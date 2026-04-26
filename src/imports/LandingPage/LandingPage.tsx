@@ -184,7 +184,7 @@ function LearnMoreContainer() {
 
 function FeatureTextGroup() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] md:gap-[32px] items-start justify-center left-[20px] md:left-[40px] top-[20px] md:top-[40px] right-[20px] md:right-auto md:w-[420px]" data-name="Feature Text Group">
+    <div className="absolute content-stretch flex flex-col gap-[16px] md:gap-[32px] items-start justify-center left-[20px] md:left-[40px] top-[20px] md:top-[40px] right-[20px] md:right-[40px]" data-name="Feature Text Group">
       <TextGroupVertical4 />
       <LearnMoreContainer />
     </div>
@@ -228,8 +228,8 @@ function TextGroupVertical5() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM1 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content]">Optimize my content for SEO and GEO to improve discoverability.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content] whitespace-pre-wrap">{`Shopie create seo optimised contents so ranks well whether in google or GEO like chatgpt, claude,  people find me easily.`}</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[1.2] md:leading-[34px] not-italic relative shrink-0 text-[28px] md:text-[32px] text-black tracking-[-0.48px] w-full">Optimize my content for SEO and GEO to improve discoverability.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[1.4] md:leading-[22px] not-italic opacity-60 relative shrink-0 text-[15px] md:text-[16px] text-black w-full">{`Shopie create seo optimised contents so ranks well whether in google or GEO like chatgpt, claude,  people find me easily.`}</p>
     </div>
   );
 }
@@ -244,7 +244,7 @@ function LearnMoreContainer1() {
 
 function FeatureTextGroup1() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] items-start justify-center left-[40px] top-[40px] w-[420px]" data-name="Feature Text Group">
+    <div className="absolute content-stretch flex flex-col gap-[16px] md:gap-[32px] items-start justify-center left-[20px] md:left-[40px] top-[20px] md:top-[40px] right-[20px] md:right-[40px]" data-name="Feature Text Group">
       <TextGroupVertical5 />
       <LearnMoreContainer1 />
     </div>
@@ -284,12 +284,12 @@ function TextGroupVertical6() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM2 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content] whitespace-pre-wrap">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[1.2] md:leading-[34px] not-italic relative shrink-0 text-[28px] md:text-[32px] text-black tracking-[-0.48px] w-full whitespace-pre-wrap">
         {`Run and improve my `}
         <br aria-hidden="true" />
         Ad campaigns
       </p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]">Elena runs and scales my ad campaigns, making sure you get the best return on investment.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[1.4] md:leading-[22px] not-italic opacity-60 relative shrink-0 text-[15px] md:text-[16px] text-black w-full">Elena runs and scales my ad campaigns, making sure you get the best return on investment.</p>
     </div>
   );
 }
@@ -304,7 +304,7 @@ function LearnMoreContainer2() {
 
 function FeatureTextGroup2() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] items-start justify-center left-[40px] top-[40px] w-[420px]" data-name="Feature Text Group">
+    <div className="absolute content-stretch flex flex-col gap-[16px] md:gap-[32px] items-start justify-center left-[20px] md:left-[40px] top-[20px] md:top-[40px] right-[20px] md:right-[40px]" data-name="Feature Text Group">
       <TextGroupVertical6 />
       <LearnMoreContainer2 />
     </div>
@@ -547,7 +547,7 @@ function FeatureTextGroup6() {
 
 function FeatureHighlight2() {
   return (
-    <div className="h-[530px] overflow-clip relative rounded-[30px] shrink-0 w-[346px]" style={{ backgroundImage: "linear-gradient(-9.72542deg, rgba(38, 193, 250, 0.8) 0.25815%, rgba(94, 212, 255, 0.8) 83.051%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Feature Highlight">
+    <div className="h-[530px] overflow-clip relative rounded-[30px] shrink-0 w-full" style={{ backgroundImage: "linear-gradient(-9.72542deg, rgba(38, 193, 250, 0.8) 0.25815%, rgba(94, 212, 255, 0.8) 83.051%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Feature Highlight">
       <FeatureTextGroup6 />
       <div className="absolute bottom-[-22px] h-[218px] right-[-30px] w-[228px]" data-name="Gemini_Generated_Image_bewxcwbewxcwbewx 2">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -599,7 +599,7 @@ function FeatureTextGroup7() {
 
 function FeatureImageLarge5() {
   return (
-    <div className="h-[530px] relative rounded-[30px] shrink-0 w-[346px]" data-name="Feature Image Large">
+    <div className="h-[530px] relative rounded-[30px] shrink-0 w-full" data-name="Feature Image Large">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[30px]">
         <div className="absolute inset-0 rounded-[30px]" style={{ backgroundImage: "linear-gradient(rgba(116, 132, 252, 0.5) 0%, rgba(19, 7, 242, 0.5) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} />
         <div className="absolute backdrop-blur-[2px] bg-size-[307.20001220703125px_307.20001220703125px] bg-top-left inset-0 mix-blend-plus-lighter opacity-40 rounded-[30px]" style={{ backgroundImage: `url('${imgFeatureImageLarge}')` }} />
@@ -659,7 +659,7 @@ function FeatureTextGroup8() {
 
 function FeatureImageLarge6() {
   return (
-    <div className="h-[530px] overflow-clip relative rounded-[30px] shrink-0 w-[346px]" data-name="Feature Image Large">
+    <div className="h-[530px] overflow-clip relative rounded-[30px] shrink-0 w-full" data-name="Feature Image Large">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[30px]">
         <div className="absolute inset-0 rounded-[30px]" style={{ backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(139.575deg, rgb(255, 219, 211) 0%, rgb(255, 221, 181) 96.708%)" }} />
         
@@ -677,7 +677,7 @@ function FeatureImageLarge6() {
 
 function FeatureSection() {
   return (
-    <div className="col-[1/span_2] content-start flex flex-wrap gap-[40px] h-[530px] items-start justify-self-stretch relative row-3 shrink-0" data-name="Feature Section">
+    <div className="col-[1/span_2] grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-[40px] justify-self-stretch relative row-3 shrink-0" data-name="Feature Section">
       <FeatureHighlight2 />
       <FeatureImageLarge5 />
       <FeatureImageLarge6 />
