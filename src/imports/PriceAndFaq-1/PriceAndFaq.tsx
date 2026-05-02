@@ -6,12 +6,12 @@ type PriceAndFaqProps = {
 
 export default function PriceAndFaq({ className, children = null }: PriceAndFaqProps) {
   return (
-    <div className={className || "bg-white content-stretch flex flex-col gap-[48px] items-center overflow-clip py-[80px] relative w-[1280px]"} data-name="Price and FAQ">
+    <div className={className || "bg-white content-stretch flex flex-col gap-[48px] items-center overflow-clip py-[80px] relative w-full max-w-[1280px] px-4"} data-name="Price and FAQ">
       <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center" data-name="Cotnet">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">Frequently Asked Questions</p>
-        <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[#6b7280] text-[20px] w-[min-content]">Watch how Loraloop manage marketing end to end</p>
+        <p className="font-['General_Sans:Medium',sans-serif] leading-[28px]  relative shrink-0 text-[#6b7280] text-[20px] ">Watch how Loraloop manage marketing end to end</p>
       </div>
-      <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-[1000px]" data-name="Container">
+      <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full max-w-[1000px] px-4" data-name="Container">
         {children || (
           <>
             <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="Question">

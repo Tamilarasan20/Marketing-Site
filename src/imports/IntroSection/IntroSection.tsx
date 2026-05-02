@@ -63,7 +63,7 @@ function ButtonContainer() {
 
 function TextGroupVertical() {
   return (
-    <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[40px] items-center justify-center left-1/2 top-[142px] w-[740px]" data-name="Text Group Vertical">
+    <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[40px] items-center justify-center left-1/2 top-[142px] w-full max-w-[740px] px-4" data-name="Text Group Vertical">
       <TextGroupVertical1 />
       <ButtonContainer />
     </div>

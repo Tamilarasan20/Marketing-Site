@@ -222,7 +222,7 @@ export default function Solution() {
 
       {/* Old vs New Way Section */}
       <div className="bg-white px-4 md:px-20 py-12 md:py-20">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="max-w-full max-w-[1200px] px-4 mx-auto">
           <h2 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-8 md:mb-12">
             Old vs New AI Way! Everyone moving
           </h2>
@@ -290,7 +290,7 @@ export default function Solution() {
 
       {/* What You Get Section */}
       <div className="bg-[#f9fafc] px-4 md:px-20 py-12 md:py-20">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="max-w-full max-w-[1200px] px-4 mx-auto">
           <div className="flex flex-col gap-8 md:gap-12">
             <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-start">
               {/* Left Column */}
@@ -451,7 +451,7 @@ export default function Solution() {
 
       {/* CTA Section */}
       <div className="bg-black px-4 md:px-20 py-16 md:py-24">
-        <div className="max-w-[1000px] mx-auto text-center">
+        <div className="max-w-full max-w-[1000px] px-4 mx-auto text-center">
           <h2 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[56px] text-white text-3xl md:text-5xl tracking-[-0.8px] md:tracking-[-1.2px] mb-6">
             AI marketing team that Never sleep.
           </h2>

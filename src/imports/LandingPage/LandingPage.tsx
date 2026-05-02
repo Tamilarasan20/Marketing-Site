@@ -1,4 +1,6 @@
-import svgPaths from "./svg-yig2xk76tq";
+import { useState } from "react";
+import { Link } from "react-router";
+import svgPaths from "./svg-7bo4y2urkw";
 import imgImage174 from "./63808635cd776f0fdaad03c9757b0a112ed13271.png";
 import imgVideoImage from "./7791317fa0728612288fbeed4e75c5ec203fe987.png";
 import imgFeatureImageLarge from "./226049655f3871f3dac264b316138eae1882ff2f.png";
@@ -10,9 +12,9 @@ import imgFeatureImageSmall2 from "./18110a4df5acac34f23ec4990a55463713d90bef.pn
 import imgFeatureImageSmall3 from "./2ede8e04425e852843b64720e2e6023d1ed754cb.png";
 import imgImage168 from "./dbeb2eb70d23fd0ba6a1408bdaa79f59657dc958.png";
 import imgGeminiGeneratedImageBewxcwbewxcwbewx2 from "./a6c396695db2f4867d2b2cf94c4c4013fb4aa21a.png";
+import imgObject from "./7908e0c373350f1c767f51c81c8c63fccd42f554.png";
 import imgFeatureImageLarge2 from "./7fb2500498e958c7df0abf6b0bb8673d257dbae0.png";
 import imgFeatureImage from "./81459e21086bbb45f043de724414eb6c6a228454.png";
-import imgObject from "./7908e0c373350f1c767f51c81c8c63fccd42f554.png";
 import imgImage177 from "./e59e1b60dcbb33e30f0b406978f03b8792a6b8a6.png";
 import imgImage176 from "./f3289e439e503ec487d828419f892c55b28a1261.png";
 import imgImage179 from "./9fa2df17169c30b0d55cbc8472bd4bd48f332457.png";
@@ -31,16 +33,16 @@ import imgImage from "./f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
 import imgImage172 from "./a091e0e97bb7d939c455df7635918b4c8c69a7b8.png";
 import imgLogos3 from "./c7fe7372891e9f00b719c9bfb401718a19a7515e.png";
 import imgLogos4 from "./62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
-import { imgGroup, imgFeatureImageSmall4, imgGroup1, imgColor } from "./svg-yrpdm";
+import { imgGroup, imgFeatureImageSmall4, imgGroup1, imgColor } from "./svg-4yq21";
 
 function TextGroupVertical3() {
   return (
     <div className="content-stretch flex flex-col items-start mb-[-1px] pb-[14px] relative shrink-0 text-white w-full" data-name="Text Group Vertical">
       <p className="leading-[0] relative shrink-0 text-[0px] w-full">
-        <span className="leading-[76px] text-[68px]">{`Meet `}</span>
-        <span className="leading-[76px] text-[#14a148] text-[68px]">Lora</span>
+        <span className="text-[36px] md:text-[68px] leading-[1.2]">{`Meet `}</span>
+        <span className="text-[36px] md:text-[68px] leading-[1.2] text-[#14a148]">Lora</span>
       </p>
-      <p className="leading-[76px] relative shrink-0 text-[68px] w-full">{`your Autonomous `}</p>
+      <p className="text-[36px] md:text-[68px] leading-[1.2] relative shrink-0 w-full">{`your Autonomous `}</p>
     </div>
   );
 }
@@ -49,7 +51,7 @@ function TextGroupVertical2() {
   return (
     <div className="content-stretch flex flex-col font-['Satoshi:Black',sans-serif] items-start pb-px relative shrink-0 tracking-[-2.04px] w-full" data-name="Text Group Vertical">
       <TextGroupVertical3 />
-      <p className="leading-[76px] relative shrink-0 text-[#14a148] text-[68px] w-full">{`AI Marketing Team `}</p>
+      <p className="text-[36px] md:text-[68px] leading-[1.2] relative shrink-0 text-[#14a148] w-full">{`AI Marketing Team `}</p>
     </div>
   );
 }
@@ -58,10 +60,8 @@ function TextGroupVertical1() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
       <TextGroupVertical2 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#9ca3af] text-[20px] w-[720px] whitespace-pre-wrap">
-        {`An AI agents work as a team that plans content, creates, publishes,  tracks performance, manages ads & keeps improving itself on autopilot`}
-        <br aria-hidden="true" />
-        your 24/7 marketing team that never sleeps.
+      <p className="font-['General_Sans:Medium',sans-serif] text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full max-w-[720px] px-4 md:px-0">
+        {`An AI agents work as a team that plans content, creates, publishes,  tracks performance, manages ads & keeps improving itself on autopilot your 24/7 marketing team that never sleeps.`}
       </p>
     </div>
   );
@@ -69,15 +69,15 @@ function TextGroupVertical1() {
 
 function ButtonContainer() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0" data-name="Button Container">
-      <div className="bg-[#1f2937] content-stretch flex gap-[12px] items-center px-[24px] py-[16px] relative rounded-[24px] shrink-0 w-[480px]" data-name="Marketting/Input field">
+    <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full px-4 md:px-0" data-name="Button Container">
+      <div className="bg-[#1f2937] content-stretch flex gap-[12px] items-center px-[24px] py-[16px] relative rounded-[24px] shrink-0 w-full max-w-[480px]" data-name="Marketting/Input field">
         <div aria-hidden="true" className="absolute border-2 border-[rgba(147,197,253,0.4)] border-solid inset-[-2px] pointer-events-none rounded-[26px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
-        <p className="flex-[1_0_0] font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-px not-italic relative text-[#9ca3af] text-[18px]">enter your mail</p>
+        <p className="flex-[1_0_0] font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-px not-italic relative text-[#9ca3af] text-[16px] md:text-[18px]">enter your mail</p>
       </div>
-      <div className="bg-[#2a3040] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[40px] shrink-0 w-[220px]" data-name="Button">
+      <div className="bg-[#2a3040] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[40px] shrink-0 w-full max-w-[220px]" data-name="Button">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Join Waitlist</p>
       </div>
-      <div className="content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[16px] shrink-0 w-[220px]" data-name="Button">
+      <Link to="/solution" className="content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[16px] shrink-0 w-full max-w-[220px]" data-name="Button">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#d1d5db] text-[16px] whitespace-nowrap">See Solution</p>
         <div className="overflow-clip relative shrink-0 size-[24px]" data-name="Right Icon">
           <div className="absolute bottom-1/4 left-[29.17%] right-[29.17%] top-1/4" data-name="Icon">
@@ -88,14 +88,14 @@ function ButtonContainer() {
             </div>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
 
 function TextGroupVertical() {
   return (
-    <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[40px] items-center justify-center left-1/2 top-[142px] w-[740px]" data-name="Text Group Vertical">
+    <div className="flex flex-col gap-6 md:gap-[40px] items-center justify-center w-full max-w-[740px] mx-auto px-4 md:px-0" data-name="Text Group Vertical">
       <TextGroupVertical1 />
       <ButtonContainer />
     </div>
@@ -104,12 +104,14 @@ function TextGroupVertical() {
 
 function IntroSection() {
   return (
-    <div className="h-[890px] overflow-clip relative shrink-0 w-[1280px]" data-name="Intro Section">
-      <div className="absolute bg-black h-[920px] left-0 top-0 w-[1293px]" data-name="Background Shape" />
-      <div className="absolute bottom-[-134px] h-[537px] right-[249px] w-[786px]" data-name="Banner Image Side Left" />
-      <TextGroupVertical />
-      <div className="-translate-x-1/2 absolute bottom-0 h-[220px] left-1/2 w-[854px]" data-name="image 174">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage174} />
+    <div className="relative z-[1] w-full min-h-[600px] md:min-h-[920px]" data-name="Intro Section">
+      <div className="absolute bg-black inset-0 w-full h-full" data-name="Background Shape" />
+      <div className="relative z-10 pt-24 md:pt-32 pb-12 md:pb-0">
+        <TextGroupVertical />
+      </div>
+      {/* Avatar strip — bottom-[0] = container bottom == IntroSection bottom == VideoSection top */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[193px] md:h-[343px] w-full max-w-[900px] px-4 z-20" data-name="image 174">
+        <img alt="" className="w-full h-full object-contain object-bottom" src={imgImage174} />
       </div>
     </div>
   );
@@ -117,24 +119,26 @@ function IntroSection() {
 
 function Cotnet() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-[740px]" data-name="Cotnet">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">See it in action</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[#374151] text-[20px] w-[min-content]">Watch how Loraloop manage marketing end to end</p>
+    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
+      <p className="font-['Satoshi:Bold',sans-serif] text-[28px] md:text-[40px] leading-[1.2] md:leading-[48px] relative shrink-0 text-[#1f2937] tracking-[-0.8px]">See it in action</p>
+      <p className="font-['General_Sans:Medium',sans-serif] text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#374151]">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
 }
 
+import videoImg from "../../assets/video_img.png";
+
 function VideoImage() {
   return (
-    <div className="h-[617px] relative rounded-[32px] shrink-0 w-[1115px]" data-name="Video Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[32px] size-full" src={imgVideoImage} />
+    <div className="relative rounded-[16px] md:rounded-[32px] w-full max-w-[1115px] aspect-video" data-name="Video Image">
+      <img alt="" className="absolute inset-0 object-cover pointer-events-none rounded-[16px] md:rounded-[32px] size-full" src={videoImg} />
     </div>
   );
 }
 
 function VideoSection() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[80px] items-center px-[80px] py-[120px] relative rounded-tl-[64px] rounded-tr-[64px] shrink-0" data-name="Video Section">
+    <div className="relative bg-white w-full flex flex-col gap-12 md:gap-[80px] items-center px-4 md:px-[80px] pt-[80px] md:pt-[80px] pb-16 md:pb-[80px] rounded-tl-[32px] md:rounded-tl-[64px] rounded-tr-[32px] md:rounded-tr-[64px] rounded-bl-[0px] rounded-br-[0px]" data-name="Video Section">
       <Cotnet />
       <VideoImage />
     </div>
@@ -143,11 +147,11 @@ function VideoSection() {
 
 function Cotnet1() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center not-italic relative shrink-0 text-center w-[740px]" data-name="Cotnet">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[0] relative shrink-0 text-[#9ca3af] text-[20px] w-full whitespace-pre-wrap">
-        <span className="leading-[28px]">{`You don’t need a large team to grow a business. Loraloop provides AI employees for marketing that handle daily work. From planning to execution, work gets done efficiently, 24/7.  `}</span>
-        <span className="leading-[28px] text-white">10x your marketing with 10x less expansive.</span>
+    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
+      <p className="font-[‘Satoshi:Bold’,sans-serif] text-[28px] md:text-[40px] leading-[1.2] md:leading-[48px] relative shrink-0 text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
+      <p className="font-[‘General_Sans:Medium’,sans-serif] text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full">
+        {`You don’t need a large team to grow a business. Loraloop provides AI employees for marketing that handle daily work. From planning to execution, work gets done efficiently, 24/7. `}
+        <span className="text-white">10x your marketing with 10x less expansive.</span>
       </p>
     </div>
   );
@@ -157,7 +161,7 @@ function BadgeM() {
   return (
     <div className="bg-[#1558b0] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] whitespace-nowrap">
+      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[82px]">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Strategist</p>
       </div>
     </div>
@@ -166,43 +170,43 @@ function BadgeM() {
 
 function TextGroupVertical4() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-white tracking-[-0.48px] w-[min-content]">Identify what’s trending and what my competitors are doing</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-80 relative shrink-0 text-[16px] text-white w-[min-content]">Sam analyzes market trends and competitor actions. He identifies which content types or topics will help me grow.</p>
+      <p className="font-[‘Satoshi:Bold’,sans-serif] text-[20px] md:text-[32px] leading-[1.2] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-0.48px]">Identify what’s trending and what my competitors are doing</p>
+      <p className="font-[‘General_Sans:Medium’,sans-serif] text-[14px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-80 relative shrink-0 text-white">Sam analyzes market trends and competitor actions. He identifies which content types or topics will help me grow.</p>
     </div>
   );
 }
 
 function LearnMoreContainer() {
   return (
-    <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+    <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[16px] md:px-[24px] py-[8px] md:py-[12px] relative rounded-[24px] md:rounded-[34px] shrink-0" data-name="Learn More Container">
+      <p className="font-[‘Satoshi:Bold’,sans-serif] leading-[normal] not-italic relative shrink-0 text-[14px] md:text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </div>
   );
 }
 
 function FeatureTextGroup() {
-  return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] items-start justify-center left-[40px] top-[40px] w-[420px]" data-name="Feature Text Group">
-      <TextGroupVertical4 />
-      <LearnMoreContainer />
-    </div>
-  );
+  // Not used — text is now inline inside FeatureImageLarge
+  return null;
 }
 
 function FeatureImageLarge() {
   return (
-    <div className="col-1 h-[530px] justify-self-stretch overflow-clip relative rounded-[30px] row-2 shrink-0" data-name="Feature Image Large">
-      <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[30px]">
-        <div className="absolute bg-gradient-to-b from-[#0073ff] inset-0 rounded-[30px] to-[#0da2ff]" />
-        <div className="absolute bg-size-[307.20001220703125px_307.20001220703125px] bg-top-left inset-0 mix-blend-plus-lighter opacity-40 rounded-[30px]" style={{ backgroundImage: `url('${imgFeatureImageLarge}')` }} />
+    <div className="min-h-[480px] md:h-[530px] w-full overflow-hidden relative rounded-[20px] md:rounded-[30px] shrink-0" data-name="Feature Image Large">
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[20px] md:rounded-[30px]">
+        <div className="absolute bg-gradient-to-b from-[#0073ff] inset-0 rounded-[20px] md:rounded-[30px] to-[#0da2ff]" />
+        <div className="absolute bg-size-[307.20001220703125px_307.20001220703125px] bg-top-left inset-0 mix-blend-plus-lighter opacity-40 rounded-[20px] md:rounded-[30px]" style={{ backgroundImage: `url('${imgFeatureImageLarge}')` }} />
       </div>
-      <FeatureTextGroup />
-      <p className="absolute bottom-[54px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[217px] not-italic text-[#134d91] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Sam</p>
-      <div className="absolute bottom-0 flex h-[219px] items-center justify-center right-[3px] w-[262px]">
+      {/* Text flows naturally, right padding reserves avatar space */}
+      <div className="relative z-10 flex flex-col gap-4 md:gap-8 items-start p-6 md:p-10 pr-[196px] md:pr-6 md:max-w-[460px]">
+        <TextGroupVertical4 />
+        <LearnMoreContainer />
+      </div>
+      <p className="absolute bottom-[20px] right-[180px] md:right-[260px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic text-[#134d91] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Sam</p>
+      <div className="absolute bottom-0 flex h-[150px] md:h-[219px] items-center justify-center right-0 md:right-[3px] w-[180px] md:w-[262px]">
         <div className="-scale-y-100 flex-none rotate-180">
-          <div className="h-[219px] relative w-[262px]" data-name="Feature Image Small">
+          <div className="h-[150px] md:h-[219px] relative w-[180px] md:w-[262px]" data-name="Feature Image Small">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <img alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall} />
             </div>
@@ -217,7 +221,7 @@ function BadgeM1() {
   return (
     <div className="bg-[#137e3b] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] whitespace-nowrap">
+      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[146px]">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI SEO/GEO Manager</p>
       </div>
     </div>
@@ -228,8 +232,8 @@ function TextGroupVertical5() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM1 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content]">Optimize my content for SEO and GEO to improve discoverability.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content] whitespace-pre-wrap">{`Shopie create seo optimised contents so ranks well whether in google or GEO like chatgpt, claude,  people find me easily.`}</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Optimize my content for SEO and GEO to improve discoverability.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black whitespace-pre-wrap">{`Shopie create seo optimised contents so ranks well whether in google or GEO like chatgpt, claude,  people find me easily.`}</p>
     </div>
   );
 }
@@ -264,7 +268,7 @@ function FeatureImageLarge1() {
           <img alt="" className="absolute h-[99.91%] left-[-0.01%] max-w-none top-[0.09%] w-[100.02%]" src={imgFeatureImageSmall1} />
         </div>
       </div>
-      <p className="-translate-x-full absolute bottom-[55px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[302px] not-italic text-[#143b2c] text-[28px] text-right tracking-[-0.48px] translate-y-full whitespace-nowrap">Sophie</p>
+      <p className="-translate-x-full absolute bottom-[55px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[302px] not-italic text-[#143b2c] text-[28px] text-right tracking-[-0.48px] translate-y-full w-[78px]">Sophie</p>
     </div>
   );
 }
@@ -284,12 +288,12 @@ function TextGroupVertical6() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM2 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content] whitespace-pre-wrap">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] whitespace-pre-wrap">
         {`Run and improve my `}
         <br aria-hidden="true" />
         Ad campaigns
       </p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]">Elena runs and scales my ad campaigns, making sure you get the best return on investment.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Elena runs and scales my ad campaigns, making sure you get the best return on investment.</p>
     </div>
   );
 }
@@ -346,10 +350,10 @@ function BadgeM3() {
 
 function TextGroupVertical7() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM3 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-white tracking-[-1px] w-[min-content]">Plan a marketing strategy for my business</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-90 relative shrink-0 text-[16px] text-white w-[min-content]">{`Lora turn my business goals into a clear execution plan. lora breaks down what needs to be done, assigns tasks to the right team, right members, & keeps everything aligned so my marketing runs in my voice.`}</p>
+      <p className="font-['Satoshi:Bold',sans-serif] text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-1px]">Plan a marketing strategy for my business</p>
+      <p className="font-['General_Sans:Medium',sans-serif] text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-90 relative shrink-0 text-white">{`Lora turn my business goals into a clear execution plan. lora breaks down what needs to be done, assigns tasks to the right team, right members, & keeps everything aligned so my marketing runs in my voice.`}</p>
     </div>
   );
 }
@@ -364,7 +368,7 @@ function LearnMoreContainer3() {
 
 function FeatureTextGroup3() {
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col gap-[32px] items-start justify-center left-[40px] top-[calc(50%-17px)] w-[578px]" data-name="Feature Text Group">
+    <div className="absolute content-stretch flex flex-col gap-[20px] md:gap-[32px] items-start justify-start left-[24px] md:left-[40px] top-[24px] md:top-[calc(50%-17px)] md:-translate-y-1/2 w-[calc(100%-48px)] md:w-[578px] z-10" data-name="Feature Text Group">
       <TextGroupVertical7 />
       <LearnMoreContainer3 />
     </div>
@@ -373,16 +377,20 @@ function FeatureTextGroup3() {
 
 function FeatureHighlight1() {
   return (
-    <div className="col-[1/span_2] h-[360px] justify-self-stretch overflow-clip relative rounded-[30px] row-1 self-start shrink-0" data-name="Feature Highlight">
+    <div className="col-span-1 md:col-span-2 h-[360px] md:h-[400px] justify-self-stretch overflow-hidden relative rounded-[30px] self-start shrink-0 w-full" data-name="Feature Highlight">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[30px]">
         <div className="absolute bg-gradient-to-b from-[#9500e5] inset-0 rounded-[30px] to-[#c31ded]" />
         <div className="absolute bg-size-[307.20001220703125px_307.20001220703125px] bg-top-left inset-0 mix-blend-plus-lighter opacity-40 rounded-[30px]" style={{ backgroundImage: `url('${imgFeatureImageLarge}')` }} />
       </div>
-      <FeatureTextGroup3 />
-      <div className="absolute bottom-[-1px] h-[285px] right-0 w-[314px]" data-name="Feature Image Small">
+      {/* Text flows naturally; right padding keeps text away from avatar on mobile */}
+      <div className="relative z-10 flex flex-col gap-4 md:gap-8 items-start p-6 md:p-10 pr-[230px] md:pr-6 md:max-w-[620px]">
+        <TextGroupVertical7 />
+        <LearnMoreContainer3 />
+      </div>
+      <div className="absolute bottom-[-1px] h-[220px] md:h-[285px] right-[-20px] md:right-0 w-[240px] md:w-[314px]" data-name="Feature Image Small">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFeatureImageSmall2} />
       </div>
-      <p className="absolute font-['Kalam:Bold',sans-serif] leading-[34px] left-[780px] not-italic text-[#501481] text-[28px] top-[321px] tracking-[-0.48px] whitespace-nowrap">Lora</p>
+      <p className="absolute bottom-[20px] right-[210px] md:right-[310px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic text-[#501481] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Lora</p>
     </div>
   );
 }
@@ -391,7 +399,7 @@ function BadgeM4() {
   return (
     <div className="bg-[#0d746c] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#eefdf9] text-[0px] tracking-[0.21px] whitespace-nowrap">
+      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#eefdf9] text-[0px] tracking-[0.21px] w-[167px]">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Social Media Manager</p>
       </div>
     </div>
@@ -400,10 +408,10 @@ function BadgeM4() {
 
 function TextGroupVertical8() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM4 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[#1f2937] text-[32px] tracking-[-0.48px] w-[min-content]">{`Schedule publish my posts, contents & Engage with audiences `}</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic relative shrink-0 text-[#1f2937] text-[16px] w-[min-content]">Sarah schedules my social posts, handles community engagement, replying and nurturing relationships.</p>
+      <p className="font-['Satoshi:Bold',sans-serif] text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-[#1f2937] tracking-[-0.48px]">{`Schedule publish my posts, contents & Engage with audiences`}</p>
+      <p className="font-['General_Sans:Medium',sans-serif] text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic relative shrink-0 text-[#1f2937]">Sarah schedules my social posts, handles community engagement, replying and nurturing relationships.</p>
     </div>
   );
 }
@@ -418,7 +426,7 @@ function LearnMoreContainer4() {
 
 function FeatureTextGroup4() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] items-start justify-center left-[40px] top-[40px] w-[420px]" data-name="Feature Text Group">
+    <div className="absolute content-stretch flex flex-col gap-[20px] md:gap-[32px] items-start justify-start left-[24px] md:left-[40px] top-[24px] md:top-[40px] w-[280px] md:w-[420px] z-10" data-name="Feature Text Group">
       <TextGroupVertical8 />
       <LearnMoreContainer4 />
     </div>
@@ -427,18 +435,22 @@ function FeatureTextGroup4() {
 
 function FeatureImageLarge3() {
   return (
-    <div className="col-1 h-[535px] justify-self-stretch overflow-clip relative rounded-[30px] row-4 shrink-0" data-name="Feature Image Large">
+    <div className="min-h-[480px] md:h-[530px] justify-self-stretch overflow-hidden relative rounded-[30px] shrink-0 w-full" data-name="Feature Image Large">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[30px]">
         <div className="absolute inset-0 rounded-[30px]" style={{ backgroundImage: "linear-gradient(rgba(21, 245, 227, 0.8) 0%, rgba(0, 110, 101, 0.8) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} />
         <div className="absolute bg-size-[307.20001220703125px_307.20001220703125px] bg-top-left inset-0 mix-blend-plus-lighter opacity-40 rounded-[30px]" style={{ backgroundImage: `url('${imgFeatureImageLarge}')` }} />
       </div>
-      <FeatureTextGroup4 />
-      <div className="-translate-x-1/2 absolute bottom-0 h-[262px] left-[calc(50%+154.5px)] w-[263px]" data-name="Feature Image Small">
+      {/* Text flows naturally; right padding reserves avatar space on mobile */}
+      <div className="relative z-10 flex flex-col gap-4 md:gap-8 items-start p-6 md:p-10 pr-[230px] md:pr-6 md:max-w-[460px]">
+        <TextGroupVertical8 />
+        <LearnMoreContainer4 />
+      </div>
+      <div className="absolute bottom-0 h-[220px] md:h-[262px] right-[-20px] md:right-[-10px] w-[220px] md:w-[263px]" data-name="Feature Image Small">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgFeatureImageSmall3} />
         </div>
       </div>
-      <p className="-translate-x-full absolute bottom-[55px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[301px] not-italic text-[#fafcfb] text-[28px] text-right tracking-[-0.48px] translate-y-full whitespace-nowrap">Sarah</p>
+      <p className="absolute bottom-[20px] right-[210px] md:right-[260px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic text-[#fafcfb] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Sarah</p>
     </div>
   );
 }
@@ -458,8 +470,8 @@ function TextGroupVertical9() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[732px]" data-name="Text Group Vertical">
       <BadgeM5 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content]">Analyze every content performance and determine what’s working whats not</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full not-italic opacity-60 relative shrink-0 text-[18px] text-black w-[min-content] whitespace-pre-wrap">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Analyze every content performance and determine what’s working whats not</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] not-italic opacity-60 relative shrink-0 text-[18px] text-black whitespace-pre-wrap">
         {`Nick tracks performs of contes, posts, ads. `}
         <br aria-hidden="true" />
         He reports on what worked, what didn’t, and what to improve next.
@@ -511,7 +523,7 @@ function BadgeM6() {
   return (
     <div className="bg-[#0abcfb] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] whitespace-nowrap">
+      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] w-[119px]">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Content Writer</p>
       </div>
     </div>
@@ -522,8 +534,8 @@ function TextGroupVertical10() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM6 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content]">{`Writes content that attracts customers for blog, mail & more..`}</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]">Clara writes my blogs, emails, threads, newsletters, Social posts and other persuasive content that drives action.</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">{`Writes content that attracts customers for blog, mail & more..`}</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Clara writes my blogs, emails, threads, newsletters, Social posts and other persuasive content that drives action.</p>
     </div>
   );
 }
@@ -538,7 +550,7 @@ function LearnMoreContainer6() {
 
 function FeatureTextGroup6() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] items-start justify-center left-[32px] top-[40px] w-[280px]" data-name="Feature Text Group">
+    <div className="absolute content-stretch flex flex-col gap-[20px] md:gap-[32px] items-start justify-center left-[24px] md:left-[32px] top-[24px] md:top-[40px] w-[280px] z-10" data-name="Feature Text Group">
       <TextGroupVertical10 />
       <LearnMoreContainer6 />
     </div>
@@ -547,24 +559,24 @@ function FeatureTextGroup6() {
 
 function FeatureHighlight2() {
   return (
-    <div className="h-[530px] overflow-clip relative rounded-[30px] shrink-0 w-[346px]" style={{ backgroundImage: "linear-gradient(-9.72542deg, rgba(38, 193, 250, 0.8) 0.25815%, rgba(94, 212, 255, 0.8) 83.051%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Feature Highlight">
+    <div className="h-[400px] md:h-[530px] overflow-clip relative rounded-[30px] shrink-0 w-full" style={{ backgroundImage: "linear-gradient(-9.72542deg, rgba(38, 193, 250, 0.8) 0.25815%, rgba(94, 212, 255, 0.8) 83.051%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Feature Highlight">
       <FeatureTextGroup6 />
       <div className="absolute bottom-[-22px] h-[218px] right-[-30px] w-[228px]" data-name="Gemini_Generated_Image_bewxcwbewxcwbewx 2">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgGeminiGeneratedImageBewxcwbewxcwbewx2} />
         </div>
       </div>
-      <p className="absolute bottom-[44px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[120px] not-italic text-[#286a8f] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Clara</p>
+      <p className="absolute bottom-[20px] right-[160px] md:right-[180px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic text-[#286a8f] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Clara</p>
     </div>
   );
 }
 
 function BadgeM7() {
   return (
-    <div className="bg-[#fdc9a8] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
+    <div className="bg-[#5762e5] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] whitespace-nowrap">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Visual Designer</p>
+      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[123px]">
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Video Producer</p>
       </div>
     </div>
   );
@@ -572,10 +584,10 @@ function BadgeM7() {
 
 function TextGroupVertical11() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-h-px relative w-full" data-name="Text Group Vertical">
       <BadgeM7 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content]">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]">Steve Design scroll-stopping visuals and carousels that reflect my brand and grab attention in all platforms</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Create Videos for TikTok, Insta, YouTube etc.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Theo turns your ideas into engaging video content for your brand. plans and scripts your short-form videos for platforms like TikTok or YouTube, boosting engagement.</p>
     </div>
   );
 }
@@ -599,28 +611,32 @@ function FeatureTextGroup7() {
 
 function FeatureImageLarge5() {
   return (
-    <div className="h-[530px] overflow-clip relative rounded-[30px] shrink-0 w-[346px]" data-name="Feature Image Large">
+    <div className="h-[530px] relative rounded-[30px] shrink-0 w-[346px]" data-name="Feature Image Large">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[30px]">
-        <div className="absolute inset-0 rounded-[30px]" style={{ backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(139.575deg, rgb(255, 219, 211) 0%, rgb(255, 221, 181) 96.708%)" }} />
-        <div className="absolute bg-size-[8.640000343322754px_8.640000343322754px] bg-top-left inset-0 opacity-30 rounded-[30px]" style={{ backgroundImage: `url('${imgFeatureImageLarge2}')` }} />
+        <div className="absolute inset-0 rounded-[30px]" style={{ backgroundImage: "linear-gradient(rgba(116, 132, 252, 0.5) 0%, rgba(19, 7, 242, 0.5) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} />
+        <div className="absolute backdrop-blur-[2px] bg-size-[307.20001220703125px_307.20001220703125px] bg-top-left inset-0 mix-blend-plus-lighter opacity-40 rounded-[30px]" style={{ backgroundImage: `url('${imgFeatureImageLarge}')` }} />
       </div>
-      <FeatureTextGroup7 />
-      <div className="absolute bottom-[-19px] h-[215px] right-[-29.67px] w-[235px]" data-name="Feature Image">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[102.18%] left-[-33.01%] max-w-none top-0 w-[168.71%]" src={imgFeatureImage} />
+      <div className="overflow-clip relative rounded-[inherit] size-full">
+        <FeatureTextGroup7 />
+        <div className="absolute bottom-[-70px] h-[285px] right-[-69.33px] w-[277px]" data-name="Object">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img alt="" className="absolute h-[373.26%] left-[-76.92%] max-w-none top-[-12.2%] w-[251.46%]" src={imgObject} />
+          </div>
         </div>
+        <p className="absolute bottom-[44px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[120px] not-italic text-[#06074e] text-[28px] tracking-[-0.48px] translate-y-full w-[57px]">Theo</p>
       </div>
-      <p className="absolute bottom-[44px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[120px] not-italic text-[#8e492b] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Steve</p>
+      <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-2px_1px_0px_rgba(151,193,255,0.4)]" />
+      <div aria-hidden="true" className="absolute border border-[#c4dcff] border-solid inset-0 pointer-events-none rounded-[30px] shadow-[0px_11.392px_22.336px_0px_rgba(53,106,185,0.09)]" />
     </div>
   );
 }
 
 function BadgeM8() {
   return (
-    <div className="bg-[#5762e5] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
+    <div className="bg-[#fdc9a8] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] whitespace-nowrap">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Video Producer</p>
+      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] w-[123px]">
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Visual Designer</p>
       </div>
     </div>
   );
@@ -628,10 +644,10 @@ function BadgeM8() {
 
 function TextGroupVertical12() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-h-px relative w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM8 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content]">Create Videos for TikTok, Insta, YouTube etc.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]">Theo turns your ideas into engaging video content for your brand. plans and scripts your short-form videos for platforms like TikTok or YouTube, boosting engagement.</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Steve Design scroll-stopping visuals and carousels that reflect my brand and grab attention in all platforms</p>
     </div>
   );
 }
@@ -646,7 +662,7 @@ function LearnMoreContainer8() {
 
 function FeatureTextGroup8() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] h-[380px] items-start left-[32px] top-[40px] w-[280px]" data-name="Feature Text Group">
+    <div className="absolute content-stretch flex flex-col gap-[20px] md:gap-[32px] items-start left-[24px] md:left-[32px] top-[24px] md:top-[40px] w-[280px] z-10" data-name="Feature Text Group">
       <TextGroupVertical12 />
       <LearnMoreContainer8 />
     </div>
@@ -655,31 +671,26 @@ function FeatureTextGroup8() {
 
 function FeatureImageLarge6() {
   return (
-    <div className="h-[530px] relative rounded-[30px] shrink-0 w-[346px]" data-name="Feature Image Large">
+    <div className="h-[400px] md:h-[530px] overflow-clip relative rounded-[30px] shrink-0 w-full" data-name="Feature Image Large">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[30px]">
-        <div className="absolute inset-0 rounded-[30px]" style={{ backgroundImage: "linear-gradient(rgba(116, 132, 252, 0.5) 0%, rgba(19, 7, 242, 0.5) 100%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} />
-        <div className="absolute backdrop-blur-[2px] bg-size-[307.20001220703125px_307.20001220703125px] bg-top-left inset-0 mix-blend-plus-lighter opacity-40 rounded-[30px]" style={{ backgroundImage: `url('${imgFeatureImageLarge}')` }} />
+        <div className="absolute inset-0 rounded-[30px]" style={{ backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(139.575deg, rgb(255, 219, 211) 0%, rgb(255, 221, 181) 96.708%)" }} />
+
       </div>
-      <div className="overflow-clip relative rounded-[inherit] size-full">
-        <FeatureTextGroup8 />
-        <div className="absolute bottom-[-70px] h-[285px] right-[-69.33px] w-[277px]" data-name="Object">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[373.26%] left-[-76.92%] max-w-none top-[-12.2%] w-[251.46%]" src={imgObject} />
-          </div>
+      <FeatureTextGroup8 />
+      <div className="absolute bottom-[-19px] h-[215px] right-[-29.67px] w-[235px]" data-name="Feature Image">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <img alt="" className="absolute h-[102.18%] left-[-33.01%] max-w-none top-0 w-[168.71%]" src={imgFeatureImage} />
         </div>
-        <p className="absolute bottom-[44px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[120px] not-italic text-[#06074e] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Theo</p>
       </div>
-      <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-2px_1px_0px_rgba(151,193,255,0.4)]" />
-      <div aria-hidden="true" className="absolute border border-[#c4dcff] border-solid inset-0 pointer-events-none rounded-[30px] shadow-[0px_11.392px_22.336px_0px_rgba(53,106,185,0.09)]" />
+      <p className="absolute bottom-[20px] right-[180px] md:right-[200px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic text-[#8e492b] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Steve</p>
     </div>
   );
 }
 
 function FeatureSection() {
   return (
-    <div className="col-[1/span_2] content-start flex flex-wrap gap-[40px] h-[530px] items-start justify-self-stretch relative row-3 shrink-0" data-name="Feature Section">
+    <div className="col-span-1 md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[40px] items-start relative shrink-0 w-full" data-name="Feature Section">
       <FeatureHighlight2 />
-      <FeatureImageLarge5 />
       <FeatureImageLarge6 />
     </div>
   );
@@ -687,23 +698,20 @@ function FeatureSection() {
 
 function FeatureHighlight() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Feature Highlight">
-      <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(5,fit-content(100%))] px-[80px] relative size-full">
-        <FeatureImageLarge />
-        <FeatureImageLarge1 />
-        <FeatureImageLarge2 />
+    <div className="relative shrink-0 w-full max-w-[1280px]" data-name="Feature Highlight">
+      <div className="gap-4 md:gap-8 lg:gap-[40px] grid grid-cols-1 md:grid-cols-2 px-4 md:px-8 lg:px-[80px] relative w-full">
         <FeatureHighlight1 />
+        <FeatureImageLarge />
         <FeatureImageLarge3 />
-        <FeatureImageLarge4 />
         <FeatureSection />
       </div>
     </div>
   );
 }
 
-function MainContent() {
+function AiAgents() {
   return (
-    <div className="bg-black content-stretch flex flex-col gap-[80px] items-center overflow-clip py-[120px] relative shrink-0 w-full" data-name="Main Content">
+    <div className="relative bg-black w-full flex flex-col gap-12 md:gap-[80px] items-center overflow-clip py-16 md:py-24 lg:py-[120px] px-4 md:px-8" data-name="AI Agents">
       <Cotnet1 />
       <FeatureHighlight />
       <div className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 w-[140px]" data-name="Button">
@@ -713,25 +721,7 @@ function MainContent() {
   );
 }
 
-function ProductLaunchVideoSection() {
-  return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0 w-[1280px]" data-name="Product Launch Video Section">
-      <VideoSection />
-      <MainContent />
-    </div>
-  );
-}
-
-function PageContainer() {
-  return (
-    <div className="bg-black content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Page Container">
-      <IntroSection />
-      <ProductLaunchVideoSection />
-    </div>
-  );
-}
-
-function Frame18() {
+function Frame17() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] w-full">The AI Employees that actually does stuff.</p>
@@ -740,11 +730,11 @@ function Frame18() {
   );
 }
 
-function Frame17() {
+function Frame16() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-[620px]">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] w-full">HOW IT WORKS</p>
-      <Frame18 />
+      <Frame17 />
     </div>
   );
 }
@@ -759,22 +749,22 @@ function Text() {
   );
 }
 
-function Container5() {
+function Container3() {
   return (
-    <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-      <Text />
-      <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[28px] min-w-px not-italic relative text-[#1f2937] text-[20px]">Enter Your Website</p>
+    <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Container">
+      <div className="mt-1"><Text /></div>
+      <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[28px] min-w-px not-italic relative text-[#1f2937] text-[18px] md:text-[20px]">Enter Your Website</p>
     </div>
   );
 }
 
-function Container4() {
+function Container2() {
   return (
-    <div className="flex-[1_0_0] min-h-px relative w-full" data-name="Container">
-      <div className="content-stretch flex flex-col gap-[12px] items-start px-[32px] py-[24px] relative size-full">
-        <Container5 />
-        <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[16px] w-full">
-          <li className="mb-0 ms-[24px]">
+    <div className="flex-[1_0_0] min-h-[220px] md:min-h-[300px] relative w-full" data-name="Container">
+      <div className="content-stretch flex flex-col gap-[12px] items-start px-[24px] md:px-[32px] py-[24px] relative size-full">
+        <Container3 />
+        <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
+          <li className="mb-2 ms-[24px]">
             <span className="leading-[22px]">Drop your website URL</span>
           </li>
           <li className="ms-[24px]">
@@ -786,16 +776,16 @@ function Container4() {
   );
 }
 
-function Container2() {
+function Container1() {
   return (
-    <div className="bg-white h-full relative rounded-[24px] shrink-0 w-[357px]" data-name="Container">
-      <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <div className="h-[240px] relative shrink-0 w-[357px]" data-name="image 177">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage177} />
+    <div className="bg-white relative rounded-[20px] md:rounded-[24px] shrink-0 w-full md:flex-1 flex flex-col" data-name="Container">
+      <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full flex-1">
+        <div className="h-[200px] md:h-[240px] relative shrink-0 w-full" data-name="image 177">
+          <img alt="" className="absolute inset-0 object-cover pointer-events-none size-full" src={imgImage177} />
         </div>
-        <Container4 />
+        <Container2 />
       </div>
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-[-1px] pointer-events-none rounded-[25px]" />
+      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-[-1px] pointer-events-none rounded-[20px] md:rounded-[25px]" />
     </div>
   );
 }
@@ -810,41 +800,43 @@ function Text1() {
   );
 }
 
-function Container8() {
-  return (
-    <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-      <Text1 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">AI Team Manage Marketing</p>
-    </div>
-  );
-}
-
-function Container7() {
-  return (
-    <div className="content-stretch flex flex-col gap-[12px] h-[200px] items-start px-[32px] py-[24px] relative shrink-0 w-[357px]" data-name="Container">
-      <Container8 />
-      <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[16px] w-full">
-        <li className="mb-0 ms-[24px]">
-          <span className="leading-[22px]">{`Social, content, leads, engagement, Ads launched and optimized automatically. `}</span>
-        </li>
-        <li className="ms-[24px]">
-          <span className="leading-[22px]">Your AI marketing team never sleeps.</span>
-        </li>
-      </ul>
-    </div>
-  );
-}
-
 function Container6() {
   return (
-    <div className="bg-white h-full relative rounded-[24px] shrink-0" data-name="Container">
-      <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <div className="h-[240px] relative shrink-0 w-[357px]" data-name="image 176">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage176} />
-        </div>
-        <Container7 />
+    <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Container">
+      <div className="mt-1"><Text1 /></div>
+      <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[18px] md:text-[20px]">AI Team Manage Marketing</p>
+    </div>
+  );
+}
+
+function Container5() {
+  return (
+    <div className="flex-[1_0_0] min-h-[220px] md:min-h-[300px] relative w-full" data-name="Container">
+      <div className="content-stretch flex flex-col gap-[12px] items-start px-[24px] md:px-[32px] py-[24px] relative size-full">
+        <Container6 />
+        <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
+          <li className="mb-2 ms-[24px]">
+            <span className="leading-[22px]">{`Social, content, leads, engagement, Ads launched and optimized automatically. `}</span>
+          </li>
+          <li className="ms-[24px]">
+            <span className="leading-[22px]">Your AI marketing team never sleeps.</span>
+          </li>
+        </ul>
       </div>
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-[-1px] pointer-events-none rounded-[25px]" />
+    </div>
+  );
+}
+
+function Container4() {
+  return (
+    <div className="bg-white relative rounded-[20px] md:rounded-[24px] shrink-0 w-full md:flex-1 flex flex-col" data-name="Container">
+      <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full flex-1">
+        <div className="h-[200px] md:h-[240px] relative shrink-0 w-full" data-name="image 176">
+          <img alt="" className="absolute inset-0 object-cover pointer-events-none size-full" src={imgImage176} />
+        </div>
+        <Container5 />
+      </div>
+      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-[-1px] pointer-events-none rounded-[20px] md:rounded-[25px]" />
     </div>
   );
 }
@@ -859,22 +851,22 @@ function Text2() {
   );
 }
 
-function Container11() {
+function Container9() {
   return (
-    <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-      <Text2 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Grow on autopilot</p>
+    <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Container">
+      <div className="mt-1"><Text2 /></div>
+      <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[18px] md:text-[20px]">Grow on autopilot</p>
     </div>
   );
 }
 
-function Container10() {
+function Container8() {
   return (
-    <div className="h-[200px] relative shrink-0 w-full" data-name="Container">
-      <div className="content-stretch flex flex-col gap-[12px] items-start px-[32px] py-[24px] relative size-full">
-        <Container11 />
-        <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[16px] w-full">
-          <li className="mb-0 ms-[24px]">
+    <div className="flex-[1_0_0] min-h-[220px] md:min-h-[300px] relative w-full" data-name="Container">
+      <div className="content-stretch flex flex-col gap-[12px] items-start px-[24px] md:px-[32px] py-[24px] relative size-full">
+        <Container9 />
+        <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
+          <li className="mb-2 ms-[24px]">
             <span className="leading-[22px]">{`Track performance. Scale what works. Improve continuously. `}</span>
           </li>
           <li className="ms-[24px]">
@@ -886,66 +878,58 @@ function Container10() {
   );
 }
 
-function Container9() {
+function Container7() {
   return (
-    <div className="bg-white relative rounded-[24px] shrink-0 w-[357px]" data-name="Container">
-      <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
-        <div className="h-[240px] relative shrink-0 w-[357px]" data-name="image 179">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage179} />
+    <div className="bg-white relative rounded-[20px] md:rounded-[24px] shrink-0 w-full md:flex-1 flex flex-col" data-name="Container">
+      <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full flex-1">
+        <div className="h-[200px] md:h-[240px] relative shrink-0 w-full" data-name="image 179">
+          <img alt="" className="absolute inset-0 object-cover pointer-events-none size-full" src={imgImage179} />
         </div>
-        <Container10 />
+        <Container8 />
       </div>
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-[-1px] pointer-events-none rounded-[25px]" />
+      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-[-1px] pointer-events-none rounded-[20px] md:rounded-[25px]" />
     </div>
   );
 }
 
-function Container1() {
+function Container() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="flex flex-row items-center justify-center size-full">
-        <div className="content-stretch flex gap-[24px] items-center justify-center px-[80px] relative size-full">
-          <div className="flex flex-row items-center self-stretch">
-            <Container2 />
-          </div>
-          <div className="flex flex-row items-center self-stretch">
-            <Container6 />
-          </div>
-          <Container9 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function App() {
-  return (
-    <div className="bg-white relative shrink-0 w-full" data-name="App">
-      <div aria-hidden="true" className="absolute border-[#e5e7eb] border-b border-solid inset-0 pointer-events-none" />
-      <div className="flex flex-col items-center justify-center size-full">
-        <div className="content-stretch flex flex-col gap-[80px] items-center justify-center px-[80px] py-[64px] relative size-full">
-          <Frame17 />
+      <div className="flex items-center justify-center w-full">
+        <div className="content-stretch flex flex-col md:flex-row gap-4 md:gap-6 items-stretch justify-center px-0 md:px-4 lg:px-8 relative w-full max-w-[1200px]">
           <Container1 />
+          <Container4 />
+          <Container7 />
         </div>
       </div>
     </div>
   );
 }
 
-function Frame19() {
+function HowItWorks() {
+  return (
+    <div className="relative bg-white w-full flex flex-col gap-12 md:gap-[80px] items-center justify-center px-4 md:px-12 lg:px-[80px] py-12 md:py-16 lg:py-[64px]" data-name="How it works">
+      <div aria-hidden="true" className="absolute border-[#e5e7eb] border-b border-solid inset-0 pointer-events-none" />
+      <Frame16 />
+      <Container />
+    </div>
+  );
+}
+
+function Frame18() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 text-white w-full">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[56px] relative shrink-0 text-[48px] tracking-[-1.2px] whitespace-nowrap">100+ Integrations supported.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[20px] w-[min-content]">From social media platforms to ecommerce, leads etc, our integrations make it easy to keep everything connected.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[20px]">From social media platforms to ecommerce, leads etc, our integrations make it easy to keep everything connected.</p>
     </div>
   );
 }
 
-function Container13() {
+function Container11() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center not-italic relative shrink-0 text-center w-[740px]" data-name="Container">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">INTEGRATION</p>
-      <Frame19 />
+      <Frame18 />
     </div>
   );
 }
@@ -956,81 +940,81 @@ function Group() {
       <div className="absolute inset-[-4.12%_-1.16%_-1.16%_-1.16%]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 41.5369 42.6022">
           <g id="Group">
-            <g filter="url(#filter0_f_1_6923)" id="Vector">
-              <path d={svgPaths.p36cf9100} fill="url(#paint0_radial_1_6923)" />
+            <g filter="url(#filter0_f_1_4501)" id="Vector">
+              <path d={svgPaths.p36cf9100} fill="url(#paint0_radial_1_4501)" />
             </g>
-            <g filter="url(#filter1_f_1_6923)" id="Vector_2">
-              <path d={svgPaths.pe812c00} fill="url(#paint1_radial_1_6923)" />
+            <g filter="url(#filter1_f_1_4501)" id="Vector_2">
+              <path d={svgPaths.pe812c00} fill="url(#paint1_radial_1_4501)" />
             </g>
-            <g filter="url(#filter2_f_1_6923)" id="Vector_3">
-              <path d={svgPaths.p223d0880} fill="url(#paint2_radial_1_6923)" />
+            <g filter="url(#filter2_f_1_4501)" id="Vector_3">
+              <path d={svgPaths.p223d0880} fill="url(#paint2_radial_1_4501)" />
             </g>
-            <g filter="url(#filter3_f_1_6923)" id="Vector_4">
-              <path d={svgPaths.pee83c0} fill="url(#paint3_radial_1_6923)" />
+            <g filter="url(#filter3_f_1_4501)" id="Vector_4">
+              <path d={svgPaths.pee83c0} fill="url(#paint3_radial_1_4501)" />
             </g>
-            <g filter="url(#filter4_f_1_6923)" id="Vector_5">
+            <g filter="url(#filter4_f_1_4501)" id="Vector_5">
               <path d={svgPaths.p384969c0} fill="var(--fill-0, #3086FF)" />
             </g>
-            <g filter="url(#filter5_f_1_6923)" id="Vector_6">
-              <path d={svgPaths.p20ec4400} fill="url(#paint4_radial_1_6923)" />
+            <g filter="url(#filter5_f_1_4501)" id="Vector_6">
+              <path d={svgPaths.p20ec4400} fill="url(#paint4_radial_1_4501)" />
             </g>
-            <g filter="url(#filter6_f_1_6923)" id="Vector_7">
-              <path d={svgPaths.p2fa22180} fill="url(#paint5_radial_1_6923)" />
+            <g filter="url(#filter6_f_1_4501)" id="Vector_7">
+              <path d={svgPaths.p2fa22180} fill="url(#paint5_radial_1_4501)" />
             </g>
-            <g filter="url(#filter7_f_1_6923)" id="Vector_8">
-              <path d={svgPaths.p25652c00} fill="url(#paint6_radial_1_6923)" />
+            <g filter="url(#filter7_f_1_4501)" id="Vector_8">
+              <path d={svgPaths.p25652c00} fill="url(#paint6_radial_1_4501)" />
             </g>
-            <g filter="url(#filter8_f_1_6923)" id="Vector_9" opacity="0.5">
-              <path d={svgPaths.p1c9ebd80} fill="url(#paint7_linear_1_6923)" />
+            <g filter="url(#filter8_f_1_4501)" id="Vector_9" opacity="0.5">
+              <path d={svgPaths.p1c9ebd80} fill="url(#paint7_linear_1_4501)" />
             </g>
           </g>
           <defs>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="15.0421" id="filter0_f_1_6923" width="16.4731" x="0.00407884" y="21.504">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="15.0421" id="filter0_f_1_4501" width="16.4731" x="0.00407884" y="21.504">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6923" stdDeviation="0.23504" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4501" stdDeviation="0.23504" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="12.1722" id="filter1_f_1_6923" width="15.3327" x="20.1573" y="1.22448">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="12.1722" id="filter1_f_1_4501" width="15.3327" x="20.1573" y="1.22448">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6923" stdDeviation="0.23504" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4501" stdDeviation="0.23504" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="13.4419" id="filter2_f_1_6923" width="16.7352" x="5.07875" y="1.19885">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="13.4419" id="filter2_f_1_4501" width="16.7352" x="5.07875" y="1.19885">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6923" stdDeviation="0.23504" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4501" stdDeviation="0.23504" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="20.7439" id="filter3_f_1_6923" width="22.638" x="18.8631" y="21.8278">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="20.7439" id="filter3_f_1_4501" width="22.638" x="18.8631" y="21.8278">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6923" stdDeviation="0.23504" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4501" stdDeviation="0.23504" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="9.21382" id="filter4_f_1_6923" width="21.1106" x="20.4262" y="17.3674">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="9.21382" id="filter4_f_1_4501" width="21.1106" x="20.4262" y="17.3674">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6923" stdDeviation="0.23504" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4501" stdDeviation="0.23504" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="15.5059" id="filter5_f_1_6923" width="13.8322" x="-2.75309e-09" y="7.74317">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="15.5059" id="filter5_f_1_4501" width="13.8322" x="-2.75309e-09" y="7.74317">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6923" stdDeviation="0.23504" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4501" stdDeviation="0.23504" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="16.6984" id="filter6_f_1_6923" width="18.6545" x="1.29939" y="0">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="16.6984" id="filter6_f_1_4501" width="18.6545" x="1.29939" y="0">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6923" stdDeviation="1.65243" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4501" stdDeviation="1.65243" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="11.0218" id="filter7_f_1_6923" width="15.6648" x="5.99996" y="31.5805">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="11.0218" id="filter7_f_1_4501" width="15.6648" x="5.99996" y="31.5805">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6923" stdDeviation="0.23504" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4501" stdDeviation="0.23504" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="9.72128" id="filter8_f_1_6923" width="5.90818" x="18.2406" y="32.8809">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="9.72128" id="filter8_f_1_4501" width="5.90818" x="18.2406" y="32.8809">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6923" stdDeviation="0.23504" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4501" stdDeviation="0.23504" />
             </filter>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-0.831203 -19.9199 29.8852 -1.19537 15.8203 35.776)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_6923" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-0.831203 -19.9199 29.8852 -1.19537 15.8203 35.776)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_4501" r="1">
               <stop offset="0.141612" stopColor="#1ABD4D" />
               <stop offset="0.247515" stopColor="#6EC30D" />
               <stop offset="0.311547" stopColor="#8AC502" />
@@ -1042,11 +1026,11 @@ function Group() {
               <stop offset="0.771242" stopColor="#FDCE05" />
               <stop offset="0.860566" stopColor="#FFCE0A" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(14.1161 -3.39261e-05 -1.98408e-05 17.8488 34.4601 12.5026)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_6923" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(14.1161 -3.39261e-05 -1.98408e-05 17.8488 34.4601 12.5026)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_4501" r="1">
               <stop offset="0.408458" stopColor="#FB4E5A" />
               <stop offset="1" stopColor="#FF4540" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-19.7777 10.7249 14.8646 26.2766 26.7512 -0.914744)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_6923" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-19.7777 10.7249 14.8646 26.2766 26.7512 -0.914744)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_4501" r="1">
               <stop offset="0.231273" stopColor="#FF4541" />
               <stop offset="0.311547" stopColor="#FF4540" />
               <stop offset="0.457516" stopColor="#FF4640" />
@@ -1056,7 +1040,7 @@ function Group() {
               <stop offset="0.860566" stopColor="#FF6C29" />
               <stop offset="1" stopColor="#FF8C18" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-35.8674 -45.8412 -17.2827 12.9625 21.4887 39.5127)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_6923" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-35.8674 -45.8412 -17.2827 12.9625 21.4887 39.5127)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_4501" r="1">
               <stop offset="0.131546" stopColor="#0CBA65" />
               <stop offset="0.209784" stopColor="#0BB86D" />
               <stop offset="0.297297" stopColor="#09B479" />
@@ -1067,7 +1051,7 @@ function Group() {
               <stop offset="0.768727" stopColor="#258BF1" />
               <stop offset="0.858506" stopColor="#3086FF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-2.53825 21.4203 30.2502 3.43614 19.4419 5.4468)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_6923" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-2.53825 21.4203 30.2502 3.43614 19.4419 5.4468)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_4501" r="1">
               <stop offset="0.366013" stopColor="#FF4E3A" />
               <stop offset="0.457516" stopColor="#FF8A1B" />
               <stop offset="0.540305" stopColor="#FFA312" />
@@ -1077,14 +1061,14 @@ function Group() {
               <stop offset="0.915033" stopColor="#FECF08" />
               <stop offset="1" stopColor="#FDCD01" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-7.33687 7.94462 -22.887 -20.261 15.8725 5.22461)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_6923" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-7.33687 7.94462 -22.887 -20.261 15.8725 5.22461)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_4501" r="1">
               <stop offset="0.315904" stopColor="#FF4C3C" />
               <stop offset="0.603818" stopColor="#FF692C" />
               <stop offset="0.726837" stopColor="#FF7825" />
               <stop offset="0.884534" stopColor="#FF8D1B" />
               <stop offset="1" stopColor="#FF9F13" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-19.7777 -10.7249 14.8646 -26.2766 26.7512 44.5943)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_6923" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-19.7777 -10.7249 14.8646 -26.2766 26.7512 44.5943)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_4501" r="1">
               <stop offset="0.231273" stopColor="#0FBC5F" />
               <stop offset="0.311547" stopColor="#0FBC5F" />
               <stop offset="0.366013" stopColor="#0FBC5E" />
@@ -1096,7 +1080,7 @@ function Group() {
               <stop offset="0.915033" stopColor="#67C30F" />
               <stop offset="1" stopColor="#86C504" />
             </radialGradient>
-            <linearGradient gradientUnits="userSpaceOnUse" id="paint7_linear_1_6923" x1="18.7107" x2="23.6787" y1="37.7416" y2="37.7416">
+            <linearGradient gradientUnits="userSpaceOnUse" id="paint7_linear_1_4501" x1="18.7107" x2="23.6787" y1="37.7416" y2="37.7416">
               <stop stopColor="#0FBC5C" />
               <stop offset="1" stopColor="#0CBA65" />
             </linearGradient>
@@ -1144,25 +1128,25 @@ function GoogleDrive() {
     <div className="absolute inset-[6.84%_0_6.68%_0]" data-name="google-drive">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 40 34.5937">
         <g id="google-drive">
-          <path d={svgPaths.p25793000} fill="url(#paint0_linear_1_6862)" id="Path" />
-          <path d={svgPaths.p3c03a340} fill="url(#paint1_linear_1_6862)" id="Path_2" />
-          <path d={svgPaths.p1a6a300} fill="url(#paint2_linear_1_6862)" id="Path_3" />
+          <path d={svgPaths.p25793000} fill="url(#paint0_linear_1_4425)" id="Path" />
+          <path d={svgPaths.p3c03a340} fill="url(#paint1_linear_1_4425)" id="Path_2" />
+          <path d={svgPaths.p1a6a300} fill="url(#paint2_linear_1_4425)" id="Path_3" />
           <path d={svgPaths.p34eff580} fill="var(--fill-0, black)" id="Path_4" opacity="0.1" />
           <path d={svgPaths.p1ec1cb80} fill="var(--fill-0, black)" id="Path_5" opacity="0.1" />
           <path d={svgPaths.p1ae22900} fill="var(--fill-0, black)" id="Path_6" opacity="0.1" />
         </g>
         <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_1_6862" x1="-6.31003" x2="14.5971" y1="6.39926" y2="42.2396">
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_1_4425" x1="-6.31003" x2="14.5971" y1="6.39926" y2="42.2396">
             <stop stopColor="#F6C338" />
             <stop offset="0.522782" stopColor="#FFD351" />
             <stop offset="1" stopColor="#F6C338" />
           </linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_1_6862" x1="-84.5169" x2="-88.9733" y1="-22.8229" y2="69.3005">
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_1_4425" x1="-84.5169" x2="-88.9733" y1="-22.8229" y2="69.3005">
             <stop stopColor="#286EE6" />
             <stop offset="0.521046" stopColor="#4286FB" />
             <stop offset="1" stopColor="#286EE6" />
           </linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint2_linear_1_6862" x1="9.14857" x2="-18.9659" y1="-15.1593" y2="3.38672">
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint2_linear_1_4425" x1="9.14857" x2="-18.9659" y1="-15.1593" y2="3.38672">
             <stop stopColor="#069B5A" />
             <stop offset="0.531031" stopColor="#11AA62" />
             <stop offset="1" stopColor="#069B5A" />
@@ -1196,7 +1180,7 @@ function More() {
   );
 }
 
-function Container14() {
+function Container12() {
   return (
     <div className="bg-white relative rounded-[40px] shrink-0 w-full" data-name="Container">
       <div className="flex flex-row items-center justify-center size-full">
@@ -1281,25 +1265,25 @@ function Container14() {
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 40 40">
               <g id="Group 1">
                 <path d={svgPaths.p36cfd200} fill="var(--fill-0, #FF4500)" id="Vector" />
-                <path d={svgPaths.pe60df00} fill="url(#paint0_radial_1_6870)" id="Vector_2" />
-                <path d={svgPaths.p10264a80} fill="url(#paint1_radial_1_6870)" id="Vector_3" />
-                <path d={svgPaths.p1b4fed00} fill="url(#paint2_radial_1_6870)" id="Vector_4" />
+                <path d={svgPaths.pe60df00} fill="url(#paint0_radial_1_4433)" id="Vector_2" />
+                <path d={svgPaths.p10264a80} fill="url(#paint1_radial_1_4433)" id="Vector_3" />
+                <path d={svgPaths.p1b4fed00} fill="url(#paint2_radial_1_4433)" id="Vector_4" />
                 <path d={svgPaths.pb404880} fill="var(--fill-0, #842123)" id="Vector_5" />
                 <path d={svgPaths.p725c8f0} fill="var(--fill-0, #842123)" id="Vector_6" />
-                <path d={svgPaths.p2c50a980} fill="url(#paint3_radial_1_6870)" id="Vector_7" />
-                <path d={svgPaths.p1112280} fill="url(#paint4_radial_1_6870)" id="Vector_8" />
+                <path d={svgPaths.p2c50a980} fill="url(#paint3_radial_1_4433)" id="Vector_7" />
+                <path d={svgPaths.p1112280} fill="url(#paint4_radial_1_4433)" id="Vector_8" />
                 <path d={svgPaths.p3145e500} fill="var(--fill-0, #BBCFDA)" id="Vector_9" />
                 <path d={svgPaths.pe406f00} fill="var(--fill-0, white)" id="Vector_10" />
-                <path d={svgPaths.p2465e200} fill="url(#paint5_radial_1_6870)" id="Vector_11" />
-                <path d={svgPaths.p26482600} fill="url(#paint6_radial_1_6870)" id="Vector_12" />
-                <path d={svgPaths.p2faa15c0} fill="url(#paint7_radial_1_6870)" id="Vector_13" />
+                <path d={svgPaths.p2465e200} fill="url(#paint5_radial_1_4433)" id="Vector_11" />
+                <path d={svgPaths.p26482600} fill="url(#paint6_radial_1_4433)" id="Vector_12" />
+                <path d={svgPaths.p2faa15c0} fill="url(#paint7_radial_1_4433)" id="Vector_13" />
                 <path d={svgPaths.p28119af0} fill="var(--fill-0, #FF6101)" id="Vector_14" />
                 <path d={svgPaths.p22049400} fill="var(--fill-0, #FF6101)" id="Vector_15" />
                 <path d={svgPaths.p3f597f00} fill="var(--fill-0, #FFC49C)" id="Vector_16" />
                 <path d={svgPaths.p2572acf0} fill="var(--fill-0, #FFC49C)" id="Vector_17" />
               </g>
               <defs>
-                <radialGradient cx="0" cy="0" gradientTransform="translate(31.4078 16.8059) scale(9.35961 8.16476)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_6870" r="1">
+                <radialGradient cx="0" cy="0" gradientTransform="translate(31.4078 16.8059) scale(9.35961 8.16476)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_4433" r="1">
                   <stop stopColor="#FEFFFF" />
                   <stop offset="0.4" stopColor="#FEFFFF" />
                   <stop offset="0.51" stopColor="#F9FCFC" />
@@ -1313,7 +1297,7 @@ function Container14() {
                   <stop offset="0.88" stopColor="#EDE3E9" />
                   <stop offset="0.9" stopColor="#FFEBEF" />
                 </radialGradient>
-                <radialGradient cx="0" cy="0" gradientTransform="translate(8.73296 16.8059) scale(9.35961 8.16476)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_6870" r="1">
+                <radialGradient cx="0" cy="0" gradientTransform="translate(8.73296 16.8059) scale(9.35961 8.16476)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_4433" r="1">
                   <stop stopColor="#FEFFFF" />
                   <stop offset="0.4" stopColor="#FEFFFF" />
                   <stop offset="0.51" stopColor="#F9FCFC" />
@@ -1327,7 +1311,7 @@ function Container14() {
                   <stop offset="0.88" stopColor="#EDE3E9" />
                   <stop offset="0.9" stopColor="#FFEBEF" />
                 </radialGradient>
-                <radialGradient cx="0" cy="0" gradientTransform="translate(20.3668 15.4963) scale(28.2323 19.8227)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_6870" r="1">
+                <radialGradient cx="0" cy="0" gradientTransform="translate(20.3668 15.4963) scale(28.2323 19.8227)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_4433" r="1">
                   <stop stopColor="#FEFFFF" />
                   <stop offset="0.4" stopColor="#FEFFFF" />
                   <stop offset="0.51" stopColor="#F9FCFC" />
@@ -1341,7 +1325,7 @@ function Container14() {
                   <stop offset="0.88" stopColor="#EDE3E9" />
                   <stop offset="0.9" stopColor="#FFEBEF" />
                 </radialGradient>
-                <radialGradient cx="0" cy="0" gradientTransform="translate(25.8252 23.5892) rotate(180) scale(2.35881 3.46294)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_6870" r="1">
+                <radialGradient cx="0" cy="0" gradientTransform="translate(25.8252 23.5892) rotate(180) scale(2.35881 3.46294)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_4433" r="1">
                   <stop stopColor="#FF6600" />
                   <stop offset="0.5" stopColor="#FF4500" />
                   <stop offset="0.7" stopColor="#FC4301" />
@@ -1349,7 +1333,7 @@ function Container14() {
                   <stop offset="0.92" stopColor="#E53812" />
                   <stop offset="1" stopColor="#D4301F" />
                 </radialGradient>
-                <radialGradient cx="0" cy="0" gradientTransform="translate(14.0925 23.5892) scale(2.35881 3.46294)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_6870" r="1">
+                <radialGradient cx="0" cy="0" gradientTransform="translate(14.0925 23.5892) scale(2.35881 3.46294)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_4433" r="1">
                   <stop stopColor="#FF6600" />
                   <stop offset="0.5" stopColor="#FF4500" />
                   <stop offset="0.7" stopColor="#FC4301" />
@@ -1357,13 +1341,13 @@ function Container14() {
                   <stop offset="0.92" stopColor="#E53812" />
                   <stop offset="1" stopColor="#D4301F" />
                 </radialGradient>
-                <radialGradient cx="0" cy="0" gradientTransform="translate(20.0569 30.4543) scale(8.31753 5.48603)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_6870" r="1">
+                <radialGradient cx="0" cy="0" gradientTransform="translate(20.0569 30.4543) scale(8.31753 5.48603)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_4433" r="1">
                   <stop stopColor="#172E35" />
                   <stop offset="0.29" stopColor="#0E1C21" />
                   <stop offset="0.73" stopColor="#030708" />
                   <stop offset="1" />
                 </radialGradient>
-                <radialGradient cx="0" cy="0" gradientTransform="translate(27.3924 5.32914) scale(7.30116 7.30115)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_6870" r="1">
+                <radialGradient cx="0" cy="0" gradientTransform="translate(27.3924 5.32914) scale(7.30116 7.30115)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_4433" r="1">
                   <stop stopColor="#FEFFFF" />
                   <stop offset="0.4" stopColor="#FEFFFF" />
                   <stop offset="0.51" stopColor="#F9FCFC" />
@@ -1377,7 +1361,7 @@ function Container14() {
                   <stop offset="0.88" stopColor="#EDE3E9" />
                   <stop offset="0.9" stopColor="#FFEBEF" />
                 </radialGradient>
-                <radialGradient cx="0" cy="0" gradientTransform="translate(24.3497 13.2884) scale(5.98442 5.98442)" gradientUnits="userSpaceOnUse" id="paint7_radial_1_6870" r="1">
+                <radialGradient cx="0" cy="0" gradientTransform="translate(24.3497 13.2884) scale(5.98442 5.98442)" gradientUnits="userSpaceOnUse" id="paint7_radial_1_4433" r="1">
                   <stop offset="0.48" stopColor="#7A9299" />
                   <stop offset="0.67" stopColor="#172E35" />
                   <stop offset="0.75" />
@@ -1510,30 +1494,26 @@ function Container14() {
   );
 }
 
-function Container12() {
+function Container10() {
   return (
     <div className="flex-[1_0_0] min-w-px relative" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[63px] items-center relative size-full">
-        <Container13 />
-        <Container14 />
+        <Container11 />
+        <Container12 />
       </div>
     </div>
   );
 }
 
-function DesignLora() {
+function Integration() {
   return (
-    <div className="bg-black relative shrink-0 w-full" data-name="Design Lora">
-      <div className="flex flex-row items-center justify-center size-full">
-        <div className="content-stretch flex items-center justify-center pb-[80px] pt-[48px] px-[80px] relative size-full">
-          <Container12 />
-        </div>
-      </div>
+    <div className="relative bg-black w-full flex items-center justify-center pb-12 md:pb-[80px] pt-8 md:pt-[48px] px-4 md:px-12 lg:px-[80px]" data-name="Integration">
+      <Container10 />
     </div>
   );
 }
 
-function Frame20() {
+function Frame19() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center not-italic relative shrink-0 text-center w-full whitespace-nowrap">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[60px] relative shrink-0 text-[#101828] text-[56px] tracking-[-1.4px]">Solution</p>
@@ -1563,9 +1543,9 @@ function StatusLine() {
 
 function Content() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
-        <p className="leading-[18px]">Knowledge Created</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
+        <p className="leading-[18px] whitespace-normal">Knowledge Created</p>
       </div>
       <StatusLine />
     </div>
@@ -1591,9 +1571,9 @@ function AvatarWithTitle() {
   );
 }
 
-function Container15() {
+function Container13() {
   return (
-    <div className="absolute bg-white content-stretch flex items-center left-[36px] px-[8px] py-[12px] rounded-[16px] top-[20px] w-[400px]" data-name="Container">
+    <div className="absolute bg-white content-stretch flex items-center left-2 right-[20%] md:left-3 md:right-[24%] lg:left-4 lg:right-[120px] px-[8px] py-[12px] rounded-[16px] top-[20px] min-w-0 overflow-hidden" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <AvatarWithTitle />
     </div>
@@ -1621,9 +1601,9 @@ function StatusLine1() {
 
 function Content1() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
-        <p className="leading-[18px]">Created Q1 Marketing Plan</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
+        <p className="leading-[18px] whitespace-normal">Created Q1 Marketing Plan</p>
       </div>
       <StatusLine1 />
     </div>
@@ -1649,14 +1629,21 @@ function AvatarWithTitle1() {
   );
 }
 
-function Container16() {
+function Container14() {
   return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between px-[8px] py-[12px] right-[36px] rounded-[16px] top-[89px] w-[400px]" data-name="Container">
+    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] right-2 left-[20%] md:right-3 md:left-[24%] lg:right-6 lg:left-[80px] rounded-[16px] top-[110px] min-w-0 overflow-hidden" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle1 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
+      <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+      </div>
+      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
+        <div className="flex-1 min-w-0">
+          <TitleWithStatus1 />
+        </div>
+        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
+          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
+        </div>
       </div>
     </div>
   );
@@ -1683,9 +1670,9 @@ function StatusLine2() {
 
 function Content2() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
-        <p className="leading-[18px]">Social Media post ready for post</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
+        <p className="leading-[18px] whitespace-normal">Social Media post ready for post</p>
       </div>
       <StatusLine2 />
     </div>
@@ -1711,14 +1698,21 @@ function AvatarWithTitle2() {
   );
 }
 
-function Container17() {
+function Container15() {
   return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between left-[36px] px-[8px] py-[12px] rounded-[16px] top-[158px] w-[400px]" data-name="Container">
+    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] left-2 right-[20%] md:left-3 md:right-[24%] lg:left-4 lg:right-[120px] rounded-[16px] top-[200px] min-w-0 overflow-hidden" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle2 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Review</p>
+      <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+      </div>
+      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
+        <div className="flex-1 min-w-0">
+          <TitleWithStatus2 />
+        </div>
+        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
+          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Review</p>
+        </div>
       </div>
     </div>
   );
@@ -1745,9 +1739,9 @@ function StatusLine3() {
 
 function Content3() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
-        <p className="leading-[18px]">{`Last 10 posts analytics reviewed `}</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
+        <p className="leading-[18px] whitespace-normal">{`Last 10 posts analytics reviewed `}</p>
       </div>
       <StatusLine3 />
     </div>
@@ -1773,14 +1767,21 @@ function AvatarWithTitle3() {
   );
 }
 
-function Container18() {
+function Container16() {
   return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between px-[8px] py-[12px] right-[36px] rounded-[16px] top-[227px] w-[400px]" data-name="Container">
+    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] right-2 left-[20%] md:right-3 md:left-[24%] lg:right-4 lg:left-[120px] rounded-[16px] top-[290px] min-w-0 overflow-hidden" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle3 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Review</p>
+      <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+      </div>
+      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
+        <div className="flex-1 min-w-0">
+          <TitleWithStatus3 />
+        </div>
+        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
+          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Review</p>
+        </div>
       </div>
     </div>
   );
@@ -1807,9 +1808,9 @@ function StatusLine4() {
 
 function Content4() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
-        <p className="leading-[18px]">Draft Q2 Content Calendar</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
+        <p className="leading-[18px] whitespace-normal">Draft Q2 Content Calendar</p>
       </div>
       <StatusLine4 />
     </div>
@@ -1835,81 +1836,6 @@ function AvatarWithTitle4() {
   );
 }
 
-function Container19() {
-  return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between left-[36px] px-[8px] py-[12px] rounded-[16px] top-[296px] w-[400px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle4 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Edit</p>
-      </div>
-    </div>
-  );
-}
-
-function StatusLine5() {
-  return (
-    <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
-      <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Checkmark">
-        <div className="absolute bottom-[29.17%] left-[16.67%] right-[16.67%] top-1/4" data-name="Icon">
-          <div className="absolute inset-[-8.86%_-6.09%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.9667 8.63333">
-              <path d={svgPaths.p3af4ac10} id="Icon" stroke="var(--stroke-0, #14A148)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
-        <p className="leading-[16px]">Pending</p>
-      </div>
-    </div>
-  );
-}
-
-function Content5() {
-  return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
-        <p className="leading-[18px]">Finalize Q1 Report</p>
-      </div>
-      <StatusLine5 />
-    </div>
-  );
-}
-
-function TitleWithStatus5() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content5 />
-    </div>
-  );
-}
-
-function AvatarWithTitle5() {
-  return (
-    <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
-      <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
-      </div>
-      <TitleWithStatus5 />
-    </div>
-  );
-}
-
-function Container20() {
-  return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between left-[36px] px-[8px] py-[12px] rounded-[16px] top-[365px] w-[400px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle5 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
-      </div>
-    </div>
-  );
-}
-
 function StatusLine6() {
   return (
     <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
@@ -1931,9 +1857,9 @@ function StatusLine6() {
 
 function Content6() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
-        <p className="leading-[18px]">Email Newsletter design</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
+        <p className="leading-[18px] whitespace-normal">Email Newsletter design</p>
       </div>
       <StatusLine6 />
     </div>
@@ -1959,114 +1885,31 @@ function AvatarWithTitle6() {
   );
 }
 
-function Container21() {
-  return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between left-[36px] px-[8px] py-[12px] rounded-[16px] top-[434px] w-[400px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle6 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
-      </div>
-    </div>
-  );
-}
-
-function StatusLine7() {
-  return (
-    <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
-      <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Icon">
-        <div className="absolute inset-[8.33%]" data-name="Icon">
-          <div className="absolute inset-[-4.87%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 14.6333 14.6333">
-              <path d={svgPaths.p3129b680} id="Icon" stroke="var(--stroke-0, #B25107)" strokeDasharray="2.6 2.6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[12px] whitespace-nowrap">
-        <p className="leading-[16px]">In Progress</p>
-      </div>
-    </div>
-  );
-}
-
-function Content7() {
-  return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
-        <p className="leading-[18px]">Competitor Analysis Update</p>
-      </div>
-      <StatusLine7 />
-    </div>
-  );
-}
-
-function TitleWithStatus7() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content7 />
-    </div>
-  );
-}
-
-function AvatarWithTitle7() {
-  return (
-    <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
-      <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
-      </div>
-      <TitleWithStatus7 />
-    </div>
-  );
-}
-
-function Container22() {
-  return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between left-[36px] px-[8px] py-[12px] rounded-[16px] top-[503px] w-[400px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle7 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Edit</p>
-      </div>
-    </div>
-  );
-}
-
 function Slot() {
   return (
-    <div className="h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
-      <div className="absolute h-[410px] left-0 top-[-25px] w-[582.701px]" data-name="image 185">
+    <div className="min-h-[600px] lg:min-h-[540px] xl:min-h-[480px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
+      <div className="absolute h-full left-0 top-[-25px] w-full" data-name="image 185">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage185} />
       </div>
+      <Container13 />
+      <Container14 />
       <Container15 />
       <Container16 />
-      <Container17 />
-      <Container18 />
-      <Container19 />
-      <Container20 />
-      <Container21 />
-      <Container22 />
     </div>
   );
 }
 
 function DescriptionSection() {
   return (
-    <div className="bg-white relative shrink-0 w-full" data-name="Description Section">
-      <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative size-full text-center">
-          <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[0px] tracking-[-0.5px] w-full">
-            <p className="text-[24px]">
-              <span className="font-['Satoshi:Bold',sans-serif] leading-[32px] not-italic text-[#14a148]">Lora plan your posts, ads, emaile etc.</span>
-              <span className="leading-[32px]">{` like real 10+ year Marketing Lead`}</span>
-            </p>
-          </div>
-          <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
-            <p className="leading-[22px]">Lora understand you end to end, Turn your business goals into a structured marketing plan with clear next steps acct like personal marketing lead.</p>
-          </div>
-        </div>
+    <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative text-center w-full flex-1" data-name="Description Section">
+      <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
+        <p>
+          <span className="leading-[32px]">Lora plan your posts, ads, emaile etc.</span>
+          <span className="leading-[32px] text-[#1f2937]">{` like real 10+ year Marketing Lead`}</span>
+        </p>
+      </div>
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
+        <p className="leading-[22px]">Lora understand you end to end, Turn your business goals into a structured marketing plan with clear next steps acct like personal marketing lead.</p>
       </div>
     </div>
   );
@@ -2086,8 +1929,8 @@ function MaskGroup() {
 
 function Content8() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">10 New trending topic detected</p>
+    <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-h-px not-italic relative">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-normal">10 New trending topic detected</p>
       <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] relative shrink-0 text-[#14a148] text-[12px]">
         <p className="leading-[16px]">AI Content for today</p>
       </div>
@@ -2117,14 +1960,24 @@ function AvatarWithTitle8() {
   );
 }
 
-function Container23() {
+function Container21() {
   return (
-    <div className="absolute bg-white content-stretch flex gap-[32px] items-center left-[36px] px-[8px] py-[12px] rounded-[16px] top-[20px] w-[400px]" data-name="Container">
+    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] left-2 right-[20%] md:left-3 md:right-[24%] lg:left-6 lg:right-[80px] rounded-[16px] top-[20px] min-w-0 overflow-hidden" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle8 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Explore</p>
+      <div className="relative shrink-0 size-[40px]" data-name="Component 2">
+        <div className="absolute aspect-[100/100] left-0 right-0 top-0">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
+        </div>
+        <MaskGroup />
+      </div>
+      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
+        <div className="flex-1 min-w-0">
+          <TitleWithStatus8 />
+        </div>
+        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
+          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Explore</p>
+        </div>
       </div>
     </div>
   );
@@ -2144,8 +1997,8 @@ function MaskGroup1() {
 
 function Content9() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Competitor analysis ready</p>
+    <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-h-px not-italic relative">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-normal">Competitor analysis ready</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#155dfc] text-[12px]">30 new growth opportunity detected</p>
     </div>
   );
@@ -2173,14 +2026,24 @@ function AvatarWithTitle9() {
   );
 }
 
-function Container24() {
+function Container22() {
   return (
-    <div className="absolute bg-white content-stretch flex gap-[32px] items-center px-[8px] py-[12px] right-[36px] rounded-[16px] top-[89px] w-[400px]" data-name="Container">
+    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] right-2 left-[20%] md:right-3 md:left-[24%] lg:right-6 lg:left-[80px] rounded-[16px] top-[110px] min-w-0 overflow-hidden" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle9 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
+      <div className="relative shrink-0 size-[40px]" data-name="Component 2">
+        <div className="absolute aspect-[100/100] left-0 right-0 top-0">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
+        </div>
+        <MaskGroup1 />
+      </div>
+      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
+        <div className="flex-1 min-w-0">
+          <TitleWithStatus9 />
+        </div>
+        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
+          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
+        </div>
       </div>
     </div>
   );
@@ -2219,8 +2082,8 @@ function StatusLine8() {
 
 function Content10() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-nowrap">Trending content spotted 10x view</p>
+    <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-h-px relative min-w-0">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-normal">Trending content spotted 10x view</p>
       <StatusLine8 />
     </div>
   );
@@ -2248,14 +2111,24 @@ function AvatarWithTitle10() {
   );
 }
 
-function Container25() {
+function Container23() {
   return (
-    <div className="absolute bg-white content-stretch flex gap-[32px] items-center left-[36px] px-[8px] py-[12px] rounded-[16px] top-[158px] w-[400px]" data-name="Container">
+    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] left-2 right-[20%] md:left-3 md:right-[24%] lg:left-6 lg:right-[80px] rounded-[16px] top-[200px] min-w-0 overflow-hidden" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle10 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
+      <div className="relative shrink-0 size-[40px]" data-name="Component 2">
+        <div className="absolute aspect-[100/100] left-0 right-0 top-0">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
+        </div>
+        <MaskGroup2 />
+      </div>
+      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
+        <div className="flex-1 min-w-0">
+          <TitleWithStatus10 />
+        </div>
+        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
+          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
+        </div>
       </div>
     </div>
   );
@@ -2275,8 +2148,8 @@ function MaskGroup3() {
 
 function Content11() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Content trending idea generator</p>
+    <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-h-px not-italic relative min-w-0">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-normal">Content trending idea generator</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#e17100] text-[12px]">12 ideas ready</p>
     </div>
   );
@@ -2284,7 +2157,7 @@ function Content11() {
 
 function TitleWithStatus11() {
   return (
-    <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
+    <div className="content-stretch flex flex-[1_0_0] items-center min-w-px relative" data-name="Title with Status">
       <Content11 />
     </div>
   );
@@ -2304,70 +2177,24 @@ function AvatarWithTitle11() {
   );
 }
 
-function Container26() {
+function Container24() {
   return (
-    <div className="absolute bg-white content-stretch flex gap-[32px] items-center px-[8px] py-[12px] right-[36px] rounded-[16px] top-[227px] w-[400px]" data-name="Container">
+    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] right-2 left-[20%] md:right-3 md:left-[24%] lg:right-6 lg:left-[60px] rounded-[16px] top-[290px] min-w-0 overflow-hidden" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle11 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
-      </div>
-    </div>
-  );
-}
-
-function MaskGroup4() {
-  return (
-    <div className="absolute contents inset-0" data-name="Mask group">
-      <div className="absolute aspect-[1048/954] bottom-[-10.5px] left-[-13.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[5.5px_-2px] mask-size-[40px_40px] right-[-20%]" style={{ maskImage: `url('${imgFeatureImageSmall4}')` }} data-name="Feature Image Small">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Content12() {
-  return (
-    <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Content trending idea generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#e17100] text-[12px]">12 ideas ready</p>
-    </div>
-  );
-}
-
-function TitleWithStatus12() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content12 />
-    </div>
-  );
-}
-
-function AvatarWithTitle12() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Component 2">
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
           <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
         </div>
-        <MaskGroup4 />
+        <MaskGroup3 />
       </div>
-      <TitleWithStatus12 />
-    </div>
-  );
-}
-
-function Container27() {
-  return (
-    <div className="absolute bg-white content-stretch flex gap-[32px] items-center left-[36px] px-[8px] py-[12px] rounded-[16px] top-[296px] w-[400px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle12 />
-      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
+      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
+        <div className="flex-1 min-w-0">
+          <TitleWithStatus11 />
+        </div>
+        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
+          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
+        </div>
       </div>
     </div>
   );
@@ -2375,22 +2202,21 @@ function Container27() {
 
 function Slot1() {
   return (
-    <div className="h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-[540px]" data-name="Slot">
-      <div className="absolute h-[411px] left-0 top-[-25px] w-[584px]" data-name="image 185">
+    <div className="min-h-[600px] lg:min-h-[540px] xl:min-h-[480px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
+      <div className="absolute h-full left-0 top-[-25px] w-full" data-name="image 185">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage186} />
       </div>
+      <Container21 />
+      <Container22 />
       <Container23 />
       <Container24 />
-      <Container25 />
-      <Container26 />
-      <Container27 />
     </div>
   );
 }
 
 function DescriptionSection1() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative shrink-0 text-center w-[540px]" data-name="Description Section">
+    <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative text-center w-full flex-1" data-name="Description Section">
       <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
         <p>
           <span className="leading-[32px]">Discover ideas, trends, monitor competitor</span>
@@ -2404,7 +2230,7 @@ function DescriptionSection1() {
   );
 }
 
-function Frame39() {
+function Frame38() {
   return (
     <div className="bg-[#14a148] content-stretch flex items-center justify-center px-[16px] py-[8px] relative rounded-[20px] shrink-0">
       <p className="font-['Bricolage_Grotesque:Bold',sans-serif] font-bold leading-[16px] relative shrink-0 text-[14px] text-center text-white whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
@@ -2414,7 +2240,7 @@ function Frame39() {
   );
 }
 
-function Frame40() {
+function Frame39() {
   return (
     <div className="content-stretch flex items-center relative shrink-0">
       <p className="font-['Bricolage_Grotesque:Bold',sans-serif] font-bold leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] text-center whitespace-pre" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>{`Or Existing  Content`}</p>
@@ -2422,7 +2248,7 @@ function Frame40() {
   );
 }
 
-function Frame41() {
+function Frame40() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2433,7 +2259,7 @@ function Frame41() {
   );
 }
 
-function Frame42() {
+function Frame41() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2458,7 +2284,7 @@ function Frame42() {
   );
 }
 
-function Frame43() {
+function Frame42() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2478,7 +2304,7 @@ function Frame43() {
   );
 }
 
-function Frame44() {
+function Frame43() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2498,7 +2324,7 @@ function Frame44() {
   );
 }
 
-function Frame45() {
+function Frame44() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2513,7 +2339,7 @@ function Frame45() {
   );
 }
 
-function Frame46() {
+function Frame45() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2526,7 +2352,7 @@ function Frame46() {
   );
 }
 
-function Frame47() {
+function Frame46() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2539,7 +2365,7 @@ function Frame47() {
   );
 }
 
-function Frame48() {
+function Frame47() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2547,25 +2373,25 @@ function Frame48() {
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
           <g id="Group 1">
             <path d={svgPaths.pdf1f80} fill="var(--fill-0, #FF4500)" id="Vector" />
-            <path d={svgPaths.p1dfebd00} fill="url(#paint0_radial_1_6837)" id="Vector_2" />
-            <path d={svgPaths.pe166600} fill="url(#paint1_radial_1_6837)" id="Vector_3" />
-            <path d={svgPaths.p21d57800} fill="url(#paint2_radial_1_6837)" id="Vector_4" />
+            <path d={svgPaths.p1dfebd00} fill="url(#paint0_radial_1_4467)" id="Vector_2" />
+            <path d={svgPaths.pe166600} fill="url(#paint1_radial_1_4467)" id="Vector_3" />
+            <path d={svgPaths.p21d57800} fill="url(#paint2_radial_1_4467)" id="Vector_4" />
             <path d={svgPaths.p9afba80} fill="var(--fill-0, #842123)" id="Vector_5" />
             <path d={svgPaths.p2984ff80} fill="var(--fill-0, #842123)" id="Vector_6" />
-            <path d={svgPaths.p5a9a400} fill="url(#paint3_radial_1_6837)" id="Vector_7" />
-            <path d={svgPaths.p2719bd80} fill="url(#paint4_radial_1_6837)" id="Vector_8" />
+            <path d={svgPaths.p5a9a400} fill="url(#paint3_radial_1_4467)" id="Vector_7" />
+            <path d={svgPaths.p2719bd80} fill="url(#paint4_radial_1_4467)" id="Vector_8" />
             <path d={svgPaths.p2ed6f600} fill="var(--fill-0, #BBCFDA)" id="Vector_9" />
             <path d={svgPaths.p30be1cf0} fill="var(--fill-0, white)" id="Vector_10" />
-            <path d={svgPaths.p2c7b2180} fill="url(#paint5_radial_1_6837)" id="Vector_11" />
-            <path d={svgPaths.p46e880} fill="url(#paint6_radial_1_6837)" id="Vector_12" />
-            <path d={svgPaths.p368bcef0} fill="url(#paint7_radial_1_6837)" id="Vector_13" />
+            <path d={svgPaths.p2c7b2180} fill="url(#paint5_radial_1_4467)" id="Vector_11" />
+            <path d={svgPaths.p46e880} fill="url(#paint6_radial_1_4467)" id="Vector_12" />
+            <path d={svgPaths.p368bcef0} fill="url(#paint7_radial_1_4467)" id="Vector_13" />
             <path d={svgPaths.p547dd00} fill="var(--fill-0, #FF6101)" id="Vector_14" />
             <path d={svgPaths.pc5dd900} fill="var(--fill-0, #FF6101)" id="Vector_15" />
             <path d={svgPaths.p1fc8c000} fill="var(--fill-0, #FFC49C)" id="Vector_16" />
             <path d={svgPaths.p20a88170} fill="var(--fill-0, #FFC49C)" id="Vector_17" />
           </g>
           <defs>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(18.8447 10.0835) scale(5.61577 4.89886)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(18.8447 10.0835) scale(5.61577 4.89886)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_4467" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -2579,7 +2405,7 @@ function Frame48() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(5.23977 10.0835) scale(5.61577 4.89886)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(5.23977 10.0835) scale(5.61577 4.89886)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_4467" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -2593,7 +2419,7 @@ function Frame48() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(12.2201 9.29777) scale(16.9394 11.8936)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(12.2201 9.29777) scale(16.9394 11.8936)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_4467" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -2607,7 +2433,7 @@ function Frame48() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(15.4951 14.1535) rotate(180) scale(1.41529 2.07776)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(15.4951 14.1535) rotate(180) scale(1.41529 2.07776)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_4467" r="1">
               <stop stopColor="#FF6600" />
               <stop offset="0.5" stopColor="#FF4500" />
               <stop offset="0.7" stopColor="#FC4301" />
@@ -2615,7 +2441,7 @@ function Frame48() {
               <stop offset="0.92" stopColor="#E53812" />
               <stop offset="1" stopColor="#D4301F" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(8.45548 14.1535) scale(1.41529 2.07776)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(8.45548 14.1535) scale(1.41529 2.07776)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_4467" r="1">
               <stop stopColor="#FF6600" />
               <stop offset="0.5" stopColor="#FF4500" />
               <stop offset="0.7" stopColor="#FC4301" />
@@ -2623,13 +2449,13 @@ function Frame48() {
               <stop offset="0.92" stopColor="#E53812" />
               <stop offset="1" stopColor="#D4301F" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(12.0342 18.2726) scale(4.99052 3.29162)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(12.0342 18.2726) scale(4.99052 3.29162)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_4467" r="1">
               <stop stopColor="#172E35" />
               <stop offset="0.29" stopColor="#0E1C21" />
               <stop offset="0.73" stopColor="#030708" />
               <stop offset="1" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(16.4354 3.19749) scale(4.38069)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(16.4354 3.19749) scale(4.38069)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_4467" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -2643,7 +2469,7 @@ function Frame48() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(14.6098 7.97304) scale(3.59065)" gradientUnits="userSpaceOnUse" id="paint7_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(14.6098 7.97304) scale(3.59065)" gradientUnits="userSpaceOnUse" id="paint7_radial_1_4467" r="1">
               <stop offset="0.48" stopColor="#7A9299" />
               <stop offset="0.67" stopColor="#172E35" />
               <stop offset="0.75" />
@@ -2656,7 +2482,7 @@ function Frame48() {
   );
 }
 
-function Frame49() {
+function Frame48() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2679,7 +2505,7 @@ function Frame49() {
   );
 }
 
-function Frame50() {
+function Frame49() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-[1/span_3] justify-self-stretch relative rounded-[12px] row-4 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2694,9 +2520,10 @@ function Frame50() {
   );
 }
 
-function Container28() {
+function Container26() {
   return (
     <div className="gap-x-[8px] gap-y-[8px] grid-cols-[___44px_44px_fit-content(100%)] grid-rows-[repeat(4,fit-content(100%))] inline-grid relative rounded-[60px] shrink-0" data-name="Container">
+      <Frame40 />
       <Frame41 />
       <Frame42 />
       <Frame43 />
@@ -2706,22 +2533,21 @@ function Container28() {
       <Frame47 />
       <Frame48 />
       <Frame49 />
-      <Frame50 />
     </div>
   );
 }
 
-function Frame38() {
+function Frame37() {
   return (
     <div className="content-stretch flex flex-col gap-[6px] items-center justify-center relative shrink-0">
+      <Frame38 />
       <Frame39 />
-      <Frame40 />
-      <Container28 />
+      <Container26 />
     </div>
   );
 }
 
-function Frame34() {
+function Frame33() {
   return (
     <div className="bg-white content-stretch flex gap-[2px] items-center p-[8px] relative rounded-[20px] shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
@@ -2739,7 +2565,7 @@ function Frame34() {
   );
 }
 
-function Frame52() {
+function Frame51() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2750,7 +2576,7 @@ function Frame52() {
   );
 }
 
-function Frame53() {
+function Frame52() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2775,7 +2601,7 @@ function Frame53() {
   );
 }
 
-function Frame54() {
+function Frame53() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2795,7 +2621,7 @@ function Frame54() {
   );
 }
 
-function Frame55() {
+function Frame54() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2815,7 +2641,7 @@ function Frame55() {
   );
 }
 
-function Frame56() {
+function Frame55() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2830,7 +2656,7 @@ function Frame56() {
   );
 }
 
-function Frame57() {
+function Frame56() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2843,7 +2669,7 @@ function Frame57() {
   );
 }
 
-function Frame58() {
+function Frame57() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2856,7 +2682,7 @@ function Frame58() {
   );
 }
 
-function Frame59() {
+function Frame58() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2864,25 +2690,25 @@ function Frame59() {
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
           <g id="Group 1">
             <path d={svgPaths.pdf1f80} fill="var(--fill-0, #FF4500)" id="Vector" />
-            <path d={svgPaths.p1dfebd00} fill="url(#paint0_radial_1_6837)" id="Vector_2" />
-            <path d={svgPaths.pe166600} fill="url(#paint1_radial_1_6837)" id="Vector_3" />
-            <path d={svgPaths.p21d57800} fill="url(#paint2_radial_1_6837)" id="Vector_4" />
+            <path d={svgPaths.p1dfebd00} fill="url(#paint0_radial_1_4467)" id="Vector_2" />
+            <path d={svgPaths.pe166600} fill="url(#paint1_radial_1_4467)" id="Vector_3" />
+            <path d={svgPaths.p21d57800} fill="url(#paint2_radial_1_4467)" id="Vector_4" />
             <path d={svgPaths.p9afba80} fill="var(--fill-0, #842123)" id="Vector_5" />
             <path d={svgPaths.p2984ff80} fill="var(--fill-0, #842123)" id="Vector_6" />
-            <path d={svgPaths.p5a9a400} fill="url(#paint3_radial_1_6837)" id="Vector_7" />
-            <path d={svgPaths.p2719bd80} fill="url(#paint4_radial_1_6837)" id="Vector_8" />
+            <path d={svgPaths.p5a9a400} fill="url(#paint3_radial_1_4467)" id="Vector_7" />
+            <path d={svgPaths.p2719bd80} fill="url(#paint4_radial_1_4467)" id="Vector_8" />
             <path d={svgPaths.p2ed6f600} fill="var(--fill-0, #BBCFDA)" id="Vector_9" />
             <path d={svgPaths.p30be1cf0} fill="var(--fill-0, white)" id="Vector_10" />
-            <path d={svgPaths.p2c7b2180} fill="url(#paint5_radial_1_6837)" id="Vector_11" />
-            <path d={svgPaths.p46e880} fill="url(#paint6_radial_1_6837)" id="Vector_12" />
-            <path d={svgPaths.p368bcef0} fill="url(#paint7_radial_1_6837)" id="Vector_13" />
+            <path d={svgPaths.p2c7b2180} fill="url(#paint5_radial_1_4467)" id="Vector_11" />
+            <path d={svgPaths.p46e880} fill="url(#paint6_radial_1_4467)" id="Vector_12" />
+            <path d={svgPaths.p368bcef0} fill="url(#paint7_radial_1_4467)" id="Vector_13" />
             <path d={svgPaths.p547dd00} fill="var(--fill-0, #FF6101)" id="Vector_14" />
             <path d={svgPaths.pc5dd900} fill="var(--fill-0, #FF6101)" id="Vector_15" />
             <path d={svgPaths.p1fc8c000} fill="var(--fill-0, #FFC49C)" id="Vector_16" />
             <path d={svgPaths.p20a88170} fill="var(--fill-0, #FFC49C)" id="Vector_17" />
           </g>
           <defs>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(18.8447 10.0835) scale(5.61577 4.89886)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(18.8447 10.0835) scale(5.61577 4.89886)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_4467" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -2896,7 +2722,7 @@ function Frame59() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(5.23977 10.0835) scale(5.61577 4.89886)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(5.23977 10.0835) scale(5.61577 4.89886)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_4467" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -2910,7 +2736,7 @@ function Frame59() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(12.2201 9.29777) scale(16.9394 11.8936)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(12.2201 9.29777) scale(16.9394 11.8936)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_4467" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -2924,7 +2750,7 @@ function Frame59() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(15.4951 14.1535) rotate(180) scale(1.41529 2.07776)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(15.4951 14.1535) rotate(180) scale(1.41529 2.07776)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_4467" r="1">
               <stop stopColor="#FF6600" />
               <stop offset="0.5" stopColor="#FF4500" />
               <stop offset="0.7" stopColor="#FC4301" />
@@ -2932,7 +2758,7 @@ function Frame59() {
               <stop offset="0.92" stopColor="#E53812" />
               <stop offset="1" stopColor="#D4301F" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(8.45548 14.1535) scale(1.41529 2.07776)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(8.45548 14.1535) scale(1.41529 2.07776)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_4467" r="1">
               <stop stopColor="#FF6600" />
               <stop offset="0.5" stopColor="#FF4500" />
               <stop offset="0.7" stopColor="#FC4301" />
@@ -2940,13 +2766,13 @@ function Frame59() {
               <stop offset="0.92" stopColor="#E53812" />
               <stop offset="1" stopColor="#D4301F" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(12.0342 18.2726) scale(4.99052 3.29162)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(12.0342 18.2726) scale(4.99052 3.29162)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_4467" r="1">
               <stop stopColor="#172E35" />
               <stop offset="0.29" stopColor="#0E1C21" />
               <stop offset="0.73" stopColor="#030708" />
               <stop offset="1" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(16.4354 3.19749) scale(4.38069)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(16.4354 3.19749) scale(4.38069)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_4467" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -2960,7 +2786,7 @@ function Frame59() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(14.6098 7.97304) scale(3.59065)" gradientUnits="userSpaceOnUse" id="paint7_radial_1_6837" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(14.6098 7.97304) scale(3.59065)" gradientUnits="userSpaceOnUse" id="paint7_radial_1_4467" r="1">
               <stop offset="0.48" stopColor="#7A9299" />
               <stop offset="0.67" stopColor="#172E35" />
               <stop offset="0.75" />
@@ -2973,7 +2799,7 @@ function Frame59() {
   );
 }
 
-function Frame60() {
+function Frame59() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -3011,7 +2837,7 @@ function GoogleAds1() {
   );
 }
 
-function Frame61() {
+function Frame60() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-4 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -3022,7 +2848,7 @@ function Frame61() {
   );
 }
 
-function Frame62() {
+function Frame61() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-4 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -3046,13 +2872,13 @@ function Symbol() {
   return (
     <div className="h-[24px] relative shrink-0 w-[21px]" data-name="Symbol 1">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 21 24">
-        <g clipPath="url(#clip0_1_7065)" id="Symbol 1">
+        <g clipPath="url(#clip0_1_4648)" id="Symbol 1">
           <path clipRule="evenodd" d={svgPaths.pab88600} fill="var(--fill-0, #95BF47)" fillRule="evenodd" id="Vector" />
           <path d={svgPaths.p246ae280} fill="var(--fill-0, #5E8E3E)" id="Vector_2" />
           <path d={svgPaths.p34adf170} fill="var(--fill-0, white)" id="Vector_3" />
         </g>
         <defs>
-          <clipPath id="clip0_1_7065">
+          <clipPath id="clip0_1_4648">
             <rect fill="white" height="24" width="21" />
           </clipPath>
         </defs>
@@ -3061,7 +2887,7 @@ function Symbol() {
   );
 }
 
-function Frame63() {
+function Frame62() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-4 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -3070,9 +2896,10 @@ function Frame63() {
   );
 }
 
-function Container29() {
+function Container27() {
   return (
     <div className="gap-x-[8px] gap-y-[8px] grid-cols-[repeat(3,fit-content(100%))] grid-rows-[repeat(4,fit-content(100%))] inline-grid relative rounded-[60px] shrink-0" data-name="Container">
+      <Frame51 />
       <Frame52 />
       <Frame53 />
       <Frame54 />
@@ -3084,12 +2911,11 @@ function Container29() {
       <Frame60 />
       <Frame61 />
       <Frame62 />
-      <Frame63 />
     </div>
   );
 }
 
-function Frame64() {
+function Frame63() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] relative rounded-[12px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -3104,43 +2930,43 @@ function Frame64() {
   );
 }
 
-function Frame51() {
+function Frame50() {
   return (
     <div className="content-stretch flex flex-col gap-[13px] items-center justify-center relative shrink-0">
-      <Container29 />
-      <Frame64 />
+      <Container27 />
+      <Frame63 />
     </div>
   );
 }
 
-function Frame37() {
+function Frame36() {
   return (
     <div className="-translate-x-1/2 -translate-y-1/2 absolute content-stretch flex gap-[16px] items-center left-1/2 top-1/2">
-      <Frame38 />
-      <Frame34 />
-      <Frame51 />
+      <Frame37 />
+      <Frame33 />
+      <Frame50 />
     </div>
   );
 }
 
 function Slot2() {
   return (
-    <div className="h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-[540px]" data-name="Slot">
-      <div className="absolute h-[411px] left-0 top-[-25px] w-[584px]" data-name="image 185">
+    <div className="min-h-[300px] lg:h-[360px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
+      <div className="absolute h-full left-0 top-[-25px] w-full" data-name="image 185">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage186} />
       </div>
-      <Frame37 />
+      <Frame36 />
     </div>
   );
 }
 
 function DescriptionSection2() {
   return (
-    <div className="bg-white content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative shrink-0 text-center w-[540px]" data-name="Description Section">
-      <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[24px] tracking-[-0.5px] w-full">
+    <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative text-center w-full flex-1" data-name="Description Section">
+      <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
         <p>
-          <span className="leading-[32px] text-[#14a148]">Turn idea/existing content</span>
-          <span className="leading-[32px]">{` into social posts, blogs, TikTok, YouTube videos in click.`}</span>
+          <span className="leading-[32px]">Turn idea/existing content</span>
+          <span className="leading-[32px] text-[#1f2937]">{` into social posts, blogs, TikTok, YouTube videos in click.`}</span>
         </p>
       </div>
       <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
@@ -3156,81 +2982,81 @@ function Group1() {
       <div className="absolute inset-[-7.62%_-1.65%_-1.66%_-1.65%]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 44.0368 46.4311">
           <g id="Group">
-            <g filter="url(#filter0_f_1_6826)" id="Vector">
-              <path d={svgPaths.p461b280} fill="url(#paint0_radial_1_6826)" />
+            <g filter="url(#filter0_f_1_4349)" id="Vector">
+              <path d={svgPaths.p461b280} fill="url(#paint0_radial_1_4349)" />
             </g>
-            <g filter="url(#filter1_f_1_6826)" id="Vector_2">
-              <path d={svgPaths.p3959b00} fill="url(#paint1_radial_1_6826)" />
+            <g filter="url(#filter1_f_1_4349)" id="Vector_2">
+              <path d={svgPaths.p3959b00} fill="url(#paint1_radial_1_4349)" />
             </g>
-            <g filter="url(#filter2_f_1_6826)" id="Vector_3">
-              <path d={svgPaths.p2b4e7800} fill="url(#paint2_radial_1_6826)" />
+            <g filter="url(#filter2_f_1_4349)" id="Vector_3">
+              <path d={svgPaths.p2b4e7800} fill="url(#paint2_radial_1_4349)" />
             </g>
-            <g filter="url(#filter3_f_1_6826)" id="Vector_4">
-              <path d={svgPaths.p34e7e500} fill="url(#paint3_radial_1_6826)" />
+            <g filter="url(#filter3_f_1_4349)" id="Vector_4">
+              <path d={svgPaths.p34e7e500} fill="url(#paint3_radial_1_4349)" />
             </g>
-            <g filter="url(#filter4_f_1_6826)" id="Vector_5">
+            <g filter="url(#filter4_f_1_4349)" id="Vector_5">
               <path d={svgPaths.p3d73a500} fill="var(--fill-0, #3086FF)" />
             </g>
-            <g filter="url(#filter5_f_1_6826)" id="Vector_6">
-              <path d={svgPaths.p10697e00} fill="url(#paint4_radial_1_6826)" />
+            <g filter="url(#filter5_f_1_4349)" id="Vector_6">
+              <path d={svgPaths.p10697e00} fill="url(#paint4_radial_1_4349)" />
             </g>
-            <g filter="url(#filter6_f_1_6826)" id="Vector_7">
-              <path d={svgPaths.p2c3c4480} fill="url(#paint5_radial_1_6826)" />
+            <g filter="url(#filter6_f_1_4349)" id="Vector_7">
+              <path d={svgPaths.p2c3c4480} fill="url(#paint5_radial_1_4349)" />
             </g>
-            <g filter="url(#filter7_f_1_6826)" id="Vector_8">
-              <path d={svgPaths.p11af1780} fill="url(#paint6_radial_1_6826)" />
+            <g filter="url(#filter7_f_1_4349)" id="Vector_8">
+              <path d={svgPaths.p11af1780} fill="url(#paint6_radial_1_4349)" />
             </g>
-            <g filter="url(#filter8_f_1_6826)" id="Vector_9" opacity="0.5">
-              <path d={svgPaths.p3a324f00} fill="url(#paint7_linear_1_6826)" />
+            <g filter="url(#filter8_f_1_4349)" id="Vector_9" opacity="0.5">
+              <path d={svgPaths.p3a324f00} fill="url(#paint7_linear_1_4349)" />
             </g>
           </g>
           <defs>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="16.2173" id="filter0_f_1_6826" width="17.7199" x="0.00428277" y="23.8549">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="16.2173" id="filter0_f_1_4349" width="17.7199" x="0.00428277" y="23.8549">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6826" stdDeviation="0.35256" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4349" stdDeviation="0.35256" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="13.2038" id="filter1_f_1_6826" width="16.5224" x="21.1652" y="2.56135">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="13.2038" id="filter1_f_1_4349" width="16.5224" x="21.1652" y="2.56135">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6826" stdDeviation="0.35256" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4349" stdDeviation="0.35256" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="14.5371" id="filter2_f_1_6826" width="17.995" x="5.33269" y="2.53444">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="14.5371" id="filter2_f_1_4349" width="17.995" x="5.33269" y="2.53444">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6826" stdDeviation="0.35256" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4349" stdDeviation="0.35256" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="22.2042" id="filter3_f_1_6826" width="24.1929" x="19.8063" y="24.1948">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="22.2042" id="filter3_f_1_4349" width="24.1929" x="19.8063" y="24.1948">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6826" stdDeviation="0.35256" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4349" stdDeviation="0.35256" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="10.0976" id="filter4_f_1_6826" width="22.5892" x="21.4476" y="19.5114">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="10.0976" id="filter4_f_1_4349" width="22.5892" x="21.4476" y="19.5114">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6826" stdDeviation="0.35256" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4349" stdDeviation="0.35256" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="16.7042" id="filter5_f_1_6826" width="14.9469" x="-8.10615e-09" y="9.40598">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="16.7042" id="filter5_f_1_4349" width="14.9469" x="-8.10615e-09" y="9.40598">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6826" stdDeviation="0.35256" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4349" stdDeviation="0.35256" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="20.5077" id="filter6_f_1_6826" width="22.5616" x="0.088715" y="0">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="20.5077" id="filter6_f_1_4349" width="22.5616" x="0.088715" y="0">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6826" stdDeviation="2.47864" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4349" stdDeviation="2.47864" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="11.9959" id="filter7_f_1_6826" width="16.8711" x="6.29996" y="34.4351">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="11.9959" id="filter7_f_1_4349" width="16.8711" x="6.29996" y="34.4351">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6826" stdDeviation="0.35256" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4349" stdDeviation="0.35256" />
             </filter>
-            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="10.6304" id="filter8_f_1_6826" width="6.62666" x="19.1526" y="35.8006">
+            <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="10.6304" id="filter8_f_1_4349" width="6.62666" x="19.1526" y="35.8006">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-              <feGaussianBlur result="effect1_foregroundBlur_1_6826" stdDeviation="0.35256" />
+              <feGaussianBlur result="effect1_foregroundBlur_1_4349" stdDeviation="0.35256" />
             </filter>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-0.872763 -20.9158 31.3794 -1.25514 16.8228 39.0519)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_6826" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-0.872763 -20.9158 31.3794 -1.25514 16.8228 39.0519)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_4349" r="1">
               <stop offset="0.141612" stopColor="#1ABD4D" />
               <stop offset="0.247515" stopColor="#6EC30D" />
               <stop offset="0.311547" stopColor="#8AC502" />
@@ -3242,11 +3068,11 @@ function Group1() {
               <stop offset="0.771242" stopColor="#FDCE05" />
               <stop offset="0.860566" stopColor="#FFCE0A" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(14.8219 -3.56224e-05 -2.08328e-05 18.7412 36.3946 14.6149)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_6826" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(14.8219 -3.56224e-05 -2.08328e-05 18.7412 36.3946 14.6149)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_4349" r="1">
               <stop offset="0.408458" stopColor="#FB4E5A" />
               <stop offset="1" stopColor="#FF4540" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-20.7666 11.2611 15.6078 27.5905 28.3003 0.526701)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_6826" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-20.7666 11.2611 15.6078 27.5905 28.3003 0.526701)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_4349" r="1">
               <stop offset="0.231273" stopColor="#FF4541" />
               <stop offset="0.311547" stopColor="#FF4540" />
               <stop offset="0.457516" stopColor="#FF4640" />
@@ -3256,7 +3082,7 @@ function Group1() {
               <stop offset="0.860566" stopColor="#FF6C29" />
               <stop offset="1" stopColor="#FF8C18" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-37.6608 -48.1333 -18.1469 13.6107 22.7747 42.9756)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_6826" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-37.6608 -48.1333 -18.1469 13.6107 22.7747 42.9756)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_4349" r="1">
               <stop offset="0.131546" stopColor="#0CBA65" />
               <stop offset="0.209784" stopColor="#0BB86D" />
               <stop offset="0.297297" stopColor="#09B479" />
@@ -3267,7 +3093,7 @@ function Group1() {
               <stop offset="0.768727" stopColor="#258BF1" />
               <stop offset="0.858506" stopColor="#3086FF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-2.66517 22.4913 31.7627 3.60794 20.6255 7.20632)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_6826" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-2.66517 22.4913 31.7627 3.60794 20.6255 7.20632)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_4349" r="1">
               <stop offset="0.366013" stopColor="#FF4E3A" />
               <stop offset="0.457516" stopColor="#FF8A1B" />
               <stop offset="0.540305" stopColor="#FFA312" />
@@ -3277,14 +3103,14 @@ function Group1() {
               <stop offset="0.915033" stopColor="#FECF08" />
               <stop offset="1" stopColor="#FDCD01" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-7.70372 8.34186 -24.0314 -21.274 16.8776 6.97302)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_6826" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-7.70372 8.34186 -24.0314 -21.274 16.8776 6.97302)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_4349" r="1">
               <stop offset="0.315904" stopColor="#FF4C3C" />
               <stop offset="0.603818" stopColor="#FF692C" />
               <stop offset="0.726837" stopColor="#FF7825" />
               <stop offset="0.884534" stopColor="#FF8D1B" />
               <stop offset="1" stopColor="#FF9F13" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="matrix(-20.7666 -11.2611 15.6078 -27.5905 28.3003 48.3112)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_6826" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="matrix(-20.7666 -11.2611 15.6078 -27.5905 28.3003 48.3112)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_4349" r="1">
               <stop offset="0.231273" stopColor="#0FBC5F" />
               <stop offset="0.311547" stopColor="#0FBC5F" />
               <stop offset="0.366013" stopColor="#0FBC5E" />
@@ -3296,7 +3122,7 @@ function Group1() {
               <stop offset="0.915033" stopColor="#67C30F" />
               <stop offset="1" stopColor="#86C504" />
             </radialGradient>
-            <linearGradient gradientUnits="userSpaceOnUse" id="paint7_linear_1_6826" x1="19.8577" x2="25.0741" y1="41.1158" y2="41.1158">
+            <linearGradient gradientUnits="userSpaceOnUse" id="paint7_linear_1_4349" x1="19.8577" x2="25.0741" y1="41.1158" y2="41.1158">
               <stop stopColor="#0FBC5C" />
               <stop offset="1" stopColor="#0CBA65" />
             </linearGradient>
@@ -3344,25 +3170,25 @@ function GoogleDrive1() {
     <div className="absolute inset-[6.84%_0_6.68%_0]" data-name="google-drive">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 42 36.3234">
         <g id="google-drive">
-          <path d={svgPaths.pcc6d780} fill="url(#paint0_linear_1_6779)" id="Path" />
-          <path d={svgPaths.p316d8a00} fill="url(#paint1_linear_1_6779)" id="Path_2" />
-          <path d={svgPaths.pe91a7f0} fill="url(#paint2_linear_1_6779)" id="Path_3" />
+          <path d={svgPaths.pcc6d780} fill="url(#paint0_linear_1_4335)" id="Path" />
+          <path d={svgPaths.p316d8a00} fill="url(#paint1_linear_1_4335)" id="Path_2" />
+          <path d={svgPaths.pe91a7f0} fill="url(#paint2_linear_1_4335)" id="Path_3" />
           <path d={svgPaths.p36a5f480} fill="var(--fill-0, black)" id="Path_4" opacity="0.1" />
           <path d={svgPaths.p261d4900} fill="var(--fill-0, black)" id="Path_5" opacity="0.1" />
           <path d={svgPaths.pe22c340} fill="var(--fill-0, black)" id="Path_6" opacity="0.1" />
         </g>
         <defs>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_1_6779" x1="-6.62553" x2="15.3269" y1="6.71922" y2="44.3516">
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_1_4335" x1="-6.62553" x2="15.3269" y1="6.71922" y2="44.3516">
             <stop stopColor="#F6C338" />
             <stop offset="0.522782" stopColor="#FFD351" />
             <stop offset="1" stopColor="#F6C338" />
           </linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_1_6779" x1="-88.7427" x2="-93.422" y1="-23.9641" y2="72.7655">
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint1_linear_1_4335" x1="-88.7427" x2="-93.422" y1="-23.9641" y2="72.7655">
             <stop stopColor="#286EE6" />
             <stop offset="0.521046" stopColor="#4286FB" />
             <stop offset="1" stopColor="#286EE6" />
           </linearGradient>
-          <linearGradient gradientUnits="userSpaceOnUse" id="paint2_linear_1_6779" x1="9.606" x2="-19.9142" y1="-15.9173" y2="3.55605">
+          <linearGradient gradientUnits="userSpaceOnUse" id="paint2_linear_1_4335" x1="9.606" x2="-19.9142" y1="-15.9173" y2="3.55605">
             <stop stopColor="#069B5A" />
             <stop offset="0.531031" stopColor="#11AA62" />
             <stop offset="1" stopColor="#069B5A" />
@@ -3388,9 +3214,9 @@ function GoogleAds2() {
   );
 }
 
-function Container30() {
+function Container28() {
   return (
-    <div className="-translate-x-1/2 -translate-y-1/2 absolute gap-x-[75px] gap-y-[36px] grid grid-cols-[repeat(9,minmax(0,1fr))] grid-rows-[repeat(3,fit-content(100%))] left-[calc(50%-1.29px)] py-[36px] rounded-[60px] top-[calc(50%+0.5px)] w-[681.429px]" data-name="Container">
+    <div className="-translate-x-1/2 -translate-y-1/2 absolute gap-x-[75px] gap-y-[36px] grid grid-cols-[repeat(9,minmax(0,1fr))] grid-rows-[repeat(3,fit-content(100%))] left-1/2 py-[36px] rounded-[60px] top-1/2 w-full max-w-[681.429px]" data-name="Container">
       <div className="col-1 relative row-1 shrink-0 size-[42px]" data-name="Logos">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
       </div>
@@ -3555,25 +3381,25 @@ function Container30() {
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 42 42">
           <g id="Group 1">
             <path d={svgPaths.p202b5a80} fill="var(--fill-0, #FF4500)" id="Vector" />
-            <path d={svgPaths.p7433b80} fill="url(#paint0_radial_1_7039)" id="Vector_2" />
-            <path d={svgPaths.p23e7ff00} fill="url(#paint1_radial_1_7039)" id="Vector_3" />
-            <path d={svgPaths.p10cf3880} fill="url(#paint2_radial_1_7039)" id="Vector_4" />
+            <path d={svgPaths.p7433b80} fill="url(#paint0_radial_1_4379)" id="Vector_2" />
+            <path d={svgPaths.p23e7ff00} fill="url(#paint1_radial_1_4379)" id="Vector_3" />
+            <path d={svgPaths.p10cf3880} fill="url(#paint2_radial_1_4379)" id="Vector_4" />
             <path d={svgPaths.p6ee1d00} fill="var(--fill-0, #842123)" id="Vector_5" />
             <path d={svgPaths.p1e90aa80} fill="var(--fill-0, #842123)" id="Vector_6" />
-            <path d={svgPaths.p33b9ff00} fill="url(#paint3_radial_1_7039)" id="Vector_7" />
-            <path d={svgPaths.p35516400} fill="url(#paint4_radial_1_7039)" id="Vector_8" />
+            <path d={svgPaths.p33b9ff00} fill="url(#paint3_radial_1_4379)" id="Vector_7" />
+            <path d={svgPaths.p35516400} fill="url(#paint4_radial_1_4379)" id="Vector_8" />
             <path d={svgPaths.p17cef500} fill="var(--fill-0, #BBCFDA)" id="Vector_9" />
             <path d={svgPaths.p2d412640} fill="var(--fill-0, white)" id="Vector_10" />
-            <path d={svgPaths.p1dad3700} fill="url(#paint5_radial_1_7039)" id="Vector_11" />
-            <path d={svgPaths.p3232a100} fill="url(#paint6_radial_1_7039)" id="Vector_12" />
-            <path d={svgPaths.pcc10270} fill="url(#paint7_radial_1_7039)" id="Vector_13" />
+            <path d={svgPaths.p1dad3700} fill="url(#paint5_radial_1_4379)" id="Vector_11" />
+            <path d={svgPaths.p3232a100} fill="url(#paint6_radial_1_4379)" id="Vector_12" />
+            <path d={svgPaths.pcc10270} fill="url(#paint7_radial_1_4379)" id="Vector_13" />
             <path d={svgPaths.p20ea980} fill="var(--fill-0, #FF6101)" id="Vector_14" />
             <path d={svgPaths.p3a0fdd00} fill="var(--fill-0, #FF6101)" id="Vector_15" />
             <path d={svgPaths.p2459cc80} fill="var(--fill-0, #FFC49C)" id="Vector_16" />
             <path d={svgPaths.p7796180} fill="var(--fill-0, #FFC49C)" id="Vector_17" />
           </g>
           <defs>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(32.9782 17.6462) scale(9.82759 8.573)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_7039" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(32.9782 17.6462) scale(9.82759 8.573)" gradientUnits="userSpaceOnUse" id="paint0_radial_1_4379" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -3587,7 +3413,7 @@ function Container30() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(9.16961 17.6462) scale(9.82759 8.573)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_7039" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(9.16961 17.6462) scale(9.82759 8.573)" gradientUnits="userSpaceOnUse" id="paint1_radial_1_4379" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -3601,7 +3427,7 @@ function Container30() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(21.3851 16.2711) scale(29.6439 20.8138)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_7039" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(21.3851 16.2711) scale(29.6439 20.8138)" gradientUnits="userSpaceOnUse" id="paint2_radial_1_4379" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -3615,7 +3441,7 @@ function Container30() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(27.1164 24.7687) rotate(180) scale(2.47675 3.63608)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_7039" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(27.1164 24.7687) rotate(180) scale(2.47675 3.63608)" gradientUnits="userSpaceOnUse" id="paint3_radial_1_4379" r="1">
               <stop stopColor="#FF6600" />
               <stop offset="0.5" stopColor="#FF4500" />
               <stop offset="0.7" stopColor="#FC4301" />
@@ -3623,7 +3449,7 @@ function Container30() {
               <stop offset="0.92" stopColor="#E53812" />
               <stop offset="1" stopColor="#D4301F" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(14.7971 24.7687) scale(2.47675 3.63608)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_7039" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(14.7971 24.7687) scale(2.47675 3.63608)" gradientUnits="userSpaceOnUse" id="paint4_radial_1_4379" r="1">
               <stop stopColor="#FF6600" />
               <stop offset="0.5" stopColor="#FF4500" />
               <stop offset="0.7" stopColor="#FC4301" />
@@ -3631,13 +3457,13 @@ function Container30() {
               <stop offset="0.92" stopColor="#E53812" />
               <stop offset="1" stopColor="#D4301F" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(21.0598 31.9771) scale(8.73341 5.76033)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_7039" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(21.0598 31.9771) scale(8.73341 5.76033)" gradientUnits="userSpaceOnUse" id="paint5_radial_1_4379" r="1">
               <stop stopColor="#172E35" />
               <stop offset="0.29" stopColor="#0E1C21" />
               <stop offset="0.73" stopColor="#030708" />
               <stop offset="1" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(28.762 5.5956) scale(7.66621 7.66621)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_7039" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(28.762 5.5956) scale(7.66621 7.66621)" gradientUnits="userSpaceOnUse" id="paint6_radial_1_4379" r="1">
               <stop stopColor="#FEFFFF" />
               <stop offset="0.4" stopColor="#FEFFFF" />
               <stop offset="0.51" stopColor="#F9FCFC" />
@@ -3651,7 +3477,7 @@ function Container30() {
               <stop offset="0.88" stopColor="#EDE3E9" />
               <stop offset="0.9" stopColor="#FFEBEF" />
             </radialGradient>
-            <radialGradient cx="0" cy="0" gradientTransform="translate(25.5671 13.9528) scale(6.28364 6.28364)" gradientUnits="userSpaceOnUse" id="paint7_radial_1_7039" r="1">
+            <radialGradient cx="0" cy="0" gradientTransform="translate(25.5671 13.9528) scale(6.28364 6.28364)" gradientUnits="userSpaceOnUse" id="paint7_radial_1_4379" r="1">
               <stop offset="0.48" stopColor="#7A9299" />
               <stop offset="0.67" stopColor="#172E35" />
               <stop offset="0.75" />
@@ -3723,7 +3549,7 @@ function Content13() {
   );
 }
 
-function Frame31() {
+function Frame30() {
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
       <div className="relative shrink-0 size-[36px]" data-name="Logos">
@@ -3734,11 +3560,11 @@ function Frame31() {
   );
 }
 
-function Container31() {
+function Container29() {
   return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between left-[62px] px-[12px] py-[18px] rounded-[18px] top-[116.5px] w-[414px]" data-name="Container">
+    <div className="absolute bg-white content-stretch flex items-center justify-between left-[62px] right-[62px] px-[12px] py-[18px] rounded-[18px] top-[116.5px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[1.5px] border-solid inset-0 pointer-events-none rounded-[18px]" />
-      <Frame31 />
+      <Frame30 />
       <div className="overflow-clip relative shrink-0 size-[36px]" data-name="Check cr-fr">
         <div className="absolute inset-[8.33%]" data-name="Shape">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
@@ -3763,7 +3589,7 @@ function Content14() {
   );
 }
 
-function Frame32() {
+function Frame31() {
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
       <div className="overflow-clip relative shrink-0 size-[30px]" data-name="Social Media Icons">
@@ -3778,11 +3604,11 @@ function Frame32() {
   );
 }
 
-function Container32() {
+function Container30() {
   return (
     <div className="absolute bg-white content-stretch flex items-center justify-between left-[54.5px] px-[12px] py-[18px] rounded-[18px] top-[131.5px] w-[429px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[1.5px] border-solid inset-0 pointer-events-none rounded-[18px]" />
-      <Frame32 />
+      <Frame31 />
       <div className="overflow-clip relative shrink-0 size-[36px]" data-name="Check cr-fr">
         <div className="absolute inset-[8.33%]" data-name="Shape">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
@@ -3807,7 +3633,7 @@ function Content15() {
   );
 }
 
-function Frame33() {
+function Frame32() {
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
       <div className="relative shrink-0 size-[36px]" data-name="Logos">
@@ -3818,11 +3644,11 @@ function Frame33() {
   );
 }
 
-function Container33() {
+function Container31() {
   return (
     <div className="absolute bg-white content-stretch flex items-center justify-between left-[50px] px-[12px] py-[18px] rounded-[18px] top-[146.5px] w-[444px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[1.5px] border-solid inset-0 pointer-events-none rounded-[18px]" />
-      <Frame33 />
+      <Frame32 />
       <div className="overflow-clip relative shrink-0 size-[36px]" data-name="Check cr-fr">
         <div className="absolute inset-[8.33%]" data-name="Shape">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
@@ -3837,9 +3663,9 @@ function Container33() {
 function Group4() {
   return (
     <div className="absolute contents left-[50px] top-[116.5px]">
+      <Container29 />
+      <Container30 />
       <Container31 />
-      <Container32 />
-      <Container33 />
     </div>
   );
 }
@@ -3847,7 +3673,7 @@ function Group4() {
 function Group5() {
   return (
     <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-[calc(50%-1.29px)] top-[calc(50%+3.5px)]">
-      <Container30 />
+      <Container28 />
       <div className="-translate-y-1/2 absolute flex h-[346px] items-center justify-center right-[-9px] top-1/2 w-[280px]">
         <div className="-scale-y-100 flex-none rotate-180">
           <div className="bg-gradient-to-r from-[#e1f0fc] from-[13.462%] h-[346px] to-[rgba(249,250,252,0)] w-[280px]" />
@@ -3861,7 +3687,7 @@ function Group5() {
 
 function Slot3() {
   return (
-    <div className="bg-[#f9fafc] h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
+    <div className="min-h-[300px] lg:h-[360px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
       <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[360px] left-1/2 opacity-20 top-1/2 w-[640px]" data-name="image 187">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage187} />
       </div>
@@ -3872,58 +3698,15 @@ function Slot3() {
 
 function DescriptionSection3() {
   return (
-    <div className="bg-white relative shrink-0 w-full" data-name="Description Section">
-      <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative size-full text-center">
-          <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
-            <p>
-              <span className="leading-[32px]">Smart Multi-Platform Publishing</span>
-              <span className="leading-[32px] text-[#1f2937]">{` based on realtime audiance & performance data!`}</span>
-            </p>
-          </div>
-          <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[0px] w-full">
-            <p className="text-[16px] whitespace-pre-wrap">
-              <span className="leading-[22px]">{`Share content across platforms like Instagram, X, Wordpress, TikTok, and YouTube `}</span>
-              <span className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic">{`etc. `}</span>
-              <span className="leading-[22px]">{`based on platform realtime  algorithms and previous past performance.`}</span>
-            </p>
-          </div>
-        </div>
+    <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative text-center w-full flex-1" data-name="Description Section">
+      <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
+        <p>
+          <span className="leading-[32px]">Smart Multi-Platform Publishing</span>
+          <span className="leading-[32px] text-[#1f2937]">{` based on realtime audiance & performance data!`}</span>
+        </p>
       </div>
-    </div>
-  );
-}
-
-function Frame36() {
-  return (
-    <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] relative shrink-0 w-full">
-      <div className="bg-white col-1 justify-self-stretch relative rounded-[20px] row-1 self-start shrink-0" data-name="Contianer">
-        <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full">
-          <Slot />
-          <DescriptionSection />
-        </div>
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
-      </div>
-      <div className="bg-white col-2 justify-self-stretch relative rounded-[20px] row-1 self-start shrink-0" data-name="Contianer">
-        <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full">
-          <Slot1 />
-          <DescriptionSection1 />
-        </div>
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
-      </div>
-      <div className="bg-white col-2 justify-self-stretch relative rounded-[20px] row-2 self-start shrink-0" data-name="Contianer">
-        <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full">
-          <Slot2 />
-          <DescriptionSection2 />
-        </div>
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
-      </div>
-      <div className="bg-white col-1 justify-self-stretch relative rounded-[20px] row-2 self-start shrink-0" data-name="Contianer">
-        <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full">
-          <Slot3 />
-          <DescriptionSection3 />
-        </div>
-        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
+        <p className="leading-[22px]">Share content across platforms like Instagram, X, Wordpress, TikTok, and YouTube etc. based on platform realtime algorithms and previous past performance.</p>
       </div>
     </div>
   );
@@ -3931,14 +3714,57 @@ function Frame36() {
 
 function Frame35() {
   return (
-    <div className="content-stretch flex flex-col gap-[69px] items-center relative shrink-0 w-[1120px]">
-      <Frame20 />
-      <Frame36 />
+    <div className="gap-x-6 gap-y-[40px] grid grid-cols-1 lg:grid-cols-2 relative shrink-0 w-full items-stretch">
+      <div className="bg-white justify-self-stretch relative rounded-[20px] shrink-0 flex flex-col h-full" data-name="Contianer">
+        <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full flex-1">
+          <Slot />
+          <div className="flex-1 w-full flex flex-col">
+            <DescriptionSection />
+          </div>
+        </div>
+        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
+      </div>
+      <div className="bg-white justify-self-stretch relative rounded-[20px] shrink-0 flex flex-col h-full" data-name="Contianer">
+        <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full flex-1">
+          <Slot1 />
+          <div className="flex-1 w-full flex flex-col">
+            <DescriptionSection1 />
+          </div>
+        </div>
+        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
+      </div>
+      <div className="bg-white justify-self-stretch relative rounded-[20px] shrink-0 flex flex-col h-full" data-name="Contianer">
+        <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full flex-1">
+          <Slot3 />
+          <div className="flex-1 w-full flex flex-col">
+            <DescriptionSection3 />
+          </div>
+        </div>
+        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
+      </div>
+      <div className="bg-white justify-self-stretch relative rounded-[20px] shrink-0 flex flex-col h-full" data-name="Contianer">
+        <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full flex-1">
+          <Slot2 />
+          <div className="flex-1 w-full flex flex-col">
+            <DescriptionSection2 />
+          </div>
+        </div>
+        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
+      </div>
     </div>
   );
 }
 
-function Frame65() {
+function Frame34() {
+  return (
+    <div className="content-stretch flex flex-col gap-[69px] items-center relative shrink-0 w-full max-w-[1280px]">
+      <Frame19 />
+      <Frame35 />
+    </div>
+  );
+}
+
+function Frame64() {
   return (
     <div className="content-stretch flex gap-[32px] items-start relative shrink-0">
       <div className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 w-[140px]" data-name="Button">
@@ -3952,16 +3778,16 @@ function Frame65() {
   );
 }
 
-function Solution({ className }: { className?: string }) {
+function Solution1({ className }: { className?: string }) {
   return (
-    <div className={className || "bg-white content-stretch flex flex-col gap-[40px] items-center justify-center overflow-clip p-[80px] relative shrink-0"} data-name="Solution">
-      <Frame35 />
-      <Frame65 />
+    <div className={className || "bg-white content-stretch flex flex-col gap-[40px] items-center justify-center overflow-clip px-2 py-12 lg:py-20 relative shrink-0 w-full"} data-name="Solution">
+      <Frame34 />
+      <Frame64 />
     </div>
   );
 }
 
-function Frame21() {
+function Frame20() {
   return (
     <div className="content-stretch flex flex-col items-center not-italic relative shrink-0 text-center w-full whitespace-nowrap">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[36px] relative shrink-0 text-[#1f2937] text-[28px] tracking-[-0.28px]">{`Don't take our word for it`}</p>
@@ -3970,7 +3796,7 @@ function Frame21() {
   );
 }
 
-function Container35() {
+function Container33() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[24px]" data-name="image 154">
@@ -3982,6 +3808,66 @@ function Container35() {
 }
 
 function ChatGpt() {
+  return (
+    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px] shrink-0" data-name="ChatGPT">
+      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
+      <Container33 />
+      <div className="relative shrink-0 size-[20px]" data-name="icon_pack/chevron_right">
+        <div className="absolute bottom-1/4 left-[35.79%] right-[33.33%] top-1/4" data-name="Mask">
+          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
+            <g id="Mask" />
+          </svg>
+        </div>
+        <div className="absolute inset-[-54.17%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[21.59px_19px] mask-size-[7.41px_12px]" style={{ maskImage: `url('${imgColor}')` }} data-name="🎨 Color">
+          <div className="absolute bg-[#d1d5db] inset-0" data-name="Black" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Container34() {
+  return (
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Container">
+      <div className="relative shrink-0 size-[24px]" data-name="image 154">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage155} />
+      </div>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask Perplexity</p>
+    </div>
+  );
+}
+
+function ChatGpt1() {
+  return (
+    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px] shrink-0" data-name="ChatGPT">
+      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
+      <Container34 />
+      <div className="relative shrink-0 size-[20px]" data-name="icon_pack/chevron_right">
+        <div className="absolute bottom-1/4 left-[35.79%] right-[33.33%] top-1/4" data-name="Mask">
+          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
+            <g id="Mask" />
+          </svg>
+        </div>
+        <div className="absolute inset-[-54.17%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[21.59px_19px] mask-size-[7.41px_12px]" style={{ maskImage: `url('${imgColor}')` }} data-name="🎨 Color">
+          <div className="absolute bg-[#d1d5db] inset-0" data-name="Black" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Container35() {
+  return (
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Container">
+      <div className="relative shrink-0 size-[24px]" data-name="image 154">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage156} />
+      </div>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask Claude</p>
+    </div>
+  );
+}
+
+function ChatGpt2() {
   return (
     <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px] shrink-0" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
@@ -4000,67 +3886,7 @@ function ChatGpt() {
   );
 }
 
-function Container36() {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Container">
-      <div className="relative shrink-0 size-[24px]" data-name="image 154">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage155} />
-      </div>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask Perplexity</p>
-    </div>
-  );
-}
-
-function ChatGpt1() {
-  return (
-    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px] shrink-0" data-name="ChatGPT">
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
-      <Container36 />
-      <div className="relative shrink-0 size-[20px]" data-name="icon_pack/chevron_right">
-        <div className="absolute bottom-1/4 left-[35.79%] right-[33.33%] top-1/4" data-name="Mask">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
-            <g id="Mask" />
-          </svg>
-        </div>
-        <div className="absolute inset-[-54.17%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[21.59px_19px] mask-size-[7.41px_12px]" style={{ maskImage: `url('${imgColor}')` }} data-name="🎨 Color">
-          <div className="absolute bg-[#d1d5db] inset-0" data-name="Black" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Container37() {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Container">
-      <div className="relative shrink-0 size-[24px]" data-name="image 154">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage156} />
-      </div>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask Claude</p>
-    </div>
-  );
-}
-
-function ChatGpt2() {
-  return (
-    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px] shrink-0" data-name="ChatGPT">
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
-      <Container37 />
-      <div className="relative shrink-0 size-[20px]" data-name="icon_pack/chevron_right">
-        <div className="absolute bottom-1/4 left-[35.79%] right-[33.33%] top-1/4" data-name="Mask">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
-            <g id="Mask" />
-          </svg>
-        </div>
-        <div className="absolute inset-[-54.17%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[21.59px_19px] mask-size-[7.41px_12px]" style={{ maskImage: `url('${imgColor}')` }} data-name="🎨 Color">
-          <div className="absolute bg-[#d1d5db] inset-0" data-name="Black" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Container34() {
+function Container32() {
   return (
     <div className="content-start flex flex-wrap gap-[20px] items-start relative shrink-0" data-name="Container">
       <ChatGpt />
@@ -4070,24 +3896,20 @@ function Container34() {
   );
 }
 
-function Frame11() {
+function Frame10() {
   return (
     <div className="bg-[#f9fafc] content-stretch flex flex-col gap-[40px] items-center px-[40px] py-[32px] relative rounded-[40px] shrink-0">
-      <Frame21 />
-      <Container34 />
+      <Frame20 />
+      <Container32 />
     </div>
   );
 }
 
-function App1() {
+function Solution() {
   return (
-    <div className="bg-white relative shrink-0 w-full" data-name="App">
-      <div className="flex flex-col items-center justify-center size-full">
-        <div className="content-stretch flex flex-col gap-[80px] items-center justify-center pb-[80px] px-[80px] relative size-full">
-          <Solution />
-          <Frame11 />
-        </div>
-      </div>
+    <div className="relative bg-white w-full flex flex-col gap-12 md:gap-[80px] items-center justify-center pb-12 md:pb-[80px] px-4 md:px-12 lg:px-[80px]" data-name="Solution">
+      <Solution1 />
+      <Frame10 />
     </div>
   );
 }
@@ -4097,16 +3919,16 @@ function Cotnet2() {
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-[740px]" data-name="Cotnet">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">WHY US?</p>
       <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] whitespace-nowrap">Marketing that runs itself.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[#9ca3af] text-[20px] w-[min-content] whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#9ca3af] text-[20px] whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
     </div>
   );
 }
 
-function Container40() {
+function Container38() {
   return <div className="bg-[rgba(24,24,27,0.5)] flex-[1_0_0] h-[52px] min-w-px" data-name="Container" />;
 }
 
-function Container41() {
+function Container39() {
   return (
     <div className="bg-[rgba(24,24,27,0.5)] flex-[1_0_0] h-[52px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#27272a] border-l border-solid inset-0 pointer-events-none" />
@@ -4117,7 +3939,7 @@ function Container41() {
   );
 }
 
-function Container42() {
+function Container40() {
   return (
     <div className="bg-[rgba(24,24,27,0.5)] flex-[1_0_0] h-[52px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#27272a] border-l border-solid inset-0 pointer-events-none" />
@@ -4128,7 +3950,7 @@ function Container42() {
   );
 }
 
-function Container43() {
+function Container41() {
   return (
     <div className="flex-[1_0_0] h-[52px] min-w-px relative" style={{ backgroundImage: "linear-gradient(169.461deg, rgba(9, 44, 77, 0.4) 0%, rgb(12, 60, 106) 100%)" }} data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4141,21 +3963,21 @@ function Container43() {
   );
 }
 
-function Container39() {
+function Container37() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#27272a] border-b border-solid inset-0 pointer-events-none" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <Container38 />
+        <Container39 />
         <Container40 />
         <Container41 />
-        <Container42 />
-        <Container43 />
       </div>
     </div>
   );
 }
 
-function Container45() {
+function Container43() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
@@ -4167,13 +3989,39 @@ function Container45() {
   );
 }
 
-function Container47() {
+function Container45() {
   return (
     <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-end justify-center not-italic py-[2px] relative size-full text-[#6b7280] whitespace-nowrap">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$4k</p>
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">to</p>
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$8k</p>
+        <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">/ month</p>
+      </div>
+    </div>
+  );
+}
+
+function Container44() {
+  return (
+    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+      <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
+      <div className="flex flex-row items-center size-full">
+        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
+          <Container45 />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Container47() {
+  return (
+    <div className="relative shrink-0" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-end justify-center not-italic py-[2px] relative size-full text-[#6b7280] whitespace-nowrap">
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$5k</p>
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">to</p>
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$15k</p>
         <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">/ month</p>
       </div>
     </div>
@@ -4193,33 +4041,7 @@ function Container46() {
   );
 }
 
-function Container49() {
-  return (
-    <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-end justify-center not-italic py-[2px] relative size-full text-[#6b7280] whitespace-nowrap">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$5k</p>
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">to</p>
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$15k</p>
-        <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">/ month</p>
-      </div>
-    </div>
-  );
-}
-
-function Container48() {
-  return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <Container49 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Frame24() {
+function Frame23() {
   return (
     <div className="relative shrink-0">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-center not-italic relative size-full text-white whitespace-nowrap">
@@ -4231,35 +4053,35 @@ function Frame24() {
   );
 }
 
-function Container50() {
+function Container48() {
   return (
     <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[10px] items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
           <p className="font-['Inter:Bold',sans-serif] font-bold leading-[28px] not-italic relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px] whitespace-nowrap">💡</p>
-          <Frame24 />
+          <Frame23 />
         </div>
       </div>
     </div>
   );
 }
 
-function Container44() {
+function Container42() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
-        <Container45 />
+        <Container43 />
+        <Container44 />
         <Container46 />
         <Container48 />
-        <Container50 />
       </div>
     </div>
   );
 }
 
-function Container52() {
+function Container50() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
@@ -4271,7 +4093,7 @@ function Container52() {
   );
 }
 
-function Container53() {
+function Container51() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4284,7 +4106,7 @@ function Container53() {
   );
 }
 
-function Container54() {
+function Container52() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4297,7 +4119,7 @@ function Container54() {
   );
 }
 
-function Container55() {
+function Container53() {
   return (
     <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
@@ -4317,21 +4139,21 @@ function Container55() {
   );
 }
 
-function Container51() {
+function Container49() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <Container50 />
+        <Container51 />
         <Container52 />
         <Container53 />
-        <Container54 />
-        <Container55 />
       </div>
     </div>
   );
 }
 
-function Container57() {
+function Container55() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
@@ -4343,7 +4165,7 @@ function Container57() {
   );
 }
 
-function Container58() {
+function Container56() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4356,7 +4178,7 @@ function Container58() {
   );
 }
 
-function Container59() {
+function Container57() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4369,7 +4191,7 @@ function Container59() {
   );
 }
 
-function Container60() {
+function Container58() {
   return (
     <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
@@ -4389,21 +4211,21 @@ function Container60() {
   );
 }
 
-function Container56() {
+function Container54() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <Container55 />
+        <Container56 />
         <Container57 />
         <Container58 />
-        <Container59 />
-        <Container60 />
       </div>
     </div>
   );
 }
 
-function Container62() {
+function Container60() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
@@ -4415,7 +4237,7 @@ function Container62() {
   );
 }
 
-function Container63() {
+function Container61() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4428,7 +4250,7 @@ function Container63() {
   );
 }
 
-function Container64() {
+function Container62() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4441,7 +4263,7 @@ function Container64() {
   );
 }
 
-function Container65() {
+function Container63() {
   return (
     <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
@@ -4461,21 +4283,21 @@ function Container65() {
   );
 }
 
-function Container61() {
+function Container59() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <Container60 />
+        <Container61 />
         <Container62 />
         <Container63 />
-        <Container64 />
-        <Container65 />
       </div>
     </div>
   );
 }
 
-function Container67() {
+function Container65() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
@@ -4487,7 +4309,7 @@ function Container67() {
   );
 }
 
-function Container68() {
+function Container66() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4500,7 +4322,7 @@ function Container68() {
   );
 }
 
-function Container69() {
+function Container67() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4513,7 +4335,7 @@ function Container69() {
   );
 }
 
-function Container70() {
+function Container68() {
   return (
     <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
@@ -4527,21 +4349,21 @@ function Container70() {
   );
 }
 
-function Container66() {
+function Container64() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <Container65 />
+        <Container66 />
         <Container67 />
         <Container68 />
-        <Container69 />
-        <Container70 />
       </div>
     </div>
   );
 }
 
-function Container72() {
+function Container70() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
@@ -4553,7 +4375,7 @@ function Container72() {
   );
 }
 
-function Container73() {
+function Container71() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4566,7 +4388,7 @@ function Container73() {
   );
 }
 
-function Container74() {
+function Container72() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4579,7 +4401,7 @@ function Container74() {
   );
 }
 
-function Container75() {
+function Container73() {
   return (
     <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
@@ -4599,21 +4421,21 @@ function Container75() {
   );
 }
 
-function Container71() {
+function Container69() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <Container70 />
+        <Container71 />
         <Container72 />
         <Container73 />
-        <Container74 />
-        <Container75 />
       </div>
     </div>
   );
 }
 
-function Container77() {
+function Container75() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
@@ -4625,7 +4447,7 @@ function Container77() {
   );
 }
 
-function Container78() {
+function Container76() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4638,7 +4460,7 @@ function Container78() {
   );
 }
 
-function Container79() {
+function Container77() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4651,7 +4473,7 @@ function Container79() {
   );
 }
 
-function Container80() {
+function Container78() {
   return (
     <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
@@ -4665,21 +4487,21 @@ function Container80() {
   );
 }
 
-function Container76() {
+function Container74() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <Container75 />
+        <Container76 />
         <Container77 />
         <Container78 />
-        <Container79 />
-        <Container80 />
       </div>
     </div>
   );
 }
 
-function Container82() {
+function Container80() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
@@ -4691,7 +4513,7 @@ function Container82() {
   );
 }
 
-function Container83() {
+function Container81() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4704,7 +4526,7 @@ function Container83() {
   );
 }
 
-function Container84() {
+function Container82() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4717,7 +4539,7 @@ function Container84() {
   );
 }
 
-function Container85() {
+function Container83() {
   return (
     <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
@@ -4731,21 +4553,21 @@ function Container85() {
   );
 }
 
-function Container81() {
+function Container79() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <Container80 />
+        <Container81 />
         <Container82 />
         <Container83 />
-        <Container84 />
-        <Container85 />
       </div>
     </div>
   );
 }
 
-function Container87() {
+function Container85() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
@@ -4757,7 +4579,7 @@ function Container87() {
   );
 }
 
-function Container88() {
+function Container86() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4770,7 +4592,7 @@ function Container88() {
   );
 }
 
-function Container89() {
+function Container87() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4783,7 +4605,7 @@ function Container89() {
   );
 }
 
-function Container90() {
+function Container88() {
   return (
     <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
@@ -4797,21 +4619,21 @@ function Container90() {
   );
 }
 
-function Container86() {
+function Container84() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <Container85 />
+        <Container86 />
         <Container87 />
         <Container88 />
-        <Container89 />
-        <Container90 />
       </div>
     </div>
   );
 }
 
-function Container92() {
+function Container90() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
@@ -4823,7 +4645,7 @@ function Container92() {
   );
 }
 
-function Container93() {
+function Container91() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4836,7 +4658,7 @@ function Container93() {
   );
 }
 
-function Container94() {
+function Container92() {
   return (
     <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
@@ -4849,7 +4671,7 @@ function Container94() {
   );
 }
 
-function Container95() {
+function Container93() {
   return (
     <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
@@ -4863,46 +4685,46 @@ function Container95() {
   );
 }
 
-function Container91() {
+function Container89() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+        <Container90 />
+        <Container91 />
         <Container92 />
         <Container93 />
-        <Container94 />
-        <Container95 />
       </div>
     </div>
   );
 }
 
-function Container38() {
+function Container36() {
   return (
     <div className="bg-[#18181b] h-[614px] relative rounded-[24px] shrink-0 w-[1120px]" data-name="Container">
       <div className="content-stretch flex flex-col items-start overflow-clip p-px relative rounded-[inherit] size-full">
-        <Container39 />
-        <Container44 />
-        <Container51 />
-        <Container56 />
-        <Container61 />
-        <Container66 />
-        <Container71 />
-        <Container76 />
-        <Container81 />
-        <Container86 />
-        <Container91 />
+        <Container37 />
+        <Container42 />
+        <Container49 />
+        <Container54 />
+        <Container59 />
+        <Container64 />
+        <Container69 />
+        <Container74 />
+        <Container79 />
+        <Container84 />
+        <Container89 />
       </div>
       <div aria-hidden="true" className="absolute border border-[#27272a] border-solid inset-0 pointer-events-none rounded-[24px]" />
     </div>
   );
 }
 
-function Frame23() {
+function Frame22() {
   return (
     <div className="content-stretch flex flex-col gap-[42px] items-center justify-center relative shrink-0 w-full">
       <Cotnet2 />
-      <Container38 />
+      <Container36 />
     </div>
   );
 }
@@ -4923,7 +4745,7 @@ function Button() {
   );
 }
 
-function Container96() {
+function Container94() {
   return (
     <div className="-translate-x-1/2 absolute bg-[#151109] content-stretch flex items-center justify-center left-1/2 px-[16.749px] py-[2.749px] rounded-[1280px] top-[-14px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[0.749px] border-[rgba(213,165,91,0.4)] border-solid inset-0 pointer-events-none rounded-[1280px]" />
@@ -4937,12 +4759,12 @@ function Button1() {
     <div className="content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0" data-name="Button">
       <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[300px]" />
       <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">12-month plan</p>
-      <Container96 />
+      <Container94 />
     </div>
   );
 }
 
-function Container97() {
+function Container95() {
   return (
     <div className="-translate-x-1/2 absolute bg-[#151109] content-stretch flex items-start left-[calc(50%+0.25px)] px-[16.749px] py-[2.749px] rounded-[1280px] top-[-15px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[0.749px] border-[rgba(213,165,91,0.4)] border-solid inset-0 pointer-events-none rounded-[1280px]" />
@@ -4956,7 +4778,7 @@ function Button2() {
     <div className="content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0" data-name="Button">
       <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[300px]" />
       <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">3-month plan</p>
-      <Container97 />
+      <Container95 />
     </div>
   );
 }
@@ -4971,7 +4793,7 @@ function Segmenter() {
   );
 }
 
-function Frame22() {
+function Frame21() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center relative shrink-0">
       <Segmenter />
@@ -4979,16 +4801,60 @@ function Frame22() {
   );
 }
 
-function Frame26() {
+function Frame25() {
   return (
     <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[740px]">
       <Cotnet3 />
-      <Frame22 />
+      <Frame21 />
     </div>
   );
 }
 
-function Container99() {
+function Frame25Modified({ selectedPlan, setSelectedPlan }: { selectedPlan: string, setSelectedPlan: (plan: 'month' | '12month' | '3month') => void }) {
+  return (
+    <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[740px]">
+      <Cotnet3 />
+      <Frame21Modified selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
+    </div>
+  );
+}
+
+function Frame21Modified({ selectedPlan, setSelectedPlan }: { selectedPlan: string, setSelectedPlan: (plan: 'month' | '12month' | '3month') => void }) {
+  return (
+    <div className="content-stretch flex flex-col items-center justify-center relative shrink-0">
+      <SegmenterModified selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
+    </div>
+  );
+}
+
+function SegmenterModified({ selectedPlan, setSelectedPlan }: { selectedPlan: string, setSelectedPlan: (plan: 'month' | '12month' | '3month') => void }) {
+  return (
+    <div className="bg-black content-stretch flex gap-[8px] items-center justify-center p-[8px] relative rounded-[300px] shrink-0" data-name="Segmenter">
+      <div
+        onClick={() => setSelectedPlan('month')}
+        className={`cursor-pointer content-stretch flex items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0 ${selectedPlan === 'month' ? 'bg-[#1f2937]' : ''}`}
+      >
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">Month plan</p>
+      </div>
+      <div
+        onClick={() => setSelectedPlan('12month')}
+        className={`cursor-pointer content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0 ${selectedPlan !== '12month' ? 'border border-[#374151] border-solid' : 'bg-[#1f2937]'}`}
+      >
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">12-month plan</p>
+        <Container94 />
+      </div>
+      <div
+        onClick={() => setSelectedPlan('3month')}
+        className={`cursor-pointer content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0 ${selectedPlan !== '3month' ? 'border border-[#374151] border-solid' : 'bg-[#1f2937]'}`}
+      >
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">3-month plan</p>
+        <Container95 />
+      </div>
+    </div>
+  );
+}
+
+function Container97() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Solo</p>
@@ -4996,7 +4862,7 @@ function Container99() {
   );
 }
 
-function Frame13() {
+function Frame12() {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">$9.99</p>
@@ -5005,11 +4871,11 @@ function Frame13() {
   );
 }
 
-function Container100() {
+function Container98() {
   return (
     <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
       <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$19</p>
-      <Frame13 />
+      <Frame12 />
     </div>
   );
 }
@@ -5017,8 +4883,8 @@ function Container100() {
 function PricingDetails() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
-      <Container99 />
-      <Container100 />
+      <Container97 />
+      <Container98 />
     </div>
   );
 }
@@ -5175,7 +5041,49 @@ function Content16() {
   );
 }
 
-function Container98() {
+function Container96Modified({ calculatePrice }: { calculatePrice: (price: number) => string }) {
+  const discountedPrice = calculatePrice(9.99);
+  return (
+    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
+        <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-7.97%] w-[100.18%]" src={imgImage} />
+          </div>
+        </div>
+        <div className="relative shrink-0 w-full" data-name="Content">
+          <div className="content-stretch flex flex-col gap-[16px] items-start pb-[48px] pt-[16px] px-[20px] relative size-full">
+            <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+              <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+                <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
+                  <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Solo</p>
+                </div>
+                <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
+                  <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$19</p>
+                  <div className="content-stretch flex items-end justify-center relative shrink-0">
+                    <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
+                    <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[40px] relative rounded-[120px] shrink-0 w-full" data-name="Button">
+                <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[120px]" />
+                <div className="flex flex-row items-center justify-center size-full">
+                  <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
+                    <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Features />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Container96() {
   return (
     <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
@@ -5190,7 +5098,7 @@ function Container98() {
   );
 }
 
-function Container102() {
+function Container100() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Pro</p>
@@ -5198,7 +5106,7 @@ function Container102() {
   );
 }
 
-function Frame14() {
+function Frame13() {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">$29.99</p>
@@ -5207,11 +5115,11 @@ function Frame14() {
   );
 }
 
-function Container103() {
+function Container101() {
   return (
     <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
       <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$49</p>
-      <Frame14 />
+      <Frame13 />
     </div>
   );
 }
@@ -5219,8 +5127,8 @@ function Container103() {
 function PricingDetails1() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
-      <Container102 />
-      <Container103 />
+      <Container100 />
+      <Container101 />
     </div>
   );
 }
@@ -5376,7 +5284,7 @@ function Content17() {
   );
 }
 
-function Container101() {
+function Container99() {
   return (
     <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
@@ -5397,7 +5305,7 @@ function PricingCard() {
       <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-white tracking-[0.6px] whitespace-nowrap">Most popular</p>
       <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
-          <Container101 />
+          <Container99 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
@@ -5405,7 +5313,56 @@ function PricingCard() {
   );
 }
 
-function Container105() {
+function PricingCardModified({ calculatePrice }: { calculatePrice: (price: number) => string }) {
+  const discountedPrice = calculatePrice(69.99);
+  return (
+    <div className="bg-[#1877f2] content-stretch flex flex-col gap-[8px] items-center justify-center pb-[2px] pt-[8px] px-[2px] relative rounded-[16px] shrink-0" data-name="PricingCard">
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-white tracking-[0.6px] whitespace-nowrap">Most popular</p>
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
+          <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+            <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
+              <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-7.97%] w-[100.18%]" src={imgImage} />
+                </div>
+              </div>
+              <div className="relative shrink-0 w-full" data-name="Content">
+                <div className="content-stretch flex flex-col gap-[16px] items-start pb-[48px] pt-[16px] px-[20px] relative size-full">
+                  <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+                    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+                      <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
+                        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Agency</p>
+                      </div>
+                      <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
+                        <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$89</p>
+                        <div className="content-stretch flex items-end justify-center relative shrink-0">
+                          <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
+                          <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-[#1877f2] h-[40px] relative rounded-[120px] shrink-0 w-full" data-name="Button">
+                      <div className="flex flex-row items-center justify-center size-full">
+                        <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
+                          <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">Get Loraloop</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <Features1 />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      </div>
+    </div>
+  );
+}
+
+function Container103() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Agency</p>
@@ -5413,7 +5370,7 @@ function Container105() {
   );
 }
 
-function Frame15() {
+function Frame14() {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">$69.99</p>
@@ -5422,11 +5379,11 @@ function Frame15() {
   );
 }
 
-function Container106() {
+function Container104() {
   return (
     <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
       <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$89</p>
-      <Frame15 />
+      <Frame14 />
     </div>
   );
 }
@@ -5434,8 +5391,8 @@ function Container106() {
 function PricingDetails2() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
-      <Container105 />
-      <Container106 />
+      <Container103 />
+      <Container104 />
     </div>
   );
 }
@@ -5592,7 +5549,48 @@ function Content18() {
   );
 }
 
-function Container104() {
+function Container102Modified({ calculatePrice }: { calculatePrice: (price: number) => string }) {
+  const discountedPrice = calculatePrice(29.99);
+  return (
+    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
+        <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.15%] w-[100.18%]" src={imgImage} />
+          </div>
+        </div>
+        <div className="relative shrink-0 w-full" data-name="Content">
+          <div className="content-stretch flex flex-col gap-[16px] items-start pb-[48px] pt-[16px] px-[20px] relative size-full">
+            <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+              <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+                <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
+                  <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Pro</p>
+                </div>
+                <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
+                  <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$49</p>
+                  <div className="content-stretch flex items-end justify-center relative shrink-0">
+                    <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
+                    <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-[#1877f2] h-[40px] relative rounded-[120px] shrink-0 w-full" data-name="Button">
+                <div className="flex flex-row items-center justify-center size-full">
+                  <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
+                    <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">Get Loraloop</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Features1 />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Container102() {
   return (
     <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
@@ -5607,7 +5605,7 @@ function Container104() {
   );
 }
 
-function Container108() {
+function Container106() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Enterprise</p>
@@ -5615,7 +5613,7 @@ function Container108() {
   );
 }
 
-function Frame16() {
+function Frame15() {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">$149.99</p>
@@ -5624,11 +5622,11 @@ function Frame16() {
   );
 }
 
-function Container109() {
+function Container107() {
   return (
     <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
       <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$199</p>
-      <Frame16 />
+      <Frame15 />
     </div>
   );
 }
@@ -5636,8 +5634,8 @@ function Container109() {
 function PricingDetails3() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
-      <Container108 />
-      <Container109 />
+      <Container106 />
+      <Container107 />
     </div>
   );
 }
@@ -5794,7 +5792,49 @@ function Content19() {
   );
 }
 
-function Container107() {
+function Container105Modified({ calculatePrice }: { calculatePrice: (price: number) => string }) {
+  const discountedPrice = calculatePrice(149.99);
+  return (
+    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
+        <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-7.97%] w-[100.18%]" src={imgImage} />
+          </div>
+        </div>
+        <div className="relative shrink-0 w-full" data-name="Content">
+          <div className="content-stretch flex flex-col gap-[16px] items-start pb-[48px] pt-[16px] px-[20px] relative size-full">
+            <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+              <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+                <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
+                  <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Enterprise</p>
+                </div>
+                <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
+                  <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$199</p>
+                  <div className="content-stretch flex items-end justify-center relative shrink-0">
+                    <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
+                    <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[40px] relative rounded-[120px] shrink-0 w-full" data-name="Button">
+                <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[120px]" />
+                <div className="flex flex-row items-center justify-center size-full">
+                  <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
+                    <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Features2 />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Container105() {
   return (
     <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
@@ -5809,25 +5849,25 @@ function Container107() {
   );
 }
 
-function Frame12() {
+function Frame11() {
   return (
     <div className="content-stretch flex gap-[20px] items-end relative shrink-0">
       <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
-          <Container98 />
+          <Container96 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
       <PricingCard />
       <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
-          <Container104 />
+          <Container102 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
       <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
-          <Container107 />
+          <Container105 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
@@ -5835,31 +5875,61 @@ function Frame12() {
   );
 }
 
-function Frame27({ className }: { className?: string }) {
+function Frame11Modified({ calculatePrice }: { calculatePrice: (price: number) => string }) {
+  return (
+    <div className="content-stretch flex gap-[20px] items-end relative shrink-0">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+        <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
+          <Container96Modified calculatePrice={calculatePrice} />
+        </div>
+        <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      </div>
+      <PricingCardModified calculatePrice={calculatePrice} />
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+        <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
+          <Container102Modified calculatePrice={calculatePrice} />
+        </div>
+        <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      </div>
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+        <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
+          <Container105Modified calculatePrice={calculatePrice} />
+        </div>
+        <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      </div>
+    </div>
+  );
+}
+
+function Frame26({ className }: { className?: string }) {
+  const [selectedPlan, setSelectedPlan] = useState<'month' | '12month' | '3month'>('month');
+
+  const getDiscount = () => {
+    switch (selectedPlan) {
+      case '12month': return 0.30;
+      case '3month': return 0.15;
+      default: return 0;
+    }
+  };
+
+  const calculatePrice = (basePrice: number) => {
+    const discount = getDiscount();
+    return (basePrice * (1 - discount)).toFixed(2);
+  };
+
   return (
     <div className={className || "content-stretch flex flex-col gap-[42px] items-center relative shrink-0"}>
+      <Frame25Modified selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
+      <Frame11Modified calculatePrice={calculatePrice} />
+    </div>
+  );
+}
+
+function Price() {
+  return (
+    <div className="relative bg-black w-full flex flex-col gap-16 md:gap-[120px] items-center overflow-clip px-4 md:px-12 py-12 md:py-[80px]" data-name="Price">
+      <Frame22 />
       <Frame26 />
-      <Frame12 />
-    </div>
-  );
-}
-
-function PriceAndFaq() {
-  return (
-    <div className="bg-black content-stretch flex flex-col gap-[120px] items-center overflow-clip pl-[45px] pr-[47px] py-[80px] relative shrink-0 w-[1282px]" data-name="Price and FAQ">
-      <Frame23 />
-      <Frame27 />
-    </div>
-  );
-}
-
-function Container3() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container 3">
-      <App />
-      <DesignLora />
-      <App1 />
-      <PriceAndFaq />
     </div>
   );
 }
@@ -5868,12 +5938,12 @@ function Cotnet4() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center" data-name="Cotnet">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">Frequently Asked Questions</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[#6b7280] text-[20px] w-[min-content]">Watch how Loraloop manage marketing end to end</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
 }
 
-function Container111() {
+function Container109() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-w-px not-italic relative" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] h-[22px] leading-[28px] opacity-88 relative shrink-0 text-[#1f2937] text-[20px] w-full">What is Loraloops AI employee?</p>
@@ -5885,7 +5955,7 @@ function Container111() {
   );
 }
 
-function Frame28() {
+function Frame27() {
   return (
     <div className="bg-[#1f2937] content-stretch flex items-center p-[2px] relative rounded-[32px] shrink-0">
       <div className="relative shrink-0 size-[20px]" data-name="chevron-up">
@@ -5904,8 +5974,36 @@ function Question() {
     <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="Question">
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[0.819px] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <div className="content-stretch flex gap-[32px] items-baseline p-[24px] relative size-full">
-        <Container111 />
-        <Frame28 />
+        <Container109 />
+        <Frame27 />
+      </div>
+    </div>
+  );
+}
+
+function Frame28() {
+  return (
+    <div className="bg-[#1f2937] content-stretch flex items-center p-[2px] relative rounded-[32px] shrink-0">
+      <div className="relative shrink-0 size-[20px]" data-name="chevron-down">
+        <div className="absolute inset-[33.33%_20.83%]" data-name="path">
+          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.6667 6.66667">
+            <path clipRule="evenodd" d={svgPaths.p2a5900} fill="var(--fill-0, white)" fillRule="evenodd" id="path" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Container110() {
+  return (
+    <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="Container">
+      <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[0.819px] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      <div className="flex flex-row items-center size-full">
+        <div className="content-stretch flex gap-[32px] items-center p-[24px] relative size-full">
+          <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] h-[22px] leading-[28px] min-w-px not-italic opacity-88 relative text-[#1f2937] text-[20px]">What can I use Loraloop AI employees for?</p>
+          <Frame28 />
+        </div>
       </div>
     </div>
   );
@@ -5925,13 +6023,13 @@ function Frame29() {
   );
 }
 
-function Container112() {
+function Container111() {
   return (
     <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[0.819px] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[32px] items-center p-[24px] relative size-full">
-          <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] h-[22px] leading-[28px] min-w-px not-italic opacity-88 relative text-[#1f2937] text-[20px]">What can I use Loraloop AI employees for?</p>
+          <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] h-[22px] leading-[28px] min-w-px not-italic opacity-88 relative text-[#1f2937] text-[20px]">Can AI employees replace human employees?</p>
           <Frame29 />
         </div>
       </div>
@@ -5939,57 +6037,25 @@ function Container112() {
   );
 }
 
-function Frame30() {
-  return (
-    <div className="bg-[#1f2937] content-stretch flex items-center p-[2px] relative rounded-[32px] shrink-0">
-      <div className="relative shrink-0 size-[20px]" data-name="chevron-down">
-        <div className="absolute inset-[33.33%_20.83%]" data-name="path">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.6667 6.66667">
-            <path clipRule="evenodd" d={svgPaths.p2a5900} fill="var(--fill-0, white)" fillRule="evenodd" id="path" />
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Container113() {
-  return (
-    <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[0.819px] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[32px] items-center p-[24px] relative size-full">
-          <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] h-[22px] leading-[28px] min-w-px not-italic opacity-88 relative text-[#1f2937] text-[20px]">Can AI employees replace human employees?</p>
-          <Frame30 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Container110() {
+function Container108() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-[1000px]" data-name="Container">
-      {children || (
-        <>
-          <Question />
-          <Container112 />
-          <Container113 />
-        </>
-      )}
+      <Question />
+      <Container110 />
+      <Container111 />
     </div>
   );
 }
-type PriceAndFaq1Props = {
+type FaqProps = {
   className?: string;
   children?: React.ReactNode | null;
 };
 
-function PriceAndFaq1({ className, children = null }: PriceAndFaq1Props) {
+function Faq({ className, children = null }: FaqProps) {
   return (
-    <div className={className || "bg-white content-stretch flex flex-col gap-[48px] items-center overflow-clip py-[80px] relative shrink-0 w-[1280px]"} data-name="Price and FAQ">
+    <div className={className || "relative bg-white w-full flex flex-col gap-8 md:gap-[48px] items-center overflow-clip py-12 md:py-[80px] px-4"} data-name="FAQ">
       <Cotnet4 />
-      <Container110 />
+      <Container108 />
     </div>
   );
 }
@@ -6022,11 +6088,11 @@ function CallToActionGroup() {
   );
 }
 
-function MainContent1() {
+function Outro() {
   return (
-    <div className="bg-black content-stretch flex flex-col gap-[80px] items-center overflow-clip pt-[80px] relative shrink-0 w-[1280px]" data-name="Main Content">
+    <div className="relative bg-black w-full flex flex-col gap-12 md:gap-[80px] items-center overflow-clip pt-12 md:pt-[80px] px-4" data-name="Outro">
       <CallToActionGroup />
-      <div className="h-[258px] relative shrink-0 w-[1002px]" data-name="image 172">
+      <div className="h-[150px] md:h-[258px] relative shrink-0 w-full max-w-[1002px]" data-name="image 172">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-[199.29%] left-0 max-w-none top-[-3.87%] w-full" src={imgImage172} />
         </div>
@@ -6035,7 +6101,7 @@ function MainContent1() {
   );
 }
 
-function Container114() {
+function Container112() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] w-full">Agents</p>
@@ -6053,7 +6119,7 @@ function Container114() {
   );
 }
 
-function Container115() {
+function Container113() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] h-full items-start min-w-px not-italic relative whitespace-nowrap" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px]">Company</p>
@@ -6064,24 +6130,24 @@ function Container115() {
   );
 }
 
-function Container116() {
+function Container114() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Blog</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 1</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 2</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog3</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 4</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 5</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 6</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 7</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 8</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 1</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 2</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog3</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 4</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 5</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 6</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 7</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 8</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] w-[169px]">View more</p>
     </div>
   );
 }
 
-function Container117() {
+function Container115() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] h-full items-start min-w-px not-italic relative" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Free AI Tools</p>
@@ -6100,20 +6166,20 @@ function Container117() {
   );
 }
 
-function Frame25() {
+function Frame24() {
   return (
     <div className="content-stretch flex gap-[24px] h-[468px] items-center relative shrink-0 w-full">
+      <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
+        <Container112 />
+      </div>
+      <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
+        <Container113 />
+      </div>
       <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
         <Container114 />
       </div>
       <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
         <Container115 />
-      </div>
-      <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
-        <Container116 />
-      </div>
-      <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
-        <Container117 />
       </div>
     </div>
   );
@@ -6161,7 +6227,7 @@ function LinkFacebook1() {
   );
 }
 
-function Container118() {
+function Container116() {
   return (
     <div className="content-stretch flex gap-[8px] h-[43.996px] items-start relative shrink-0" data-name="Container">
       <LinkYouTube />
@@ -6171,54 +6237,27 @@ function Container118() {
   );
 }
 
-function Frame9() {
+function Frame65() {
   return (
-    <div className="content-stretch flex gap-[7px] items-center justify-center relative shrink-0 w-[375px]">
-      <div className="h-[58.26px] relative shrink-0 w-[64.864px]">
-        <div className="absolute inset-[-8.18%_-7.34%_-8.17%_-7.34%]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 74.3875 67.7855">
-            <path d={svgPaths.p7344f00} id="Vector 1" stroke="var(--stroke-0, black)" strokeLinecap="round" strokeWidth="9.52381" />
-          </svg>
-        </div>
-      </div>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[100px] not-italic relative shrink-0 text-[78.571px] text-black text-center whitespace-nowrap">oraLoop</p>
-    </div>
-  );
-}
-
-function Frame66() {
-  return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0">
-      <Frame9 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Copyright © 2026 Orimoretail Pvt. Ltd. All rights reserved.</p>
+    <div className="content-stretch flex flex-col items-center not-italic relative shrink-0 whitespace-nowrap">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[100px] relative shrink-0 text-[78.571px] text-black text-center">LoraLoop</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#6b7280] text-[16px]">Copyright © 2026 Orimoretail Pvt. Ltd. All rights reserved.</p>
     </div>
   );
 }
 
 function Footer({ className }: { className?: string }) {
   return (
-    <div className={className || "bg-white content-stretch flex flex-col gap-[32px] items-center justify-center p-[80px] relative shrink-0 w-[1280px]"} data-name="Footer">
+    <div className={className || "relative bg-white w-full flex flex-col gap-6 md:gap-[32px] items-center justify-center p-4 md:p-12 lg:p-[80px]"} data-name="Footer">
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-solid border-t inset-0 pointer-events-none" />
-      <Frame25 />
-      <Container118 />
-      <Frame66 />
+      <Frame24 />
+      <Container116 />
+      <Frame65 />
     </div>
   );
 }
 
-function Container() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-[1280px]" data-name="Container">
-      <PageContainer />
-      <Container3 />
-      <PriceAndFaq1 />
-      <MainContent1 />
-      <Footer />
-    </div>
-  );
-}
-
-function Frame10() {
+function Frame9() {
   return (
     <div className="content-stretch flex gap-[1.773px] items-center justify-center relative shrink-0">
       <div className="h-[14.459px] relative shrink-0 w-[16.098px]">
@@ -6236,30 +6275,94 @@ function Frame10() {
 function Wordmark() {
   return (
     <div className="content-stretch flex flex-col items-start py-[8px] relative shrink-0 w-[113px]" data-name="Wordmark 3">
-      <Frame10 />
+      <Frame9 />
     </div>
   );
 }
 
-function Frame7() {
+const aiAgents = [
+  { name: "Lora", role: "AI Marketing Lead", img: imgLora2 },
+  { name: "Sam", role: "AI Strategist", img: imgFeatureImageSmall },
+  { name: "Sophie", role: "AI SEO/GEO Manager", img: imgFeatureImageSmall1 },
+  { name: "Clara", role: "AI Content Writer", img: imgGeminiGeneratedImageBewxcwbewxcwbewx2 },
+  { name: "Steve", role: "AI Visual Designer", img: imgFeatureImage },
+  { name: "Sarah", role: "AI Social Media Manager", img: imgFeatureImageSmall3 },
+];
+
+function AIEmployeesDropdown() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="content-stretch flex items-center pt-[4px] relative shrink-0">
-      <div className="relative shrink-0 size-[16px]" data-name="chevron-down">
-        <div className="absolute inset-[33.33%_20.83%]" data-name="path">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.33333 5.33333">
-            <path clipRule="evenodd" d={svgPaths.p23cd8f00} fill="var(--fill-0, #40566D)" fillRule="evenodd" id="path" />
-          </svg>
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      {/* Trigger button */}
+      <div
+        className="content-stretch flex gap-[2px] items-center justify-center p-[8px] relative shrink-0 cursor-pointer select-none"
+        onClick={() => setOpen(!open)}
+      >
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">AI Employees</p>
+        <div className="content-stretch flex items-center pt-[4px] relative shrink-0">
+          <div className="relative shrink-0 size-[16px]" data-name="chevron-down">
+            <div className="absolute inset-[33.33%_20.83%]" data-name="path">
+              <svg
+                className="absolute block inset-0 size-full"
+                fill="none"
+                preserveAspectRatio="none"
+                viewBox="0 0 9.33333 5.33333"
+                style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s ease' }}
+              >
+                <path clipRule="evenodd" d={svgPaths.p23cd8f00} fill="var(--fill-0, #40566D)" fillRule="evenodd" id="path" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
 
-function Frame1() {
-  return (
-    <div className="content-stretch flex gap-[2px] items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">AI Employees</p>
-      <Frame7 />
+      {/* Dropdown panel */}
+      {open && (
+        <div
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-[6px] bg-white z-[100]"
+          style={{
+            width: 480,
+            height: 216,
+            borderRadius: 8,
+            border: '1px solid #e5e7eb',
+            boxShadow: '0px 8px 24px rgba(0,0,0,0.10)',
+            padding: '16px',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gridTemplateRows: '1fr 1fr 1fr',
+            rowGap: 8,
+            columnGap: 16,
+            boxSizing: 'border-box',
+          }}
+        >
+          {aiAgents.map((agent) => (
+            <div
+              key={agent.name}
+              className="flex items-center gap-[10px] cursor-pointer hover:bg-[#f9fafc] rounded-[8px] px-[8px] py-[4px] transition-colors"
+            >
+              <div
+                className="relative shrink-0"
+                style={{ width: 36, height: 36, borderRadius: '50%', overflow: 'hidden', flexShrink: 0 }}
+              >
+                <img
+                  alt={agent.name}
+                  src={agent.img}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+              <div className="flex flex-col min-w-0">
+                <p className="font-['Satoshi:Bold',sans-serif] text-[13px] leading-[18px] text-[#1f2937] whitespace-nowrap overflow-hidden text-ellipsis">{agent.role}</p>
+                <p className="font-['General_Sans:Medium',sans-serif] text-[11px] leading-[16px] text-[#6b7280] whitespace-nowrap">{agent.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -6291,7 +6394,7 @@ function Frame4() {
 function Frame6() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
-      <Frame1 />
+      <AIEmployeesDropdown />
       <Frame3 />
       <Frame5 />
       <Frame4 />
@@ -6301,9 +6404,11 @@ function Frame6() {
 
 function Frame() {
   return (
-    <div className="content-stretch flex gap-[48px] items-center relative shrink-0">
+    <div className="content-stretch flex gap-4 md:gap-[48px] items-center relative shrink-0">
       <Wordmark />
-      <Frame6 />
+      <div className="hidden md:flex">
+        <Frame6 />
+      </div>
     </div>
   );
 }
@@ -6318,10 +6423,12 @@ function Frame2() {
 
 function Frame8() {
   return (
-    <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <Frame2 />
-      <div className="bg-[#1877f2] content-stretch flex gap-[4px] h-[40px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
+    <div className="content-stretch flex gap-2 md:gap-[12px] items-center relative shrink-0">
+      <div className="hidden md:flex">
+        <Frame2 />
+      </div>
+      <div className="bg-[#1877f2] content-stretch flex gap-[4px] h-[36px] md:h-[40px] items-center justify-center px-4 md:px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[13px] md:text-[14px] text-white whitespace-nowrap">Get Start</p>
       </div>
     </div>
   );
@@ -6329,11 +6436,18 @@ function Frame8() {
 
 export default function LandingPage() {
   return (
-    <div className="bg-white content-stretch flex gap-[10px] items-center relative size-full" data-name="landing Page">
-      <Container />
-      <div className="-translate-x-1/2 absolute backdrop-blur-[8px] bg-[rgba(243,246,251,0.9)] content-stretch flex items-center justify-between left-1/2 px-[24px] py-[4px] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] top-[32px] w-[1120px]" data-name="Header">
-        <Frame />
-        <Frame8 />
+    <div className="bg-black relative w-full min-h-screen overflow-x-hidden" data-name="landing Page">
+      <div className="flex flex-col w-full">
+        <IntroSection />
+        <VideoSection />
+        <AiAgents />
+        <HowItWorks />
+        <Integration />
+        <Solution />
+        <Price />
+        <Faq />
+        <Outro />
+        <Footer />
       </div>
     </div>
   );

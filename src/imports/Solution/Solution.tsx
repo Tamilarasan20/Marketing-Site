@@ -95,7 +95,7 @@ function Frame15() {
 
 function Header({ className }: { className?: string }) {
   return (
-    <div className={className || "content-stretch flex flex-col gap-[40px] items-center pb-[40px] px-[80px] relative shrink-0 w-[1280px]"} data-name="header">
+    <div className={className || "content-stretch flex flex-col gap-[40px] items-center pb-[40px] px-[80px] relative shrink-0 w-full max-w-[1280px] px-4"} data-name="header">
       <Frame39 />
       <Frame15 />
     </div>
@@ -107,7 +107,7 @@ function Frame41() {
     <div className="relative shrink-0 w-full">
       <div className="flex flex-col items-center justify-center size-full">
         <div className="content-stretch flex flex-col gap-[10px] items-center justify-center px-[80px] py-[40px] relative size-full">
-          <div className="absolute h-[901px] left-0 top-0 w-[1280px]" data-name="image 190">
+          <div className="absolute h-[901px] left-0 top-0 w-full max-w-[1280px] px-4" data-name="image 190">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage190} />
           </div>
           <div className="h-[660px] pointer-events-none relative rounded-[32px] shrink-0 w-[1020px]" data-name="image 189">
@@ -2693,12 +2693,12 @@ function Group3() {
   return (
     <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-[calc(50%-1.29px)] top-[calc(50%+3.5px)]">
       <Container26 />
-      <div className="-translate-y-1/2 absolute flex h-[346px] items-center justify-center right-[-9px] top-1/2 w-[280px]">
+      <div className="-translate-y-1/2 absolute flex h-[346px] items-center justify-center right-[-9px] top-1/2 w-full">
         <div className="-scale-y-100 flex-none rotate-180">
-          <div className="bg-gradient-to-r from-[#e1f0fc] from-[13.462%] h-[346px] to-[rgba(249,250,252,0)] w-[280px]" />
+          <div className="bg-gradient-to-r from-[#e1f0fc] from-[13.462%] h-[346px] to-[rgba(249,250,252,0)] w-full" />
         </div>
       </div>
-      <div className="-translate-y-1/2 absolute bg-gradient-to-r from-[#faf4fd] from-[16%] h-[353px] left-[-20px] to-[rgba(249,250,252,0)] top-[calc(50%+3.5px)] w-[280px]" />
+      <div className="-translate-y-1/2 absolute bg-gradient-to-r from-[#faf4fd] from-[16%] h-[353px] left-[-20px] to-[rgba(249,250,252,0)] top-[calc(50%+3.5px)] w-full" />
       <Group2 />
     </div>
   );
@@ -2741,7 +2741,7 @@ function DescriptionSection3() {
 
 function Frame25() {
   return (
-    <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] relative shrink-0 w-full">
+    <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-1 md:grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] relative shrink-0 w-full">
       <div className="bg-white col-1 justify-self-stretch relative rounded-[20px] row-1 self-start shrink-0" data-name="Contianer">
         <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full">
           <Slot />
@@ -2791,7 +2791,7 @@ function Cotnet() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center" data-name="Cotnet">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">Frequently Asked Questions</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[#6b7280] text-[20px] w-[min-content]">Watch how Loraloop manage marketing end to end</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px]  relative shrink-0 text-[#6b7280] text-[20px] ">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
 }
@@ -2892,7 +2892,7 @@ function Container33() {
 
 function Container30() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-[1000px]" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full max-w-[1000px] px-4" data-name="Container">
       <Question />
       <Container32 />
       <Container33 />
@@ -2919,7 +2919,7 @@ function TextGroupVertical() {
 
 function CallToActionGroup() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[740px]" data-name="Call to Action Group">
+    <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full max-w-[740px] px-4" data-name="Call to Action Group">
       <TextGroupVertical />
       <div className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 w-[140px]" data-name="Button">
         <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
@@ -2930,7 +2930,7 @@ function CallToActionGroup() {
 
 function MainContent() {
   return (
-    <div className="bg-black content-stretch flex flex-col gap-[80px] items-center overflow-clip pt-[80px] relative shrink-0 w-[1280px]" data-name="Main Content">
+    <div className="bg-black content-stretch flex flex-col gap-[80px] items-center overflow-clip pt-[80px] relative shrink-0 w-full max-w-[1280px] px-4" data-name="Main Content">
       <CallToActionGroup />
       <div className="h-[258px] relative shrink-0 w-[1002px]" data-name="image 172">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -2974,14 +2974,14 @@ function Container36() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Blog</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 1</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 2</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog3</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 4</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 5</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 6</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 7</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 8</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 1</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 2</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog3</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 4</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 5</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 6</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 7</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 8</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] w-[169px]">View more</p>
     </div>
   );
@@ -3079,7 +3079,7 @@ function Container38() {
 
 function Frame9() {
   return (
-    <div className="content-stretch flex gap-[7px] items-center justify-center relative shrink-0 w-[375px]">
+    <div className="content-stretch flex gap-[7px] items-center justify-center relative shrink-0 w-full max-w-full">
       <div className="h-[58.26px] relative shrink-0 w-[64.864px]">
         <div className="absolute inset-[-8.18%_-7.34%_-8.17%_-7.34%]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 74.3875 67.7855">
@@ -3103,17 +3103,17 @@ function Frame68() {
 
 function Frame38() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 top-[128px] w-[1280px]">
+    <div className="absolute content-stretch flex flex-col items-start left-0 top-[128px] w-full max-w-[1280px] px-4">
       <Header />
       <Frame41 />
       <Frame37 />
       <Frame24 />
-      <div className="bg-white content-stretch flex flex-col gap-[48px] items-center overflow-clip py-[80px] relative shrink-0 w-[1280px]" data-name="Price and FAQ">
+      <div className="bg-white content-stretch flex flex-col gap-[48px] items-center overflow-clip py-[80px] relative shrink-0 w-full max-w-[1280px] px-4" data-name="Price and FAQ">
         <Cotnet />
         <Container30 />
       </div>
       <MainContent />
-      <div className="bg-white content-stretch flex flex-col gap-[32px] items-center justify-center p-[80px] relative shrink-0 w-[1280px]" data-name="Footer">
+      <div className="bg-white content-stretch flex flex-col gap-[32px] items-center justify-center p-[80px] relative shrink-0 w-full max-w-[1280px] px-4" data-name="Footer">
         <div aria-hidden="true" className="absolute border-[#e5e7eb] border-solid border-t inset-0 pointer-events-none" />
         <Frame11 />
         <Container38 />
@@ -3236,7 +3236,7 @@ export default function Solution() {
   return (
     <div className="bg-white relative size-full" data-name="Solution">
       <Frame38 />
-      <div className="-translate-x-1/2 absolute backdrop-blur-[8px] bg-[rgba(243,246,251,0.9)] content-stretch flex items-center justify-between left-1/2 px-[24px] py-[4px] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] top-[32px] w-[1120px]" data-name="Header">
+      <div className="-translate-x-1/2 absolute backdrop-blur-[8px] bg-[rgba(243,246,251,0.9)] content-stretch flex items-center justify-between left-1/2 px-[24px] py-[4px] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] top-[32px] w-full max-w-[1120px] px-4" data-name="Header">
         <Frame />
         <Frame8 />
       </div>

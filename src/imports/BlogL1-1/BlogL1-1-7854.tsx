@@ -18,8 +18,8 @@ function Container() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start not-italic relative shrink-0 w-[530px]" data-name="Container">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[20px] relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">Business</p>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[56px] min-w-full relative shrink-0 text-[#1f2937] text-[48px] tracking-[-1.2px] w-[min-content]">8 Best Relevance AI Alternatives and Competitors in 2026</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, and real-world business use cases.</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[56px]  relative shrink-0 text-[#1f2937] text-[48px] tracking-[-1.2px] ">8 Best Relevance AI Alternatives and Competitors in 2026</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, and real-world business use cases.</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
     </div>
   );
@@ -218,7 +218,7 @@ function Container6() {
 
 function BlogPostsGrid() {
   return (
-    <div className="gap-x-[32px] gap-y-[32px] grid grid-cols-[repeat(3,minmax(0,1fr))] grid-rows-[repeat(1,fit-content(100%))] relative shrink-0 w-full" data-name="BlogPostsGrid">
+    <div className="gap-x-[32px] gap-y-[32px] grid grid-cols-1 lg:grid-cols-[repeat(3,minmax(0,1fr))] grid-rows-[repeat(1,fit-content(100%))] relative shrink-0 w-full" data-name="BlogPostsGrid">
       <BlogPostCard />
       <div className="col-2 content-stretch flex flex-col gap-[16px] items-start justify-self-stretch relative rounded-[16px] row-1 self-start shrink-0" data-name="BlogPostCard">
         <Image2 />
@@ -339,7 +339,7 @@ function Container9() {
 
 function BlogPostsGrid1() {
   return (
-    <div className="gap-x-[32px] gap-y-[32px] grid grid-cols-[repeat(3,minmax(0,1fr))] grid-rows-[repeat(1,fit-content(100%))] relative shrink-0 w-full" data-name="BlogPostsGrid">
+    <div className="gap-x-[32px] gap-y-[32px] grid grid-cols-1 lg:grid-cols-[repeat(3,minmax(0,1fr))] grid-rows-[repeat(1,fit-content(100%))] relative shrink-0 w-full" data-name="BlogPostsGrid">
       <div className="col-1 content-stretch flex flex-col gap-[16px] items-start justify-self-stretch relative rounded-[16px] row-1 self-start shrink-0" data-name="BlogPostCard">
         <Image4 />
         <Container7 />
@@ -489,14 +489,14 @@ function Container12() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Blog</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 1</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 2</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog3</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 4</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 5</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 6</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 7</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 8</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 1</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 2</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog3</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 4</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 5</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 6</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 7</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 8</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] w-[169px]">View more</p>
     </div>
   );
@@ -594,7 +594,7 @@ function Container14() {
 
 function Frame9() {
   return (
-    <div className="content-stretch flex gap-[7px] items-center justify-center relative shrink-0 w-[375px]">
+    <div className="content-stretch flex gap-[7px] items-center justify-center relative shrink-0 w-full max-w-full">
       <div className="h-[58.26px] relative shrink-0 w-[64.864px]">
         <div className="absolute inset-[-8.18%_-7.34%_-8.17%_-7.34%]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 74.3875 67.7855">
@@ -618,10 +618,10 @@ function Frame28() {
 
 function Frame17() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-0 top-[96px] w-[1280px]">
+    <div className="absolute content-stretch flex flex-col items-start left-0 top-[96px] w-full max-w-[1280px] px-4">
       <HeroSection />
       <UiDesignCreation />
-      <div className="bg-white content-stretch flex flex-col gap-[32px] items-center justify-center p-[80px] relative shrink-0 w-[1280px]" data-name="Footer">
+      <div className="bg-white content-stretch flex flex-col gap-[32px] items-center justify-center p-[80px] relative shrink-0 w-full max-w-[1280px] px-4" data-name="Footer">
         <div aria-hidden="true" className="absolute border-[#e5e7eb] border-solid border-t inset-0 pointer-events-none" />
         <Frame19 />
         <Container14 />
@@ -744,7 +744,7 @@ export default function BlogL() {
   return (
     <div className="bg-white relative size-full" data-name="Blog L1">
       <Frame17 />
-      <div className="-translate-x-1/2 absolute backdrop-blur-[8px] bg-[rgba(243,246,251,0.9)] content-stretch flex items-center justify-between left-1/2 px-[24px] py-[4px] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] top-[32px] w-[1120px]" data-name="Header">
+      <div className="-translate-x-1/2 absolute backdrop-blur-[8px] bg-[rgba(243,246,251,0.9)] content-stretch flex items-center justify-between left-1/2 px-[24px] py-[4px] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] top-[32px] w-full max-w-[1120px] px-4" data-name="Header">
         <Frame />
         <Frame8 />
       </div>

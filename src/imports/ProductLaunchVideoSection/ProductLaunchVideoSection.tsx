@@ -14,9 +14,9 @@ import imgFeatureImage from "./81459e21086bbb45f043de724414eb6c6a228454.png";
 
 function Cotnet() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-[740px]" data-name="Cotnet">
+    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">See it in action</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[#374151] text-[20px] w-[min-content]">Watch how Loraloop manage marketing end to end</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px]  relative shrink-0 text-[#374151] text-[20px] ">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
 }
@@ -40,7 +40,7 @@ function VideoSection() {
 
 function Cotnet1() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center not-italic relative shrink-0 text-center w-[740px]" data-name="Cotnet">
+    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[0] relative shrink-0 text-[#9ca3af] text-[20px] w-full whitespace-pre-wrap">
         <span className="leading-[28px]">{`You don’t need a large team to grow a business. Loraloop provides AI employees for marketing that handle daily work. From planning to execution, work gets done efficiently, 24/7.  `}</span>
@@ -65,8 +65,8 @@ function TextGroupVertical() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-white tracking-[-0.48px] w-[min-content]">Identify what’s trending and what my competitors are doing</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-80 relative shrink-0 text-[16px] text-white w-[min-content]">Sam analyzes market trends and competitor actions. He identifies which content types or topics will help me grow.</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-white tracking-[-0.48px] ">Identify what’s trending and what my competitors are doing</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-80 relative shrink-0 text-[16px] text-white ">Sam analyzes market trends and competitor actions. He identifies which content types or topics will help me grow.</p>
     </div>
   );
 }
@@ -125,8 +125,8 @@ function TextGroupVertical1() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM1 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content]">Optimize my content for SEO and GEO to improve discoverability.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content] whitespace-pre-wrap">{`Shopie create seo optimised contents so ranks well whether in google or GEO like chatgpt, claude,  people find me easily.`}</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Optimize my content for SEO and GEO to improve discoverability.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black  whitespace-pre-wrap">{`Shopie create seo optimised contents so ranks well whether in google or GEO like chatgpt, claude,  people find me easily.`}</p>
     </div>
   );
 }
@@ -186,7 +186,7 @@ function TextGroupVertical2() {
         <br aria-hidden="true" />
         Ad campaigns
       </p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]">Elena runs and scales my ad campaigns, making sure you get the best return on investment.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Elena runs and scales my ad campaigns, making sure you get the best return on investment.</p>
     </div>
   );
 }
@@ -245,8 +245,8 @@ function TextGroupVertical3() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM3 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-white tracking-[-1px] w-[min-content]">Plan a marketing strategy for my business</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-90 relative shrink-0 text-[16px] text-white w-[min-content]">{`Lora turn my business goals into a clear execution plan. lora breaks down what needs to be done, assigns tasks to the right team, right members, & keeps everything aligned so my marketing runs in my voice.`}</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-white tracking-[-1px] ">Plan a marketing strategy for my business</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-90 relative shrink-0 text-[16px] text-white ">{`Lora turn my business goals into a clear execution plan. lora breaks down what needs to be done, assigns tasks to the right team, right members, & keeps everything aligned so my marketing runs in my voice.`}</p>
     </div>
   );
 }
@@ -299,8 +299,8 @@ function TextGroupVertical4() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM4 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[#1f2937] text-[32px] tracking-[-0.48px] w-[min-content]">{`Schedule publish my posts, contents & Engage with audiences `}</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic relative shrink-0 text-[#1f2937] text-[16px] w-[min-content]">Sarah schedules my social posts, handles community engagement, replying and nurturing relationships.</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[#1f2937] text-[32px] tracking-[-0.48px] ">{`Schedule publish my posts, contents & Engage with audiences `}</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic relative shrink-0 text-[#1f2937] text-[16px] ">Sarah schedules my social posts, handles community engagement, replying and nurturing relationships.</p>
     </div>
   );
 }
@@ -355,7 +355,7 @@ function TextGroupVertical5() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[732px]" data-name="Text Group Vertical">
       <BadgeM5 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content]">Analyze every content performance and determine what’s working whats not</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Analyze every content performance and determine what’s working whats not</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full not-italic opacity-60 relative shrink-0 text-[18px] text-black w-[min-content] whitespace-pre-wrap">
         {`Nick tracks performs of contes, posts, ads. `}
         <br aria-hidden="true" />
@@ -419,8 +419,8 @@ function TextGroupVertical6() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM6 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content]">{`Writes content that attracts customers for blog, mail & more..`}</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]">Clara writes my blogs, emails, threads, newsletters, Social posts and other persuasive content that drives action.</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">{`Writes content that attracts customers for blog, mail & more..`}</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Clara writes my blogs, emails, threads, newsletters, Social posts and other persuasive content that drives action.</p>
     </div>
   );
 }
@@ -435,7 +435,7 @@ function LearnMoreContainer6() {
 
 function FeatureTextGroup6() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] items-start justify-center left-[32px] top-[40px] w-[280px]" data-name="Feature Text Group">
+    <div className="absolute content-stretch flex flex-col gap-[32px] items-start justify-center left-[32px] top-[40px] w-full" data-name="Feature Text Group">
       <TextGroupVertical6 />
       <LearnMoreContainer6 />
     </div>
@@ -471,8 +471,8 @@ function TextGroupVertical7() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-h-px relative w-full" data-name="Text Group Vertical">
       <BadgeM7 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content]">Create Videos for TikTok, Insta, YouTube etc.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]">Theo turns your ideas into engaging video content for your brand. plans and scripts your short-form videos for platforms like TikTok or YouTube, boosting engagement.</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Create Videos for TikTok, Insta, YouTube etc.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Theo turns your ideas into engaging video content for your brand. plans and scripts your short-form videos for platforms like TikTok or YouTube, boosting engagement.</p>
     </div>
   );
 }
@@ -487,7 +487,7 @@ function LearnMoreContainer7() {
 
 function FeatureTextGroup7() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] h-[380px] items-start left-[32px] top-[40px] w-[280px]" data-name="Feature Text Group">
+    <div className="absolute content-stretch flex flex-col gap-[32px] h-[380px] items-start left-[32px] top-[40px] w-full" data-name="Feature Text Group">
       <TextGroupVertical7 />
       <LearnMoreContainer7 />
     </div>
@@ -531,8 +531,8 @@ function TextGroupVertical8() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM8 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content]">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]">Steve Design scroll-stopping visuals and carousels that reflect my brand and grab attention in all platforms</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Steve Design scroll-stopping visuals and carousels that reflect my brand and grab attention in all platforms</p>
     </div>
   );
 }
@@ -547,7 +547,7 @@ function LearnMoreContainer8() {
 
 function FeatureTextGroup8() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[32px] h-[380px] items-start left-[32px] top-[40px] w-[280px]" data-name="Feature Text Group">
+    <div className="absolute content-stretch flex flex-col gap-[32px] h-[380px] items-start left-[32px] top-[40px] w-full" data-name="Feature Text Group">
       <TextGroupVertical8 />
       <LearnMoreContainer8 />
     </div>
@@ -585,7 +585,7 @@ function FeatureSection() {
 function FeatureHighlight() {
   return (
     <div className="relative shrink-0 w-full" data-name="Feature Highlight">
-      <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(5,fit-content(100%))] px-[80px] relative size-full">
+      <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-1 md:grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(5,fit-content(100%))] px-[80px] relative size-full">
         <FeatureImageLarge />
         <FeatureImageLarge1 />
         <FeatureImageLarge2 />

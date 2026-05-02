@@ -2328,12 +2328,12 @@ function Group3() {
   return (
     <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-[calc(50%-1.29px)] top-[calc(50%+3.5px)]">
       <Container15 />
-      <div className="-translate-y-1/2 absolute flex h-[346px] items-center justify-center right-[-9px] top-1/2 w-[280px]">
+      <div className="-translate-y-1/2 absolute flex h-[346px] items-center justify-center right-[-9px] top-1/2 w-full">
         <div className="-scale-y-100 flex-none rotate-180">
-          <div className="bg-gradient-to-r from-[#e1f0fc] from-[13.462%] h-[346px] to-[rgba(249,250,252,0)] w-[280px]" />
+          <div className="bg-gradient-to-r from-[#e1f0fc] from-[13.462%] h-[346px] to-[rgba(249,250,252,0)] w-full" />
         </div>
       </div>
-      <div className="-translate-y-1/2 absolute bg-gradient-to-r from-[#faf4fd] from-[16%] h-[353px] left-[-20px] to-[rgba(249,250,252,0)] top-[calc(50%+3.5px)] w-[280px]" />
+      <div className="-translate-y-1/2 absolute bg-gradient-to-r from-[#faf4fd] from-[16%] h-[353px] left-[-20px] to-[rgba(249,250,252,0)] top-[calc(50%+3.5px)] w-full" />
       <Group2 />
     </div>
   );
@@ -2376,7 +2376,7 @@ function DescriptionSection3() {
 
 function Frame8() {
   return (
-    <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] relative shrink-0 w-full">
+    <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-1 md:grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] relative shrink-0 w-full">
       <div className="bg-white col-1 justify-self-stretch relative rounded-[20px] row-1 self-start shrink-0" data-name="Contianer">
         <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full">
           <Slot />
@@ -2411,7 +2411,7 @@ function Frame8() {
 
 function Frame7() {
   return (
-    <div className="content-stretch flex flex-col gap-[69px] items-center relative shrink-0 w-[1120px]">
+    <div className="content-stretch flex flex-col gap-[69px] items-center relative shrink-0 w-full max-w-[1120px] px-4">
       <Frame1 />
       <Frame8 />
     </div>

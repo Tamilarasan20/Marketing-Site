@@ -19,7 +19,7 @@ function TextGroupVertical() {
 
 function CallToActionGroup() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[740px]" data-name="Call to Action Group">
+    <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full max-w-[740px] px-4" data-name="Call to Action Group">
       <TextGroupVertical />
       <div className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0" data-name="Button">
         <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>

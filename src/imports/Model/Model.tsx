@@ -284,7 +284,7 @@ export default function Model() {
       <div className="absolute bottom-[-134px] h-[537px] right-[249px] w-[786px]" data-name="Banner Image Side Left" />
       <TextGroupVertical />
       <Slide />
-      <div className="-translate-x-1/2 absolute backdrop-blur-[8px] bg-[rgba(243,246,251,0.9)] content-stretch flex items-center justify-between left-1/2 px-[24px] py-[4px] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] top-[32px] w-[1120px]" data-name="Header">
+      <div className="-translate-x-1/2 absolute backdrop-blur-[8px] bg-[rgba(243,246,251,0.9)] content-stretch flex items-center justify-between left-1/2 px-[24px] py-[4px] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] top-[32px] w-full max-w-[1120px] px-4" data-name="Header">
         <Frame />
         <Frame8 />
       </div>

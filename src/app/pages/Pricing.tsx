@@ -62,7 +62,7 @@ export default function Pricing() {
   return (
     <div className="bg-black min-h-screen pt-20 md:pt-32 pb-10 md:pb-20">
       <div className="px-6 md:px-20 py-10 md:py-20">
-        <div className="flex flex-col items-center gap-8 md:gap-[42px] max-w-[740px] mx-auto mb-12 md:mb-16">
+        <div className="flex flex-col items-center gap-8 md:gap-[42px] max-w-full max-w-full max-w-[740px] px-4 mx-auto mb-12 md:mb-16">
           <h1 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-3xl md:text-[40px] text-center text-white tracking-[-0.8px]">
             Pricing
           </h1>
@@ -111,9 +111,9 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-full max-w-full max-w-[1200px] px-4 mx-auto">
           {/* Solo Plan */}
-          <div className="bg-[#131313] rounded-2xl overflow-hidden w-full max-w-[280px] mx-auto">
+          <div className="bg-[#131313] rounded-2xl overflow-hidden w-full max-w-full mx-auto">
             <div className="h-[150px] overflow-hidden">
               <img
                 src={imgImage}
@@ -161,7 +161,7 @@ export default function Pricing() {
           </div>
 
           {/* Pro Plan - Most Popular */}
-          <div className="bg-[#1877f2] rounded-2xl p-[2px] w-full max-w-[280px] mx-auto">
+          <div className="bg-[#1877f2] rounded-2xl p-[2px] w-full max-w-full mx-auto">
             <div className="flex flex-col gap-2 items-center pt-2 pb-[2px]">
               <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-xs text-white tracking-[0.6px]">
                 Most popular
@@ -216,7 +216,7 @@ export default function Pricing() {
           </div>
 
           {/* Agency Plan */}
-          <div className="bg-[#131313] rounded-2xl overflow-hidden w-full max-w-[280px] mx-auto">
+          <div className="bg-[#131313] rounded-2xl overflow-hidden w-full max-w-full mx-auto">
             <div className="h-[150px] overflow-hidden">
               <img
                 src={imgImage}
@@ -264,7 +264,7 @@ export default function Pricing() {
           </div>
 
           {/* Enterprise Plan */}
-          <div className="bg-[#131313] rounded-2xl overflow-hidden w-full max-w-[280px] mx-auto">
+          <div className="bg-[#131313] rounded-2xl overflow-hidden w-full max-w-full mx-auto">
             <div className="h-[150px] overflow-hidden">
               <img
                 src={imgImage}

@@ -2330,12 +2330,12 @@ function Group3() {
   return (
     <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-[calc(50%-1.29px)] top-[calc(50%+3.5px)]">
       <Container15 />
-      <div className="-translate-y-1/2 absolute flex h-[346px] items-center justify-center right-[-9px] top-1/2 w-[280px]">
+      <div className="-translate-y-1/2 absolute flex h-[346px] items-center justify-center right-[-9px] top-1/2 w-full">
         <div className="-scale-y-100 flex-none rotate-180">
-          <div className="bg-gradient-to-r from-[#e1f0fc] from-[13.462%] h-[346px] to-[rgba(249,250,252,0)] w-[280px]" />
+          <div className="bg-gradient-to-r from-[#e1f0fc] from-[13.462%] h-[346px] to-[rgba(249,250,252,0)] w-full" />
         </div>
       </div>
-      <div className="-translate-y-1/2 absolute bg-gradient-to-r from-[#faf4fd] from-[16%] h-[353px] left-[-20px] to-[rgba(249,250,252,0)] top-[calc(50%+3.5px)] w-[280px]" />
+      <div className="-translate-y-1/2 absolute bg-gradient-to-r from-[#faf4fd] from-[16%] h-[353px] left-[-20px] to-[rgba(249,250,252,0)] top-[calc(50%+3.5px)] w-full" />
       <Group2 />
     </div>
   );
@@ -2378,7 +2378,7 @@ function DescriptionSection3() {
 
 function Frame20() {
   return (
-    <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] relative shrink-0 w-full">
+    <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-1 md:grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(2,fit-content(100%))] relative shrink-0 w-full">
       <div className="bg-white col-1 justify-self-stretch relative rounded-[20px] row-1 self-start shrink-0" data-name="Contianer">
         <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full">
           <Slot />
@@ -2413,7 +2413,7 @@ function Frame20() {
 
 function Frame19() {
   return (
-    <div className="content-stretch flex flex-col gap-[69px] items-center relative shrink-0 w-[1120px]">
+    <div className="content-stretch flex flex-col gap-[69px] items-center relative shrink-0 w-full max-w-[1120px] px-4">
       <Frame6 />
       <Frame20 />
     </div>
@@ -2570,10 +2570,10 @@ function App() {
 
 function Cotnet() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-[740px]" data-name="Cotnet">
+    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">WHY US?</p>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] whitespace-nowrap">Marketing that runs itself.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[#9ca3af] text-[20px] w-[min-content] whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] ">Marketing that runs itself.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px]  relative shrink-0 text-[#9ca3af] text-[20px]  whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
     </div>
   );
 }
@@ -3355,7 +3355,7 @@ function Container76() {
 
 function Container23() {
   return (
-    <div className="bg-[#18181b] h-[614px] relative rounded-[24px] shrink-0 w-[1120px]" data-name="Container">
+    <div className="bg-[#18181b] h-[614px] relative rounded-[24px] shrink-0 w-full max-w-[1120px] px-4" data-name="Container">
       <div className="content-stretch flex flex-col items-start overflow-clip p-px relative rounded-[inherit] size-full">
         <Container24 />
         <Container29 />
@@ -3457,7 +3457,7 @@ function Frame8() {
 
 function Frame11() {
   return (
-    <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[740px]">
+    <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[740px] px-4">
       <Cotnet1 />
       <Frame8 />
     </div>
@@ -3653,7 +3653,7 @@ function Content16() {
 
 function Container83() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -3854,7 +3854,7 @@ function Content17() {
 
 function Container86() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -3871,7 +3871,7 @@ function PricingCard() {
   return (
     <div className="bg-[#1877f2] content-stretch flex flex-col gap-[8px] items-center justify-center pb-[2px] pt-[8px] px-[2px] relative rounded-[16px] shrink-0" data-name="PricingCard">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-white tracking-[0.6px] whitespace-nowrap">Most popular</p>
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container86 />
         </div>
@@ -4070,7 +4070,7 @@ function Content18() {
 
 function Container89() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -4272,7 +4272,7 @@ function Content19() {
 
 function Container92() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -4287,21 +4287,21 @@ function Container92() {
 
 function Frame1() {
   return (
-    <div className="content-stretch flex gap-[20px] items-end relative shrink-0">
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+    <div className="content-stretch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] items-end relative shrink-0 w-full">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container83 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
       <PricingCard />
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container89 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container92 />
         </div>
@@ -4331,7 +4331,7 @@ function Cotnet2() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center" data-name="Cotnet">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">Frequently Asked Questions</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[#6b7280] text-[20px] w-[min-content]">Watch how Loraloop manage marketing end to end</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px]  relative shrink-0 text-[#6b7280] text-[20px] ">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
 }
@@ -4432,7 +4432,7 @@ function Container98() {
 
 function Container95() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-[1000px]" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full max-w-[1000px] px-4" data-name="Container">
       <Question />
       <Container97 />
       <Container98 />
@@ -4459,7 +4459,7 @@ function TextGroupVertical() {
 
 function CallToActionGroup() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[740px]" data-name="Call to Action Group">
+    <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full max-w-[740px] px-4" data-name="Call to Action Group">
       <TextGroupVertical />
       <div className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0" data-name="Button">
         <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>

@@ -78,7 +78,7 @@ function Frame16() {
 
 function Frame20() {
   return (
-    <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[740px]">
+    <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[740px] px-4">
       <Cotnet />
       <Frame16 />
     </div>
@@ -274,7 +274,7 @@ function Content() {
 
 function Container4() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -475,7 +475,7 @@ function Content1() {
 
 function Container7() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -492,7 +492,7 @@ function PricingCard() {
   return (
     <div className="bg-[#1877f2] content-stretch flex flex-col gap-[8px] items-center justify-center pb-[2px] pt-[8px] px-[2px] relative rounded-[16px] shrink-0" data-name="PricingCard">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-white tracking-[0.6px] whitespace-nowrap">Most popular</p>
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container7 />
         </div>
@@ -691,7 +691,7 @@ function Content2() {
 
 function Container10() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -893,7 +893,7 @@ function Content3() {
 
 function Container13() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -908,21 +908,21 @@ function Container13() {
 
 function Frame11() {
   return (
-    <div className="content-stretch flex gap-[20px] items-end relative shrink-0">
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+    <div className="content-stretch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] items-end relative shrink-0 w-full">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container4 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
       <PricingCard />
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container10 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container13 />
         </div>
@@ -934,10 +934,10 @@ function Frame11() {
 
 function Cotnet1() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-[740px]" data-name="Cotnet">
+    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">WHY US?</p>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] whitespace-nowrap">Marketing that runs itself.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[#9ca3af] text-[20px] w-[min-content] whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] ">Marketing that runs itself.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px]  relative shrink-0 text-[#9ca3af] text-[20px]  whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
     </div>
   );
 }
@@ -1719,7 +1719,7 @@ function Container69() {
 
 function Container16() {
   return (
-    <div className="bg-[#18181b] h-[614px] relative rounded-[24px] shrink-0 w-[1120px]" data-name="Container">
+    <div className="bg-[#18181b] h-[614px] relative rounded-[24px] shrink-0 w-full max-w-[1120px] px-4" data-name="Container">
       <div className="content-stretch flex flex-col items-start overflow-clip p-px relative rounded-[inherit] size-full">
         <Container17 />
         <Container22 />
@@ -1800,14 +1800,14 @@ function Container76() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Blog</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 1</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 2</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog3</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 4</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 5</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 6</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 7</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full relative shrink-0 text-[#374151] text-[16px] w-[min-content]">Blog 8</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 1</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 2</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog3</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 4</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 5</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 6</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 7</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 8</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] w-[169px]">View more</p>
     </div>
   );
@@ -1905,7 +1905,7 @@ function Container78() {
 
 function Frame9() {
   return (
-    <div className="content-stretch flex gap-[7px] items-center justify-center relative shrink-0 w-[375px]">
+    <div className="content-stretch flex gap-[7px] items-center justify-center relative shrink-0 w-full max-w-full">
       <div className="h-[58.26px] relative shrink-0 w-[64.864px]">
         <div className="absolute inset-[-8.18%_-7.34%_-8.17%_-7.34%]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 74.3875 67.7855">
@@ -1929,9 +1929,9 @@ function Frame21() {
 
 function Container() {
   return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-[1280px]" data-name="Container">
+    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full max-w-[1280px] px-4" data-name="Container">
       <Container3 />
-      <div className="bg-white content-stretch flex flex-col gap-[32px] items-center justify-center p-[80px] relative shrink-0 w-[1280px]" data-name="Footer">
+      <div className="bg-white content-stretch flex flex-col gap-[32px] items-center justify-center p-[80px] relative shrink-0 w-full max-w-[1280px] px-4" data-name="Footer">
         <div aria-hidden="true" className="absolute border-[#e5e7eb] border-solid border-t inset-0 pointer-events-none" />
         <Frame19 />
         <Container78 />
@@ -2054,7 +2054,7 @@ export default function Pricing() {
   return (
     <div className="bg-white content-stretch flex gap-[10px] items-center relative size-full" data-name="Pricing">
       <Container />
-      <div className="-translate-x-1/2 absolute backdrop-blur-[8px] bg-[rgba(243,246,251,0.9)] content-stretch flex items-center justify-between left-1/2 px-[24px] py-[4px] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] top-[32px] w-[1120px]" data-name="Header">
+      <div className="-translate-x-1/2 absolute backdrop-blur-[8px] bg-[rgba(243,246,251,0.9)] content-stretch flex items-center justify-between left-1/2 px-[24px] py-[4px] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] top-[32px] w-full max-w-[1120px] px-4" data-name="Header">
         <Frame />
         <Frame8 />
       </div>

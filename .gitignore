@@ -1,0 +1,11 @@
+node_modules/
+.pnpm-store/
+dist/
+build/
+*.log
+.env
+.env.local
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

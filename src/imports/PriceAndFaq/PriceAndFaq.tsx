@@ -3,10 +3,10 @@ import imgImage from "./f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
 
 function Cotnet() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-[740px]" data-name="Cotnet">
+    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">WHY US?</p>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] whitespace-nowrap">Marketing that runs itself.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[#9ca3af] text-[20px] w-[min-content] whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] ">Marketing that runs itself.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px]  relative shrink-0 text-[#9ca3af] text-[20px]  whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
     </div>
   );
 }
@@ -788,7 +788,7 @@ function Container53() {
 
 function Container() {
   return (
-    <div className="bg-[#18181b] h-[614px] relative rounded-[24px] shrink-0 w-[1120px]" data-name="Container">
+    <div className="bg-[#18181b] h-[614px] relative rounded-[24px] shrink-0 w-full max-w-[1120px] px-4" data-name="Container">
       <div className="content-stretch flex flex-col items-start overflow-clip p-px relative rounded-[inherit] size-full">
         <Container1 />
         <Container6 />
@@ -890,7 +890,7 @@ function Frame5() {
 
 function Frame8() {
   return (
-    <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-[740px]">
+    <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full max-w-[740px] px-4">
       <Cotnet1 />
       <Frame5 />
     </div>
@@ -1086,7 +1086,7 @@ function Content() {
 
 function Container60() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -1287,7 +1287,7 @@ function Content1() {
 
 function Container63() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -1304,7 +1304,7 @@ function PricingCard() {
   return (
     <div className="bg-[#1877f2] content-stretch flex flex-col gap-[8px] items-center justify-center pb-[2px] pt-[8px] px-[2px] relative rounded-[16px] shrink-0" data-name="PricingCard">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-white tracking-[0.6px] whitespace-nowrap">Most popular</p>
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container63 />
         </div>
@@ -1503,7 +1503,7 @@ function Content2() {
 
 function Container66() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -1705,7 +1705,7 @@ function Content3() {
 
 function Container69() {
   return (
-    <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
+    <div className="bg-[#131313] relative shrink-0 w-full" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -1720,21 +1720,21 @@ function Container69() {
 
 function Frame() {
   return (
-    <div className="content-stretch flex gap-[20px] items-end relative shrink-0">
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+    <div className="content-stretch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] items-end relative shrink-0 w-full">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container60 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
       <PricingCard />
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container66 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container69 />
         </div>

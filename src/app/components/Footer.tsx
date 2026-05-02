@@ -7,7 +7,7 @@ import imgLogos2 from "../../imports/ResponsiveWebsiteDesign/62fcac5886e5a57ef8f
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-[#e5e7eb]">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-20 py-10 md:py-20">
+      <div className="max-w-full max-w-[1280px] px-4 mx-auto px-4 md:px-20 py-10 md:py-20">
         <div className="flex flex-col gap-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:h-[468px]">
             <div className="flex flex-col gap-[13px]">
@@ -72,7 +72,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="flex gap-[7px] items-center justify-center w-[375px]">
+            <div className="flex gap-[7px] items-center justify-center w-full max-w-full">
               <div className="h-[58.26px] w-[64.864px] relative">
                 <div className="absolute inset-[-8.18%_-7.34%_-8.17%_-7.34%]">
                   <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 74.3875 67.7855">
