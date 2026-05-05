@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import svgPaths from "../../imports/Expander1/svg-vqugh1pll5";
 import appLogo from "../../assets/app_logo.png";
 import imgLora from "../../imports/Home-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
@@ -63,6 +63,13 @@ const aiAgents = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pillRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Close on navigation
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
 
   // Close on outside click
   useEffect(() => {
@@ -141,6 +148,34 @@ export default function Header() {
           </Link>
         </nav>
 
+        {/* Join Waitlist Button */}
+        <button
+          type="button"
+          onClick={() => {
+            if (location.pathname === "/") {
+              window.scrollTo(0, 0);
+              window.dispatchEvent(new CustomEvent("focus-waitlist-email"));
+            } else {
+              navigate("/", { state: { focusEmail: true } });
+            }
+          }}
+          className="bg-[#1877f2] hover:bg-[#1565c0] transition-colors rounded-full px-5 py-2 flex items-center justify-center"
+          style={{ border: "none", cursor: "pointer" }}
+        >
+          <span
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 700,
+              fontSize: "14px",
+              lineHeight: "20px",
+              color: "#fff",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Join Waitlist
+          </span>
+        </button>
+
         {/* Dropdown panel — anchored to pill bottom edge */}
         {open && (
           <div
@@ -164,12 +199,14 @@ export default function Header() {
             }}
           >
             {aiAgents.map((agent) => (
-              <div
+              <Link
                 key={agent.name}
-                className="flex items-center gap-[10px] cursor-pointer rounded-[8px] px-[8px] py-[6px]"
+                to={`/solution?agent=${agent.name.toLowerCase()}`}
+                className="flex items-center gap-[10px] cursor-pointer rounded-[8px] px-[8px] py-[6px] no-underline"
                 style={{ backgroundColor: "transparent", transition: "background-color 0.15s" }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f9fafc")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+                onClick={() => setOpen(false)}
               >
                 {/* 40×40 colored circle avatar */}
                 <div
@@ -230,7 +267,7 @@ export default function Header() {
                     {agent.name}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}

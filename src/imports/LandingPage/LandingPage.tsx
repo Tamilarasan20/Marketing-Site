@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import WaitlistForm from "../../app/components/WaitlistForm";
 import svgPaths from "./svg-7bo4y2urkw";
 import imgImage174 from "./63808635cd776f0fdaad03c9757b0a112ed13271.png";
 import imgVideoImage from "./7791317fa0728612288fbeed4e75c5ec203fe987.png";
@@ -38,20 +39,20 @@ import { imgGroup, imgFeatureImageSmall4, imgGroup1, imgColor } from "./svg-4yq2
 function TextGroupVertical3() {
   return (
     <div className="content-stretch flex flex-col items-start mb-[-1px] pb-[14px] relative shrink-0 text-white w-full" data-name="Text Group Vertical">
-      <p className="leading-[0] relative shrink-0 text-[0px] w-full">
-        <span className="text-[36px] md:text-[68px] leading-[1.2]">{`Meet `}</span>
-        <span className="text-[36px] md:text-[68px] leading-[1.2] text-[#14a148]">Lora</span>
+      <p className="leading-[0] relative shrink-0 text-[0px] w-full font-black">
+        <span className="text-[36px] md:text-[68px] leading-[1.2] font-black">{`Meet `}</span>
+        <span className="text-[36px] md:text-[68px] leading-[1.2] text-[#14a148] font-black">Lora</span>
       </p>
-      <p className="text-[36px] md:text-[68px] leading-[1.2] relative shrink-0 w-full">{`your Autonomous `}</p>
+      <p className="text-[36px] md:text-[68px] leading-[1.2] relative shrink-0 w-full font-black">{`your Autonomous `}</p>
     </div>
   );
 }
 
 function TextGroupVertical2() {
   return (
-    <div className="content-stretch flex flex-col font-['Satoshi:Black',sans-serif] items-start pb-px relative shrink-0 tracking-[-2.04px] w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col font-['Satoshi:Black',sans-serif] font-black items-start pb-px relative shrink-0 tracking-[-2.04px] w-full" data-name="Text Group Vertical">
       <TextGroupVertical3 />
-      <p className="text-[36px] md:text-[68px] leading-[1.2] relative shrink-0 text-[#14a148] w-full">{`AI Marketing Team `}</p>
+      <p className="text-[36px] md:text-[68px] leading-[1.2] relative shrink-0 text-[#14a148] w-full font-black">{`AI Marketing Team `}</p>
     </div>
   );
 }
@@ -69,16 +70,24 @@ function TextGroupVertical1() {
 
 function ButtonContainer() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full px-4 md:px-0" data-name="Button Container">
+    <div className="content-stretch flex flex-col gap-[16px] items-center relative z-50 shrink-0 w-full px-4 md:px-0" data-name="Button Container">
       <div className="bg-[#1f2937] content-stretch flex gap-[12px] items-center px-[24px] py-[16px] relative rounded-[24px] shrink-0 w-full max-w-[480px]" data-name="Marketting/Input field">
         <div aria-hidden="true" className="absolute border-2 border-[rgba(147,197,253,0.4)] border-solid inset-[-2px] pointer-events-none rounded-[26px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
-        <p className="flex-[1_0_0] font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-px not-italic relative text-[#9ca3af] text-[16px] md:text-[18px]">enter your mail</p>
+        <p className="flex-1 font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-px not-italic relative text-[#9ca3af] text-[16px] md:text-[18px]">enter your mail</p>
       </div>
       <div className="bg-[#2a3040] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[40px] shrink-0 w-full max-w-[220px]" data-name="Button">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Join Waitlist</p>
       </div>
-      <Link to="/solution" className="content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[16px] shrink-0 w-full max-w-[220px]" data-name="Button">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#d1d5db] text-[16px] whitespace-nowrap">See Solution</p>
+      <div 
+        onClick={() => {
+          const el = document.getElementById('solution');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }}
+        style={{ cursor: 'pointer', pointerEvents: 'auto' }}
+        className="content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative z-[9999] rounded-[16px] shrink-0 w-full max-w-[220px]" 
+        data-name="Button"
+      >
+        <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#d1d5db] text-[16px] whitespace-nowrap">See Solution</p>
         <div className="overflow-clip relative shrink-0 size-[24px]" data-name="Right Icon">
           <div className="absolute bottom-1/4 left-[29.17%] right-[29.17%] top-1/4" data-name="Icon">
             <div className="absolute inset-[-5.42%_-6.5%]">
@@ -88,30 +97,30 @@ function ButtonContainer() {
             </div>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }
 
 function TextGroupVertical() {
   return (
-    <div className="flex flex-col gap-6 md:gap-[40px] items-center justify-center w-full max-w-[740px] mx-auto px-4 md:px-0" data-name="Text Group Vertical">
+    <div className="flex flex-col gap-6 md:gap-[40px] items-center justify-center w-full max-w-[740px] mx-auto px-4 md:px-0 relative z-50 pointer-events-auto" data-name="Text Group Vertical">
       <TextGroupVertical1 />
-      <ButtonContainer />
+      <WaitlistForm />
     </div>
   );
 }
 
 function IntroSection() {
   return (
-    <div className="relative z-[1] w-full min-h-[600px] md:min-h-[920px]" data-name="Intro Section">
-      <div className="absolute bg-black inset-0 w-full h-full" data-name="Background Shape" />
-      <div className="relative z-10 pt-24 md:pt-32 pb-12 md:pb-0">
+    <div className="relative z-30 w-full min-h-[600px] md:min-h-[920px]" data-name="Intro Section">
+      <div className="absolute bg-black inset-0 w-full h-full pointer-events-none" data-name="Background Shape" />
+      <div className="relative z-40 pt-24 md:pt-32 pb-12 md:pb-0">
         <TextGroupVertical />
       </div>
       {/* Avatar strip — bottom-[0] = container bottom == IntroSection bottom == VideoSection top */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[193px] md:h-[343px] w-full max-w-[900px] px-4 z-20" data-name="image 174">
-        <img alt="" className="w-full h-full object-contain object-bottom" src={imgImage174} />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[193px] md:h-[343px] w-full max-w-[900px] px-4 z-20 pointer-events-none" data-name="image 174">
+        <img alt="" className="w-full h-full object-contain object-bottom pointer-events-none" src={imgImage174} />
       </div>
     </div>
   );
@@ -120,7 +129,7 @@ function IntroSection() {
 function Cotnet() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
-      <p className="font-['Satoshi:Bold',sans-serif] text-[28px] md:text-[40px] leading-[1.2] md:leading-[48px] relative shrink-0 text-[#1f2937] tracking-[-0.8px]">See it in action</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] text-[28px] md:text-[40px] leading-[1.2] md:leading-[48px] relative shrink-0 text-[#1f2937] tracking-[-0.8px]">See it in action</p>
       <p className="font-['General_Sans:Medium',sans-serif] text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#374151]">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
@@ -148,7 +157,7 @@ function VideoSection() {
 function Cotnet1() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
-      <p className="font-[‘Satoshi:Bold’,sans-serif] text-[28px] md:text-[40px] leading-[1.2] md:leading-[48px] relative shrink-0 text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
+      <p className="font-[700] font-[‘Satoshi:Bold’,sans-serif] text-[28px] md:text-[40px] leading-[1.2] md:leading-[48px] relative shrink-0 text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
       <p className="font-[‘General_Sans:Medium’,sans-serif] text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full">
         {`You don’t need a large team to grow a business. Loraloop provides AI employees for marketing that handle daily work. From planning to execution, work gets done efficiently, 24/7. `}
         <span className="text-white">10x your marketing with 10x less expansive.</span>
@@ -172,7 +181,7 @@ function TextGroupVertical4() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM />
-      <p className="font-[‘Satoshi:Bold’,sans-serif] text-[20px] md:text-[32px] leading-[1.2] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-0.48px]">Identify what’s trending and what my competitors are doing</p>
+      <p className="font-[700] font-[‘Satoshi:Bold’,sans-serif] text-[20px] md:text-[32px] leading-[1.2] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-0.48px]">Identify what’s trending and what my competitors are doing</p>
       <p className="font-[‘General_Sans:Medium’,sans-serif] text-[14px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-80 relative shrink-0 text-white">Sam analyzes market trends and competitor actions. He identifies which content types or topics will help me grow.</p>
     </div>
   );
@@ -180,9 +189,9 @@ function TextGroupVertical4() {
 
 function LearnMoreContainer() {
   return (
-    <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[16px] md:px-[24px] py-[8px] md:py-[12px] relative rounded-[24px] md:rounded-[34px] shrink-0" data-name="Learn More Container">
+    <Link to="/solution?agent=sam" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[16px] md:px-[24px] py-[8px] md:py-[12px] relative rounded-[24px] md:rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
       <p className="font-[‘Satoshi:Bold’,sans-serif] leading-[normal] not-italic relative shrink-0 text-[14px] md:text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
-    </div>
+    </Link>
   );
 }
 
@@ -240,9 +249,9 @@ function TextGroupVertical5() {
 
 function LearnMoreContainer1() {
   return (
-    <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
+    <Link to="/solution?agent=sophie" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
-    </div>
+    </Link>
   );
 }
 
@@ -300,9 +309,9 @@ function TextGroupVertical6() {
 
 function LearnMoreContainer2() {
   return (
-    <div className="bg-white content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
+    <Link to="/solution?agent=elena" className="bg-white content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-gray-100 transition-colors" data-name="Learn More Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
-    </div>
+    </Link>
   );
 }
 
@@ -352,7 +361,7 @@ function TextGroupVertical7() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM3 />
-      <p className="font-['Satoshi:Bold',sans-serif] text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-1px]">Plan a marketing strategy for my business</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-1px]">Plan a marketing strategy for my business</p>
       <p className="font-['General_Sans:Medium',sans-serif] text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-90 relative shrink-0 text-white">{`Lora turn my business goals into a clear execution plan. lora breaks down what needs to be done, assigns tasks to the right team, right members, & keeps everything aligned so my marketing runs in my voice.`}</p>
     </div>
   );
@@ -360,9 +369,9 @@ function TextGroupVertical7() {
 
 function LearnMoreContainer3() {
   return (
-    <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
+    <Link to="/solution?agent=lora" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
-    </div>
+    </Link>
   );
 }
 
@@ -410,7 +419,7 @@ function TextGroupVertical8() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM4 />
-      <p className="font-['Satoshi:Bold',sans-serif] text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-[#1f2937] tracking-[-0.48px]">{`Schedule publish my posts, contents & Engage with audiences`}</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-[#1f2937] tracking-[-0.48px]">{`Schedule publish my posts, contents & Engage with audiences`}</p>
       <p className="font-['General_Sans:Medium',sans-serif] text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic relative shrink-0 text-[#1f2937]">Sarah schedules my social posts, handles community engagement, replying and nurturing relationships.</p>
     </div>
   );
@@ -418,9 +427,9 @@ function TextGroupVertical8() {
 
 function LearnMoreContainer4() {
   return (
-    <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
+    <Link to="/solution?agent=sarah" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
-    </div>
+    </Link>
   );
 }
 
@@ -482,9 +491,9 @@ function TextGroupVertical9() {
 
 function LearnMoreContainer5() {
   return (
-    <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
+    <Link to="/solution?agent=nick" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
-    </div>
+    </Link>
   );
 }
 
@@ -534,7 +543,7 @@ function TextGroupVertical10() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM6 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">{`Writes content that attracts customers for blog, mail & more..`}</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">{`Writes content that attracts customers for blog, mail & more..`}</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Clara writes my blogs, emails, threads, newsletters, Social posts and other persuasive content that drives action.</p>
     </div>
   );
@@ -542,9 +551,9 @@ function TextGroupVertical10() {
 
 function LearnMoreContainer6() {
   return (
-    <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
+    <Link to="/solution?agent=clara" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
-    </div>
+    </Link>
   );
 }
 
@@ -584,7 +593,7 @@ function BadgeM7() {
 
 function TextGroupVertical11() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-h-px relative w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-1 flex-col gap-[16px] items-start min-h-px relative w-full" data-name="Text Group Vertical">
       <BadgeM7 />
       <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Create Videos for TikTok, Insta, YouTube etc.</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Theo turns your ideas into engaging video content for your brand. plans and scripts your short-form videos for platforms like TikTok or YouTube, boosting engagement.</p>
@@ -594,9 +603,9 @@ function TextGroupVertical11() {
 
 function LearnMoreContainer7() {
   return (
-    <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
+    <Link to="/solution?agent=theo" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
-    </div>
+    </Link>
   );
 }
 
@@ -646,7 +655,7 @@ function TextGroupVertical12() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM8 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Steve Design scroll-stopping visuals and carousels that reflect my brand and grab attention in all platforms</p>
     </div>
   );
@@ -654,9 +663,9 @@ function TextGroupVertical12() {
 
 function LearnMoreContainer8() {
   return (
-    <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
+    <Link to="/solution?agent=steve" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
-    </div>
+    </Link>
   );
 }
 
@@ -714,7 +723,14 @@ function AiAgents() {
     <div className="relative bg-black w-full flex flex-col gap-12 md:gap-[80px] items-center overflow-clip py-16 md:py-24 lg:py-[120px] px-4 md:px-8" data-name="AI Agents">
       <Cotnet1 />
       <FeatureHighlight />
-      <div className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 w-[140px]" data-name="Button">
+      <div 
+        onClick={() => {
+          window.scrollTo(0, 0);
+          window.dispatchEvent(new CustomEvent("focus-waitlist-email"));
+        }}
+        className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 w-[140px] cursor-pointer hover:opacity-90 transition-opacity" 
+        data-name="Button"
+      >
         <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
       </div>
     </div>
@@ -724,7 +740,7 @@ function AiAgents() {
 function Frame17() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] w-full">The AI Employees that actually does stuff.</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] w-full">The AI Employees that actually does stuff.</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#374151] text-[20px] w-full">Loraloop plans your marketing, creates your content, and runs campaigns before you even wake up.</p>
     </div>
   );
@@ -753,14 +769,14 @@ function Container3() {
   return (
     <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Container">
       <div className="mt-1"><Text /></div>
-      <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[28px] min-w-px not-italic relative text-[#1f2937] text-[18px] md:text-[20px]">Enter Your Website</p>
+      <p className="font-[700] flex-1 font-['Satoshi:Bold',sans-serif] leading-[28px] min-w-px not-italic relative text-[#1f2937] text-[18px] md:text-[20px]">Enter Your Website</p>
     </div>
   );
 }
 
 function Container2() {
   return (
-    <div className="flex-[1_0_0] min-h-[220px] md:min-h-[300px] relative w-full" data-name="Container">
+    <div className="flex-1 min-h-[220px] md:min-aspect-[540/300] h-auto min-h-[300px] relative w-full" data-name="Container">
       <div className="content-stretch flex flex-col gap-[12px] items-start px-[24px] md:px-[32px] py-[24px] relative size-full">
         <Container3 />
         <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
@@ -804,14 +820,14 @@ function Container6() {
   return (
     <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Container">
       <div className="mt-1"><Text1 /></div>
-      <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[18px] md:text-[20px]">AI Team Manage Marketing</p>
+      <p className="font-[700] flex-1 font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[18px] md:text-[20px]">AI Team Manage Marketing</p>
     </div>
   );
 }
 
 function Container5() {
   return (
-    <div className="flex-[1_0_0] min-h-[220px] md:min-h-[300px] relative w-full" data-name="Container">
+    <div className="flex-1 min-h-[220px] md:min-aspect-[540/300] h-auto min-h-[300px] relative w-full" data-name="Container">
       <div className="content-stretch flex flex-col gap-[12px] items-start px-[24px] md:px-[32px] py-[24px] relative size-full">
         <Container6 />
         <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
@@ -855,14 +871,14 @@ function Container9() {
   return (
     <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Container">
       <div className="mt-1"><Text2 /></div>
-      <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[18px] md:text-[20px]">Grow on autopilot</p>
+      <p className="font-[700] flex-1 font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[18px] md:text-[20px]">Grow on autopilot</p>
     </div>
   );
 }
 
 function Container8() {
   return (
-    <div className="flex-[1_0_0] min-h-[220px] md:min-h-[300px] relative w-full" data-name="Container">
+    <div className="flex-1 min-h-[220px] md:min-aspect-[540/300] h-auto min-h-[300px] relative w-full" data-name="Container">
       <div className="content-stretch flex flex-col gap-[12px] items-start px-[24px] md:px-[32px] py-[24px] relative size-full">
         <Container9 />
         <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
@@ -894,7 +910,7 @@ function Container7() {
 
 function Container() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div className="flex items-center justify-center w-full">
         <div className="content-stretch flex flex-col md:flex-row gap-4 md:gap-6 items-stretch justify-center px-0 md:px-4 lg:px-8 relative w-full max-w-[1200px]">
           <Container1 />
@@ -918,17 +934,17 @@ function HowItWorks() {
 
 function Frame18() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 text-white w-full">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[56px] relative shrink-0 text-[48px] tracking-[-1.2px] whitespace-nowrap">100+ Integrations supported.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[20px]">From social media platforms to ecommerce, leads etc, our integrations make it easy to keep everything connected.</p>
+    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 text-white w-full">
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[1.2] md:leading-[56px] relative shrink-0 text-[32px] md:text-[48px] tracking-[-1.2px] text-center w-full">100+ Integrations supported.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[1.4] md:leading-[28px] relative shrink-0 text-[16px] md:text-[20px] text-center max-w-[800px] w-full">From social media platforms to ecommerce, leads etc, our integrations make it easy to keep everything connected.</p>
     </div>
   );
 }
 
 function Container11() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-center not-italic relative shrink-0 text-center w-[740px]" data-name="Container">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">INTEGRATION</p>
+    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] mx-auto" data-name="Container">
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap w-full text-center">INTEGRATION</p>
       <Frame18 />
     </div>
   );
@@ -1496,8 +1512,8 @@ function Container12() {
 
 function Container10() {
   return (
-    <div className="flex-[1_0_0] min-w-px relative" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[63px] items-center relative size-full">
+    <div className="flex-1 min-w-px relative" data-name="Container">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[63px] items-stretch relative size-full">
         <Container11 />
         <Container12 />
       </div>
@@ -1513,16 +1529,16 @@ function Integration() {
   );
 }
 
-function Frame19() {
+function Frame19_Auth() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center not-italic relative shrink-0 text-center w-full whitespace-nowrap">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[60px] relative shrink-0 text-[#101828] text-[56px] tracking-[-1.4px]">Solution</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[60px] relative shrink-0 text-[#101828] text-[56px] tracking-[-1.4px]">Solution</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">What you get with loraloop</p>
     </div>
   );
 }
 
-function StatusLine() {
+function StatusLine_Auth() {
   return (
     <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
       <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Checkmark">
@@ -1541,46 +1557,47 @@ function StatusLine() {
   );
 }
 
-function Content() {
+function Content_Auth() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
-        <p className="leading-[18px] whitespace-normal">Knowledge Created</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+        <p className="leading-[18px]">Analysed market trends, Monitor Competitors<br/>across social media platforms</p>
       </div>
-      <StatusLine />
+      <StatusLine_Auth />
     </div>
   );
 }
 
-function TitleWithStatus() {
+function TitleWithStatus_Auth() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content />
+      <Content_Auth />
     </div>
   );
 }
 
-function AvatarWithTitle() {
+function AvatarWithTitle_Auth() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
-      <TitleWithStatus />
+      <TitleWithStatus_Auth />
     </div>
   );
 }
 
-function Container13() {
+function Container13_Auth() {
   return (
-    <div className="absolute bg-white content-stretch flex items-center left-2 right-[20%] md:left-3 md:right-[24%] lg:left-4 lg:right-[120px] px-[8px] py-[12px] rounded-[16px] top-[20px] min-w-0 overflow-hidden" data-name="Container">
+    <div className="absolute bg-white content-stretch flex items-center justify-between left-[40px] px-[16px] py-[12px] rounded-[16px] top-[20px] w-[460px] shadow-sm" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <AvatarWithTitle />
+      <AvatarWithTitle_Auth />
+      <p className="font-['General_Sans:Medium',sans-serif] text-[12px] text-[#6b7280] self-end mt-auto ml-2">05:11 AM</p>
     </div>
   );
 }
 
-function StatusLine1() {
+function StatusLine1_Auth() {
   return (
     <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
       <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Checkmark">
@@ -1593,63 +1610,53 @@ function StatusLine1() {
         </div>
       </div>
       <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
-        <p className="leading-[16px]">Approved</p>
+        <p className="leading-[16px]">Done</p>
       </div>
     </div>
   );
 }
 
-function Content1() {
+function Content1_Auth() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
-        <p className="leading-[18px] whitespace-normal">Created Q1 Marketing Plan</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+        <p className="leading-[18px]">Posts created across channels Insta, X, TikTok,<br/>Youtube, etc.</p>
       </div>
-      <StatusLine1 />
+      <StatusLine1_Auth />
     </div>
   );
 }
 
-function TitleWithStatus1() {
+function TitleWithStatus1_Auth() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content1 />
+      <Content1_Auth />
     </div>
   );
 }
 
-function AvatarWithTitle1() {
+function AvatarWithTitle1_Auth() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
-      <TitleWithStatus1 />
+      <TitleWithStatus1_Auth />
     </div>
   );
 }
 
-function Container14() {
+function Container14_Auth() {
   return (
-    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] right-2 left-[20%] md:right-3 md:left-[24%] lg:right-6 lg:left-[80px] rounded-[16px] top-[110px] min-w-0 overflow-hidden" data-name="Container">
+    <div className="absolute bg-white content-stretch flex items-center justify-between left-[40px] px-[16px] py-[12px] rounded-[16px] top-[110px] w-[460px] shadow-sm" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
-      </div>
-      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
-        <div className="flex-1 min-w-0">
-          <TitleWithStatus1 />
-        </div>
-        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
-        </div>
-      </div>
+      <AvatarWithTitle1_Auth />
+      <p className="font-['General_Sans:Medium',sans-serif] text-[12px] text-[#6b7280] self-end mt-auto ml-2">05:12 AM</p>
     </div>
   );
 }
 
-function StatusLine2() {
+function StatusLine2_Auth() {
   return (
     <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
       <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Icon">
@@ -1668,57 +1675,47 @@ function StatusLine2() {
   );
 }
 
-function Content2() {
+function Content2_Auth() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
-        <p className="leading-[18px] whitespace-normal">Social Media post ready for post</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+        <p className="leading-[18px]">Published Posts, Blogs, Videos, Ads</p>
       </div>
-      <StatusLine2 />
+      <StatusLine2_Auth />
     </div>
   );
 }
 
-function TitleWithStatus2() {
+function TitleWithStatus2_Auth() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content2 />
+      <Content2_Auth />
     </div>
   );
 }
 
-function AvatarWithTitle2() {
+function AvatarWithTitle2_Auth() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
-      <TitleWithStatus2 />
+      <TitleWithStatus2_Auth />
     </div>
   );
 }
 
-function Container15() {
+function Container15_Auth() {
   return (
-    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] left-2 right-[20%] md:left-3 md:right-[24%] lg:left-4 lg:right-[120px] rounded-[16px] top-[200px] min-w-0 overflow-hidden" data-name="Container">
+    <div className="absolute bg-white content-stretch flex items-center justify-between left-[40px] px-[16px] py-[12px] rounded-[16px] top-[200px] w-[460px] shadow-sm" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
-      </div>
-      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
-        <div className="flex-1 min-w-0">
-          <TitleWithStatus2 />
-        </div>
-        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Review</p>
-        </div>
-      </div>
+      <AvatarWithTitle2_Auth />
+      <p className="font-['General_Sans:Medium',sans-serif] text-[12px] text-[#6b7280] self-end mt-auto ml-2">05:13 AM</p>
     </div>
   );
 }
 
-function StatusLine3() {
+function StatusLine3_Auth() {
   return (
     <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
       <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Icon">
@@ -1737,57 +1734,47 @@ function StatusLine3() {
   );
 }
 
-function Content3() {
+function Content3_Auth() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
-        <p className="leading-[18px] whitespace-normal">{`Last 10 posts analytics reviewed `}</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+        <p className="leading-[18px]">{`Last 10 posts analytics reviewed `}</p>
       </div>
-      <StatusLine3 />
+      <StatusLine3_Auth />
     </div>
   );
 }
 
-function TitleWithStatus3() {
+function TitleWithStatus3_Auth() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content3 />
+      <Content3_Auth />
     </div>
   );
 }
 
-function AvatarWithTitle3() {
+function AvatarWithTitle3_Auth() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
-      <TitleWithStatus3 />
+      <TitleWithStatus3_Auth />
     </div>
   );
 }
 
-function Container16() {
-  return (
-    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] right-2 left-[20%] md:right-3 md:left-[24%] lg:right-4 lg:left-[120px] rounded-[16px] top-[290px] min-w-0 overflow-hidden" data-name="Container">
+function Container16_Auth() {
+    return (
+      <div className="absolute bg-white content-stretch flex items-center justify-between px-[8px] py-[12px] right-[36px] rounded-[16px] top-[227px] w-[400px]" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
-      </div>
-      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
-        <div className="flex-1 min-w-0">
-          <TitleWithStatus3 />
-        </div>
-        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Review</p>
-        </div>
-      </div>
+      <AvatarWithTitle3_Auth />
+      
     </div>
   );
 }
 
-function StatusLine4() {
+function StatusLine4_Auth() {
   return (
     <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
       <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Checkmark">
@@ -1806,37 +1793,109 @@ function StatusLine4() {
   );
 }
 
-function Content4() {
+function Content4_Auth() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
-        <p className="leading-[18px] whitespace-normal">Draft Q2 Content Calendar</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+        <p className="leading-[18px]">Draft Q2 Content Calendar</p>
       </div>
-      <StatusLine4 />
+      <StatusLine4_Auth />
     </div>
   );
 }
 
-function TitleWithStatus4() {
+function TitleWithStatus4_Auth() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content4 />
+      <Content4_Auth />
     </div>
   );
 }
 
-function AvatarWithTitle4() {
+function AvatarWithTitle4_Auth() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
-      <TitleWithStatus4 />
+      <TitleWithStatus4_Auth />
     </div>
   );
 }
 
-function StatusLine6() {
+function Container17_Auth() {
+    return (
+      <div className="absolute bg-white content-stretch flex items-center justify-between left-[36px] px-[8px] py-[12px] rounded-[16px] top-[296px] w-[400px]" data-name="Container">
+      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      <AvatarWithTitle4_Auth />
+      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
+        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Edit</p>
+      </div>
+    </div>
+  );
+}
+
+function StatusLine5_Auth() {
+  return (
+    <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
+      <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Checkmark">
+        <div className="absolute bottom-[29.17%] left-[16.67%] right-[16.67%] top-1/4" data-name="Icon">
+          <div className="absolute inset-[-8.86%_-6.09%]">
+            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.9667 8.63333">
+              <path d={svgPaths.p3af4ac10} id="Icon" stroke="var(--stroke-0, #14A148)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
+        <p className="leading-[16px]">Pending</p>
+      </div>
+    </div>
+  );
+}
+
+function Content5_Auth() {
+  return (
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+        <p className="leading-[18px]">Finalize Q1 Report</p>
+      </div>
+      <StatusLine5_Auth />
+    </div>
+  );
+}
+
+function TitleWithStatus5_Auth() {
+  return (
+    <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
+      <Content5_Auth />
+    </div>
+  );
+}
+
+function AvatarWithTitle5_Auth() {
+  return (
+    <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
+      <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+      </div>
+      <TitleWithStatus5_Auth />
+    </div>
+  );
+}
+
+function Container18_Auth() {
+    return (
+      <div className="absolute bg-white content-stretch flex items-center justify-between left-[36px] px-[8px] py-[12px] rounded-[16px] top-[365px] w-[400px]" data-name="Container">
+      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      <AvatarWithTitle5_Auth />
+      
+    </div>
+  );
+}
+
+function StatusLine6_Auth() {
   return (
     <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
       <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Icon">
@@ -1855,67 +1914,152 @@ function StatusLine6() {
   );
 }
 
-function Content6() {
+function Content6_Auth() {
   return (
-    <div className="content-stretch flex flex-col items-start justify-center relative flex-1 min-w-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative flex-1 min-w-0 text-[#1f2937] text-[14px]">
-        <p className="leading-[18px] whitespace-normal">Email Newsletter design</p>
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+        <p className="leading-[18px]">Email Newsletter design</p>
       </div>
-      <StatusLine6 />
+      <StatusLine6_Auth />
     </div>
   );
 }
 
-function TitleWithStatus6() {
+function TitleWithStatus6_Auth() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content6 />
+      <Content6_Auth />
     </div>
   );
 }
 
-function AvatarWithTitle6() {
+function AvatarWithTitle6_Auth() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
-      <TitleWithStatus6 />
+      <TitleWithStatus6_Auth />
     </div>
   );
 }
 
-function Slot() {
+function Container19_Auth() {
+    return (
+      <div className="absolute bg-white content-stretch flex items-center justify-between left-[36px] px-[8px] py-[12px] rounded-[16px] top-[434px] w-[400px]" data-name="Container">
+      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      <AvatarWithTitle6_Auth />
+      
+    </div>
+  );
+}
+
+function StatusLine7_Auth() {
   return (
-    <div className="min-h-[600px] lg:min-h-[540px] xl:min-h-[480px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
-      <div className="absolute h-full left-0 top-[-25px] w-full" data-name="image 185">
+    <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
+      <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Icon">
+        <div className="absolute inset-[8.33%]" data-name="Icon">
+          <div className="absolute inset-[-4.87%]">
+            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 14.6333 14.6333">
+              <path d={svgPaths.p3129b680} id="Icon" stroke="var(--stroke-0, #B25107)" strokeDasharray="2.6 2.6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[12px] whitespace-nowrap">
+        <p className="leading-[16px]">In Progress</p>
+      </div>
+    </div>
+  );
+}
+
+function Content7_Auth() {
+  return (
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+        <p className="leading-[18px]">Competitor Analysis Update</p>
+      </div>
+      <StatusLine7_Auth />
+    </div>
+  );
+}
+
+function TitleWithStatus7_Auth() {
+  return (
+    <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
+      <Content7_Auth />
+    </div>
+  );
+}
+
+function AvatarWithTitle7_Auth() {
+  return (
+    <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
+      <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+      </div>
+      <TitleWithStatus7_Auth />
+    </div>
+  );
+}
+
+function Container20_Auth() {
+    return (
+      <div className="absolute bg-white content-stretch flex items-center justify-between left-[36px] px-[8px] py-[12px] rounded-[16px] top-[503px] w-[400px]" data-name="Container">
+      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      <AvatarWithTitle7_Auth />
+      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
+        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Edit</p>
+      </div>
+    </div>
+  );
+}
+
+function Slot_Auth() {
+  return (
+    <div className="aspect-[540/300] h-auto min-h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
+      <div className="absolute h-[410px] left-0 top-[-25px] w-full" data-name="image 185">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage185} />
       </div>
-      <Container13 />
-      <Container14 />
-      <Container15 />
-      <Container16 />
-    </div>
-  );
-}
-
-function DescriptionSection() {
-  return (
-    <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative text-center w-full flex-1" data-name="Description Section">
-      <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
-        <p>
-          <span className="leading-[32px]">Lora plan your posts, ads, emaile etc.</span>
-          <span className="leading-[32px] text-[#1f2937]">{` like real 10+ year Marketing Lead`}</span>
-        </p>
-      </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
-        <p className="leading-[22px]">Lora understand you end to end, Turn your business goals into a structured marketing plan with clear next steps acct like personal marketing lead.</p>
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden p-2">
+        <div className="shrink-0 origin-center scale-[0.5] sm:scale-[0.6] md:scale-[0.7] lg:scale-[0.7] xl:scale-[0.85] 2xl:scale-100 w-[540px] h-[300px] relative pointer-events-auto">
+          <div className="relative size-full pointer-events-auto">
+            <Container13_Auth />
+      <Container14_Auth />
+      <Container15_Auth />
+      
+      
+      
+      
+      
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-function MaskGroup() {
+function DescriptionSection_Auth() {
+    return (
+      <div className="bg-white relative shrink-0 flex-1 w-full" data-name="Description Section">
+      <div className="flex flex-col items-center size-full">
+        <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative size-full text-center">
+          <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[0px] tracking-[-0.5px] w-full">
+            <p className="text-[24px]">
+              <span className="font-['Satoshi:Bold',sans-serif] leading-[32px] not-italic text-[#14a148]">Social Media handled End to End</span>
+            </p>
+          </div>
+          <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
+            <p className="leading-[22px]">Lora understand you end to end, Turn your goals into a structured marketing plan with clear next steps acct like personal marketing lead.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MaskGroup_Auth() {
   return (
     <div className="absolute contents inset-0" data-name="Mask group">
       <div className="absolute aspect-[1048/954] bottom-[-10.5px] left-[-13.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[5.5px_-2px] mask-size-[40px_40px] right-[-20%]" style={{ maskImage: `url('${imgFeatureImageSmall4}')` }} data-name="Feature Image Small">
@@ -1927,10 +2071,10 @@ function MaskGroup() {
   );
 }
 
-function Content8() {
+function Content8_Auth() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-h-px not-italic relative">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-normal">10 New trending topic detected</p>
+    <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">10 New trending topic detected</p>
       <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] relative shrink-0 text-[#14a148] text-[12px]">
         <p className="leading-[16px]">AI Content for today</p>
       </div>
@@ -1938,52 +2082,42 @@ function Content8() {
   );
 }
 
-function TitleWithStatus8() {
+function TitleWithStatus8_Auth() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content8 />
+      <Content8_Auth />
     </div>
   );
 }
 
-function AvatarWithTitle8() {
+function AvatarWithTitle8_Auth() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
+    <div className="content-stretch flex flex-1 gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Component 2">
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
           <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
         </div>
-        <MaskGroup />
+        <MaskGroup_Auth />
       </div>
-      <TitleWithStatus8 />
+      <TitleWithStatus8_Auth />
     </div>
   );
 }
 
-function Container21() {
-  return (
-    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] left-2 right-[20%] md:left-3 md:right-[24%] lg:left-6 lg:right-[80px] rounded-[16px] top-[20px] min-w-0 overflow-hidden" data-name="Container">
+function Container21_Auth() {
+    return (
+      <div className="absolute bg-white content-stretch flex gap-[32px] items-center left-[36px] px-[8px] py-[12px] rounded-[16px] top-[20px] w-[400px]" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="relative shrink-0 size-[40px]" data-name="Component 2">
-        <div className="absolute aspect-[100/100] left-0 right-0 top-0">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
-        </div>
-        <MaskGroup />
-      </div>
-      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
-        <div className="flex-1 min-w-0">
-          <TitleWithStatus8 />
-        </div>
-        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Explore</p>
-        </div>
+      <AvatarWithTitle8_Auth />
+      <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
+        <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Explore</p>
       </div>
     </div>
   );
 }
 
-function MaskGroup1() {
+function MaskGroup1_Auth() {
   return (
     <div className="absolute contents inset-0" data-name="Mask group">
       <div className="absolute aspect-[1048/954] bottom-[-10.5px] left-[-13.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[5.5px_-2px] mask-size-[40px_40px] right-[-20%]" style={{ maskImage: `url('${imgFeatureImageSmall4}')` }} data-name="Feature Image Small">
@@ -1995,61 +2129,48 @@ function MaskGroup1() {
   );
 }
 
-function Content9() {
+function Content9_Auth() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-h-px not-italic relative">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-normal">Competitor analysis ready</p>
+    <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Competitor analysis ready</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#155dfc] text-[12px]">30 new growth opportunity detected</p>
     </div>
   );
 }
 
-function TitleWithStatus9() {
+function TitleWithStatus9_Auth() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content9 />
+      <Content9_Auth />
     </div>
   );
 }
 
-function AvatarWithTitle9() {
+function AvatarWithTitle9_Auth() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
+    <div className="content-stretch flex flex-1 gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Component 2">
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
           <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
         </div>
-        <MaskGroup1 />
+        <MaskGroup1_Auth />
       </div>
-      <TitleWithStatus9 />
+      <TitleWithStatus9_Auth />
     </div>
   );
 }
 
-function Container22() {
-  return (
-    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] right-2 left-[20%] md:right-3 md:left-[24%] lg:right-6 lg:left-[80px] rounded-[16px] top-[110px] min-w-0 overflow-hidden" data-name="Container">
+function Container22_Auth() {
+    return (
+      <div className="absolute bg-white content-stretch flex gap-[32px] items-center px-[8px] py-[12px] right-[36px] rounded-[16px] top-[89px] w-[400px]" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="relative shrink-0 size-[40px]" data-name="Component 2">
-        <div className="absolute aspect-[100/100] left-0 right-0 top-0">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
-        </div>
-        <MaskGroup1 />
-      </div>
-      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
-        <div className="flex-1 min-w-0">
-          <TitleWithStatus9 />
-        </div>
-        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
-        </div>
-      </div>
+      <AvatarWithTitle9_Auth />
+      
     </div>
   );
 }
 
-function MaskGroup2() {
+function MaskGroup2_Auth() {
   return (
     <div className="absolute contents inset-0" data-name="Mask group">
       <div className="absolute aspect-[1048/954] bottom-[-10.5px] left-[-13.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[5.5px_-2px] mask-size-[40px_40px] right-[-20%]" style={{ maskImage: `url('${imgFeatureImageSmall4}')` }} data-name="Feature Image Small">
@@ -2061,7 +2182,7 @@ function MaskGroup2() {
   );
 }
 
-function StatusLine8() {
+function StatusLine8_Auth() {
   return (
     <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
       <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Icon">
@@ -2080,61 +2201,48 @@ function StatusLine8() {
   );
 }
 
-function Content10() {
+function Content10_Auth() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-h-px relative min-w-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-normal">Trending content spotted 10x view</p>
-      <StatusLine8 />
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-nowrap">Trending content spotted 10x view</p>
+      <StatusLine8_Auth />
     </div>
   );
 }
 
-function TitleWithStatus10() {
+function TitleWithStatus10_Auth() {
   return (
     <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
-      <Content10 />
+      <Content10_Auth />
     </div>
   );
 }
 
-function AvatarWithTitle10() {
+function AvatarWithTitle10_Auth() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
+    <div className="content-stretch flex flex-1 gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Component 2">
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
           <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
         </div>
-        <MaskGroup2 />
+        <MaskGroup2_Auth />
       </div>
-      <TitleWithStatus10 />
+      <TitleWithStatus10_Auth />
     </div>
   );
 }
 
-function Container23() {
-  return (
-    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] left-2 right-[20%] md:left-3 md:right-[24%] lg:left-6 lg:right-[80px] rounded-[16px] top-[200px] min-w-0 overflow-hidden" data-name="Container">
+function Container23_Auth() {
+    return (
+      <div className="absolute bg-white content-stretch flex gap-[32px] items-center left-[36px] px-[8px] py-[12px] rounded-[16px] top-[158px] w-[400px]" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="relative shrink-0 size-[40px]" data-name="Component 2">
-        <div className="absolute aspect-[100/100] left-0 right-0 top-0">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
-        </div>
-        <MaskGroup2 />
-      </div>
-      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
-        <div className="flex-1 min-w-0">
-          <TitleWithStatus10 />
-        </div>
-        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
-        </div>
-      </div>
+      <AvatarWithTitle10_Auth />
+      
     </div>
   );
 }
 
-function MaskGroup3() {
+function MaskGroup3_Auth() {
   return (
     <div className="absolute contents inset-0" data-name="Mask group">
       <div className="absolute aspect-[1048/954] bottom-[-10.5px] left-[-13.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[5.5px_-2px] mask-size-[40px_40px] right-[-20%]" style={{ maskImage: `url('${imgFeatureImageSmall4}')` }} data-name="Feature Image Small">
@@ -2146,81 +2254,127 @@ function MaskGroup3() {
   );
 }
 
-function Content11() {
+function Content11_Auth() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-h-px not-italic relative min-w-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-normal">Content trending idea generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#e17100] text-[12px]">12 ideas ready</p>
+    <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Content trending idea generator</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#d77504] text-[12px]">12 Ideas ready</p>
     </div>
   );
 }
 
-function TitleWithStatus11() {
+function TitleWithStatus11_Auth() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] items-center min-w-px relative" data-name="Title with Status">
-      <Content11 />
+    <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
+      <Content11_Auth />
     </div>
   );
 }
 
-function AvatarWithTitle11() {
+function AvatarWithTitle11_Auth() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
+    <div className="content-stretch flex flex-1 gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Component 2">
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
           <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
         </div>
-        <MaskGroup3 />
+        <MaskGroup3_Auth />
       </div>
-      <TitleWithStatus11 />
+      <TitleWithStatus11_Auth />
     </div>
   );
 }
 
-function Container24() {
-  return (
-    <div className="absolute bg-white flex items-start gap-3 px-[8px] py-[12px] right-2 left-[20%] md:right-3 md:left-[24%] lg:right-6 lg:left-[60px] rounded-[16px] top-[290px] min-w-0 overflow-hidden" data-name="Container">
+function Container24_Auth() {
+    return (
+      <div className="absolute bg-white content-stretch flex gap-[32px] items-center px-[8px] py-[12px] right-[36px] rounded-[16px] top-[227px] w-[400px]" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="relative shrink-0 size-[40px]" data-name="Component 2">
-        <div className="absolute aspect-[100/100] left-0 right-0 top-0">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
-        </div>
-        <MaskGroup3 />
-      </div>
-      <div className="flex flex-col xl:flex-row gap-2 items-start xl:items-center justify-between relative flex-1 min-w-0">
-        <div className="flex-1 min-w-0">
-          <TitleWithStatus11 />
-        </div>
-        <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">View</p>
+      <AvatarWithTitle11_Auth />
+      
+    </div>
+  );
+}
+
+function MaskGroup4_Auth() {
+  return (
+    <div className="absolute contents inset-0" data-name="Mask group">
+      <div className="absolute aspect-[1048/954] bottom-[-10.5px] left-[-13.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[5.5px_-2px] mask-size-[40px_40px] right-[-20%]" style={{ maskImage: `url('${imgFeatureImageSmall4}')` }} data-name="Feature Image Small">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <img alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall} />
         </div>
       </div>
     </div>
   );
 }
 
-function Slot1() {
+function Content12_Auth() {
   return (
-    <div className="min-h-[600px] lg:min-h-[540px] xl:min-h-[480px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
-      <div className="absolute h-full left-0 top-[-25px] w-full" data-name="image 185">
+    <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Content trending idea generator</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#d77504] text-[12px]">12 Ideas ready</p>
+    </div>
+  );
+}
+
+function TitleWithStatus12_Auth() {
+  return (
+    <div className="content-stretch flex items-center relative shrink-0" data-name="Title with Status">
+      <Content12_Auth />
+    </div>
+  );
+}
+
+function AvatarWithTitle12_Auth() {
+  return (
+    <div className="content-stretch flex flex-1 gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
+      <div className="relative shrink-0 size-[40px]" data-name="Component 2">
+        <div className="absolute aspect-[100/100] left-0 right-0 top-0">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse2} width="40" />
+        </div>
+        <MaskGroup4_Auth />
+      </div>
+      <TitleWithStatus12_Auth />
+    </div>
+  );
+}
+
+function Container25_Auth() {
+    return (
+      <div className="absolute bg-white content-stretch flex gap-[32px] items-center left-[36px] px-[8px] py-[12px] rounded-[16px] top-[296px] w-[400px]" data-name="Container">
+      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      <AvatarWithTitle12_Auth />
+      
+    </div>
+  );
+}
+
+function Slot1_Auth() {
+  return (
+    <div className="aspect-[540/300] h-auto min-h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
+      <div className="absolute h-[411px] left-0 top-[-25px] w-full" data-name="image 185">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage186} />
       </div>
-      <Container21 />
-      <Container22 />
-      <Container23 />
-      <Container24 />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden p-2">
+        <div className="shrink-0 origin-center scale-[0.5] sm:scale-[0.6] md:scale-[0.7] lg:scale-[0.7] xl:scale-[0.85] 2xl:scale-100 w-[540px] h-[300px] relative pointer-events-auto">
+          <div className="relative size-full pointer-events-auto">
+            <Container21_Auth />
+      <Container22_Auth />
+      <Container23_Auth />
+      <Container24_Auth />
+      
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
-function DescriptionSection1() {
-  return (
-    <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative text-center w-full flex-1" data-name="Description Section">
+function DescriptionSection1_Auth() {
+    return (
+      <div className="bg-white content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative shrink-0 text-center flex-1 w-full" data-name="Description Section">
       <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
         <p>
-          <span className="leading-[32px]">Discover ideas, trends, monitor competitor</span>
-          <span className="leading-[32px] text-[#1f2937]">{` your marketing 10x value content`}</span>
+          <span className="leading-[32px] text-[#14a148]">Discover ideas, trends, monitor competitor</span><span className="leading-[32px] text-[#1f2937]"> your marketing 10x value content</span>
         </p>
       </div>
       <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
@@ -2230,7 +2384,7 @@ function DescriptionSection1() {
   );
 }
 
-function Frame38() {
+function Frame38_Auth() {
   return (
     <div className="bg-[#14a148] content-stretch flex items-center justify-center px-[16px] py-[8px] relative rounded-[20px] shrink-0">
       <p className="font-['Bricolage_Grotesque:Bold',sans-serif] font-bold leading-[16px] relative shrink-0 text-[14px] text-center text-white whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
@@ -2240,7 +2394,7 @@ function Frame38() {
   );
 }
 
-function Frame39() {
+function Frame39_Auth() {
   return (
     <div className="content-stretch flex items-center relative shrink-0">
       <p className="font-['Bricolage_Grotesque:Bold',sans-serif] font-bold leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] text-center whitespace-pre" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>{`Or Existing  Content`}</p>
@@ -2248,7 +2402,7 @@ function Frame39() {
   );
 }
 
-function Frame40() {
+function Frame40_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2259,7 +2413,7 @@ function Frame40() {
   );
 }
 
-function Frame41() {
+function Frame41_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2284,7 +2438,7 @@ function Frame41() {
   );
 }
 
-function Frame42() {
+function Frame42_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2304,7 +2458,7 @@ function Frame42() {
   );
 }
 
-function Frame43() {
+function Frame43_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2324,7 +2478,7 @@ function Frame43() {
   );
 }
 
-function Frame44() {
+function Frame44_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2339,7 +2493,7 @@ function Frame44() {
   );
 }
 
-function Frame45() {
+function Frame45_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2352,7 +2506,7 @@ function Frame45() {
   );
 }
 
-function Frame46() {
+function Frame46_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2365,7 +2519,7 @@ function Frame46() {
   );
 }
 
-function Frame47() {
+function Frame47_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2482,7 +2636,7 @@ function Frame47() {
   );
 }
 
-function Frame48() {
+function Frame48_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2505,7 +2659,7 @@ function Frame48() {
   );
 }
 
-function Frame49() {
+function Frame49_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-[1/span_3] justify-self-stretch relative rounded-[12px] row-4 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2520,34 +2674,34 @@ function Frame49() {
   );
 }
 
-function Container26() {
+function Container26_Auth() {
   return (
     <div className="gap-x-[8px] gap-y-[8px] grid-cols-[___44px_44px_fit-content(100%)] grid-rows-[repeat(4,fit-content(100%))] inline-grid relative rounded-[60px] shrink-0" data-name="Container">
-      <Frame40 />
-      <Frame41 />
-      <Frame42 />
-      <Frame43 />
-      <Frame44 />
-      <Frame45 />
-      <Frame46 />
-      <Frame47 />
-      <Frame48 />
-      <Frame49 />
+      <Frame40_Auth />
+      <Frame41_Auth />
+      <Frame42_Auth />
+      <Frame43_Auth />
+      <Frame44_Auth />
+      <Frame45_Auth />
+      <Frame46_Auth />
+      <Frame47_Auth />
+      <Frame48_Auth />
+      <Frame49_Auth />
     </div>
   );
 }
 
-function Frame37() {
+function Frame37_Auth() {
   return (
     <div className="content-stretch flex flex-col gap-[6px] items-center justify-center relative shrink-0">
-      <Frame38 />
-      <Frame39 />
-      <Container26 />
+      <Frame38_Auth />
+      <Frame39_Auth />
+      <Container26_Auth />
     </div>
   );
 }
 
-function Frame33() {
+function Frame33_Auth() {
   return (
     <div className="bg-white content-stretch flex gap-[2px] items-center p-[8px] relative rounded-[20px] shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
@@ -2565,7 +2719,7 @@ function Frame33() {
   );
 }
 
-function Frame51() {
+function Frame51_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2576,7 +2730,7 @@ function Frame51() {
   );
 }
 
-function Frame52() {
+function Frame52_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2601,7 +2755,7 @@ function Frame52() {
   );
 }
 
-function Frame53() {
+function Frame53_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2621,7 +2775,7 @@ function Frame53() {
   );
 }
 
-function Frame54() {
+function Frame54_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2641,7 +2795,7 @@ function Frame54() {
   );
 }
 
-function Frame55() {
+function Frame55_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2656,7 +2810,7 @@ function Frame55() {
   );
 }
 
-function Frame56() {
+function Frame56_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2669,7 +2823,7 @@ function Frame56() {
   );
 }
 
-function Frame57() {
+function Frame57_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-2 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2682,7 +2836,7 @@ function Frame57() {
   );
 }
 
-function Frame58() {
+function Frame58_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2799,7 +2953,7 @@ function Frame58() {
   );
 }
 
-function Frame59() {
+function Frame59_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-3 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2822,7 +2976,7 @@ function Frame59() {
   );
 }
 
-function GoogleAds1() {
+function GoogleAds1_Auth() {
   return (
     <div className="absolute inset-[3.13%_0_5.5%_0]" data-name="Google Ads">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 21.9289">
@@ -2837,18 +2991,18 @@ function GoogleAds1() {
   );
 }
 
-function Frame60() {
+function Frame60_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-4 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
       <div className="overflow-clip relative shrink-0 size-[24px]" data-name="Marketing Tools">
-        <GoogleAds1 />
+        <GoogleAds1_Auth />
       </div>
     </div>
   );
 }
 
-function Frame61() {
+function Frame61_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-3 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-4 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2868,7 +3022,7 @@ function Frame61() {
   );
 }
 
-function Symbol() {
+function Symbol_Auth() {
   return (
     <div className="h-[24px] relative shrink-0 w-[21px]" data-name="Symbol 1">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 21 24">
@@ -2887,35 +3041,35 @@ function Symbol() {
   );
 }
 
-function Frame62() {
+function Frame62_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] col-2 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-4 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
-      <Symbol />
+      <Symbol_Auth />
     </div>
   );
 }
 
-function Container27() {
+function Container27_Auth() {
   return (
     <div className="gap-x-[8px] gap-y-[8px] grid-cols-[repeat(3,fit-content(100%))] grid-rows-[repeat(4,fit-content(100%))] inline-grid relative rounded-[60px] shrink-0" data-name="Container">
-      <Frame51 />
-      <Frame52 />
-      <Frame53 />
-      <Frame54 />
-      <Frame55 />
-      <Frame56 />
-      <Frame57 />
-      <Frame58 />
-      <Frame59 />
-      <Frame60 />
-      <Frame61 />
-      <Frame62 />
+      <Frame51_Auth />
+      <Frame52_Auth />
+      <Frame53_Auth />
+      <Frame54_Auth />
+      <Frame55_Auth />
+      <Frame56_Auth />
+      <Frame57_Auth />
+      <Frame58_Auth />
+      <Frame59_Auth />
+      <Frame60_Auth />
+      <Frame61_Auth />
+      <Frame62_Auth />
     </div>
   );
 }
 
-function Frame63() {
+function Frame63_Auth() {
   return (
     <div className="bg-[rgba(255,255,255,0.8)] relative rounded-[12px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
@@ -2930,43 +3084,48 @@ function Frame63() {
   );
 }
 
-function Frame50() {
+function Frame50_Auth() {
   return (
     <div className="content-stretch flex flex-col gap-[13px] items-center justify-center relative shrink-0">
-      <Container27 />
-      <Frame63 />
+      <Container27_Auth />
+      <Frame63_Auth />
     </div>
   );
 }
 
-function Frame36() {
+function Frame36_Auth() {
   return (
     <div className="-translate-x-1/2 -translate-y-1/2 absolute content-stretch flex gap-[16px] items-center left-1/2 top-1/2">
-      <Frame37 />
-      <Frame33 />
-      <Frame50 />
+      <Frame37_Auth />
+      <Frame33_Auth />
+      <Frame50_Auth />
     </div>
   );
 }
 
-function Slot2() {
+function Slot2_Auth() {
   return (
-    <div className="min-h-[300px] lg:h-[360px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
-      <div className="absolute h-full left-0 top-[-25px] w-full" data-name="image 185">
+    <div className="aspect-[540/300] h-auto min-h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
+      <div className="absolute h-[411px] left-0 top-[-25px] w-full" data-name="image 185">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage186} />
       </div>
-      <Frame36 />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden p-2">
+        <div className="shrink-0 origin-center scale-[0.5] sm:scale-[0.6] md:scale-[0.7] lg:scale-[0.7] xl:scale-[0.85] 2xl:scale-100 w-[540px] h-[300px] relative pointer-events-auto">
+          <div className="relative size-full pointer-events-auto">
+            <Frame36_Auth />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
-function DescriptionSection2() {
-  return (
-    <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative text-center w-full flex-1" data-name="Description Section">
-      <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
+function DescriptionSection2_Auth() {
+    return (
+      <div className="bg-white content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative shrink-0 text-center flex-1 w-full" data-name="Description Section">
+      <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[24px] tracking-[-0.5px] w-full">
         <p>
-          <span className="leading-[32px]">Turn idea/existing content</span>
-          <span className="leading-[32px] text-[#1f2937]">{` into social posts, blogs, TikTok, YouTube videos in click.`}</span>
+          <span className="leading-[32px] text-[#14a148]">Turn idea/existing content</span><span className="leading-[32px] text-[#1f2937]"> into social posts, blogs, TikToks, YouTube videos in minutes.</span>
         </p>
       </div>
       <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
@@ -2976,7 +3135,7 @@ function DescriptionSection2() {
   );
 }
 
-function Group1() {
+function Group1_Auth() {
   return (
     <div className="absolute inset-[-0.55%_-0.9%_-0.61%_-0.59%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0.282px_0.264px] mask-size-[48px_48px]" style={{ maskImage: `url('${imgGroup1}')` }} data-name="Group">
       <div className="absolute inset-[-7.62%_-1.65%_-1.66%_-1.65%]">
@@ -3133,7 +3292,7 @@ function Group1() {
   );
 }
 
-function GoogleAnalyticsLogomark1() {
+function GoogleAnalyticsLogomark1_Auth() {
   return (
     <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[48px] top-1/2" data-name="Google Analytics Logomark">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 48 48">
@@ -3149,7 +3308,7 @@ function GoogleAnalyticsLogomark1() {
   );
 }
 
-function Group3() {
+function Group3_Auth() {
   return (
     <div className="absolute inset-[12.5%_0_12.48%_0]">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 41.9994 31.5078">
@@ -3165,7 +3324,7 @@ function Group3() {
   );
 }
 
-function GoogleDrive1() {
+function GoogleDrive1_Auth() {
   return (
     <div className="absolute inset-[6.84%_0_6.68%_0]" data-name="google-drive">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 42 36.3234">
@@ -3199,7 +3358,7 @@ function GoogleDrive1() {
   );
 }
 
-function GoogleAds2() {
+function GoogleAds2_Auth() {
   return (
     <div className="absolute inset-[3.13%_0_5.5%_0]" data-name="Google Ads">
       <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 42.0001 38.3757">
@@ -3214,9 +3373,9 @@ function GoogleAds2() {
   );
 }
 
-function Container28() {
+function Container28_Auth() {
   return (
-    <div className="-translate-x-1/2 -translate-y-1/2 absolute gap-x-[75px] gap-y-[36px] grid grid-cols-[repeat(9,minmax(0,1fr))] grid-rows-[repeat(3,fit-content(100%))] left-1/2 py-[36px] rounded-[60px] top-1/2 w-full max-w-[681.429px]" data-name="Container">
+    <div className="-translate-x-1/2 -translate-y-1/2 absolute gap-x-[75px] gap-y-[36px] grid grid-cols-[repeat(9,minmax(0,1fr))] grid-rows-[repeat(3,fit-content(100%))] left-[calc(50%-1.29px)] py-[36px] rounded-[60px] top-[calc(50%+0.5px)] w-full max-w-[681px]" data-name="Container">
       <div className="col-1 relative row-1 shrink-0 size-[42px]" data-name="Logos">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
       </div>
@@ -3289,7 +3448,7 @@ function Container28() {
         </div>
       </div>
       <div className="col-9 overflow-clip relative row-1 shrink-0 size-[42px]" data-name="Social Icons">
-        <Group1 />
+        <Group1_Auth />
       </div>
       <div className="col-1 overflow-clip relative row-2 shrink-0 size-[42px]" data-name="Social Icons">
         <div className="absolute inset-[0_7.2%_0_6.77%]" data-name="Vector">
@@ -3309,14 +3468,14 @@ function Container28() {
         </svg>
       </div>
       <div className="col-3 overflow-clip relative row-2 shrink-0 size-[42px]" data-name="Google Tools">
-        <GoogleAnalyticsLogomark1 />
+        <GoogleAnalyticsLogomark1_Auth />
       </div>
       <div className="col-4 relative row-2 shrink-0 size-[42px]" data-name="Mail & Storage">
         <div className="absolute inset-[0_1.09%_0_-1.09%]" data-name="Logo Container" />
-        <Group3 />
+        <Group3_Auth />
       </div>
       <div className="col-5 overflow-clip relative row-2 shrink-0 size-[42px]" data-name="Mail & Storage">
-        <GoogleDrive1 />
+        <GoogleDrive1_Auth />
       </div>
       <div className="col-6 overflow-clip relative row-2 shrink-0 size-[42px]" data-name="Finance">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 42 42">
@@ -3487,7 +3646,7 @@ function Container28() {
         </svg>
       </div>
       <div className="col-5 overflow-clip relative row-3 shrink-0 size-[42px]" data-name="Marketing Tools">
-        <GoogleAds2 />
+        <GoogleAds2_Auth />
       </div>
       <div className="col-6 overflow-clip relative row-3 shrink-0 size-[42px]" data-name="Marketing Tools">
         <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[48px] left-[calc(50%+0.11px)] top-1/2 w-[45.226px]" data-name="Mailchimp">
@@ -3536,7 +3695,7 @@ function Container28() {
   );
 }
 
-function Content13() {
+function Content13_Auth() {
   return (
     <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start justify-center leading-[0] not-italic pb-[3px] relative shrink-0 whitespace-nowrap" data-name="Content">
       <div className="flex flex-col justify-center mb-[-3px] relative shrink-0 text-[#1f2937] text-[21px]">
@@ -3549,22 +3708,22 @@ function Content13() {
   );
 }
 
-function Frame30() {
+function Frame30_Auth() {
   return (
-    <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
+    <div className="content-stretch flex flex-wrap gap-[20px] items-end justify-center relative w-full max-w-[1200px]">
       <div className="relative shrink-0 size-[36px]" data-name="Logos">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos2} />
       </div>
-      <Content13 />
+      <Content13_Auth />
     </div>
   );
 }
 
-function Container29() {
+function Container29_Auth() {
   return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between left-[62px] right-[62px] px-[12px] py-[18px] rounded-[18px] top-[116.5px]" data-name="Container">
+    <div className="absolute bg-white content-stretch flex items-center justify-between left-[11.4%] px-[12px] py-[18px] rounded-[18px] top-[116.5px] w-[76.6%]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[1.5px] border-solid inset-0 pointer-events-none rounded-[18px]" />
-      <Frame30 />
+      <Frame30_Auth />
       <div className="overflow-clip relative shrink-0 size-[36px]" data-name="Check cr-fr">
         <div className="absolute inset-[8.33%]" data-name="Shape">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
@@ -3576,7 +3735,7 @@ function Container29() {
   );
 }
 
-function Content14() {
+function Content14_Auth() {
   return (
     <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start justify-center leading-[0] not-italic pb-[3px] relative shrink-0 whitespace-nowrap" data-name="Content">
       <div className="flex flex-col justify-center mb-[-3px] relative shrink-0 text-[#1f2937] text-[21px]">
@@ -3589,9 +3748,9 @@ function Content14() {
   );
 }
 
-function Frame31() {
+function Frame31_Auth() {
   return (
-    <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
+    <div className="content-stretch flex flex-wrap gap-[20px] items-end justify-center relative w-full max-w-[1200px]">
       <div className="overflow-clip relative shrink-0 size-[30px]" data-name="Social Media Icons">
         <div className="absolute inset-[0_1.08%]" data-name="Vector">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 29.3549 30">
@@ -3599,16 +3758,16 @@ function Frame31() {
           </svg>
         </div>
       </div>
-      <Content14 />
+      <Content14_Auth />
     </div>
   );
 }
 
-function Container30() {
+function Container30_Auth() {
   return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between left-[54.5px] px-[12px] py-[18px] rounded-[18px] top-[131.5px] w-[429px]" data-name="Container">
+    <div className="absolute bg-white content-stretch flex items-center justify-between left-[10.1%] px-[12px] py-[18px] rounded-[18px] top-[131.5px] w-[79.4%]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[1.5px] border-solid inset-0 pointer-events-none rounded-[18px]" />
-      <Frame31 />
+      <Frame31_Auth />
       <div className="overflow-clip relative shrink-0 size-[36px]" data-name="Check cr-fr">
         <div className="absolute inset-[8.33%]" data-name="Shape">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
@@ -3620,7 +3779,7 @@ function Container30() {
   );
 }
 
-function Content15() {
+function Content15_Auth() {
   return (
     <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start justify-center leading-[0] not-italic pb-[3px] relative shrink-0 whitespace-nowrap" data-name="Content">
       <div className="flex flex-col justify-center mb-[-3px] relative shrink-0 text-[#1f2937] text-[21px]">
@@ -3633,22 +3792,22 @@ function Content15() {
   );
 }
 
-function Frame32() {
+function Frame32_Auth() {
   return (
-    <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
+    <div className="content-stretch flex flex-wrap gap-[20px] items-end justify-center relative w-full max-w-[1200px]">
       <div className="relative shrink-0 size-[36px]" data-name="Logos">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
       </div>
-      <Content15 />
+      <Content15_Auth />
     </div>
   );
 }
 
-function Container31() {
+function Container31_Auth() {
   return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between left-[50px] px-[12px] py-[18px] rounded-[18px] top-[146.5px] w-[444px]" data-name="Container">
+    <div className="absolute bg-white content-stretch flex items-center justify-between left-[9.2%] px-[12px] py-[18px] rounded-[18px] top-[146.5px] w-[82.2%]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[1.5px] border-solid inset-0 pointer-events-none rounded-[18px]" />
-      <Frame32 />
+      <Frame32_Auth />
       <div className="overflow-clip relative shrink-0 size-[36px]" data-name="Check cr-fr">
         <div className="absolute inset-[8.33%]" data-name="Shape">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
@@ -3660,94 +3819,95 @@ function Container31() {
   );
 }
 
-function Group4() {
+function Group4_Auth() {
   return (
-    <div className="absolute contents left-[50px] top-[116.5px]">
-      <Container29 />
-      <Container30 />
-      <Container31 />
+    <div className="absolute contents left-[9.2%] top-[116.5px]">
+      <Container29_Auth />
+      <Container30_Auth />
+      <Container31_Auth />
     </div>
   );
 }
 
-function Group5() {
+function Group5_Auth() {
   return (
     <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-[calc(50%-1.29px)] top-[calc(50%+3.5px)]">
-      <Container28 />
+      <Container28_Auth />
       <div className="-translate-y-1/2 absolute flex h-[346px] items-center justify-center right-[-9px] top-1/2 w-[280px]">
         <div className="-scale-y-100 flex-none rotate-180">
           <div className="bg-gradient-to-r from-[#e1f0fc] from-[13.462%] h-[346px] to-[rgba(249,250,252,0)] w-[280px]" />
         </div>
       </div>
       <div className="-translate-y-1/2 absolute bg-gradient-to-r from-[#faf4fd] from-[16%] h-[353px] left-[-20px] to-[rgba(249,250,252,0)] top-[calc(50%+3.5px)] w-[280px]" />
-      <Group4 />
+      <Group4_Auth />
     </div>
   );
 }
 
-function Slot3() {
+function Slot3_Auth() {
   return (
-    <div className="min-h-[300px] lg:h-[360px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[360px] left-1/2 opacity-20 top-1/2 w-[640px]" data-name="image 187">
+    <div className="bg-[#f9fafc] aspect-[540/300] h-auto min-h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[360px] left-1/2 opacity-20 top-1/2 w-full" data-name="image 187">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage187} />
       </div>
-      <Group5 />
-    </div>
-  );
-}
-
-function DescriptionSection3() {
-  return (
-    <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative text-center w-full flex-1" data-name="Description Section">
-      <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
-        <p>
-          <span className="leading-[32px]">Smart Multi-Platform Publishing</span>
-          <span className="leading-[32px] text-[#1f2937]">{` based on realtime audiance & performance data!`}</span>
-        </p>
-      </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
-        <p className="leading-[22px]">Share content across platforms like Instagram, X, Wordpress, TikTok, and YouTube etc. based on platform realtime algorithms and previous past performance.</p>
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden p-2">
+        <div className="shrink-0 origin-center scale-[0.5] sm:scale-[0.6] md:scale-[0.7] lg:scale-[0.7] xl:scale-[0.85] 2xl:scale-100 w-[540px] h-[300px] relative pointer-events-auto">
+          <div className="relative size-full pointer-events-auto">
+            <Group5_Auth />
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-function Frame35() {
+function DescriptionSection3_Auth() {
+    return (
+      <div className="bg-white relative shrink-0 flex-1 w-full" data-name="Description Section">
+      <div className="flex flex-col items-center size-full">
+        <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative size-full text-center">
+          <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
+            <p>
+              <span className="leading-[32px] text-[#14a148]">Smart Multi-Platform Publishing</span><span className="leading-[32px] text-[#1f2937]"> based on realtime audiance & performance data!</span>
+            </p>
+          </div>
+          <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
+            <p className="leading-[22px]">Share content across platforms like Instagram, X, Wordpress, TikTok, and YouTube etc. based on platform realtime algorithms and previous past performance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Frame35_Auth() {
   return (
-    <div className="gap-x-6 gap-y-[40px] grid grid-cols-1 lg:grid-cols-2 relative shrink-0 w-full items-stretch">
-      <div className="bg-white justify-self-stretch relative rounded-[20px] shrink-0 flex flex-col h-full" data-name="Contianer">
+    <div className="gap-x-[40px] gap-y-[40px] grid grid-cols-1 lg:grid-cols-2 grid-rows-[repeat(4,fit-content(100%))] lg:grid-rows-[repeat(2,fit-content(100%))] relative shrink-0 w-full">
+      <div className="bg-white col-1 justify-self-stretch relative rounded-[20px] row-1 shrink-0 h-full flex flex-col" data-name="Contianer">
         <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full flex-1">
-          <Slot />
-          <div className="flex-1 w-full flex flex-col">
-            <DescriptionSection />
-          </div>
+          <Slot_Auth />
+          <DescriptionSection_Auth />
         </div>
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
       </div>
-      <div className="bg-white justify-self-stretch relative rounded-[20px] shrink-0 flex flex-col h-full" data-name="Contianer">
+      <div className="bg-white col-2 justify-self-stretch relative rounded-[20px] row-1 shrink-0 h-full flex flex-col" data-name="Contianer">
         <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full flex-1">
-          <Slot1 />
-          <div className="flex-1 w-full flex flex-col">
-            <DescriptionSection1 />
-          </div>
+          <Slot1_Auth />
+          <DescriptionSection1_Auth />
         </div>
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
       </div>
-      <div className="bg-white justify-self-stretch relative rounded-[20px] shrink-0 flex flex-col h-full" data-name="Contianer">
+      <div className="bg-white col-2 justify-self-stretch relative rounded-[20px] row-2 shrink-0 h-full flex flex-col" data-name="Contianer">
         <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full flex-1">
-          <Slot3 />
-          <div className="flex-1 w-full flex flex-col">
-            <DescriptionSection3 />
-          </div>
+          <Slot2_Auth />
+          <DescriptionSection2_Auth />
         </div>
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
       </div>
-      <div className="bg-white justify-self-stretch relative rounded-[20px] shrink-0 flex flex-col h-full" data-name="Contianer">
+      <div className="bg-white col-1 justify-self-stretch relative rounded-[20px] row-2 shrink-0 h-full flex flex-col" data-name="Contianer">
         <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full flex-1">
-          <Slot2 />
-          <div className="flex-1 w-full flex flex-col">
-            <DescriptionSection2 />
-          </div>
+          <Slot3_Auth />
+          <DescriptionSection3_Auth />
         </div>
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
       </div>
@@ -3755,39 +3915,50 @@ function Frame35() {
   );
 }
 
-function Frame34() {
+function Frame34_Auth() {
   return (
-    <div className="content-stretch flex flex-col gap-[69px] items-center relative shrink-0 w-full max-w-[1280px]">
-      <Frame19 />
-      <Frame35 />
+    <div className="content-stretch flex flex-col gap-12 md:gap-[69px] items-center relative shrink-0 w-full max-w-[1120px] px-4 md:px-6 lg:px-0">
+      <Frame19_Auth />
+      <Frame35_Auth />
     </div>
   );
 }
 
-function Frame64() {
+function Frame64_Auth() {
   return (
-    <div className="content-stretch flex gap-[32px] items-start relative shrink-0">
-      <div className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 w-[140px]" data-name="Button">
+    <div className="content-stretch flex flex-wrap gap-[20px] items-end justify-center relative w-full max-w-[1200px]">
+      <div 
+        onClick={() => {
+          window.scrollTo(0, 0);
+          window.dispatchEvent(new CustomEvent("focus-waitlist-email"));
+        }}
+        className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 w-[140px] cursor-pointer hover:opacity-90 transition-opacity" 
+        data-name="Button"
+      >
         <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
       </div>
-      <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0" data-name="Button">
+      <Link 
+        to="/solution" 
+        className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 cursor-pointer hover:bg-gray-50 transition-colors" 
+        data-name="Button"
+      >
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#111827] text-[18px] whitespace-nowrap">View More Solution</p>
-      </div>
+        <p className="font-[700] font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#111827] text-[18px] whitespace-nowrap">View More Solution</p>
+      </Link>
     </div>
   );
 }
 
-function Solution1({ className }: { className?: string }) {
+function Solution1_Auth({ className }: { className?: string }) {
   return (
-    <div className={className || "bg-white content-stretch flex flex-col gap-[40px] items-center justify-center overflow-clip px-2 py-12 lg:py-20 relative shrink-0 w-full"} data-name="Solution">
-      <Frame34 />
-      <Frame64 />
+    <div className={className || "bg-white content-stretch flex flex-col gap-8 md:gap-[40px] items-center justify-center overflow-clip px-4 py-12 md:p-12 lg:p-[80px] relative shrink-0 w-full"} data-name="Solution">
+      <Frame34_Auth />
+      <Frame64_Auth />
     </div>
   );
 }
 
-function Frame20() {
+function Frame20_Auth() {
   return (
     <div className="content-stretch flex flex-col items-center not-italic relative shrink-0 text-center w-full whitespace-nowrap">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[36px] relative shrink-0 text-[#1f2937] text-[28px] tracking-[-0.28px]">{`Don't take our word for it`}</p>
@@ -3796,7 +3967,7 @@ function Frame20() {
   );
 }
 
-function Container33() {
+function Container33_Auth() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[24px]" data-name="image 154">
@@ -3807,11 +3978,11 @@ function Container33() {
   );
 }
 
-function ChatGpt() {
+function ChatGpt_Auth() {
   return (
-    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px] shrink-0" data-name="ChatGPT">
+    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px]" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
-      <Container33 />
+      <Container33_Auth />
       <div className="relative shrink-0 size-[20px]" data-name="icon_pack/chevron_right">
         <div className="absolute bottom-1/4 left-[35.79%] right-[33.33%] top-1/4" data-name="Mask">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
@@ -3826,7 +3997,7 @@ function ChatGpt() {
   );
 }
 
-function Container34() {
+function Container34_Auth() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[24px]" data-name="image 154">
@@ -3837,11 +4008,11 @@ function Container34() {
   );
 }
 
-function ChatGpt1() {
+function ChatGpt1_Auth() {
   return (
-    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px] shrink-0" data-name="ChatGPT">
+    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px]" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
-      <Container34 />
+      <Container34_Auth />
       <div className="relative shrink-0 size-[20px]" data-name="icon_pack/chevron_right">
         <div className="absolute bottom-1/4 left-[35.79%] right-[33.33%] top-1/4" data-name="Mask">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
@@ -3856,7 +4027,7 @@ function ChatGpt1() {
   );
 }
 
-function Container35() {
+function Container35_Auth() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[24px]" data-name="image 154">
@@ -3867,11 +4038,11 @@ function Container35() {
   );
 }
 
-function ChatGpt2() {
+function ChatGpt2_Auth() {
   return (
-    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px] shrink-0" data-name="ChatGPT">
+    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px]" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
-      <Container35 />
+      <Container35_Auth />
       <div className="relative shrink-0 size-[20px]" data-name="icon_pack/chevron_right">
         <div className="absolute bottom-1/4 left-[35.79%] right-[33.33%] top-1/4" data-name="Mask">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
@@ -3886,54 +4057,54 @@ function ChatGpt2() {
   );
 }
 
-function Container32() {
+function Container32_Auth() {
   return (
     <div className="content-start flex flex-wrap gap-[20px] items-start relative shrink-0" data-name="Container">
-      <ChatGpt />
-      <ChatGpt1 />
-      <ChatGpt2 />
+      <ChatGpt_Auth />
+      <ChatGpt1_Auth />
+      <ChatGpt2_Auth />
     </div>
   );
 }
 
-function Frame10() {
+function Frame10_Auth() {
   return (
     <div className="bg-[#f9fafc] content-stretch flex flex-col gap-[40px] items-center px-[40px] py-[32px] relative rounded-[40px] shrink-0">
-      <Frame20 />
-      <Container32 />
+      <Frame20_Auth />
+      <Container32_Auth />
     </div>
   );
 }
 
-function Solution() {
+function Solution_Auth() {
   return (
-    <div className="relative bg-white w-full flex flex-col gap-12 md:gap-[80px] items-center justify-center pb-12 md:pb-[80px] px-4 md:px-12 lg:px-[80px]" data-name="Solution">
-      <Solution1 />
-      <Frame10 />
+    <div id="solution" className="font-[700] relative bg-white w-full flex flex-col gap-12 md:gap-[80px] items-center justify-center pb-12 md:pb-[80px] px-4 md:px-12 lg:px-[80px]" data-name="Solution">
+      <Solution1_Auth />
+      <Frame10_Auth />
     </div>
   );
 }
 
 function Cotnet2() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-[740px]" data-name="Cotnet">
+    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px]" data-name="Cotnet">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">WHY US?</p>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] whitespace-nowrap">Marketing that runs itself.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#9ca3af] text-[20px] whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[1.2] md:leading-[48px] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.8px]">Marketing that runs itself.</p>
+      <p className="font-['General_Sans:Medium',sans-serif] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] text-[16px] md:text-[20px] whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
     </div>
   );
 }
 
 function Container38() {
-  return <div className="bg-[rgba(24,24,27,0.5)] flex-[1_0_0] h-[52px] min-w-px" data-name="Container" />;
+  return <div className="bg-[rgba(24,24,27,0.5)] flex-1 h-auto min-h-[52px] min-w-px" data-name="Container" />;
 }
 
 function Container39() {
   return (
-    <div className="bg-[rgba(24,24,27,0.5)] flex-[1_0_0] h-[52px] min-w-px relative" data-name="Container">
+    <div className="bg-[rgba(24,24,27,0.5)] flex-1 h-auto min-h-[52px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#27272a] border-l border-solid inset-0 pointer-events-none" />
-      <div className="content-stretch flex flex-col items-start pl-[25px] pr-[24px] pt-[16px] relative size-full">
-        <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[0.1996px] whitespace-nowrap">Independent Talent</p>
+      <div className="content-stretch flex flex-col items-start pl-2 md:pl-[25px] pr-2 md:pr-[24px] pt-[16px] relative size-full">
+        <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[0.1996px]">Independent Talent</p>
       </div>
     </div>
   );
@@ -3941,10 +4112,10 @@ function Container39() {
 
 function Container40() {
   return (
-    <div className="bg-[rgba(24,24,27,0.5)] flex-[1_0_0] h-[52px] min-w-px relative" data-name="Container">
+    <div className="bg-[rgba(24,24,27,0.5)] flex-1 h-auto min-h-[52px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#27272a] border-l border-solid inset-0 pointer-events-none" />
-      <div className="content-stretch flex flex-col items-start pl-[25px] pr-[24px] pt-[16px] relative size-full">
-        <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[0.1996px] whitespace-nowrap">Agencies</p>
+      <div className="content-stretch flex flex-col items-start pl-2 md:pl-[25px] pr-2 md:pr-[24px] pt-[16px] relative size-full">
+        <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[0.1996px]">Agencies</p>
       </div>
     </div>
   );
@@ -3952,11 +4123,11 @@ function Container40() {
 
 function Container41() {
   return (
-    <div className="flex-[1_0_0] h-[52px] min-w-px relative" style={{ backgroundImage: "linear-gradient(169.461deg, rgba(9, 44, 77, 0.4) 0%, rgb(12, 60, 106) 100%)" }} data-name="Container">
+    <div className="flex-1 h-auto min-h-[52px] min-w-px relative" style={{ backgroundImage: "linear-gradient(169.461deg, rgba(9, 44, 77, 0.4) 0%, rgb(12, 60, 106) 100%)" }} data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-col items-center justify-center size-full">
-        <div className="content-stretch flex flex-col items-center justify-center pl-[25px] pr-[24px] pt-[16px] relative size-full">
-          <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#51a2ff] text-[14px] tracking-[0.1996px] whitespace-nowrap">AI Marketing Team (LoraLoop)</p>
+        <div className="content-stretch flex flex-col items-center justify-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] pt-[16px] relative size-full">
+          <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#51a2ff] text-[14px] tracking-[0.1996px]">AI Marketing Team (LoraLoop)</p>
         </div>
       </div>
     </div>
@@ -3965,9 +4136,9 @@ function Container41() {
 
 function Container37() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#27272a] border-b border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-stretch relative size-full">
         <Container38 />
         <Container39 />
         <Container40 />
@@ -3979,10 +4150,10 @@ function Container37() {
 
 function Container43() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center px-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Cost</p>
+        <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
+          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Cost</p>
         </div>
       </div>
     </div>
@@ -3992,7 +4163,7 @@ function Container43() {
 function Container45() {
   return (
     <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-end justify-center not-italic py-[2px] relative size-full text-[#6b7280] whitespace-nowrap">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-end justify-center not-italic py-[2px] relative size-full text-[#6b7280]">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$4k</p>
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">to</p>
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$8k</p>
@@ -4004,10 +4175,10 @@ function Container45() {
 
 function Container44() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <Container45 />
         </div>
       </div>
@@ -4018,7 +4189,7 @@ function Container44() {
 function Container47() {
   return (
     <div className="relative shrink-0" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-end justify-center not-italic py-[2px] relative size-full text-[#6b7280] whitespace-nowrap">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-end justify-center not-italic py-[2px] relative size-full text-[#6b7280]">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$5k</p>
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">to</p>
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$15k</p>
@@ -4030,10 +4201,10 @@ function Container47() {
 
 function Container46() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <Container47 />
         </div>
       </div>
@@ -4044,7 +4215,7 @@ function Container46() {
 function Frame23() {
   return (
     <div className="relative shrink-0">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-center not-italic relative size-full text-white whitespace-nowrap">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-center not-italic relative size-full text-white">
         <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">Starts</p>
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$9.99</p>
         <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">/ month</p>
@@ -4055,10 +4226,10 @@ function Frame23() {
 
 function Container48() {
   return (
-    <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
+    <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[10px] items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex gap-[10px] items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <p className="font-['Inter:Bold',sans-serif] font-bold leading-[28px] not-italic relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px] whitespace-nowrap">💡</p>
           <Frame23 />
         </div>
@@ -4069,9 +4240,9 @@ function Container48() {
 
 function Container42() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-stretch relative size-full">
         <Container43 />
         <Container44 />
         <Container46 />
@@ -4083,10 +4254,10 @@ function Container42() {
 
 function Container50() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center px-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Availability</p>
+        <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Availability</p>
         </div>
       </div>
     </div>
@@ -4095,11 +4266,11 @@ function Container50() {
 
 function Container51() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Limited hours</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Limited hours</p>
         </div>
       </div>
     </div>
@@ -4108,11 +4279,11 @@ function Container51() {
 
 function Container52() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Business hours only</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Business hours only</p>
         </div>
       </div>
     </div>
@@ -4121,10 +4292,10 @@ function Container52() {
 
 function Container53() {
   return (
-    <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
+    <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[10px] items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex gap-[10px] items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <div className="h-[9.167px] relative shrink-0 w-[13.333px]" data-name="Vector">
             <div className="absolute inset-[-9.09%_-6.25%]">
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15 10.8333">
@@ -4132,7 +4303,7 @@ function Container53() {
               </svg>
             </div>
           </div>
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px] whitespace-nowrap">24/7, always on</p>
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">24/7, always on</p>
         </div>
       </div>
     </div>
@@ -4141,9 +4312,9 @@ function Container53() {
 
 function Container49() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-stretch relative size-full">
         <Container50 />
         <Container51 />
         <Container52 />
@@ -4155,10 +4326,10 @@ function Container49() {
 
 function Container55() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center px-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Downtime</p>
+        <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Downtime</p>
         </div>
       </div>
     </div>
@@ -4167,11 +4338,11 @@ function Container55() {
 
 function Container56() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Leaves, sick days</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Leaves, sick days</p>
         </div>
       </div>
     </div>
@@ -4180,11 +4351,11 @@ function Container56() {
 
 function Container57() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">{`Holidays & breaks`}</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">{`Holidays & breaks`}</p>
         </div>
       </div>
     </div>
@@ -4193,10 +4364,10 @@ function Container57() {
 
 function Container58() {
   return (
-    <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
+    <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[10px] items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex gap-[10px] items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <div className="h-[9.167px] relative shrink-0 w-[13.333px]" data-name="Vector">
             <div className="absolute inset-[-9.09%_-6.25%]">
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15 10.8333">
@@ -4204,7 +4375,7 @@ function Container58() {
               </svg>
             </div>
           </div>
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Never stops</p>
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Never stops</p>
         </div>
       </div>
     </div>
@@ -4213,9 +4384,9 @@ function Container58() {
 
 function Container54() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-stretch relative size-full">
         <Container55 />
         <Container56 />
         <Container57 />
@@ -4227,10 +4398,10 @@ function Container54() {
 
 function Container60() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center px-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Overhead</p>
+        <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Overhead</p>
         </div>
       </div>
     </div>
@@ -4239,11 +4410,11 @@ function Container60() {
 
 function Container61() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Benefits, tools, extras</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Benefits, tools, extras</p>
         </div>
       </div>
     </div>
@@ -4252,11 +4423,11 @@ function Container61() {
 
 function Container62() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">High retainers</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">High retainers</p>
         </div>
       </div>
     </div>
@@ -4265,10 +4436,10 @@ function Container62() {
 
 function Container63() {
   return (
-    <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
+    <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[10px] items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex gap-[10px] items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <div className="h-[9.167px] relative shrink-0 w-[13.333px]" data-name="Vector">
             <div className="absolute inset-[-9.09%_-6.25%]">
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15 10.8333">
@@ -4276,7 +4447,7 @@ function Container63() {
               </svg>
             </div>
           </div>
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px] whitespace-nowrap">No overhead</p>
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">No overhead</p>
         </div>
       </div>
     </div>
@@ -4285,9 +4456,9 @@ function Container63() {
 
 function Container59() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-stretch relative size-full">
         <Container60 />
         <Container61 />
         <Container62 />
@@ -4299,10 +4470,10 @@ function Container59() {
 
 function Container65() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center px-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Setup Time</p>
+        <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Setup Time</p>
         </div>
       </div>
     </div>
@@ -4311,11 +4482,11 @@ function Container65() {
 
 function Container66() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Weeks to start</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Weeks to start</p>
         </div>
       </div>
     </div>
@@ -4324,11 +4495,11 @@ function Container66() {
 
 function Container67() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">1–2 weeks onboarding</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">1–2 weeks onboarding</p>
         </div>
       </div>
     </div>
@@ -4337,10 +4508,10 @@ function Container67() {
 
 function Container68() {
   return (
-    <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
+    <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-[25px] pr-[24px] py-[14px] relative size-full whitespace-nowrap">
+        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <p className="leading-[28px] relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px]">⚡</p>
           <p className="leading-[20px] relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Ready in 5 minutes</p>
         </div>
@@ -4351,9 +4522,9 @@ function Container68() {
 
 function Container64() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-stretch relative size-full">
         <Container65 />
         <Container66 />
         <Container67 />
@@ -4365,10 +4536,10 @@ function Container64() {
 
 function Container70() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center px-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Continuity</p>
+        <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Continuity</p>
         </div>
       </div>
     </div>
@@ -4377,11 +4548,11 @@ function Container70() {
 
 function Container71() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Can quit anytime</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Can quit anytime</p>
         </div>
       </div>
     </div>
@@ -4390,11 +4561,11 @@ function Container71() {
 
 function Container72() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Team changes</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Team changes</p>
         </div>
       </div>
     </div>
@@ -4403,10 +4574,10 @@ function Container72() {
 
 function Container73() {
   return (
-    <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
+    <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[10px] items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex gap-[10px] items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <div className="h-[9.167px] relative shrink-0 w-[13.333px]" data-name="Vector">
             <div className="absolute inset-[-9.09%_-6.25%]">
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 15 10.8333">
@@ -4414,7 +4585,7 @@ function Container73() {
               </svg>
             </div>
           </div>
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Never leaves</p>
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Never leaves</p>
         </div>
       </div>
     </div>
@@ -4423,9 +4594,9 @@ function Container73() {
 
 function Container69() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-stretch relative size-full">
         <Container70 />
         <Container71 />
         <Container72 />
@@ -4437,10 +4608,10 @@ function Container69() {
 
 function Container75() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center px-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Skill Coverage</p>
+        <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Skill Coverage</p>
         </div>
       </div>
     </div>
@@ -4449,11 +4620,11 @@ function Container75() {
 
 function Container76() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Limited to one skillset</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Limited to one skillset</p>
         </div>
       </div>
     </div>
@@ -4462,11 +4633,11 @@ function Container76() {
 
 function Container77() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Depends on team</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Depends on team</p>
         </div>
       </div>
     </div>
@@ -4475,10 +4646,10 @@ function Container77() {
 
 function Container78() {
   return (
-    <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
+    <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-[25px] pr-[24px] py-[14px] relative size-full whitespace-nowrap">
+        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <p className="leading-[28px] relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px]">🌐</p>
           <p className="leading-[20px] relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Works across all platforms</p>
         </div>
@@ -4489,9 +4660,9 @@ function Container78() {
 
 function Container74() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-stretch relative size-full">
         <Container75 />
         <Container76 />
         <Container77 />
@@ -4503,10 +4674,10 @@ function Container74() {
 
 function Container80() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center px-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Speed</p>
+        <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Speed</p>
         </div>
       </div>
     </div>
@@ -4515,11 +4686,11 @@ function Container80() {
 
 function Container81() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Slow, needs follow-ups</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Slow, needs follow-ups</p>
         </div>
       </div>
     </div>
@@ -4528,11 +4699,11 @@ function Container81() {
 
 function Container82() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Queue-based delays</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Queue-based delays</p>
         </div>
       </div>
     </div>
@@ -4541,10 +4712,10 @@ function Container82() {
 
 function Container83() {
   return (
-    <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
+    <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-[25px] pr-[24px] py-[14px] relative size-full whitespace-nowrap">
+        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <p className="leading-[28px] relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px]">⚡</p>
           <p className="leading-[20px] relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Executes in minutes</p>
         </div>
@@ -4555,9 +4726,9 @@ function Container83() {
 
 function Container79() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-stretch relative size-full">
         <Container80 />
         <Container81 />
         <Container82 />
@@ -4569,10 +4740,10 @@ function Container79() {
 
 function Container85() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center px-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Scalability</p>
+        <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Scalability</p>
         </div>
       </div>
     </div>
@@ -4581,11 +4752,11 @@ function Container85() {
 
 function Container86() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Hire more people</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Hire more people</p>
         </div>
       </div>
     </div>
@@ -4594,11 +4765,11 @@ function Container86() {
 
 function Container87() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">Pay more to scale</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Pay more to scale</p>
         </div>
       </div>
     </div>
@@ -4607,10 +4778,10 @@ function Container87() {
 
 function Container88() {
   return (
-    <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
+    <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-[25px] pr-[24px] py-[14px] relative size-full whitespace-nowrap">
+        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <p className="leading-[28px] relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px]">🚀</p>
           <p className="leading-[20px] relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Instant scaling</p>
         </div>
@@ -4621,9 +4792,9 @@ function Container88() {
 
 function Container84() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-stretch relative size-full">
         <Container85 />
         <Container86 />
         <Container87 />
@@ -4635,10 +4806,10 @@ function Container84() {
 
 function Container90() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center px-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px] whitespace-nowrap">How It Works</p>
+        <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">How It Works</p>
         </div>
       </div>
     </div>
@@ -4647,11 +4818,11 @@ function Container90() {
 
 function Container91() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">You manage them</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">You manage them</p>
         </div>
       </div>
     </div>
@@ -4660,11 +4831,11 @@ function Container91() {
 
 function Container92() {
   return (
-    <div className="flex-[1_0_0] h-[56px] min-w-px relative" data-name="Container">
+    <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center pl-[25px] pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px] whitespace-nowrap">They plan first</p>
+        <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">They plan first</p>
         </div>
       </div>
     </div>
@@ -4673,10 +4844,10 @@ function Container92() {
 
 function Container93() {
   return (
-    <div className="bg-gradient-to-r flex-[1_0_0] from-[rgba(38,87,161,0.2)] h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
+    <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-[25px] pr-[24px] py-[14px] relative size-full whitespace-nowrap">
+        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <p className="leading-[28px] relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px]">🎯</p>
           <p className="leading-[20px] relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">You approve, we execute</p>
         </div>
@@ -4687,9 +4858,9 @@ function Container93() {
 
 function Container89() {
   return (
-    <div className="relative shrink-0 w-full" data-name="Container">
+    <div className="relative w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-b border-solid inset-0 pointer-events-none" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-stretch relative size-full">
         <Container90 />
         <Container91 />
         <Container92 />
@@ -4701,7 +4872,7 @@ function Container89() {
 
 function Container36() {
   return (
-    <div className="bg-[#18181b] h-[614px] relative rounded-[24px] shrink-0 w-[1120px]" data-name="Container">
+    <div className="bg-[#18181b] relative rounded-[24px] w-full max-w-[1120px]" data-name="Container">
       <div className="content-stretch flex flex-col items-start overflow-clip p-px relative rounded-[inherit] size-full">
         <Container37 />
         <Container42 />
@@ -4722,7 +4893,7 @@ function Container36() {
 
 function Frame22() {
   return (
-    <div className="content-stretch flex flex-col gap-[42px] items-center justify-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[42px] items-center justify-center relative w-full">
       <Cotnet2 />
       <Container36 />
     </div>
@@ -4732,7 +4903,7 @@ function Frame22() {
 function Cotnet3() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full" data-name="Cotnet">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] not-italic relative shrink-0 text-[40px] text-center text-white tracking-[-0.8px] whitespace-nowrap">Pricing</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[48px] not-italic relative shrink-0 text-[40px] text-center text-white tracking-[-0.8px]">Pricing</p>
     </div>
   );
 }
@@ -4740,7 +4911,7 @@ function Cotnet3() {
 function Button() {
   return (
     <div className="bg-[#1f2937] content-stretch flex items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0" data-name="Button">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">Month plan</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">Month plan</p>
     </div>
   );
 }
@@ -4749,7 +4920,7 @@ function Container94() {
   return (
     <div className="-translate-x-1/2 absolute bg-[#151109] content-stretch flex items-center justify-center left-1/2 px-[16.749px] py-[2.749px] rounded-[1280px] top-[-14px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[0.749px] border-[rgba(213,165,91,0.4)] border-solid inset-0 pointer-events-none rounded-[1280px]" />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#d5a55b] text-[12px] tracking-[0.3px] whitespace-nowrap">Save 30%</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#d5a55b] text-[12px] tracking-[0.3px]">Save 30%</p>
     </div>
   );
 }
@@ -4758,7 +4929,7 @@ function Button1() {
   return (
     <div className="content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0" data-name="Button">
       <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[300px]" />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">12-month plan</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">12-month plan</p>
       <Container94 />
     </div>
   );
@@ -4834,13 +5005,13 @@ function SegmenterModified({ selectedPlan, setSelectedPlan }: { selectedPlan: st
         onClick={() => setSelectedPlan('month')}
         className={`cursor-pointer content-stretch flex items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0 ${selectedPlan === 'month' ? 'bg-[#1f2937]' : ''}`}
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">Month plan</p>
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">Month plan</p>
       </div>
       <div
         onClick={() => setSelectedPlan('12month')}
         className={`cursor-pointer content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0 ${selectedPlan !== '12month' ? 'border border-[#374151] border-solid' : 'bg-[#1f2937]'}`}
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">12-month plan</p>
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">12-month plan</p>
         <Container94 />
       </div>
       <div
@@ -4882,7 +5053,7 @@ function Container98() {
 
 function PricingDetails() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+    <div className="font-[700] content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container97 />
       <Container98 />
     </div>
@@ -4891,7 +5062,7 @@ function PricingDetails() {
 
 function Pricing() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+    <div className="font-[700] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
       <PricingDetails />
       <div className="h-[40px] relative rounded-[120px] shrink-0 w-full" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[120px]" />
@@ -5053,8 +5224,8 @@ function Container96Modified({ calculatePrice }: { calculatePrice: (price: numbe
         </div>
         <div className="relative shrink-0 w-full" data-name="Content">
           <div className="content-stretch flex flex-col gap-[16px] items-start pb-[48px] pt-[16px] px-[20px] relative size-full">
-            <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
-              <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+            <div className="font-[700] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+              <div className="font-[700] content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
                 <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
                   <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Solo</p>
                 </div>
@@ -5126,7 +5297,7 @@ function Container101() {
 
 function PricingDetails1() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+    <div className="font-[700] content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container100 />
       <Container101 />
     </div>
@@ -5135,7 +5306,7 @@ function PricingDetails1() {
 
 function Pricing1() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+    <div className="font-[700] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
       <PricingDetails1 />
       <div className="bg-[#1877f2] h-[40px] relative rounded-[120px] shrink-0 w-full" data-name="Button">
         <div className="flex flex-row items-center justify-center size-full">
@@ -5301,9 +5472,9 @@ function Container99() {
 
 function PricingCard() {
   return (
-    <div className="bg-[#1877f2] content-stretch flex flex-col gap-[8px] items-center justify-center pb-[2px] pt-[8px] px-[2px] relative rounded-[16px] shrink-0" data-name="PricingCard">
+    <div className="font-[700] bg-[#1877f2] content-stretch flex flex-col gap-[8px] items-center justify-center pb-[2px] pt-[8px] px-[2px] relative rounded-[16px]" data-name="PricingCard">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-white tracking-[0.6px] whitespace-nowrap">Most popular</p>
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="font-[700] bg-[#151515] relative rounded-[16px] w-[282px]" data-name="PricingCard">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container99 />
         </div>
@@ -5316,9 +5487,9 @@ function PricingCard() {
 function PricingCardModified({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   const discountedPrice = calculatePrice(69.99);
   return (
-    <div className="bg-[#1877f2] content-stretch flex flex-col gap-[8px] items-center justify-center pb-[2px] pt-[8px] px-[2px] relative rounded-[16px] shrink-0" data-name="PricingCard">
+    <div className="font-[700] bg-[#1877f2] content-stretch flex flex-col gap-[8px] items-center justify-center pb-[2px] pt-[8px] px-[2px] relative rounded-[16px]" data-name="PricingCard">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-white tracking-[0.6px] whitespace-nowrap">Most popular</p>
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="font-[700] bg-[#151515] relative rounded-[16px] w-[282px]" data-name="PricingCard">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
             <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
@@ -5329,8 +5500,8 @@ function PricingCardModified({ calculatePrice }: { calculatePrice: (price: numbe
               </div>
               <div className="relative shrink-0 w-full" data-name="Content">
                 <div className="content-stretch flex flex-col gap-[16px] items-start pb-[48px] pt-[16px] px-[20px] relative size-full">
-                  <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
-                    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+                  <div className="font-[700] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+                    <div className="font-[700] content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
                       <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
                         <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Agency</p>
                       </div>
@@ -5390,7 +5561,7 @@ function Container104() {
 
 function PricingDetails2() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+    <div className="font-[700] content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container103 />
       <Container104 />
     </div>
@@ -5399,7 +5570,7 @@ function PricingDetails2() {
 
 function Pricing2() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+    <div className="font-[700] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
       <PricingDetails2 />
       <div className="h-[40px] relative rounded-[120px] shrink-0 w-full" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[120px]" />
@@ -5561,8 +5732,8 @@ function Container102Modified({ calculatePrice }: { calculatePrice: (price: numb
         </div>
         <div className="relative shrink-0 w-full" data-name="Content">
           <div className="content-stretch flex flex-col gap-[16px] items-start pb-[48px] pt-[16px] px-[20px] relative size-full">
-            <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
-              <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+            <div className="font-[700] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+              <div className="font-[700] content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
                 <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
                   <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Pro</p>
                 </div>
@@ -5633,7 +5804,7 @@ function Container107() {
 
 function PricingDetails3() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+    <div className="font-[700] content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container106 />
       <Container107 />
     </div>
@@ -5642,7 +5813,7 @@ function PricingDetails3() {
 
 function Pricing3() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+    <div className="font-[700] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
       <PricingDetails3 />
       <div className="h-[40px] relative rounded-[120px] shrink-0 w-full" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[120px]" />
@@ -5804,8 +5975,8 @@ function Container105Modified({ calculatePrice }: { calculatePrice: (price: numb
         </div>
         <div className="relative shrink-0 w-full" data-name="Content">
           <div className="content-stretch flex flex-col gap-[16px] items-start pb-[48px] pt-[16px] px-[20px] relative size-full">
-            <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
-              <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+            <div className="font-[700] content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
+              <div className="font-[700] content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
                 <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
                   <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Enterprise</p>
                 </div>
@@ -5851,21 +6022,21 @@ function Container105() {
 
 function Frame11() {
   return (
-    <div className="content-stretch flex gap-[20px] items-end relative shrink-0">
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+    <div className="content-stretch flex flex-wrap gap-[20px] items-end justify-center relative w-full max-w-[1200px]">
+      <div className="font-[700] bg-[#151515] relative rounded-[16px] w-[282px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container96 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
       <PricingCard />
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="font-[700] bg-[#151515] relative rounded-[16px] w-[282px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container102 />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="font-[700] bg-[#151515] relative rounded-[16px] w-[282px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container105 />
         </div>
@@ -5877,21 +6048,21 @@ function Frame11() {
 
 function Frame11Modified({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
-    <div className="content-stretch flex gap-[20px] items-end relative shrink-0">
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+    <div className="content-stretch flex flex-wrap gap-[20px] items-end justify-center relative w-full max-w-[1200px]">
+      <div className="font-[700] bg-[#151515] relative rounded-[16px] w-[282px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container96Modified calculatePrice={calculatePrice} />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
       <PricingCardModified calculatePrice={calculatePrice} />
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="font-[700] bg-[#151515] relative rounded-[16px] w-[282px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container102Modified calculatePrice={calculatePrice} />
         </div>
         <div aria-hidden="true" className="absolute border-[0.781px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       </div>
-      <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-[282px]" data-name="PricingCard">
+      <div className="font-[700] bg-[#151515] relative rounded-[16px] w-[282px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container105Modified calculatePrice={calculatePrice} />
         </div>
@@ -5937,100 +6108,33 @@ function Price() {
 function Cotnet4() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center" data-name="Cotnet">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">Frequently Asked Questions</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">Frequently Asked Questions</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
 }
 
-function Container109() {
+function FaqItem({ question, answer, isExpanded, onToggle }: { question: string; answer: React.ReactNode; isExpanded: boolean; onToggle: () => void }) {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-w-px not-italic relative" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] h-[22px] leading-[28px] opacity-88 relative shrink-0 text-[#1f2937] text-[20px] w-full">What is Loraloops AI employee?</p>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] opacity-80 relative shrink-0 text-[#374151] text-[16px] w-full whitespace-pre-wrap">
-        <p className="leading-[22px] mb-0">Loraloop AI employees are autonomous digital workers that handle your marketing tasks end-to-end.</p>
-        <p className="leading-[22px]">{`They plan campaigns, create content, publish posts, run ads, track performance, and continuously optimize  all without manual effort. Think of them as a full marketing team that works 24/7, never sleeps, and keeps improving results automatically.`}</p>
-      </div>
-    </div>
-  );
-}
-
-function Frame27() {
-  return (
-    <div className="bg-[#1f2937] content-stretch flex items-center p-[2px] relative rounded-[32px] shrink-0">
-      <div className="relative shrink-0 size-[20px]" data-name="chevron-up">
-        <div className="absolute inset-[33.33%_20.83%]" data-name="path">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.6667 6.66667">
-            <path clipRule="evenodd" d={svgPaths.p2c9b2300} fill="var(--fill-0, white)" fillRule="evenodd" id="path" />
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Question() {
-  return (
-    <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="Question">
+    <div className="bg-white relative rounded-[16px] shrink-0 w-full cursor-pointer overflow-hidden transition-all duration-300 hover:bg-gray-50" data-name="Question" onClick={onToggle}>
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[0.819px] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="content-stretch flex gap-[32px] items-baseline p-[24px] relative size-full">
-        <Container109 />
-        <Frame27 />
-      </div>
-    </div>
-  );
-}
-
-function Frame28() {
-  return (
-    <div className="bg-[#1f2937] content-stretch flex items-center p-[2px] relative rounded-[32px] shrink-0">
-      <div className="relative shrink-0 size-[20px]" data-name="chevron-down">
-        <div className="absolute inset-[33.33%_20.83%]" data-name="path">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.6667 6.66667">
-            <path clipRule="evenodd" d={svgPaths.p2a5900} fill="var(--fill-0, white)" fillRule="evenodd" id="path" />
-          </svg>
+      <div className="content-stretch flex flex-col p-[24px] relative">
+        <div className="flex gap-[32px] items-center justify-between w-full">
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] opacity-88 relative text-[#1f2937] text-[18px] md:text-[20px]">{question}</p>
+          <div className={`bg-[#1f2937] content-stretch flex items-center p-[2px] relative rounded-[32px] shrink-0 transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+            <div className="relative shrink-0 size-[20px]" data-name="chevron-down">
+              <div className="absolute inset-[33.33%_20.83%]" data-name="path">
+                <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.6667 6.66667">
+                  <path clipRule="evenodd" d={svgPaths.p2a5900} fill="var(--fill-0, white)" fillRule="evenodd" id="path" />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  );
-}
-
-function Container110() {
-  return (
-    <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[0.819px] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[32px] items-center p-[24px] relative size-full">
-          <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] h-[22px] leading-[28px] min-w-px not-italic opacity-88 relative text-[#1f2937] text-[20px]">What can I use Loraloop AI employees for?</p>
-          <Frame28 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Frame29() {
-  return (
-    <div className="bg-[#1f2937] content-stretch flex items-center p-[2px] relative rounded-[32px] shrink-0">
-      <div className="relative shrink-0 size-[20px]" data-name="chevron-down">
-        <div className="absolute inset-[33.33%_20.83%]" data-name="path">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.6667 6.66667">
-            <path clipRule="evenodd" d={svgPaths.p2a5900} fill="var(--fill-0, white)" fillRule="evenodd" id="path" />
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Container111() {
-  return (
-    <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[0.819px] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[32px] items-center p-[24px] relative size-full">
-          <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] h-[22px] leading-[28px] min-w-px not-italic opacity-88 relative text-[#1f2937] text-[20px]">Can AI employees replace human employees?</p>
-          <Frame29 />
+        <div className={`transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[500px] mt-[16px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+          <div className="font-['General_Sans:Medium',sans-serif] leading-[22px] opacity-80 relative text-[#374151] text-[16px] whitespace-pre-wrap">
+            {answer}
+          </div>
         </div>
       </div>
     </div>
@@ -6038,11 +6142,39 @@ function Container111() {
 }
 
 function Container108() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+
+  const faqs = [
+    {
+      question: "What is Loraloops AI employee?",
+      answer: (
+        <>
+          <p className="mb-4">Loraloop AI employees are autonomous digital workers that handle your marketing tasks end-to-end.</p>
+          <p>{`They plan campaigns, create content, publish posts, run ads, track performance, and continuously optimize  all without manual effort. Think of them as a full marketing team that works 24/7, never sleeps, and keeps improving results automatically.`}</p>
+        </>
+      )
+    },
+    {
+      question: "What can I use Loraloop AI employees for?",
+      answer: "You can use Loraloop AI employees for social media management, content creation, ad campaign optimization, lead generation, and overall marketing strategy execution across multiple platforms."
+    },
+    {
+      question: "Can AI employees replace human employees?",
+      answer: "Loraloop AI employees are designed to augment and empower human teams, taking over repetitive and data-intensive tasks so your people can focus on high-level creativity and strategic decision-making."
+    }
+  ];
+
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-[1000px]" data-name="Container">
-      <Question />
-      <Container110 />
-      <Container111 />
+    <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full max-w-[1000px]" data-name="Container">
+      {faqs.map((faq, index) => (
+        <FaqItem
+          key={index}
+          question={faq.question}
+          answer={faq.answer}
+          isExpanded={expandedIndex === index}
+          onToggle={() => setExpandedIndex(expandedIndex === index ? null : index)}
+        />
+      ))}
     </div>
   );
 }
@@ -6063,7 +6195,7 @@ function Faq({ className, children = null }: FaqProps) {
 function TextGroupVertical13() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleep</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleep</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[0] relative shrink-0 text-[#9ca3af] text-[20px] w-full">
         <span className="leading-[28px]">
           Social media tools are easy to buy, but hard to keep up with. loraloop is your AI marketing team like 10 year employees marketing team for you to
@@ -6081,7 +6213,14 @@ function CallToActionGroup() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-[740px]" data-name="Call to Action Group">
       <TextGroupVertical13 />
-      <div className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0" data-name="Button">
+      <div 
+        onClick={() => {
+          window.scrollTo(0, 0);
+          window.dispatchEvent(new CustomEvent("focus-waitlist-email"));
+        }}
+        className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 cursor-pointer hover:opacity-90 transition-opacity" 
+        data-name="Button"
+      >
         <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
       </div>
     </div>
@@ -6103,25 +6242,20 @@ function Outro() {
 
 function Container112() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
+    <div className="content-stretch flex flex-1 flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] w-full">Agents</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Lora - AI Marketing Lead</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Sam - AI Strategist</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Sophie - AI SEO/GEO Manager</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Clara - AI Content Writer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Clara - AI Content Writer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Theo - AI Video Producer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Steve - AI Visual Designer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Sarah - AI Social Media Manager</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Elena - AI Ads Manager</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Nick - AI Analyst</p>
+      <Link to="/solution?agent=lora" className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Lora - AI Marketing Lead</Link>
+      <Link to="/solution?agent=sam" className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Sam - AI Strategist</Link>
+      <Link to="/solution?agent=clara" className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Clara - AI Content Writer</Link>
+      <Link to="/solution?agent=steve" className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Steve - AI Visual Designer</Link>
+      <Link to="/solution?agent=sarah" className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Sarah - AI Social Media Manager</Link>
     </div>
   );
 }
 
 function Container113() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] h-full items-start min-w-px not-italic relative whitespace-nowrap" data-name="Container">
+    <div className="content-stretch flex flex-1 flex-col gap-[14px] h-full items-start min-w-px not-italic relative whitespace-nowrap" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px]">Company</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">About us</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Contact Us/Support</p>
@@ -6132,7 +6266,7 @@ function Container113() {
 
 function Container114() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
+    <div className="content-stretch flex flex-1 flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Blog</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 1</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 2</p>
@@ -6149,7 +6283,7 @@ function Container114() {
 
 function Container115() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] h-full items-start min-w-px not-italic relative" data-name="Container">
+    <div className="content-stretch flex flex-1 flex-col gap-[12px] h-full items-start min-w-px not-italic relative" data-name="Container">
       <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Free AI Tools</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Article Writer</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Audio Ad Creator</p>
@@ -6169,16 +6303,16 @@ function Container115() {
 function Frame24() {
   return (
     <div className="content-stretch flex gap-[24px] h-[468px] items-center relative shrink-0 w-full">
-      <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
+      <div className="flex flex-1 flex-row items-center self-stretch">
         <Container112 />
       </div>
-      <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
+      <div className="flex flex-1 flex-row items-center self-stretch">
         <Container113 />
       </div>
-      <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
+      <div className="flex flex-1 flex-row items-center self-stretch">
         <Container114 />
       </div>
-      <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
+      <div className="flex flex-1 flex-row items-center self-stretch">
         <Container115 />
       </div>
     </div>
@@ -6283,7 +6417,6 @@ function Wordmark() {
 const aiAgents = [
   { name: "Lora", role: "AI Marketing Lead", img: imgLora2 },
   { name: "Sam", role: "AI Strategist", img: imgFeatureImageSmall },
-  { name: "Sophie", role: "AI SEO/GEO Manager", img: imgFeatureImageSmall1 },
   { name: "Clara", role: "AI Content Writer", img: imgGeminiGeneratedImageBewxcwbewxcwbewx2 },
   { name: "Steve", role: "AI Visual Designer", img: imgFeatureImage },
   { name: "Sarah", role: "AI Social Media Manager", img: imgFeatureImageSmall3 },
@@ -6327,23 +6460,22 @@ function AIEmployeesDropdown() {
           className="absolute top-full left-1/2 -translate-x-1/2 mt-[6px] bg-white z-[100]"
           style={{
             width: 480,
-            height: 216,
             borderRadius: 8,
             border: '1px solid #e5e7eb',
             boxShadow: '0px 8px 24px rgba(0,0,0,0.10)',
             padding: '16px',
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
-            gridTemplateRows: '1fr 1fr 1fr',
             rowGap: 8,
             columnGap: 16,
             boxSizing: 'border-box',
           }}
         >
           {aiAgents.map((agent) => (
-            <div
+            <Link
               key={agent.name}
-              className="flex items-center gap-[10px] cursor-pointer hover:bg-[#f9fafc] rounded-[8px] px-[8px] py-[4px] transition-colors"
+              to={`/solution?agent=${agent.name.toLowerCase()}`}
+              className="flex items-center gap-[10px] cursor-pointer hover:bg-[#f9fafc] rounded-[8px] px-[8px] py-[4px] transition-colors no-underline"
             >
               <div
                 className="relative shrink-0"
@@ -6356,10 +6488,10 @@ function AIEmployeesDropdown() {
                 />
               </div>
               <div className="flex flex-col min-w-0">
-                <p className="font-['Satoshi:Bold',sans-serif] text-[13px] leading-[18px] text-[#1f2937] whitespace-nowrap overflow-hidden text-ellipsis">{agent.role}</p>
-                <p className="font-['General_Sans:Medium',sans-serif] text-[11px] leading-[16px] text-[#6b7280] whitespace-nowrap">{agent.name}</p>
+                <p className="font-['Satoshi:Bold',sans-serif] text-[13px] leading-[18px] text-[#1f2937] whitespace-nowrap overflow-hidden text-ellipsis no-underline">{agent.role}</p>
+                <p className="font-['General_Sans:Medium',sans-serif] text-[11px] leading-[16px] text-[#6b7280] whitespace-nowrap no-underline">{agent.name}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       )}
@@ -6370,7 +6502,7 @@ function AIEmployeesDropdown() {
 function Frame3() {
   return (
     <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Solution</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Solution</p>
     </div>
   );
 }
@@ -6386,14 +6518,14 @@ function Frame5() {
 function Frame4() {
   return (
     <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Pricing</p>
+      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Pricing</p>
     </div>
   );
 }
 
 function Frame6() {
   return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
+    <div className="content-stretch flex flex-wrap gap-[20px] items-end justify-center relative w-full max-w-[1200px]">
       <AIEmployeesDropdown />
       <Frame3 />
       <Frame5 />
@@ -6443,11 +6575,12 @@ export default function LandingPage() {
         <AiAgents />
         <HowItWorks />
         <Integration />
-        <Solution />
+        <div id="solution-section">
+          <Solution_Auth />
+        </div>
         <Price />
         <Faq />
         <Outro />
-        <Footer />
       </div>
     </div>
   );

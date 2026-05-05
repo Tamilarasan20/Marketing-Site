@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 import HamburgerMenu from "../../imports/HamburgerMenu/HamburgerMenu";
 import Expander1 from "../../imports/Expander1/Expander1";
 import Expander2 from "../../imports/Expander2/Expander2";
@@ -6,6 +7,13 @@ import Expander2 from "../../imports/Expander2/Expander2";
 export default function MobileNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showEmployees, setShowEmployees] = useState(false);
+  const location = useLocation();
+
+  // Close on navigation
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setShowEmployees(false);
+  }, [location]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -27,7 +35,7 @@ export default function MobileNav() {
 
   return (
     <div
-      className="-translate-x-1/2 absolute left-1/2 top-[24px] w-full max-w-full md:hidden z-[60]"
+      className="absolute left-[24px] right-[24px] top-[24px] md:hidden z-[60]"
       data-name="MobileNav"
       onClick={(e) => {
         const target = e.target as HTMLElement;

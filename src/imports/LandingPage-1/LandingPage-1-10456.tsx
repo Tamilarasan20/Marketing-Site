@@ -36,20 +36,20 @@ import { imgGroup, imgFeatureImageSmall4, imgGroup1, imgColor } from "./svg-2rgc
 function TextGroupVertical3() {
   return (
     <div className="content-stretch flex flex-col items-start mb-[-1px] pb-[14px] relative shrink-0 text-white w-full" data-name="Text Group Vertical">
-      <p className="leading-[0] relative shrink-0 text-[0px] w-full">
-        <span className="leading-[76px] text-[68px]">{`Meet `}</span>
-        <span className="leading-[76px] text-[#14a148] text-[68px]">Lora</span>
+      <p className="leading-[0] relative shrink-0 text-[0px] w-full font-black">
+        <span className="leading-[76px] text-[68px] font-black">{`Meet `}</span>
+        <span className="leading-[76px] text-[#14a148] text-[68px] font-black">Lora</span>
       </p>
-      <p className="leading-[76px] relative shrink-0 text-[68px] w-full">{`your Autonomous `}</p>
+      <p className="leading-[76px] relative shrink-0 text-[68px] w-full font-black">{`your Autonomous `}</p>
     </div>
   );
 }
 
 function TextGroupVertical2() {
   return (
-    <div className="content-stretch flex flex-col font-['Satoshi:Black',sans-serif] items-start pb-px relative shrink-0 tracking-[-2.04px] w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col font-['Satoshi:Black',sans-serif] font-black items-start pb-px relative shrink-0 tracking-[-2.04px] w-full" data-name="Text Group Vertical">
       <TextGroupVertical3 />
-      <p className="leading-[76px] relative shrink-0 text-[#14a148] text-[68px] w-full">{`AI Marketing Team `}</p>
+      <p className="leading-[76px] relative shrink-0 text-[#14a148] text-[68px] w-full font-black">{`AI Marketing Team `}</p>
     </div>
   );
 }

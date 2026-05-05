@@ -1,5 +1,6 @@
 import svgPaths from "./svg-vqugh1pll5";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
+import appLogo from "../../assets/app_logo.png";
 
 function Menu() {
   return (
@@ -17,20 +18,37 @@ function Menu() {
   );
 }
 
-function Frame3() {
+function Logo() {
   return (
-    <div className="content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#0279ec] text-[16px] whitespace-nowrap">Login</p>
-    </div>
+    <Link to="/" className="flex items-center gap-[6px] shrink-0 ml-[4px]">
+      <img
+        src={appLogo}
+        alt="Loraloop logo"
+        style={{ width: 34, height: 34, objectFit: "contain", flexShrink: 0 }}
+      />
+    </Link>
   );
 }
 
 function Frame6() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <Frame3 />
-      <div className="bg-[#1877f2] content-stretch flex gap-[4px] h-[40px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
+      <div 
+        onClick={() => {
+          if (location.pathname === "/") {
+            window.scrollTo(0, 0);
+            window.dispatchEvent(new CustomEvent("focus-waitlist-email"));
+          } else {
+            navigate("/", { state: { focusEmail: true } });
+          }
+        }}
+        className="bg-[#1877f2] content-stretch flex gap-[4px] h-[40px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0 cursor-pointer" 
+        data-name="Button"
+      >
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Join Waitlist</p>
       </div>
     </div>
   );
@@ -38,10 +56,13 @@ function Frame6() {
 
 function LandingPage() {
   return (
-    <div className="bg-[#f3f6fb] relative rounded-[20px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] shrink-0 w-full" data-name="LandingPage">
+    <div className="bg-[rgba(243,246,251,0.9)] backdrop-blur-[8px] relative rounded-[20px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] shrink-0 w-full" data-name="LandingPage">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center justify-between px-[16px] py-[4px] relative size-full">
-          <Menu />
+        <div className="content-stretch flex items-center justify-between px-[12px] py-[4px] relative size-full">
+          <div className="flex items-center">
+            <Logo />
+            <Menu />
+          </div>
           <Frame6 />
         </div>
       </div>
@@ -182,7 +203,6 @@ function MenuExpander() {
   return (
     <div className="bg-[#f3f6fb] relative rounded-[20px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] shrink-0 w-full" data-name="Menu Expander">
       <div className="content-stretch flex flex-col gap-[16px] items-start px-[16px] py-[20px] relative size-full">
-        <Frame />
         <Frame7 />
       </div>
     </div>

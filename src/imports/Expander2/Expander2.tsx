@@ -1,14 +1,11 @@
 import svgPaths from "./svg-hjgudbia7v";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
+import appLogo from "../../assets/app_logo.png";
 import imgLora2 from "./32264b1854d55ff26d5f28cf2aff116c87c1ae73.png";
 import imgMark1 from "./b34a04b0d155ad8417b049bc9858620b387d57d6.png";
-import imgSophie1 from "./7f8a67d1c140c52d1b6678ae07c33d1915711c2e.png";
 import imgClara1 from "./b77f42882a70f9452bf0bb5a474a1ad9b31a04fc.png";
-import imgTheo1 from "./d07ecb97e8b9ee75e5acd60ce6899904cb22a862.png";
 import imgSteve1 from "./c9c2f9a7adf5d78f4c0df2eea6a47b4ab705250b.png";
-import imgElena1 from "./9e93997490a115f5175753dac42207acd80356eb.png";
 import imgSarah1 from "./7afe4355de0c7c959afd51dd8847ac323e91965e.png";
-import imgNick1 from "./6ec3052296e3932fcfa638bc419f504d211f1c3c.png";
 
 function Menu() {
   return (
@@ -26,20 +23,37 @@ function Menu() {
   );
 }
 
-function Frame3() {
+function Logo() {
   return (
-    <div className="content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#0279ec] text-[16px] whitespace-nowrap">Login</p>
-    </div>
+    <Link to="/" className="flex items-center gap-[6px] shrink-0 ml-[4px]">
+      <img
+        src={appLogo}
+        alt="Loraloop logo"
+        style={{ width: 34, height: 34, objectFit: "contain", flexShrink: 0 }}
+      />
+    </Link>
   );
 }
 
 function Frame6() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <Frame3 />
-      <div className="bg-[#1877f2] content-stretch flex gap-[4px] h-[40px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
+      <div 
+        onClick={() => {
+          if (location.pathname === "/") {
+            window.scrollTo(0, 0);
+            window.dispatchEvent(new CustomEvent("focus-waitlist-email"));
+          } else {
+            navigate("/", { state: { focusEmail: true } });
+          }
+        }}
+        className="bg-[#1877f2] content-stretch flex gap-[4px] h-[40px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0 cursor-pointer" 
+        data-name="Button"
+      >
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Join Waitlist</p>
       </div>
     </div>
   );
@@ -47,10 +61,13 @@ function Frame6() {
 
 function LandingPage() {
   return (
-    <div className="bg-[#f3f6fb] relative rounded-[20px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] shrink-0 w-full" data-name="LandingPage">
+    <div className="bg-[rgba(243,246,251,0.9)] backdrop-blur-[8px] relative rounded-[20px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] shrink-0 w-full" data-name="LandingPage">
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex items-center justify-between px-[16px] py-[4px] relative size-full">
-          <Menu />
+        <div className="content-stretch flex items-center justify-between px-[12px] py-[4px] relative size-full">
+          <div className="flex items-center">
+            <Logo />
+            <Menu />
+          </div>
           <Frame6 />
         </div>
       </div>
@@ -357,15 +374,11 @@ function Container1() {
     <div className="backdrop-blur-[8px] bg-[rgba(247,248,250,0.95)] relative rounded-[16px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] shrink-0 w-full" data-name="Container">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[8px] items-start px-[8px] py-[16px] relative size-full">
-          <Container2 />
-          <Container3 />
-          <Container4 />
-          <Container5 />
-          <Container6 />
-          <Container7 />
-          <Container8 />
-          <Container9 />
-          <Container10 />
+          <Link to="/solution?agent=lora" className="w-full no-underline"><Container2 /></Link>
+          <Link to="/solution?agent=sam" className="w-full no-underline"><Container3 /></Link>
+          <Link to="/solution?agent=clara" className="w-full no-underline"><Container5 /></Link>
+          <Link to="/solution?agent=steve" className="w-full no-underline"><Container7 /></Link>
+          <Link to="/solution?agent=sarah" className="w-full no-underline"><Container9 /></Link>
         </div>
       </div>
     </div>
@@ -420,26 +433,24 @@ function Frame7() {
   );
 }
 
-function Frame10() {
-  return (
-    <div className="flex-[1_0_0] min-w-px relative rounded-[34px]">
-      <div className="flex flex-row items-center justify-center size-full">
-        <div className="content-stretch flex items-center justify-center px-[24px] py-[12px] relative size-full">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#0279ec] text-[16px] whitespace-nowrap">Login</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Frame9() {
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0 w-full">
-      <Frame10 />
-      <div className="bg-[#1877f2] flex-[1_0_0] h-[40px] min-w-px relative rounded-[120px]" data-name="Button">
+      <div 
+        onClick={() => {
+          const el = document.getElementById("waitlist-form");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          } else {
+            window.location.href = "/#waitlist-form";
+          }
+        }}
+        className="bg-[#1877f2] flex-[1_0_0] h-[40px] min-w-px relative rounded-[120px] cursor-pointer" 
+        data-name="Button"
+      >
         <div className="flex flex-row items-center justify-center size-full">
-          <div className="content-stretch flex gap-[4px] items-center justify-center px-[24px] relative size-full">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
+          <div className="content-stretch flex gap-[4px] items-center justify-center px-[20px] relative size-full">
+            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Join Waitlist</p>
           </div>
         </div>
       </div>
@@ -451,7 +462,6 @@ function MenuExpander() {
   return (
     <div className="bg-[#f3f6fb] relative rounded-[20px] shadow-[0px_8px_9.6px_0px_rgba(0,0,0,0.1),0px_8px_25px_0px_rgba(0,0,0,0.1)] shrink-0 w-full" data-name="Menu Expander 2">
       <div className="content-stretch flex flex-col gap-[16px] items-start px-[16px] py-[20px] relative w-full max-h-[600px] overflow-y-auto scroll-smooth">
-        <Frame />
         <Frame7 />
         <Frame9 />
       </div>

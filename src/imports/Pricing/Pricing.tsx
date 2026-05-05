@@ -908,7 +908,7 @@ function Container13() {
 
 function Frame11() {
   return (
-    <div className="content-stretch grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px] items-end relative shrink-0 w-full">
+    <div className="content-stretch grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[20px] items-end relative shrink-0 w-full">
       <div className="bg-[#151515] relative rounded-[16px] shrink-0 w-full" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container4 />
@@ -1749,8 +1749,8 @@ function Frame17() {
 
 function PriceAndFaq() {
   return (
-    <div className="bg-black content-stretch flex flex-col gap-[120px] items-center overflow-clip pb-[80px] pl-[45px] pr-[47px] pt-[140px] relative shrink-0 w-[1282px]" data-name="Price and FAQ">
-      <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0">
+    <div className="bg-black content-stretch flex flex-col gap-[120px] items-center overflow-clip pb-[80px] px-4 md:px-[45px] pt-[140px] relative shrink-0 w-full max-w-[1282px]" data-name="Price and FAQ">
+      <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full">
         <Frame20 />
         <Frame11 />
       </div>

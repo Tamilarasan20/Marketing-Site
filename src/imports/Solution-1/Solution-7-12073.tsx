@@ -31,7 +31,7 @@ import { imgFeatureImageSmall, imgGroup } from "./svg-pgeeg";
 
 function Frame16() {
   return (
-    <div className="bg-[#eefdf3] content-stretch flex items-center justify-center px-[8px] py-[4px] relative rounded-[20px] shrink-0">
+    <div className="font-[600] bg-[#eefdf3] content-stretch flex items-center justify-center px-[8px] py-[4px] relative rounded-[20px] shrink-0">
       <p className="font-['General_Sans:Semibold',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#14a148] text-[14px] text-center whitespace-nowrap">AI Employees / Solution</p>
     </div>
   );
@@ -812,8 +812,8 @@ function Frame38() {
   return (
     <div className="bg-white relative shrink-0 w-full">
       <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col gap-[48px] items-center p-[80px] relative size-full">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] not-italic relative shrink-0 text-[#1f2937] text-[40px] text-center tracking-[-0.8px] whitespace-nowrap">Old vs New AI Way! Everyone moving</p>
+        <div className="font-[700] content-stretch flex flex-col gap-[48px] items-center p-[80px] relative size-full">
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] not-italic relative shrink-0 text-[#1f2937] text-[40px] text-center tracking-[-0.8px] whitespace-nowrap">Old vs New AI Way!</p>
           <Frame19 />
         </div>
       </div>

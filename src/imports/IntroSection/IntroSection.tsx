@@ -1,23 +1,24 @@
 import svgPaths from "./svg-wr4hzvlnoz";
 import imgImage174 from "./63808635cd776f0fdaad03c9757b0a112ed13271.png";
+import WaitlistForm from "../../app/components/WaitlistForm";
 
 function TextGroupVertical3() {
   return (
     <div className="content-stretch flex flex-col items-start mb-[-1px] pb-[14px] relative shrink-0 text-white w-full" data-name="Text Group Vertical">
-      <p className="leading-[0] relative shrink-0 text-[0px] w-full">
-        <span className="leading-[76px] text-[68px]">{`Meet `}</span>
-        <span className="leading-[76px] text-[#14a148] text-[68px]">Lora</span>
+      <p className="leading-[0] relative shrink-0 text-[0px] w-full font-black">
+        <span className="leading-[76px] text-[68px] font-black">{`Meet `}</span>
+        <span className="leading-[76px] text-[#14a148] text-[68px] font-black">Lora</span>
       </p>
-      <p className="leading-[76px] relative shrink-0 text-[68px] w-full">{`your Autonomous `}</p>
+      <p className="leading-[76px] relative shrink-0 text-[68px] w-full font-black">{`your Autonomous `}</p>
     </div>
   );
 }
 
 function TextGroupVertical2() {
   return (
-    <div className="content-stretch flex flex-col font-['Satoshi:Black',sans-serif] items-start pb-px relative shrink-0 tracking-[-2.04px] w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col font-['Satoshi:Black',sans-serif] font-black items-start pb-px relative shrink-0 tracking-[-2.04px] w-full" data-name="Text Group Vertical">
       <TextGroupVertical3 />
-      <p className="leading-[76px] relative shrink-0 text-[#14a148] text-[68px] w-full">{`AI Marketing Team `}</p>
+      <p className="leading-[76px] relative shrink-0 text-[#14a148] text-[68px] w-full font-black">{`AI Marketing Team `}</p>
     </div>
   );
 }
@@ -45,16 +46,24 @@ function ButtonContainer() {
       <div className="bg-[#2a3040] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[40px] shrink-0 w-[220px]" data-name="Button">
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Join Waitlist</p>
       </div>
-      <div className="content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[16px] shrink-0 w-[220px]" data-name="Button">
+      <div 
+        onClick={() => {
+          const solutionSection = document.getElementById("solution-section");
+          if (solutionSection) {
+            solutionSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        className="content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[16px] shrink-0 cursor-pointer" 
+        data-name="Button"
+      >
         <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#d1d5db] text-[16px] whitespace-nowrap">See Solution</p>
-        <div className="overflow-clip relative shrink-0 size-[24px]" data-name="Right Icon">
-          <div className="absolute bottom-1/4 left-[29.17%] right-[29.17%] top-1/4" data-name="Icon">
-            <div className="absolute inset-[-5.42%_-6.5%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.3 13.3">
-                <path d={svgPaths.p29585580} id="Icon" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-              </svg>
-            </div>
-          </div>
+        <div className="flex flex-col items-center justify-center ml-1">
+          <svg className="w-[12px] h-[7px]" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L6 5L11 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          <svg className="w-[12px] h-[7px] -mt-[1px]" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L6 5L11 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
       </div>
     </div>
@@ -65,7 +74,7 @@ function TextGroupVertical() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[40px] items-center justify-center left-1/2 top-[142px] w-full max-w-[740px] px-4" data-name="Text Group Vertical">
       <TextGroupVertical1 />
-      <ButtonContainer />
+      <WaitlistForm />
     </div>
   );
 }
