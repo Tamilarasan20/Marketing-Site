@@ -178,13 +178,13 @@ function Frame5() {
 
 function FrameBlogs() {
   return (
-    <div className="relative shrink-0 w-full block">
+    <Link to="/blog" className="relative shrink-0 w-full block">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[8px] py-[12px] relative size-full">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#9ca3af] text-[16px] text-center whitespace-nowrap">Blogs (Soon)</p>
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Blogs</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

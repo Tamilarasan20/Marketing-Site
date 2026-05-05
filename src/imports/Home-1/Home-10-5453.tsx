@@ -337,10 +337,12 @@ function Container5() {
   );
 }
 
+import videoImg from "../../assets/video_img.png";
+
 function VideoImage() {
   return (
     <div className="h-[203.126px] relative rounded-[16px] shrink-0 w-full" data-name="VideoImage">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgVideoImage} />
+      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={videoImg} />
     </div>
   );
 }
@@ -3666,10 +3668,10 @@ function Cotnet2() {
   );
 }
 
-function Button() {
+function Button({ selectedPlan, setSelectedPlan }: { selectedPlan: string, setSelectedPlan: (plan: 'month' | '12month' | '3month') => void }) {
   return (
-    <div className="bg-[#1f2937] relative rounded-[300px] shrink-0 w-full" data-name="Button">
-      <div className="flex flex-row items-center justify-center size-full">
+    <div className={`relative rounded-[300px] shrink-0 w-full ${selectedPlan === 'month' ? 'bg-[#1f2937]' : ''}`} data-name="Button">
+      <div className="flex flex-row items-center justify-center size-full cursor-pointer" onClick={() => setSelectedPlan('month')}>
         <div className="content-stretch flex items-center justify-center px-[16px] py-[14px] relative size-full">
           <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">Month plan</p>
         </div>
@@ -3687,11 +3689,11 @@ function Container123() {
   );
 }
 
-function Button1() {
+function Button1({ selectedPlan, setSelectedPlan }: { selectedPlan: string, setSelectedPlan: (plan: 'month' | '12month' | '3month') => void }) {
   return (
-    <div className="relative rounded-[300px] shrink-0 w-full" data-name="Button">
-      <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[300px]" />
-      <div className="flex flex-row items-center justify-center size-full">
+    <div className={`relative rounded-[300px] shrink-0 w-full ${selectedPlan === '12month' ? 'bg-[#1f2937]' : ''}`} data-name="Button">
+      {selectedPlan !== '12month' && <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[300px]" />}
+      <div className="flex flex-row items-center justify-center size-full cursor-pointer" onClick={() => setSelectedPlan('12month')}>
         <div className="content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative size-full">
           <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">12-month plan</p>
           <Container123 />
@@ -3710,11 +3712,11 @@ function Container124() {
   );
 }
 
-function Button2() {
+function Button2({ selectedPlan, setSelectedPlan }: { selectedPlan: string, setSelectedPlan: (plan: 'month' | '12month' | '3month') => void }) {
   return (
-    <div className="relative rounded-[300px] shrink-0 w-full" data-name="Button">
-      <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[300px]" />
-      <div className="flex flex-row items-center justify-center size-full">
+    <div className={`relative rounded-[300px] shrink-0 w-full ${selectedPlan === '3month' ? 'bg-[#1f2937]' : ''}`} data-name="Button">
+      {selectedPlan !== '3month' && <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[300px]" />}
+      <div className="flex flex-row items-center justify-center size-full cursor-pointer" onClick={() => setSelectedPlan('3month')}>
         <div className="content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative size-full">
           <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">3-month plan</p>
           <Container124 />
@@ -3724,25 +3726,25 @@ function Button2() {
   );
 }
 
-function Segmenter() {
+function Segmenter({ selectedPlan, setSelectedPlan }: { selectedPlan: string, setSelectedPlan: (plan: 'month' | '12month' | '3month') => void }) {
   return (
     <div className="bg-black relative rounded-[300px] shrink-0 w-full" data-name="Segmenter">
       <div className="flex flex-col items-center justify-center size-full">
         <div className="content-stretch flex flex-col gap-[24px] items-center justify-center p-[8px] relative size-full">
-          <Button />
-          <Button1 />
-          <Button2 />
+          <Button selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
+          <Button1 selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
+          <Button2 selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
         </div>
       </div>
     </div>
   );
 }
 
-function Frame17() {
+function Frame17({ selectedPlan, setSelectedPlan }: { selectedPlan: string, setSelectedPlan: (plan: 'month' | '12month' | '3month') => void }) {
   return (
     <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full">
       <Cotnet2 />
-      <Segmenter />
+      <Segmenter selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
     </div>
   );
 }
@@ -3755,37 +3757,37 @@ function Container126() {
   );
 }
 
-function Frame6() {
+function Frame6({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[33.58px] relative shrink-0 text-[23.99px] text-white">$9.99</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[33.58px] relative shrink-0 text-[23.99px] text-white">${calculatePrice(9.99)}</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[19.189px] relative shrink-0 text-[#6b7280] text-[14.39px] tracking-[0.6px]">/mo</p>
     </div>
   );
 }
 
-function Container127() {
+function Container127({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="content-stretch flex gap-[9.594px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
       <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[33.58px] line-through relative shrink-0 text-[#6b7280] text-[23.986px]">$19</p>
-      <Frame6 />
+      <Frame6 calculatePrice={calculatePrice} />
     </div>
   );
 }
 
-function PricingDetails() {
+function PricingDetails({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="font-[700] content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container126 />
-      <Container127 />
+      <Container127 calculatePrice={calculatePrice} />
     </div>
   );
 }
 
-function Pricing() {
+function Pricing({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="font-[700] content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
-      <PricingDetails />
+      <PricingDetails calculatePrice={calculatePrice} />
       <div className="h-[47.972px] relative rounded-[143.916px] shrink-0 w-full" data-name="Button">
         <div aria-hidden="true" className="absolute border-[#374151] border-[1.199px] border-solid inset-0 pointer-events-none rounded-[143.916px]" />
         <div className="flex flex-row items-center justify-center size-full">
@@ -3923,18 +3925,18 @@ function Features() {
   );
 }
 
-function Content() {
+function Content({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="relative shrink-0 w-full" data-name="Content">
       <div className="content-stretch flex flex-col gap-[19.189px] items-start pb-[57.566px] pt-[19.189px] px-[23.986px] relative size-full">
-        <Pricing />
+        <Pricing calculatePrice={calculatePrice} />
         <Features />
       </div>
     </div>
   );
 }
 
-function Container125() {
+function Container125({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="bg-[#131313] relative shrink-0 w-[335.804px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
@@ -3943,7 +3945,7 @@ function Container125() {
             <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.81%] w-[100.18%]" src={imgImage4} />
           </div>
         </div>
-        <Content />
+        <Content calculatePrice={calculatePrice} />
       </div>
     </div>
   );
@@ -3957,37 +3959,37 @@ function Container129() {
   );
 }
 
-function Frame7() {
+function Frame7({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[33.58px] relative shrink-0 text-[23.99px] text-white">$29.99</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[33.58px] relative shrink-0 text-[23.99px] text-white">${calculatePrice(29.99)}</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[19.189px] relative shrink-0 text-[#6b7280] text-[14.39px] tracking-[0.6px]">/mo</p>
     </div>
   );
 }
 
-function Container130() {
+function Container130({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="content-stretch flex gap-[9.594px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
       <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[33.58px] line-through relative shrink-0 text-[#6b7280] text-[23.986px]">$49</p>
-      <Frame7 />
+      <Frame7 calculatePrice={calculatePrice} />
     </div>
   );
 }
 
-function PricingDetails1() {
+function PricingDetails1({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="font-[700] content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container129 />
-      <Container130 />
+      <Container130 calculatePrice={calculatePrice} />
     </div>
   );
 }
 
-function Pricing1() {
+function Pricing1({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="font-[700] content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
-      <PricingDetails1 />
+      <PricingDetails1 calculatePrice={calculatePrice} />
       <div className="bg-[#1877f2] h-[47.972px] relative rounded-[143.916px] shrink-0 w-full" data-name="Button">
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[4.797px] items-center justify-center px-[14.392px] relative size-full">
@@ -4124,18 +4126,18 @@ function Features1() {
   );
 }
 
-function Content1() {
+function Content1({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="relative shrink-0 w-full" data-name="Content">
       <div className="content-stretch flex flex-col gap-[19.189px] items-start pb-[57.566px] pt-[19.189px] px-[23.986px] relative size-full">
-        <Pricing1 />
+        <Pricing1 calculatePrice={calculatePrice} />
         <Features1 />
       </div>
     </div>
   );
 }
 
-function Container128() {
+function Container128({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="bg-[#131313] relative shrink-0 w-[335.804px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
@@ -4144,19 +4146,19 @@ function Container128() {
             <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.15%] w-[100.18%]" src={imgImage4} />
           </div>
         </div>
-        <Content1 />
+        <Content1 calculatePrice={calculatePrice} />
       </div>
     </div>
   );
 }
 
-function PricingCard() {
+function PricingCard({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="font-[700] bg-[#1877f2] content-stretch flex flex-col gap-[9.594px] items-center justify-center pb-[2.399px] pt-[9.594px] px-[2.399px] relative rounded-[19.189px] shrink-0" data-name="PricingCard">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[19.189px] not-italic relative shrink-0 text-[14.392px] text-white tracking-[0.7196px] whitespace-nowrap">Most popular</p>
       <div className="font-[700] bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip p-[0.936px] relative rounded-[inherit] size-full">
-          <Container128 />
+          <Container128 calculatePrice={calculatePrice} />
         </div>
         <div aria-hidden="true" className="absolute border-[0.936px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[19.189px]" />
       </div>
@@ -4172,37 +4174,37 @@ function Container132() {
   );
 }
 
-function Frame8() {
+function Frame8({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[33.58px] relative shrink-0 text-[23.99px] text-white">$69.99</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[33.58px] relative shrink-0 text-[23.99px] text-white">${calculatePrice(69.99)}</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[19.189px] relative shrink-0 text-[#6b7280] text-[14.39px] tracking-[0.6px]">/mo</p>
     </div>
   );
 }
 
-function Container133() {
+function Container133({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="content-stretch flex gap-[9.594px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
       <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[33.58px] line-through relative shrink-0 text-[#6b7280] text-[23.986px]">$89</p>
-      <Frame8 />
+      <Frame8 calculatePrice={calculatePrice} />
     </div>
   );
 }
 
-function PricingDetails2() {
+function PricingDetails2({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="font-[700] content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container132 />
-      <Container133 />
+      <Container133 calculatePrice={calculatePrice} />
     </div>
   );
 }
 
-function Pricing2() {
+function Pricing2({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="font-[700] content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
-      <PricingDetails2 />
+      <PricingDetails2 calculatePrice={calculatePrice} />
       <div className="h-[47.972px] relative rounded-[143.916px] shrink-0 w-full" data-name="Button">
         <div aria-hidden="true" className="absolute border-[#374151] border-[1.199px] border-solid inset-0 pointer-events-none rounded-[143.916px]" />
         <div className="flex flex-row items-center justify-center size-full">
@@ -4340,18 +4342,18 @@ function Features2() {
   );
 }
 
-function Content2() {
+function Content2({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="relative shrink-0 w-full" data-name="Content">
       <div className="content-stretch flex flex-col gap-[19.189px] items-start pb-[57.566px] pt-[19.189px] px-[23.986px] relative size-full">
-        <Pricing2 />
+        <Pricing2 calculatePrice={calculatePrice} />
         <Features2 />
       </div>
     </div>
   );
 }
 
-function Container131() {
+function Container131({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="bg-[#131313] relative shrink-0 w-[335.804px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
@@ -4360,7 +4362,7 @@ function Container131() {
             <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.15%] w-[100.18%]" src={imgImage4} />
           </div>
         </div>
-        <Content2 />
+        <Content2 calculatePrice={calculatePrice} />
       </div>
     </div>
   );
@@ -4374,37 +4376,37 @@ function Container135() {
   );
 }
 
-function Frame9() {
+function Frame9({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[33.58px] relative shrink-0 text-[23.99px] text-white">$149.99</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[33.58px] relative shrink-0 text-[23.99px] text-white">${calculatePrice(149.99)}</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[19.189px] relative shrink-0 text-[#6b7280] text-[14.39px] tracking-[0.6px]">/mo</p>
     </div>
   );
 }
 
-function Container136() {
+function Container136({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="content-stretch flex gap-[9.594px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
       <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[33.58px] line-through relative shrink-0 text-[#6b7280] text-[23.986px]">$199</p>
-      <Frame9 />
+      <Frame9 calculatePrice={calculatePrice} />
     </div>
   );
 }
 
-function PricingDetails3() {
+function PricingDetails3({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="font-[700] content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container135 />
-      <Container136 />
+      <Container136 calculatePrice={calculatePrice} />
     </div>
   );
 }
 
-function Pricing3() {
+function Pricing3({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="font-[700] content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
-      <PricingDetails3 />
+      <PricingDetails3 calculatePrice={calculatePrice} />
       <div className="h-[47.972px] relative rounded-[143.916px] shrink-0 w-full" data-name="Button">
         <div aria-hidden="true" className="absolute border-[#374151] border-[1.199px] border-solid inset-0 pointer-events-none rounded-[143.916px]" />
         <div className="flex flex-row items-center justify-center size-full">
@@ -4542,18 +4544,18 @@ function Features3() {
   );
 }
 
-function Content3() {
+function Content3({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="relative shrink-0 w-full" data-name="Content">
       <div className="content-stretch flex flex-col gap-[19.189px] items-start pb-[57.566px] pt-[19.189px] px-[23.986px] relative size-full">
-        <Pricing3 />
+        <Pricing3 calculatePrice={calculatePrice} />
         <Features3 />
       </div>
     </div>
   );
 }
 
-function Container134() {
+function Container134({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="bg-[#131313] relative shrink-0 w-[335.804px]" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
@@ -4562,31 +4564,31 @@ function Container134() {
             <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-7.97%] w-[100.18%]" src={imgImage4} />
           </div>
         </div>
-        <Content3 />
+        <Content3 calculatePrice={calculatePrice} />
       </div>
     </div>
   );
 }
 
-function Frame5() {
+function Frame5({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-center justify-center relative shrink-0 w-full">
       <div className="font-[700] bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.936px] relative rounded-[inherit] size-full">
-          <Container125 />
+          <Container125 calculatePrice={calculatePrice} />
         </div>
         <div aria-hidden="true" className="absolute border-[0.936px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[19.189px]" />
       </div>
-      <PricingCard />
+      <PricingCard calculatePrice={calculatePrice} />
       <div className="font-[700] bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.936px] relative rounded-[inherit] size-full">
-          <Container131 />
+          <Container131 calculatePrice={calculatePrice} />
         </div>
         <div aria-hidden="true" className="absolute border-[0.936px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[19.189px]" />
       </div>
       <div className="font-[700] bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.936px] relative rounded-[inherit] size-full">
-          <Container134 />
+          <Container134 calculatePrice={calculatePrice} />
         </div>
         <div aria-hidden="true" className="absolute border-[0.936px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[19.189px]" />
       </div>
@@ -4595,10 +4597,25 @@ function Frame5() {
 }
 
 function Frame18() {
+  const [selectedPlan, setSelectedPlan] = useState<'month' | '12month' | '3month'>('month');
+
+  const getDiscount = () => {
+    switch (selectedPlan) {
+      case '12month': return 0.30;
+      case '3month': return 0.15;
+      default: return 0;
+    }
+  };
+
+  const calculatePrice = (basePrice: number) => {
+    const discount = getDiscount();
+    return (basePrice * (1 - discount)).toFixed(2);
+  };
+
   return (
     <div className="content-stretch flex flex-col gap-[42px] items-center relative shrink-0 w-full">
-      <Frame17 />
-      <Frame5 />
+      <Frame17 selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />
+      <Frame5 calculatePrice={calculatePrice} />
     </div>
   );
 }
@@ -4701,26 +4718,62 @@ function Frame21() {
   );
 }
 
-function Container140() {
+function FaqItem({ question, answer, isExpanded, onToggle }: { question: string; answer: React.ReactNode; isExpanded: boolean; onToggle: () => void }) {
   return (
-    <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="Container">
+    <div className="bg-white relative rounded-[16px] shrink-0 w-full cursor-pointer overflow-hidden transition-all duration-300 hover:bg-gray-50" data-name="Question" onClick={onToggle}>
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[0.819px] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex gap-[32px] items-center p-[16px] relative size-full">
-          <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[24px] min-w-px not-italic opacity-88 relative text-[#1f2937] text-[18px]">Can AI employees replace human employees?</p>
-          <Frame21 />
+      <div className="content-stretch flex flex-col p-[16px] md:p-[24px] relative">
+        <div className="flex gap-[16px] md:gap-[32px] items-center justify-between w-full">
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] md:leading-[28px] opacity-88 relative text-[#1f2937] text-[18px] flex-[1]">{question}</p>
+          <div className={`bg-[#1f2937] content-stretch flex items-center p-[2px] relative rounded-[32px] shrink-0 transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+            <div className="relative shrink-0 size-[20px]" data-name="chevron-down">
+              <div className="absolute inset-[33.33%_20.83%]" data-name="path">
+                <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.6667 6.66667">
+                  <path clipRule="evenodd" d="M0.583328 1.08333L5.83333 5.33333L11.0833 1.08333" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={`transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[500px] mt-[16px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+          <div className="font-['General_Sans:Medium',sans-serif] leading-[22px] opacity-80 relative text-[#374151] text-[16px] whitespace-pre-wrap">
+            {answer}
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-function Container137() {
+function FaqList() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+
+  const faqs = [
+    {
+      question: "What is Loraloops AI employee?",
+      answer: "Loraloop AI employees are autonomous digital workers that handle your marketing tasks end-to-end. They plan campaigns, create content, publish posts, run ads, track performance, and continuously optimize - all without manual effort."
+    },
+    {
+      question: "What can I use Loraloop AI employees for?",
+      answer: "You can use Loraloop AI employees for social media management, content creation, ad campaign optimization, lead generation, and overall marketing strategy execution across multiple platforms."
+    },
+    {
+      question: "Can AI employees replace human employees?",
+      answer: "Loraloop AI employees are designed to augment and empower human teams, taking over repetitive and data-intensive tasks so your people can focus on high-level creativity and strategic decision-making."
+    }
+  ];
+
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-name="Container">
-      <Question />
-      <Container139 />
-      <Container140 />
+      {faqs.map((faq, index) => (
+        <FaqItem
+          key={index}
+          question={faq.question}
+          answer={faq.answer}
+          isExpanded={expandedIndex === index}
+          onToggle={() => setExpandedIndex(expandedIndex === index ? null : index)}
+        />
+      ))}
     </div>
   );
 }
@@ -4729,7 +4782,7 @@ function Faq() {
   return (
     <div className="bg-white content-stretch flex flex-col gap-[48px] items-center overflow-clip px-[24px] py-[80px] relative shrink-0 w-full" data-name="FAQ">
       <Cotnet3 />
-      <Container137 />
+      <FaqList />
     </div>
   );
 }

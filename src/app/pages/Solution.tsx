@@ -187,7 +187,7 @@ export default function Solution() {
   };
 
   const handleGetStart = () => {
-    navigate("/", { state: { focusEmail: true } });
+    navigate("/pricing");
     window.scrollTo(0, 0);
   };
 

@@ -168,11 +168,14 @@ function Content() {
 
 function Container2() {
   return (
-    <div className="content-stretch flex gap-[13px] items-center py-[4px] relative shrink-0 w-full" data-name="Container">
-      <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+    <div className="content-stretch flex flex-col items-start gap-[12px] py-[4px] relative shrink-0 w-full" data-name="Container">
+      <div className="flex gap-[13px] items-start w-full">
+        <div className="relative shrink-0 size-[40px] mt-[2px]" data-name="Lora 2">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+        </div>
+        <Content />
       </div>
-      <Content />
+      <UpdatingSoonBadge />
     </div>
   );
 }
@@ -369,16 +372,32 @@ function Container10() {
   );
 }
 
+function UpdatingSoonBadge() {
+  return (
+    <div className="bg-[#e5e7eb] px-[10px] py-[4px] rounded-[100px] inline-flex">
+      <p className="font-['General_Sans:Medium',sans-serif] text-[11px] text-[#4b5563] leading-[14px]">Contents Updating soon</p>
+    </div>
+  );
+}
+
 function Container1() {
   return (
     <div className="backdrop-blur-[8px] bg-[rgba(247,248,250,0.95)] relative rounded-[16px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] shrink-0 w-full" data-name="Container">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col gap-[8px] items-start px-[8px] py-[16px] relative size-full">
           <Link to="/solution?agent=lora" className="w-full no-underline"><Container2 /></Link>
-          <Link to="/solution?agent=sam" className="w-full no-underline"><Container3 /></Link>
-          <Link to="/solution?agent=clara" className="w-full no-underline"><Container5 /></Link>
-          <Link to="/solution?agent=steve" className="w-full no-underline"><Container7 /></Link>
-          <Link to="/solution?agent=sarah" className="w-full no-underline"><Container9 /></Link>
+          <div className="w-full grayscale opacity-50 pointer-events-none">
+            <Container3 />
+          </div>
+          <div className="w-full grayscale opacity-50 pointer-events-none">
+            <Container5 />
+          </div>
+          <div className="w-full grayscale opacity-50 pointer-events-none">
+            <Container7 />
+          </div>
+          <div className="w-full grayscale opacity-50 pointer-events-none">
+            <Container9 />
+          </div>
         </div>
       </div>
     </div>
@@ -399,13 +418,13 @@ function Frame4() {
 
 function FrameBlogs() {
   return (
-    <div className="relative shrink-0 w-full block">
+    <Link to="/blog" className="relative shrink-0 w-full block">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[8px] py-[12px] relative size-full">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#9ca3af] text-[16px] text-center whitespace-nowrap">Blogs (Soon)</p>
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Blogs</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

@@ -30,15 +30,15 @@ export default function Contact() {
             <div className="flex flex-col gap-2">
               <p className="font-['General_Sans:Semibold',sans-serif] leading-7 text-[#1f2937] text-lg">Social Media</p>
               <div className="flex gap-2">
-                <div className="rounded-[11.365px] w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
-                  <img alt="YouTube" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos} />
-                </div>
-                <div className="rounded-[11.365px] w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
-                  <img alt="Facebook" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos1} />
-                </div>
-                <div className="rounded-[11.365px] w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
-                  <img alt="LinkedIn" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos2} />
-                </div>
+                <a href="https://www.linkedin.com/company/loraloop/" target="_blank" rel="noopener noreferrer" className="rounded-[11.365px] w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                  <img alt="LinkedIn" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos} />
+                </a>
+                <a href="https://www.instagram.com/loraloop_ai?igsh=YXR6bnpjcXB3bXFi" target="_blank" rel="noopener noreferrer" className="rounded-[11.365px] w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                  <img alt="Instagram" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos1} />
+                </a>
+                <a href="https://x.com/TKtamilarasan2" target="_blank" rel="noopener noreferrer" className="rounded-[11.365px] w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                  <img alt="X (Twitter)" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos2} />
+                </a>
               </div>
             </div>
 
