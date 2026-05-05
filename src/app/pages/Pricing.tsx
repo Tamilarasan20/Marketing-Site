@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 import { Check } from "lucide-react";
 import imgImage from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
 
@@ -58,6 +59,17 @@ const features = {
 
 export default function Pricing() {
   const [selectedPlan, setSelectedPlan] = useState<PlanType>("monthly");
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleGetLoraloop = () => {
+    if (location.pathname === "/") {
+      window.scrollTo(0, 0);
+      window.dispatchEvent(new CustomEvent("focus-waitlist-email"));
+    } else {
+      navigate("/", { state: { focusEmail: true } });
+    }
+  };
 
   return (
     <div className="bg-black min-h-screen pt-20 md:pt-32 pb-10 md:pb-20">
@@ -143,7 +155,7 @@ export default function Pricing() {
                 </div>
               </div>
 
-              <button className="h-10 w-full rounded-full border border-[#374151] font-['Satoshi:Bold',sans-serif] leading-5 text-sm text-white hover:bg-[#1f2937] transition-colors">
+              <button onClick={handleGetLoraloop} className="h-10 w-full rounded-full border border-[#374151] font-['Satoshi:Bold',sans-serif] leading-5 text-sm text-white hover:bg-[#1f2937] transition-colors">
                 Get Loraloop
               </button>
 
@@ -196,7 +208,7 @@ export default function Pricing() {
                     </div>
                   </div>
 
-                  <button className="h-10 w-full rounded-full bg-[#1877f2] font-['Satoshi:Bold',sans-serif] leading-5 text-sm text-[#1f2937] hover:bg-[#1565d8] transition-colors">
+                  <button onClick={handleGetLoraloop} className="h-10 w-full rounded-full bg-[#1877f2] font-['Satoshi:Bold',sans-serif] leading-5 text-sm text-[#1f2937] hover:bg-[#1565d8] transition-colors">
                     Get Loraloop
                   </button>
 
@@ -246,7 +258,7 @@ export default function Pricing() {
                 </div>
               </div>
 
-              <button className="h-10 w-full rounded-full border border-[#374151] font-['Satoshi:Bold',sans-serif] leading-5 text-sm text-white hover:bg-[#1f2937] transition-colors">
+              <button onClick={handleGetLoraloop} className="h-10 w-full rounded-full border border-[#374151] font-['Satoshi:Bold',sans-serif] leading-5 text-sm text-white hover:bg-[#1f2937] transition-colors">
                 Get Loraloop
               </button>
 
@@ -294,7 +306,7 @@ export default function Pricing() {
                 </div>
               </div>
 
-              <button className="h-10 w-full rounded-full border border-[#374151] font-['Satoshi:Bold',sans-serif] leading-5 text-sm text-white hover:bg-[#1f2937] transition-colors">
+              <button onClick={handleGetLoraloop} className="h-10 w-full rounded-full border border-[#374151] font-['Satoshi:Bold',sans-serif] leading-5 text-sm text-white hover:bg-[#1f2937] transition-colors">
                 Get Loraloop
               </button>
 
