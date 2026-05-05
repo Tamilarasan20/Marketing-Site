@@ -158,29 +158,15 @@ export default function Blog() {
             </div>
 
             <div className="flex flex-wrap gap-4 items-center justify-center">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((page) => (
-                <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={`h-12 px-5 rounded-full font-['Satoshi:Bold',sans-serif] leading-6 text-base transition-colors ${
-                    currentPage === page
-                      ? "bg-[#1877f2] text-white"
-                      : "bg-white text-[#111827] border border-[#e5e7eb] hover:bg-gray-100"
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
-              <div className="flex gap-1">
-                <div className="w-[5px] h-[5px] rounded-full bg-[#d1d5db]" />
-                <div className="w-[5px] h-[5px] rounded-full bg-[#d1d5db]" />
-                <div className="w-[5px] h-[5px] rounded-full bg-[#d1d5db]" />
-              </div>
-              <button className="h-12 px-5 rounded-full bg-white text-[#111827] border border-[#e5e7eb] font-['Satoshi:Bold',sans-serif] leading-6 text-base hover:bg-gray-100 transition-colors">
-                24
-              </button>
-              <button className="h-12 px-5 rounded-full bg-white text-[#111827] border border-[#e5e7eb] font-['Satoshi:Bold',sans-serif] leading-6 text-base hover:bg-gray-100 transition-colors">
-                Next
+              <button
+                onClick={() => setCurrentPage(1)}
+                className={`h-12 px-5 rounded-full font-['Satoshi:Bold',sans-serif] leading-6 text-base transition-colors ${
+                  currentPage === 1
+                    ? "bg-[#1877f2] text-white"
+                    : "bg-white text-[#111827] border border-[#e5e7eb] hover:bg-gray-100"
+                }`}
+              >
+                1
               </button>
             </div>
           </div>

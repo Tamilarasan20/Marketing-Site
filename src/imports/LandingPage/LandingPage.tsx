@@ -34,6 +34,8 @@ import imgImage from "./f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
 import imgImage172 from "./a091e0e97bb7d939c455df7635918b4c8c69a7b8.png";
 import imgLogos3 from "./c7fe7372891e9f00b719c9bfb401718a19a7515e.png";
 import imgLogos4 from "./62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
+import imgPoint from "./point.png";
+import imgStatusCheckmark from "./status_checkmark.png";
 import { imgGroup, imgFeatureImageSmall4, imgGroup1, imgColor } from "./svg-4yq21";
 
 function TextGroupVertical3() {
@@ -1560,6 +1562,10 @@ function StatusLine_Auth() {
 function Content_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
+      <div className="flex items-center gap-[4px] mb-[4px]">
+        <img src={imgPoint} alt="" className="w-[16px] h-[16px]" />
+        <span className="font-['General_Sans:Medium',sans-serif] text-[12px] text-[#6b7280]">AI Agents Deep Analyse</span>
+      </div>
       <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
         <p className="leading-[18px]">Analysed market trends, Monitor Competitors<br/>across social media platforms</p>
       </div>
@@ -1648,7 +1654,7 @@ function AvatarWithTitle1_Auth() {
 
 function Container14_Auth() {
   return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between left-[40px] px-[16px] py-[12px] rounded-[16px] top-[110px] w-[460px] shadow-sm" data-name="Container">
+    <div className="absolute bg-white content-stretch flex items-center justify-between left-[40px] px-[16px] py-[12px] rounded-[16px] top-[128px] w-[460px] shadow-sm" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <AvatarWithTitle1_Auth />
       <p className="font-['General_Sans:Medium',sans-serif] text-[12px] text-[#6b7280] self-end mt-auto ml-2">05:12 AM</p>
@@ -1660,16 +1666,10 @@ function StatusLine2_Auth() {
   return (
     <div className="content-stretch flex gap-[4px] items-start relative shrink-0" data-name="Status Line">
       <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Icon">
-        <div className="absolute inset-[8.33%]" data-name="Icon">
-          <div className="absolute inset-[-4.87%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 14.6333 14.6333">
-              <path d={svgPaths.p3129b680} id="Icon" stroke="var(--stroke-0, #B25107)" strokeDasharray="2.6 2.6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.3" />
-            </svg>
-          </div>
-        </div>
+        <img src={imgStatusCheckmark} alt="" className="w-full h-full object-contain" />
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[12px] whitespace-nowrap">
-        <p className="leading-[16px]">Need Approval</p>
+      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
+        <p className="leading-[16px]">Published</p>
       </div>
     </div>
   );
@@ -1707,7 +1707,7 @@ function AvatarWithTitle2_Auth() {
 
 function Container15_Auth() {
   return (
-    <div className="absolute bg-white content-stretch flex items-center justify-between left-[40px] px-[16px] py-[12px] rounded-[16px] top-[200px] w-[460px] shadow-sm" data-name="Container">
+    <div className="absolute bg-white content-stretch flex items-center justify-between left-[40px] px-[16px] py-[12px] rounded-[16px] top-[210px] w-[460px] shadow-sm" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <AvatarWithTitle2_Auth />
       <p className="font-['General_Sans:Medium',sans-serif] text-[12px] text-[#6b7280] self-end mt-auto ml-2">05:13 AM</p>
@@ -2045,9 +2045,9 @@ function DescriptionSection_Auth() {
       <div className="bg-white relative shrink-0 flex-1 w-full" data-name="Description Section">
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative size-full text-center">
-          <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[0px] tracking-[-0.5px] w-full">
+          <div className="flex flex-col font-[700] font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[0px] tracking-[-0.5px] w-full">
             <p className="text-[24px]">
-              <span className="font-['Satoshi:Bold',sans-serif] leading-[32px] not-italic text-[#14a148]">Social Media handled End to End</span>
+              <span className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[32px] not-italic text-[#14a148]">Social Media handled End to End</span>
             </p>
           </div>
           <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
@@ -2372,7 +2372,7 @@ function Slot1_Auth() {
 function DescriptionSection1_Auth() {
     return (
       <div className="bg-white content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative shrink-0 text-center flex-1 w-full" data-name="Description Section">
-      <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
+      <div className="flex flex-col font-[700] font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
         <p>
           <span className="leading-[32px] text-[#14a148]">Discover ideas, trends, monitor competitor</span><span className="leading-[32px] text-[#1f2937]"> your marketing 10x value content</span>
         </p>
@@ -3123,7 +3123,7 @@ function Slot2_Auth() {
 function DescriptionSection2_Auth() {
     return (
       <div className="bg-white content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative shrink-0 text-center flex-1 w-full" data-name="Description Section">
-      <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[24px] tracking-[-0.5px] w-full">
+      <div className="flex flex-col font-[700] font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[24px] tracking-[-0.5px] w-full">
         <p>
           <span className="leading-[32px] text-[#14a148]">Turn idea/existing content</span><span className="leading-[32px] text-[#1f2937]"> into social posts, blogs, TikToks, YouTube videos in minutes.</span>
         </p>
@@ -3866,7 +3866,7 @@ function DescriptionSection3_Auth() {
       <div className="bg-white relative shrink-0 flex-1 w-full" data-name="Description Section">
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative size-full text-center">
-          <div className="flex flex-col font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
+          <div className="flex flex-col font-[700] font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
             <p>
               <span className="leading-[32px] text-[#14a148]">Smart Multi-Platform Publishing</span><span className="leading-[32px] text-[#1f2937]"> based on realtime audiance & performance data!</span>
             </p>
@@ -6585,3 +6585,4 @@ export default function LandingPage() {
     </div>
   );
 }
+

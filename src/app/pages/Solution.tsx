@@ -22,6 +22,7 @@ const aiEmployees = [
     name: "Lora",
     role: "AI Marketing Lead",
     image: imgLora,
+    isSoon: false,
     title: (
       <>
         Meet <span className="text-[#9131ea]">Lora</span> Autonomous
@@ -35,6 +36,7 @@ const aiEmployees = [
     name: "Sam",
     role: "AI Strategist",
     image: imgSam,
+    isSoon: true,
     title: (
       <>
         Meet <span className="text-[#1877f2]">Sam</span> Autonomous
@@ -48,6 +50,7 @@ const aiEmployees = [
     name: "Clara",
     role: "AI Content Writer",
     image: imgClara,
+    isSoon: true,
     title: (
       <>
         Meet <span className="text-[#9131ea]">Clara</span> Your
@@ -61,6 +64,7 @@ const aiEmployees = [
     name: "Steve",
     role: "AI Visual Designer",
     image: imgSteve,
+    isSoon: true,
     title: (
       <>
         Meet <span className="text-[#d77504]">Steve</span> Your
@@ -74,6 +78,7 @@ const aiEmployees = [
     name: "Sarah",
     role: "AI Social Media Manager",
     image: imgSarah,
+    isSoon: true,
     title: (
       <>
         Meet <span className="text-[#14a148]">Sarah</span> Your
@@ -236,25 +241,36 @@ export default function Solution() {
                 <button
                   key={index}
                   ref={(el) => (employeeRefs.current[index] = el)}
-                  onClick={() => handleEmployeeClick(index)}
-                  className={`flex gap-3 items-center transition-colors cursor-pointer ${
+                  onClick={() => !employee.isSoon && handleEmployeeClick(index)}
+                  disabled={employee.isSoon}
+                  className={`flex gap-3 items-center transition-colors ${
                     index === selectedEmployee
-                      ? "bg-[#dbeafe] p-2 rounded-[20px]"
-                      : "py-2"
+                      ? "bg-[#dbeafe] p-2 rounded-[20px] cursor-default"
+                      : employee.isSoon
+                      ? "py-2 cursor-default opacity-50"
+                      : "py-2 cursor-pointer"
                   }`}
                 >
                   <div className="w-10 h-10 rounded-full overflow-hidden shrink-0 pointer-events-none">
-                    <img alt={employee.name} className="w-full h-full object-cover" src={employee.image} />
+                    <img 
+                      alt={employee.name} 
+                      className={`w-full h-full object-cover ${employee.isSoon ? "grayscale" : ""}`} 
+                      src={employee.image} 
+                    />
                   </div>
                   <div className="flex flex-col items-start min-w-0 pointer-events-none">
                     <p className={`leading-[18px] text-sm whitespace-nowrap ${
                       index === selectedEmployee
                         ? "font-['General_Sans:Semibold',sans-serif] text-[#1f2937]"
+                        : employee.isSoon
+                        ? "font-['General_Sans:Medium',sans-serif] text-[#9ca3af]"
                         : "font-['General_Sans:Medium',sans-serif] text-[#374151]"
                     }`}>
                       {employee.role}
                     </p>
-                    <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#6b7280] text-xs">
+                    <p className={`font-['General_Sans:Medium',sans-serif] leading-4 text-xs ${
+                      employee.isSoon ? "text-[#9ca3af]" : "text-[#6b7280]"
+                    }`}>
                       {employee.name}
                     </p>
                   </div>
@@ -308,9 +324,12 @@ export default function Solution() {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Old Way */}
               <div className="bg-white p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-[#e5e7eb]">
-                <h3 className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-2xl text-center mb-6 md:mb-8">
-                  Old Way
-                </h3>
+                <div className="flex flex-col items-center gap-1 mb-6 md:mb-8">
+                  <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">Old way</p>
+                  <h3 className="font-[700] font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-2xl md:text-3xl text-center">
+                    You doing all work
+                  </h3>
+                </div>
                 <div className="bg-[#f9fafc] rounded-2xl p-6">
                   <div className="flex flex-col gap-6">
                     {oldWayProblems.map((problem, index) => (
@@ -327,9 +346,12 @@ export default function Solution() {
 
               {/* New Way */}
               <div className="bg-white p-6 md:p-10">
-                <h3 className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-2xl text-center mb-6 md:mb-8">
-                  New Way - AI Agents work while you sleep
-                </h3>
+                <div className="flex flex-col items-center gap-1 mb-6 md:mb-8">
+                  <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">New way</p>
+                  <h3 className="font-[700] font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-2xl md:text-3xl text-center">
+                    AI Agents work while you sleep
+                  </h3>
+                </div>
                 <div className="flex flex-wrap gap-3 justify-center">
                   {newWayBenefits.map((benefit, index) => {
                     const IconComponent = benefit.icon;
@@ -380,7 +402,7 @@ export default function Solution() {
       {/* FAQ Section */}
       <div className="bg-white px-4 md:px-20 py-12 md:py-20">
         <div className="max-w-[800px] mx-auto">
-          <h2 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-10 md:mb-12">
+          <h2 className="font-[700] font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-10 md:mb-12">
             Frequently Asked Questions
           </h2>
 
@@ -389,7 +411,7 @@ export default function Solution() {
               <div key={index} className="border border-[#e5e7eb] rounded-2xl overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between p-5 md:p-6 text-left hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 md:p-6 text-left hover:bg-gray-50 transition-colors cursor-pointer"
                 >
                   <span className="font-['Satoshi:Bold',sans-serif] leading-6 text-[#1f2937] text-base md:text-lg pr-4">
                     {item.question}
@@ -418,7 +440,7 @@ export default function Solution() {
       <div className="relative bg-black w-full flex flex-col gap-12 md:gap-[80px] items-center overflow-clip pt-12 md:pt-[80px] px-4" data-name="Outro">
         <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full max-w-[740px]" data-name="Call to Action Group">
           <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleep</p>
+            <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleep</p>
             <p className="font-['General_Sans:Medium',sans-serif] leading-[24px] md:leading-[28px] relative shrink-0 text-[#9ca3af] text-[16px] md:text-[20px] w-full">
               Social media tools are easy to buy, but hard to keep up with. loraloop is your AI marketing team like 10 year employees marketing team for you to
               <br aria-hidden="true" className="hidden md:block" />

@@ -17,6 +17,11 @@ const navTextStyle: React.CSSProperties = {
   whiteSpace: "nowrap",
 };
 
+const soonTextStyle: React.CSSProperties = {
+  ...navTextStyle,
+  color: "#9ca3af",
+};
+
 const aiAgents = [
   {
     name: "Lora",
@@ -25,38 +30,43 @@ const aiAgents = [
     bg: "linear-gradient(160deg, rgb(149,0,229) 0%, rgb(195,29,237) 100%)",
     scale: 1.3,
     offsetY: "2px",
+    isSoon: false,
   },
   {
     name: "Sam",
     role: "AI Strategist",
     img: imgSam,
-    bg: "linear-gradient(160deg, rgb(0,115,255) 0%, rgb(13,162,255) 100%)",
+    bg: "#E5E7EB",
     scale: 1.3,
     offsetY: "2px",
+    isSoon: true,
   },
   {
     name: "Clara",
     role: "AI Content Writer",
     img: imgClara,
-    bg: "linear-gradient(160deg, rgba(38,193,250,0.9) 0%, rgba(94,212,255,0.9) 100%)",
+    bg: "#E5E7EB",
     scale: 1.1,
     offsetY: "0px",
+    isSoon: true,
   },
   {
     name: "Steve",
     role: "AI Visual Designer",
     img: imgSteve,
-    bg: "linear-gradient(140deg, rgb(255,219,211) 0%, rgb(255,221,181) 100%)",
+    bg: "#E5E7EB",
     scale: 1.9,
     offsetY: "2px",
+    isSoon: true,
   },
   {
     name: "Sarah",
     role: "AI Social Media Manager",
     img: imgSarah,
-    bg: "linear-gradient(160deg, rgba(21,245,227,0.9) 0%, rgba(0,110,101,0.9) 100%)",
+    bg: "#E5E7EB",
     scale: 1.1,
     offsetY: "0px",
+    isSoon: true,
   },
 ];
 
@@ -82,6 +92,9 @@ export default function Header() {
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, [open]);
+
+  const activeAgents = aiAgents.filter((a) => !a.isSoon);
+  const soonAgents = aiAgents.filter((a) => a.isSoon);
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50 flex justify-center pointer-events-none">
@@ -140,9 +153,9 @@ export default function Header() {
           <Link to="/solution" className="flex items-center justify-center px-[12px] py-[8px]">
             <span style={navTextStyle}>Solution</span>
           </Link>
-          <Link to="/blog" className="flex items-center justify-center px-[12px] py-[8px]">
-            <span style={navTextStyle}>Blogs</span>
-          </Link>
+          <div className="flex items-center justify-center px-[12px] py-[8px]">
+            <span style={soonTextStyle}>Blogs (Soon)</span>
+          </div>
           <Link to="/pricing" className="flex items-center justify-center px-[12px] py-[8px]">
             <span style={navTextStyle}>Pricing</span>
           </Link>
@@ -184,91 +197,180 @@ export default function Header() {
               top: "calc(100% + 12px)",
               left: "50%",
               transform: "translateX(-50%)",
-              width: 480,
+              width: 520,
               background: "white",
-              borderRadius: 8,
+              borderRadius: 24,
               border: "1px solid #e5e7eb",
               boxShadow: "0px 12px 32px rgba(0,0,0,0.12)",
-              padding: "16px",
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              rowGap: 8,
-              columnGap: 16,
+              padding: "24px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 16,
               boxSizing: "border-box",
               zIndex: 200,
             }}
           >
-            {aiAgents.map((agent) => (
-              <Link
-                key={agent.name}
-                to={`/solution?agent=${agent.name.toLowerCase()}`}
-                className="flex items-center gap-[10px] cursor-pointer rounded-[8px] px-[8px] py-[6px] no-underline"
-                style={{ backgroundColor: "transparent", transition: "background-color 0.15s" }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f9fafc")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
-                onClick={() => setOpen(false)}
+            {/* Active Agents */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+              {activeAgents.map((agent) => (
+                <Link
+                  key={agent.name}
+                  to={`/solution?agent=${agent.name.toLowerCase()}`}
+                  className="flex items-center gap-[12px] cursor-pointer rounded-[12px] px-[8px] py-[6px] no-underline"
+                  style={{ backgroundColor: "transparent", transition: "background-color 0.15s" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f9fafc")}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+                  onClick={() => setOpen(false)}
+                >
+                  <div
+                    style={{
+                      width: 48,
+                      height: 48,
+                      minWidth: 48,
+                      borderRadius: "50%",
+                      background: agent.bg,
+                      overflow: "hidden",
+                      position: "relative",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <img
+                      alt={agent.name}
+                      src={agent.img}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        transform: `scale(${agent.scale}) translateY(${agent.offsetY})`,
+                      }}
+                    />
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
+                    <p
+                      style={{
+                        fontFamily: "Satoshi, sans-serif",
+                        fontWeight: 700,
+                        fontSize: 14,
+                        lineHeight: "20px",
+                        color: "#1f2937",
+                        margin: 0,
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {agent.role}
+                    </p>
+                    <p
+                      style={{
+                        fontFamily: "General Sans, sans-serif",
+                        fontWeight: 500,
+                        fontSize: 12,
+                        lineHeight: "16px",
+                        color: "#6b7280",
+                        margin: 0,
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {agent.name}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* Contents Updating soon pill */}
+            <div className="flex items-center">
+              <div
+                style={{
+                  background: "#F3F4F6",
+                  borderRadius: "100px",
+                  padding: "4px 12px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                }}
               >
-                {/* 40×40 colored circle avatar */}
-                <div
+                <span
                   style={{
-                    width: 40,
-                    height: 40,
-                    minWidth: 40,
-                    borderRadius: "50%",
-                    background: agent.bg,
-                    overflow: "hidden",
-                    position: "relative",
-                    flexShrink: 0,
+                    fontFamily: "Satoshi, sans-serif",
+                    fontWeight: 500,
+                    fontSize: "12px",
+                    lineHeight: "16px",
+                    color: "#6B7280",
                   }}
                 >
-                  <img
-                    alt={agent.name}
-                    src={agent.img}
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                      transform: `scale(${agent.scale}) translateY(${agent.offsetY})`,
-                    }}
-                  />
-                </div>
+                  Contents Updating soon
+                </span>
+              </div>
+            </div>
 
-                {/* Role + Name */}
-                <div style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
-                  <p
+            {/* Soon Agents */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+              {soonAgents.map((agent) => (
+                <div
+                  key={agent.name}
+                  className="flex items-center gap-[12px] rounded-[12px] px-[8px] py-[6px]"
+                  style={{ opacity: 0.8 }}
+                >
+                  <div
                     style={{
-                      fontFamily: "Satoshi, sans-serif",
-                      fontWeight: 700,
-                      fontSize: 13,
-                      lineHeight: "18px",
-                      color: "#1f2937",
-                      whiteSpace: "nowrap",
+                      width: 48,
+                      height: 48,
+                      minWidth: 48,
+                      borderRadius: "50%",
+                      background: agent.bg,
                       overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      margin: 0,
+                      position: "relative",
+                      flexShrink: 0,
                     }}
                   >
-                    {agent.role}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: "General Sans, sans-serif",
-                      fontWeight: 500,
-                      fontSize: 11,
-                      lineHeight: "16px",
-                      color: "#6b7280",
-                      whiteSpace: "nowrap",
-                      margin: 0,
-                    }}
-                  >
-                    {agent.name}
-                  </p>
+                    <img
+                      alt={agent.name}
+                      src={agent.img}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        transform: `scale(${agent.scale}) translateY(${agent.offsetY})`,
+                        filter: "grayscale(100%)",
+                      }}
+                    />
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
+                    <p
+                      style={{
+                        fontFamily: "Satoshi, sans-serif",
+                        fontWeight: 700,
+                        fontSize: 14,
+                        lineHeight: "20px",
+                        color: "#9CA3AF",
+                        margin: 0,
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {agent.role}
+                    </p>
+                    <p
+                      style={{
+                        fontFamily: "General Sans, sans-serif",
+                        fontWeight: 500,
+                        fontSize: 12,
+                        lineHeight: "16px",
+                        color: "#9CA3AF",
+                        margin: 0,
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {agent.name}
+                    </p>
+                  </div>
                 </div>
-              </Link>
-            ))}
+              ))}
+            </div>
           </div>
         )}
       </div>

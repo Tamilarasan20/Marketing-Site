@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function About() {
   return (
     <div className="pt-20 md:pt-32 pb-20 px-4">
-      <div className="max-w-full max-w-[1120px] px-4 mx-auto">
+      <div className="max-w-[1280px] px-4 md:px-16 mx-auto">
         <div className="flex flex-col gap-[88px]">
           <div className="flex flex-col gap-14">
             <p className="font-['Satoshi:Bold',sans-serif] leading-[56px] text-[#101828] text-5xl tracking-[-1.2px]">About Loraloop</p>

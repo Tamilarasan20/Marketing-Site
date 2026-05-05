@@ -5,7 +5,7 @@ import imgLogos2 from "../../imports/ResponsiveWebsiteDesign/62fcac5886e5a57ef8f
 export default function Contact() {
   return (
     <div className="pt-20 md:pt-32 pb-20 px-4">
-      <div className="max-w-full max-w-[1120px] px-4 mx-auto">
+      <div className="max-w-[1280px] px-4 md:px-16 mx-auto">
         <div className="flex flex-col gap-14">
           <div className="flex flex-col gap-4 py-[2px]">
             <p className="font-['Satoshi:Bold',sans-serif] leading-[56px] text-[#101828] text-5xl tracking-[-1.2px]">Contact Us/Support</p>
@@ -45,11 +45,11 @@ export default function Contact() {
             <div className="flex flex-col gap-2 leading-[22px] text-base">
               <div className="flex gap-2 items-center">
                 <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280]">Email:</p>
-                <a href="mailto:loraloopai@gmail.com" className="font-['General_Sans:Semibold',sans-serif] text-[#1f2937] hover:text-[#1877f2]">loraloopai@gmail.com</a>
+                <a href="mailto:loraloopai@gmail.com" className="font-['General_Sans:Semibold',sans-serif] text-[#1877f2] underline underline-offset-4 hover:opacity-80 transition-opacity">loraloopai@gmail.com</a>
               </div>
               <div className="flex gap-2 items-center">
                 <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280]">Discord Community:</p>
-                <a href="https://discord.gg/ynrBvXUY" target="_blank" rel="noopener noreferrer" className="font-['General_Sans:Semibold',sans-serif] text-[#1f2937] hover:text-[#1877f2]">https://discord.gg/ynrBvXUY</a>
+                <a href="https://discord.gg/ynrBvXUY" target="_blank" rel="noopener noreferrer" className="font-['General_Sans:Semibold',sans-serif] text-[#1877f2] underline underline-offset-4 hover:opacity-80 transition-opacity">https://discord.gg/ynrBvXUY</a>
               </div>
             </div>
           </div>
