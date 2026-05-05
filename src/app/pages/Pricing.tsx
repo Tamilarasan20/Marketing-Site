@@ -111,7 +111,7 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-[1200px] px-4 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-[1200px] px-4 mx-auto items-end">
           {/* Solo Plan */}
           <div className="bg-[#131313] rounded-2xl overflow-hidden w-full max-w-full mx-auto">
             <div className="h-[150px] overflow-hidden">
