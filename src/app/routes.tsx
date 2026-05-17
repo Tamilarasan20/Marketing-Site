@@ -7,6 +7,7 @@ import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       { path: "blog/:id", Component: BlogDetail },
       { path: "about", Component: About },
       { path: "contact", Component: Contact },
+      { path: "privacy-policy", Component: PrivacyPolicy },
       { path: "*", Component: NotFound },
     ],
   },
