@@ -27,6 +27,7 @@ export default function Footer() {
             <div className="flex flex-col gap-[14px] items-center md:items-start text-center md:text-left">
               <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl">Company</p>
               <Link to="/about" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors">About us</Link>
+              <Link to="/privacy-policy" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors">Privacy Policy</Link>
               <Link to="/contact" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors">Contact Us/Support</Link>
               <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Become Affiliate (Soon)</p>
             </div>
