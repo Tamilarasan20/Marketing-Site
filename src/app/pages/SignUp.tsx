@@ -1,17 +1,21 @@
 import { useState, type FormEvent } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { supabase } from "../../lib/supabase";
 
 export default function SignUp() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [info, setInfo] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
+    setInfo(null);
 
     if (!name || !email || !password) {
       setError("Please fill in all fields.");
@@ -28,8 +32,29 @@ export default function SignUp() {
 
     setSubmitting(true);
     try {
-      const params = new URLSearchParams({ name, email });
-      window.location.href = `/app/signup?${params.toString()}`;
+      const { data, error: signUpError } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: { full_name: name },
+        },
+      });
+      if (signUpError) {
+        setError(signUpError.message);
+        return;
+      }
+      if (data.session) {
+        const appUrl = import.meta.env.VITE_APP_URL;
+        if (appUrl) {
+          window.location.href = appUrl;
+        } else {
+          navigate("/");
+        }
+      } else {
+        setInfo("Check your email to confirm your account.");
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Sign up failed. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -111,6 +136,9 @@ export default function SignUp() {
 
             {error && (
               <p className="font-['General_Sans:Medium',sans-serif] text-[#dc2626] text-sm">{error}</p>
+            )}
+            {info && (
+              <p className="font-['General_Sans:Medium',sans-serif] text-[#0279ec] text-sm">{info}</p>
             )}
 
             <button

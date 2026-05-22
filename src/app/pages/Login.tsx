@@ -1,7 +1,9 @@
 import { useState, type FormEvent } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { supabase } from "../../lib/supabase";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -19,7 +21,22 @@ export default function Login() {
 
     setSubmitting(true);
     try {
-      window.location.href = `/app/login?email=${encodeURIComponent(email)}`;
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      if (signInError) {
+        setError(signInError.message);
+        return;
+      }
+      const appUrl = import.meta.env.VITE_APP_URL;
+      if (appUrl) {
+        window.location.href = appUrl;
+      } else {
+        navigate("/");
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Sign in failed. Please try again.");
     } finally {
       setSubmitting(false);
     }
