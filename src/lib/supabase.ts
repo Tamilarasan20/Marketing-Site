@@ -8,3 +8,6 @@ if (!supabaseUrl || !supabaseAnonKey) {
 }
 
 export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '');
+
+export const APP_URL =
+  import.meta.env.VITE_APP_URL || 'https://loraloop-main-api.vercel.app';
