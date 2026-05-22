@@ -14,14 +14,14 @@ export default function Layout() {
       let current = e.target as HTMLElement | null;
       while (current && current !== document.body) {
         const text = current.textContent?.trim();
-        if (text === "Get Start" || text === "Get Started") {
+        if (text === "Get Start" || text === "Get Started" || text === "Join Waitlist") {
           e.preventDefault();
           e.stopPropagation();
-          navigate("/pricing");
+          navigate("/signup");
           window.scrollTo(0, 0);
           return;
         }
-        if (text === "Login" || text === "Log in" || text === "Log In" || text === "Sign in" || text === "Sign In") {
+        if (text === "Login" || text === "Log in" || text === "Log In" || text === "Sign in" || text === "Sign In" || text === "Signin") {
           e.preventDefault();
           e.stopPropagation();
           navigate("/login");
