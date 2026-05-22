@@ -101,8 +101,7 @@ export default function Header() {
       {/* Pill — relative so dropdown anchors to its bottom */}
       <div
         ref={pillRef}
-        className="pointer-events-auto relative backdrop-blur-[8px] bg-[rgba(243,246,251,0.9)] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] px-6 py-[4px] flex items-center"
-        style={{ gap: 48 }}
+        className="pointer-events-auto relative backdrop-blur-[8px] bg-[rgba(243,246,251,0.9)] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] px-3 md:px-6 py-[4px] flex items-center gap-3 md:gap-12"
       >
         {/* Logo group */}
         <Link to="/" className="flex items-center gap-[6px] py-2 shrink-0">
@@ -163,6 +162,24 @@ export default function Header() {
 
         {/* Auth + Waitlist CTAs */}
         <div className="flex items-center gap-2">
+          {/* Mobile: single combined Sign in / Sign up */}
+          <Link
+            to="/login"
+            className="md:hidden flex items-center justify-center px-3 py-2 rounded-full border border-[#1877f2] hover:bg-[#1877f2]/5 transition-colors"
+          >
+            <span
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontWeight: 700,
+                fontSize: "13px",
+                lineHeight: "18px",
+                color: "#1877f2",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Sign in / Sign up
+            </span>
+          </Link>
           <Link
             to="/login"
             className="hidden md:flex items-center justify-center px-3 py-2 rounded-full hover:bg-white/60 transition-colors"
@@ -207,14 +224,14 @@ export default function Header() {
                 navigate("/", { state: { focusEmail: true } });
               }
             }}
-            className="bg-[#1877f2] hover:bg-[#1565c0] transition-colors rounded-full px-5 py-2 flex items-center justify-center"
+            className="bg-[#1877f2] hover:bg-[#1565c0] transition-colors rounded-full px-3 md:px-5 py-2 flex items-center justify-center"
             style={{ border: "none", cursor: "pointer" }}
           >
             <span
+              className="text-[13px] md:text-[14px]"
               style={{
                 fontFamily: "Satoshi, sans-serif",
                 fontWeight: 700,
-                fontSize: "14px",
                 lineHeight: "20px",
                 color: "#fff",
                 whiteSpace: "nowrap",
