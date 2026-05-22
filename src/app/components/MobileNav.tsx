@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 import HamburgerMenu from "../../imports/HamburgerMenu/HamburgerMenu";
 import Expander1 from "../../imports/Expander1/Expander1";
 import Expander2 from "../../imports/Expander2/Expander2";
@@ -55,6 +55,23 @@ export default function MobileNav() {
       }}
     >
       {renderMenuState()}
+      {!isMenuOpen && (
+        <Link
+          to="/login"
+          onClick={(e) => e.stopPropagation()}
+          className="absolute right-[64px] top-1/2 -translate-y-1/2 flex items-center justify-center px-3 py-[6px] rounded-full border border-[#1877f2] bg-white/90 backdrop-blur-sm hover:bg-[#1877f2]/5 transition-colors"
+          style={{
+            fontFamily: "Satoshi, sans-serif",
+            fontWeight: 700,
+            fontSize: "12px",
+            lineHeight: "16px",
+            color: "#1877f2",
+            whiteSpace: "nowrap",
+          }}
+        >
+          Sign in / Sign up
+        </Link>
+      )}
     </div>
   );
 }
