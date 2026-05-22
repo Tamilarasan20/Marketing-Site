@@ -49,7 +49,7 @@ function Image() {
 
 function TextGroupVertical2() {
   return (
-    <div className="content-stretch flex flex-col font-['Satoshi:Medium',sans-serif] font-medium items-center justify-center relative shrink-0 text-[36px] tracking-[-2.04px] whitespace-nowrap" data-name="TextGroupVertical2">
+    <div className="content-stretch flex flex-col font-['Satoshi:Medium',sans-serif] font-medium items-center justify-center relative shrink-0 text-[36px] tracking-[-1.2px] whitespace-nowrap" data-name="TextGroupVertical2">
       <p className="leading-[0] relative shrink-0 text-white font-medium">
         <span className="leading-[40px]">{`Meet `}</span>
         <span className="leading-[40px] text-[#14a148]">Lora</span>
