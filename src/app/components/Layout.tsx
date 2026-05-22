@@ -24,13 +24,15 @@ export default function Layout() {
         if (text === "Login" || text === "Log in" || text === "Log In" || text === "Sign in" || text === "Sign In") {
           e.preventDefault();
           e.stopPropagation();
-          window.location.href = "/login";
+          navigate("/login");
+          window.scrollTo(0, 0);
           return;
         }
         if (text === "Sign up" || text === "Sign Up" || text === "Signup") {
           e.preventDefault();
           e.stopPropagation();
-          window.location.href = "/signup";
+          navigate("/signup");
+          window.scrollTo(0, 0);
           return;
         }
         current = current.parentElement;
