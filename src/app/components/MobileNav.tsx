@@ -56,21 +56,39 @@ export default function MobileNav() {
     >
       {renderMenuState()}
       {!isMenuOpen && (
-        <Link
-          to="/login"
+        <div
+          className="absolute right-[64px] top-1/2 -translate-y-1/2 flex items-center gap-2"
           onClick={(e) => e.stopPropagation()}
-          className="absolute right-[64px] top-1/2 -translate-y-1/2 flex items-center justify-center px-3 py-[6px] rounded-full border border-[#1877f2] bg-white/90 backdrop-blur-sm hover:bg-[#1877f2]/5 transition-colors"
-          style={{
-            fontFamily: "Satoshi, sans-serif",
-            fontWeight: 700,
-            fontSize: "12px",
-            lineHeight: "16px",
-            color: "#1877f2",
-            whiteSpace: "nowrap",
-          }}
         >
-          Sign in / Sign up
-        </Link>
+          <Link
+            to="/login"
+            className="flex items-center justify-center px-3 py-[6px] rounded-full bg-white"
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 700,
+              fontSize: "12px",
+              lineHeight: "16px",
+              color: "#0f172a",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Signin
+          </Link>
+          <Link
+            to="/signup"
+            className="flex items-center justify-center px-3 py-[6px] rounded-full bg-[#1877f2]"
+            style={{
+              fontFamily: "Satoshi, sans-serif",
+              fontWeight: 700,
+              fontSize: "12px",
+              lineHeight: "16px",
+              color: "#fff",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Get Started
+          </Link>
+        </div>
       )}
     </div>
   );

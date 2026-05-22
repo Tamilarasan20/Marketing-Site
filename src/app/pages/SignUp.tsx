@@ -1,10 +1,16 @@
-import { useState, type FormEvent } from "react";
-import { Link } from "react-router";
+import { useState, useEffect, type FormEvent } from "react";
+import { Link, useSearchParams } from "react-router";
 import { supabase, APP_URL } from "../../lib/supabase";
 
 export default function SignUp() {
+  const [searchParams] = useSearchParams();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const prefill = searchParams.get("email");
+    if (prefill) setEmail(prefill);
+  }, [searchParams]);
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(false);
   const [error, setError] = useState<string | null>(null);

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useLocation } from "react-router";
 import svgPaths from "../../imports/Expander1/svg-vqugh1pll5";
 import appLogo from "../../assets/app_logo.png";
 import imgLora from "../../imports/Home-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
@@ -74,7 +74,6 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const pillRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const navigate = useNavigate();
 
   // Close on navigation
   useEffect(() => {
@@ -160,72 +159,28 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Auth + Waitlist CTAs */}
+        {/* Auth CTAs */}
         <div className="flex items-center gap-2">
-          {/* Mobile: single combined Sign in / Sign up */}
           <Link
             to="/login"
-            className="md:hidden flex items-center justify-center px-3 py-2 rounded-full border border-[#1877f2] hover:bg-[#1877f2]/5 transition-colors"
+            className="flex items-center justify-center px-3 md:px-5 py-2 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors"
           >
             <span
+              className="text-[13px] md:text-[14px]"
               style={{
                 fontFamily: "Satoshi, sans-serif",
                 fontWeight: 700,
-                fontSize: "13px",
-                lineHeight: "18px",
-                color: "#1877f2",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Sign in / Sign up
-            </span>
-          </Link>
-          <Link
-            to="/login"
-            className="hidden md:flex items-center justify-center px-3 py-2 rounded-full hover:bg-white/60 transition-colors"
-          >
-            <span
-              style={{
-                fontFamily: "Satoshi, sans-serif",
-                fontWeight: 700,
-                fontSize: "14px",
                 lineHeight: "20px",
                 color: "#0f172a",
                 whiteSpace: "nowrap",
               }}
             >
-              Login
+              Signin
             </span>
           </Link>
           <Link
             to="/signup"
-            className="hidden md:flex items-center justify-center rounded-full px-4 py-2 border border-[#1877f2] hover:bg-[#1877f2]/5 transition-colors"
-          >
-            <span
-              style={{
-                fontFamily: "Satoshi, sans-serif",
-                fontWeight: 700,
-                fontSize: "14px",
-                lineHeight: "20px",
-                color: "#1877f2",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Sign Up
-            </span>
-          </Link>
-          <button
-            type="button"
-            onClick={() => {
-              if (location.pathname === "/") {
-                window.scrollTo(0, 0);
-                window.dispatchEvent(new CustomEvent("focus-waitlist-email"));
-              } else {
-                navigate("/", { state: { focusEmail: true } });
-              }
-            }}
             className="bg-[#1877f2] hover:bg-[#1565c0] transition-colors rounded-full px-3 md:px-5 py-2 flex items-center justify-center"
-            style={{ border: "none", cursor: "pointer" }}
           >
             <span
               className="text-[13px] md:text-[14px]"
@@ -237,9 +192,9 @@ export default function Header() {
                 whiteSpace: "nowrap",
               }}
             >
-              Join Waitlist
+              Get Started
             </span>
-          </button>
+          </Link>
         </div>
 
         {/* Dropdown panel — anchored to pill bottom edge */}
