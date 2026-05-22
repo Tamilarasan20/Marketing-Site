@@ -41,27 +41,27 @@ import { imgGroup, imgFeatureImageSmall4, imgGroup1, imgColor } from "./svg-4yq2
 function TextGroupVertical3() {
   return (
     <div className="content-stretch flex flex-col items-start mb-[-1px] pb-[14px] relative shrink-0 text-white w-full" data-name="Text Group Vertical">
-      <p className="leading-[0] relative shrink-0 text-[0px] w-full font-black">
-        <span className="text-[36px] md:text-[68px] leading-[1.2] font-black">{`Meet `}</span>
-        <span className="text-[36px] md:text-[68px] leading-[1.2] text-[#14a148] font-black">Lora</span>
+      <p className="leading-[0] relative shrink-0 text-[0px] w-full font-medium">
+        <span className="text-[36px] md:text-[68px] leading-[1.05] font-medium">{`Meet `}</span>
+        <span className="text-[36px] md:text-[68px] leading-[1.05] text-[#14a148] font-medium">Lora</span>
       </p>
-      <p className="text-[36px] md:text-[68px] leading-[1.2] relative shrink-0 w-full font-black">{`your Autonomous `}</p>
+      <p className="text-[36px] md:text-[68px] leading-[1.05] relative shrink-0 w-full font-medium">{`your Autonomous `}</p>
     </div>
   );
 }
 
 function TextGroupVertical2() {
   return (
-    <div className="content-stretch flex flex-col font-['Satoshi:Black',sans-serif] font-black items-start pb-px relative shrink-0 tracking-[-2.04px] w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col font-['Satoshi:Medium',sans-serif] font-medium items-start pb-px relative shrink-0 tracking-[-2.04px] w-full" data-name="Text Group Vertical">
       <TextGroupVertical3 />
-      <p className="text-[36px] md:text-[68px] leading-[1.2] relative shrink-0 text-[#14a148] w-full font-black">{`AI Marketing Team `}</p>
+      <p className="text-[36px] md:text-[68px] leading-[1.05] relative shrink-0 text-[#14a148] w-full font-medium">{`AI Marketing Team `}</p>
     </div>
   );
 }
 
 function TextGroupVertical1() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
       <TextGroupVertical2 />
       <p className="font-['General_Sans:Medium',sans-serif] text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full max-w-[720px] px-4 md:px-0">
         {`An AI agents work as a team that plans content, creates, publishes,  tracks performance, manages ads & keeps improving itself on autopilot your 24/7 marketing team that never sleeps.`}
@@ -106,7 +106,7 @@ function ButtonContainer() {
 
 function TextGroupVertical() {
   return (
-    <div className="flex flex-col gap-6 md:gap-[40px] items-center justify-center w-full max-w-[740px] mx-auto px-4 md:px-0 relative z-50 pointer-events-auto" data-name="Text Group Vertical">
+    <div className="flex flex-col gap-6 md:gap-[24px] items-center justify-center w-full max-w-[740px] mx-auto px-4 md:px-0 relative z-50 pointer-events-auto" data-name="Text Group Vertical">
       <TextGroupVertical1 />
       <WaitlistForm />
     </div>
