@@ -32,7 +32,7 @@ function LinkFacebook() {
           </div>
         </div>
       </div>
-      <a className="block cursor-pointer font-['General_Sans:Bold',sans-serif] leading-[22px] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" href="https://discord.gg/ynrBvXUY" target="_blank">
+      <a className="block cursor-pointer font-['General_Sans:Semibold',sans-serif] leading-[22px] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" href="https://discord.gg/ynrBvXUY" target="_blank">
         Join Discord
       </a>
     </div>
