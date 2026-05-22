@@ -8,11 +8,13 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [info, setInfo] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
+    setInfo(null);
 
     if (!name || !email || !password) {
       setError("Please fill in all fields.");
@@ -29,7 +31,7 @@ export default function SignUp() {
 
     setSubmitting(true);
     try {
-      const { error: signUpError } = await supabase.auth.signUp({
+      const { data, error: signUpError } = await supabase.auth.signUp({
         email,
         password,
         options: { data: { full_name: name } },
@@ -38,7 +40,15 @@ export default function SignUp() {
         setError(signUpError.message);
         return;
       }
-      window.location.href = "https://github.com/Tamilarasan20/Loraloop-Main";
+      if (data.session) {
+        window.location.href = "https://github.com/Tamilarasan20/Loraloop-Main";
+        return;
+      }
+      setInfo(
+        "Account created. Please check your email to confirm your address before signing in."
+      );
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Sign up failed.");
     } finally {
       setSubmitting(false);
     }
@@ -120,6 +130,9 @@ export default function SignUp() {
 
             {error && (
               <p className="font-['General_Sans:Medium',sans-serif] text-[#dc2626] text-sm">{error}</p>
+            )}
+            {info && (
+              <p className="font-['General_Sans:Medium',sans-serif] text-[#059669] text-sm">{info}</p>
             )}
 
             <button

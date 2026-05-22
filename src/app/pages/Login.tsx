@@ -20,7 +20,7 @@ export default function Login() {
 
     setSubmitting(true);
     try {
-      const { error: signInError } = await supabase.auth.signInWithPassword({
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
@@ -28,7 +28,13 @@ export default function Login() {
         setError(signInError.message);
         return;
       }
+      if (!data.session) {
+        setError("Sign in failed. Please try again.");
+        return;
+      }
       window.location.href = "https://github.com/Tamilarasan20/Loraloop-Main";
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Sign in failed.");
     } finally {
       setSubmitting(false);
     }
