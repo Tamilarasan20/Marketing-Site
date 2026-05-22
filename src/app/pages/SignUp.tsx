@@ -1,9 +1,8 @@
 import { useState, type FormEvent } from "react";
-import { Link, useNavigate } from "react-router";
-import { supabase } from "../../lib/supabase";
+import { Link } from "react-router";
+import { supabase, APP_URL } from "../../lib/supabase";
 
 export default function SignUp() {
-  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,10 +17,9 @@ export default function SignUp() {
     setInfo(null);
     setGoogleLoading(true);
     try {
-      const appUrl = import.meta.env.VITE_APP_URL;
       const { error: oauthError } = await supabase.auth.signInWithOAuth({
         provider: "google",
-        options: { redirectTo: appUrl || window.location.origin },
+        options: { redirectTo: APP_URL },
       });
       if (oauthError) {
         setError(oauthError.message);
@@ -65,12 +63,7 @@ export default function SignUp() {
         return;
       }
       if (data.session) {
-        const appUrl = import.meta.env.VITE_APP_URL;
-        if (appUrl) {
-          window.location.href = appUrl;
-        } else {
-          navigate("/");
-        }
+        window.location.href = APP_URL;
       } else {
         setInfo("Check your email to confirm your account.");
       }
