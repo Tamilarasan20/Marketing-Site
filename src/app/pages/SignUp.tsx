@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Link } from "react-router";
-import { supabase } from "../../lib/supabase";
+import { supabase, POST_AUTH_URL } from "../../lib/supabase";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -34,14 +34,17 @@ export default function SignUp() {
       const { data, error: signUpError } = await supabase.auth.signUp({
         email,
         password,
-        options: { data: { full_name: name } },
+        options: {
+          data: { full_name: name },
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
+        },
       });
       if (signUpError) {
         setError(signUpError.message);
         return;
       }
       if (data.session) {
-        window.location.href = "https://github.com/Tamilarasan20/Loraloop-Main";
+        window.location.href = POST_AUTH_URL;
         return;
       }
       setInfo(

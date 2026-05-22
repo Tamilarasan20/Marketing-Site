@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Link } from "react-router";
-import { supabase } from "../../lib/supabase";
+import { supabase, POST_AUTH_URL } from "../../lib/supabase";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -32,7 +32,7 @@ export default function Login() {
         setError("Sign in failed. Please try again.");
         return;
       }
-      window.location.href = "https://github.com/Tamilarasan20/Loraloop-Main";
+      window.location.href = POST_AUTH_URL;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Sign in failed.");
     } finally {
@@ -105,6 +105,12 @@ export default function Login() {
               {submitting ? "Signing in…" : "Sign in"}
             </button>
           </form>
+
+          <p className="text-center font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">
+            <Link to="/forgot-password" className="text-[#0279ec] font-['General_Sans:Semibold',sans-serif] hover:underline">
+              Forgot your password?
+            </Link>
+          </p>
 
           <p className="text-center font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-base">
             Don't have an account?{" "}

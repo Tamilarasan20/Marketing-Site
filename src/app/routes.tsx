@@ -12,6 +12,9 @@ import Terms from "./pages/Terms";
 import DataDeletion from "./pages/DataDeletion";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+import AuthCallback from "./pages/AuthCallback";
 import NotFound from "./pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -31,6 +34,9 @@ export const router = createBrowserRouter([
       { path: "data-deletion", Component: DataDeletion },
       { path: "login", Component: Login },
       { path: "signup", Component: SignUp },
+      { path: "forgot-password", Component: ForgotPassword },
+      { path: "reset-password", Component: ResetPassword },
+      { path: "auth/callback", Component: AuthCallback },
       { path: "*", Component: NotFound },
     ],
   },
