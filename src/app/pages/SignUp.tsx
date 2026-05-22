@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Link } from "react-router";
+import { supabase } from "../../lib/supabase";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -28,8 +29,16 @@ export default function SignUp() {
 
     setSubmitting(true);
     try {
-      const params = new URLSearchParams({ name, email });
-      window.location.href = `/app/signup?${params.toString()}`;
+      const { error: signUpError } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { data: { full_name: name } },
+      });
+      if (signUpError) {
+        setError(signUpError.message);
+        return;
+      }
+      window.location.href = "https://github.com/Tamilarasan20/Loraloop-Main";
     } finally {
       setSubmitting(false);
     }

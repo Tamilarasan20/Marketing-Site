@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Link } from "react-router";
+import { supabase } from "../../lib/supabase";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -19,6 +20,14 @@ export default function Login() {
 
     setSubmitting(true);
     try {
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      if (signInError) {
+        setError(signInError.message);
+        return;
+      }
       window.location.href = "https://github.com/Tamilarasan20/Loraloop-Main";
     } finally {
       setSubmitting(false);
