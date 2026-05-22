@@ -97,7 +97,7 @@ function Container1() {
 function Paragraph1() {
   return (
     <div className="absolute h-[23.998px] left-[40.83px] top-[12px] w-[92.329px]" data-name="Paragraph">
-      <p className="font-[700] absolute font-['Satoshi:Bold',sans-serif] leading-[24px] left-0 not-italic text-[#d1d5db] text-[16px] top-[0.31px] whitespace-nowrap">See Solution</p>
+      <p className="font-bold absolute font-['Satoshi:Bold',sans-serif] leading-[24px] left-0 not-italic text-[#d1d5db] text-[16px] top-[0.31px] whitespace-nowrap">See Solution</p>
     </div>
   );
 }
@@ -331,7 +331,7 @@ function IntroSection() {
 function Container5() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center not-italic relative shrink-0 text-center" data-name="Container">
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[33.6px] relative shrink-0 text-[#1f2937] text-[28px] tracking-[-0.8px] whitespace-nowrap">See it in action</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[33.6px] relative shrink-0 text-[#1f2937] text-[28px] tracking-[-0.8px] whitespace-nowrap">See it in action</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22.4px] relative shrink-0 text-[#374151] text-[16px] w-[270px]">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
@@ -363,7 +363,7 @@ function VideoSection() {
 function Cotnet1() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start not-italic relative shrink-0 text-center w-full" data-name="Cotnet1">
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[36px] relative shrink-0 text-[28px] text-white tracking-[-0.28px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[36px] relative shrink-0 text-[28px] text-white tracking-[-0.28px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[0] relative shrink-0 text-[#9ca3af] text-[0px] w-full">
         <span className="leading-[22px] text-[16px]">{`You don’t need a large team to grow a business. Loraloop provides AI employees for marketing that handle daily work. From planning to execution, work gets done efficiently, 24/7. `}</span>
         <span className="leading-[22px] text-[16px] text-white">10x your marketing with 10x less expansive.</span>
@@ -407,7 +407,7 @@ function TextGroupVertical3() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[270px]" data-name="TextGroupVertical7">
       <BadgeM3 />
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[30px] min-w-full not-italic relative shrink-0 text-[28px] text-white tracking-[-0.42px] w-[min-content]">Plan a marketing strategy for my business</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[30px] min-w-full not-italic relative shrink-0 text-[28px] text-white tracking-[-0.42px] w-[min-content]">Plan a marketing strategy for my business</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic relative shrink-0 text-[16px] text-white w-[min-content]">{`Lora turn my business goals into a clear execution plan. lora breaks down what needs to be done, assigns tasks to the right team, right members, & keeps everything aligned so my marketing runs in my voice.`}</p>
     </div>
   );
@@ -504,7 +504,7 @@ function Frame27() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[16px] items-start left-[19.94px] top-[20px] w-[274px]">
       <BadgeM />
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[30px] min-w-full not-italic relative shrink-0 text-[28px] text-white tracking-[-0.42px] w-[min-content]">Identify what’s trending and what my competitors are doing</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[30px] min-w-full not-italic relative shrink-0 text-[28px] text-white tracking-[-0.42px] w-[min-content]">Identify what’s trending and what my competitors are doing</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic relative shrink-0 text-[16px] text-white w-[min-content]">Sam analyzes market trends and competitor actions. He identifies which content types or topics will help me grow.</p>
       <LearnMoreContainer1 />
     </div>
@@ -592,7 +592,7 @@ function FeatureTextGroup() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[16px] items-start justify-center left-[20px] top-[20px] w-[280px]" data-name="Feature Text Group">
       <BadgeM2 />
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[30px] min-w-full not-italic relative shrink-0 text-[28px] text-black tracking-[-0.42px] w-[min-content]">{`Writes content that attracts customers for blog, mail & more..`}</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[30px] min-w-full not-italic relative shrink-0 text-[28px] text-black tracking-[-0.42px] w-[min-content]">{`Writes content that attracts customers for blog, mail & more..`}</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]">Clara writes my blogs, emails, threads, newsletters, Social posts and other persuasive content that drives action.</p>
       <LearnMoreContainer3 />
     </div>
@@ -634,7 +634,7 @@ function FeatureTextGroup1() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[16px] items-start left-[20px] top-[20px] w-[280px]" data-name="Feature Text Group">
       <BadgeM4 />
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[30px] min-w-full not-italic relative shrink-0 text-[28px] text-black tracking-[-0.42px] w-[min-content]">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[30px] min-w-full not-italic relative shrink-0 text-[28px] text-black tracking-[-0.42px] w-[min-content]">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic opacity-60 relative shrink-0 text-[16px] text-black w-[min-content]">Steve Design scroll-stopping visuals and carousels that reflect my brand and grab attention in all platforms</p>
       <LearnMoreContainer4 />
     </div>
@@ -734,7 +734,7 @@ function FeatureTextGroup4() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[16px] items-start justify-center left-[20px] top-[20px] w-[283px]" data-name="Feature Text Group">
       <BadgeM6 />
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[30px] min-w-full not-italic relative shrink-0 text-[28px] text-black tracking-[-0.42px] w-[min-content]">{`Schedule publish my posts, contents & Engage with audiences `}</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[30px] min-w-full not-italic relative shrink-0 text-[28px] text-black tracking-[-0.42px] w-[min-content]">{`Schedule publish my posts, contents & Engage with audiences `}</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] min-w-full not-italic relative shrink-0 text-[#1f2937] text-[16px] w-[min-content]">Sarah schedules my social posts, handles community engagement, replying and nurturing relationships.</p>
       <LearnMoreContainer6 />
     </div>
@@ -906,7 +906,7 @@ function AiAgents() {
 function Frame() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 text-white w-full" data-name="Frame18">
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[56px] relative shrink-0 text-[48px] tracking-[-1.2px] w-full">100+ Integrations supported.</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[56px] relative shrink-0 text-[48px] tracking-[-1.2px] w-full">100+ Integrations supported.</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[20px] w-full">From social media platforms to ecommerce, leads etc, our integrations make it easy to keep everything connected.</p>
     </div>
   );
@@ -2354,7 +2354,7 @@ function Integration() {
 function Frame11() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[40px] relative shrink-0 text-[#1f2937] text-[32px] tracking-[-0.64px] w-full">The AI Employees that actually does stuff.</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[40px] relative shrink-0 text-[#1f2937] text-[32px] tracking-[-0.64px] w-full">The AI Employees that actually does stuff.</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#374151] text-[20px] w-full">Loraloop plans your marketing, creates your content, and runs campaigns before you even wake up.</p>
     </div>
   );
@@ -2383,7 +2383,7 @@ function Container54() {
   return (
     <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
       <Text />
-      <p className="font-[700] flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[28px] min-w-px not-italic relative text-[#1f2937] text-[20px]">Enter Your Website</p>
+      <p className="font-bold flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[28px] min-w-px not-italic relative text-[#1f2937] text-[20px]">Enter Your Website</p>
     </div>
   );
 }
@@ -2434,7 +2434,7 @@ function Container57() {
   return (
     <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Container">
       <Text1 />
-      <p className="font-[700] flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[28px] min-w-px not-italic relative text-[#1f2937] text-[20px]">AI Team Manage Marketing</p>
+      <p className="font-bold flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[28px] min-w-px not-italic relative text-[#1f2937] text-[20px]">AI Team Manage Marketing</p>
     </div>
   );
 }
@@ -2485,7 +2485,7 @@ function Container60() {
   return (
     <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
       <Text2 />
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Grow on autopilot</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Grow on autopilot</p>
     </div>
   );
 }
@@ -2545,7 +2545,7 @@ function HowItWorks() {
 function Frame12() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center not-italic relative shrink-0 text-center w-full whitespace-nowrap">
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[60px] relative shrink-0 text-[#101828] text-[56px] tracking-[-1.4px]">Solution</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[60px] relative shrink-0 text-[#101828] text-[56px] tracking-[-1.4px]">Solution</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">What you get with loraloop</p>
     </div>
   );
@@ -2716,7 +2716,7 @@ function Frame23() {
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[8px] items-center justify-center px-[16px] relative size-full">
-            <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">View More Solution</p>
+            <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">View More Solution</p>
           </div>
         </div>
       </div>
@@ -2726,7 +2726,7 @@ function Frame23() {
 
 function Solution() {
   return (
-    <div className="font-[700] bg-white content-stretch flex flex-col gap-[40px] items-center justify-center overflow-clip relative shrink-0 w-full" data-name="Solution">
+    <div className="font-bold bg-white content-stretch flex flex-col gap-[40px] items-center justify-center overflow-clip relative shrink-0 w-full" data-name="Solution">
       <Frame12 />
       <Frame22 />
       <Frame23 />
@@ -2887,7 +2887,7 @@ function Cotnet() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Cotnet">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">WHY US?</p>
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[48px] min-w-full relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-[min-content]">Marketing that runs itself.</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[48px] min-w-full relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-[min-content]">Marketing that runs itself.</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full relative shrink-0 text-[#9ca3af] text-[20px] w-[min-content] whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
     </div>
   );
@@ -3663,7 +3663,7 @@ function Frame14() {
 function Cotnet2() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full" data-name="Cotnet">
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[48px] not-italic relative shrink-0 text-[40px] text-center text-white tracking-[-0.8px] whitespace-nowrap">Pricing</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[48px] not-italic relative shrink-0 text-[40px] text-center text-white tracking-[-0.8px] whitespace-nowrap">Pricing</p>
     </div>
   );
 }
@@ -3777,7 +3777,7 @@ function Container127({ calculatePrice }: { calculatePrice: (price: number) => s
 
 function PricingDetails({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
-    <div className="font-[700] content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+    <div className="font-bold content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container126 />
       <Container127 calculatePrice={calculatePrice} />
     </div>
@@ -3786,7 +3786,7 @@ function PricingDetails({ calculatePrice }: { calculatePrice: (price: number) =>
 
 function Pricing({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
-    <div className="font-[700] content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
+    <div className="font-bold content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
       <PricingDetails calculatePrice={calculatePrice} />
       <div className="h-[47.972px] relative rounded-[143.916px] shrink-0 w-full" data-name="Button">
         <div aria-hidden="true" className="absolute border-[#374151] border-[1.199px] border-solid inset-0 pointer-events-none rounded-[143.916px]" />
@@ -3979,7 +3979,7 @@ function Container130({ calculatePrice }: { calculatePrice: (price: number) => s
 
 function PricingDetails1({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
-    <div className="font-[700] content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+    <div className="font-bold content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container129 />
       <Container130 calculatePrice={calculatePrice} />
     </div>
@@ -3988,7 +3988,7 @@ function PricingDetails1({ calculatePrice }: { calculatePrice: (price: number) =
 
 function Pricing1({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
-    <div className="font-[700] content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
+    <div className="font-bold content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
       <PricingDetails1 calculatePrice={calculatePrice} />
       <div className="bg-[#1877f2] h-[47.972px] relative rounded-[143.916px] shrink-0 w-full" data-name="Button">
         <div className="flex flex-row items-center justify-center size-full">
@@ -4154,9 +4154,9 @@ function Container128({ calculatePrice }: { calculatePrice: (price: number) => s
 
 function PricingCard({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
-    <div className="font-[700] bg-[#1877f2] content-stretch flex flex-col gap-[9.594px] items-center justify-center pb-[2.399px] pt-[9.594px] px-[2.399px] relative rounded-[19.189px] shrink-0" data-name="PricingCard">
+    <div className="font-bold bg-[#1877f2] content-stretch flex flex-col gap-[9.594px] items-center justify-center pb-[2.399px] pt-[9.594px] px-[2.399px] relative rounded-[19.189px] shrink-0" data-name="PricingCard">
       <p className="font-['General_Sans:Medium',sans-serif] leading-[19.189px] not-italic relative shrink-0 text-[14.392px] text-white tracking-[0.7196px] whitespace-nowrap">Most popular</p>
-      <div className="font-[700] bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
+      <div className="font-bold bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip p-[0.936px] relative rounded-[inherit] size-full">
           <Container128 calculatePrice={calculatePrice} />
         </div>
@@ -4194,7 +4194,7 @@ function Container133({ calculatePrice }: { calculatePrice: (price: number) => s
 
 function PricingDetails2({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
-    <div className="font-[700] content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+    <div className="font-bold content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container132 />
       <Container133 calculatePrice={calculatePrice} />
     </div>
@@ -4203,7 +4203,7 @@ function PricingDetails2({ calculatePrice }: { calculatePrice: (price: number) =
 
 function Pricing2({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
-    <div className="font-[700] content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
+    <div className="font-bold content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
       <PricingDetails2 calculatePrice={calculatePrice} />
       <div className="h-[47.972px] relative rounded-[143.916px] shrink-0 w-full" data-name="Button">
         <div aria-hidden="true" className="absolute border-[#374151] border-[1.199px] border-solid inset-0 pointer-events-none rounded-[143.916px]" />
@@ -4396,7 +4396,7 @@ function Container136({ calculatePrice }: { calculatePrice: (price: number) => s
 
 function PricingDetails3({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
-    <div className="font-[700] content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
+    <div className="font-bold content-stretch flex flex-col gap-[19.189px] items-start relative shrink-0 w-full" data-name="Pricing Details">
       <Container135 />
       <Container136 calculatePrice={calculatePrice} />
     </div>
@@ -4405,7 +4405,7 @@ function PricingDetails3({ calculatePrice }: { calculatePrice: (price: number) =
 
 function Pricing3({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
-    <div className="font-[700] content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
+    <div className="font-bold content-stretch flex flex-col gap-[28.783px] items-start relative shrink-0 w-full" data-name="Pricing">
       <PricingDetails3 calculatePrice={calculatePrice} />
       <div className="h-[47.972px] relative rounded-[143.916px] shrink-0 w-full" data-name="Button">
         <div aria-hidden="true" className="absolute border-[#374151] border-[1.199px] border-solid inset-0 pointer-events-none rounded-[143.916px]" />
@@ -4573,20 +4573,20 @@ function Container134({ calculatePrice }: { calculatePrice: (price: number) => s
 function Frame5({ calculatePrice }: { calculatePrice: (price: number) => string }) {
   return (
     <div className="content-stretch flex flex-col gap-[20px] items-center justify-center relative shrink-0 w-full">
-      <div className="font-[700] bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
+      <div className="font-bold bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.936px] relative rounded-[inherit] size-full">
           <Container125 calculatePrice={calculatePrice} />
         </div>
         <div aria-hidden="true" className="absolute border-[0.936px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[19.189px]" />
       </div>
       <PricingCard calculatePrice={calculatePrice} />
-      <div className="font-[700] bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
+      <div className="font-bold bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.936px] relative rounded-[inherit] size-full">
           <Container131 calculatePrice={calculatePrice} />
         </div>
         <div aria-hidden="true" className="absolute border-[0.936px] border-[rgba(255,255,255,0.05)] border-solid inset-0 pointer-events-none rounded-[19.189px]" />
       </div>
-      <div className="font-[700] bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
+      <div className="font-bold bg-[#151515] relative rounded-[19.189px] shrink-0 w-[338.203px]" data-name="PricingCard">
         <div className="content-stretch flex items-center overflow-clip p-[0.936px] relative rounded-[inherit] size-full">
           <Container134 calculatePrice={calculatePrice} />
         </div>
@@ -4632,7 +4632,7 @@ function PriceAndFaq() {
 function Cotnet3() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Cotnet">
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] w-full">Frequently Asked Questions</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] w-full">Frequently Asked Questions</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#6b7280] text-[20px] w-full">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
@@ -4790,7 +4790,7 @@ function Faq() {
 function TextGroupVertical() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
-      <p className="font-[700] font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleep</p>
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleep</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[0] relative shrink-0 text-[#9ca3af] text-[20px] w-full">
         <span className="leading-[28px]">
           Social media tools are easy to buy, but hard to keep up with. loraloop is your AI marketing team like 10 year employees marketing team for you to
