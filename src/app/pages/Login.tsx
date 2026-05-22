@@ -19,7 +19,7 @@ export default function Login() {
 
     setSubmitting(true);
     try {
-      window.location.href = `/app/login?email=${encodeURIComponent(email)}`;
+      window.location.href = "https://github.com/Tamilarasan20/Loraloop-Main";
     } finally {
       setSubmitting(false);
     }
