@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router";
+import { useLocation } from "react-router";
 import HamburgerMenu from "../../imports/HamburgerMenu/HamburgerMenu";
 import Expander1 from "../../imports/Expander1/Expander1";
 import Expander2 from "../../imports/Expander2/Expander2";
@@ -55,41 +55,6 @@ export default function MobileNav() {
       }}
     >
       {renderMenuState()}
-      {!isMenuOpen && (
-        <div
-          className="absolute right-[64px] top-1/2 -translate-y-1/2 flex items-center gap-2"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Link
-            to="/login"
-            className="flex items-center justify-center px-3 py-[6px] rounded-full bg-white"
-            style={{
-              fontFamily: "Satoshi, sans-serif",
-              fontWeight: 700,
-              fontSize: "12px",
-              lineHeight: "16px",
-              color: "#0f172a",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Signin
-          </Link>
-          <Link
-            to="/signup"
-            className="flex items-center justify-center px-3 py-[6px] rounded-full bg-[#1877f2]"
-            style={{
-              fontFamily: "Satoshi, sans-serif",
-              fontWeight: 700,
-              fontSize: "12px",
-              lineHeight: "16px",
-              color: "#fff",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Get Started
-          </Link>
-        </div>
-      )}
     </div>
   );
 }
