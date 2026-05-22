@@ -161,33 +161,69 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Join Waitlist Button */}
-        <button
-          type="button"
-          onClick={() => {
-            if (location.pathname === "/") {
-              window.scrollTo(0, 0);
-              window.dispatchEvent(new CustomEvent("focus-waitlist-email"));
-            } else {
-              navigate("/", { state: { focusEmail: true } });
-            }
-          }}
-          className="bg-[#1877f2] hover:bg-[#1565c0] transition-colors rounded-full px-5 py-2 flex items-center justify-center"
-          style={{ border: "none", cursor: "pointer" }}
-        >
-          <span
-            style={{
-              fontFamily: "Satoshi, sans-serif",
-              fontWeight: 700,
-              fontSize: "14px",
-              lineHeight: "20px",
-              color: "#fff",
-              whiteSpace: "nowrap",
-            }}
+        {/* Auth + Waitlist CTAs */}
+        <div className="flex items-center gap-2">
+          <Link
+            to="/login"
+            className="hidden md:flex items-center justify-center px-3 py-2 rounded-full hover:bg-white/60 transition-colors"
           >
-            Join Waitlist
-          </span>
-        </button>
+            <span
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontWeight: 700,
+                fontSize: "14px",
+                lineHeight: "20px",
+                color: "#0f172a",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Login
+            </span>
+          </Link>
+          <Link
+            to="/signup"
+            className="hidden md:flex items-center justify-center rounded-full px-4 py-2 border border-[#1877f2] hover:bg-[#1877f2]/5 transition-colors"
+          >
+            <span
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontWeight: 700,
+                fontSize: "14px",
+                lineHeight: "20px",
+                color: "#1877f2",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Sign Up
+            </span>
+          </Link>
+          <button
+            type="button"
+            onClick={() => {
+              if (location.pathname === "/") {
+                window.scrollTo(0, 0);
+                window.dispatchEvent(new CustomEvent("focus-waitlist-email"));
+              } else {
+                navigate("/", { state: { focusEmail: true } });
+              }
+            }}
+            className="bg-[#1877f2] hover:bg-[#1565c0] transition-colors rounded-full px-5 py-2 flex items-center justify-center"
+            style={{ border: "none", cursor: "pointer" }}
+          >
+            <span
+              style={{
+                fontFamily: "Satoshi, sans-serif",
+                fontWeight: 700,
+                fontSize: "14px",
+                lineHeight: "20px",
+                color: "#fff",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Join Waitlist
+            </span>
+          </button>
+        </div>
 
         {/* Dropdown panel — anchored to pill bottom edge */}
         {open && (
