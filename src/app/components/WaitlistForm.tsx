@@ -2,18 +2,20 @@ import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router';
 
+const WEBSITE_REGEX = /^(https?:\/\/)?(www\.)?([a-z0-9-]+\.)+[a-z]{2,}(\/[^\s]*)?$/i;
+
 export default function WaitlistForm() {
-  const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState('');
   const [error, setError] = useState<string | null>(null);
-  const emailInputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
 
+  const isValid = WEBSITE_REGEX.test(website.trim());
+
   useEffect(() => {
     const focusInput = () => {
-      if (emailInputRef.current) {
-        emailInputRef.current.focus();
-      }
+      if (inputRef.current) inputRef.current.focus();
     };
 
     if (location.state?.focusEmail) {
@@ -32,25 +34,10 @@ export default function WaitlistForm() {
     }
   }, [error]);
 
-  const validateEmail = (value: string) =>
-    String(value)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null);
-    if (!email) {
-      setError('Please enter your email');
-      return;
-    }
-    if (!validateEmail(email)) {
-      setError('Please enter a valid email address');
-      return;
-    }
-    navigate(`/signup?email=${encodeURIComponent(email)}`);
+    if (!isValid) return;
+    navigate(`/signup?website=${encodeURIComponent(website.trim())}`);
   };
 
   return (
@@ -77,12 +64,16 @@ export default function WaitlistForm() {
       <div className="bg-[#1f2937] content-stretch flex gap-[12px] items-center px-[24px] py-[16px] relative rounded-[24px] shrink-0 w-full max-w-[480px]" data-name="Marketting/Input field">
         <div aria-hidden="true" className="absolute border-2 border-[rgba(147,197,253,0.4)] border-solid inset-[-2px] pointer-events-none rounded-[26px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
         <input
-          ref={emailInputRef}
-          type="email"
+          ref={inputRef}
+          type="text"
+          inputMode="url"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
           placeholder="yourwebsite.com"
-          value={email}
+          value={website}
           onChange={(e) => {
-            setEmail(e.target.value);
+            setWebsite(e.target.value);
             if (error) setError(null);
           }}
           className="bg-transparent flex-1 font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-px not-italic relative text-white text-[16px] md:text-[18px] outline-none placeholder:text-[#9ca3af]"
@@ -91,10 +82,16 @@ export default function WaitlistForm() {
 
       <button
         type="submit"
-        className="bg-[#1877f2] hover:bg-[#1565c0] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[40px] shrink-0 w-full max-w-[220px] transition-colors cursor-pointer"
+        disabled={!isValid}
+        aria-disabled={!isValid}
+        className={`content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[40px] shrink-0 w-full max-w-[220px] transition-colors ${
+          isValid
+            ? 'bg-[#1877f2] hover:bg-[#1565c0] cursor-pointer'
+            : 'bg-[#2a3040] cursor-not-allowed'
+        }`}
         data-name="Button"
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-white text-[16px] whitespace-nowrap">
+        <p className={`font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] whitespace-nowrap ${isValid ? 'text-white' : 'text-[#6b7280]'}`}>
           Get Started
         </p>
       </button>
