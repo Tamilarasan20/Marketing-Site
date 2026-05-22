@@ -13,11 +13,24 @@ export default function Layout() {
     const handleClick = (e: MouseEvent) => {
       let current = e.target as HTMLElement | null;
       while (current && current !== document.body) {
-        if (current.textContent?.trim() === "Get Start" || current.textContent?.trim() === "Get Started") {
+        const text = current.textContent?.trim();
+        if (text === "Get Start" || text === "Get Started") {
           e.preventDefault();
           e.stopPropagation();
           navigate("/pricing");
           window.scrollTo(0, 0);
+          return;
+        }
+        if (text === "Login" || text === "Log in" || text === "Log In" || text === "Sign in" || text === "Sign In") {
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = "/login";
+          return;
+        }
+        if (text === "Sign up" || text === "Sign Up" || text === "Signup") {
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = "/signup";
           return;
         }
         current = current.parentElement;
