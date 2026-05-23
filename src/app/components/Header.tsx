@@ -161,8 +161,8 @@ export default function Header() {
 
         {/* Auth CTAs */}
         <div className="flex items-center gap-2">
-          <Link
-            to="/login"
+          <a
+            href="/app/login"
             className="flex items-center justify-center px-3 md:px-5 py-2 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors"
           >
             <span
@@ -177,9 +177,9 @@ export default function Header() {
             >
               Signin
             </span>
-          </Link>
-          <Link
-            to="/signup"
+          </a>
+          <a
+            href="/app/register"
             className="bg-[#1877f2] hover:bg-[#1565c0] transition-colors rounded-full px-3 md:px-5 py-2 flex items-center justify-center"
           >
             <span
@@ -194,7 +194,7 @@ export default function Header() {
             >
               Get Started
             </span>
-          </Link>
+          </a>
         </div>
 
         {/* Dropdown panel — anchored to pill bottom edge */}

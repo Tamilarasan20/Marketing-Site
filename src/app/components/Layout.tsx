@@ -1,4 +1,4 @@
-import { Outlet, useLocation, useNavigate } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import { useEffect } from "react";
 import Header from "./Header";
 import MobileNav from "./MobileNav";
@@ -7,7 +7,6 @@ import ScrollToTop from "./ScrollToTop";
 
 export default function Layout() {
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -17,22 +16,19 @@ export default function Layout() {
         if (text === "Get Start" || text === "Get Started" || text === "Join Waitlist") {
           e.preventDefault();
           e.stopPropagation();
-          navigate("/signup");
-          window.scrollTo(0, 0);
+          window.location.href = "/app/register";
           return;
         }
         if (text === "Login" || text === "Log in" || text === "Log In" || text === "Sign in" || text === "Sign In" || text === "Signin") {
           e.preventDefault();
           e.stopPropagation();
-          navigate("/login");
-          window.scrollTo(0, 0);
+          window.location.href = "/app/login";
           return;
         }
         if (text === "Sign up" || text === "Sign Up" || text === "Signup") {
           e.preventDefault();
           e.stopPropagation();
-          navigate("/signup");
-          window.scrollTo(0, 0);
+          window.location.href = "/app/register";
           return;
         }
         current = current.parentElement;
@@ -40,7 +36,7 @@ export default function Layout() {
     };
     document.addEventListener("click", handleClick, true);
     return () => document.removeEventListener("click", handleClick, true);
-  }, [navigate]);
+  }, []);
 
   const isHomePage = location.pathname === "/";
 
