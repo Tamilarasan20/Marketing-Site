@@ -36,7 +36,7 @@ export default function WaitlistForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!isValid) return;
-    window.location.href = `/app/register?website=${encodeURIComponent(website.trim())}`;
+    window.location.href = `/app/signup?website=${encodeURIComponent(website.trim())}`;
   };
 
   return (

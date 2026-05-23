@@ -16,19 +16,19 @@ export default function Layout() {
         if (text === "Get Start" || text === "Get Started" || text === "Join Waitlist") {
           e.preventDefault();
           e.stopPropagation();
-          window.location.href = "/app/register";
+          window.location.href = "/app/signup";
           return;
         }
         if (text === "Login" || text === "Log in" || text === "Log In" || text === "Sign in" || text === "Sign In" || text === "Signin") {
           e.preventDefault();
           e.stopPropagation();
-          window.location.href = "/app/login";
+          window.location.href = "/app/signin";
           return;
         }
         if (text === "Sign up" || text === "Sign Up" || text === "Signup") {
           e.preventDefault();
           e.stopPropagation();
-          window.location.href = "/app/register";
+          window.location.href = "/app/signup";
           return;
         }
         current = current.parentElement;
