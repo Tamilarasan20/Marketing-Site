@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { useLocation, useNavigate } from 'react-router';
+import { useLocation } from 'react-router';
 
 const WEBSITE_REGEX = /^(https?:\/\/)?(www\.)?([a-z0-9-]+\.)+[a-z]{2,}(\/[^\s]*)?$/i;
 
@@ -9,7 +9,6 @@ export default function WaitlistForm() {
   const [error, setError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
-  const navigate = useNavigate();
 
   const isValid = WEBSITE_REGEX.test(website.trim());
 
@@ -37,7 +36,7 @@ export default function WaitlistForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!isValid) return;
-    navigate(`/signup?website=${encodeURIComponent(website.trim())}`);
+    window.location.href = `/app/signup?website=${encodeURIComponent(website.trim())}`;
   };
 
   return (

@@ -10,8 +10,6 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import DataDeletion from "./pages/DataDeletion";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -29,8 +27,6 @@ export const router = createBrowserRouter([
       { path: "privacy-policy", Component: PrivacyPolicy },
       { path: "terms", Component: Terms },
       { path: "data-deletion", Component: DataDeletion },
-      { path: "login", Component: Login },
-      { path: "signup", Component: SignUp },
       { path: "*", Component: NotFound },
     ],
   },

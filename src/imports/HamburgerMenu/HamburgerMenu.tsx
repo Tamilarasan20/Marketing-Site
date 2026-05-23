@@ -32,20 +32,20 @@ function Logo() {
 function Frame1() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
-      <Link
-        to="/login"
+      <a
+        href="/app/signin"
         className="bg-white content-stretch flex h-[40px] items-center justify-center px-[18px] relative rounded-[120px] shrink-0"
         data-name="Signin"
       >
         <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Signin</p>
-      </Link>
-      <Link
-        to="/signup"
+      </a>
+      <a
+        href="/app/signup"
         className="bg-[#1877f2] content-stretch flex h-[40px] items-center justify-center px-[18px] relative rounded-[120px] shrink-0"
         data-name="Get Start"
       >
         <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
-      </Link>
+      </a>
     </div>
   );
 }
