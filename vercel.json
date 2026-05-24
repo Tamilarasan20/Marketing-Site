@@ -2,10 +2,6 @@
   "rewrites": [
     { "source": "/app", "destination": "https://loraloop-main-api.vercel.app/app" },
     { "source": "/app/:path*", "destination": "https://loraloop-main-api.vercel.app/app/:path*" },
-    { "source": "/tools", "destination": "https://loraloop-free-tools.vercel.app/" },
-    { "source": "/tools/:path*", "destination": "https://loraloop-free-tools.vercel.app/tools/:path*" },
-    { "source": "/api/generate", "destination": "https://loraloop-free-tools.vercel.app/api/generate" },
-    { "source": "/_next/:path*", "destination": "https://loraloop-free-tools.vercel.app/_next/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

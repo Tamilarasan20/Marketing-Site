@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import DataDeletion from "./pages/DataDeletion";
+import ToolEmbed from "./pages/ToolEmbed";
 import NotFound from "./pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
       { path: "solution", Component: Solution },
       { path: "blog", Component: Blog },
       { path: "blog/:id", Component: BlogDetail },
+      { path: "tools/:slug", Component: ToolEmbed },
       { path: "about", Component: About },
       { path: "contact", Component: Contact },
       { path: "privacy-policy", Component: PrivacyPolicy },
