@@ -1,7 +1,5 @@
 import { useParams, Link } from "react-router";
 import { ChevronRight, Link as LinkIcon } from "lucide-react";
-import imgImage from "../../imports/BlogL2-1/566bd8859808c5b6c2c0d3b943de3f7a326c5dca.png";
-import imgImage1 from "../../imports/BlogL2-1/705d74ba75d640101f8addb80d435e1726949c3f.png";
 import imgCallToActionSection from "../../imports/BlogL2-1/226049655f3871f3dac264b316138eae1882ff2f.png";
 import imgFeatureImageSmall from "../../imports/BlogL2-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
 import imgLogos from "../../imports/BlogL2-1/808cf4a87ce2d856a11af393004688f1a9052950.png";
@@ -14,8 +12,8 @@ import imgLogos6 from "../../imports/BlogL2-1/c7fe7372891e9f00b719c9bfb401718a19
 import imgLogos7 from "../../imports/BlogL2-1/62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
 import { getBlogPost, blogPosts } from "../data/blogData";
 import type { ContentSection } from "../data/blogData";
-
-const blogImages = [imgImage, imgImage1, imgImage1];
+import { blogThumbnails } from "../data/blogThumbnails";
+import { BlogThumbnail } from "../components/BlogThumbnail";
 
 const aiTools = [
   { name: "ChatGPT", icon: imgLogos },
@@ -127,7 +125,7 @@ export default function BlogDetail() {
     );
   }
 
-  const heroImage = blogImages[post.imageIndex] ?? imgImage;
+  const thumb = blogThumbnails[post.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
   const relatedPosts = blogPosts.filter((p) => p.id !== post.id).slice(0, 3);
 
   return (
@@ -187,9 +185,13 @@ export default function BlogDetail() {
               </div>
             </div>
 
-            {/* Hero image */}
+            {/* Hero thumbnail */}
             <div className="w-full lg:w-[520px] h-[220px] sm:h-[300px] md:h-[360px] rounded-2xl overflow-hidden shrink-0">
-              <img alt="" className="w-full h-full object-cover" src={heroImage} />
+              <BlogThumbnail
+                emoji={thumb.emoji}
+                gradient={thumb.gradient}
+                category={post.category}
+              />
             </div>
           </div>
         </div>
@@ -240,18 +242,23 @@ export default function BlogDetail() {
               </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {relatedPosts.map((article) => (
-                <Link key={article.id} to={`/blog/${article.id}`} className="flex flex-col gap-4 rounded-2xl group">
-                  <div className="h-[180px] rounded-2xl overflow-hidden">
-                    <img alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src={blogImages[article.imageIndex] ?? imgImage} />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <p className="font-['General_Sans:Medium',sans-serif] text-[#1f2937] text-xs">{article.category}</p>
-                    <h3 className="font-['Satoshi:Bold',sans-serif] leading-6 text-[#1f2937] text-base group-hover:text-[#1877f2] transition-colors line-clamp-2">{article.title}</h3>
-                    <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">{article.date}</p>
-                  </div>
-                </Link>
-              ))}
+              {relatedPosts.map((article) => {
+                const relThumb = blogThumbnails[article.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
+                return (
+                  <Link key={article.id} to={`/blog/${article.id}`} className="flex flex-col gap-4 rounded-2xl group">
+                    <div className="h-[180px] rounded-2xl overflow-hidden">
+                      <div className="w-full h-full group-hover:scale-105 transition-transform duration-300">
+                        <BlogThumbnail emoji={relThumb.emoji} gradient={relThumb.gradient} category={article.category} />
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <p className="font-['General_Sans:Medium',sans-serif] text-[#1f2937] text-xs">{article.category}</p>
+                      <h3 className="font-['Satoshi:Bold',sans-serif] leading-6 text-[#1f2937] text-base group-hover:text-[#1877f2] transition-colors line-clamp-2">{article.title}</h3>
+                      <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">{article.date}</p>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
