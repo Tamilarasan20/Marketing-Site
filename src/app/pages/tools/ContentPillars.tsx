@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import CTABanner from '../components/CTABanner';
-import { useStreamGeneration } from '../hooks/useStreamGeneration';
+import CTABanner from '../../components/CTABanner';
+import { useStreamGeneration } from '../../hooks/useStreamGeneration';
 
 const faqs = [
   { q: 'What are content pillars?', a: 'Content pillars are the core themes your brand consistently creates content around. Instead of randomly posting, you organize everything under 3-5 pillars — making your content strategic, cohesive, and easier to plan.' },

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import CTABanner from '../components/CTABanner';
-import { useStreamGeneration } from '../hooks/useStreamGeneration';
+import CTABanner from '../../components/CTABanner';
+import { useStreamGeneration } from '../../hooks/useStreamGeneration';
 
 const faqs = [
   { q: 'What makes good ad copy?', a: "Good ad copy does four things: stops the scroll (hook), creates desire (benefits + emotion), removes doubt (social proof or guarantee), and drives action (specific CTA)." },

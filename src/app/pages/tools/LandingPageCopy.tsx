@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import CTABanner from '../components/CTABanner';
-import { useStreamGeneration } from '../hooks/useStreamGeneration';
+import CTABanner from '../../components/CTABanner';
+import { useStreamGeneration } from '../../hooks/useStreamGeneration';
 
 const faqs = [
   { q: 'What is a landing page?', a: "A landing page is a single web page designed for one specific goal — getting a visitor to take one action (sign up, buy, book, download). Unlike a homepage, a landing page eliminates distractions and focuses entirely on conversion." },

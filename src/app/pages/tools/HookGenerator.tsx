@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import CTABanner from '../components/CTABanner';
-import { useStreamGeneration } from '../hooks/useStreamGeneration';
+import CTABanner from '../../components/CTABanner';
+import { useStreamGeneration } from '../../hooks/useStreamGeneration';
 
 const faqs = [
   { q: 'What makes a good hook?', a: 'A good hook does one thing: it makes the viewer feel that stopping would cost them something. The best hooks create an information gap, trigger an emotion (fear, curiosity, hope), or make a bold statement that demands a response.' },

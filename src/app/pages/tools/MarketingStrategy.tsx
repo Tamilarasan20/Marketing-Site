@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import CTABanner from '../components/CTABanner';
-import { useStreamGeneration } from '../hooks/useStreamGeneration';
+import CTABanner from '../../components/CTABanner';
+import { useStreamGeneration } from '../../hooks/useStreamGeneration';
 
 const faqs = [
   { q: 'What is a marketing strategy?', a: 'A marketing strategy is the plan for how you will reach, attract, and convert your target customers. It defines who you are targeting, which channels you will use, what you will say, and how you will measure success.' },

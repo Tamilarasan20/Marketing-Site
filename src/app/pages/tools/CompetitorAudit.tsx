@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import CTABanner from '../components/CTABanner';
-import { useStreamGeneration } from '../hooks/useStreamGeneration';
+import CTABanner from '../../components/CTABanner';
+import { useStreamGeneration } from '../../hooks/useStreamGeneration';
 
 const faqs = [
   { q: 'Why should I analyze my competitors?', a: "Competitor analysis reveals what's working in your market, what gaps exist, and how to position yourself differently. The goal isn't to copy — it's to find the white space they're ignoring and own it." },
