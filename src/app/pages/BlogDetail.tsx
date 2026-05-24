@@ -39,54 +39,54 @@ function renderSection(section: ContentSection, index: number) {
   switch (section.type) {
     case "heading":
       return (
-        <h2 key={index} className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-xl md:text-2xl mt-8 mb-2">
+        <h2 key={index} className="font-['Satoshi:Bold',sans-serif] leading-9 text-[#1f2937] text-2xl md:text-3xl mt-10 mb-3">
           {section.text}
         </h2>
       );
     case "subheading":
       return (
-        <h3 key={index} className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-lg mt-5 mb-1">
+        <h3 key={index} className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-xl md:text-2xl mt-6 mb-2">
           {section.text}
         </h3>
       );
     case "paragraph":
       return (
-        <p key={index} className="font-['General_Sans:Medium',sans-serif] leading-[30px] text-[#374151] text-sm md:text-base">
+        <p key={index} className="font-['General_Sans:Medium',sans-serif] leading-[34px] text-[#374151] text-base md:text-lg">
           {section.text}
         </p>
       );
     case "callout":
       return (
-        <div key={index} className="border-l-4 border-[#1877f2] bg-[#f0f7ff] rounded-r-xl px-5 py-4 my-2">
-          <p className="font-['Satoshi:Bold',sans-serif] text-[#1565d8] text-sm md:text-base leading-[28px]">{section.text}</p>
+        <div key={index} className="border-l-4 border-[#1877f2] bg-[#f0f7ff] rounded-r-xl px-5 py-4 my-3">
+          <p className="font-['Satoshi:Bold',sans-serif] text-[#1565d8] text-base md:text-lg leading-[32px]">{section.text}</p>
         </div>
       );
     case "list":
       return (
-        <ul key={index} className="list-disc ml-5 space-y-1.5 font-['General_Sans:Medium',sans-serif] text-[#374151] text-sm md:text-base">
+        <ul key={index} className="list-disc ml-6 space-y-2 font-['General_Sans:Medium',sans-serif] text-[#374151] text-base md:text-lg">
           {section.items.map((item, i) => (
-            <li key={i} className="leading-[28px]">{item}</li>
+            <li key={i} className="leading-[32px]">{item}</li>
           ))}
         </ul>
       );
     case "numbered-list":
       return (
-        <ol key={index} className="list-decimal ml-5 space-y-1.5 font-['General_Sans:Medium',sans-serif] text-[#374151] text-sm md:text-base">
+        <ol key={index} className="list-decimal ml-6 space-y-2 font-['General_Sans:Medium',sans-serif] text-[#374151] text-base md:text-lg">
           {section.items.map((item, i) => (
-            <li key={i} className="leading-[28px]">{item}</li>
+            <li key={i} className="leading-[32px]">{item}</li>
           ))}
         </ol>
       );
     case "faq":
       return (
-        <div key={index} className="flex flex-col gap-3 mt-2">
+        <div key={index} className="flex flex-col gap-3 mt-3">
           {section.items.map((item, i) => (
             <div key={i} className="border border-[#e5e7eb] rounded-xl overflow-hidden">
-              <div className="bg-[#f9fafc] px-5 py-3 border-b border-[#e5e7eb]">
-                <p className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-sm md:text-base">{item.q}</p>
+              <div className="bg-[#f9fafc] px-5 py-4 border-b border-[#e5e7eb]">
+                <p className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-base md:text-lg">{item.q}</p>
               </div>
-              <div className="px-5 py-3">
-                <p className="font-['General_Sans:Medium',sans-serif] text-[#374151] text-sm leading-[26px]">{item.a}</p>
+              <div className="px-5 py-4">
+                <p className="font-['General_Sans:Medium',sans-serif] text-[#374151] text-base leading-[30px]">{item.a}</p>
               </div>
             </div>
           ))}
@@ -94,13 +94,13 @@ function renderSection(section: ContentSection, index: number) {
       );
     case "cta":
       return (
-        <div key={index} className="bg-[#eef4ff] rounded-2xl p-5 md:p-6 border border-[#c7d7fc] mt-6">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1877f2] text-base mb-4">{section.text}</p>
+        <div key={index} className="bg-[#eef4ff] rounded-2xl p-5 md:p-8 border border-[#c7d7fc] mt-8">
+          <p className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1877f2] text-lg mb-5">{section.text}</p>
           <a
             href="https://loraloop.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#1877f2] text-white font-['Satoshi:Bold',sans-serif] px-6 py-3 rounded-full text-sm hover:bg-[#1565d8] transition-colors"
+            className="inline-block bg-[#1877f2] text-white font-['Satoshi:Bold',sans-serif] px-6 py-3 rounded-full text-base hover:bg-[#1565d8] transition-colors"
           >
             Try Loraloop Free →
           </a>
@@ -119,8 +119,8 @@ export default function BlogDetail() {
   if (!post) {
     return (
       <div className="bg-white pt-32 pb-20 px-4 md:px-20 text-center">
-        <h1 className="font-['Satoshi:Bold',sans-serif] text-2xl text-[#1f2937]">Blog post not found</h1>
-        <Link to="/blog" className="text-[#1877f2] hover:underline mt-4 inline-block">← Back to Blog</Link>
+        <h1 className="font-['Satoshi:Bold',sans-serif] text-3xl text-[#1f2937]">Blog post not found</h1>
+        <Link to="/blog" className="text-[#1877f2] hover:underline mt-4 inline-block text-lg">← Back to Blog</Link>
       </div>
     );
   }
@@ -142,14 +142,14 @@ export default function BlogDetail() {
                   <ChevronRight size={16} className="text-[#d1d5db]" />
                   <span className="font-['Satoshi:Bold',sans-serif] leading-5 text-[#374151]">{post.category}</span>
                 </div>
-                <h1 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-2xl md:text-[40px] tracking-[-0.8px]">
+                <h1 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[56px] text-[#1f2937] text-3xl md:text-[44px] tracking-[-0.8px]">
                   {post.title}
                 </h1>
-                <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#6b7280] text-sm">{post.date}</p>
+                <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#6b7280] text-base">{post.date}</p>
 
                 {/* Summarise row */}
                 <div className="flex flex-col gap-2">
-                  <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#6b7280] text-xs">Summarise:</p>
+                  <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#6b7280] text-sm">Summarise:</p>
                   <div className="flex flex-wrap gap-2">
                     {aiTools.map((ai) => (
                       <a
@@ -160,7 +160,7 @@ export default function BlogDetail() {
                         className="bg-white flex gap-2 items-center px-3 py-2 rounded-xl border border-[#e5e7eb] shadow-sm hover:bg-gray-50 hover:border-[#1877f2] transition-colors"
                       >
                         <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
-                        <span className="font-['General_Sans:Medium',sans-serif] leading-[18px] text-[#374151] text-[13px] tracking-[0.3px]">{ai.name}</span>
+                        <span className="font-['General_Sans:Medium',sans-serif] leading-[18px] text-[#374151] text-sm tracking-[0.3px]">{ai.name}</span>
                       </a>
                     ))}
                   </div>
@@ -186,7 +186,7 @@ export default function BlogDetail() {
             </div>
 
             {/* Hero thumbnail */}
-            <div className="w-full lg:w-[520px] h-[220px] sm:h-[300px] md:h-[360px] rounded-2xl overflow-hidden shrink-0">
+            <div className="w-full lg:w-[520px] h-[220px] sm:h-[300px] md:h-[380px] rounded-2xl overflow-hidden shrink-0">
               <BlogThumbnail
                 emoji={thumb.emoji}
                 gradient={thumb.gradient}
@@ -198,11 +198,11 @@ export default function BlogDetail() {
 
         {/* Content + Sidebar */}
         <div className="px-4 md:px-20 py-8">
-          <div className="flex flex-col lg:flex-row gap-8 items-start">
-            <div className="flex-1 flex flex-col gap-3 min-w-0">
+          <div className="flex flex-col lg:flex-row gap-10 items-start">
+            <div className="flex-1 flex flex-col gap-4 min-w-0">
               {post.content.map((section, index) => renderSection(section, index))}
             </div>
-            <div className="w-full lg:w-[280px] flex flex-col gap-6 lg:sticky lg:top-24 shrink-0">
+            <div className="w-full lg:w-[290px] flex flex-col gap-6 lg:sticky lg:top-24 shrink-0">
               <div className="bg-[#eef4ff] rounded-3xl p-5">
                 <div className="flex flex-col gap-3">
                   <h3 className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-lg">Table of Contents</h3>
@@ -252,8 +252,8 @@ export default function BlogDetail() {
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <p className="font-['General_Sans:Medium',sans-serif] text-[#1f2937] text-xs">{article.category}</p>
-                      <h3 className="font-['Satoshi:Bold',sans-serif] leading-6 text-[#1f2937] text-base group-hover:text-[#1877f2] transition-colors line-clamp-2">{article.title}</h3>
+                      <p className="font-['General_Sans:Medium',sans-serif] text-[#1f2937] text-sm">{article.category}</p>
+                      <h3 className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-lg md:text-xl group-hover:text-[#1877f2] transition-colors line-clamp-2">{article.title}</h3>
                       <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">{article.date}</p>
                     </div>
                   </Link>
