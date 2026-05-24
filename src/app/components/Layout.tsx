@@ -4,9 +4,11 @@ import Header from "./Header";
 import MobileNav from "./MobileNav";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
+import { useAnalyticsPageviews } from "../hooks/useAnalyticsPageviews";
 
 export default function Layout() {
   const location = useLocation();
+  useAnalyticsPageviews();
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
