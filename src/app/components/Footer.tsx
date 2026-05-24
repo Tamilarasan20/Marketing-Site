@@ -4,15 +4,15 @@ import imgLogos1 from "../../imports/ResponsiveWebsiteDesign/4174d16cdcac15f4497
 import imgLogos2 from "../../imports/ResponsiveWebsiteDesign/62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
 
 const aiTools = [
-  { name: "Brand Voice Generator", href: "https://tools.loraloop.com/tools/brand-voice" },
-  { name: "Social Media Calendar", href: "https://tools.loraloop.com/tools/social-calendar" },
-  { name: "Content Pillar Generator", href: "https://tools.loraloop.com/tools/content-pillars" },
-  { name: "Hook Generator", href: "https://tools.loraloop.com/tools/hook-generator" },
-  { name: "Competitor Audit Tool", href: "https://tools.loraloop.com/tools/competitor-audit" },
-  { name: "Ad Copy Generator", href: "https://tools.loraloop.com/tools/ad-copy" },
-  { name: "Marketing Strategy Generator", href: "https://tools.loraloop.com/tools/marketing-strategy" },
-  { name: "Landing Page Copy Generator", href: "https://tools.loraloop.com/tools/landing-page-copy" },
-  { name: "Product Description Generator", href: "https://tools.loraloop.com/tools/product-description" },
+  { name: "Brand Voice Generator", href: "/tools/brand-voice" },
+  { name: "Social Media Calendar", href: "/tools/social-calendar" },
+  { name: "Content Pillar Generator", href: "/tools/content-pillars" },
+  { name: "Hook Generator", href: "/tools/hook-generator" },
+  { name: "Competitor Audit Tool", href: "/tools/competitor-audit" },
+  { name: "Ad Copy Generator", href: "/tools/ad-copy" },
+  { name: "Marketing Strategy Generator", href: "/tools/marketing-strategy" },
+  { name: "Landing Page Copy Generator", href: "/tools/landing-page-copy" },
+  { name: "Product Description Generator", href: "/tools/product-description" },
 ];
 
 const blogLinks = [
@@ -48,13 +48,17 @@ export default function Footer() {
                 <a
                   key={tool.href}
                   href={tool.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors"
                 >
                   {tool.name}
                 </a>
               ))}
+              <a
+                href="/tools"
+                className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#1877f2] text-base hover:underline transition-colors"
+              >
+                View all tools →
+              </a>
             </div>
 
             <div className="flex flex-col gap-[13px] items-center md:items-start text-center md:text-left">
