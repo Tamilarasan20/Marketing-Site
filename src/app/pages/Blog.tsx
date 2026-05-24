@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import imgImage from "../../imports/BlogL1-1/566bd8859808c5b6c2c0d3b943de3f7a326c5dca.png";
 import imgImage1 from "../../imports/BlogL1-1/705d74ba75d640101f8addb80d435e1726949c3f.png";
 import imgImage2 from "../../imports/BlogL1-1/c25b0a6ee79ed88f3818ee97020997d193100651.png";
@@ -56,6 +57,10 @@ const blogPosts = [
 ];
 
 export default function Blog() {
+  usePageMeta(
+    "Blog | Loraloop",
+    "Read the latest Loraloop insights on AI automation, intelligent workflows, AI agents, and how to scale your business with artificial intelligence."
+  );
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);

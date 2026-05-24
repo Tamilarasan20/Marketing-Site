@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useMemo } from "react";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { useNavigate, useSearchParams } from "react-router";
 import { Frame35_Auth } from "../../imports/LandingPage/LandingPage";
 import { ChevronDown, Users, BarChart2, Target, Lightbulb, CheckCircle } from "lucide-react";
@@ -148,6 +149,10 @@ const faqItems = [
 ];
 
 export default function Solution() {
+  usePageMeta(
+    "AI Solutions | Loraloop",
+    "Discover Loraloop's AI agent solutions — automate complex workflows, delegate tasks to AI, and scale your business operations intelligently."
+  );
   const [searchParams, setSearchParams] = useSearchParams();
   const agentParam = searchParams.get("agent");
   

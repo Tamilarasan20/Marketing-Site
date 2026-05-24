@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { Check } from "lucide-react";
 import imgImage from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
 
@@ -58,6 +59,10 @@ const features = {
 };
 
 export default function Pricing() {
+  usePageMeta(
+    "Pricing | Loraloop",
+    "Simple, transparent pricing for Loraloop's AI automation platform. Choose the plan that fits your team and scale as you grow."
+  );
   const [selectedPlan, setSelectedPlan] = useState<PlanType>("monthly");
   const location = useLocation();
   const navigate = useNavigate();

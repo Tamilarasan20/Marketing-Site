@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { usePageMeta } from "../../hooks/usePageMeta";
 import { ChevronRight, Link as LinkIcon } from "lucide-react";
 import imgImage from "../../imports/BlogL2-1/566bd8859808c5b6c2c0d3b943de3f7a326c5dca.png";
 import imgImage1 from "../../imports/BlogL2-1/705d74ba75d640101f8addb80d435e1726949c3f.png";
@@ -48,6 +49,10 @@ const relatedArticles = [
 ];
 
 export default function BlogDetail() {
+  usePageMeta(
+    "8 Best Relevance AI Alternatives and Competitors in 2026 | Loraloop Blog",
+    "Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, and real-world business use cases."
+  );
   return (
     <div className="bg-white">
       <div className="pt-20 md:pt-32 pb-20">
