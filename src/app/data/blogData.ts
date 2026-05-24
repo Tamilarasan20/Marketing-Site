@@ -1,0 +1,205 @@
+export type ContentSection =
+  | { type: 'paragraph'; text: string }
+  | { type: 'heading'; text: string }
+  | { type: 'list'; items: string[] }
+  | { type: 'numbered-list'; items: string[] }
+  | { type: 'cta'; text: string };
+
+export interface BlogPost {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  imageIndex: number;
+  tableOfContents: string[];
+  content: ContentSection[];
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    id: 1,
+    title: "8 Best Relevance AI Alternatives and Competitors in 2026",
+    description: "Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, and real-world business use cases.",
+    category: "Business",
+    date: "April 6, 2026",
+    imageIndex: 0,
+    tableOfContents: [
+      "Best Relevance AI Alternatives in 2026",
+      "8 Best Relevance AI Competitors in 2026",
+      "How We Researched and Ranked the Best Relevance AI Alternatives?",
+      "How to Choose the Best Relevance AI Alternative?",
+      "When a Multi-Agent AI Workspace Makes More Sense?",
+      "Why Sintra AI Is the Best Relevance AI Alternative?",
+      "Ready to Build Your Own AI Team?",
+    ],
+    content: [
+      { type: 'heading', text: 'Best Relevance AI Alternatives in 2026' },
+      { type: 'paragraph', text: 'Here is a list of the top Relevance AI alternatives you can try in 2026.' },
+      { type: 'paragraph', text: 'Higher-consideration purchases require storytelling, trust-building, and creative depth. Your AI marketing priorities shift when your average order value rises.' },
+      { type: 'numbered-list', items: [
+        'Video storytelling content — AI-assisted video briefs, scripts, and long-form content that walks customers through the why behind your product.',
+        'SEO and long-form content — Customers researching a $150+ purchase read reviews, comparison articles, and brand stories.',
+        'Email nurture sophistication — Longer consideration windows require multi-touch email sequences that educate and overcome objections.',
+        'Social proof automation — Review requests, testimonial collection, UGC repurposing.',
+      ]},
+    ],
+  },
+  {
+    id: 2,
+    title: "Best DeepSeek Alternatives for 2026",
+    description: "Overview of the best DeepSeek alternatives in 2026, comparing tools like Sintra AI, ChatGPT, and Claude across workflows, research.",
+    category: "Product",
+    date: "April 6, 2026",
+    imageIndex: 1,
+    tableOfContents: ["What is DeepSeek?", "Best Alternatives in 2026", "Feature Comparison", "Which One Should You Choose?"],
+    content: [
+      { type: 'heading', text: 'Best DeepSeek Alternatives in 2026' },
+      { type: 'paragraph', text: 'Here are the top alternatives to DeepSeek for research, coding, and workflow automation in 2026.' },
+    ],
+  },
+  { id: 3, title: "8 Best Relevance AI Alternatives for Automated Workflows", description: "Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features.", category: "Business", date: "April 6, 2026", imageIndex: 0, tableOfContents: ["Best Alternatives", "Comparison Table", "Top Picks for 2026"], content: [{ type: 'heading', text: 'Best Relevance AI Alternatives for Automated Workflows' }, { type: 'paragraph', text: 'Explore the top alternatives for building automated AI workflows in 2026.' }] },
+  { id: 4, title: "8 Best Relevance AI Alternatives for Automated Workflows", description: "Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features.", category: "Business", date: "April 6, 2026", imageIndex: 0, tableOfContents: ["Best Alternatives", "Comparison Table", "Top Picks for 2026"], content: [{ type: 'heading', text: 'Best Relevance AI Alternatives for Automated Workflows' }, { type: 'paragraph', text: 'Explore the top alternatives for building automated AI workflows in 2026.' }] },
+  { id: 5, title: "8 Best Relevance AI Alternatives for Automated Workflows", description: "Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features.", category: "Business", date: "April 6, 2026", imageIndex: 0, tableOfContents: ["Best Alternatives", "Comparison Table", "Top Picks for 2026"], content: [{ type: 'heading', text: 'Best Relevance AI Alternatives for Automated Workflows' }, { type: 'paragraph', text: 'Explore the top alternatives for building automated AI workflows in 2026.' }] },
+  { id: 6, title: "8 Best Relevance AI Alternatives for Automated Workflows", description: "Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features.", category: "Business", date: "April 6, 2026", imageIndex: 0, tableOfContents: ["Best Alternatives", "Comparison Table", "Top Picks for 2026"], content: [{ type: 'heading', text: 'Best Relevance AI Alternatives for Automated Workflows' }, { type: 'paragraph', text: 'Explore the top alternatives for building automated AI workflows in 2026.' }] },
+  {
+    id: 7,
+    title: "Why Founders Don't Need Another Social Media Scheduler — They Need an AI Marketing Team",
+    description: "Most founders don't fail at marketing because they can't find a scheduler. They fail because they don't know what to post, how to stay consistent, or how to turn marketing into growth.",
+    category: "Business",
+    date: "May 24, 2026",
+    imageIndex: 1,
+    tableOfContents: ["The Real Marketing Problem for Founders", "Why Scheduling Alone Is Not Enough", "What an AI Marketing Team Should Do", "Why Loraloop Is Built This Way"],
+    content: [
+      { type: 'paragraph', text: 'Most founders do not fail at marketing because they cannot find a scheduler.' },
+      { type: 'paragraph', text: 'They fail because they are inconsistent. They do not know what to post. They do not know what content connects to business goals. They do not have time to create every day. A scheduler solves only one small part of that problem.' },
+      { type: 'heading', text: 'The Real Marketing Problem for Founders' },
+      { type: 'paragraph', text: 'Founders usually struggle with more than just a publishing tool. The real challenges are:' },
+      { type: 'list', items: ['No clear content strategy', 'Random posting without direction', 'No brand voice consistency', 'No SEO direction or plan', 'No campaign planning process', 'No performance review habit', 'No time to manage multiple tools', 'Too many disconnected apps and platforms'] },
+      { type: 'heading', text: 'Why Scheduling Alone Is Not Enough' },
+      { type: 'paragraph', text: 'Scheduling helps after the content exists. But before that, the founder still needs to decide:' },
+      { type: 'list', items: ['What campaign are we running?', 'What offer are we promoting?', 'What audience are we targeting?', 'What pain point are we addressing?', 'What content format should we use?', 'What should be repurposed?', 'What should be improved based on performance?'] },
+      { type: 'heading', text: 'What an AI Marketing Team Should Do' },
+      { type: 'paragraph', text: 'A useful AI marketing team should help across the full workflow — not just the last step:' },
+      { type: 'list', items: ['Research and competitive analysis', 'Strategy and campaign planning', 'Content planning and editorial calendars', 'Copywriting for social, blog, and ads', 'SEO and GEO topic research', 'Email ideas and nurture sequences', 'Competitor monitoring', 'Approvals and review workflows', 'Performance insights and recommendations'] },
+      { type: 'heading', text: 'Why Loraloop Is Built This Way' },
+      { type: 'paragraph', text: 'Loraloop is not trying to replace human judgment. It helps founders reduce the manual work around marketing while keeping approval and control in the user\'s hands.' },
+      { type: 'paragraph', text: 'The safest version of autonomous marketing is not blind auto-publishing. It is AI-assisted planning, drafting, scheduling, and optimization with human approval at the right moments.' },
+      { type: 'cta', text: 'Loraloop gives founders the marketing support they wish they had — without needing to hire a full team on day one.' },
+    ],
+  },
+  {
+    id: 8,
+    title: "Loraloop vs Postiz: Which AI Marketing Platform Is Better for Founders?",
+    description: "Postiz is strong for social media scheduling with AI features and open-source flexibility. Loraloop is built as an AI marketing teammate that runs the full workflow from strategy to content to insights.",
+    category: "Product",
+    date: "May 24, 2026",
+    imageIndex: 2,
+    tableOfContents: ["What is Postiz?", "What is Loraloop?", "Key Difference", "Who Should Use Postiz?", "Who Should Use Loraloop?"],
+    content: [
+      { type: 'paragraph', text: 'Most founders do not just need another content calendar. They need help deciding what to post, why to post it, when to post it, and how it connects to growth.' },
+      { type: 'paragraph', text: 'Postiz is a powerful social scheduling platform. Loraloop is being built as an AI marketing teammate that helps founders plan, create, improve, and manage marketing work across channels.' },
+      { type: 'heading', text: 'What is Postiz?' },
+      { type: 'paragraph', text: 'Postiz helps users plan, generate, and schedule social media posts across many networks, with a visual calendar and AI features. It is an open-source social media scheduling tool with scheduling, analytics, team collaboration, and automation integrations.' },
+      { type: 'heading', text: 'What is Loraloop?' },
+      { type: 'paragraph', text: 'Loraloop is an autonomous AI marketing platform for founders, small businesses, and eCommerce brands. Instead of only helping users publish content, Loraloop helps with:' },
+      { type: 'list', items: ['Marketing strategy and campaign planning', 'Brand knowledge and voice consistency', 'Social content creation', 'Blog ideas and SEO/GEO content', 'Competitor research', 'Content calendar management', 'Approval-based publishing workflow', 'Performance insights and recommendations'] },
+      { type: 'heading', text: 'Key Difference' },
+      { type: 'paragraph', text: 'Postiz = social media scheduling-first. Loraloop = AI marketing operating system-first.' },
+      { type: 'paragraph', text: 'Postiz helps you manage posts. Loraloop helps you manage marketing.' },
+      { type: 'heading', text: 'Who Should Use Postiz?' },
+      { type: 'list', items: ['Creators who mainly need scheduling', 'Teams that want open-source or self-hosting flexibility', 'Users who already know their content strategy', 'Agencies that need publishing workflows', 'Technical teams that want API automation'] },
+      { type: 'heading', text: 'Who Should Use Loraloop?' },
+      { type: 'list', items: ['Founders who do not have a marketing team', 'Small businesses that need strategy and execution together', 'eCommerce brands that need content, SEO, campaigns, and insights', 'Solo founders who want guided marketing', 'Teams that want approval-based AI output instead of blind automation'] },
+      { type: 'cta', text: 'Try Loraloop if you do not just want to schedule content — you want an AI marketing teammate that helps you know what to do next.' },
+    ],
+  },
+  {
+    id: 9,
+    title: "Loraloop vs Post Bridge: Simple Scheduler or AI Marketing Team?",
+    description: "Post Bridge is positioned around simplicity and cross-platform posting. Loraloop competes on depth of marketing value — not just scheduling, but strategy, content, approvals, and insights.",
+    category: "Product",
+    date: "May 24, 2026",
+    imageIndex: 1,
+    tableOfContents: ["What is Post Bridge?", "What is Loraloop?", "Main Difference", "When Post Bridge Is Enough", "When Loraloop Is Better"],
+    content: [
+      { type: 'paragraph', text: 'If your only problem is \"I want to post the same content across platforms,\" a simple scheduler may be enough.' },
+      { type: 'paragraph', text: 'But if your problem is \"I do not know what to post, how to stay consistent, or how to turn marketing into growth,\" you need more than scheduling. That is the difference between Post Bridge and Loraloop.' },
+      { type: 'heading', text: 'What is Post Bridge?' },
+      { type: 'paragraph', text: 'Post Bridge is a lightweight social media scheduling and cross-posting tool designed for creators and small teams that want to upload once, customize content, and distribute it across platforms.' },
+      { type: 'heading', text: 'What is Loraloop?' },
+      { type: 'paragraph', text: 'Loraloop is built for founders and teams that need marketing help beyond posting. Loraloop helps answer:' },
+      { type: 'list', items: ['What should we post this week?', 'What campaigns should we run?', 'What should our brand voice sound like?', 'What SEO and GEO topics should we target?', 'What content should be approved before publishing?', 'What insights should we act on next?'] },
+      { type: 'heading', text: 'Main Difference' },
+      { type: 'paragraph', text: 'Post Bridge helps you distribute content. Loraloop helps you decide, create, organize, approve, and improve marketing content.' },
+      { type: 'heading', text: 'When Post Bridge Is Enough' },
+      { type: 'list', items: ['You already know your strategy', 'You only need basic scheduling', 'You are mainly posting short-form content', 'You want a low-cost simple tool', 'You do not need multi-agent marketing help'] },
+      { type: 'heading', text: 'When Loraloop Is Better' },
+      { type: 'list', items: ['You want a complete content strategy', 'You want brand-aware AI content generation', 'You need SEO, blog, and social support together', 'You need approval before publishing', 'You want marketing insights, not just a queue', 'You are building a serious brand, not just posting randomly'] },
+      { type: 'cta', text: 'If you only need scheduling, use a scheduler. If you need marketing direction, use Loraloop.' },
+    ],
+  },
+  {
+    id: 10,
+    title: "Top 10 AI Marketing Tools for Founders in 2026",
+    description: "A fair and useful comparison of the top AI marketing tools for founders, creators, and small businesses in 2026 — with Loraloop, Buffer, Postiz, Surfer SEO, Semrush, Jasper, and more.",
+    category: "Business",
+    date: "May 24, 2026",
+    imageIndex: 0,
+    tableOfContents: ["1. Loraloop", "2. Buffer", "3. Postiz", "4. Post Bridge", "5. Surfer SEO", "6. Semrush", "7. Jasper", "8. Predis.ai", "9. ContentStudio", "10. Claude / ChatGPT"],
+    content: [
+      { type: 'paragraph', text: 'Most AI tools help with one marketing task. The best ones connect multiple parts of your workflow. Here are the top 10 AI marketing tools for founders in 2026.' },
+      { type: 'heading', text: '1. Loraloop — Best for Autonomous AI Marketing Workflows' },
+      { type: 'paragraph', text: 'Best for founders, small businesses, and eCommerce teams that need strategy, content, approvals, calendar, and insights in one place. Best use case: consistent marketing execution without a full team.' },
+      { type: 'heading', text: '2. Buffer — Best for Simple Social Media Management' },
+      { type: 'paragraph', text: 'Buffer is known for social media scheduling and AI social post generation. Best use case: simple scheduling and social publishing.' },
+      { type: 'heading', text: '3. Postiz — Best Open-Source Social Scheduling Option' },
+      { type: 'paragraph', text: 'Postiz offers social scheduling, AI features, analytics, collaboration, and open-source flexibility. Best use case: technical users and teams that want control over their scheduler.' },
+      { type: 'heading', text: '4. Post Bridge — Best Lightweight Social Scheduler' },
+      { type: 'paragraph', text: 'A simple, affordable social media scheduling tool for creators and small teams. Best use case: creators who want simple cross-posting without complexity.' },
+      { type: 'heading', text: '5. Surfer SEO — Best for SEO Content Optimization' },
+      { type: 'paragraph', text: 'Used for content optimization and data-driven SEO writing recommendations. Best use case: ranking blog articles and optimizing content briefs.' },
+      { type: 'heading', text: '6. Semrush — Best for SEO and Competitive Research' },
+      { type: 'paragraph', text: 'Widely used for SEO, keyword research, competitor analysis, and content marketing. Best use case: SEO research, competitor analysis, and search visibility.' },
+      { type: 'heading', text: '7. Jasper — Best for Marketing Copywriting' },
+      { type: 'paragraph', text: 'Used for copywriting, campaign messaging, and brand-aware marketing content. Best use case: marketing teams that need lots of copy variations quickly.' },
+      { type: 'heading', text: '8. Predis.ai — Best for AI-Generated Social Content' },
+      { type: 'paragraph', text: 'Creates post content with AI for fast social media content generation at scale.' },
+      { type: 'heading', text: '9. ContentStudio — Best for Content Discovery and Planning' },
+      { type: 'paragraph', text: 'Helps with staying on top of content topics and managing social workflows. Best use case: planning content around trends and topics.' },
+      { type: 'heading', text: '10. Claude / ChatGPT — Best General AI Marketing Assistant' },
+      { type: 'paragraph', text: 'Great for brainstorming, rewriting, and research support, but not a full marketing workflow system. Best use case: flexible ideation and content drafting.' },
+      { type: 'cta', text: 'Most AI tools help with one marketing task. Loraloop is built to connect the whole workflow: strategy, content, approval, calendar, and insights.' },
+    ],
+  },
+  {
+    id: 11,
+    title: "The Founder's Guide to AI Marketing Automation: What to Automate and What Not to Automate",
+    description: "AI marketing automation sounds exciting until one bad post goes live. This guide shows founders what to safely automate and what to keep under human control — with an approval-first model.",
+    category: "Business",
+    date: "May 24, 2026",
+    imageIndex: 2,
+    tableOfContents: ["What Founders Should Automate", "What Founders Should Not Fully Automate", "The Approval-First Model", "Why Brand Knowledge Matters", "How Loraloop Helps"],
+    content: [
+      { type: 'paragraph', text: 'AI marketing automation sounds exciting until one bad post goes live.' },
+      { type: 'paragraph', text: 'For founders, the goal should not be \"automate everything.\" The goal should be: automate the repetitive work, keep humans in control of brand-sensitive decisions, and use AI to move faster without damaging trust.' },
+      { type: 'heading', text: 'What Founders Should Automate' },
+      { type: 'list', items: ['Content idea generation', 'Content repurposing from existing assets', 'Draft creation for review', 'SEO topic clustering', 'Competitor monitoring alerts', 'Calendar planning and scheduling', 'Performance summaries and reports', 'Hashtag and keyword suggestions', 'Blog outlines and briefs', 'Campaign briefs and frameworks', 'Daily marketing insights digests'] },
+      { type: 'heading', text: 'What Founders Should Not Fully Automate' },
+      { type: 'list', items: ['Final publishing decisions', 'Ad budget changes', 'Sensitive brand statements', 'Crisis replies and reputation management', 'Legal, medical, or financial claims', 'Customer complaint responses', 'Aggressive sales messaging', 'Political or controversial content'] },
+      { type: 'heading', text: 'The Approval-First Model' },
+      { type: 'paragraph', text: 'Loraloop promotes an approval-first workflow that gives speed without losing control:' },
+      { type: 'numbered-list', items: ['AI creates the plan', 'AI drafts the content', 'AI recommends the schedule', 'User reviews and edits', 'User approves', 'Then publishing and scheduling happens'] },
+      { type: 'heading', text: 'Why Brand Knowledge Matters' },
+      { type: 'paragraph', text: 'Without brand knowledge, AI creates generic content. With brand knowledge, AI becomes genuinely useful. Key brand inputs include:' },
+      { type: 'list', items: ['Brand voice and tone guidelines', 'Target audience profiles', 'Products, services, and current offers', 'Competitor positioning', 'Past content performance data', 'Customer pain points and objections', "Do and don't rules for your brand"] },
+      { type: 'heading', text: 'How Loraloop Helps' },
+      { type: 'paragraph', text: 'Loraloop connects brand memory, strategy, content creation, calendar planning, and insights so founders do not have to jump between ten tools.' },
+      { type: 'cta', text: 'Good AI marketing automation should feel like a teammate, not a risky autopilot. That is the direction Loraloop is built for.' },
+    ],
+  },
+];
+
+export function getBlogPost(id: number): BlogPost | undefined {
+  return blogPosts.find(post => post.id === id);
+}

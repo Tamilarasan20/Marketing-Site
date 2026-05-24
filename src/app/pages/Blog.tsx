@@ -3,89 +3,44 @@ import { Link } from "react-router";
 import imgImage from "../../imports/BlogL1-1/566bd8859808c5b6c2c0d3b943de3f7a326c5dca.png";
 import imgImage1 from "../../imports/BlogL1-1/705d74ba75d640101f8addb80d435e1726949c3f.png";
 import imgImage2 from "../../imports/BlogL1-1/c25b0a6ee79ed88f3818ee97020997d193100651.png";
+import { blogPosts as allBlogPosts } from "../data/blogData";
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "8 Best Relevance AI Alternatives for Automated Workflows",
-    description: "Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features,",
-    category: "Business",
-    date: "April 6, 2026",
-    image: imgImage1,
-  },
-  {
-    id: 2,
-    title: "Best DeepSeek Alternatives for 2026",
-    description: "Overview of the best DeepSeek alternatives in 2026, comparing tools like Sintra AI, ChatGPT, and Claude across workflows, research.Overview of the best DeepSeek alternatives in 2026, comparing tools like Sintra AI, ChatGPT, and Claude across workflows, research.",
-    category: "Product",
-    date: "April 6, 2026",
-    image: imgImage2,
-  },
-  {
-    id: 3,
-    title: "8 Best Relevance AI Alternatives for Automated Workflows",
-    description: "Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features,",
-    category: "Business",
-    date: "April 6, 2026",
-    image: imgImage1,
-  },
-  {
-    id: 4,
-    title: "8 Best Relevance AI Alternatives for Automated Workflows",
-    description: "Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features,",
-    category: "Business",
-    date: "April 6, 2026",
-    image: imgImage1,
-  },
-  {
-    id: 5,
-    title: "8 Best Relevance AI Alternatives for Automated Workflows",
-    description: "Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features,",
-    category: "Business",
-    date: "April 6, 2026",
-    image: imgImage1,
-  },
-  {
-    id: 6,
-    title: "8 Best Relevance AI Alternatives for Automated Workflows",
-    description: "Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features,",
-    category: "Business",
-    date: "April 6, 2026",
-    image: imgImage1,
-  },
-];
+const blogImages = [imgImage, imgImage1, imgImage2];
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const filteredPosts = blogPosts.filter((post) => {
+  const filteredPosts = allBlogPosts.filter((post) => {
     const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         post.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch =
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const featuredPost = allBlogPosts[0];
 
   return (
     <div className="bg-white">
       <div className="pt-20 md:pt-32 pb-10">
         <div className="px-4 md:px-20 py-10 md:py-20">
           <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center">
-            <Link to="/blog/1" className="h-[300px] md:h-[360px] w-full md:w-[576px] rounded-2xl overflow-hidden shrink-0">
+            <Link to={`/blog/${featuredPost.id}`} className="h-[300px] md:h-[360px] w-full md:w-[576px] rounded-2xl overflow-hidden shrink-0">
               <img alt="" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" src={imgImage} />
             </Link>
             <div className="flex flex-col gap-4 w-full md:w-[530px]">
-              <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#1f2937] text-sm">Business</p>
-              <Link to="/blog/1">
+              <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#1f2937] text-sm">{featuredPost.category}</p>
+              <Link to={`/blog/${featuredPost.id}`}>
                 <h1 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[56px] text-[#1f2937] text-3xl md:text-5xl tracking-[-1.2px] hover:text-[#1877f2] transition-colors">
-                  8 Best Relevance AI Alternatives and Competitors in 2026
+                  {featuredPost.title}
                 </h1>
               </Link>
               <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base">
-                Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, and real-world business use cases.
+                {featuredPost.description}
               </p>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#6b7280] text-sm">April 6, 2026</p>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#6b7280] text-sm">{featuredPost.date}</p>
             </div>
           </div>
         </div>
@@ -108,7 +63,6 @@ export default function Blog() {
                   </button>
                 ))}
               </div>
-
               <div className="flex gap-3 w-full md:w-[390px]">
                 <input
                   type="text"
@@ -125,22 +79,16 @@ export default function Blog() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
-                <Link
-                  key={post.id}
-                  to={`/blog/${post.id}`}
-                  className="flex flex-col gap-4 rounded-2xl group"
-                >
+                <Link key={post.id} to={`/blog/${post.id}`} className="flex flex-col gap-4 rounded-2xl group">
                   <div className="h-[200px] rounded-2xl overflow-hidden">
                     <img
                       alt=""
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      src={post.image}
+                      src={blogImages[post.imageIndex] ?? imgImage}
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#1f2937] text-xs">
-                      {post.category}
-                    </p>
+                    <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#1f2937] text-xs">{post.category}</p>
                     <div className="flex flex-col gap-3">
                       <h3 className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl overflow-hidden text-ellipsis group-hover:text-[#1877f2] transition-colors">
                         {post.title}
@@ -149,9 +97,7 @@ export default function Blog() {
                         {post.description}
                       </p>
                     </div>
-                    <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#6b7280] text-sm">
-                      {post.date}
-                    </p>
+                    <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#6b7280] text-sm">{post.date}</p>
                   </div>
                 </Link>
               ))}
