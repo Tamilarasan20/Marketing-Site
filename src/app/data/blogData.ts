@@ -159,7 +159,7 @@ export const blogPosts: BlogPost[] = [
       ]},
 
       { type: 'heading', text: 'What Is Loraloop?' },
-      { type: 'paragraph', text: 'Loraloop is an autonomous AI marketing platform built for founders, small businesses, and eCommerce brands. Its core premise is different from Postiz: while Postiz starts at \"here is your content, now schedule it,\" Loraloop starts at \"what should your marketing strategy be this month?\" and builds the content, SEO plan, and campaign structure from there.' },
+      { type: 'paragraph', text: 'Loraloop is an autonomous AI marketing platform built for founders, small businesses, and eCommerce brands. Its core premise is different from Postiz: while Postiz starts at "here is your content, now schedule it," Loraloop starts at "what should your marketing strategy be this month?" and builds the content, SEO plan, and campaign structure from there.' },
       { type: 'paragraph', text: 'Loraloop is designed to cover the full marketing workflow, including areas that social schedulers do not touch:' },
       { type: 'list', items: [
         'Brand knowledge base — voice, audience, positioning, and offer stored permanently',
@@ -219,7 +219,7 @@ export const blogPosts: BlogPost[] = [
         { q: 'Which is better for a founder — Loraloop or Postiz?', a: 'For founders who need a complete marketing system, Loraloop is better. It covers strategy, content, SEO, and insights in one platform. Postiz is better for founders who already have a strategy and need an efficient, multi-channel social scheduler with open-source flexibility.' },
       ]},
 
-      { type: 'cta', text: 'If your marketing problem is bigger than \"I need to schedule posts,\" Loraloop is built for the full workflow. Try it free and see how it compares to managing five separate tools.' },
+      { type: 'cta', text: 'If your marketing problem is bigger than "I need to schedule posts," Loraloop is built for the full workflow. Try it free and see how it compares to managing five separate tools.' },
     ],
   },
 
@@ -436,7 +436,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'heading', text: 'How to Choose the Right AI Marketing Tool for Your Business' },
       { type: 'paragraph', text: 'The most common mistake founders make is choosing an AI marketing tool based on feature count rather than workflow fit. A tool with 50 features that covers only one part of your workflow is less valuable than a tool with 10 features that covers the parts you actually need.' },
       { type: 'paragraph', text: 'Before choosing a tool, answer these three questions: (1) What is the specific marketing problem I need to solve right now? (2) How many separate tools am I currently using to do marketing, and is there one that replaces most of them? (3) Do I need help creating content, or do I need help distributing content I already have?' },
-      { type: 'paragraph', text: 'If your answer to question three is \"I need help creating content AND connecting it to a strategy,\" most tools on this list will not solve your problem. Loraloop is designed specifically for that case.' },
+      { type: 'paragraph', text: 'If your answer to question three is "I need help creating content AND connecting it to a strategy," most tools on this list will not solve your problem. Loraloop is designed specifically for that case.' },
 
       { type: 'faq', items: [
         { q: 'What is the best AI marketing tool for small businesses in 2026?', a: 'For small businesses that need a complete marketing system, Loraloop is the best option in 2026. It covers strategy, content creation, SEO, GEO, campaign planning, and insights in one platform. For businesses that only need social scheduling, Buffer or Post Bridge are strong choices.' },
@@ -561,6 +561,268 @@ export const blogPosts: BlogPost[] = [
       ]},
 
       { type: 'cta', text: 'AI marketing automation should make you faster without making you reckless. Loraloop is built on the approval-first model — AI does the work, you stay in control of your brand.' },
+    ],
+  },
+  {
+    id: 12,
+    title: "How to Build a Content Marketing Machine as a Solo Founder",
+    description: "A practical system for solo founders to produce consistent, high-quality content without a team — using brand voice documentation, batching, AI assistance, and smart repurposing.",
+    category: "Business",
+    date: "May 12, 2026",
+    imageIndex: 11,
+    tableOfContents: [
+      "Why Solo Founders Struggle With Content",
+      "Step 1: Document Your Brand Voice First",
+      "Step 2: Batch Content Creation",
+      "Step 3: Use AI as a Multiplier, Not a Replacement",
+      "Step 4: Build a Repurposing Engine",
+      "Step 5: Measure What Moves the Business",
+      "FAQ",
+    ],
+    content: [
+      { type: 'heading', text: 'Why Solo Founders Struggle With Content' },
+      { type: 'paragraph', text: 'Solo founders know content marketing works. They have seen competitors grow audiences, earn inbound leads, and build brand authority through consistent publishing. The problem is not strategy — it is capacity. A solo founder wearing five hats does not have ten hours a week to write blog posts, film videos, and manage a social calendar.' },
+      { type: 'paragraph', text: 'The founders who succeed at content marketing as a one-person operation do not work more hours. They build a system that multiplies their effort. This guide shows exactly how to build that system in 2026.' },
+
+      { type: 'callout', text: 'The solo founder content marketing advantage: you have the authentic voice and domain expertise that no agency can replicate. The system just helps you use it consistently.' },
+
+      { type: 'heading', text: 'Step 1: Document Your Brand Voice First' },
+      { type: 'paragraph', text: 'Before producing a single piece of content, document how your brand sounds. This is the foundational step that makes everything else faster — especially if you use AI tools to assist with drafts.' },
+      { type: 'paragraph', text: 'A useful brand voice document covers six things:' },
+      { type: 'list', items: [
+        'Tone adjectives — three to five words that describe how your brand sounds (e.g., direct, warm, expert, no-fluff)',
+        'Vocabulary rules — words and phrases you use consistently and ones you deliberately avoid',
+        'Audience profile — who you are writing to, what they care about, and what problems they are trying to solve',
+        'Example sentences — three or four sentences that sound exactly like your brand',
+        'Anti-examples — two or three sentences that sound nothing like you, to set the boundary',
+        'Topic boundaries — what you cover and what you deliberately stay out of',
+      ]},
+      { type: 'paragraph', text: 'With this document, you can write faster, brief collaborators more effectively, and use AI drafting tools that actually match your voice instead of producing generic output.' },
+
+      { type: 'heading', text: 'Step 2: Batch Content Creation' },
+      { type: 'paragraph', text: 'The biggest time cost in content creation is not the writing — it is the context switching. Every time you stop to write a caption, you interrupt your focus from something else. Batching solves this by consolidating content creation into focused blocks.' },
+      { type: 'paragraph', text: 'A practical batching system for solo founders looks like this:' },
+      { type: 'numbered-list', items: [
+        'Monthly strategy session (60 minutes) — review what worked last month, choose the content themes for the next four weeks, and identify two or three cornerstone pieces to create',
+        'Weekly content block (90–120 minutes) — produce all social posts, one long-form piece (blog or newsletter), and any repurposed content for the week in one sitting',
+        'Daily micro-tasks (15 minutes) — respond to comments, share others\' content, and handle any quick real-time posts',
+      ]},
+      { type: 'paragraph', text: 'This structure means content never competes with operational work. It has a dedicated time slot, and outside that slot, you are not thinking about it.' },
+
+      { type: 'heading', text: 'Step 3: Use AI as a Multiplier, Not a Replacement' },
+      { type: 'paragraph', text: 'The most effective solo founder content systems in 2026 use AI for the parts of content creation that are slow and cognitively draining — research, outlining, first drafts, and SEO optimization — while keeping the founder in the loop for voice, accuracy, and final approval.' },
+      { type: 'paragraph', text: 'Here is where AI meaningfully multiplies solo founder output:' },
+      { type: 'list', items: [
+        'First drafts — AI produces a full draft in minutes from a topic and brief; the founder edits rather than writes from scratch',
+        'Content repurposing — AI turns a blog post into five social captions, an email, and a short-form video script automatically',
+        'SEO briefs — AI researches keywords and builds a content brief that would take two hours to produce manually',
+        'GEO-structured content — AI formats articles with citable facts and FAQ sections that help content get picked up by AI search engines',
+        'Headline variations — AI generates ten headline options in seconds; the founder picks the best one',
+        'Content calendar — AI builds a month of scheduled posts from strategic themes; the founder edits before approving',
+      ]},
+
+      { type: 'callout', text: 'The best use of AI in content creation is not to remove the founder from the process — it is to remove the parts of the process the founder should not be spending time on.' },
+
+      { type: 'heading', text: 'Step 4: Build a Repurposing Engine' },
+      { type: 'paragraph', text: 'A repurposing engine turns one piece of content into many without producing new ideas from scratch each time. For a solo founder, this is the highest-leverage content strategy available.' },
+      { type: 'paragraph', text: 'The repurposing stack for a single long-form piece looks like this:' },
+      { type: 'numbered-list', items: [
+        'One long-form anchor piece (blog post or newsletter) — the original source of truth with full research and depth',
+        'Three to five social media posts — each covering a different angle, insight, or takeaway from the anchor piece',
+        'One email newsletter section — a condensed version with a link to read the full piece',
+        'One short-form video script — the most shareable insight from the piece in 60–90 seconds',
+        'One LinkedIn article summary — optimized for professional audience discovery',
+      ]},
+      { type: 'paragraph', text: 'One anchor piece, done well, gives you a week of content across five channels. AI makes the repurposing step near-automatic — the founder\'s time investment goes entirely into the original piece.' },
+
+      { type: 'heading', text: 'Step 5: Measure What Moves the Business' },
+      { type: 'paragraph', text: 'Solo founders cannot afford to measure vanity metrics. Likes and impressions feel good but do not tell you whether your content marketing is working. Here are the metrics that actually matter:' },
+      { type: 'list', items: [
+        'Leads from content — how many inbound leads can be traced to a specific piece of content or channel',
+        'Email list growth — week-over-week subscriber growth, segmented by which content drove the signup',
+        'Organic search traffic — monthly unique visitors from search, and which articles are driving them',
+        'Content-sourced revenue — how much closed revenue can be attributed to content-driven pipeline',
+        'Audience quality — are the people engaging with your content the same profile as your best customers',
+      ]},
+      { type: 'paragraph', text: 'Measure monthly, not daily. Look for directional trends over three-month periods rather than reacting to individual post performance.' },
+
+      { type: 'faq', items: [
+        { q: 'How often should a solo founder publish content?', a: 'Consistency matters more than frequency. Publishing one high-quality piece per week reliably is far more effective than publishing daily for two weeks and then going silent for a month. Start with a frequency you can sustain indefinitely — even if that is one post per week — then increase as the system matures.' },
+        { q: 'Should solo founders use AI to write their content?', a: 'Yes, for drafts and research. AI is most effective at producing first drafts, repurposing existing content, and performing keyword research. The founder\'s role shifts from writer to editor and approver, which is a much better use of their time. The key is ensuring AI output is reviewed before publishing and that it reflects the documented brand voice.' },
+        { q: 'What is the most important type of content for a solo founder?', a: 'Long-form anchor content — blog posts, newsletters, or detailed guides — provides the highest ROI for solo founders because it compounds over time through search, can be repurposed into multiple shorter pieces, and builds deeper authority than short-form posts alone. Prioritize one long-form piece per week as the core of your content system.' },
+        { q: 'How do I create a brand voice guide?', a: 'Start by collecting five to ten existing pieces of content that you feel best represent your brand. Identify the patterns — the specific words, sentence structures, and tones they share. Then document those patterns as explicit rules: vocabulary to use, vocabulary to avoid, tone descriptors, and audience assumptions. Add two or three example and anti-example sentences to make the guide actionable.' },
+        { q: 'How do I measure content marketing ROI as a solo founder?', a: 'Track leads from content (which pieces drive inbound inquiries), email list growth by source, organic search traffic to content pages, and content-attributed revenue in your CRM or pipeline tracker. Review monthly. Three months of data gives you a reliable enough picture to make strategic changes to your content focus.' },
+        { q: 'What is content batching and why does it work?', a: 'Content batching is the practice of producing all content for a defined period (usually a week or month) in a single focused work session rather than creating content ad hoc throughout the week. It works because context switching is the biggest time cost in creative work — batching eliminates that cost and produces better output because you stay in the creative mindset for the full session.' },
+        { q: 'How many pieces of content should I produce from each long-form piece?', a: 'A useful minimum is five to six derivative pieces from each anchor: three to four social posts, one email section, and one video script or short-form adaptation. With an AI repurposing tool, this takes 20 to 30 minutes after the original piece is written. The anchor piece should be the primary creative investment; repurposing should be near-automatic.' },
+      ]},
+
+      { type: 'cta', text: 'Loraloop helps solo founders build and run their content marketing machine — brand voice documentation, AI drafting, repurposing, calendar planning, and approval-first publishing all in one system.' },
+    ],
+  },
+  {
+    id: 13,
+    title: "GEO vs SEO in 2026: How to Get Your Brand Cited by ChatGPT, Perplexity, and Google AI",
+    description: "Generative Engine Optimization (GEO) is the new discipline for getting your brand mentioned by AI search engines. This guide explains how GEO works, how it differs from SEO, and exactly how to structure content that AI models cite.",
+    category: "Product",
+    date: "May 15, 2026",
+    imageIndex: 12,
+    tableOfContents: [
+      "What Is GEO?",
+      "GEO vs SEO: The Key Differences",
+      "How AI Search Engines Select What to Cite",
+      "The Four GEO Pillars",
+      "How to Write Citable Sentences",
+      "Measuring Your GEO Performance",
+      "FAQ",
+    ],
+    content: [
+      { type: 'heading', text: 'What Is GEO?' },
+      { type: 'paragraph', text: 'Generative Engine Optimization (GEO) is the practice of structuring web content so that AI search engines — including Perplexity, ChatGPT search, Google AI Overviews, and Bing Copilot — are more likely to cite it in their generated responses. In 2026, AI-generated summaries now appear above traditional search results for a growing percentage of commercial and informational queries. GEO determines whether your brand appears in those summaries.' },
+      { type: 'paragraph', text: 'GEO emerged as a distinct discipline in 2024 and has grown rapidly as AI search adoption accelerated. According to early GEO research at Princeton, Columbia, and Georgia Tech, content that uses specific structural and linguistic signals is cited significantly more often by generative AI systems than content optimized solely for traditional search.' },
+
+      { type: 'callout', text: 'GEO is not a replacement for SEO — it is a parallel discipline. The brands that win in AI-driven search in 2026 are the ones optimizing for both simultaneously.' },
+
+      { type: 'heading', text: 'GEO vs SEO: The Key Differences' },
+      { type: 'paragraph', text: 'Traditional SEO and GEO share some underlying goals — both aim to make content visible and authoritative — but they optimize for fundamentally different systems and behaviors.' },
+      { type: 'list', items: [
+        'SEO targets web crawlers and ranking algorithms; GEO targets large language models and retrieval-augmented generation systems',
+        'SEO optimizes for keyword density, backlink profiles, and technical signals; GEO optimizes for factual density, citability, and answer-completeness',
+        'SEO measures success in clicks and rankings; GEO measures success in brand mentions and citations within AI-generated responses',
+        'SEO content can be conversational and exploratory; GEO content must contain clear, quotable statements of fact that stand alone outside their context',
+        'SEO distributes authority through links; GEO distributes authority through being cited as a primary source in AI responses',
+        'SEO benefits from age and domain authority; GEO is more meritocratic — a newer brand with highly citable content can appear alongside established competitors',
+      ]},
+
+      { type: 'heading', text: 'How AI Search Engines Select What to Cite' },
+      { type: 'paragraph', text: 'AI search engines like Perplexity and ChatGPT search use a retrieval-augmented generation (RAG) architecture. When a user submits a query, the system retrieves relevant web documents, then synthesizes an answer from those documents, citing the most relevant sources. The selection of which documents to retrieve — and which statements to quote — is driven by specific content signals.' },
+      { type: 'paragraph', text: 'The content signals that increase citation probability include:' },
+      { type: 'list', items: [
+        'Explicit factual statements — sentences that make a specific, verifiable claim (e.g., "GEO content receives 40% more citations in AI search results than generic marketing copy")',
+        'Direct question-answer pairs — structured FAQ sections where the question matches common search queries and the answer is complete and self-contained',
+        'Clearly attributed statistics — numbers and percentages with explicit sourcing, even if the source is your own research or data',
+        'Structured headings — H2 and H3 headings that match the phrasing of common search queries so the AI can anchor citations to specific sections',
+        'Authoritative framing — language that signals expertise ("research shows", "the data indicates", "in practice") without being vague',
+        'Concise definitions — clear one-sentence definitions of technical concepts that AI systems can extract and use as reference',
+      ]},
+
+      { type: 'heading', text: 'The Four GEO Pillars' },
+      { type: 'paragraph', text: 'Effective GEO content is built on four structural pillars that make it easy for AI systems to retrieve, understand, and cite.' },
+      { type: 'numbered-list', items: [
+        'Factual density — every section contains multiple specific, quotable claims. Vague statements like "AI is changing marketing" are not citable. Specific statements like "brands using structured GEO content see a 30–40% increase in AI search citation rates" are citable.',
+        'Structural clarity — use descriptive H2 and H3 headings, bulleted and numbered lists, and explicit definitions. AI systems extract structured content more reliably than dense prose.',
+        'Answer completeness — every question your content addresses should be answered completely within a single section or paragraph. The AI should not need to synthesize your answer from multiple scattered paragraphs.',
+        'Entity salience — mention your brand, products, and key concepts multiple times in natural contexts. AI systems learn associations between concepts and entities through frequency and co-occurrence.',
+      ]},
+
+      { type: 'callout', text: 'The fastest GEO win for most brands: add a structured FAQ section at the bottom of every article. AI search engines heavily favour well-structured question-answer pairs for citation.' },
+
+      { type: 'heading', text: 'How to Write Citable Sentences' },
+      { type: 'paragraph', text: 'The most actionable GEO skill is writing sentences that AI systems can lift and use directly. A citable sentence has three properties: it makes a specific claim, it is self-contained (readable out of context), and it does not require surrounding text to make sense.' },
+      { type: 'paragraph', text: 'Here are examples of non-citable vs citable versions of the same idea:' },
+      { type: 'list', items: [
+        'Non-citable: "AI is being used more in content marketing." → Citable: "78% of B2B marketing teams report using AI for at least one content creation task in 2026, up from 45% in 2024."',
+        'Non-citable: "GEO is different from SEO." → Citable: "GEO (Generative Engine Optimization) optimizes content for citation by AI search engines like Perplexity and ChatGPT, while SEO optimizes for traditional search engine rankings."',
+        'Non-citable: "You should use headings in your content." → Citable: "Content structured with descriptive H2 headings that match common search queries receives 2–3x more citations in AI-generated responses than unstructured prose."',
+      ]},
+      { type: 'paragraph', text: 'Write at least three to five explicitly citable sentences per major section. These are the sentences most likely to appear verbatim or near-verbatim in an AI-generated response that cites your brand.' },
+
+      { type: 'heading', text: 'Measuring Your GEO Performance' },
+      { type: 'paragraph', text: 'GEO measurement is still maturing in 2026, but several practical approaches exist for tracking whether your brand is appearing in AI search responses.' },
+      { type: 'list', items: [
+        'Manual query testing — search your target queries in Perplexity, ChatGPT search, and Google AI Overviews and record whether your brand or content is cited in the responses',
+        'Brand mention tracking — use tools like Mention, Brand24, or AI-specific monitoring tools to track when your brand name appears in AI-generated contexts',
+        'Referral traffic from AI sources — monitor your analytics for referral traffic from perplexity.ai, chat.openai.com, and bing.com/chat, which indicates your content was cited and clicked through',
+        'Citation rate by content type — test whether structured FAQ content, factual articles, or definition pages receive more AI search citation than other content types on your site',
+      ]},
+      { type: 'paragraph', text: 'Establish a quarterly GEO audit: run your 20 most important target queries through the major AI search engines and record citation rates. Use this baseline to measure improvement as you publish more GEO-optimized content.' },
+
+      { type: 'faq', items: [
+        { q: 'What is GEO (Generative Engine Optimization)?', a: 'GEO (Generative Engine Optimization) is the practice of structuring web content to increase the likelihood that AI search engines — including Perplexity, ChatGPT search, Google AI Overviews, and Bing Copilot — will cite it in their generated responses. GEO focuses on factual density, structural clarity, citable sentences, and question-answer pairs that AI systems can extract and reference.' },
+        { q: 'How is GEO different from SEO?', a: 'SEO optimizes content for traditional search engine crawlers and ranking algorithms, measuring success in organic rankings and clicks. GEO optimizes content for large language model retrieval systems, measuring success in brand citations within AI-generated summaries. Both are important in 2026 — SEO drives traditional search traffic while GEO drives AI search visibility.' },
+        { q: 'How do I make my content more citable by AI search engines?', a: 'Write specific, self-contained factual sentences that make clear claims. Add structured FAQ sections with complete answers. Use descriptive H2 and H3 headings that match common search query phrasing. Include statistics and data with explicit attribution. Ensure every major point can be understood without surrounding context, since AI systems often extract and cite individual sentences or short paragraphs.' },
+        { q: 'Which AI search engines should I optimize for?', a: 'The highest-priority AI search engines for GEO in 2026 are Perplexity AI (pure AI search with high citation transparency), ChatGPT search (integrated into the world\'s most-used AI assistant), and Google AI Overviews (appearing in traditional Google results for a growing percentage of queries). Bing Copilot is also worth tracking for B2B audiences.' },
+        { q: 'Does GEO replace SEO?', a: 'No. GEO and SEO are complementary disciplines. Traditional Google search still drives significant traffic, and many users do not use AI search for all queries. The brands winning in 2026 optimize for both: SEO content that ranks in traditional search, and GEO-structured content (especially FAQ sections and factual articles) that earns citations in AI-generated responses.' },
+        { q: 'How long does GEO take to show results?', a: 'GEO results can be faster than traditional SEO because AI search engines re-crawl and re-index content more dynamically. Brands report seeing new citations in AI-generated responses within two to four weeks of publishing well-structured GEO content. A sustained GEO program over three to six months typically produces measurable increases in AI search citation rates.' },
+        { q: 'What is AEO and how does it relate to GEO?', a: 'AEO (Answer Engine Optimization) is a related discipline that focuses on formatting content as direct answers for voice search and AI assistants like Siri, Alexa, and Google Assistant. GEO focuses on getting cited by AI-powered web search engines like Perplexity. The structural techniques overlap significantly: both benefit from explicit question-answer formatting, concise definitions, and self-contained factual statements.' },
+      ]},
+
+      { type: 'cta', text: 'Loraloop creates SEO, GEO, and AEO-optimized content in your brand voice — structured to rank in traditional search and get cited by ChatGPT, Perplexity, and Google AI Overviews.' },
+    ],
+  },
+  {
+    id: 14,
+    title: "5 Content Marketing Mistakes Founders Make (And Exactly How AI Fixes Them)",
+    description: "The most common content marketing mistakes founders make — inconsistency, missing brand voice, trend-chasing, no distribution, and no repurposing — and a specific AI-powered fix for each one.",
+    category: "Business",
+    date: "May 18, 2026",
+    imageIndex: 13,
+    tableOfContents: [
+      "Mistake 1: Publishing Inconsistently",
+      "Mistake 2: Having No Documented Brand Voice",
+      "Mistake 3: Chasing Trends Instead of Building Authority",
+      "Mistake 4: Creating Content But Not Distributing It",
+      "Mistake 5: Never Repurposing What Already Works",
+      "The Common Thread",
+      "FAQ",
+    ],
+    content: [
+      { type: 'paragraph', text: 'Content marketing is one of the highest-leverage growth channels for early-stage founders — when it works. When it does not work, it is almost always for one of five reasons. These are not strategic mistakes. They are operational and system failures that AI tools in 2026 can directly fix.' },
+
+      { type: 'heading', text: 'Mistake 1: Publishing Inconsistently' },
+      { type: 'paragraph', text: 'The most common content marketing mistake founders make is not publishing terrible content — it is publishing sporadically. Three posts in one week, then nothing for six weeks, then a burst of activity, then silence again. Audiences do not build around inconsistent publishers. Algorithms do not reward them. Search engines do not trust them.' },
+      { type: 'paragraph', text: 'The root cause is operational, not motivational. Founders do not lack ideas or intent — they lack a system that removes content creation from the variable demands of a startup week.' },
+
+      { type: 'callout', text: 'Fix: AI-powered content calendars build a month of scheduled content from your themes and past performance. The founder\'s job shifts from daily creation to monthly strategy and weekly approval. Consistency becomes the default, not the exception.' },
+
+      { type: 'paragraph', text: 'Specifically: tools like Loraloop generate a full content calendar, draft each post, and queue everything for approval in a single workflow. Instead of deciding what to post today, the founder reviews what AI has drafted for the week and approves what fits. The publishing machine runs regardless of how demanding the operational week is.' },
+
+      { type: 'heading', text: 'Mistake 2: Having No Documented Brand Voice' },
+      { type: 'paragraph', text: 'When founders write content themselves, their brand voice is naturally consistent — it sounds like them. When they hire a VA, bring on a content writer, use an agency, or start using AI tools, the content immediately starts to sound generic or inconsistent. The reason is always the same: the brand voice was never documented.' },
+      { type: 'paragraph', text: 'Undocumented brand voice has a specific cost: every new collaborator (human or AI) reverts to the average. The average sounds like everyone else in your industry. It does not build a recognizable brand.' },
+
+      { type: 'callout', text: 'Fix: A brand voice document — covering tone, vocabulary, audience assumptions, example sentences, and anti-examples — takes 90 minutes to create and makes every subsequent piece of content faster and more consistent. With AI, this document becomes the system prompt that drives every draft.' },
+
+      { type: 'paragraph', text: 'The brand voice document is also what makes AI drafting effective rather than generic. AI tools given a detailed brand voice brief produce output that could only have been written for your brand. Without it, they produce content indistinguishable from your competitors\' AI-generated posts.' },
+
+      { type: 'heading', text: 'Mistake 3: Chasing Trends Instead of Building Authority' },
+      { type: 'paragraph', text: 'Founders who watch their competitors gain traction often respond by chasing whatever topic is currently getting engagement. They pivot from their core content themes to cover trending topics, timely news hooks, and viral formats. Short-term, this might produce spikes in impressions. Long-term, it builds no authority on anything.' },
+      { type: 'paragraph', text: 'Authority in content marketing is built by being the most useful, most thorough, and most consistently cited source on a defined set of topics. That requires depth and repetition — publishing multiple strong pieces on the same core themes over time — not breadth across every trend that emerges.' },
+
+      { type: 'callout', text: 'Fix: AI-powered content strategy identifies your two or three core topic clusters based on your business model, audience intent, and competitive gaps. It then builds every piece of content around deepening authority in those clusters — not chasing what\'s trending this week.' },
+
+      { type: 'paragraph', text: 'This also has a GEO benefit. AI search engines like Perplexity cite sources they associate with specific topic areas. A brand that has 15 thorough articles on "AI marketing automation for founders" will be cited on that query consistently. A brand that has one article on the topic and 14 on trending tangents will not.' },
+
+      { type: 'heading', text: 'Mistake 4: Creating Content But Not Distributing It' },
+      { type: 'paragraph', text: 'Many founders spend 80% of their content time creating and 20% on distribution. The ratio should be closer to 50/50. A great article published to a small audience and shared once on LinkedIn before being forgotten will underperform a mediocre article promoted consistently across five channels for two weeks.' },
+      { type: 'paragraph', text: 'The distribution problem is partly a time problem and partly a system problem. Founders do not want to spend their limited content time on the mechanical work of sharing, scheduling, and promoting. That is exactly what AI can handle.' },
+
+      { type: 'callout', text: 'Fix: AI-powered distribution automation takes each published piece and generates platform-specific promotional posts for LinkedIn, X, Instagram, and email — each formatted for the platform, each scheduled at optimal times. The founder approves the distribution plan once; the AI executes it.' },
+
+      { type: 'paragraph', text: 'Effective content distribution in 2026 also includes GEO distribution: ensuring published articles are structured to earn citations in AI search responses, and that your brand appears in Perplexity and ChatGPT answers for your target queries. AI tools that support GEO optimization turn every new article into a citation candidate for AI search engines.' },
+
+      { type: 'heading', text: 'Mistake 5: Never Repurposing What Already Works' },
+      { type: 'paragraph', text: 'A founder writes a newsletter that gets a 40% open rate. They share it once, congratulate themselves on the performance, and then produce an entirely new piece next week. The insight that resonated with 40% of their audience is never revisited, expanded, adapted for a different format, or surfaced for a new audience.' },
+      { type: 'paragraph', text: 'This is content waste at its most costly. The market research has already been done — the audience has told you what they want to read. Repurposing that material into different formats and for different channels multiplies its impact without multiplying the creative effort.' },
+
+      { type: 'callout', text: 'Fix: Build a systematic repurposing workflow where every long-form piece that performs above average is automatically adapted into social posts, a short-form video script, an updated SEO article, and a newsletter segment. AI makes this near-automatic — one prompt, five formats.' },
+
+      { type: 'paragraph', text: 'Repurposing also has a compounding benefit for SEO and GEO. Multiple pieces of content on the same core topic — approached from different angles, formatted differently, targeting different keyword variants — build topical authority more effectively than a single comprehensive piece. Repurposing high-performers creates exactly this depth.' },
+
+      { type: 'heading', text: 'The Common Thread' },
+      { type: 'paragraph', text: 'These five mistakes share a common root: content marketing was designed as a system, and most founders are running it as a series of one-off decisions. Deciding what to post today, writing from scratch each time, remembering to share content after publishing, and hunting for new topics every week are all symptoms of a missing system.' },
+      { type: 'paragraph', text: 'AI tools in 2026 are uniquely suited to fill this gap because they are system tools: they can run a calendar consistently, apply a documented brand voice to every draft, surface high-performers for repurposing, and execute multi-channel distribution without requiring a human decision at each step.' },
+      { type: 'paragraph', text: 'The founder\'s role in a well-built AI content marketing system is strategy, approval, and voice — not execution. That is the appropriate division of labor for a founder who needs their marketing to compound over time without consuming their week.' },
+
+      { type: 'faq', items: [
+        { q: 'What is the biggest content marketing mistake founders make?', a: 'Inconsistency is the single most damaging content marketing mistake for founders. Publishing sporadically — bursts of activity followed by silence — prevents audience growth, damages search engine trust, and means no single piece of content builds on the momentum of the last. AI-powered content calendars and scheduling tools solve this by making consistent publishing the operational default rather than a personal discipline challenge.' },
+        { q: 'How do I maintain a consistent brand voice in my content?', a: 'Document your brand voice before you scale content production. The document should cover tone adjectives (how you sound), vocabulary rules (what words you use and avoid), audience assumptions (who you are writing to), example sentences (what your brand sounds like), and anti-examples (what it definitely does not sound like). With this document, both human collaborators and AI drafting tools produce content that stays on-brand consistently.' },
+        { q: 'Should founders focus on SEO or social media content?', a: 'Both serve different purposes in a content system. SEO blog content compounds over time — an article that ranks builds traffic month after month. Social content builds audience relationship and drives near-term engagement. The most effective approach is to create long-form SEO anchor content first, then repurpose it into social posts. This gives you both the long-term asset and the short-term distribution without doubling the creative effort.' },
+        { q: 'How much time should founders spend on content distribution vs creation?', a: 'A 50/50 ratio is a useful target: spend roughly equal time on creating high-quality content and distributing it across channels. Most founders over-invest in creation and under-invest in distribution, which means good content never reaches the audience it could. AI tools can dramatically reduce the time cost of distribution by generating platform-specific posts and scheduling them automatically, effectively shifting more of the founder\'s time toward creation.' },
+        { q: 'What content should founders repurpose first?', a: 'Repurpose content that has already demonstrated performance: newsletter issues with above-average open rates, social posts with unusually high engagement, and blog articles with above-average time-on-page. These signals tell you what your audience wants more of. Repurposing high-performers into multiple formats maximizes the reach of your best content rather than spreading effort across material that may or may not resonate.' },
+        { q: 'What is topical authority and why does it matter for content marketing?', a: 'Topical authority is the degree to which a website or brand is recognized — by search engines and AI systems — as the most authoritative source on a specific subject area. It is built by publishing multiple high-quality pieces on the same core topics over time. Topical authority matters because both Google and AI search engines (Perplexity, ChatGPT) preferentially cite and rank sources with demonstrated depth on a topic over sources with broad but shallow coverage.' },
+      ]},
+
+      { type: 'cta', text: 'Loraloop is the AI content marketing system built to fix all five of these mistakes — consistent scheduling, documented brand voice, authority-building content strategy, multi-channel distribution, and automatic repurposing.' },
     ],
   },
 ];
