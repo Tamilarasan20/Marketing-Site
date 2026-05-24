@@ -176,15 +176,10 @@ export default function BlogDetail() {
         {/* Content + Sidebar */}
         <div className="px-4 md:px-20 py-8">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
-
-            {/* Main content */}
             <div className="flex-1 flex flex-col gap-3 min-w-0">
               {post.content.map((section, index) => renderSection(section, index))}
             </div>
-
-            {/* Sidebar */}
             <div className="w-full lg:w-[280px] flex flex-col gap-6 lg:sticky lg:top-24 shrink-0">
-              {/* Table of contents */}
               <div className="bg-[#eef4ff] rounded-3xl p-5">
                 <div className="flex flex-col gap-3">
                   <h3 className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-lg">Table of Contents</h3>
@@ -198,30 +193,16 @@ export default function BlogDetail() {
                   </div>
                 </div>
               </div>
-
-              {/* CTA box */}
               <div className="h-[290px] rounded-3xl relative overflow-hidden border border-[#08f]">
                 <div className="absolute inset-0 bg-gradient-to-b from-[#0073ff] to-[#0da2ff]" />
-                <div
-                  className="absolute inset-0 opacity-40 mix-blend-plus-lighter"
-                  style={{ backgroundImage: `url('${imgCallToActionSection}')`, backgroundSize: "307.2px 307.2px", backgroundPosition: "top left" }}
-                />
+                <div className="absolute inset-0 opacity-40 mix-blend-plus-lighter" style={{ backgroundImage: `url('${imgCallToActionSection}')`, backgroundSize: "307.2px 307.2px", backgroundPosition: "top left" }} />
                 <div className="absolute inset-0 backdrop-blur-[2px]" />
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[160px] w-[180px]">
                   <img alt="" className="w-full h-full object-cover" src={imgFeatureImageSmall} />
                 </div>
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 flex flex-col gap-3 items-center w-[230px]">
-                  <p className="font-['Satoshi:Bold',sans-serif] leading-6 text-lg text-center text-white">
-                    Your AI marketing team that delivers results, never sleeps!
-                  </p>
-                  <a
-                    href="https://loraloop.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white text-[#0073ff] px-5 py-2.5 rounded-[34px] font-['Satoshi:Bold',sans-serif] text-sm hover:bg-gray-100 transition-colors"
-                  >
-                    Get Started
-                  </a>
+                  <p className="font-['Satoshi:Bold',sans-serif] leading-6 text-lg text-center text-white">Your AI marketing team that delivers results, never sleeps!</p>
+                  <a href="https://loraloop.com" target="_blank" rel="noopener noreferrer" className="bg-white text-[#0073ff] px-5 py-2.5 rounded-[34px] font-['Satoshi:Bold',sans-serif] text-sm hover:bg-gray-100 transition-colors">Get Started</a>
                 </div>
               </div>
             </div>
@@ -254,24 +235,23 @@ export default function BlogDetail() {
           </div>
         </div>
 
-        {/* Floating LLM summarise bar */}
-        <div className="fixed bottom-4 left-3 right-3 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-max z-50 backdrop-blur-[10px] bg-[rgba(0,0,0,0.88)] rounded-2xl md:rounded-[30px] shadow-xl px-4 md:px-6 py-3">
-          <div className="flex flex-col gap-2 items-center">
-            <p className="font-['General_Sans:Medium',sans-serif] text-[#9ca3af] text-xs">Quick Summarise with</p>
-            <div className="flex gap-2 overflow-x-auto w-full md:w-auto pb-0.5 scrollbar-hide">
-              {aiTools.map((ai) => (
-                <a
-                  key={ai.name}
-                  href={getSummarizeUrl(ai.name, currentUrl)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white flex gap-1.5 items-center px-3 py-2 rounded-2xl border border-[#e5e7eb] shadow-sm hover:bg-gray-100 transition-colors flex-shrink-0"
-                >
-                  <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
-                  <span className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-sm whitespace-nowrap">{ai.name}</span>
-                </a>
-              ))}
-            </div>
+        {/* Floating LLM summarise bar — horizontal scrollable */}
+        <div className="fixed bottom-4 left-3 right-3 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-max z-50 backdrop-blur-[10px] bg-[rgba(0,0,0,0.88)] rounded-2xl md:rounded-[30px] shadow-xl px-4 py-3">
+          <div className="flex flex-row items-center gap-3 overflow-x-auto">
+            <p className="font-['General_Sans:Medium',sans-serif] text-[#9ca3af] text-xs whitespace-nowrap flex-shrink-0">Quick Summarise with</p>
+            <div className="w-px h-4 bg-[#444] flex-shrink-0" />
+            {aiTools.map((ai) => (
+              <a
+                key={ai.name}
+                href={getSummarizeUrl(ai.name, currentUrl)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white flex gap-1.5 items-center px-3 py-1.5 rounded-2xl border border-[#e5e7eb] hover:bg-gray-100 transition-colors flex-shrink-0"
+              >
+                <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
+                <span className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-sm whitespace-nowrap">{ai.name}</span>
+              </a>
+            ))}
           </div>
         </div>
 
