@@ -1,8 +1,13 @@
 import imgLogos from "../../imports/ResponsiveWebsiteDesign/c7fe7372891e9f00b719c9bfb401718a19a7515e.png";
 import imgLogos1 from "../../imports/ResponsiveWebsiteDesign/4174d16cdcac15f4497d1c39f4b1a5104b45fac1.png";
 import imgLogos2 from "../../imports/ResponsiveWebsiteDesign/62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
+import { usePageMeta } from "../../hooks/usePageMeta";
 
 export default function Contact() {
+  usePageMeta(
+    "Contact | Loraloop",
+    "Get in touch with the Loraloop team. We'd love to help you automate your business with AI."
+  );
   return (
     <div className="pt-20 md:pt-32 pb-20 px-4">
       <div className="max-w-[1280px] px-4 md:px-16 mx-auto">

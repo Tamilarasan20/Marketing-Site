@@ -1,6 +1,11 @@
 import { Link } from "react-router";
+import { usePageMeta } from "../../hooks/usePageMeta";
 
 export default function About() {
+  usePageMeta(
+    "About | Loraloop",
+    "Learn about the Loraloop team and our mission to make AI-powered automation accessible to every business."
+  );
   return (
     <div className="pt-20 md:pt-32 pb-20 px-4">
       <div className="max-w-[1280px] px-4 md:px-16 mx-auto">

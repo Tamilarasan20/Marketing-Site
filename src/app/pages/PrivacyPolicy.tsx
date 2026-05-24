@@ -1,4 +1,7 @@
+import { usePageMeta } from "../../hooks/usePageMeta";
+
 export default function PrivacyPolicy() {
+  usePageMeta("Privacy Policy | Loraloop", "Read Loraloop's privacy policy to understand how we collect, use, and protect your data.");
   return (
     <div className="pt-20 md:pt-32 pb-20 px-4">
       <div className="max-w-[860px] px-4 md:px-8 mx-auto">
