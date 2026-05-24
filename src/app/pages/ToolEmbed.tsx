@@ -1,3 +1,4 @@
+import type { ComponentType } from 'react';
 import { useParams } from 'react-router';
 import BrandVoice from './tools/BrandVoice';
 import SocialCalendar from './tools/SocialCalendar';
@@ -9,7 +10,7 @@ import LandingPageCopy from './tools/LandingPageCopy';
 import ProductDescription from './tools/ProductDescription';
 import CompetitorAudit from './tools/CompetitorAudit';
 
-const toolComponents: Record<string, React.ComponentType> = {
+const toolComponents: Record<string, ComponentType> = {
   'brand-voice': BrandVoice,
   'social-calendar': SocialCalendar,
   'content-pillars': ContentPillars,

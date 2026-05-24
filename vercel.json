@@ -1,7 +1,8 @@
 {
+  "installCommand": "pnpm install --no-frozen-lockfile",
   "rewrites": [
     { "source": "/app", "destination": "https://loraloop-main-api.vercel.app/app" },
     { "source": "/app/:path*", "destination": "https://loraloop-main-api.vercel.app/app/:path*" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
