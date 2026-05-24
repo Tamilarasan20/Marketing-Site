@@ -10,7 +10,7 @@ import imgLogos4 from "../../imports/BlogL2-1/c19b58cb0cef79f0c6f9f6c2d6119a3abc
 import imgLogos5 from "../../imports/BlogL2-1/215585c81b06ce6b25e4697e64c75a244401e297.png";
 import imgLogos6 from "../../imports/BlogL2-1/c7fe7372891e9f00b719c9bfb401718a19a7515e.png";
 import imgLogos7 from "../../imports/BlogL2-1/62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
-import { getBlogPost, blogPosts } from "../data/blogData";
+import { getBlogPost, getBlogPostBySlug, blogPosts } from "../data/blogData";
 import type { ContentSection } from "../data/blogData";
 import { blogThumbnails } from "../data/blogThumbnails";
 import { BlogThumbnail } from "../components/BlogThumbnail";
@@ -133,8 +133,8 @@ function renderSection(section: ContentSection, index: number) {
 }
 
 export default function BlogDetail() {
-  const { id } = useParams();
-  const post = getBlogPost(Number(id));
+  const { slug } = useParams();
+  const post = slug ? (getBlogPostBySlug(slug) ?? getBlogPost(Number(slug))) : undefined;
   const currentUrl = typeof window !== "undefined" ? window.location.href : "";
 
   if (!post) {
@@ -286,7 +286,7 @@ export default function BlogDetail() {
                 const relThumb = blogThumbnails[article.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
                 const rt = getReadTime(article.content);
                 return (
-                  <Link key={article.id} to={`/blog/${article.id}`} className="group flex flex-col gap-4 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#1877f2] hover:shadow-md transition-all duration-200 overflow-hidden">
+                  <Link key={article.id} to={`/blog/${article.slug}`} className="group flex flex-col gap-4 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#1877f2] hover:shadow-md transition-all duration-200 overflow-hidden">
                     <div className="h-[180px] overflow-hidden">
                       <div className="w-full h-full group-hover:scale-105 transition-transform duration-300">
                         <BlogThumbnail emoji={relThumb.emoji} gradient={relThumb.gradient} category={article.category} />

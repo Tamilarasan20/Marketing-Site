@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
       { path: "pricing", Component: Pricing },
       { path: "solution", Component: Solution },
       { path: "blog", Component: Blog },
-      { path: "blog/:id", Component: BlogDetail },
+      { path: "blog/:slug", Component: BlogDetail },
       { path: "tools/:slug", Component: ToolEmbed },
       { path: "about", Component: About },
       { path: "contact", Component: Contact },

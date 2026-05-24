@@ -42,7 +42,7 @@ export default function Blog() {
         {/* Featured post */}
         <div className="px-4 md:px-20 py-12 md:py-20">
           <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-10 md:gap-14 items-start md:items-center">
-            <Link to={`/blog/${featuredPost.id}`} className="h-[320px] md:h-[400px] w-full md:w-[560px] rounded-3xl overflow-hidden shrink-0 hover:scale-[1.01] transition-transform duration-300">
+            <Link to={`/blog/${featuredPost.slug}`} className="h-[320px] md:h-[400px] w-full md:w-[560px] rounded-3xl overflow-hidden shrink-0 hover:scale-[1.01] transition-transform duration-300">
               <BlogThumbnail emoji={featuredThumb.emoji} gradient={featuredThumb.gradient} category={featuredPost.category} />
             </Link>
             <div className="flex flex-col gap-5 w-full">
@@ -50,7 +50,7 @@ export default function Blog() {
                 <span className="font-['Satoshi:Bold',sans-serif] text-xs text-[#1877f2] bg-[#eff6ff] px-3 py-1 rounded-full">{featuredPost.category}</span>
                 <span className="flex items-center gap-1.5 font-['General_Sans:Medium',sans-serif] text-[#64748b] text-xs"><Clock size={12} />{featuredReadTime} min read</span>
               </div>
-              <Link to={`/blog/${featuredPost.id}`}>
+              <Link to={`/blog/${featuredPost.slug}`}>
                 <h1 className="font-['Satoshi:Bold',sans-serif] leading-[1.12] text-[#0f172a] text-4xl md:text-5xl tracking-[-1.5px] hover:text-[#1877f2] transition-colors">
                   {featuredPost.title}
                 </h1>
@@ -63,7 +63,7 @@ export default function Blog() {
                 <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
                 <span className="font-['General_Sans:Medium',sans-serif] text-[#94a3b8] text-sm">Loraloop Team</span>
               </div>
-              <Link to={`/blog/${featuredPost.id}`} className="inline-flex items-center gap-2 text-[#1877f2] font-['Satoshi:Bold',sans-serif] text-base hover:gap-3 transition-all">
+              <Link to={`/blog/${featuredPost.slug}`} className="inline-flex items-center gap-2 text-[#1877f2] font-['Satoshi:Bold',sans-serif] text-base hover:gap-3 transition-all">
                 Read article →
               </Link>
             </div>
@@ -101,7 +101,7 @@ export default function Blog() {
                 const thumb = blogThumbnails[post.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
                 const rt = getReadTime(post.content);
                 return (
-                  <Link key={post.id} to={`/blog/${post.id}`}
+                  <Link key={post.id} to={`/blog/${post.slug}`}
                     className="group flex flex-col rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#1877f2] hover:shadow-lg transition-all duration-200 overflow-hidden">
                     <div className="h-[220px] overflow-hidden">
                       <div className="w-full h-full group-hover:scale-105 transition-transform duration-300">
