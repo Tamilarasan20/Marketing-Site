@@ -4,6 +4,18 @@ import imgLogos from "../../imports/ResponsiveWebsiteDesign/c7fe7372891e9f00b719
 import imgLogos1 from "../../imports/ResponsiveWebsiteDesign/4174d16cdcac15f4497d1c39f4b1a5104b45fac1.png";
 import imgLogos2 from "../../imports/ResponsiveWebsiteDesign/62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
 
+const aiTools = [
+  { name: "Brand Voice Generator", href: "https://tools.loraloop.com/tools/brand-voice" },
+  { name: "Social Media Calendar", href: "https://tools.loraloop.com/tools/social-calendar" },
+  { name: "Content Pillar Generator", href: "https://tools.loraloop.com/tools/content-pillars" },
+  { name: "Hook Generator", href: "https://tools.loraloop.com/tools/hook-generator" },
+  { name: "Competitor Audit Tool", href: "https://tools.loraloop.com/tools/competitor-audit" },
+  { name: "Ad Copy Generator", href: "https://tools.loraloop.com/tools/ad-copy" },
+  { name: "Marketing Strategy Generator", href: "https://tools.loraloop.com/tools/marketing-strategy" },
+  { name: "Landing Page Copy Generator", href: "https://tools.loraloop.com/tools/landing-page-copy" },
+  { name: "Product Description Generator", href: "https://tools.loraloop.com/tools/product-description" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-[#e5e7eb]">
@@ -22,6 +34,21 @@ export default function Footer() {
               <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Sarah - AI Social Media Manager (Soon)</p>
               <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Elena - AI Ads Manager (Soon)</p>
               <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Nick - AI Analyst (Soon)</p>
+            </div>
+
+            <div className="flex flex-col gap-[13px] items-center md:items-start text-center md:text-left">
+              <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl">AI Tools</p>
+              {aiTools.map((tool) => (
+                <a
+                  key={tool.href}
+                  href={tool.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors"
+                >
+                  {tool.name}
+                </a>
+              ))}
             </div>
 
             <div className="flex flex-col gap-[14px] items-center md:items-start text-center md:text-left">
