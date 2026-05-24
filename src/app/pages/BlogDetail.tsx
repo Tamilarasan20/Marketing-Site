@@ -25,39 +25,57 @@ const aiTools = [
   { name: "Google AI", icon: imgLogos4 },
 ];
 
+function getSummarizeUrl(llm: string, pageUrl: string): string {
+  const prompt = encodeURIComponent(`Summarize this article for me: ${pageUrl}`);
+  const urls: Record<string, string> = {
+    "ChatGPT": `https://chatgpt.com/?q=${prompt}`,
+    "Perplexity": `https://www.perplexity.ai/search?q=${prompt}`,
+    "Claude": `https://claude.ai/new?q=${prompt}`,
+    "Grok": `https://x.com/i/grok?text=${prompt}`,
+    "Google AI": `https://gemini.google.com/app?q=${prompt}`,
+  };
+  return urls[llm] ?? `https://www.perplexity.ai/search?q=${prompt}`;
+}
+
 function renderSection(section: ContentSection, index: number) {
   switch (section.type) {
-    case 'heading':
+    case "heading":
       return (
-        <h2 key={index} className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-2xl mt-4">
+        <h2 key={index} className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-xl md:text-2xl mt-6 mb-1">
           {section.text}
         </h2>
       );
-    case 'paragraph':
+    case "subheading":
       return (
-        <p key={index} className="font-['General_Sans:Medium',sans-serif] leading-[29px] text-[#374151] text-sm">
+        <h3 key={index} className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-lg mt-4 mb-1">
+          {section.text}
+        </h3>
+      );
+    case "paragraph":
+      return (
+        <p key={index} className="font-['General_Sans:Medium',sans-serif] leading-[30px] text-[#374151] text-sm md:text-base">
           {section.text}
         </p>
       );
-    case 'list':
+    case "list":
       return (
-        <ul key={index} className="list-disc ml-5 space-y-1 font-['General_Sans:Medium',sans-serif] text-[#374151] text-sm">
+        <ul key={index} className="list-disc ml-5 space-y-1.5 font-['General_Sans:Medium',sans-serif] text-[#374151] text-sm md:text-base">
           {section.items.map((item, i) => (
-            <li key={i} className="leading-[29px]">{item}</li>
+            <li key={i} className="leading-[28px]">{item}</li>
           ))}
         </ul>
       );
-    case 'numbered-list':
+    case "numbered-list":
       return (
-        <ol key={index} className="list-decimal ml-5 space-y-1 font-['General_Sans:Medium',sans-serif] text-[#374151] text-sm">
+        <ol key={index} className="list-decimal ml-5 space-y-1.5 font-['General_Sans:Medium',sans-serif] text-[#374151] text-sm md:text-base">
           {section.items.map((item, i) => (
-            <li key={i} className="leading-[29px]">{item}</li>
+            <li key={i} className="leading-[28px]">{item}</li>
           ))}
         </ol>
       );
-    case 'cta':
+    case "cta":
       return (
-        <div key={index} className="bg-[#eef4ff] rounded-2xl p-6 border border-[#c7d7fc] mt-4">
+        <div key={index} className="bg-[#eef4ff] rounded-2xl p-5 md:p-6 border border-[#c7d7fc] mt-6">
           <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1877f2] text-base mb-4">{section.text}</p>
           <a
             href="https://loraloop.com"
@@ -77,6 +95,7 @@ function renderSection(section: ContentSection, index: number) {
 export default function BlogDetail() {
   const { id } = useParams();
   const post = getBlogPost(Number(id));
+  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
 
   if (!post) {
     return (
@@ -92,103 +111,142 @@ export default function BlogDetail() {
 
   return (
     <div className="bg-white">
-      <div className="pt-20 md:pt-32 pb-20">
-        <div className="px-4 md:px-20 py-10 md:py-20">
+      <div className="pt-20 md:pt-32 pb-36">
+
+        {/* Header */}
+        <div className="px-4 md:px-20 py-8 md:py-16">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-start">
-            <div className="flex-1 flex flex-col gap-8">
+            <div className="flex-1 flex flex-col gap-6">
               <div className="flex flex-col gap-4">
                 <div className="flex gap-2 items-center text-sm">
-                  <Link to="/blog" className="font-['Satoshi:Bold',sans-serif] leading-5 text-[#374151] hover:text-[#1877f2]">Blog</Link>
+                  <Link to="/blog" className="font-['Satoshi:Bold',sans-serif] leading-5 text-[#374151] hover:text-[#1877f2] transition-colors">Blog</Link>
                   <ChevronRight size={16} className="text-[#d1d5db]" />
                   <span className="font-['Satoshi:Bold',sans-serif] leading-5 text-[#374151]">{post.category}</span>
                 </div>
-                <h1 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] tracking-[-0.8px]">
+                <h1 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-2xl md:text-[40px] tracking-[-0.8px]">
                   {post.title}
                 </h1>
                 <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#6b7280] text-sm">{post.date}</p>
-                <div className="flex flex-col gap-4">
-                  <div className="flex flex-col gap-2">
-                    <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#6b7280] text-xs">Summarise:</p>
-                    <div className="flex flex-wrap gap-2">
-                      {aiTools.map((ai) => (
-                        <button key={ai.name} className="bg-white flex gap-3 items-center px-3 py-2 rounded-xl border border-[#e5e7eb] shadow-sm hover:bg-gray-50 transition-colors">
-                          <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
-                          <span className="font-['General_Sans:Medium',sans-serif] leading-[18px] text-[#374151] text-[13px] tracking-[0.3px]">{ai.name}</span>
-                        </button>
-                      ))}
-                    </div>
+
+                {/* Summarise row */}
+                <div className="flex flex-col gap-2">
+                  <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#6b7280] text-xs">Summarise:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {aiTools.map((ai) => (
+                      <a
+                        key={ai.name}
+                        href={getSummarizeUrl(ai.name, currentUrl)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white flex gap-2 items-center px-3 py-2 rounded-xl border border-[#e5e7eb] shadow-sm hover:bg-gray-50 hover:border-[#1877f2] transition-colors"
+                      >
+                        <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
+                        <span className="font-['General_Sans:Medium',sans-serif] leading-[18px] text-[#374151] text-[13px] tracking-[0.3px]">{ai.name}</span>
+                      </a>
+                    ))}
                   </div>
-                  <div className="flex gap-2 items-center">
-                    <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#6b7280] text-xs">Share:</p>
-                    <div className="flex gap-0">
-                      <button className="bg-white p-1 rounded-2xl hover:bg-gray-100 transition-colors"><img src={imgLogos5} alt="Share" className="w-5 h-5" /></button>
-                      <button className="bg-white p-1 rounded-2xl hover:bg-gray-100 transition-colors"><img src={imgLogos6} alt="Share" className="w-5 h-5" /></button>
-                      <button className="bg-white p-1 rounded-2xl opacity-80 hover:opacity-100 transition-opacity"><img src={imgLogos7} alt="Share" className="w-5 h-5" /></button>
-                      <button className="bg-white p-2 rounded-2xl hover:bg-gray-100 transition-colors"><LinkIcon size={16} className="text-[#6b7280]" /></button>
-                    </div>
+                </div>
+
+                {/* Share row */}
+                <div className="flex gap-2 items-center">
+                  <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#6b7280] text-xs">Share:</p>
+                  <div className="flex gap-0">
+                    <button className="bg-white p-1 rounded-2xl hover:bg-gray-100 transition-colors"><img src={imgLogos5} alt="Share" className="w-5 h-5" /></button>
+                    <button className="bg-white p-1 rounded-2xl hover:bg-gray-100 transition-colors"><img src={imgLogos6} alt="Share" className="w-5 h-5" /></button>
+                    <button className="bg-white p-1 rounded-2xl opacity-80 hover:opacity-100 transition-opacity"><img src={imgLogos7} alt="Share" className="w-5 h-5" /></button>
+                    <button
+                      className="bg-white p-2 rounded-2xl hover:bg-gray-100 transition-colors"
+                      onClick={() => navigator.clipboard?.writeText(currentUrl)}
+                      title="Copy link"
+                    >
+                      <LinkIcon size={16} className="text-[#6b7280]" />
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-[576px] h-[300px] md:h-[360px] rounded-2xl overflow-hidden shrink-0">
+
+            {/* Hero image */}
+            <div className="w-full lg:w-[520px] h-[220px] sm:h-[300px] md:h-[360px] rounded-2xl overflow-hidden shrink-0">
               <img alt="" className="w-full h-full object-cover" src={heroImage} />
             </div>
           </div>
         </div>
 
-        <div className="px-4 md:px-20 py-10">
+        {/* Content + Sidebar */}
+        <div className="px-4 md:px-20 py-8">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
-            <div className="flex-1 flex flex-col gap-4">
+
+            {/* Main content */}
+            <div className="flex-1 flex flex-col gap-3 min-w-0">
               {post.content.map((section, index) => renderSection(section, index))}
             </div>
-            <div className="w-full lg:w-[290px] flex flex-col gap-8 lg:sticky lg:top-24">
+
+            {/* Sidebar */}
+            <div className="w-full lg:w-[280px] flex flex-col gap-6 lg:sticky lg:top-24 shrink-0">
+              {/* Table of contents */}
               <div className="bg-[#eef4ff] rounded-3xl p-5">
                 <div className="flex flex-col gap-3">
-                  <h3 className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl">Table of Contents</h3>
-                  <div className="h-px bg-[#e5e7eb]" />
-                  <div className="flex flex-col gap-1">
-                    {post.tableOfContents.map((item, index) => (
-                      <button key={index} className="bg-[#eef4ff] py-2 px-0 text-left hover:bg-[#dce7ff] transition-colors rounded">
-                        <span className="font-['General_Sans:Medium',sans-serif] leading-[18px] text-[#1877f2] text-sm">{item}</span>
-                      </button>
+                  <h3 className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-lg">Table of Contents</h3>
+                  <div className="h-px bg-[#dce7ff]" />
+                  <div className="flex flex-col gap-0.5">
+                    {post.tableOfContents.map((item, i) => (
+                      <span key={i} className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#1877f2] text-sm py-1 px-1 rounded hover:bg-[#dce7ff] cursor-pointer transition-colors block">
+                        {i + 1}. {item}
+                      </span>
                     ))}
                   </div>
                 </div>
               </div>
-              <div className="h-[310px] rounded-3xl relative overflow-hidden border border-[#08f]">
+
+              {/* CTA box */}
+              <div className="h-[290px] rounded-3xl relative overflow-hidden border border-[#08f]">
                 <div className="absolute inset-0 bg-gradient-to-b from-[#0073ff] to-[#0da2ff]" />
-                <div className="absolute inset-0 opacity-40 mix-blend-plus-lighter" style={{ backgroundImage: `url('${imgCallToActionSection}')`, backgroundSize: "307.2px 307.2px", backgroundPosition: "top left" }} />
+                <div
+                  className="absolute inset-0 opacity-40 mix-blend-plus-lighter"
+                  style={{ backgroundImage: `url('${imgCallToActionSection}')`, backgroundSize: "307.2px 307.2px", backgroundPosition: "top left" }}
+                />
                 <div className="absolute inset-0 backdrop-blur-[2px]" />
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[188px] w-[206px]">
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[160px] w-[180px]">
                   <img alt="" className="w-full h-full object-cover" src={imgFeatureImageSmall} />
                 </div>
-                <div className="absolute top-[30px] left-1/2 -translate-x-1/2 flex flex-col gap-3 items-center w-[265px]">
-                  <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-xl text-center text-white">Your AI marketing team that deliver results, never sleep!</p>
-                  <button className="bg-[#0279ec] px-6 py-3 rounded-[34px] font-['Satoshi:Bold',sans-serif] text-lg text-white tracking-[-0.18px] hover:bg-[#0267ca] transition-colors">Get Start</button>
+                <div className="absolute top-6 left-1/2 -translate-x-1/2 flex flex-col gap-3 items-center w-[230px]">
+                  <p className="font-['Satoshi:Bold',sans-serif] leading-6 text-lg text-center text-white">
+                    Your AI marketing team that delivers results, never sleeps!
+                  </p>
+                  <a
+                    href="https://loraloop.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-[#0073ff] px-5 py-2.5 rounded-[34px] font-['Satoshi:Bold',sans-serif] text-sm hover:bg-gray-100 transition-colors"
+                  >
+                    Get Started
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-white px-4 md:px-20 py-10">
-          <div className="flex flex-col gap-12">
+        {/* Related articles */}
+        <div className="px-4 md:px-20 py-8">
+          <div className="flex flex-col gap-8">
             <div className="flex items-center justify-between">
-              <h2 className="font-['Satoshi:Bold',sans-serif] leading-9 text-[#1f2937] text-[28px] tracking-[-0.42px]">Related articles</h2>
-              <Link to="/blog" className="bg-[#1877f2] flex gap-2 h-12 items-center justify-center px-4 rounded-full w-[120px] hover:bg-[#1565d8] transition-colors">
-                <span className="font-['Satoshi:Bold',sans-serif] leading-6 text-base text-white">View All</span>
+              <h2 className="font-['Satoshi:Bold',sans-serif] leading-9 text-[#1f2937] text-2xl md:text-[28px] tracking-[-0.42px]">Related articles</h2>
+              <Link to="/blog" className="bg-[#1877f2] flex gap-2 h-10 items-center justify-center px-5 rounded-full hover:bg-[#1565d8] transition-colors">
+                <span className="font-['Satoshi:Bold',sans-serif] text-sm text-white">View All</span>
               </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedPosts.map((article) => (
                 <Link key={article.id} to={`/blog/${article.id}`} className="flex flex-col gap-4 rounded-2xl group">
-                  <div className="h-[200px] rounded-2xl overflow-hidden">
+                  <div className="h-[180px] rounded-2xl overflow-hidden">
                     <img alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src={blogImages[article.imageIndex] ?? imgImage} />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#1f2937] text-xs">{article.category}</p>
-                    <h3 className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl group-hover:text-[#1877f2] transition-colors">{article.title}</h3>
-                    <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#6b7280] text-sm">{article.date}</p>
+                    <p className="font-['General_Sans:Medium',sans-serif] text-[#1f2937] text-xs">{article.category}</p>
+                    <h3 className="font-['Satoshi:Bold',sans-serif] leading-6 text-[#1f2937] text-base group-hover:text-[#1877f2] transition-colors line-clamp-2">{article.title}</h3>
+                    <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">{article.date}</p>
                   </div>
                 </Link>
               ))}
@@ -196,19 +254,27 @@ export default function BlogDetail() {
           </div>
         </div>
 
-        <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 backdrop-blur-[8px] bg-[rgba(0,0,0,0.9)] rounded-[30px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] px-6 py-4">
-          <div className="flex flex-col gap-3 items-center">
-            <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#9ca3af] text-xs">Quick Summarise with</p>
-            <div className="flex flex-wrap gap-2 justify-center">
+        {/* Floating LLM summarise bar */}
+        <div className="fixed bottom-4 left-3 right-3 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-max z-50 backdrop-blur-[10px] bg-[rgba(0,0,0,0.88)] rounded-2xl md:rounded-[30px] shadow-xl px-4 md:px-6 py-3">
+          <div className="flex flex-col gap-2 items-center">
+            <p className="font-['General_Sans:Medium',sans-serif] text-[#9ca3af] text-xs">Quick Summarise with</p>
+            <div className="flex gap-2 overflow-x-auto w-full md:w-auto pb-0.5 scrollbar-hide">
               {aiTools.map((ai) => (
-                <button key={ai.name} className="bg-white flex gap-1 items-center px-3 py-2 rounded-2xl border border-[#e5e7eb] shadow-sm hover:bg-gray-100 transition-colors">
+                <a
+                  key={ai.name}
+                  href={getSummarizeUrl(ai.name, currentUrl)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white flex gap-1.5 items-center px-3 py-2 rounded-2xl border border-[#e5e7eb] shadow-sm hover:bg-gray-100 transition-colors flex-shrink-0"
+                >
                   <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
-                  <span className="font-['Satoshi:Bold',sans-serif] leading-5 text-[#1f2937] text-sm tracking-[0.21px]">{ai.name}</span>
-                </button>
+                  <span className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-sm whitespace-nowrap">{ai.name}</span>
+                </a>
               ))}
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );
