@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import CTABanner from '../components/CTABanner';
-import { useStreamGeneration } from '../hooks/useStreamGeneration';
+import CTABanner from '../../components/CTABanner';
+import { useStreamGeneration } from '../../hooks/useStreamGeneration';
 
 const faqs = [
   { q: 'What is a social media content calendar?', a: 'A content calendar is a planned schedule of what you will post, when, and on which platform. It removes the daily "what do I post?" panic and ensures you show up consistently — which is the #1 driver of organic growth.' },

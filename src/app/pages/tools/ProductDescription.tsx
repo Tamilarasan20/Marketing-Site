@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import CTABanner from '../components/CTABanner';
-import { useStreamGeneration } from '../hooks/useStreamGeneration';
+import CTABanner from '../../components/CTABanner';
+import { useStreamGeneration } from '../../hooks/useStreamGeneration';
 
 const faqs = [
   { q: 'Why do product descriptions matter?', a: "Your product description is a silent salesperson that works 24/7. Good descriptions address objections, highlight benefits, and build enough confidence for someone to click 'Buy Now'." },

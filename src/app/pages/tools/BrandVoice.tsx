@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import CTABanner from '../components/CTABanner';
-import { useStreamGeneration } from '../hooks/useStreamGeneration';
+import CTABanner from '../../components/CTABanner';
+import { useStreamGeneration } from '../../hooks/useStreamGeneration';
 
 const faqs = [
   { q: 'What is a brand voice?', a: "Brand voice is the consistent personality and tone your business uses across all content — social posts, ads, emails, website copy. It's what makes your content feel unmistakably yours, even without your logo." },
