@@ -1,5 +1,5 @@
 import svgPaths from "./svg-hjgudbia7v";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link } from "react-router";
 import appLogo from "../../assets/app_logo.png";
 import imgLora2 from "./32264b1854d55ff26d5f28cf2aff116c87c1ae73.png";
 import imgMark1 from "./b34a04b0d155ad8417b049bc9858620b387d57d6.png";
@@ -36,25 +36,22 @@ function Logo() {
 }
 
 function Frame6() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
   return (
-    <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <div 
-        onClick={() => {
-          if (location.pathname === "/") {
-            window.scrollTo(0, 0);
-            window.dispatchEvent(new CustomEvent("focus-waitlist-email"));
-          } else {
-            navigate("/", { state: { focusEmail: true } });
-          }
-        }}
-        className="bg-[#1877f2] content-stretch flex gap-[4px] h-[40px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0 cursor-pointer" 
-        data-name="Button"
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
+      <a
+        href="/app/signin"
+        className="bg-white content-stretch flex h-[40px] items-center justify-center px-[18px] relative rounded-[120px] shrink-0"
+        data-name="Signin"
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Join Waitlist</p>
-      </div>
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Signin</p>
+      </a>
+      <a
+        href="/app/signup"
+        className="bg-[#1877f2] content-stretch flex h-[40px] items-center justify-center px-[18px] relative rounded-[120px] shrink-0"
+        data-name="Get Start"
+      >
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
+      </a>
     </div>
   );
 }
@@ -454,25 +451,21 @@ function Frame7() {
 
 function Frame9() {
   return (
-    <div className="content-stretch flex gap-[12px] items-center relative shrink-0 w-full">
-      <div 
-        onClick={() => {
-          const el = document.getElementById("waitlist-form");
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-          } else {
-            window.location.href = "/#waitlist-form";
-          }
-        }}
-        className="bg-[#1877f2] flex-[1_0_0] h-[40px] min-w-px relative rounded-[120px] cursor-pointer" 
-        data-name="Button"
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
+      <a
+        href="/app/signin"
+        className="bg-white flex-1 h-[40px] flex items-center justify-center rounded-[120px]"
+        data-name="Signin"
       >
-        <div className="flex flex-row items-center justify-center size-full">
-          <div className="content-stretch flex gap-[4px] items-center justify-center px-[20px] relative size-full">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Join Waitlist</p>
-          </div>
-        </div>
-      </div>
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Signin</p>
+      </a>
+      <a
+        href="/app/signup"
+        className="bg-[#1877f2] flex-1 h-[40px] flex items-center justify-center rounded-[120px]"
+        data-name="Get Start"
+      >
+        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
+      </a>
     </div>
   );
 }
