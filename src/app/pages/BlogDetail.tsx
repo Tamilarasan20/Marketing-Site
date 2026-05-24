@@ -39,54 +39,54 @@ function renderSection(section: ContentSection, index: number) {
   switch (section.type) {
     case "heading":
       return (
-        <h2 key={index} className="font-['Satoshi:Bold',sans-serif] leading-9 text-[#1f2937] text-2xl md:text-3xl mt-10 mb-3">
+        <h2 key={index} className="font-['Satoshi:Bold',sans-serif] leading-[1.2] text-[#1f2937] text-3xl md:text-4xl mt-12 mb-4">
           {section.text}
         </h2>
       );
     case "subheading":
       return (
-        <h3 key={index} className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-xl md:text-2xl mt-6 mb-2">
+        <h3 key={index} className="font-['Satoshi:Bold',sans-serif] leading-[1.25] text-[#1f2937] text-2xl md:text-3xl mt-8 mb-3">
           {section.text}
         </h3>
       );
     case "paragraph":
       return (
-        <p key={index} className="font-['General_Sans:Medium',sans-serif] leading-[34px] text-[#374151] text-base md:text-lg">
+        <p key={index} className="font-['General_Sans:Medium',sans-serif] leading-[1.9] text-[#374151] text-lg md:text-xl">
           {section.text}
         </p>
       );
     case "callout":
       return (
-        <div key={index} className="border-l-4 border-[#1877f2] bg-[#f0f7ff] rounded-r-xl px-5 py-4 my-3">
-          <p className="font-['Satoshi:Bold',sans-serif] text-[#1565d8] text-base md:text-lg leading-[32px]">{section.text}</p>
+        <div key={index} className="border-l-4 border-[#1877f2] bg-[#f0f7ff] rounded-r-xl px-6 py-5 my-4">
+          <p className="font-['Satoshi:Bold',sans-serif] text-[#1565d8] text-lg md:text-xl leading-[1.8]">{section.text}</p>
         </div>
       );
     case "list":
       return (
-        <ul key={index} className="list-disc ml-6 space-y-2 font-['General_Sans:Medium',sans-serif] text-[#374151] text-base md:text-lg">
+        <ul key={index} className="list-disc ml-7 space-y-2.5 font-['General_Sans:Medium',sans-serif] text-[#374151] text-lg md:text-xl">
           {section.items.map((item, i) => (
-            <li key={i} className="leading-[32px]">{item}</li>
+            <li key={i} className="leading-[1.8]">{item}</li>
           ))}
         </ul>
       );
     case "numbered-list":
       return (
-        <ol key={index} className="list-decimal ml-6 space-y-2 font-['General_Sans:Medium',sans-serif] text-[#374151] text-base md:text-lg">
+        <ol key={index} className="list-decimal ml-7 space-y-2.5 font-['General_Sans:Medium',sans-serif] text-[#374151] text-lg md:text-xl">
           {section.items.map((item, i) => (
-            <li key={i} className="leading-[32px]">{item}</li>
+            <li key={i} className="leading-[1.8]">{item}</li>
           ))}
         </ol>
       );
     case "faq":
       return (
-        <div key={index} className="flex flex-col gap-3 mt-3">
+        <div key={index} className="flex flex-col gap-4 mt-4">
           {section.items.map((item, i) => (
-            <div key={i} className="border border-[#e5e7eb] rounded-xl overflow-hidden">
-              <div className="bg-[#f9fafc] px-5 py-4 border-b border-[#e5e7eb]">
-                <p className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-base md:text-lg">{item.q}</p>
+            <div key={i} className="border border-[#e5e7eb] rounded-2xl overflow-hidden">
+              <div className="bg-[#f9fafc] px-6 py-5 border-b border-[#e5e7eb]">
+                <p className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-lg md:text-xl">{item.q}</p>
               </div>
-              <div className="px-5 py-4">
-                <p className="font-['General_Sans:Medium',sans-serif] text-[#374151] text-base leading-[30px]">{item.a}</p>
+              <div className="px-6 py-5">
+                <p className="font-['General_Sans:Medium',sans-serif] text-[#374151] text-base md:text-lg leading-[1.8]">{item.a}</p>
               </div>
             </div>
           ))}
@@ -94,13 +94,13 @@ function renderSection(section: ContentSection, index: number) {
       );
     case "cta":
       return (
-        <div key={index} className="bg-[#eef4ff] rounded-2xl p-5 md:p-8 border border-[#c7d7fc] mt-8">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1877f2] text-lg mb-5">{section.text}</p>
+        <div key={index} className="bg-[#eef4ff] rounded-2xl p-6 md:p-10 border border-[#c7d7fc] mt-10">
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[1.5] text-[#1877f2] text-xl md:text-2xl mb-6">{section.text}</p>
           <a
             href="https://loraloop.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#1877f2] text-white font-['Satoshi:Bold',sans-serif] px-6 py-3 rounded-full text-base hover:bg-[#1565d8] transition-colors"
+            className="inline-block bg-[#1877f2] text-white font-['Satoshi:Bold',sans-serif] px-8 py-4 rounded-full text-base md:text-lg hover:bg-[#1565d8] transition-colors"
           >
             Try Loraloop Free →
           </a>
@@ -119,8 +119,8 @@ export default function BlogDetail() {
   if (!post) {
     return (
       <div className="bg-white pt-32 pb-20 px-4 md:px-20 text-center">
-        <h1 className="font-['Satoshi:Bold',sans-serif] text-3xl text-[#1f2937]">Blog post not found</h1>
-        <Link to="/blog" className="text-[#1877f2] hover:underline mt-4 inline-block text-lg">← Back to Blog</Link>
+        <h1 className="font-['Satoshi:Bold',sans-serif] text-4xl text-[#1f2937]">Blog post not found</h1>
+        <Link to="/blog" className="text-[#1877f2] hover:underline mt-4 inline-block text-xl">← Back to Blog</Link>
       </div>
     );
   }
@@ -134,22 +134,22 @@ export default function BlogDetail() {
 
         {/* Header */}
         <div className="px-4 md:px-20 py-8 md:py-16">
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
             <div className="flex-1 flex flex-col gap-6">
-              <div className="flex flex-col gap-4">
-                <div className="flex gap-2 items-center text-sm">
-                  <Link to="/blog" className="font-['Satoshi:Bold',sans-serif] leading-5 text-[#374151] hover:text-[#1877f2] transition-colors">Blog</Link>
-                  <ChevronRight size={16} className="text-[#d1d5db]" />
-                  <span className="font-['Satoshi:Bold',sans-serif] leading-5 text-[#374151]">{post.category}</span>
+              <div className="flex flex-col gap-5">
+                <div className="flex gap-2 items-center">
+                  <Link to="/blog" className="font-['Satoshi:Bold',sans-serif] text-sm text-[#374151] hover:text-[#1877f2] transition-colors">Blog</Link>
+                  <ChevronRight size={14} className="text-[#d1d5db]" />
+                  <span className="font-['Satoshi:Bold',sans-serif] text-sm text-[#374151]">{post.category}</span>
                 </div>
-                <h1 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[56px] text-[#1f2937] text-3xl md:text-[44px] tracking-[-0.8px]">
+                <h1 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[1.15] text-[#1f2937] text-4xl md:text-5xl tracking-[-1px]">
                   {post.title}
                 </h1>
-                <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#6b7280] text-base">{post.date}</p>
+                <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-base md:text-lg">{post.date}</p>
 
                 {/* Summarise row */}
                 <div className="flex flex-col gap-2">
-                  <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#6b7280] text-sm">Summarise:</p>
+                  <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">Summarise:</p>
                   <div className="flex flex-wrap gap-2">
                     {aiTools.map((ai) => (
                       <a
@@ -160,7 +160,7 @@ export default function BlogDetail() {
                         className="bg-white flex gap-2 items-center px-3 py-2 rounded-xl border border-[#e5e7eb] shadow-sm hover:bg-gray-50 hover:border-[#1877f2] transition-colors"
                       >
                         <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
-                        <span className="font-['General_Sans:Medium',sans-serif] leading-[18px] text-[#374151] text-sm tracking-[0.3px]">{ai.name}</span>
+                        <span className="font-['General_Sans:Medium',sans-serif] text-[#374151] text-sm">{ai.name}</span>
                       </a>
                     ))}
                   </div>
@@ -168,7 +168,7 @@ export default function BlogDetail() {
 
                 {/* Share row */}
                 <div className="flex gap-2 items-center">
-                  <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#6b7280] text-xs">Share:</p>
+                  <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-xs">Share:</p>
                   <div className="flex gap-0">
                     <button className="bg-white p-1 rounded-2xl hover:bg-gray-100 transition-colors"><img src={imgLogos5} alt="Share" className="w-5 h-5" /></button>
                     <button className="bg-white p-1 rounded-2xl hover:bg-gray-100 transition-colors"><img src={imgLogos6} alt="Share" className="w-5 h-5" /></button>
@@ -186,7 +186,7 @@ export default function BlogDetail() {
             </div>
 
             {/* Hero thumbnail */}
-            <div className="w-full lg:w-[520px] h-[220px] sm:h-[300px] md:h-[380px] rounded-2xl overflow-hidden shrink-0">
+            <div className="w-full lg:w-[500px] h-[240px] sm:h-[320px] md:h-[400px] rounded-2xl overflow-hidden shrink-0">
               <BlogThumbnail
                 emoji={thumb.emoji}
                 gradient={thumb.gradient}
@@ -198,18 +198,18 @@ export default function BlogDetail() {
 
         {/* Content + Sidebar */}
         <div className="px-4 md:px-20 py-8">
-          <div className="flex flex-col lg:flex-row gap-10 items-start">
-            <div className="flex-1 flex flex-col gap-4 min-w-0">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            <div className="flex-1 flex flex-col gap-5 min-w-0">
               {post.content.map((section, index) => renderSection(section, index))}
             </div>
-            <div className="w-full lg:w-[290px] flex flex-col gap-6 lg:sticky lg:top-24 shrink-0">
-              <div className="bg-[#eef4ff] rounded-3xl p-5">
+            <div className="w-full lg:w-[300px] flex flex-col gap-6 lg:sticky lg:top-24 shrink-0">
+              <div className="bg-[#eef4ff] rounded-3xl p-6">
                 <div className="flex flex-col gap-3">
-                  <h3 className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-lg">Table of Contents</h3>
+                  <h3 className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-xl">Table of Contents</h3>
                   <div className="h-px bg-[#dce7ff]" />
                   <div className="flex flex-col gap-0.5">
                     {post.tableOfContents.map((item, i) => (
-                      <span key={i} className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#1877f2] text-sm py-1 px-1 rounded hover:bg-[#dce7ff] cursor-pointer transition-colors block">
+                      <span key={i} className="font-['General_Sans:Medium',sans-serif] text-[#1877f2] text-sm leading-[1.6] py-1 px-1 rounded hover:bg-[#dce7ff] cursor-pointer transition-colors block">
                         {i + 1}. {item}
                       </span>
                     ))}
@@ -233,10 +233,10 @@ export default function BlogDetail() {
         </div>
 
         {/* Related articles */}
-        <div className="px-4 md:px-20 py-8">
+        <div className="px-4 md:px-20 py-10">
           <div className="flex flex-col gap-8">
             <div className="flex items-center justify-between">
-              <h2 className="font-['Satoshi:Bold',sans-serif] leading-9 text-[#1f2937] text-2xl md:text-[28px] tracking-[-0.42px]">Related articles</h2>
+              <h2 className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-2xl md:text-3xl">Related articles</h2>
               <Link to="/blog" className="bg-[#1877f2] flex gap-2 h-10 items-center justify-center px-5 rounded-full hover:bg-[#1565d8] transition-colors">
                 <span className="font-['Satoshi:Bold',sans-serif] text-sm text-white">View All</span>
               </Link>
@@ -246,14 +246,14 @@ export default function BlogDetail() {
                 const relThumb = blogThumbnails[article.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
                 return (
                   <Link key={article.id} to={`/blog/${article.id}`} className="flex flex-col gap-4 rounded-2xl group">
-                    <div className="h-[180px] rounded-2xl overflow-hidden">
+                    <div className="h-[200px] rounded-2xl overflow-hidden">
                       <div className="w-full h-full group-hover:scale-105 transition-transform duration-300">
                         <BlogThumbnail emoji={relThumb.emoji} gradient={relThumb.gradient} category={article.category} />
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
                       <p className="font-['General_Sans:Medium',sans-serif] text-[#1f2937] text-sm">{article.category}</p>
-                      <h3 className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-lg md:text-xl group-hover:text-[#1877f2] transition-colors line-clamp-2">{article.title}</h3>
+                      <h3 className="font-['Satoshi:Bold',sans-serif] leading-[1.4] text-[#1f2937] text-xl md:text-2xl group-hover:text-[#1877f2] transition-colors line-clamp-2">{article.title}</h3>
                       <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">{article.date}</p>
                     </div>
                   </Link>

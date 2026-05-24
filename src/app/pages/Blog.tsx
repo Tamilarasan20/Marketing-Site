@@ -23,9 +23,10 @@ export default function Blog() {
   return (
     <div className="bg-white">
       <div className="pt-20 md:pt-32 pb-10">
+        {/* Featured post */}
         <div className="px-4 md:px-20 py-10 md:py-20">
-          <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start md:items-center">
-            <Link to={`/blog/${featuredPost.id}`} className="h-[300px] md:h-[380px] w-full md:w-[576px] rounded-2xl overflow-hidden shrink-0 hover:scale-[1.02] transition-transform duration-300">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start md:items-center">
+            <Link to={`/blog/${featuredPost.id}`} className="h-[320px] md:h-[400px] w-full md:w-[576px] rounded-2xl overflow-hidden shrink-0 hover:scale-[1.02] transition-transform duration-300">
               <BlogThumbnail
                 emoji={featuredThumb.emoji}
                 gradient={featuredThumb.gradient}
@@ -33,20 +34,21 @@ export default function Blog() {
               />
             </Link>
             <div className="flex flex-col gap-5 w-full md:w-[530px]">
-              <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#1f2937] text-base">{featuredPost.category}</p>
+              <p className="font-['General_Sans:Medium',sans-serif] text-[#1f2937] text-base">{featuredPost.category}</p>
               <Link to={`/blog/${featuredPost.id}`}>
-                <h1 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[60px] text-[#1f2937] text-3xl md:text-5xl tracking-[-1.2px] hover:text-[#1877f2] transition-colors">
+                <h1 className="font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[1.15] text-[#1f2937] text-4xl md:text-5xl tracking-[-1.2px] hover:text-[#1877f2] transition-colors">
                   {featuredPost.title}
                 </h1>
               </Link>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[26px] text-[#374151] text-base md:text-lg">
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[1.8] text-[#374151] text-lg md:text-xl">
                 {featuredPost.description}
               </p>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#6b7280] text-base">{featuredPost.date}</p>
+              <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-base">{featuredPost.date}</p>
             </div>
           </div>
         </div>
 
+        {/* Grid */}
         <div className="bg-[#f9fafc] px-4 md:px-20 py-10">
           <div className="flex flex-col gap-12">
             <div className="flex flex-col md:flex-row gap-4 md:gap-0 items-start md:items-center justify-between">
@@ -55,7 +57,7 @@ export default function Blog() {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`px-5 py-3 rounded-full font-['Satoshi:Bold',sans-serif] leading-5 text-sm transition-colors ${
+                    className={`px-5 py-3 rounded-full font-['Satoshi:Bold',sans-serif] text-sm transition-colors ${
                       selectedCategory === category
                         ? "bg-[#eef4ff] text-[#1877f2]"
                         : "bg-white text-[#374151] hover:bg-gray-100"
@@ -71,35 +73,33 @@ export default function Blog() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search blog posts"
-                  className="flex-1 h-10 px-4 py-3 rounded-full border border-[#e5e7eb] bg-white font-['General_Sans:Medium',sans-serif] leading-[18px] text-[#9ca3af] text-sm focus:outline-none focus:border-[#1877f2]"
+                  className="flex-1 h-10 px-4 py-3 rounded-full border border-[#e5e7eb] bg-white font-['General_Sans:Medium',sans-serif] text-[#9ca3af] text-sm focus:outline-none focus:border-[#1877f2]"
                 />
-                <button className="h-10 px-5 rounded-full border border-[#e5e7eb] bg-white font-['Satoshi:Bold',sans-serif] leading-5 text-[#111827] text-sm hover:bg-gray-100 transition-colors">
+                <button className="h-10 px-5 rounded-full border border-[#e5e7eb] bg-white font-['Satoshi:Bold',sans-serif] text-[#111827] text-sm hover:bg-gray-100 transition-colors">
                   Search
                 </button>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {filteredPosts.map((post) => {
                 const thumb = blogThumbnails[post.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
                 return (
                   <Link key={post.id} to={`/blog/${post.id}`} className="flex flex-col gap-4 rounded-2xl group">
-                    <div className="h-[220px] rounded-2xl overflow-hidden">
+                    <div className="h-[230px] rounded-2xl overflow-hidden">
                       <div className="w-full h-full group-hover:scale-105 transition-transform duration-300">
                         <BlogThumbnail emoji={thumb.emoji} gradient={thumb.gradient} category={post.category} />
                       </div>
                     </div>
                     <div className="flex flex-col gap-3">
-                      <p className="font-['General_Sans:Medium',sans-serif] leading-4 text-[#1f2937] text-sm">{post.category}</p>
-                      <div className="flex flex-col gap-2">
-                        <h3 className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-xl md:text-2xl group-hover:text-[#1877f2] transition-colors">
-                          {post.title}
-                        </h3>
-                        <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#6b7280] text-base line-clamp-3">
-                          {post.description}
-                        </p>
-                      </div>
-                      <p className="font-['General_Sans:Medium',sans-serif] leading-5 text-[#6b7280] text-sm">{post.date}</p>
+                      <p className="font-['General_Sans:Medium',sans-serif] text-[#1f2937] text-sm">{post.category}</p>
+                      <h3 className="font-['Satoshi:Bold',sans-serif] leading-[1.35] text-[#1f2937] text-2xl group-hover:text-[#1877f2] transition-colors">
+                        {post.title}
+                      </h3>
+                      <p className="font-['General_Sans:Medium',sans-serif] leading-[1.7] text-[#6b7280] text-base md:text-lg line-clamp-3">
+                        {post.description}
+                      </p>
+                      <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">{post.date}</p>
                     </div>
                   </Link>
                 );
@@ -109,7 +109,7 @@ export default function Blog() {
             <div className="flex flex-wrap gap-4 items-center justify-center">
               <button
                 onClick={() => setCurrentPage(1)}
-                className={`h-12 px-5 rounded-full font-['Satoshi:Bold',sans-serif] leading-6 text-base transition-colors ${
+                className={`h-12 px-5 rounded-full font-['Satoshi:Bold',sans-serif] text-base transition-colors ${
                   currentPage === 1
                     ? "bg-[#1877f2] text-white"
                     : "bg-white text-[#111827] border border-[#e5e7eb] hover:bg-gray-100"
