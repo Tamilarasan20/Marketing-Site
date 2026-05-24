@@ -41,13 +41,13 @@ function renderSection(section: ContentSection, index: number) {
   switch (section.type) {
     case "heading":
       return (
-        <h2 key={index} className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-xl md:text-2xl mt-6 mb-1">
+        <h2 key={index} className="font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-xl md:text-2xl mt-8 mb-2">
           {section.text}
         </h2>
       );
     case "subheading":
       return (
-        <h3 key={index} className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-lg mt-4 mb-1">
+        <h3 key={index} className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-lg mt-5 mb-1">
           {section.text}
         </h3>
       );
@@ -56,6 +56,12 @@ function renderSection(section: ContentSection, index: number) {
         <p key={index} className="font-['General_Sans:Medium',sans-serif] leading-[30px] text-[#374151] text-sm md:text-base">
           {section.text}
         </p>
+      );
+    case "callout":
+      return (
+        <div key={index} className="border-l-4 border-[#1877f2] bg-[#f0f7ff] rounded-r-xl px-5 py-4 my-2">
+          <p className="font-['Satoshi:Bold',sans-serif] text-[#1565d8] text-sm md:text-base leading-[28px]">{section.text}</p>
+        </div>
       );
     case "list":
       return (
@@ -72,6 +78,21 @@ function renderSection(section: ContentSection, index: number) {
             <li key={i} className="leading-[28px]">{item}</li>
           ))}
         </ol>
+      );
+    case "faq":
+      return (
+        <div key={index} className="flex flex-col gap-3 mt-2">
+          {section.items.map((item, i) => (
+            <div key={i} className="border border-[#e5e7eb] rounded-xl overflow-hidden">
+              <div className="bg-[#f9fafc] px-5 py-3 border-b border-[#e5e7eb]">
+                <p className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-sm md:text-base">{item.q}</p>
+              </div>
+              <div className="px-5 py-3">
+                <p className="font-['General_Sans:Medium',sans-serif] text-[#374151] text-sm leading-[26px]">{item.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       );
     case "cta":
       return (
@@ -235,7 +256,7 @@ export default function BlogDetail() {
           </div>
         </div>
 
-        {/* Floating LLM summarise bar — horizontal scrollable */}
+        {/* Floating LLM summarise bar */}
         <div className="fixed bottom-4 left-3 right-3 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-max z-50 backdrop-blur-[10px] bg-[rgba(0,0,0,0.88)] rounded-2xl md:rounded-[30px] shadow-xl px-4 py-3">
           <div className="flex flex-row items-center gap-3 overflow-x-auto">
             <p className="font-['General_Sans:Medium',sans-serif] text-[#9ca3af] text-xs whitespace-nowrap flex-shrink-0">Quick Summarise with</p>
