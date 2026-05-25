@@ -662,15 +662,174 @@ writePage('/blog', buildPage({
 </main>`,
 }));
 
-// ── 5. Sitemap ─────────────────────────────────────────────────────────────────
+// ── 5. Audience landing pages ─────────────────────────────────────────────────
+
+const audiencePages = [
+  {
+    path: '/for-founders',
+    title: 'Loraloop for Founders — Your AI Marketing Team When You Have No Time',
+    description: 'Loraloop gives founders an AI marketing team that plans campaigns, writes content, optimizes for SEO and AI search, and runs approvals — so you can focus on building the business.',
+    h1: 'Your AI Marketing Team When You Have No Time to Market',
+    intro: 'Loraloop is an autonomous AI marketing platform built for founders and indie hackers who need consistent marketing without the time, team, or expertise to do it manually. It builds your brand strategy, creates social content, writes SEO blog articles, generates GEO content for AI search, drafts ad copy and emails, and presents everything for your approval before publishing.',
+    features: [
+      'Brand knowledge base — stores your voice, audience, and positioning permanently',
+      'Monthly campaign plans tied to your revenue goals',
+      'Social content for LinkedIn, Instagram, X, Facebook, and TikTok',
+      'SEO blog articles targeting your keywords for Google ranking',
+      'GEO content structured for Perplexity, ChatGPT, and Google AI Overviews',
+      'Ad copy for Facebook, Instagram, Google, and TikTok',
+      'Email sequences and newsletters in your brand voice',
+      'Approval workflow — you review all content before it publishes',
+      'Performance reporting with monthly recommendations',
+    ],
+  },
+  {
+    path: '/for-agencies',
+    title: 'Loraloop for Agencies — Scale Client Marketing Without Hiring More People',
+    description: 'Loraloop lets marketing agencies manage multiple client brands, run approval workflows, generate content at scale, and deliver reports — without growing headcount.',
+    h1: 'Scale Client Marketing Output Without Hiring More People',
+    intro: 'Loraloop is an AI marketing platform built for multi-client operations. Each client brand gets its own workspace with a persistent knowledge base, content calendar, approval queue, and performance reporting. Agencies use Loraloop to produce more work for more clients without proportional team growth.',
+    features: [
+      'Multi-brand workspace — separate knowledge base, queue, and calendar per client',
+      'Client approval workflow — clients review their own content before publishing',
+      'Brand voice isolation — each client\'s output sounds like them, not like your other clients',
+      'Full content generation: social posts, SEO blogs, GEO content, ad copy, email',
+      'Monthly performance reports per client without manual data work',
+      'Team access and permission management',
+      'Agency plan with higher credit limits for multi-brand volume',
+    ],
+  },
+  {
+    path: '/for-freelancers',
+    title: 'Loraloop for Freelancers — Handle More Clients Without Burning Out',
+    description: 'Loraloop helps marketing freelancers take on more client accounts by handling content generation, scheduling, and reporting — cutting production time from 20 hours to 6-8 hours per client.',
+    h1: 'Handle More Clients Without Burning Out',
+    intro: 'Loraloop is an AI marketing platform for marketing freelancers who manage multiple client brands. Each client has a separate brand workspace. Loraloop generates content drafts from each client\'s knowledge base — social posts, SEO articles, ad copy, and reports. Freelancers review, refine, and approve rather than writing everything from scratch.',
+    features: [
+      'Separate brand workspace per client with isolated knowledge base',
+      'Full content generation per client — social, SEO, GEO, ad copy, email',
+      'Client approval workflow — clients review drafts before publishing',
+      'Monthly performance reports per client, client-ready format',
+      'Scales from 3 to 8 clients without proportional time increase',
+      'SEO blog and GEO content delivery — add higher-value services without specialist expertise',
+    ],
+  },
+  {
+    path: '/for-ecommerce',
+    title: 'Loraloop for eCommerce — Product Marketing Automation for Online Brands',
+    description: 'Loraloop creates product posts, seasonal campaigns, SEO category content, ad copy, and emails for eCommerce brands — from your brand and product knowledge base, every week.',
+    h1: 'Plan, Create, and Schedule Product Marketing That Sells',
+    intro: 'Loraloop is an AI marketing platform for eCommerce brands that need a consistent content operation across social media, SEO, email, and paid advertising. It builds a brand knowledge base from your products, audience, and seasonal calendar — then generates the full content mix your eCommerce brand needs each month.',
+    features: [
+      'Product-first content creation — posts built around your actual products',
+      'Seasonal campaign planning — Black Friday, holiday promotions, launches planned in advance',
+      'SEO blog articles targeting product category keywords and buying guides',
+      'GEO content for AI search citation — Perplexity, ChatGPT, Google AI Overviews',
+      'Ad copy for Facebook, Instagram, Google, and TikTok product campaigns',
+      'Email campaigns — launches, promotional offers, newsletters',
+      'Competitor tracking and market intelligence',
+      'Approval workflow — all content reviewed before publishing',
+    ],
+  },
+  {
+    path: '/for-creators',
+    title: 'Loraloop for Creators — Consistent Content Across Platforms Without Burning Out',
+    description: 'Loraloop helps creators turn ideas into consistent cross-platform content — with content pillar strategy, repurposing across Instagram, LinkedIn, TikTok, and X, and scheduling.',
+    h1: 'Turn Your Ideas Into Consistent Content Across Platforms',
+    intro: 'Loraloop is an AI marketing platform for creators and personal brand builders who want to grow consistently without spending all week on production. It builds your content pillar strategy, repurposes ideas across platforms, generates captions and hooks in your voice, and handles scheduling.',
+    features: [
+      'Content pillar strategy — 5 consistent themes that anchor your niche',
+      'Idea-to-platform repurposing — one idea becomes posts for Instagram, LinkedIn, TikTok, and X',
+      'Monthly content calendar with specific post ideas and hooks',
+      'Caption and hook generation in your brand voice',
+      'Bio and profile optimization for platform discoverability',
+      'Approval workflow — review before anything publishes',
+      'Performance tracking — see which formats grow your audience fastest',
+    ],
+  },
+];
+
+for (const page of audiencePages) {
+  writePage(page.path, buildPage({
+    path: page.path,
+    title: page.title,
+    description: page.description,
+    bodyHtml: `<main>
+  <h1>${esc(page.h1)}</h1>
+  <p>${esc(page.intro)}</p>
+  <section>
+    <h2>What Loraloop Delivers</h2>
+    <ul>
+      ${page.features.map(f => `<li>${esc(f)}</li>`).join('\n      ')}
+    </ul>
+  </section>
+  <section>
+    <p><a href="${SITE}/app/signup">Try Loraloop Free →</a></p>
+  </section>
+</main>`,
+  }));
+}
+
+// TOOLS — free tool landing pages
+const toolPages = [
+  {
+    path: '/tools/bio-generator',
+    title: 'Free AI Bio Generator — Platform-Optimised Bios in 60 Seconds',
+    description: 'Generate compelling Instagram, LinkedIn, TikTok, and X bios in your brand voice — free, no login required. Create 4 bio options with hashtag suggestions and CTA ideas instantly.',
+    h1: 'Free AI Bio Generator',
+    intro: 'Generate platform-optimised social media bios for Instagram, LinkedIn, TikTok, and X in under 60 seconds. Get 4 bio variations — direct, personality-forward, keyword-rich, and ultra-short — with hashtag suggestions and CTA ideas.',
+  },
+  {
+    path: '/tools/blog-title-generator',
+    title: 'Free AI Blog Title Generator — 10 SEO-Optimised Titles in 60 Seconds',
+    description: 'Generate 10 SEO-optimised blog title options — keyword-targeted, click-worthy, and matched to search intent. Free, no login required.',
+    h1: 'Free AI Blog Title Generator',
+    intro: 'Generate 10 SEO-optimised blog title options in under 60 seconds. Titles are keyword-targeted, matched to your search intent (list, how-to, comparison, guide), and include a top 3 recommendation with H1 variations.',
+  },
+  {
+    path: '/tools/instagram-caption',
+    title: 'Free AI Instagram Caption Generator — 5 Ready-to-Post Captions',
+    description: 'Generate 5 ready-to-post Instagram captions with hooks, hashtags, and CTAs — matched to your brand and post type in under 60 seconds. Free, no login required.',
+    h1: 'Free AI Instagram Caption Generator',
+    intro: 'Generate 5 Instagram captions in under 60 seconds — story-led, educational, punchy, question-led, and hook-led styles — each with relevant hashtags and a CTA. Includes a hashtag bank and CTA variation bank.',
+  },
+];
+
+for (const tool of toolPages) {
+  writePage(tool.path, buildPage({
+    path: tool.path,
+    title: tool.title,
+    description: tool.description,
+    bodyHtml: `<main>
+  <h1>${esc(tool.h1)}</h1>
+  <p>${esc(tool.intro)}</p>
+  <p>This tool is free and requires no login. Results are generated instantly using AI.</p>
+  <p><a href="${SITE}${tool.path}">Use the ${esc(tool.h1)} →</a></p>
+  <section>
+    <h2>Want to automate this every month?</h2>
+    <p>Loraloop generates all your marketing content automatically — social posts, blog articles, ad copy, and emails — from your brand knowledge base. Review, approve, and publish. <a href="${SITE}/app/signup">Try Loraloop free →</a></p>
+  </section>
+</main>`,
+  }));
+}
+
+// ── 6. Sitemap ─────────────────────────────────────────────────────────────────
 const today = new Date().toISOString().split('T')[0];
 const staticPages = [
-  { path: '',          priority: '1.0', freq: 'weekly' },
-  { path: 'pricing',   priority: '0.9', freq: 'monthly' },
-  { path: 'solution',  priority: '0.9', freq: 'monthly' },
-  { path: 'blog',      priority: '0.8', freq: 'daily' },
-  { path: 'about',     priority: '0.7', freq: 'monthly' },
-  { path: 'contact',   priority: '0.6', freq: 'monthly' },
+  { path: '',               priority: '1.0', freq: 'weekly' },
+  { path: 'pricing',        priority: '0.9', freq: 'monthly' },
+  { path: 'solution',       priority: '0.9', freq: 'monthly' },
+  { path: 'blog',           priority: '0.8', freq: 'daily' },
+  { path: 'about',          priority: '0.7', freq: 'monthly' },
+  { path: 'contact',        priority: '0.6', freq: 'monthly' },
+  { path: 'for-founders',   priority: '0.9', freq: 'monthly' },
+  { path: 'for-agencies',   priority: '0.9', freq: 'monthly' },
+  { path: 'for-freelancers',priority: '0.9', freq: 'monthly' },
+  { path: 'for-ecommerce',  priority: '0.9', freq: 'monthly' },
+  { path: 'for-creators',   priority: '0.9', freq: 'monthly' },
+  { path: 'tools/bio-generator',       priority: '0.8', freq: 'monthly' },
+  { path: 'tools/blog-title-generator',priority: '0.8', freq: 'monthly' },
+  { path: 'tools/instagram-caption',   priority: '0.8', freq: 'monthly' },
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -699,7 +858,7 @@ ${blogPosts.map(p => {
 writeFileSync(join(distDir, 'sitemap.xml'), sitemap, 'utf8');
 console.log('  ✓ sitemap.xml');
 
-// ── 6. robots.txt ──────────────────────────────────────────────────────────────
+// ── 7. robots.txt ──────────────────────────────────────────────────────────────
 const robotsTxt = `User-agent: *
 Allow: /
 Disallow: /app/
@@ -730,7 +889,7 @@ Sitemap: ${SITE}/llms.txt
 writeFileSync(join(distDir, 'robots.txt'), robotsTxt, 'utf8');
 console.log('  ✓ robots.txt');
 
-// ── 7. llms.txt — comprehensive AI-readable site summary (GEO-optimized) ──────
+// ── 8. llms.txt — comprehensive AI-readable site summary (GEO-optimized) ──────
 const llmsTxt = `# Loraloop — AI Marketing Team for Founders and Small Businesses
 > ${SITE}
 > Last updated: ${today}

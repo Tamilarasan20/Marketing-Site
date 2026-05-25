@@ -9,6 +9,9 @@ import MarketingStrategy from './tools/MarketingStrategy';
 import LandingPageCopy from './tools/LandingPageCopy';
 import ProductDescription from './tools/ProductDescription';
 import CompetitorAudit from './tools/CompetitorAudit';
+import BioGenerator from './tools/BioGenerator';
+import BlogTitleGenerator from './tools/BlogTitleGenerator';
+import InstagramCaption from './tools/InstagramCaption';
 
 const toolComponents: Record<string, ComponentType> = {
   'brand-voice': BrandVoice,
@@ -20,6 +23,9 @@ const toolComponents: Record<string, ComponentType> = {
   'landing-page-copy': LandingPageCopy,
   'product-description': ProductDescription,
   'competitor-audit': CompetitorAudit,
+  'bio-generator': BioGenerator,
+  'blog-title-generator': BlogTitleGenerator,
+  'instagram-caption': InstagramCaption,
 };
 
 export default function ToolEmbed() {

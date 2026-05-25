@@ -8,6 +8,14 @@ import imgClara from "../../imports/Home-1/a6c396695db2f4867d2b2cf94c4c4013fb4aa
 import imgSteve from "../../imports/Home-1/81459e21086bbb45f043de724414eb6c6a228454.png";
 import imgSarah from "../../imports/Home-1/2ede8e04425e852843b64720e2e6023d1ed754cb.png";
 
+const solutionLinks = [
+  { label: "For Founders", desc: "AI marketing when you have no time", to: "/for-founders", icon: "🚀" },
+  { label: "For Agencies", desc: "Scale client output without hiring", to: "/for-agencies", icon: "🏢" },
+  { label: "For Freelancers", desc: "Handle more clients, work less", to: "/for-freelancers", icon: "⚡" },
+  { label: "For eCommerce", desc: "Product marketing on autopilot", to: "/for-ecommerce", icon: "🛍️" },
+  { label: "For Creators", desc: "Consistent content across platforms", to: "/for-creators", icon: "🎨" },
+];
+
 const navTextStyle: React.CSSProperties = {
   fontFamily: "Satoshi, sans-serif",
   fontWeight: 700,
@@ -72,25 +80,28 @@ const aiAgents = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const pillRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   // Close on navigation
   useEffect(() => {
     setOpen(false);
+    setSolutionsOpen(false);
   }, [location]);
 
   // Close on outside click
   useEffect(() => {
-    if (!open) return;
+    if (!open && !solutionsOpen) return;
     const handler = (e: MouseEvent) => {
       if (pillRef.current && !pillRef.current.contains(e.target as Node)) {
         setOpen(false);
+        setSolutionsOpen(false);
       }
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
-  }, [open]);
+  }, [open, solutionsOpen]);
 
   const activeAgents = aiAgents.filter((a) => !a.isSoon);
   const soonAgents = aiAgents.filter((a) => a.isSoon);
@@ -148,12 +159,35 @@ export default function Header() {
             </div>
           </button>
 
+          {/* Solutions dropdown */}
+          <button
+            type="button"
+            onClick={() => { setSolutionsOpen((v) => !v); setOpen(false); }}
+            style={{ background: "none", border: "none", outline: "none", cursor: "pointer", padding: 0 }}
+            className="flex gap-[2px] items-center justify-center px-[12px] py-[8px]"
+          >
+            <span style={navTextStyle}>Solutions</span>
+            <div className="w-4 h-4 flex items-center justify-center ml-[4px]">
+              <svg
+                className="w-full h-full"
+                fill="none"
+                viewBox="0 0 9.33333 5.33333"
+                style={{
+                  transform: solutionsOpen ? "rotate(180deg)" : "rotate(0deg)",
+                  transition: "transform 0.2s ease",
+                }}
+              >
+                <path clipRule="evenodd" d={svgPaths.p23cd8f00} fill="#40566D" fillRule="evenodd" />
+              </svg>
+            </div>
+          </button>
+
           <Link to="/solution" className="flex items-center justify-center px-[12px] py-[8px]">
-            <span style={navTextStyle}>Solution</span>
+            <span style={navTextStyle}>Platform</span>
           </Link>
-          <div className="flex items-center justify-center px-[12px] py-[8px]">
-            <span style={soonTextStyle}>Blogs (Soon)</span>
-          </div>
+          <Link to="/blog" className="flex items-center justify-center px-[12px] py-[8px]">
+            <span style={navTextStyle}>Blog</span>
+          </Link>
           <Link to="/pricing" className="flex items-center justify-center px-[12px] py-[8px]">
             <span style={navTextStyle}>Pricing</span>
           </Link>
@@ -197,7 +231,49 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Dropdown panel — anchored to pill bottom edge */}
+        {/* Solutions dropdown */}
+        {solutionsOpen && (
+          <div
+            style={{
+              position: "absolute",
+              top: "calc(100% + 12px)",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: 480,
+              background: "white",
+              borderRadius: 24,
+              border: "1px solid #e5e7eb",
+              boxShadow: "0px 12px 32px rgba(0,0,0,0.12)",
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 6,
+              boxSizing: "border-box",
+              zIndex: 200,
+            }}
+          >
+            <p style={{ fontFamily: "Satoshi, sans-serif", fontWeight: 700, fontSize: 11, color: "#9ca3af", textTransform: "uppercase", letterSpacing: "0.08em", margin: "0 0 8px 8px" }}>Who is Loraloop for?</p>
+            {solutionLinks.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="flex items-center gap-3 rounded-[12px] px-3 py-3 no-underline"
+                style={{ backgroundColor: "transparent", transition: "background-color 0.15s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f9fafc")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+                onClick={() => setSolutionsOpen(false)}
+              >
+                <span style={{ fontSize: 20, width: 32, textAlign: "center", flexShrink: 0 }}>{item.icon}</span>
+                <div>
+                  <p style={{ fontFamily: "Satoshi, sans-serif", fontWeight: 700, fontSize: 14, color: "#1f2937", margin: 0 }}>{item.label}</p>
+                  <p style={{ fontFamily: "General Sans, sans-serif", fontWeight: 500, fontSize: 12, color: "#6b7280", margin: 0 }}>{item.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {/* AI Employees dropdown panel — anchored to pill bottom edge */}
         {open && (
           <div
             style={{

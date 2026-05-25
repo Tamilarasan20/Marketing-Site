@@ -3,16 +3,24 @@ import imgLogos from "../../imports/ResponsiveWebsiteDesign/c7fe7372891e9f00b719
 import imgLogos1 from "../../imports/ResponsiveWebsiteDesign/4174d16cdcac15f4497d1c39f4b1a5104b45fac1.png";
 import imgLogos2 from "../../imports/ResponsiveWebsiteDesign/62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
 
+const audienceLinks = [
+  { name: "For Founders", to: "/for-founders" },
+  { name: "For Marketing Agencies", to: "/for-agencies" },
+  { name: "For Freelancers", to: "/for-freelancers" },
+  { name: "For eCommerce Brands", to: "/for-ecommerce" },
+  { name: "For Creators", to: "/for-creators" },
+];
+
 const aiTools = [
   { name: "Brand Voice Generator", to: "/tools/brand-voice" },
   { name: "Social Media Calendar", to: "/tools/social-calendar" },
-  { name: "Content Pillar Generator", to: "/tools/content-pillars" },
+  { name: "Instagram Caption Generator", to: "/tools/instagram-caption" },
   { name: "Hook Generator", to: "/tools/hook-generator" },
-  { name: "Competitor Audit Tool", to: "/tools/competitor-audit" },
+  { name: "Bio Generator", to: "/tools/bio-generator" },
+  { name: "Blog Title Generator", to: "/tools/blog-title-generator" },
   { name: "Ad Copy Generator", to: "/tools/ad-copy" },
+  { name: "Competitor Audit Tool", to: "/tools/competitor-audit" },
   { name: "Marketing Strategy Generator", to: "/tools/marketing-strategy" },
-  { name: "Landing Page Copy Generator", to: "/tools/landing-page-copy" },
-  { name: "Product Description Generator", to: "/tools/product-description" },
 ];
 
 const blogLinks = [
@@ -28,7 +36,20 @@ export default function Footer() {
     <footer className="bg-white border-t border-[#e5e7eb]">
       <div className="max-w-[1280px] px-4 mx-auto md:px-20 py-10 md:py-20">
         <div className="flex flex-col gap-12">
-          <div className="flex flex-col md:flex-row justify-between gap-10">
+          <div className="flex flex-col md:flex-row justify-between gap-10 flex-wrap">
+            <div className="flex flex-col gap-[13px] items-center md:items-start text-center md:text-left">
+              <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl">Solutions</p>
+              {audienceLinks.map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+
             <div className="flex flex-col gap-[13px] items-center md:items-start text-center md:text-left">
               <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl">Agents</p>
               <Link to="/solution" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors">Lora - AI Marketing Lead</Link>

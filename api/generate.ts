@@ -11,7 +11,10 @@ type ToolType =
   | 'marketing-strategy'
   | 'landing-page-copy'
   | 'product-description'
-  | 'competitor-audit';
+  | 'competitor-audit'
+  | 'bio-generator'
+  | 'blog-title-generator'
+  | 'instagram-caption';
 
 function buildPrompt(tool: ToolType, inputs: Record<string, string>): string {
   switch (tool) {
@@ -264,6 +267,110 @@ Generate a comprehensive competitive analysis:
 ## Your Opportunity Map
 ## Immediate Actions (This Week)
 ## 90-Day Positioning Plan`;
+
+    case 'bio-generator':
+      return `You are an expert copywriter specialising in social media profiles and personal brand positioning. Generate compelling, platform-optimised bio options.
+
+Name / Brand: ${inputs.name}
+Platform: ${inputs.platform}
+Role / What They Do: ${inputs.role}
+Target Audience: ${inputs.audience}
+Value / What They Help People Achieve: ${inputs.offer}
+Personality / Tone: ${inputs.personality || 'Professional yet approachable'}
+
+Generate bio options with EXACTLY these sections:
+
+## Platform-Optimised Bio Options
+
+### Option 1 — Direct and Value-Led
+Write a bio that leads with the clear value for the audience. Stay within platform character limits (150 chars for Instagram/TikTok, 220 chars for LinkedIn summary line, 160 chars for X).
+
+### Option 2 — Personality-Forward
+Write a bio that leads with personality and tone, then value. Should feel distinctive and human.
+
+### Option 3 — Keyword-Rich (best for discoverability)
+Write a bio that front-loads the role keyword for platform search, includes the audience, and ends with a CTA or hook.
+
+### Option 4 — Ultra-Short (for tight character limits)
+A 60–80 character bio that works as a one-liner anywhere.
+
+## Hashtag / Keyword Suggestions
+List 8–10 hashtags or keywords relevant to this niche for discoverability in their platform's search.
+
+## CTA Ideas for Bio Link
+Give 3 link-in-bio CTA phrases they can use to drive clicks (e.g. "Free guide →", "Book a call →", "Shop now →").
+
+Make each bio feel genuinely different — not just slight rewrites of the same sentence.`;
+
+    case 'blog-title-generator':
+      return `You are an expert SEO content strategist. Generate 10 high-performing blog title options that are keyword-targeted, click-worthy, and optimised for search intent.
+
+Article Topic: ${inputs.topic}
+Target Keyword: ${inputs.keyword || 'Not specified — infer from topic'}
+Search Intent: ${inputs.intent}
+Target Audience: ${inputs.audience}
+Industry / Niche: ${inputs.industry || 'General'}
+
+Generate titles with EXACTLY this structure:
+
+## 10 Blog Title Options
+
+For each title, provide:
+- The title itself (bolded)
+- Character count
+- Brief note on why it works (keyword placement, intent match, click trigger)
+
+### Titles 1–3: List / Roundup format
+e.g. "X Best [Topic] for [Audience] in [Year]"
+
+### Titles 4–6: How-to / Guide format
+e.g. "How to [Achieve Result] Without [Common Pain]"
+
+### Titles 7–8: Comparison / vs format
+e.g. "[Option A] vs [Option B]: Which Is Better for [Audience]?"
+
+### Titles 9–10: Question / Problem-aware format
+e.g. "Why [Audience] Struggle With [Problem] (And What Actually Works)"
+
+## Top 3 Recommended
+Pick the 3 strongest titles with a one-sentence reason why each would perform well in search.
+
+## H1 Variations
+For the top recommended title, suggest 2 slightly adapted H1 versions that work better on-page while keeping the keyword.`;
+
+    case 'instagram-caption':
+      return `You are an expert Instagram content writer. Generate 5 ready-to-post Instagram captions that stop the scroll, deliver value, and drive action.
+
+Business / Brand: ${inputs.businessName}
+Post Type: ${inputs.postType}
+Post Topic / Content: ${inputs.topic}
+Target Audience: ${inputs.audience}
+Brand Tone: ${inputs.tone}
+Call-to-Action Goal: ${inputs.cta || 'Engage with the post / visit link in bio'}
+
+Generate captions with EXACTLY this structure:
+
+## 5 Instagram Caption Options
+
+For each caption:
+- A clear label (Caption 1, Caption 2, etc.) with a style descriptor (e.g. "Story-led", "Educational", "Punchy")
+- The full caption text, formatted with line breaks as it would appear on Instagram
+- Relevant hashtags at the end (5–8 targeted hashtags)
+- Character count (excluding hashtags)
+
+### Caption 1 — Hook-led (strong opening line that stops the scroll)
+### Caption 2 — Story/narrative style (opens with a relatable situation)
+### Caption 3 — Educational / value-first (starts with a tip or insight)
+### Caption 4 — Bold/direct (short, punchy, no fluff)
+### Caption 5 — Question-led (opens with a question that gets comments)
+
+## Hashtag Bank
+List 15–20 relevant hashtags (mix of niche-specific, mid-size, and broad) they can rotate across posts.
+
+## CTA Variations
+Give 5 different CTA phrases they can swap into any caption to test what drives the most action.
+
+Make every caption feel authentic to the brand tone, not generic. Write as if you know the brand well.`;
 
     default:
       throw new Error(`Unknown tool: ${tool}`);

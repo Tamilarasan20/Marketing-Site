@@ -12,6 +12,11 @@ import Terms from "./pages/Terms";
 import DataDeletion from "./pages/DataDeletion";
 import ToolEmbed from "./pages/ToolEmbed";
 import NotFound from "./pages/NotFound";
+import ForFounders from "./pages/ForFounders";
+import ForAgencies from "./pages/ForAgencies";
+import ForFreelancers from "./pages/ForFreelancers";
+import ForEcommerce from "./pages/ForEcommerce";
+import ForCreators from "./pages/ForCreators";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +34,11 @@ export const router = createBrowserRouter([
       { path: "privacy-policy", Component: PrivacyPolicy },
       { path: "terms", Component: Terms },
       { path: "data-deletion", Component: DataDeletion },
+      { path: "for-founders", Component: ForFounders },
+      { path: "for-agencies", Component: ForAgencies },
+      { path: "for-freelancers", Component: ForFreelancers },
+      { path: "for-ecommerce", Component: ForEcommerce },
+      { path: "for-creators", Component: ForCreators },
       { path: "*", Component: NotFound },
     ],
   },
