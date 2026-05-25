@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router";
-import { ChevronRight, Link as LinkIcon, Clock } from "lucide-react";
+import { ChevronRight, Link as LinkIcon, Clock, Check } from "lucide-react";
 import imgCallToActionSection from "../../imports/BlogL2-1/226049655f3871f3dac264b316138eae1882ff2f.png";
 import imgFeatureImageSmall from "../../imports/BlogL2-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
 import imgLogos from "../../imports/BlogL2-1/808cf4a87ce2d856a11af393004688f1a9052950.png";
@@ -47,6 +48,48 @@ function getSummarizeUrl(llm: string, pageUrl: string): string {
     "Google AI": `https://gemini.google.com/app?q=${prompt}`,
   };
   return urls[llm] ?? `https://www.perplexity.ai/search?q=${prompt}`;
+}
+
+const ICON_SIZE = 30;
+
+function isMobile() {
+  if (typeof window === "undefined") return false;
+  return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+}
+
+function buildShareUrl(platform: "facebook" | "linkedin" | "x", url: string, title: string) {
+  const u = encodeURIComponent(url);
+  const t = encodeURIComponent(title);
+  if (platform === "facebook") return `https://www.facebook.com/sharer/sharer.php?u=${u}`;
+  if (platform === "linkedin") return `https://www.linkedin.com/sharing/share-offsite/?url=${u}`;
+  return `https://x.com/intent/tweet?url=${u}&text=${t}`;
+}
+
+function FacebookIcon({ size }: { size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="30" height="30" rx="8" fill="#1877F2" />
+      <path d="M20.5 15H17V12.5C17 11.672 17.672 11 18.5 11H20V8H18.5C16.015 8 14 10.015 14 12.5V15H12V18H14V26H17V18H19.5L20.5 15Z" fill="white" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ size }: { size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="30" height="30" rx="8" fill="#0A66C2" />
+      <path d="M9 12H12V21H9V12ZM10.5 10.8C9.5 10.8 9 10.1 9 9.4C9 8.7 9.6 8 10.6 8C11.6 8 12 8.7 12 9.4C12 10.1 11.5 10.8 10.5 10.8ZM21 21H18V16.2C18 15 17.5 14.2 16.4 14.2C15.6 14.2 15.1 14.7 14.9 15.2C14.8 15.4 14.8 15.7 14.8 16V21H11.8V12H14.7V13.4C15.1 12.8 15.9 12 17.3 12C19 12 21 13 21 16V21Z" fill="white" />
+    </svg>
+  );
+}
+
+function XIcon({ size }: { size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="30" height="30" rx="8" fill="#000000" />
+      <path d="M17.27 13.85L22.6 8H21.3L16.7 13.04L13.07 8H8.5L14.1 16.22L8.5 22.4H9.8L14.67 17.07L18.53 22.4H23.1L17.27 13.85ZM15.3 16.3L14.73 15.5L10.27 8.9H12.43L15.8 13.8L16.37 14.6L21.3 21.55H19.14L15.3 16.3Z" fill="white" />
+    </svg>
+  );
 }
 
 function renderSection(section: ContentSection, index: number) {
@@ -136,6 +179,21 @@ export default function BlogDetail() {
   const { slug } = useParams();
   const post = slug ? (getBlogPostBySlug(slug) ?? getBlogPost(Number(slug))) : undefined;
   const currentUrl = typeof window !== "undefined" ? window.location.href : "";
+  const [copied, setCopied] = useState(false);
+
+  function handleShare(platform: "facebook" | "linkedin" | "x" | "copy") {
+    if (isMobile() && navigator.share) {
+      navigator.share({ title: post?.title ?? "Loraloop Blog", url: currentUrl }).catch(() => {});
+      return;
+    }
+    if (platform === "copy") {
+      navigator.clipboard?.writeText(currentUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } else {
+      window.open(buildShareUrl(platform, currentUrl, post?.title ?? ""), "_blank", "noopener,noreferrer");
+    }
+  }
 
   if (!post) {
     return (
@@ -205,14 +263,22 @@ export default function BlogDetail() {
                 </div>
 
                 {/* Share */}
-                <div className="flex gap-3 items-center">
+                <div className="flex gap-3 items-center flex-wrap">
                   <p className="font-['General_Sans:Medium',sans-serif] text-[#64748b] text-sm">Share:</p>
-                  <button className="p-1.5 rounded-xl hover:bg-gray-100 transition-colors"><img src={imgLogos5} alt="Share" className="w-5 h-5" /></button>
-                  <button className="p-1.5 rounded-xl hover:bg-gray-100 transition-colors"><img src={imgLogos6} alt="Share" className="w-5 h-5" /></button>
-                  <button className="p-1.5 rounded-xl hover:bg-gray-100 transition-colors"><img src={imgLogos7} alt="Share" className="w-5 h-5" /></button>
-                  <button className="p-1.5 rounded-xl hover:bg-gray-100 transition-colors" onClick={() => navigator.clipboard?.writeText(currentUrl)} title="Copy link">
-                    <LinkIcon size={16} className="text-[#64748b]" />
+                  <button onClick={() => handleShare("facebook")} title="Share on Facebook" className="rounded-xl hover:opacity-80 active:scale-95 transition-all">
+                    <FacebookIcon size={ICON_SIZE} />
                   </button>
+                  <button onClick={() => handleShare("linkedin")} title="Share on LinkedIn" className="rounded-xl hover:opacity-80 active:scale-95 transition-all">
+                    <LinkedInIcon size={ICON_SIZE} />
+                  </button>
+                  <button onClick={() => handleShare("x")} title="Share on X" className="rounded-xl hover:opacity-80 active:scale-95 transition-all">
+                    <XIcon size={ICON_SIZE} />
+                  </button>
+                  <button onClick={() => handleShare("copy")} title={copied ? "Copied!" : "Copy link"}
+                    className={`w-[30px] h-[30px] rounded-xl flex items-center justify-center transition-all active:scale-95 ${copied ? "bg-green-500 text-white" : "bg-[#f1f5f9] text-[#64748b] hover:bg-[#e2e8f0]"}`}>
+                    {copied ? <Check size={16} /> : <LinkIcon size={16} />}
+                  </button>
+                  {copied && <span className="text-xs text-green-600 font-['General_Sans:Medium',sans-serif]">Copied!</span>}
                 </div>
               </div>
 
