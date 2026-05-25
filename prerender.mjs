@@ -1,11 +1,16 @@
 import { build } from 'esbuild';
-import { readFileSync, writeFileSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { unlinkSync } from 'fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SITE = 'https://loraloop.com';
+const OG_IMAGE = `${SITE}/og-image.png`;
+const OG_IMAGE_WIDTH = '1200';
+const OG_IMAGE_HEIGHT = '630';
+const TWITTER_HANDLE = '@loraloop_ai';
+const THEME_COLOR = '#6366f1';
 
 // ── 1. Compile blogData.ts ────────────────────────────────────────────────────
 const tmpOut = join(__dirname, '_blogdata_tmp.mjs');
@@ -63,29 +68,78 @@ function faqSchema(content) {
 }
 
 function articleSchema(post) {
-  return { '@context': 'https://schema.org', '@type': 'Article', headline: post.seoTitle || post.title, description: post.description, author: { '@type': 'Organization', name: 'Loraloop' }, publisher: { '@type': 'Organization', name: 'Loraloop', url: SITE }, datePublished: post.date, url: `${SITE}/blog/${post.slug}`, mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}/blog/${post.slug}` } };
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${SITE}/blog/${post.slug}#article`,
+    headline: post.seoTitle || post.title,
+    description: post.description,
+    image: { '@type': 'ImageObject', url: OG_IMAGE, width: parseInt(OG_IMAGE_WIDTH), height: parseInt(OG_IMAGE_HEIGHT) },
+    author: { '@type': 'Organization', name: 'Loraloop', url: SITE },
+    publisher: { '@type': 'Organization', name: 'Loraloop', url: SITE, logo: { '@type': 'ImageObject', url: OG_IMAGE } },
+    datePublished: post.date,
+    dateModified: post.date,
+    url: `${SITE}/blog/${post.slug}`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}/blog/${post.slug}` },
+    articleSection: post.category,
+    inLanguage: 'en-US',
+    isPartOf: { '@id': `${SITE}/#website` },
+  };
+}
+
+function breadcrumbSchema(post) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.seoTitle || post.title, item: `${SITE}/blog/${post.slug}` },
+    ],
+  };
+}
+
+function parseIsoDate(dateStr) {
+  try {
+    const d = new Date(dateStr);
+    if (!isNaN(d.getTime())) return d.toISOString().split('T')[0];
+  } catch (_) {}
+  return new Date().toISOString().split('T')[0];
 }
 
 const distDir = join(__dirname, 'dist');
 const template = readFileSync(join(distDir, 'index.html'), 'utf8');
 
-function buildPage({ path, title, description, bodyHtml, extraHead = '' }) {
+function buildPage({ path, title, description, bodyHtml, extraHead = '', ogType = 'website', ogImage = OG_IMAGE }) {
   const url = `${SITE}${path}`;
   const t = esc(title);
   const d = esc(description);
+  const img = esc(ogImage);
   let html = template
     .replace(/<title>[^<]*<\/title>/, `<title>${t} | Loraloop</title>`)
     .replace('</head>',
       `  <meta name="description" content="${d}" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Loraloop" />
   <link rel="canonical" href="${url}" />
+  <link rel="alternate" hreflang="en" href="${url}" />
+  <link rel="alternate" hreflang="x-default" href="${url}" />
   <meta property="og:title" content="${t} | Loraloop" />
   <meta property="og:description" content="${d}" />
   <meta property="og:url" content="${url}" />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="${ogType}" />
   <meta property="og:site_name" content="Loraloop" />
+  <meta property="og:image" content="${img}" />
+  <meta property="og:image:width" content="${OG_IMAGE_WIDTH}" />
+  <meta property="og:image:height" content="${OG_IMAGE_HEIGHT}" />
+  <meta property="og:image:alt" content="${t} | Loraloop" />
+  <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="${TWITTER_HANDLE}" />
   <meta name="twitter:title" content="${t} | Loraloop" />
   <meta name="twitter:description" content="${d}" />
+  <meta name="twitter:image" content="${img}" />
+  <meta name="theme-color" content="${THEME_COLOR}" />
   ${extraHead}
 </head>`)
     .replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
@@ -104,11 +158,18 @@ function writePage(urlPath, html) {
 for (const post of blogPosts) {
   const url = `/blog/${post.slug}`;
   const faq = faqSchema(post.content);
+  const isoDate = parseIsoDate(post.date);
   const html = buildPage({
     path: url,
     title: post.seoTitle || post.title,
     description: post.description,
-    extraHead: `<script type="application/ld+json">${JSON.stringify(articleSchema(post))}</script>${faq ? `\n  <script type="application/ld+json">${JSON.stringify(faq)}</script>` : ''}\n  <meta property="og:type" content="article" />`,
+    ogType: 'article',
+    extraHead: `<script type="application/ld+json">${JSON.stringify(articleSchema(post))}</script>
+  <script type="application/ld+json">${JSON.stringify(breadcrumbSchema(post))}</script>${faq ? `\n  <script type="application/ld+json">${JSON.stringify(faq)}</script>` : ''}
+  <meta property="article:published_time" content="${isoDate}" />
+  <meta property="article:modified_time" content="${isoDate}" />
+  <meta property="article:author" content="Loraloop" />
+  <meta property="article:section" content="${esc(post.category)}" />`,
     bodyHtml: `<article itemscope itemtype="https://schema.org/Article">
   <header>
     <span>${esc(post.category)}</span>
@@ -129,16 +190,83 @@ ${renderContentToHtml(post.content)}
 // ── 4. Static pages ───────────────────────────────────────────────────────────
 
 // HOME
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${SITE}/#organization`,
+  name: 'Loraloop',
+  url: SITE,
+  logo: { '@type': 'ImageObject', url: OG_IMAGE, width: parseInt(OG_IMAGE_WIDTH), height: parseInt(OG_IMAGE_HEIGHT) },
+  description: 'Autonomous AI marketing platform for founders and small businesses.',
+  foundingDate: '2024',
+  areaServed: 'Worldwide',
+  sameAs: [
+    'https://www.linkedin.com/company/loraloop/',
+    'https://www.instagram.com/loraloop_ai',
+    'https://x.com/TKtamilarasan2',
+    'https://discord.gg/ynrBvXUY',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'loraloopai@gmail.com',
+    contactType: 'customer support',
+    areaServed: 'Worldwide',
+    availableLanguage: 'English',
+  },
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE}/#website`,
+  url: SITE,
+  name: 'Loraloop',
+  description: 'Autonomous AI marketing platform for founders and small businesses.',
+  publisher: { '@id': `${SITE}/#organization` },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: { '@type': 'EntryPoint', urlTemplate: `${SITE}/blog?q={search_term_string}` },
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const softwareAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Loraloop',
+  url: SITE,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description: 'Autonomous AI marketing platform covering SEO, GEO, AEO, social media, ad copy, email marketing, and performance reporting.',
+  featureList: [
+    'AI-powered brand strategy and campaign planning',
+    'Social media content creation for LinkedIn, Instagram, X, Facebook, TikTok',
+    'SEO blog article generation',
+    'GEO (Generative Engine Optimization) content for AI search engines',
+    'AEO (Answer Engine Optimization) for voice search',
+    'Ad copy for Facebook, Instagram, Google, TikTok',
+    'Email marketing sequences and newsletters',
+    'Competitor tracking and market intelligence',
+    'Performance reporting with monthly recommendations',
+    'Approval-first workflow',
+  ],
+  offers: [
+    { '@type': 'Offer', name: 'Solo', price: '9.99', priceCurrency: 'USD', description: '100 monthly AI credits, 2 seats, 1 workspace' },
+    { '@type': 'Offer', name: 'Pro', price: '29.99', priceCurrency: 'USD', description: '500 monthly AI credits, 5 seats, 3 workspaces' },
+    { '@type': 'Offer', name: 'Agency', price: '69.99', priceCurrency: 'USD', description: '1,200 monthly AI credits, 25 seats, 10 workspaces' },
+    { '@type': 'Offer', name: 'Enterprise', price: '149.99', priceCurrency: 'USD', description: '2,500 monthly AI credits, unlimited seats and workspaces' },
+  ],
+  screenshot: OG_IMAGE,
+  publisher: { '@id': `${SITE}/#organization` },
+};
+
 writePage('/', buildPage({
   path: '/',
   title: 'Loraloop — AI Marketing Team for Founders and Small Businesses',
   description: 'Loraloop is your autonomous AI marketing team. It plans campaigns, creates content, optimizes for SEO and GEO, runs ads, and reports performance — 24/7, without a human team.',
-  extraHead: `<script type="application/ld+json">${JSON.stringify({
-    '@context': 'https://schema.org', '@type': 'Organization',
-    name: 'Loraloop', url: SITE, description: 'Autonomous AI marketing platform for founders and small businesses.',
-    sameAs: ['https://www.linkedin.com/company/loraloop/', 'https://www.instagram.com/loraloop_ai', 'https://x.com/TKtamilarasan2'],
-    contactPoint: { '@type': 'ContactPoint', email: 'loraloopai@gmail.com', contactType: 'customer support' }
-  })}</script>`,
+  extraHead: `<script type="application/ld+json">${JSON.stringify(orgSchema)}</script>
+  <script type="application/ld+json">${JSON.stringify(websiteSchema)}</script>
+  <script type="application/ld+json">${JSON.stringify(softwareAppSchema)}</script>`,
   bodyHtml: `<main>
   <section>
     <h1>Loraloop — Your AI Marketing Team That Never Sleeps</h1>
@@ -193,15 +321,46 @@ writePage('/', buildPage({
 }));
 
 // PRICING
+const pricingFaqItems = [
+  { q: 'How do AI credits work?', a: 'AI credits are used each time Loraloop generates content, runs analysis, or executes a marketing task. Each plan includes a monthly credit allowance. Credits reset each month and unused credits do not roll over.' },
+  { q: 'Can I switch plans?', a: 'Yes, you can upgrade or downgrade your plan at any time. Changes take effect at your next billing cycle.' },
+  { q: 'Is there a free trial?', a: 'Yes, Loraloop offers a free trial so you can experience the platform before committing to a paid plan.' },
+  { q: 'What is a Workspace?', a: 'A Workspace is a separate brand environment in Loraloop. Each Workspace has its own brand knowledge base, content calendar, and AI configuration. Agencies use multiple Workspaces to manage different clients.' },
+];
+
+const pricingAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  '@id': `${SITE}/pricing#product`,
+  name: 'Loraloop',
+  url: SITE,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description: 'AI marketing platform with autonomous AI employees. Plans start at $6.99/mo.',
+  offers: [
+    { '@type': 'Offer', name: 'Solo — Monthly', price: '9.99', priceCurrency: 'USD', billingIncrement: 'P1M', eligibleQuantity: { '@type': 'QuantitativeValue', value: 1 } },
+    { '@type': 'Offer', name: 'Solo — Annual', price: '6.99', priceCurrency: 'USD', billingIncrement: 'P1M', description: 'Billed annually. Save 30%.' },
+    { '@type': 'Offer', name: 'Pro — Monthly', price: '29.99', priceCurrency: 'USD', billingIncrement: 'P1M' },
+    { '@type': 'Offer', name: 'Pro — Annual', price: '20.99', priceCurrency: 'USD', billingIncrement: 'P1M', description: 'Billed annually. Save 30%.' },
+    { '@type': 'Offer', name: 'Agency — Monthly', price: '69.99', priceCurrency: 'USD', billingIncrement: 'P1M' },
+    { '@type': 'Offer', name: 'Agency — Annual', price: '48.99', priceCurrency: 'USD', billingIncrement: 'P1M', description: 'Billed annually. Save 30%.' },
+    { '@type': 'Offer', name: 'Enterprise — Monthly', price: '149.99', priceCurrency: 'USD', billingIncrement: 'P1M' },
+    { '@type': 'Offer', name: 'Enterprise — Annual', price: '104.99', priceCurrency: 'USD', billingIncrement: 'P1M', description: 'Billed annually. Save 30%.' },
+  ],
+};
+
+const pricingFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: pricingFaqItems.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
 writePage('/pricing', buildPage({
   path: '/pricing',
   title: 'Loraloop Pricing — AI Marketing Team Plans',
   description: 'Loraloop pricing plans for every business size. Solo from $6.99/mo, Pro from $20.99/mo, Agency from $48.99/mo, Enterprise from $104.99/mo. All plans include all 9 AI marketing helpers.',
-  extraHead: `<script type="application/ld+json">${JSON.stringify({
-    '@context': 'https://schema.org', '@type': 'WebPage',
-    name: 'Loraloop Pricing', url: `${SITE}/pricing`,
-    description: 'Pricing plans for Loraloop AI marketing platform.',
-  })}</script>`,
+  extraHead: `<script type="application/ld+json">${JSON.stringify(pricingAppSchema)}</script>
+  <script type="application/ld+json">${JSON.stringify(pricingFaqSchema)}</script>`,
   bodyHtml: `<main>
   <h1>Loraloop Pricing</h1>
   <p>All Loraloop plans include access to all 9 AI marketing helpers. Choose the billing cycle that works for your business — save 30% with an annual plan or 15% with a 3-month plan.</p>
@@ -285,15 +444,35 @@ writePage('/pricing', buildPage({
 }));
 
 // SOLUTION
+const solutionFaqItems = [
+  { q: 'What is Loraloop AI employees?', a: 'Loraloop provides AI employees that handle your marketing tasks end-to-end. From planning and content creation to execution and analysis, the AI team works 24/7 to grow your business without requiring constant input from you.' },
+  { q: 'What if I don\'t have a marketing team or employees?', a: 'That\'s exactly what Loraloop is built for. The AI employees become your marketing team, handling everything from strategy to execution without requiring any marketing expertise on your end.' },
+  { q: 'Can AI employees replace human employees?', a: 'AI employees complement and enhance your team by handling repetitive marketing tasks, allowing your human team to focus on strategy and creative decisions. For solo founders, they can fully replace the need for a human marketing team at a fraction of the cost.' },
+];
+
+const solutionFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: solutionFaqItems.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
+const solutionPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${SITE}/solution`,
+  name: 'Loraloop AI Marketing Solution',
+  url: `${SITE}/solution`,
+  description: 'How Loraloop\'s AI marketing team works — five specialized AI employees for marketing automation.',
+  isPartOf: { '@id': `${SITE}/#website` },
+  publisher: { '@id': `${SITE}/#organization` },
+};
+
 writePage('/solution', buildPage({
   path: '/solution',
   title: 'Loraloop Solution — Meet Your AI Marketing Employees',
   description: 'Loraloop\'s AI marketing employees — Lora (Marketing Lead), Sam (Strategist), Clara (Content Writer), Steve (Visual Designer), and Sarah (Social Media Manager) — run your marketing 24/7.',
-  extraHead: `<script type="application/ld+json">${JSON.stringify({
-    '@context': 'https://schema.org', '@type': 'WebPage',
-    name: 'Loraloop AI Marketing Solution', url: `${SITE}/solution`,
-    description: 'How Loraloop\'s AI marketing team works — five specialized AI employees for marketing automation.',
-  })}</script>`,
+  extraHead: `<script type="application/ld+json">${JSON.stringify(solutionPageSchema)}</script>
+  <script type="application/ld+json">${JSON.stringify(solutionFaqSchema)}</script>`,
   bodyHtml: `<main>
   <h1>Loraloop AI Marketing Employees</h1>
   <p>Loraloop gives your business a team of autonomous AI employees that manage marketing end-to-end. Each AI employee has a specialized role and works continuously — planning, creating, publishing, analyzing, and improving your marketing without you needing to manage each step.</p>
@@ -378,6 +557,7 @@ writePage('/about', buildPage({
   path: '/about',
   title: 'About Loraloop — Building the Future of AI Marketing',
   description: 'Loraloop is building the future of AI marketing for SMBs, creators, and eCommerce businesses — autonomous AI employees that run your entire marketing engine 24/7.',
+  extraHead: `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'AboutPage', '@id': `${SITE}/about`, name: 'About Loraloop', url: `${SITE}/about`, isPartOf: { '@id': `${SITE}/#website` }, publisher: { '@id': `${SITE}/#organization` } })}</script>`,
   bodyHtml: `<main>
   <h1>About Loraloop</h1>
 
@@ -441,6 +621,7 @@ writePage('/contact', buildPage({
   path: '/contact',
   title: 'Contact Loraloop — Support and Community',
   description: 'Get in touch with Loraloop. Join our Discord community, email us at loraloopai@gmail.com, or connect on LinkedIn, Instagram, and X.',
+  extraHead: `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'ContactPage', '@id': `${SITE}/contact`, name: 'Contact Loraloop', url: `${SITE}/contact`, isPartOf: { '@id': `${SITE}/#website` }, publisher: { '@id': `${SITE}/#organization` } })}</script>`,
   bodyHtml: `<main>
   <h1>Contact Loraloop</h1>
   <p>We encourage you to communicate freely. Whether you have a question, comment, or just want to share feedback, we'd love to hear from you.</p>
@@ -469,6 +650,7 @@ writePage('/blog', buildPage({
   path: '/blog',
   title: 'Loraloop Blog — AI Marketing Insights for Founders and Small Businesses',
   description: 'Expert guides on AI marketing, GEO, AEO, SEO, and AI tool comparisons. Written for founders and small businesses by the Loraloop team.',
+  extraHead: `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'CollectionPage', '@id': `${SITE}/blog`, name: 'Loraloop Blog', url: `${SITE}/blog`, description: 'AI marketing guides and tool comparisons for founders and small businesses.', isPartOf: { '@id': `${SITE}/#website` }, publisher: { '@id': `${SITE}/#organization` } })}</script>`,
   bodyHtml: `<main>
   <h1>Loraloop Blog</h1>
   <p>AI marketing guides, tool comparisons, and strategy resources for founders and small businesses.</p>
@@ -492,30 +674,66 @@ const staticPages = [
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${staticPages.map(p => `  <url>
     <loc>${SITE}/${p.path}</loc>
     <changefreq>${p.freq}</changefreq>
     <priority>${p.priority}</priority>
     <lastmod>${today}</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE}/${p.path}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}/${p.path}"/>
   </url>`).join('\n')}
-${blogPosts.map(p => `  <url>
+${blogPosts.map(p => {
+  const postDate = parseIsoDate(p.date);
+  return `  <url>
     <loc>${SITE}/blog/${p.slug}</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <lastmod>${today}</lastmod>
-  </url>`).join('\n')}
+    <lastmod>${postDate}</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE}/blog/${p.slug}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}/blog/${p.slug}"/>
+  </url>`;
+}).join('\n')}
 </urlset>`;
 writeFileSync(join(distDir, 'sitemap.xml'), sitemap, 'utf8');
 console.log('  ✓ sitemap.xml');
 
 // ── 6. robots.txt ──────────────────────────────────────────────────────────────
-writeFileSync(join(distDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`, 'utf8');
+const robotsTxt = `User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /app
+
+# Allow major AI crawlers full access for GEO (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleExtended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: ${SITE}/sitemap.xml
+Sitemap: ${SITE}/llms.txt
+`;
+writeFileSync(join(distDir, 'robots.txt'), robotsTxt, 'utf8');
 console.log('  ✓ robots.txt');
 
-// ── 7. llms.txt — comprehensive AI-readable site summary ──────────────────────
+// ── 7. llms.txt — comprehensive AI-readable site summary (GEO-optimized) ──────
 const llmsTxt = `# Loraloop — AI Marketing Team for Founders and Small Businesses
 > ${SITE}
+> Last updated: ${today}
 
 Loraloop is an autonomous AI marketing platform that replaces the need for a full human marketing team. It provides AI employees that plan, create, publish, analyze, and improve your marketing 24/7 — covering social media, SEO, GEO, AEO, ads, email, and performance reporting in one platform.
 
@@ -600,6 +818,48 @@ Free trial available. See full pricing: ${SITE}/pricing
 - [About](${SITE}/about) — Company mission, vision, and differentiators
 - [Contact](${SITE}/contact) — Email, Discord, and social channels
 
+## Common Questions (GEO / AEO)
+
+**What is Loraloop?**
+Loraloop is an autonomous AI marketing platform that gives founders and small businesses a full marketing team without hiring. AI employees handle strategy, content, SEO, GEO, ads, email, and reporting 24/7.
+
+**How much does Loraloop cost?**
+Loraloop plans start at $6.99/month (Solo annual). Monthly prices: Solo $9.99/mo, Pro $29.99/mo, Agency $69.99/mo, Enterprise $149.99/mo. A free trial is available.
+
+**What is GEO (Generative Engine Optimization)?**
+GEO is the practice of optimizing content so it gets cited by AI search engines like ChatGPT, Perplexity AI, and Google AI Overviews. Loraloop creates GEO-structured content that answers specific questions in a format AI engines can extract and cite.
+
+**What is AEO (Answer Engine Optimization)?**
+AEO optimizes content for voice search assistants and AI answer engines. Content is structured as direct questions and answers so it can be served as a featured snippet or voice response.
+
+**What makes Loraloop different from Buffer, Hootsuite, or other social scheduling tools?**
+Social schedulers like Buffer and Hootsuite publish content you create. Loraloop creates the strategy, writes the content, optimizes it for SEO and GEO, then handles scheduling. It solves the content creation and strategy problem, not just the scheduling problem.
+
+**Who are Loraloop's AI employees?**
+Loraloop has five AI employees: Lora (AI Marketing Lead, available now), Sam (AI Strategist, coming soon), Clara (AI Content Writer, coming soon), Steve (AI Visual Designer, coming soon), and Sarah (AI Social Media Manager, coming soon).
+
+**Does Loraloop support multiple brands or clients?**
+Yes. Loraloop supports multiple workspaces, each with its own brand knowledge base. Agency plan includes 10 workspaces; Enterprise includes unlimited workspaces.
+
+**What channels does Loraloop cover?**
+LinkedIn, Instagram, X (Twitter), Facebook, TikTok, Google Ads, Facebook Ads, email newsletters, and SEO blog content.
+
+**Is Loraloop suitable for agencies?**
+Yes. The Agency plan ($48.99/mo annual) includes 25 seats, 10 workspaces, 1,200 AI credits/month, and 24/7 support. Enterprise includes unlimited seats and workspaces.
+
+## Entity Information
+
+- **Company name:** Loraloop
+- **Product type:** SaaS / AI marketing platform
+- **Category:** Marketing automation, AI agents, generative AI
+- **Audience:** Founders, solo operators, SMBs, eCommerce brands, marketing agencies
+- **Primary use case:** Autonomous AI marketing team replacing manual marketing effort
+- **Technology:** Multi-agent AI system with persistent brand knowledge base
+- **Availability:** Web application (global)
+- **Language:** English
+- **Founded:** 2024
+- **Email:** loraloopai@gmail.com
+
 ## Blog Posts
 
 ${blogPosts.map(p => `- [${p.title}](${SITE}/blog/${p.slug})
@@ -608,7 +868,17 @@ ${blogPosts.map(p => `- [${p.title}](${SITE}/blog/${p.slug})
 writeFileSync(join(distDir, 'llms.txt'), llmsTxt, 'utf8');
 console.log('  ✓ llms.txt');
 
-// ── 8. Cleanup ─────────────────────────────────────────────────────────────────
+// ── 8. OG image — copy logo as social share fallback ──────────────────────────
+const logoSrc = join(__dirname, 'src/assets/app_logo.png');
+const ogImageDest = join(distDir, 'og-image.png');
+if (existsSync(logoSrc) && !existsSync(ogImageDest)) {
+  copyFileSync(logoSrc, ogImageDest);
+  console.log('  ✓ og-image.png (copied from app_logo — replace with 1200×630 social card for best results)');
+} else if (existsSync(ogImageDest)) {
+  console.log('  ✓ og-image.png (already exists)');
+}
+
+// ── 9. Cleanup ─────────────────────────────────────────────────────────────────
 try { unlinkSync(tmpOut); } catch (_) {}
 
 const total = blogPosts.length + 6;
