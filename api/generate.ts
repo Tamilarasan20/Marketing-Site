@@ -1,4 +1,4 @@
-import Anthropic from '@anthropic-ai/sdk';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const MAX_INPUT_LENGTH = 2000;
 
@@ -377,6 +377,8 @@ Make every caption feel authentic to the brand tone, not generic. Write as if yo
   }
 }
 
+export const config = { runtime: 'edge' };
+
 export default async function handler(req: Request): Promise<Response> {
   if (req.method !== 'POST') {
     return new Response('Method not allowed', { status: 405 });
@@ -401,22 +403,27 @@ export default async function handler(req: Request): Promise<Response> {
     }
 
     const prompt = buildPrompt(tool, sanitizedInputs);
-    const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+    const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+    if (!apiKey) {
+      return new Response(JSON.stringify({ error: 'GEMINI_API_KEY is not configured.' }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
 
-    const stream = await client.messages.create({
-      model: 'claude-sonnet-4-6',
-      max_tokens: 3500,
-      stream: true,
-      messages: [{ role: 'user', content: prompt }],
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({
+      model: process.env.GEMINI_MODEL || 'gemini-2.5-flash',
+      generationConfig: { maxOutputTokens: 3500 },
     });
+    const result = await model.generateContentStream(prompt);
 
     const readableStream = new ReadableStream({
       async start(controller) {
         try {
-          for await (const event of stream) {
-            if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
-              controller.enqueue(new TextEncoder().encode(event.delta.text));
-            }
+          for await (const chunk of result.stream) {
+            const text = chunk.text();
+            if (text) controller.enqueue(new TextEncoder().encode(text));
           }
           controller.close();
         } catch (err) {
