@@ -182,15 +182,17 @@ export default function BlogDetail() {
   const [copied, setCopied] = useState(false);
 
   function handleShare(platform: "facebook" | "linkedin" | "x" | "copy") {
-    if (isMobile() && navigator.share) {
-      navigator.share({ title: post?.title ?? "Loraloop Blog", url: currentUrl }).catch(() => {});
-      return;
-    }
     if (platform === "copy") {
-      navigator.clipboard?.writeText(currentUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      // Last icon: native share sheet on mobile, copy URL on desktop
+      if (isMobile() && navigator.share) {
+        navigator.share({ title: post?.title ?? "Loraloop Blog", url: currentUrl }).catch(() => {});
+      } else {
+        navigator.clipboard?.writeText(currentUrl);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      }
     } else {
+      // FB / LinkedIn / X: always open the platform share URL
       window.open(buildShareUrl(platform, currentUrl, post?.title ?? ""), "_blank", "noopener,noreferrer");
     }
   }
