@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import PricingSection from "../../app/components/PricingSection";
 import WaitlistForm from "../../app/components/WaitlistForm";
 import svgPaths from "./svg-7bo4y2urkw";
 import imgImage174 from "./63808635cd776f0fdaad03c9757b0a112ed13271.png";
@@ -6098,9 +6099,9 @@ function Frame26({ className }: { className?: string }) {
 
 function Price() {
   return (
-    <div className="relative bg-black w-full flex flex-col gap-16 md:gap-[120px] items-center overflow-clip px-4 md:px-12 py-12 md:py-[80px]" data-name="Price">
+    <div className="relative bg-black w-full flex flex-col gap-16 md:gap-[120px] items-center overflow-clip" data-name="Price">
       <Frame22 />
-      <Frame26 />
+      <PricingSection className="w-full py-0" />
     </div>
   );
 }
@@ -6585,4 +6586,3 @@ export default function LandingPage() {
     </div>
   );
 }
-

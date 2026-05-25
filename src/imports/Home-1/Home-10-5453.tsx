@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PricingSection from "../../app/components/PricingSection";
 import WaitlistForm from "../../app/components/WaitlistForm";
 import svgPaths from "./svg-0wmtnxnc2s";
 import expanderSvgPaths from "../Expander1/svg-vqugh1pll5";
@@ -4622,9 +4623,9 @@ function Frame18() {
 
 function PriceAndFaq() {
   return (
-    <div className="bg-black content-stretch flex flex-col gap-[120px] items-center overflow-clip px-[24px] py-[80px] relative shrink-0 w-full" data-name="Price and FAQ">
+    <div className="bg-black content-stretch flex flex-col gap-[120px] items-center overflow-clip relative shrink-0 w-full" data-name="Price and FAQ">
       <Frame14 />
-      <Frame18 />
+      <PricingSection className="w-full py-0" />
     </div>
   );
 }
