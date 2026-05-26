@@ -191,12 +191,6 @@ export default function Header() {
           <Link to="/pricing" className="flex items-center justify-center px-[12px] py-[8px]">
             <span style={navTextStyle}>Pricing</span>
           </Link>
-          <Link
-            to="/tools"
-            className="flex items-center justify-center px-[12px] py-[6px] rounded-full border border-emerald-400 bg-emerald-50 hover:bg-emerald-100 transition-colors"
-          >
-            <span style={{ ...navTextStyle, color: '#059669', fontSize: '13px' }}>Free AI Tools</span>
-          </Link>
         </nav>
 
         {/* Auth CTAs */}
