@@ -34,78 +34,78 @@ const blogLinks = [
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-[#e5e7eb]">
-      <div className="max-w-[1280px] px-4 mx-auto md:px-20 py-10 md:py-20">
-        <div className="flex flex-col gap-12">
-          <div className="flex flex-col md:flex-row justify-between gap-10 flex-wrap">
-            <div className="flex flex-col gap-[13px] items-center md:items-start text-center md:text-left">
+      <div className="max-w-[1280px] px-4 mx-auto sm:px-6 md:px-20 py-10 md:py-20">
+        <div className="flex flex-col gap-12 md:gap-16">
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 xl:grid-cols-5 xl:gap-12">
+            <div className="flex flex-col gap-[13px] items-center text-center sm:items-start sm:text-left">
               <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl">Solutions</p>
               {audienceLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors"
+                  className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words"
                 >
                   {link.name}
                 </Link>
               ))}
             </div>
 
-            <div className="flex flex-col gap-[13px] items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col gap-[13px] items-center text-center sm:items-start sm:text-left">
               <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl">Agents</p>
-              <Link to="/solution" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors">Lora - AI Marketing Lead</Link>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Sam - AI Strategist (Soon)</p>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Sophie - AI SEO/GEO Manager (Soon)</p>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Clara - AI Content Writer (Soon)</p>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Theo - AI Video Producer (Soon)</p>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Steve - AI Visual Designer (Soon)</p>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Sarah - AI Social Media Manager (Soon)</p>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Elena - AI Ads Manager (Soon)</p>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Nick - AI Analyst (Soon)</p>
+              <Link to="/solution" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Lora - AI Marketing Lead</Link>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Sam - AI Strategist (Soon)</p>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Sophie - AI SEO/GEO Manager (Soon)</p>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Clara - AI Content Writer (Soon)</p>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Theo - AI Video Producer (Soon)</p>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Steve - AI Visual Designer (Soon)</p>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Sarah - AI Social Media Manager (Soon)</p>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Elena - AI Ads Manager (Soon)</p>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Nick - AI Analyst (Soon)</p>
             </div>
 
-            <div className="flex flex-col gap-[13px] items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col gap-[13px] items-center text-center sm:items-start sm:text-left">
               <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl">AI Tools</p>
               {aiTools.map((tool) => (
                 <Link
                   key={tool.to}
                   to={tool.to}
-                  className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors"
+                  className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words"
                 >
                   {tool.name}
                 </Link>
               ))}
               <Link
                 to="/tools"
-                className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#1877f2] text-base hover:underline transition-colors"
+                className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#1877f2] text-sm sm:text-base hover:underline transition-colors break-words"
               >
                 View all tools →
               </Link>
             </div>
 
-            <div className="flex flex-col gap-[13px] items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col gap-[13px] items-center text-center sm:items-start sm:text-left">
               <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl">Blog</p>
               {blogLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors"
+                  className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words"
                 >
                   {link.name}
                 </Link>
               ))}
-              <Link to="/blog" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#1877f2] text-base hover:underline transition-colors">
+              <Link to="/blog" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#1877f2] text-sm sm:text-base hover:underline transition-colors break-words">
                 View all posts →
               </Link>
             </div>
 
-            <div className="flex flex-col gap-[14px] items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col gap-[14px] items-center text-center sm:items-start sm:text-left">
               <p className="font-['Satoshi:Bold',sans-serif] leading-7 text-[#1f2937] text-xl">Company</p>
-              <Link to="/about" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors">About us</Link>
-              <Link to="/privacy-policy" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors">Terms of Service</Link>
-              <Link to="/data-deletion" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors">User Data Deletion</Link>
-              <Link to="/contact" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-base hover:text-[#1877f2] transition-colors">Contact Us/Support</Link>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-base">Become Affiliate (Soon)</p>
+              <Link to="/about" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">About us</Link>
+              <Link to="/privacy-policy" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Privacy Policy</Link>
+              <Link to="/terms" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Terms of Service</Link>
+              <Link to="/data-deletion" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">User Data Deletion</Link>
+              <Link to="/contact" className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Contact Us/Support</Link>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Become Affiliate (Soon)</p>
             </div>
           </div>
 
@@ -121,11 +121,11 @@ export default function Footer() {
                 <img alt="X (Twitter)" className="w-9 h-9 object-cover" src={imgLogos2} />
               </a>
             </div>
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-4 sm:gap-6">
               <div className="flex items-center justify-center">
-                <p className="font-['Satoshi:Bold',sans-serif] leading-tight text-[50px] md:text-[80px] text-black whitespace-nowrap">LoraLoop</p>
+                <p className="font-['Satoshi:Bold',sans-serif] leading-tight text-[clamp(2.5rem,8vw,5rem)] text-black whitespace-nowrap">LoraLoop</p>
               </div>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#6b7280] text-base text-center">Copyright © 2026 Orimoretail Pvt. Ltd. All rights reserved.</p>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#6b7280] text-sm sm:text-base text-center">Copyright © 2026 Orimoretail Pvt. Ltd. All rights reserved.</p>
             </div>
           </div>
         </div>

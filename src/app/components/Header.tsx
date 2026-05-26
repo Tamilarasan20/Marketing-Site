@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router";
-import svgPaths from "../../imports/Expander1/svg-vqugh1pll5";
 import appLogo from "../../assets/app_logo.png";
 import imgLora from "../../imports/Home-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
 import imgSam from "../../imports/Home-1/67e2795861635095f78d499d37fb8c47640346cd.png";
@@ -18,12 +17,33 @@ const solutionLinks = [
 
 const navTextStyle: React.CSSProperties = {
   fontFamily: "Satoshi, sans-serif",
-  fontWeight: 700,
+  fontWeight: 500,
   fontSize: "16px",
   lineHeight: "24px",
   color: "#000",
   whiteSpace: "nowrap",
 };
+
+const ChevronIcon = ({ open }: { open: boolean }) => (
+  <svg
+    width="16"
+    height="16"
+    fill="none"
+    viewBox="0 0 16 16"
+    style={{
+      transform: open ? "rotate(180deg)" : "rotate(0deg)",
+      transition: "transform 0.2s ease",
+    }}
+  >
+    <path
+      d="M4 6.5L8 10.5L12 6.5"
+      stroke="#40566D"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.3"
+    />
+  </svg>
+);
 
 const soonTextStyle: React.CSSProperties = {
   ...navTextStyle,
@@ -123,7 +143,7 @@ export default function Header() {
           <span
             style={{
               fontFamily: "Satoshi, sans-serif",
-              fontWeight: 700,
+              fontWeight: 500,
               fontSize: "19.5px",
               lineHeight: "24.82px",
               color: "#000",
@@ -145,40 +165,7 @@ export default function Header() {
           >
             <span style={navTextStyle}>AI Employees</span>
             <div className="w-4 h-4 flex items-center justify-center ml-[4px]">
-              <svg
-                className="w-full h-full"
-                fill="none"
-                viewBox="0 0 9.33333 5.33333"
-                style={{
-                  transform: open ? "rotate(180deg)" : "rotate(0deg)",
-                  transition: "transform 0.2s ease",
-                }}
-              >
-                <path clipRule="evenodd" d={svgPaths.p23cd8f00} fill="#40566D" fillRule="evenodd" />
-              </svg>
-            </div>
-          </button>
-
-          {/* Solutions dropdown */}
-          <button
-            type="button"
-            onClick={() => { setSolutionsOpen((v) => !v); setOpen(false); }}
-            style={{ background: "none", border: "none", outline: "none", cursor: "pointer", padding: 0 }}
-            className="flex gap-[2px] items-center justify-center px-[12px] py-[8px]"
-          >
-            <span style={navTextStyle}>Solutions</span>
-            <div className="w-4 h-4 flex items-center justify-center ml-[4px]">
-              <svg
-                className="w-full h-full"
-                fill="none"
-                viewBox="0 0 9.33333 5.33333"
-                style={{
-                  transform: solutionsOpen ? "rotate(180deg)" : "rotate(0deg)",
-                  transition: "transform 0.2s ease",
-                }}
-              >
-                <path clipRule="evenodd" d={svgPaths.p23cd8f00} fill="#40566D" fillRule="evenodd" />
-              </svg>
+              <ChevronIcon open={open} />
             </div>
           </button>
 
@@ -190,12 +177,6 @@ export default function Header() {
           </Link>
           <Link to="/pricing" className="flex items-center justify-center px-[12px] py-[8px]">
             <span style={navTextStyle}>Pricing</span>
-          </Link>
-          <Link
-            to="/tools"
-            className="flex items-center justify-center px-[12px] py-[6px] rounded-full border border-emerald-400 bg-emerald-50 hover:bg-emerald-100 transition-colors"
-          >
-            <span style={{ ...navTextStyle, color: '#059669', fontSize: '13px' }}>Free AI Tools</span>
           </Link>
         </nav>
 
@@ -209,7 +190,7 @@ export default function Header() {
               className="text-[13px] md:text-[14px]"
               style={{
                 fontFamily: "Satoshi, sans-serif",
-                fontWeight: 700,
+                fontWeight: 500,
                 lineHeight: "20px",
                 color: "#0f172a",
                 whiteSpace: "nowrap",
@@ -226,7 +207,7 @@ export default function Header() {
               className="text-[13px] md:text-[14px]"
               style={{
                 fontFamily: "Satoshi, sans-serif",
-                fontWeight: 700,
+                fontWeight: 500,
                 lineHeight: "20px",
                 color: "#fff",
                 whiteSpace: "nowrap",

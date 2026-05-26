@@ -11,7 +11,7 @@ import imgImage197 from "./4def1c376fe3407da459dc5c0acbe8552485afd4.png";
 function Cotnet() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
+      <p style={{ fontWeight: 900 }} className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[0] relative shrink-0 text-[#9ca3af] text-[20px] w-full whitespace-pre-wrap">
         <span className="leading-[28px]">{`You don’t need a large team to grow a business. Loraloop provides AI employees for marketing that handle daily work. From planning to execution, work gets done efficiently, 24/7.  `}</span>
         <span className="leading-[28px] text-white">10x your marketing with 10x less expansive.</span>

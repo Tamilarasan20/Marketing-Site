@@ -34,6 +34,8 @@ export function initAnalytics(): void {
 }
 
 function wireSupabaseAuth(): void {
+  if (!supabase) return;
+
   supabase.auth.getUser().then(({ data }) => {
     if (data.user) identifyUser(data.user.id, {
       email: data.user.email,

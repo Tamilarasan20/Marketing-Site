@@ -126,7 +126,7 @@ export default function PricingSection({ className = "" }: { className?: string 
     <section className={`bg-black px-4 py-16 md:px-8 md:py-24 ${className}`}>
       <div className="mx-auto flex w-full max-w-[1480px] flex-col items-center">
         <div className="flex w-full max-w-[740px] flex-col items-center gap-7 md:gap-[42px]">
-          <h2 className="font-['Satoshi:Bold',sans-serif] text-[40px] font-bold leading-[1.1] tracking-[-0.8px] text-white md:text-[56px]">
+          <h2 style={{ fontWeight: 900 }} className="font-['Satoshi:Bold',sans-serif] text-[40px] font-bold leading-[1.1] tracking-[-0.8px] text-white md:text-[56px]">
             Pricing
           </h2>
 

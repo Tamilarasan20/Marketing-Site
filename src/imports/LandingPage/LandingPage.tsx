@@ -159,11 +159,11 @@ function VideoSection() {
 
 function Cotnet1() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] text-[28px] md:text-[40px] leading-[1.2] md:leading-[48px] relative shrink-0 text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full">
+    <div className="content-stretch flex flex-col gap-[10px] md:gap-[12px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
+      <p className="font-bold font-['Satoshi:Bold',sans-serif] text-[28px] md:text-[40px] leading-[1.1] md:leading-[1.12] relative shrink-0 text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
+      <p className="font-normal font-['General_Sans:Regular',sans-serif] text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full">
         {`You don’t need a large team to grow a business. Loraloop provides AI employees for marketing that handle daily work. From planning to execution, work gets done efficiently, 24/7. `}
-        <span className="text-white">10x your marketing with 10x less expansive.</span>
+        <span className="font-medium text-white">10x your marketing with 10x less expansive.</span>
       </p>
     </div>
   );

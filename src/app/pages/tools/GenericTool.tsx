@@ -41,12 +41,12 @@ export default function GenericTool() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-10">
       {/* Breadcrumb */}
       <nav className="text-sm text-gray-400 mb-6 flex items-center gap-2">
         <Link to="/" className="hover:text-violet-600">Home</Link>
         <span>/</span>
-        <Link to="/tools" className="hover:text-violet-600">All AI Tools</Link>
+        <Link to="/tools" className="hover:text-violet-600">Free AI Tools</Link>
         <span>/</span>
         <span className="text-gray-700">{tool.name}</span>
       </nav>

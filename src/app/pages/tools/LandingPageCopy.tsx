@@ -21,7 +21,7 @@ export default function LandingPageCopy() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-sm text-gray-400 mb-8 flex items-center gap-2">
         <Link to="/" className="hover:text-violet-600">Home</Link><span>/</span>
-        <Link to="/tools" className="hover:text-violet-600">All AI Tools</Link><span>/</span>
+        <Link to="/tools" className="hover:text-violet-600">Free AI Tools</Link><span>/</span>
         <span className="text-gray-700">Landing Page Copy Generator</span>
       </nav>
       <div className="mb-10">
