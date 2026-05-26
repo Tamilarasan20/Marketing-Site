@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import CTABanner from '../../components/CTABanner';
 import { useStreamGeneration } from '../../hooks/useStreamGeneration';
+import NextToolsSection from '../../components/NextToolsSection';
+import ToolCtaSection from '../../components/ToolCtaSection';
 
 const faqs = [
   { q: 'What is a social media content calendar?', a: 'A content calendar is a planned schedule of what you will post, when, and on which platform. It removes the daily "what do I post?" panic and ensures you show up consistently — which is the #1 driver of organic growth.' },
@@ -10,12 +12,6 @@ const faqs = [
   { q: 'Does the same content calendar work for all platforms?', a: 'No. Each platform has different formats, audience behaviors, and optimal posting times. This tool creates calendars specific to your chosen platform.' },
   { q: 'What do I do after I have the calendar?', a: 'Use it as a brief to create content. Or use Loraloop to auto-generate the actual captions, visuals, and posts from the calendar — then schedule them with one click.' },
 ];
-const relatedTools = [
-  { name: 'Brand Voice Generator', to: '/tools/brand-voice' },
-  { name: 'Hook Generator', to: '/tools/hook-generator' },
-  { name: 'Content Pillar Generator', to: '/tools/content-pillars' },
-];
-
 export default function SocialCalendar() {
   const { output, isLoading, error, generate } = useStreamGeneration();
   const [formData, setFormData] = useState({ businessType: '', audience: '', goal: 'Brand awareness', platform: 'Instagram', frequency: '5x/week' });
@@ -25,7 +21,8 @@ export default function SocialCalendar() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-sm text-gray-400 mb-8 flex items-center gap-2">
         <Link to="/" className="hover:text-violet-600">Home</Link><span>/</span>
-        <span className="text-gray-600">Social Media Calendar Generator</span>
+        <Link to="/tools" className="hover:text-violet-600">All AI Tools</Link><span>/</span>
+        <span className="text-gray-700">Social Media Calendar Generator</span>
       </nav>
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-4">
@@ -92,17 +89,13 @@ export default function SocialCalendar() {
       )}
       <CTABanner heading="Auto-generate captions, creatives, and posts for every day on this calendar." subtext="Loraloop turns your content calendar into scheduled, brand-consistent posts — without you writing a single caption." />
       <div className="mt-12">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">Related tools</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {relatedTools.map((tool) => (<Link key={tool.to} to={tool.to} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-violet-300 hover:shadow-sm transition-all"><p className="font-semibold text-gray-900 text-sm mb-1">{tool.name}</p><p className="text-xs text-violet-600">Try free →</p></Link>))}
-        </div>
-      </div>
-      <div className="mt-12">
         <h3 className="text-xl font-bold text-gray-900 mb-6">Frequently asked questions</h3>
         <div className="space-y-1">
           {faqs.map((faq) => (<details key={faq.q} className="bg-white border border-gray-200 rounded-xl overflow-hidden group"><summary className="px-6 py-4 cursor-pointer font-medium text-gray-900 text-sm flex items-center justify-between list-none">{faq.q}<span className="text-violet-500 text-lg group-open:rotate-45 transition-transform">+</span></summary><p className="px-6 pb-5 text-sm text-gray-600 leading-relaxed">{faq.a}</p></details>))}
         </div>
       </div>
+      <NextToolsSection currentSlug="social-calendar" />
+      <ToolCtaSection />
     </div>
   );
 }

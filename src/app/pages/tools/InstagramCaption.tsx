@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import CTABanner from '../../components/CTABanner';
 import { useStreamGeneration } from '../../hooks/useStreamGeneration';
+import NextToolsSection from '../../components/NextToolsSection';
+import ToolCtaSection from '../../components/ToolCtaSection';
 
 const faqs = [
   { q: 'What makes an Instagram caption perform well?', a: "A high-performing caption starts with a hook that stops the scroll — a question, bold statement, or surprising fact. It delivers value (entertainment, information, or emotion), uses line breaks for readability, includes a clear CTA, and ends with relevant hashtags. The first 125 characters matter most because that's what shows before 'more'." },
@@ -9,12 +11,6 @@ const faqs = [
   { q: 'Should I use emojis in Instagram captions?', a: 'Emojis improve scannability, add personality, and help break up text — which matters on a visual platform. Use them purposefully: as bullet points, to add tone, or to draw attention to key phrases. Match emoji style to your brand personality; a corporate B2B brand might use fewer emojis than a lifestyle creator.' },
   { q: 'What is the ideal Instagram caption length?', a: 'It depends on the content type. Educational carousels and storytelling posts benefit from longer captions (up to 2,200 characters). Quick product shots or lifestyle images work better with short, punchy captions (50–150 characters). Match caption length to content depth and audience expectations.' },
   { q: 'Can I use the same caption across platforms?', a: "No — platform-native captions outperform cross-posted ones. Instagram captions can be longer and use emojis freely. LinkedIn captions are more professional and conversational. TikTok captions are extremely short. Use this tool for Instagram-specific captions; try the Hook Generator for TikTok hooks." },
-];
-
-const relatedTools = [
-  { name: 'Hook Generator', to: '/tools/hook-generator' },
-  { name: 'Social Media Calendar', to: '/tools/social-calendar' },
-  { name: 'Brand Voice Generator', to: '/tools/brand-voice' },
 ];
 
 export default function InstagramCaption() {
@@ -26,8 +22,8 @@ export default function InstagramCaption() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-sm text-gray-400 mb-8 flex items-center gap-2">
         <Link to="/" className="hover:text-violet-600">Home</Link><span>/</span>
-        <Link to="/tools/instagram-caption" className="hover:text-violet-600">Tools</Link><span>/</span>
-        <span className="text-gray-600">Instagram Caption Generator</span>
+        <Link to="/tools" className="hover:text-violet-600">All AI Tools</Link><span>/</span>
+        <span className="text-gray-700">Instagram Caption Generator</span>
       </nav>
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-4">
@@ -110,17 +106,6 @@ export default function InstagramCaption() {
       )}
       <CTABanner heading="Your Instagram captions are ready. Now automate the whole month." subtext="Loraloop generates a full Instagram content calendar — captions, carousel scripts, and reels concepts — every month in your brand voice. Review, approve, publish." />
       <div className="mt-12">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">Try these tools next</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {relatedTools.map((tool) => (
-            <Link key={tool.to} to={tool.to} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-violet-300 hover:shadow-sm transition-all">
-              <p className="font-semibold text-gray-900 text-sm mb-1">{tool.name}</p>
-              <p className="text-xs text-violet-600">Try free →</p>
-            </Link>
-          ))}
-        </div>
-      </div>
-      <div className="mt-12">
         <h3 className="text-xl font-bold text-gray-900 mb-6">Frequently asked questions</h3>
         <div className="space-y-1">
           {faqs.map((faq) => (
@@ -131,6 +116,8 @@ export default function InstagramCaption() {
           ))}
         </div>
       </div>
+      <NextToolsSection currentSlug="instagram-caption" />
+      <ToolCtaSection />
     </div>
   );
 }

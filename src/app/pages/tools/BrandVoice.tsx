@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import CTABanner from '../../components/CTABanner';
 import { useStreamGeneration } from '../../hooks/useStreamGeneration';
+import NextToolsSection from '../../components/NextToolsSection';
+import ToolCtaSection from '../../components/ToolCtaSection';
 
 const faqs = [
   { q: 'What is a brand voice?', a: "Brand voice is the consistent personality and tone your business uses across all content — social posts, ads, emails, website copy. It's what makes your content feel unmistakably yours, even without your logo." },
@@ -11,11 +13,6 @@ const faqs = [
   { q: 'What should I do with my brand voice guide once I have it?', a: "Share it with anyone creating content for you — team members, freelancers, AI tools. Use it to brief ad creative. Reference it before writing any caption or email. Inside Loraloop, you can import it so every piece of generated content automatically matches your voice." },
 ];
 
-const relatedTools = [
-  { name: 'Content Pillar Generator', to: '/tools/content-pillars' },
-  { name: 'Social Media Calendar Generator', to: '/tools/social-calendar' },
-  { name: 'Ad Copy Generator', to: '/tools/ad-copy' },
-];
 
 export default function BrandVoice() {
   const { output, isLoading, error, generate } = useStreamGeneration();
@@ -26,8 +23,8 @@ export default function BrandVoice() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-sm text-gray-400 mb-8 flex items-center gap-2">
         <Link to="/" className="hover:text-violet-600">Home</Link><span>/</span>
-        <Link to="/tools/brand-voice" className="hover:text-violet-600">Tools</Link><span>/</span>
-        <span className="text-gray-600">Brand Voice Generator</span>
+        <Link to="/tools" className="hover:text-violet-600">All AI Tools</Link><span>/</span>
+        <span className="text-gray-700">Brand Voice Generator</span>
       </nav>
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-4">
@@ -94,17 +91,6 @@ export default function BrandVoice() {
       )}
       <CTABanner heading="Your brand voice is ready. Now let Loraloop execute it." subtext="Turn this brand voice into a 30-day content calendar, auto-generated captions, creatives, and approval-ready posts inside Loraloop." />
       <div className="mt-12">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">Next steps — try these tools</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {relatedTools.map((tool) => (
-            <Link key={tool.to} to={tool.to} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-violet-300 hover:shadow-sm transition-all">
-              <p className="font-semibold text-gray-900 text-sm mb-1">{tool.name}</p>
-              <p className="text-xs text-violet-600">Try free →</p>
-            </Link>
-          ))}
-        </div>
-      </div>
-      <div className="mt-12">
         <h3 className="text-xl font-bold text-gray-900 mb-6">Frequently asked questions</h3>
         <div className="space-y-1">
           {faqs.map((faq) => (
@@ -115,6 +101,8 @@ export default function BrandVoice() {
           ))}
         </div>
       </div>
+      <NextToolsSection currentSlug="brand-voice" />
+      <ToolCtaSection />
     </div>
   );
 }

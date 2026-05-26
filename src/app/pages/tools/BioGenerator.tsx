@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import CTABanner from '../../components/CTABanner';
 import { useStreamGeneration } from '../../hooks/useStreamGeneration';
+import NextToolsSection from '../../components/NextToolsSection';
+import ToolCtaSection from '../../components/ToolCtaSection';
 
 const faqs = [
   { q: 'What makes a good social media bio?', a: "A great bio does three things: tells people who you are, what you do or offer, and why they should follow you — in under 150 characters for most platforms. It should include a keyword for discoverability, a clear value statement, and ideally a reason to click your link." },
@@ -11,11 +13,6 @@ const faqs = [
   { q: 'What should I do after generating my bio?', a: "Test 2–3 versions from the output by using them on your platform and comparing follower growth and link clicks over 2–4 weeks. Inside Loraloop, you can store your final bio in your brand knowledge base so all future content stays consistent with your positioning." },
 ];
 
-const relatedTools = [
-  { name: 'Brand Voice Generator', to: '/tools/brand-voice' },
-  { name: 'Hook Generator', to: '/tools/hook-generator' },
-  { name: 'Instagram Caption Generator', to: '/tools/instagram-caption' },
-];
 
 export default function BioGenerator() {
   const { output, isLoading, error, generate } = useStreamGeneration();
@@ -26,8 +23,8 @@ export default function BioGenerator() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-sm text-gray-400 mb-8 flex items-center gap-2">
         <Link to="/" className="hover:text-violet-600">Home</Link><span>/</span>
-        <Link to="/tools/bio-generator" className="hover:text-violet-600">Tools</Link><span>/</span>
-        <span className="text-gray-600">Bio Generator</span>
+        <Link to="/tools" className="hover:text-violet-600">All AI Tools</Link><span>/</span>
+        <span className="text-gray-700">Bio Generator</span>
       </nav>
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-4">
@@ -94,17 +91,6 @@ export default function BioGenerator() {
       )}
       <CTABanner heading="Ready to turn your brand identity into a full content system?" subtext="Loraloop uses your bio, brand voice, and audience profile to auto-generate a month of content — captions, posts, and articles — ready for your approval." />
       <div className="mt-12">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">Try these tools next</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {relatedTools.map((tool) => (
-            <Link key={tool.to} to={tool.to} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-violet-300 hover:shadow-sm transition-all">
-              <p className="font-semibold text-gray-900 text-sm mb-1">{tool.name}</p>
-              <p className="text-xs text-violet-600">Try free →</p>
-            </Link>
-          ))}
-        </div>
-      </div>
-      <div className="mt-12">
         <h3 className="text-xl font-bold text-gray-900 mb-6">Frequently asked questions</h3>
         <div className="space-y-1">
           {faqs.map((faq) => (
@@ -115,6 +101,8 @@ export default function BioGenerator() {
           ))}
         </div>
       </div>
+      <NextToolsSection currentSlug="bio-generator" />
+      <ToolCtaSection />
     </div>
   );
 }

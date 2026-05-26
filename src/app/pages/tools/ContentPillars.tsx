@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import CTABanner from '../../components/CTABanner';
 import { useStreamGeneration } from '../../hooks/useStreamGeneration';
+import NextToolsSection from '../../components/NextToolsSection';
+import ToolCtaSection from '../../components/ToolCtaSection';
 
 const faqs = [
   { q: 'What are content pillars?', a: 'Content pillars are the core themes your brand consistently creates content around. Instead of randomly posting, you organize everything under 3-5 pillars — making your content strategic, cohesive, and easier to plan.' },
@@ -9,11 +11,6 @@ const faqs = [
   { q: 'How do I use content pillars to create posts?', a: 'Each week, rotate through your pillars. If you post 4x per week and have 4 pillars, each pillar gets one post per week. This ensures balanced content that serves awareness, trust-building, and conversion goals.' },
   { q: 'What is the difference between content pillars and content categories?', a: "Categories are broad buckets. Pillars are specific to YOUR brand — they combine the topic AND your unique angle. 'Behind the scenes' is a category. 'How we source ethical ingredients' is a content pillar for a food brand." },
   { q: 'How often should I revisit my content pillars?', a: 'Review them quarterly. Your business, audience, and goals evolve. What worked 6 months ago may need refreshing. Major pivots, new products, or seasonal shifts are all good reasons to revisit.' },
-];
-const relatedTools = [
-  { name: 'Brand Voice Generator', to: '/tools/brand-voice' },
-  { name: 'Social Media Calendar Generator', to: '/tools/social-calendar' },
-  { name: 'Hook Generator', to: '/tools/hook-generator' },
 ];
 
 export default function ContentPillars() {
@@ -25,7 +22,8 @@ export default function ContentPillars() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-sm text-gray-400 mb-8 flex items-center gap-2">
         <Link to="/" className="hover:text-violet-600">Home</Link><span>/</span>
-        <span className="text-gray-600">Content Pillar Generator</span>
+        <Link to="/tools" className="hover:text-violet-600">All AI Tools</Link><span>/</span>
+        <span className="text-gray-700">Content Pillar Generator</span>
       </nav>
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-4">
@@ -84,17 +82,13 @@ export default function ContentPillars() {
       )}
       <CTABanner heading="Content pillars planned. Now let Loraloop fill every slot." subtext="Loraloop takes your content pillars and auto-creates brand-consistent posts for every slot in your calendar, every week." />
       <div className="mt-12">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">Related tools</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {relatedTools.map((tool) => (<Link key={tool.to} to={tool.to} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-violet-300 hover:shadow-sm transition-all"><p className="font-semibold text-gray-900 text-sm mb-1">{tool.name}</p><p className="text-xs text-violet-600">Try free →</p></Link>))}
-        </div>
-      </div>
-      <div className="mt-12">
         <h3 className="text-xl font-bold text-gray-900 mb-6">Frequently asked questions</h3>
         <div className="space-y-1">
           {faqs.map((faq) => (<details key={faq.q} className="bg-white border border-gray-200 rounded-xl overflow-hidden group"><summary className="px-6 py-4 cursor-pointer font-medium text-gray-900 text-sm flex items-center justify-between list-none">{faq.q}<span className="text-violet-500 text-lg group-open:rotate-45 transition-transform">+</span></summary><p className="px-6 pb-5 text-sm text-gray-600 leading-relaxed">{faq.a}</p></details>))}
         </div>
       </div>
+      <NextToolsSection currentSlug="content-pillars" />
+      <ToolCtaSection />
     </div>
   );
 }

@@ -75,7 +75,7 @@ export default function Footer() {
                 </Link>
               ))}
               <Link
-                to="/tools/brand-voice"
+                to="/tools"
                 className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#1877f2] text-base hover:underline transition-colors"
               >
                 View all tools →
