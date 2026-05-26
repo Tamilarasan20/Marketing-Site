@@ -12,6 +12,8 @@ import CompetitorAudit from './tools/CompetitorAudit';
 import BioGenerator from './tools/BioGenerator';
 import BlogTitleGenerator from './tools/BlogTitleGenerator';
 import InstagramCaption from './tools/InstagramCaption';
+import GenericTool from './tools/GenericTool';
+import { getToolBySlug } from '../data/toolsData';
 
 const toolComponents: Record<string, ComponentType> = {
   'brand-voice': BrandVoice,
@@ -32,13 +34,16 @@ export default function ToolEmbed() {
   const { slug } = useParams<{ slug: string }>();
   const ToolComponent = toolComponents[slug ?? ''];
 
-  if (!ToolComponent) {
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-20 text-center">
-        <p className="text-gray-500 text-lg">Tool not found.</p>
-      </div>
-    );
-  }
+  if (ToolComponent) return <ToolComponent />;
 
-  return <ToolComponent />;
+  // For known tools not yet fully implemented, use GenericTool
+  const knownTool = getToolBySlug(slug ?? '');
+  if (knownTool) return <GenericTool />;
+
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+      <p className="text-gray-500 text-lg mb-4">Tool not found.</p>
+      <a href="/tools" className="text-violet-600 hover:underline text-sm">Browse all free tools →</a>
+    </div>
+  );
 }

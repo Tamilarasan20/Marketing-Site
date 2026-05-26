@@ -14,7 +14,8 @@ type ToolType =
   | 'competitor-audit'
   | 'bio-generator'
   | 'blog-title-generator'
-  | 'instagram-caption';
+  | 'instagram-caption'
+  | 'generic';
 
 function buildPrompt(tool: ToolType, inputs: Record<string, string>): string {
   switch (tool) {
@@ -371,6 +372,14 @@ List 15–20 relevant hashtags (mix of niche-specific, mid-size, and broad) they
 Give 5 different CTA phrases they can swap into any caption to test what drives the most action.
 
 Make every caption feel authentic to the brand tone, not generic. Write as if you know the brand well.`;
+
+    case 'generic':
+      return `You are an expert AI assistant powering the "${inputs.toolName}" tool. Your task is to ${inputs.toolDescription}.
+
+User Input:
+${inputs.userInput}
+
+Provide a comprehensive, high-quality, well-structured response. Use clear headings, bullet points, and sections where appropriate. Be specific, actionable, and practical. Tailor the output precisely to the user's input.`;
 
     default:
       throw new Error(`Unknown tool: ${tool}`);

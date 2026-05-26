@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import CTABanner from '../../components/CTABanner';
 import { useStreamGeneration } from '../../hooks/useStreamGeneration';
+import NextToolsSection from '../../components/NextToolsSection';
+import ToolCtaSection from '../../components/ToolCtaSection';
 
 const faqs = [
   { q: 'What is a marketing strategy?', a: 'A marketing strategy is the plan for how you will reach, attract, and convert your target customers. It defines who you are targeting, which channels you will use, what you will say, and how you will measure success.' },
@@ -10,12 +12,6 @@ const faqs = [
   { q: 'How long does it take to see marketing results?', a: "Paid ads: 2-4 weeks. Social media organic: 3-6 months. SEO: 6-12 months. Email marketing: 30-60 days. The businesses that fail at marketing usually give up 2 weeks before the results would have appeared." },
   { q: "What's the difference between a marketing strategy and a marketing plan?", a: "Strategy is the what and why — your positioning, target audience, channels, and messaging. A plan is the how and when — the specific tasks, timeline, and budget." },
 ];
-const relatedTools = [
-  { name: 'Content Pillar Generator', to: '/tools/content-pillars' },
-  { name: 'Ad Copy Generator', to: '/tools/ad-copy' },
-  { name: 'Competitor Audit Tool', to: '/tools/competitor-audit' },
-];
-
 export default function MarketingStrategy() {
   const { output, isLoading, error, generate } = useStreamGeneration();
   const [formData, setFormData] = useState({ businessType: '', product: '', audience: '', budget: '$500–$2,000/month', goal: 'Generate leads', channels: '', timeline: '90 days' });
@@ -25,7 +21,8 @@ export default function MarketingStrategy() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-sm text-gray-400 mb-8 flex items-center gap-2">
         <Link to="/" className="hover:text-violet-600">Home</Link><span>/</span>
-        <span className="text-gray-600">Marketing Strategy Generator</span>
+        <Link to="/tools" className="hover:text-violet-600">All AI Tools</Link><span>/</span>
+        <span className="text-gray-700">Marketing Strategy Generator</span>
       </nav>
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-4">
@@ -74,8 +71,9 @@ export default function MarketingStrategy() {
         </div>
       )}
       <CTABanner heading="Strategy is only useful when someone executes it." subtext="Loraloop takes your marketing strategy and runs it — content creation, scheduling, ads, and reporting. You stay in control, Loraloop does the work." />
-      <div className="mt-12"><h3 className="text-lg font-bold text-gray-900 mb-4">Related tools</h3><div className="grid grid-cols-1 sm:grid-cols-3 gap-4">{relatedTools.map((tool) => (<Link key={tool.to} to={tool.to} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-violet-300 hover:shadow-sm transition-all"><p className="font-semibold text-gray-900 text-sm mb-1">{tool.name}</p><p className="text-xs text-violet-600">Try free →</p></Link>))}</div></div>
       <div className="mt-12"><h3 className="text-xl font-bold text-gray-900 mb-6">Frequently asked questions</h3><div className="space-y-1">{faqs.map((faq) => (<details key={faq.q} className="bg-white border border-gray-200 rounded-xl overflow-hidden group"><summary className="px-6 py-4 cursor-pointer font-medium text-gray-900 text-sm flex items-center justify-between list-none">{faq.q}<span className="text-violet-500 text-lg group-open:rotate-45 transition-transform">+</span></summary><p className="px-6 pb-5 text-sm text-gray-600 leading-relaxed">{faq.a}</p></details>))}</div></div>
+      <NextToolsSection currentSlug="marketing-strategy" />
+      <ToolCtaSection />
     </div>
   );
 }

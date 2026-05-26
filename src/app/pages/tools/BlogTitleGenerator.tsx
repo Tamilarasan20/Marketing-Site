@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import CTABanner from '../../components/CTABanner';
 import { useStreamGeneration } from '../../hooks/useStreamGeneration';
+import NextToolsSection from '../../components/NextToolsSection';
+import ToolCtaSection from '../../components/ToolCtaSection';
 
 const faqs = [
   { q: 'What makes a good blog title for SEO?', a: "A good SEO blog title includes the target keyword near the start, signals search intent clearly (list, guide, comparison, how-to), and is specific rather than vague. Titles between 50–60 characters perform best in search results. Numbers (e.g. '7 Ways') and parenthetical qualifiers (e.g. '(2026 Guide)') consistently improve click-through rates." },
@@ -9,12 +11,6 @@ const faqs = [
   { q: 'Should my blog title match my H1 exactly?', a: 'Your title tag (what appears in Google) and your H1 (what appears on the page) can differ slightly. The title tag should be optimized for the keyword and search snippet. The H1 can be slightly longer or conversational. They should not contradict each other.' },
   { q: 'Does a better title actually affect Google rankings?', a: "Title tag optimization affects click-through rate (CTR) from search results, which indirectly influences rankings. A title that better matches search intent and generates more clicks can improve a page's position over time, even without other changes." },
   { q: 'Can I use these titles for content that isn\'t yet written?', a: 'Yes. In fact, writing the title first is a strong content strategy. The title defines your target keyword and content scope before you write a word — which produces more focused, SEO-effective articles.' },
-];
-
-const relatedTools = [
-  { name: 'Marketing Strategy Generator', to: '/tools/marketing-strategy' },
-  { name: 'Content Pillar Generator', to: '/tools/content-pillars' },
-  { name: 'Ad Copy Generator', to: '/tools/ad-copy' },
 ];
 
 export default function BlogTitleGenerator() {
@@ -26,8 +22,8 @@ export default function BlogTitleGenerator() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-sm text-gray-400 mb-8 flex items-center gap-2">
         <Link to="/" className="hover:text-violet-600">Home</Link><span>/</span>
-        <Link to="/tools/blog-title-generator" className="hover:text-violet-600">Tools</Link><span>/</span>
-        <span className="text-gray-600">Blog Title Generator</span>
+        <Link to="/tools" className="hover:text-violet-600">All AI Tools</Link><span>/</span>
+        <span className="text-gray-700">Blog Title Generator</span>
       </nav>
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-4">
@@ -96,17 +92,6 @@ export default function BlogTitleGenerator() {
       )}
       <CTABanner heading="Turn your blog titles into published SEO articles." subtext="Loraloop generates full keyword-targeted blog articles from your brand knowledge base — GEO-structured for AI search citation and ready for review." />
       <div className="mt-12">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">Try these tools next</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {relatedTools.map((tool) => (
-            <Link key={tool.to} to={tool.to} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-violet-300 hover:shadow-sm transition-all">
-              <p className="font-semibold text-gray-900 text-sm mb-1">{tool.name}</p>
-              <p className="text-xs text-violet-600">Try free →</p>
-            </Link>
-          ))}
-        </div>
-      </div>
-      <div className="mt-12">
         <h3 className="text-xl font-bold text-gray-900 mb-6">Frequently asked questions</h3>
         <div className="space-y-1">
           {faqs.map((faq) => (
@@ -117,6 +102,8 @@ export default function BlogTitleGenerator() {
           ))}
         </div>
       </div>
+      <NextToolsSection currentSlug="blog-title-generator" />
+      <ToolCtaSection />
     </div>
   );
 }

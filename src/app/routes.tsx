@@ -11,6 +11,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import DataDeletion from "./pages/DataDeletion";
 import ToolEmbed from "./pages/ToolEmbed";
+import AllToolsPage from "./pages/AllToolsPage";
 import NotFound from "./pages/NotFound";
 import ForFounders from "./pages/ForFounders";
 import ForAgencies from "./pages/ForAgencies";
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
       { path: "solution", Component: Solution },
       { path: "blog", Component: Blog },
       { path: "blog/:slug", Component: BlogDetail },
+      { path: "tools", Component: AllToolsPage },
       { path: "tools/:slug", Component: ToolEmbed },
       { path: "about", Component: About },
       { path: "contact", Component: Contact },

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import CTABanner from '../../components/CTABanner';
 import { useStreamGeneration } from '../../hooks/useStreamGeneration';
+import NextToolsSection from '../../components/NextToolsSection';
+import ToolCtaSection from '../../components/ToolCtaSection';
 
 const faqs = [
   { q: 'What is a landing page?', a: "A landing page is a single web page designed for one specific goal — getting a visitor to take one action (sign up, buy, book, download). Unlike a homepage, a landing page eliminates distractions and focuses entirely on conversion." },
@@ -10,12 +12,6 @@ const faqs = [
   { q: 'How many CTAs should a landing page have?', a: "One clear action, but multiple CTA buttons. Pick one action and repeat the CTA button 3-4 times: above the fold, after benefits, after social proof, and at the bottom." },
   { q: "What's the difference between a landing page and a homepage?", a: "A homepage serves multiple audiences and goals. A landing page serves one audience and one goal. If you're running ads, always send traffic to a landing page. The difference in conversion rate is typically 3-5x." },
 ];
-const relatedTools = [
-  { name: 'Ad Copy Generator', to: '/tools/ad-copy' },
-  { name: 'Product Description Generator', to: '/tools/product-description' },
-  { name: 'Brand Voice Generator', to: '/tools/brand-voice' },
-];
-
 export default function LandingPageCopy() {
   const { output, isLoading, error, generate } = useStreamGeneration();
   const [formData, setFormData] = useState({ product: '', description: '', audience: '', benefit: '', price: 'Under $50', ctaGoal: 'Sign up / get started' });
@@ -25,7 +21,8 @@ export default function LandingPageCopy() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-sm text-gray-400 mb-8 flex items-center gap-2">
         <Link to="/" className="hover:text-violet-600">Home</Link><span>/</span>
-        <span className="text-gray-600">Landing Page Copy Generator</span>
+        <Link to="/tools" className="hover:text-violet-600">All AI Tools</Link><span>/</span>
+        <span className="text-gray-700">Landing Page Copy Generator</span>
       </nav>
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-4">
@@ -71,8 +68,9 @@ export default function LandingPageCopy() {
         </div>
       )}
       <CTABanner heading="Great copy needs traffic. Loraloop sends both." subtext="Loraloop creates the social content and ads that drive qualified traffic to your landing page — all on-brand and on autopilot." />
-      <div className="mt-12"><h3 className="text-lg font-bold text-gray-900 mb-4">Related tools</h3><div className="grid grid-cols-1 sm:grid-cols-3 gap-4">{ relatedTools.map((tool) => (<Link key={tool.to} to={tool.to} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-violet-300 hover:shadow-sm transition-all"><p className="font-semibold text-gray-900 text-sm mb-1">{tool.name}</p><p className="text-xs text-violet-600">Try free →</p></Link>))}</div></div>
       <div className="mt-12"><h3 className="text-xl font-bold text-gray-900 mb-6">Frequently asked questions</h3><div className="space-y-1">{ faqs.map((faq) => (<details key={faq.q} className="bg-white border border-gray-200 rounded-xl overflow-hidden group"><summary className="px-6 py-4 cursor-pointer font-medium text-gray-900 text-sm flex items-center justify-between list-none">{faq.q}<span className="text-violet-500 text-lg group-open:rotate-45 transition-transform">+</span></summary><p className="px-6 pb-5 text-sm text-gray-600 leading-relaxed">{faq.a}</p></details>))}</div></div>
+      <NextToolsSection currentSlug="landing-page-copy" />
+      <ToolCtaSection />
     </div>
   );
 }
