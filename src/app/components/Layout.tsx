@@ -18,19 +18,19 @@ export default function Layout() {
         if (text === "Get Start" || text === "Get Started" || text === "Join Waitlist") {
           e.preventDefault();
           e.stopPropagation();
-          window.location.href = "/app/signup";
+          window.location.href = "https://app.loraloop.com/signup";
           return;
         }
         if (text === "Login" || text === "Log in" || text === "Log In" || text === "Sign in" || text === "Sign In" || text === "Signin") {
           e.preventDefault();
           e.stopPropagation();
-          window.location.href = "/app/signin";
+          window.location.href = "https://app.loraloop.com/signin";
           return;
         }
         if (text === "Sign up" || text === "Sign Up" || text === "Signup") {
           e.preventDefault();
           e.stopPropagation();
-          window.location.href = "/app/signup";
+          window.location.href = "https://app.loraloop.com/signup";
           return;
         }
         current = current.parentElement;

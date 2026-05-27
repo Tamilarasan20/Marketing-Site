@@ -183,7 +183,7 @@ export default function Header() {
         {/* Auth CTAs */}
         <div className="flex items-center gap-2">
           <a
-            href="/app/signin"
+            href="https://app.loraloop.com/signin"
             className="flex items-center justify-center px-3 md:px-5 py-2 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors"
           >
             <span
@@ -200,7 +200,7 @@ export default function Header() {
             </span>
           </a>
           <a
-            href="/app/signup"
+            href="https://app.loraloop.com/signup"
             className="bg-[#1877f2] hover:bg-[#1565c0] transition-colors rounded-full px-3 md:px-5 py-2 flex items-center justify-center"
           >
             <span
