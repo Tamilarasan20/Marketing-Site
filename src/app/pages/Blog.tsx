@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { Clock } from "lucide-react";
+import "../data/registerAdditionalBlogData";
 import { blogPosts as allBlogPosts } from "../data/blogData";
 import type { ContentSection } from "../data/blogData";
 import { blogThumbnails } from "../data/blogThumbnails";
