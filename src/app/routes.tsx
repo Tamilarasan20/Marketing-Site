@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Pricing from "./pages/Pricing";
 import Solution from "./pages/Solution";
 import Blog from "./pages/Blog";
-import BlogDetail from "./pages/BlogDetail";
+import BlogDetail from "./pages/BlogDetailWithAdditional";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
