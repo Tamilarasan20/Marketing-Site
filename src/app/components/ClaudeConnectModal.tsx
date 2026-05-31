@@ -100,7 +100,20 @@ function McpSteps() {
 
       <StepRow number={2} title="Add a custom connector">
         <p>Name it <strong className="text-[#111]">Loraloop</strong> and paste the URL below.</p>
-        <CopyBox value="https://www.loraloop.com/api/mcp" />
+        <CopyBox value="https://mcp.loraloop.com/api/mcp" />
+        {/* Fallback if Claude.ai shows "Couldn't register" */}
+        <details className="mt-3 group">
+          <summary className="text-[12px] text-[#888] cursor-pointer hover:text-[#555] transition-colors list-none flex items-center gap-1">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" className="group-open:rotate-90 transition-transform">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+            Seeing a "Couldn't register" error?
+          </summary>
+          <div className="mt-2 pl-4 border-l-2 border-[#ddd]">
+            <p className="text-[12px] text-[#666] mb-1">In the connector settings, expand <strong className="text-[#444]">Advanced</strong> and paste this as the <strong className="text-[#444]">OAuth Client ID</strong>:</p>
+            <CopyBox value="loraloop-claude" />
+          </div>
+        </details>
       </StepRow>
 
       <StepRow number={3} title="Connect and sign in">
