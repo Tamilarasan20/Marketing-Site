@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router";
-import appLogo from "../../assets/app_logo.png";
+import appLogo from "../../assets/loraloop-icon.svg";
 import imgLora from "../../imports/Home-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
 import imgSam from "../../imports/Home-1/67e2795861635095f78d499d37fb8c47640346cd.png";
 import imgClara from "../../imports/Home-1/a6c396695db2f4867d2b2cf94c4c4013fb4aa21a.png";
@@ -150,7 +150,7 @@ export default function Header() {
               whiteSpace: "nowrap",
             }}
           >
-            Loraloop.ai
+            Loraloop
           </span>
         </Link>
 
@@ -170,7 +170,7 @@ export default function Header() {
           </button>
 
           <Link to="/solution" className="flex items-center justify-center px-[12px] py-[8px]">
-            <span style={navTextStyle}>Platform</span>
+            <span style={navTextStyle}>Solution</span>
           </Link>
           <Link to="/blog" className="flex items-center justify-center px-[12px] py-[8px]">
             <span style={navTextStyle}>Blog</span>
