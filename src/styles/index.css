@@ -2,6 +2,73 @@
 @import './tailwind.css';
 @import './theme.css';
 
+/* ─── Global smoothness & rendering ─────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  /* Leave room for the fixed pill header when anchor-jumping */
+  scroll-padding-top: 88px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Respect the user's motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Focus ring — visible, calm, accessible ─────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #1877f2;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Page-entry fade — applied to the route wrapper in Layout ────────────── */
+@keyframes ll-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: ll-page-in var(--duration-page, 300ms) var(--ease-smooth, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+
+/* ─── Skeleton shimmer ────────────────────────────────────────────────────── */
+@keyframes ll-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f4 25%,
+    #e4e4ea 50%,
+    #f0f0f4 75%
+  );
+  background-size: 200% 100%;
+  animation: ll-shimmer 1.6s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+/* ─── Utilities ───────────────────────────────────────────────────────────── */
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -9,5 +76,38 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* Smooth card lift on hover */
+  .card-lift {
+    transition: box-shadow 200ms ease-out, transform 200ms ease-out;
+  }
+  .card-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Pill-badge styles */
+  .badge-blue {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #1877f2;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge-neutral {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: #6b7280;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
   }
 }

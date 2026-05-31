@@ -172,11 +172,23 @@ export default function Blog() {
                 })}
               </div>
             ) : (
-              <div className="py-20 text-center">
-                <p className="font-['General_Sans:Medium',sans-serif] text-[#94a3b8] text-lg">No articles found.</p>
-                <button onClick={() => { setSearchQuery(""); setSelectedCategory("All"); }}
-                  className="mt-4 text-[#1877f2] font-['Satoshi:Bold',sans-serif] text-sm hover:underline">
-                  Clear filters
+              <div className="py-24 flex flex-col items-center text-center gap-5 max-w-[400px] mx-auto">
+                <div className="w-16 h-16 rounded-2xl bg-[#f1f5f9] flex items-center justify-center text-3xl select-none" aria-hidden="true">
+                  🔍
+                </div>
+                <div className="flex flex-col gap-2">
+                  <p className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-xl">No articles found</p>
+                  <p className="font-['General_Sans:Medium',sans-serif] text-[#64748b] text-base leading-relaxed">
+                    {searchQuery
+                      ? `We couldn't find any articles matching "${searchQuery}". Try a different search term.`
+                      : `There are no articles in the "${selectedCategory}" category yet. Check back soon.`}
+                  </p>
+                </div>
+                <button
+                  onClick={() => { setSearchQuery(""); setSelectedCategory("All"); }}
+                  className="px-6 py-2.5 rounded-full bg-[#1877f2] text-white font-['Satoshi:Bold',sans-serif] text-sm hover:bg-[#1565c0] transition-colors duration-150"
+                >
+                  View all articles
                 </button>
               </div>
             )}

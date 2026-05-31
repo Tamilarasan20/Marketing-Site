@@ -143,9 +143,14 @@ export default function PricingSection({ className = "" }: { className?: string 
     <section className={`bg-black px-4 py-16 md:px-8 md:py-24 ${className}`}>
       <div className="mx-auto flex w-full max-w-[1480px] flex-col items-center">
         <div className="flex w-full max-w-[740px] flex-col items-center gap-7 md:gap-[42px]">
-          <h2 style={{ fontWeight: 900 }} className="font-['Satoshi:Bold',sans-serif] text-[40px] font-bold leading-[1.1] tracking-[-0.8px] text-white md:text-[56px]">
-            Pricing
-          </h2>
+          <div className="flex flex-col items-center gap-3">
+            <h2 style={{ fontWeight: 900 }} className="font-['Satoshi:Bold',sans-serif] text-[40px] font-bold leading-[1.1] tracking-[-0.8px] text-white md:text-[56px]">
+              Simple, honest pricing
+            </h2>
+            <p className="font-['General_Sans:Medium',sans-serif] text-[#9ca3af] text-lg text-center max-w-md leading-relaxed">
+              Choose a plan and start building your AI marketing team today. No setup fees. Cancel anytime.
+            </p>
+          </div>
 
           <div className="flex flex-col items-center gap-5 md:gap-6">
             <div className="flex rounded-full border border-[#374151] bg-black p-1">
@@ -277,10 +282,10 @@ function PricingCard({ plan, billingCycle, onGetStarted }: {
         <button
           type="button"
           onClick={() => onGetStarted(selectedCreditIndex)}
-          className={`mt-8 h-14 w-full rounded-full font-['Satoshi:Bold',sans-serif] text-[18px] font-bold transition-colors ${
+          className={`mt-8 h-14 w-full rounded-full font-['Satoshi:Bold',sans-serif] text-[18px] font-bold transition-colors duration-150 ${
             plan.popular
-              ? "bg-[#1877f2] text-white hover:bg-[#156bdc]"
-              : "border border-[#cfd8e6] bg-[#edf4ff] text-[#1877f2] hover:bg-white"
+              ? "bg-[#1877f2] text-white hover:bg-[#156bdc] active:bg-[#1256b0]"
+              : "border border-[#cfd8e6] bg-[#edf4ff] text-[#1877f2] hover:bg-white active:bg-[#dbeafe]"
           }`}
         >
           Get Started
@@ -307,25 +312,30 @@ function PricingCard({ plan, billingCycle, onGetStarted }: {
               <ChevronDown size={16} className={`text-[#9ca3af] transition-transform ${isCreditMenuOpen ? "rotate-180" : ""}`} />
             ) : null}
           </button>
-          {isCreditMenuOpen && plan.creditOptions ? (
-            <div className="absolute top-[76px] z-30 w-[310px] max-w-[calc(100vw-48px)] overflow-hidden rounded-[18px] bg-[#2f3d52] py-2 shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
-              {plan.creditOptions.map((option, index) => (
-                <button
-                  key={`${option.credits}-${option.price}`}
-                  type="button"
-                  onClick={() => {
-                    setSelectedCreditIndex(index);
-                    setIsCreditMenuOpen(false);
-                  }}
-                  className={`flex w-full items-center px-4 py-3 text-left font-['Satoshi:Bold',sans-serif] text-[17px] font-bold text-white transition-colors hover:bg-[rgba(255,255,255,0.08)] ${
-                    index === selectedCreditIndex ? "bg-[rgba(24,119,242,0.18)]" : ""
-                  }`}
-                >
-                  <span>{option.credits} — {discountedPriceForCycle(option.planPrice, billingCycle)}/mo</span>
-                </button>
-              ))}
-            </div>
-          ) : null}
+          {/* Credit options dropdown — always rendered for smooth CSS transition */}
+          <div
+            className={`absolute top-[76px] z-30 w-[310px] max-w-[calc(100vw-48px)] overflow-hidden rounded-[18px] bg-[#2f3d52] py-2 shadow-[0_18px_40px_rgba(0,0,0,0.35)] transition-[opacity,transform] duration-200 ease-out ${
+              isCreditMenuOpen && plan.creditOptions
+                ? "opacity-100 translate-y-0 pointer-events-auto"
+                : "opacity-0 -translate-y-2 pointer-events-none"
+            }`}
+          >
+            {plan.creditOptions?.map((option, index) => (
+              <button
+                key={`${option.credits}-${option.price}`}
+                type="button"
+                onClick={() => {
+                  setSelectedCreditIndex(index);
+                  setIsCreditMenuOpen(false);
+                }}
+                className={`flex w-full items-center px-4 py-3 text-left font-['Satoshi:Bold',sans-serif] text-[17px] font-bold text-white transition-colors duration-150 hover:bg-[rgba(255,255,255,0.08)] ${
+                  index === selectedCreditIndex ? "bg-[rgba(24,119,242,0.18)]" : ""
+                }`}
+              >
+                <span>{option.credits} — {discountedPriceForCycle(option.planPrice, billingCycle)}/mo</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         <ul className="mt-9 flex flex-col gap-[18px]">
