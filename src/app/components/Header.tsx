@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation } from "react-router";
+import { useTranslation } from "react-i18next";
 import appLogo from "../../assets/loraloop-icon.svg";
+import i18n from "../../i18n";
 
 // ── Language config ──────────────────────────────────────────────────────────
 const LANGUAGES = [
@@ -55,6 +57,7 @@ function LanguagePicker() {
   const select = (lang: typeof LANGUAGES[number]) => {
     setCurrent(lang.code);
     applyLang(lang.code, lang.dir);
+    i18n.changeLanguage(lang.code);
     setOpen(false);
   };
 
@@ -160,6 +163,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pillRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const closeAll = useCallback(() => setOpen(false), []);
 
@@ -234,7 +238,7 @@ export default function Header() {
             className="flex gap-[2px] items-center justify-center px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1877f2]/50"
           >
             <span className="font-['Satoshi',sans-serif] font-medium text-base leading-6 text-black whitespace-nowrap">
-              AI Employees
+              {t('nav.aiEmployees')}
             </span>
             <svg
               width="16"
@@ -262,7 +266,7 @@ export default function Header() {
             className="flex items-center justify-center px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-black/5"
           >
             <span className="font-['Satoshi',sans-serif] font-medium text-base leading-6 text-black whitespace-nowrap">
-              Solution
+              {t('nav.solution')}
             </span>
           </Link>
           <Link
@@ -293,15 +297,15 @@ export default function Header() {
             className="flex items-center justify-center px-3 md:px-5 py-2 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors duration-150"
           >
             <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-[#0f172a] whitespace-nowrap">
-              Sign in
+              {t('nav.signIn')}
             </span>
           </a>
           <a
-            href="https://app.loraloop.com/signup"
+            href={`https://app.loraloop.com/signup?lang=${typeof window !== 'undefined' ? (localStorage.getItem('loraloop_language') ?? 'en') : 'en'}`}
             className="bg-[#1877f2] hover:bg-[#1565c0] active:bg-[#1256b0] transition-colors duration-150 rounded-full px-3 md:px-5 py-2 flex items-center justify-center"
           >
             <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-white whitespace-nowrap">
-              Get Started
+              {t('nav.getStarted')}
             </span>
           </a>
         </div>

@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "aiEmployees": "AI Employees",
+    "solution": "Solution",
+    "blog": "Blog",
+    "pricing": "Pricing",
+    "signIn": "Sign in",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title": "AI Marketing Agents That Execute 24/7",
+    "subtitle": "Plan, create, schedule, and improve your marketing with AI agents that never sleep.",
+    "inputPlaceholder": "yourwebsite.com",
+    "cta": "Get Started",
+    "connectClaude": "Connect with Claude",
+    "trustedBy": "Trusted by 1,000+ brands"
+  },
+  "features": {
+    "title": "Everything your marketing team needs",
+    "subtitle": "9 AI agents that work together to grow your brand.",
+    "content": "Content",
+    "contentDesc": "Posts, blogs, emails, and captions in seconds.",
+    "social": "Social Media",
+    "socialDesc": "Schedule and publish across all platforms.",
+    "ads": "Ads",
+    "adsDesc": "Create and manage ad campaigns with AI.",
+    "analytics": "Analytics",
+    "analyticsDesc": "Deep insights and performance reports."
+  },
+  "pricing": {
+    "title": "Simple, honest pricing",
+    "subtitle": "Choose a plan and start building your AI marketing team today. No setup fees. Cancel anytime.",
+    "monthly": "Monthly",
+    "quarterly": "3-month",
+    "annual": "12-month",
+    "save15": "Save 15%",
+    "save30": "Save 30%",
+    "mostPopular": "Most popular",
+    "getStarted": "Get Started",
+    "aiAgents": "AI Agents",
+    "noAiAgents": "No AI Agents",
+    "monthlyCredits": "Monthly credits",
+    "perMonth": "/mo"
+  },
+  "footer": {
+    "tagline": "AI Marketing Agents That Execute 24/7",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "about": "About",
+    "blog": "Blog",
+    "pricing": "Pricing",
+    "copyright": "© 2025 Loraloop. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong.",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "comingSoon": "Coming soon"
+  }
+}
