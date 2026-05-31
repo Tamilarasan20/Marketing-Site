@@ -175,7 +175,7 @@ export default function PricingSection({ className = "" }: { className?: string 
           </div>
         </div>
 
-        <div className="mt-16 grid w-full grid-cols-1 items-end gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-6">
+        <div className="mt-16 grid w-full grid-cols-1 items-end gap-5 lg:grid-cols-4 xl:gap-6">
           {plans.map((plan) => (
             <PricingCard key={plan.id} plan={plan} billingCycle={billingCycle} />
           ))}
