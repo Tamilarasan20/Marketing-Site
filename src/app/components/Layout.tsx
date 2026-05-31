@@ -40,8 +40,6 @@ export default function Layout() {
     return () => document.removeEventListener("click", handleClick, true);
   }, []);
 
-  const isHomePage = location.pathname === "/";
-
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <ScrollToTop />
@@ -50,7 +48,10 @@ export default function Layout() {
       </div>
       <MobileNav />
       <main className="flex-1">
-        <Outlet />
+        {/* key forces remount → restarts the page-enter animation on navigation */}
+        <div key={location.pathname} className="page-enter">
+          <Outlet />
+        </div>
       </main>
       <Footer />
     </div>

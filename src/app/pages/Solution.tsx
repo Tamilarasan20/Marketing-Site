@@ -294,7 +294,7 @@ export default function Solution() {
             onClick={handleGetStart}
             className="bg-[#1877f2] h-12 px-6 rounded-full hover:bg-[#1565d8] transition-colors cursor-pointer"
           >
-            <span className="font-['Satoshi:Bold',sans-serif] leading-6 text-white text-base">Get Start</span>
+            <span className="font-['Satoshi:Bold',sans-serif] leading-6 text-white text-base">Get Started</span>
           </button>
         </div>
       </div>
@@ -452,7 +452,7 @@ export default function Solution() {
             className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0 cursor-pointer hover:opacity-90 transition-opacity" 
             data-name="Button"
           >
-            <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
+            <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Started</p>
           </div>
         </div>
         <div className="h-[150px] md:h-[258px] relative shrink-0 w-full max-w-[1002px]" data-name="image 172">
