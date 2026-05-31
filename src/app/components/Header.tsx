@@ -1,6 +1,105 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation } from "react-router";
 import appLogo from "../../assets/loraloop-icon.svg";
+
+// ── Language config ──────────────────────────────────────────────────────────
+const LANGUAGES = [
+  { code: "en", label: "English",    nativeLabel: "English",    flag: "🇺🇸", dir: "ltr" },
+  { code: "fr", label: "French",     nativeLabel: "Français",   flag: "🇫🇷", dir: "ltr" },
+  { code: "de", label: "German",     nativeLabel: "Deutsch",    flag: "🇩🇪", dir: "ltr" },
+  { code: "es", label: "Spanish",    nativeLabel: "Español",    flag: "🇪🇸", dir: "ltr" },
+  { code: "pt", label: "Portuguese", nativeLabel: "Português",  flag: "🇧🇷", dir: "ltr" },
+  { code: "ar", label: "Arabic",     nativeLabel: "العربية",    flag: "🇸🇦", dir: "rtl" },
+] as const;
+
+type LangCode = typeof LANGUAGES[number]["code"];
+
+function getSavedLang(): LangCode {
+  try { return (localStorage.getItem("loraloop_language") as LangCode) ?? "en"; }
+  catch { return "en"; }
+}
+
+function applyLang(code: LangCode, dir: string) {
+  document.documentElement.lang = code;
+  document.documentElement.dir  = dir;
+  try { localStorage.setItem("loraloop_language", code); } catch { /* quota */ }
+}
+
+// Globe SVG icon
+function GlobeIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  );
+}
+
+// Language picker component (globe icon only, no text)
+function LanguagePicker() {
+  const [current, setCurrent] = useState<LangCode>("en");
+  const [open, setOpen]       = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => { setCurrent(getSavedLang()); }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const h = (e: MouseEvent) => {
+      if (!ref.current?.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", h);
+    return () => document.removeEventListener("mousedown", h);
+  }, [open]);
+
+  const select = (lang: typeof LANGUAGES[number]) => {
+    setCurrent(lang.code);
+    applyLang(lang.code, lang.dir);
+    setOpen(false);
+  };
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-label="Select language"
+        className="flex items-center justify-center w-9 h-9 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors duration-150 text-[#374151]"
+      >
+        <GlobeIcon size={17} />
+      </button>
+
+      {open && (
+        <div
+          className="absolute right-0 top-full mt-2 z-[300] bg-white border border-[#e5e7eb] rounded-2xl shadow-xl overflow-hidden"
+          style={{ minWidth: 200 }}
+        >
+          {LANGUAGES.map((lang) => (
+            <button
+              key={lang.code}
+              type="button"
+              onClick={() => select(lang)}
+              className={cn(
+                "flex items-center gap-3 w-full px-4 py-3 text-left text-[14px] transition-colors",
+                current === lang.code
+                  ? "bg-[#f0f7ff] text-[#1877f2] font-semibold"
+                  : "text-[#374151] hover:bg-[#f9fafb]",
+              )}
+            >
+              <span className="text-lg leading-none">{lang.flag}</span>
+              <span className="flex-1">{lang.nativeLabel}</span>
+              {current === lang.code && (
+                <svg className="w-3.5 h-3.5 text-[#1877f2]" viewBox="0 0 12 12" fill="currentColor">
+                  <path d="M10 2.5 4.5 8 2 5.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                </svg>
+              )}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 import imgLora from "../../imports/Home-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
 import imgSam from "../../imports/Home-1/67e2795861635095f78d499d37fb8c47640346cd.png";
 import imgClara from "../../imports/Home-1/a6c396695db2f4867d2b2cf94c4c4013fb4aa21a.png";
@@ -186,6 +285,9 @@ export default function Header() {
 
         {/* Auth CTAs */}
         <div className="flex items-center gap-2">
+          {/* Globe / language picker — icon only */}
+          <LanguagePicker />
+
           <a
             href="https://app.loraloop.com/signin"
             className="flex items-center justify-center px-3 md:px-5 py-2 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors duration-150"
