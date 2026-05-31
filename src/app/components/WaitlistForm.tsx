@@ -101,10 +101,11 @@ export default function WaitlistForm() {
 
       <button
         type="button"
-        onClick={() => setClaudeModalOpen(true)}
-        className="content-stretch flex gap-[10px] items-center justify-center pl-[8px] pr-[16px] py-[8px] relative rounded-full shrink-0 bg-[#1f2937] hover:bg-[#2a3549] active:scale-[0.98] transition-all cursor-pointer select-none"
-        data-name="Connect with Claude"
-        aria-label="Connect Loraloop with Claude"
+        disabled
+        aria-disabled="true"
+        title="Coming soon"
+        className="content-stretch flex gap-[10px] items-center justify-center pl-[8px] pr-[16px] py-[8px] relative rounded-full shrink-0 bg-[#1f2937] opacity-50 cursor-not-allowed select-none"
+        data-name="Connect with Claude (disabled)"
       >
         <div className="flex items-center justify-center w-[32px] h-[32px] rounded-[8px] bg-[#d97757] shrink-0">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
