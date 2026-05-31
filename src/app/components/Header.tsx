@@ -1,6 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation } from "react-router";
 import appLogo from "../../assets/loraloop-icon.svg";
+import imgLora from "../../imports/Home-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
+import imgSam from "../../imports/Home-1/67e2795861635095f78d499d37fb8c47640346cd.png";
+import imgClara from "../../imports/Home-1/a6c396695db2f4867d2b2cf94c4c4013fb4aa21a.png";
+import imgSteve from "../../imports/Home-1/81459e21086bbb45f043de724414eb6c6a228454.png";
+import imgSarah from "../../imports/Home-1/2ede8e04425e852843b64720e2e6023d1ed754cb.png";
+import { cn } from "./ui/utils";
 
 // ── Language config ──────────────────────────────────────────────────────────
 const LANGUAGES = [
@@ -14,9 +20,21 @@ const LANGUAGES = [
 
 type LangCode = typeof LANGUAGES[number]["code"];
 
+// Nav text translations keyed by language code
+const NAV_LABELS: Record<LangCode, { aiEmployees: string; solution: string; blog: string; pricing: string; signIn: string; getStarted: string }> = {
+  en: { aiEmployees: "AI Employees", solution: "Solution", blog: "Blog", pricing: "Pricing", signIn: "Sign in", getStarted: "Get Started" },
+  fr: { aiEmployees: "Employés IA",  solution: "Solution", blog: "Blog", pricing: "Tarifs",  signIn: "Connexion", getStarted: "Commencer" },
+  de: { aiEmployees: "KI-Mitarbeiter", solution: "Lösung", blog: "Blog", pricing: "Preise",  signIn: "Anmelden", getStarted: "Loslegen" },
+  es: { aiEmployees: "Empleados IA",  solution: "Solución", blog: "Blog", pricing: "Precios", signIn: "Iniciar sesión", getStarted: "Empezar" },
+  pt: { aiEmployees: "Funcionários IA", solution: "Solução", blog: "Blog", pricing: "Preços", signIn: "Entrar", getStarted: "Começar" },
+  ar: { aiEmployees: "موظفو الذكاء الاصطناعي", solution: "الحل", blog: "المدونة", pricing: "الأسعار", signIn: "تسجيل الدخول", getStarted: "ابدأ الآن" },
+};
+
 function getSavedLang(): LangCode {
-  try { return (localStorage.getItem("loraloop_language") as LangCode) ?? "en"; }
-  catch { return "en"; }
+  try {
+    const stored = localStorage.getItem("loraloop_language");
+    return (LANGUAGES.find((l) => l.code === stored)?.code ?? "en") as LangCode;
+  } catch { return "en"; }
 }
 
 function applyLang(code: LangCode, dir: string) {
@@ -35,13 +53,10 @@ function GlobeIcon({ size = 16 }: { size?: number }) {
   );
 }
 
-// Language picker component (globe icon only, no text)
-function LanguagePicker() {
-  const [current, setCurrent] = useState<LangCode>("en");
-  const [open, setOpen]       = useState(false);
+// Language picker — current/onSelect lifted to Header so nav labels can translate
+function LanguagePicker({ current, onSelect }: { current: LangCode; onSelect: (lang: typeof LANGUAGES[number]) => void }) {
+  const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => { setCurrent(getSavedLang()); }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -51,12 +66,6 @@ function LanguagePicker() {
     document.addEventListener("mousedown", h);
     return () => document.removeEventListener("mousedown", h);
   }, [open]);
-
-  const select = (lang: typeof LANGUAGES[number]) => {
-    setCurrent(lang.code);
-    applyLang(lang.code, lang.dir);
-    setOpen(false);
-  };
 
   return (
     <div className="relative" ref={ref}>
@@ -78,7 +87,7 @@ function LanguagePicker() {
             <button
               key={lang.code}
               type="button"
-              onClick={() => select(lang)}
+              onClick={() => { onSelect(lang); setOpen(false); }}
               className={cn(
                 "flex items-center gap-3 w-full px-4 py-3 text-left text-[14px] transition-colors",
                 current === lang.code
@@ -100,13 +109,6 @@ function LanguagePicker() {
     </div>
   );
 }
-import imgLora from "../../imports/Home-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
-import imgSam from "../../imports/Home-1/67e2795861635095f78d499d37fb8c47640346cd.png";
-import imgClara from "../../imports/Home-1/a6c396695db2f4867d2b2cf94c4c4013fb4aa21a.png";
-import imgSteve from "../../imports/Home-1/81459e21086bbb45f043de724414eb6c6a228454.png";
-import imgSarah from "../../imports/Home-1/2ede8e04425e852843b64720e2e6023d1ed754cb.png";
-import { cn } from "./ui/utils";
-
 const aiAgents = [
   {
     name: "Lora",
@@ -158,8 +160,19 @@ const aiAgents = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [lang, setLang] = useState<LangCode>("en");
   const pillRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+
+  // Load persisted language on mount
+  useEffect(() => { setLang(getSavedLang()); }, []);
+
+  const handleLangSelect = useCallback((selected: typeof LANGUAGES[number]) => {
+    setLang(selected.code);
+    applyLang(selected.code, selected.dir);
+  }, []);
+
+  const nav = NAV_LABELS[lang];
 
   const closeAll = useCallback(() => setOpen(false), []);
 
@@ -234,7 +247,7 @@ export default function Header() {
             className="flex gap-[2px] items-center justify-center px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1877f2]/50"
           >
             <span className="font-['Satoshi',sans-serif] font-medium text-base leading-6 text-black whitespace-nowrap">
-              AI Employees
+              {nav.aiEmployees}
             </span>
             <svg
               width="16"
@@ -262,7 +275,7 @@ export default function Header() {
             className="flex items-center justify-center px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-black/5"
           >
             <span className="font-['Satoshi',sans-serif] font-medium text-base leading-6 text-black whitespace-nowrap">
-              Solution
+              {nav.solution}
             </span>
           </Link>
           <Link
@@ -270,7 +283,7 @@ export default function Header() {
             className="flex items-center justify-center px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-black/5"
           >
             <span className="font-['Satoshi',sans-serif] font-medium text-base leading-6 text-black whitespace-nowrap">
-              Blog
+              {nav.blog}
             </span>
           </Link>
           <Link
@@ -278,7 +291,7 @@ export default function Header() {
             className="flex items-center justify-center px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-black/5"
           >
             <span className="font-['Satoshi',sans-serif] font-medium text-base leading-6 text-black whitespace-nowrap">
-              Pricing
+              {nav.pricing}
             </span>
           </Link>
         </nav>
@@ -286,14 +299,14 @@ export default function Header() {
         {/* Auth CTAs */}
         <div className="flex items-center gap-2">
           {/* Globe / language picker — icon only */}
-          <LanguagePicker />
+          <LanguagePicker current={lang} onSelect={handleLangSelect} />
 
           <a
             href="https://app.loraloop.com/signin"
             className="flex items-center justify-center px-3 md:px-5 py-2 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors duration-150"
           >
             <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-[#0f172a] whitespace-nowrap">
-              Sign in
+              {nav.signIn}
             </span>
           </a>
           <a
@@ -301,7 +314,7 @@ export default function Header() {
             className="bg-[#1877f2] hover:bg-[#1565c0] active:bg-[#1256b0] transition-colors duration-150 rounded-full px-3 md:px-5 py-2 flex items-center justify-center"
           >
             <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-white whitespace-nowrap">
-              Get Started
+              {nav.getStarted}
             </span>
           </a>
         </div>
