@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocation } from 'react-router';
+import ClaudeConnectModal from './ClaudeConnectModal';
 
 const WEBSITE_REGEX = /^(https?:\/\/)?(www\.)?([a-z0-9-]+\.)+[a-z]{2,}(\/[^\s]*)?$/i;
 
 export default function WaitlistForm() {
   const [website, setWebsite] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [claudeModalOpen, setClaudeModalOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
 
@@ -97,12 +99,12 @@ export default function WaitlistForm() {
 
       <div className="w-full max-w-[420px] h-px bg-[rgba(255,255,255,0.1)] my-1" />
 
-      <div
-        aria-disabled="true"
-        className="content-stretch flex gap-[10px] items-center justify-center pl-[8px] pr-[16px] py-[8px] relative rounded-full shrink-0 bg-[#1f2937] opacity-60 cursor-not-allowed select-none"
-        style={{ pointerEvents: 'none' }}
-        data-name="Connect with Claude (disabled)"
-        title="Coming soon"
+      <button
+        type="button"
+        onClick={() => setClaudeModalOpen(true)}
+        className="content-stretch flex gap-[10px] items-center justify-center pl-[8px] pr-[16px] py-[8px] relative rounded-full shrink-0 bg-[#1f2937] hover:bg-[#2a3549] active:scale-[0.98] transition-all cursor-pointer select-none"
+        data-name="Connect with Claude"
+        aria-label="Connect Loraloop with Claude"
       >
         <div className="flex items-center justify-center w-[32px] h-[32px] rounded-[8px] bg-[#d97757] shrink-0">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -111,7 +113,6 @@ export default function WaitlistForm() {
               <line x1="2" y1="12" x2="22" y2="12" />
               <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
               <line x1="19.07" y1="4.93" x2="4.93" y2="19.07" />
-              <line x1="6" y1="2.5" x2="6" y2="2.5" />
             </g>
           </svg>
         </div>
@@ -121,7 +122,9 @@ export default function WaitlistForm() {
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0">
           <path d="M6 4l4 4-4 4" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-      </div>
+      </button>
+
+      <ClaudeConnectModal open={claudeModalOpen} onOpenChange={setClaudeModalOpen} />
     </form>
   );
 }
