@@ -42,7 +42,7 @@ const plans: Plan[] = [
       { credits: "250 credits", price: "$39/mo", planPrice: "$39" },
       { credits: "400 credits", price: "$59/mo", planPrice: "$59" },
     ],
-    features: ["All 9 helpers", "100 monthly AI credits", "5 Seats", "3 Workspace", "Support 24/7"],
+    features: ["All 9 helpers", "100 monthly AI credits", "2 Seats", "3 Workspaces", "Support 24/7"],
   },
   {
     id: "growth",
@@ -59,7 +59,7 @@ const plans: Plan[] = [
       { credits: "750 credits", price: "$99/mo", planPrice: "$99" },
       { credits: "900 credits", price: "$129/mo", planPrice: "$129" },
     ],
-    features: ["All 9 helpers", "600 monthly AI credits", "5 Seats", "3 Workspace", "Support 24/7"],
+    features: ["All 9 helpers", "500 monthly AI credits", "5 Seats", "5 Workspaces", "Support 24/7"],
     popular: true,
   },
   {
@@ -77,7 +77,7 @@ const plans: Plan[] = [
       { credits: "2000 credits", price: "$199/mo", planPrice: "$199" },
       { credits: "3000 credits", price: "$299/mo", planPrice: "$299" },
     ],
-    features: ["All 9 helpers", "1500 monthly AI credits", "25 Seats", "10 Workspace", "Support 24/7"],
+    features: ["All 9 helpers", "1,500 monthly AI credits", "25 Seats", "10 Workspaces", "Support 24/7"],
   },
   {
     id: "enterprise",
@@ -93,7 +93,7 @@ const plans: Plan[] = [
       { credits: "5000 credits", price: "$499/mo", planPrice: "$499" },
       { credits: "6000 credits", price: "$599/mo", planPrice: "$599" },
     ],
-    features: ["All 9 helpers", "4500 monthly AI credits", "Unlimited Seats", "Unlimited Workspace", "Priority Support 24/7"],
+    features: ["All 9 helpers", "4,500 monthly AI credits", "Unlimited Seats", "Unlimited Workspaces", "Priority Support 24/7"],
   },
 ];
 
