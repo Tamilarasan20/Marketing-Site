@@ -118,9 +118,26 @@ const discountedPriceForCycle = (price: string, cycle: BillingCycle) => {
   return `$${Math.round(numericPrice)}`;
 };
 
+const PERIOD_MAP: Record<BillingCycle, string> = {
+  monthly: "monthly",
+  "3-month": "quarterly",
+  "12-month": "annual",
+};
+
+const APP_URL = "https://app.loraloop.com";
+
 export default function PricingSection({ className = "" }: { className?: string }) {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
   const [agentMode, setAgentMode] = useState<AgentMode>("ai");
+
+  function handleGetStarted(planId: string, tier: number, cycle: BillingCycle) {
+    const period = PERIOD_MAP[cycle];
+    const url = new URL(`${APP_URL}/signup`);
+    url.searchParams.set("plan", planId.toUpperCase());
+    url.searchParams.set("tier", String(tier));
+    url.searchParams.set("period", period);
+    window.location.href = url.toString();
+  }
 
   return (
     <section className={`bg-black px-4 py-16 md:px-8 md:py-24 ${className}`}>
@@ -182,7 +199,12 @@ export default function PricingSection({ className = "" }: { className?: string 
 
         <div className="mt-16 grid w-full grid-cols-1 items-end gap-5 lg:grid-cols-4 xl:gap-6">
           {plans.map((plan) => (
-            <PricingCard key={plan.id} plan={plan} billingCycle={billingCycle} />
+            <PricingCard
+              key={plan.id}
+              plan={plan}
+              billingCycle={billingCycle}
+              onGetStarted={(tier) => handleGetStarted(plan.id, tier, billingCycle)}
+            />
           ))}
         </div>
       </div>
@@ -190,7 +212,11 @@ export default function PricingSection({ className = "" }: { className?: string 
   );
 }
 
-function PricingCard({ plan, billingCycle }: { plan: Plan; billingCycle: BillingCycle }) {
+function PricingCard({ plan, billingCycle, onGetStarted }: {
+  plan: Plan;
+  billingCycle: BillingCycle;
+  onGetStarted: (tierIndex: number) => void;
+}) {
   const [selectedCreditIndex, setSelectedCreditIndex] = useState(0);
   const [isCreditMenuOpen, setIsCreditMenuOpen] = useState(false);
   const selectedCredit = plan.creditOptions?.[selectedCreditIndex];
@@ -255,6 +281,7 @@ function PricingCard({ plan, billingCycle }: { plan: Plan; billingCycle: Billing
 
         <button
           type="button"
+          onClick={() => onGetStarted(selectedCreditIndex)}
           className={`mt-8 h-14 w-full rounded-full font-['Satoshi:Bold',sans-serif] text-[18px] font-bold transition-colors duration-150 ${
             plan.popular
               ? "bg-[#1877f2] text-white hover:bg-[#156bdc] active:bg-[#1256b0]"
