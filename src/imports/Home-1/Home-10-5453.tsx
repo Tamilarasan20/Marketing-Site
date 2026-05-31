@@ -2735,6 +2735,13 @@ function Solution() {
   );
 }
 
+const _mob_prompt = encodeURIComponent(
+  "What is Loraloop (loraloop.com)? Tell me about this AI marketing platform — what it does, how it helps brands, creators, and agencies automate their marketing with AI agents, what makes it stand out from other tools, and why users love it."
+);
+const _MOB_CHATGPT_URL = `https://chatgpt.com/?q=${_mob_prompt}`;
+const _MOB_PERPLEXITY_URL = `https://www.perplexity.ai/?q=${_mob_prompt}`;
+const _MOB_CLAUDE_URL = `https://claude.ai/new?q=${_mob_prompt}`;
+
 function Frame13() {
   return (
     <div className="content-stretch flex flex-col items-center not-italic relative shrink-0 text-center w-full">
@@ -2761,7 +2768,7 @@ function Container62() {
 
 function ChatGpt() {
   return (
-    <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="ChatGPT">
+    <a href={_MOB_CHATGPT_URL} target="_blank" rel="noopener noreferrer" className="bg-white relative rounded-[16px] shrink-0 w-full block cursor-pointer no-underline hover:shadow-[0_4px_16px_rgba(0,0,0,0.10)] transition-shadow duration-150" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between px-[20px] py-[16px] relative size-full">
@@ -2778,7 +2785,7 @@ function ChatGpt() {
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -2795,7 +2802,7 @@ function Container63() {
 
 function ChatGpt1() {
   return (
-    <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="ChatGPT">
+    <a href={_MOB_PERPLEXITY_URL} target="_blank" rel="noopener noreferrer" className="bg-white relative rounded-[16px] shrink-0 w-full block cursor-pointer no-underline hover:shadow-[0_4px_16px_rgba(0,0,0,0.10)] transition-shadow duration-150" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between px-[20px] py-[16px] relative size-full">
@@ -2812,7 +2819,7 @@ function ChatGpt1() {
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -2829,7 +2836,7 @@ function Container64() {
 
 function ChatGpt2() {
   return (
-    <div className="bg-white relative rounded-[16px] shrink-0 w-full" data-name="ChatGPT">
+    <a href={_MOB_CLAUDE_URL} target="_blank" rel="noopener noreferrer" className="bg-white relative rounded-[16px] shrink-0 w-full block cursor-pointer no-underline hover:shadow-[0_4px_16px_rgba(0,0,0,0.10)] transition-shadow duration-150" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between px-[20px] py-[16px] relative size-full">
@@ -2846,7 +2853,7 @@ function ChatGpt2() {
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 

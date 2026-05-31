@@ -3959,6 +3959,13 @@ function Solution1_Auth({ className }: { className?: string }) {
   );
 }
 
+const _loraloop_prompt = encodeURIComponent(
+  "What is Loraloop (loraloop.com)? Tell me about this AI marketing platform — what it does, how it helps brands, creators, and agencies automate their marketing with AI agents, what makes it stand out from other tools, and why users love it."
+);
+const _CHATGPT_URL = `https://chatgpt.com/?q=${_loraloop_prompt}`;
+const _PERPLEXITY_URL = `https://www.perplexity.ai/?q=${_loraloop_prompt}`;
+const _CLAUDE_URL = `https://claude.ai/new?q=${_loraloop_prompt}`;
+
 function Frame20_Auth() {
   return (
     <div className="content-stretch flex flex-col items-center not-italic relative shrink-0 text-center w-full whitespace-nowrap">
@@ -3981,7 +3988,7 @@ function Container33_Auth() {
 
 function ChatGpt_Auth() {
   return (
-    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px]" data-name="ChatGPT">
+    <a href={_CHATGPT_URL} target="_blank" rel="noopener noreferrer" className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px] cursor-pointer no-underline hover:shadow-[0_4px_16px_rgba(0,0,0,0.10)] transition-shadow duration-150" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
       <Container33_Auth />
       <div className="relative shrink-0 size-[20px]" data-name="icon_pack/chevron_right">
@@ -3994,7 +4001,7 @@ function ChatGpt_Auth() {
           <div className="absolute bg-[#d1d5db] inset-0" data-name="Black" />
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -4011,7 +4018,7 @@ function Container34_Auth() {
 
 function ChatGpt1_Auth() {
   return (
-    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px]" data-name="ChatGPT">
+    <a href={_PERPLEXITY_URL} target="_blank" rel="noopener noreferrer" className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px] cursor-pointer no-underline hover:shadow-[0_4px_16px_rgba(0,0,0,0.10)] transition-shadow duration-150" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
       <Container34_Auth />
       <div className="relative shrink-0 size-[20px]" data-name="icon_pack/chevron_right">
@@ -4024,7 +4031,7 @@ function ChatGpt1_Auth() {
           <div className="absolute bg-[#d1d5db] inset-0" data-name="Black" />
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -4041,7 +4048,7 @@ function Container35_Auth() {
 
 function ChatGpt2_Auth() {
   return (
-    <div className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px]" data-name="ChatGPT">
+    <a href={_CLAUDE_URL} target="_blank" rel="noopener noreferrer" className="bg-white content-stretch flex gap-[12px] items-center px-[20px] py-[16px] relative rounded-[16px] cursor-pointer no-underline hover:shadow-[0_4px_16px_rgba(0,0,0,0.10)] transition-shadow duration-150" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
       <Container35_Auth />
       <div className="relative shrink-0 size-[20px]" data-name="icon_pack/chevron_right">
@@ -4054,7 +4061,7 @@ function ChatGpt2_Auth() {
           <div className="absolute bg-[#d1d5db] inset-0" data-name="Black" />
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
