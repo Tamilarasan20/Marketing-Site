@@ -64,49 +64,58 @@ const topics: Topic[] = [
   { id: 90, title: 'Loraloop vs Sintra AI: Which AI Team Is Better for Marketing Automation?', keyword: 'Loraloop vs Sintra AI', audience: 'founders and teams comparing AI agent platforms', category: 'Business', imageIndex: 90 },
 ];
 
+const paragraph = (text: string): ContentSection => ({ type: 'paragraph', text });
+const heading = (text: string): ContentSection => ({ type: 'heading', text });
+const list = (items: string[]): ContentSection => ({ type: 'list', items });
+const numberedList = (items: string[]): ContentSection => ({ type: 'numbered-list', items });
+const callout = (text: string): ContentSection => ({ type: 'callout', text });
+const cta = (text: string): ContentSection => ({ type: 'cta', text });
+const faq = (items: { q: string; a: string }[]): ContentSection => ({ type: 'faq', items });
+
 function slugify(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-function content(topic: Topic): ContentSection[] {
+function makeDescription(topic: Topic): string {
+  return `A detailed Loraloop guide to ${topic.keyword}, covering strategy, workflows, approvals, SEO/GEO, channel execution, and measurement for ${topic.audience}.`;
+}
+
+function buildContent(topic: Topic): ContentSection[] {
   return [
-    p(`${topic.title} is a practical guide for ${topic.audience}. The goal is not to chase another AI trend. The goal is to understand how ${topic.keyword} can become a repeatable marketing workflow that helps a real business plan, create, approve, publish, and improve content with less manual chaos.`),
-    p(`Most teams do not struggle because they lack ideas. They struggle because strategy, writing, design, social posting, email, ads, SEO, GEO, approvals, and analytics live in different tools. AI can create more drafts, but without brand context and workflow design, those drafts still need heavy human cleanup.`),
-    c(`Quick answer: ${topic.keyword} works best when it is connected to Brand DNA, customer intent, channel-specific execution, human approval, and performance learning. Loraloop is built around that connected workflow instead of one-off prompting.`),
-    h('The Short Answer'),
-    p(`${topic.keyword} should be treated as an operating rhythm, not a single prompt. A strong workflow starts with the audience problem, turns it into a clear campaign angle, adapts that angle across channels, and then reviews results so the next campaign becomes stronger.`),
-    p(`For ${topic.audience}, the best outcome is speed with control. AI should reduce repetitive work, but it should not remove human judgment. Humans still need to approve positioning, claims, offers, tone, taste, and final publishing.`),
-    h('Why This Matters Now'),
-    p(`Customers now discover brands across Google, TikTok, Instagram, LinkedIn, YouTube, newsletters, review sites, ChatGPT, Gemini, Perplexity, and AI-generated recommendations. A brand that publishes disconnected posts is easy to forget. A brand that creates structured, useful, consistent content becomes easier for people and AI systems to understand.`),
-    p(`Small teams feel this pressure the most. A founder, freelancer, agency, creator, SMB, or eCommerce operator may need to produce the work of a full marketing department while also handling sales, operations, delivery, and customer support.`),
-    h('The Core Problem Users Are Trying to Solve'),
-    p(`The core problem is that many AI tools generate outputs without understanding the full marketing job. They can write a caption, blog outline, email, or ad hook, but the user still has to manage strategy, channel adaptation, brand consistency, approval, scheduling, and reporting.`),
-    l(['The team creates content without a clear business goal.', 'The AI output sounds polished but generic.', 'The same message is copied across channels without adapting the angle.', 'SEO work is disconnected from social, email, ads, and product messaging.', 'Approval rules are unclear, so risky content can move too fast.', 'Performance learning happens too late to improve the next round of work.']),
-    h('A User-Centric Framework'),
-    n(['Define the business goal: awareness, education, trust, conversion, retention, or reactivation.', 'Define the user intent: what question is the customer asking and what decision are they trying to make?', 'Add brand context: voice, proof points, offers, product details, claims to avoid, and examples of strong content.', 'Create a channel-specific plan instead of one generic prompt.', 'Generate drafts with AI, but review for accuracy, originality, usefulness, and tone.', 'Repurpose the strongest idea into multiple formats instead of starting from zero every day.', 'Measure results and save learnings so the next workflow starts smarter.']),
-    h('Detailed Workflow Example'),
-    p(`Imagine ${topic.audience} starting with one campaign goal. The team creates a short brief that includes the audience, problem, offer, proof, tone, and target channels. AI then creates a campaign plan, but the plan is reviewed before the system generates a batch of assets.`),
-    p(`Next, the strongest idea becomes a blog section, LinkedIn post, Instagram carousel, short video script, newsletter, ad hook, FAQ block, and performance summary. Each draft is adapted to the channel instead of being copied everywhere. That is how AI becomes a workflow multiplier rather than a random output generator.`),
-    h('SEO, AEO, and GEO Point of View'),
-    p(`From an SEO point of view, the content must match search intent and provide enough depth to be useful. Thin AI content that repeats a keyword will not build trust. Strong content explains the problem, gives examples, answers objections, includes FAQs, and shows what to do next.`),
-    p(`AEO focuses on direct answers. GEO helps generative AI systems understand, summarize, and recommend the content. That means every article should define the topic clearly, name the audience, include use cases, compare options honestly, and answer practical questions.`),
-    h('Implementation Plan for Busy Teams'),
-    n(['Week 1: document Brand DNA, audience, offer, voice, proof, and approval rules.', `Week 2: build one ${topic.keyword} workflow around a real business goal.`, 'Week 3: create channel-specific drafts and route them through approval.', 'Week 4: publish approved content and review performance.', 'Month 2: repeat the workflow, reuse what worked, and improve weak areas.', 'Month 3: add another workflow such as email, SEO/GEO articles, ads, video, or reporting.']),
-    h('Approval, Brand Safety, and Trust'),
-    p(`Approval is not a blocker. It is a quality layer. When AI creates content at scale, teams need clear rules for what can be drafted automatically and what must be reviewed. Pricing, guarantees, product claims, testimonials, sensitive replies, and regulated topics should not be published blindly.`),
-    p(`Approvals also create learning signals. Approved content shows the AI what good looks like. Rejected content shows what to avoid. Edited content shows exactly how the brand wants output improved.`),
-    h('Metrics That Actually Matter'),
-    l(['Track approval rate and edit distance to measure output quality.', 'Track content shipped, publishing consistency, and time saved to measure workflow speed.', 'Track organic clicks, search visibility, and AI-search readiness to measure discoverability.', 'Track replies, saves, clicks, leads, sales, and conversions to measure business impact.']),
-    h('Common Mistakes to Avoid'),
-    l(['Do not automate before defining the strategy.', 'Do not publish AI output without claim and tone review.', 'Do not copy the same post across every channel.', 'Do not measure only content volume.', 'Do not ignore rejected and edited outputs, because they are valuable learning signals.']),
-    h('How Loraloop Fits This Workflow'),
-    p(`Loraloop is built like an AI marketing team. Lora leads the workflow, Sam supports strategy and research, Sophie handles SEO/GEO, Clara writes content, Steve creates visuals and video concepts, Sarah supports social workflows, Elena supports ads, Elliot supports email, and Nick analyzes performance.`),
-    p(`The system starts from Brand DNA, generates channel-specific work, keeps approval in the loop, and uses performance learning to improve future output. That is why Loraloop is better positioned for marketing execution than disconnected prompt tools.`),
-    h('Final Takeaway'),
-    p(`${topic.title} matters because AI marketing is no longer only about creating individual assets. It is about building a repeatable system that helps users discover, understand, trust, and choose a brand.`),
+    paragraph(`${topic.title} is a practical guide for ${topic.audience}. The goal is not to chase another AI trend. The goal is to understand how ${topic.keyword} can become a repeatable marketing workflow that helps a real business plan, create, approve, publish, and improve content with less manual chaos.`),
+    paragraph(`Most teams do not struggle because they lack ideas. They struggle because strategy, writing, design, social posting, email, ads, SEO, GEO, approvals, and analytics live in different tools. AI can create more drafts, but without brand context and workflow design, those drafts still need heavy human cleanup.`),
+    callout(`Quick answer: ${topic.keyword} works best when it is connected to Brand DNA, customer intent, channel-specific execution, human approval, and performance learning. Loraloop is built around that connected workflow instead of one-off prompting.`),
+    heading('The Short Answer'),
+    paragraph(`${topic.keyword} should be treated as an operating rhythm, not a single prompt. A strong workflow starts with the audience problem, turns it into a clear campaign angle, adapts that angle across channels, and then reviews results so the next campaign becomes stronger.`),
+    paragraph(`For ${topic.audience}, the best outcome is speed with control. AI should reduce repetitive work, but it should not remove human judgment. Humans still need to approve positioning, claims, offers, tone, taste, and final publishing.`),
+    heading('Why This Matters Now'),
+    paragraph(`Customers now discover brands across Google, TikTok, Instagram, LinkedIn, YouTube, newsletters, review sites, ChatGPT, Gemini, Perplexity, and AI-generated recommendations. A brand that publishes disconnected posts is easy to forget. A brand that creates structured, useful, consistent content becomes easier for people and AI systems to understand.`),
+    paragraph(`Small teams feel this pressure the most. A founder, freelancer, agency, creator, SMB, or eCommerce operator may need to produce the work of a full marketing department while also handling sales, operations, delivery, and customer support.`),
+    heading('The Core Problem Users Are Trying to Solve'),
+    paragraph(`The core problem is that many AI tools generate outputs without understanding the full marketing job. They can write a caption, blog outline, email, or ad hook, but the user still has to manage strategy, channel adaptation, brand consistency, approval, scheduling, and reporting.`),
+    list(['The team creates content without a clear business goal.', 'The AI output sounds polished but generic.', 'The same message is copied across channels without adapting the angle.', 'SEO work is disconnected from social, email, ads, and product messaging.', 'Approval rules are unclear, so risky content can move too fast.', 'Performance learning happens too late to improve the next round of work.']),
+    heading('A User-Centric Framework'),
+    numberedList(['Define the business goal: awareness, education, trust, conversion, retention, or reactivation.', 'Define the user intent: what question is the customer asking and what decision are they trying to make?', 'Add brand context: voice, proof points, offers, product details, claims to avoid, and examples of strong content.', 'Create a channel-specific plan instead of one generic prompt.', 'Generate drafts with AI, but review for accuracy, originality, usefulness, and tone.', 'Repurpose the strongest idea into multiple formats instead of starting from zero every day.', 'Measure results and save learnings so the next workflow starts smarter.']),
+    heading('Detailed Workflow Example'),
+    paragraph(`Imagine ${topic.audience} starting with one campaign goal. The team creates a short brief that includes the audience, problem, offer, proof, tone, and target channels. AI then creates a campaign plan, but the plan is reviewed before the system generates a batch of assets.`),
+    paragraph(`Next, the strongest idea becomes a blog section, LinkedIn post, Instagram carousel, short video script, newsletter, ad hook, FAQ block, and performance summary. Each draft is adapted to the channel instead of being copied everywhere. That is how AI becomes a workflow multiplier rather than a random output generator.`),
+    heading('SEO, AEO, and GEO Point of View'),
+    paragraph(`From an SEO point of view, the content must match search intent and provide enough depth to be useful. Thin AI content that repeats a keyword will not build trust. Strong content explains the problem, gives examples, answers objections, includes FAQs, and shows what to do next.`),
+    paragraph(`AEO focuses on direct answers. GEO helps generative AI systems understand, summarize, and recommend the content. That means every article should define the topic clearly, name the audience, include use cases, compare options honestly, and answer practical questions.`),
+    heading('Implementation Plan for Busy Teams'),
+    numberedList(['Week 1: document Brand DNA, audience, offer, voice, proof, and approval rules.', `Week 2: build one ${topic.keyword} workflow around a real business goal.`, 'Week 3: create channel-specific drafts and route them through approval.', 'Week 4: publish approved content and review performance.', 'Month 2: repeat the workflow, reuse what worked, and improve weak areas.', 'Month 3: add another workflow such as email, SEO/GEO articles, ads, video, or reporting.']),
+    heading('Approval, Brand Safety, and Trust'),
+    paragraph(`Approval is not a blocker. It is a quality layer. When AI creates content at scale, teams need clear rules for what can be drafted automatically and what must be reviewed. Pricing, guarantees, product claims, testimonials, sensitive replies, and regulated topics should not be published blindly.`),
+    paragraph(`Approvals also create learning signals. Approved content shows the AI what good looks like. Rejected content shows what to avoid. Edited content shows exactly how the brand wants output improved.`),
+    heading('Metrics That Actually Matter'),
+    list(['Track approval rate and edit distance to measure output quality.', 'Track content shipped, publishing consistency, and time saved to measure workflow speed.', 'Track organic clicks, search visibility, and AI-search readiness to measure discoverability.', 'Track replies, saves, clicks, leads, sales, and conversions to measure business impact.']),
+    heading('Common Mistakes to Avoid'),
+    list(['Do not automate before defining the strategy.', 'Do not publish AI output without claim and tone review.', 'Do not copy the same post across every channel.', 'Do not measure only content volume.', 'Do not ignore rejected and edited outputs, because they are valuable learning signals.']),
+    heading('How Loraloop Fits This Workflow'),
+    paragraph(`Loraloop is built like an AI marketing team. Lora leads the workflow, Sam supports strategy and research, Sophie handles SEO/GEO, Clara writes content, Steve creates visuals and video concepts, Sarah supports social workflows, Elena supports ads, Elliot supports email, and Nick analyzes performance.`),
+    paragraph(`The system starts from Brand DNA, generates channel-specific work, keeps approval in the loop, and uses performance learning to improve future output. That is why Loraloop is better positioned for marketing execution than disconnected prompt tools.`),
+    heading('Final Takeaway'),
+    paragraph(`${topic.title} matters because AI marketing is no longer only about creating individual assets. It is about building a repeatable system that helps users discover, understand, trust, and choose a brand.`),
     faq([{ q: `Who should care about ${topic.keyword}?`, a: `${topic.audience} should care because it affects how consistently they can plan, create, publish, and improve marketing without unnecessary manual work.` }, { q: 'Should this workflow be fully automated?', a: 'No. AI should speed up research, drafting, repurposing, and reporting, but humans should approve strategy, claims, brand tone, offers, and final publishing.' }, { q: 'How does this help SEO and GEO?', a: 'It helps by creating structured, useful, specific content that answers user questions clearly and gives search engines and AI answer engines enough context to understand the brand.' }, { q: 'What is the best first step?', a: 'Start by documenting Brand DNA: audience, offer, tone, proof, objections, product details, claims to avoid, and the business goal for the next campaign.' }]),
     cta(`Loraloop helps ${topic.audience} turn ${topic.keyword} into a connected, approval-first marketing workflow.`),
   ];
@@ -116,11 +125,11 @@ export const sintraInspiredBlogPosts: BlogPost[] = topics.map((topic) => ({
   id: topic.id,
   slug: slugify(topic.title),
   title: topic.title,
-  seoTitle: topic.seoTitle,
+  seoTitle: topic.title,
   description: makeDescription(topic),
   category: topic.category,
   date: publishDate,
   imageIndex: topic.imageIndex,
   tableOfContents: ['The Short Answer', 'Why This Matters Now', 'The Core Problem Users Are Trying to Solve', 'A User-Centric Framework', 'Detailed Workflow Example', 'SEO, AEO, and GEO Point of View', 'Implementation Plan for Busy Teams', 'Approval, Brand Safety, and Trust', 'Metrics That Actually Matter', 'Common Mistakes to Avoid', 'How Loraloop Fits This Workflow', 'Final Takeaway', 'Frequently Asked Questions'],
-  content: content(topic),
+  content: buildContent(topic),
 }));
