@@ -1,4 +1,13 @@
-export const blogThumbnails: Record<number, { emoji: string; gradient: [string, string] }> = {
+export type BlogThumbnailItem =
+  | { emoji: string; gradient: [string, string]; src?: never; alt?: never }
+  | { src: string; alt: string; emoji?: never; gradient?: never };
+
+export const fallbackBlogThumbnail: BlogThumbnailItem = {
+  emoji: "📝",
+  gradient: ["#6d28d9", "#4f46e5"],
+};
+
+export const blogThumbnails: Record<number, BlogThumbnailItem> = {
   1: { emoji: "🤖", gradient: ["#6d28d9", "#4f46e5"] },
   2: { emoji: "⚔️", gradient: ["#7c3aed", "#db2777"] },
   3: { emoji: "🕸️", gradient: ["#0ea5e9", "#6366f1"] },
@@ -29,16 +38,16 @@ export const blogThumbnails: Record<number, { emoji: string; gradient: [string, 
   28: { emoji: "⚡", gradient: ["#7c3aed", "#0ea5e9"] },
   29: { emoji: "💼", gradient: ["#059669", "#2563eb"] },
   30: { emoji: "🛍️", gradient: ["#ea580c", "#7c3aed"] },
-  41: { emoji: "🧠", gradient: ["#2563eb", "#7c3aed"] },
-  42: { emoji: "💬", gradient: ["#0ea5e9", "#6366f1"] },
-  43: { emoji: "⚙️", gradient: ["#059669", "#0ea5e9"] },
-  44: { emoji: "🤝", gradient: ["#0891b2", "#7c3aed"] },
-  45: { emoji: "🔁", gradient: ["#2563eb", "#059669"] },
-  46: { emoji: "🎯", gradient: ["#dc2626", "#f59e0b"] },
-  47: { emoji: "🧭", gradient: ["#7c3aed", "#1d4ed8"] },
-  48: { emoji: "🧩", gradient: ["#0f766e", "#2563eb"] },
-  49: { emoji: "📱", gradient: ["#db2777", "#7c3aed"] },
-  50: { emoji: "✉️", gradient: ["#0891b2", "#2563eb"] },
+  41: { src: "/blog-thumbnails/41-chatgpt-vs-claude-vs-gemini.svg", alt: "ChatGPT vs Claude vs Gemini for Marketing" },
+  42: { src: "/blog-thumbnails/42-chatgpt-plus-vs-ai-marketing-platform.svg", alt: "ChatGPT Plus vs AI Marketing Platform" },
+  43: { src: "/blog-thumbnails/43-automate-marketing-with-ai.svg", alt: "How to Automate Marketing with AI" },
+  44: { src: "/blog-thumbnails/44-ai-customer-engagement.svg", alt: "AI Customer Engagement" },
+  45: { src: "/blog-thumbnails/45-business-process-automation-marketing.svg", alt: "Business Process Automation for Marketing Teams" },
+  46: { src: "/blog-thumbnails/46-ai-lead-generation.svg", alt: "AI Lead Generation Through Content SEO and Social" },
+  47: { src: "/blog-thumbnails/47-ai-for-directors-and-managers.svg", alt: "AI for Directors and Managers" },
+  48: { src: "/blog-thumbnails/48-ai-workflows-explained.svg", alt: "AI Workflows Explained for Marketing Teams" },
+  49: { src: "/blog-thumbnails/49-best-ai-social-media-tools.svg", alt: "Best AI Social Media Tools for Small Businesses" },
+  50: { src: "/blog-thumbnails/50-ai-email-marketing.svg", alt: "AI Email Marketing for Small Businesses" },
   51: { emoji: "🔎", gradient: ["#1d4ed8", "#0ea5e9"] },
   52: { emoji: "🌐", gradient: ["#6366f1", "#8b5cf6"] },
   53: { emoji: "🗓️", gradient: ["#f59e0b", "#dc2626"] },
