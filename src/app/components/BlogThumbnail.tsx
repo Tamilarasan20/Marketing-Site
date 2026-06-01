@@ -1,11 +1,33 @@
 interface BlogThumbnailProps {
-  emoji: string;
-  gradient: [string, string];
+  emoji?: string;
+  gradient?: [string, string];
+  src?: string;
+  alt?: string;
   category: string;
   className?: string;
 }
 
-export function BlogThumbnail({ emoji, gradient, category, className = "" }: BlogThumbnailProps) {
+export function BlogThumbnail({
+  emoji = "📝",
+  gradient = ["#6d28d9", "#4f46e5"],
+  src,
+  alt,
+  category,
+  className = "",
+}: BlogThumbnailProps) {
+  if (src) {
+    return (
+      <div className={`w-full h-full relative overflow-hidden bg-[#f8fafc] ${className}`}>
+        <img
+          src={src}
+          alt={alt ?? category}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       className={`w-full h-full flex flex-col items-center justify-center relative overflow-hidden select-none ${className}`}
