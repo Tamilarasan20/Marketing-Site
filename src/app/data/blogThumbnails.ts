@@ -1,13 +1,4 @@
-export type BlogThumbnailItem =
-  | { emoji: string; gradient: [string, string]; src?: never; alt?: never }
-  | { src: string; alt: string; emoji?: never; gradient?: never };
-
-export const fallbackBlogThumbnail: BlogThumbnailItem = {
-  emoji: "📝",
-  gradient: ["#6d28d9", "#4f46e5"],
-};
-
-export const blogThumbnails: Record<number, BlogThumbnailItem> = {
+export const blogThumbnails: Record<number, { emoji: string; gradient: [string, string] }> = {
   1: { emoji: "🤖", gradient: ["#6d28d9", "#4f46e5"] },
   2: { emoji: "⚔️", gradient: ["#7c3aed", "#db2777"] },
   3: { emoji: "🕸️", gradient: ["#0ea5e9", "#6366f1"] },
@@ -38,16 +29,16 @@ export const blogThumbnails: Record<number, BlogThumbnailItem> = {
   28: { emoji: "⚡", gradient: ["#7c3aed", "#0ea5e9"] },
   29: { emoji: "💼", gradient: ["#059669", "#2563eb"] },
   30: { emoji: "🛍️", gradient: ["#ea580c", "#7c3aed"] },
-  41: { src: "/blog-thumbnails/41-chatgpt-vs-claude-vs-gemini.svg", alt: "ChatGPT vs Claude vs Gemini for Marketing" },
-  42: { src: "/blog-thumbnails/42-chatgpt-plus-vs-ai-marketing-platform.svg", alt: "ChatGPT Plus vs AI Marketing Platform" },
-  43: { src: "/blog-thumbnails/43-automate-marketing-with-ai.svg", alt: "How to Automate Marketing with AI" },
-  44: { src: "/blog-thumbnails/44-ai-customer-engagement.svg", alt: "AI Customer Engagement" },
-  45: { src: "/blog-thumbnails/45-business-process-automation-marketing.svg", alt: "Business Process Automation for Marketing Teams" },
-  46: { src: "/blog-thumbnails/46-ai-lead-generation.svg", alt: "AI Lead Generation Through Content SEO and Social" },
-  47: { src: "/blog-thumbnails/47-ai-for-directors-and-managers.svg", alt: "AI for Directors and Managers" },
-  48: { src: "/blog-thumbnails/48-ai-workflows-explained.svg", alt: "AI Workflows Explained for Marketing Teams" },
-  49: { src: "/blog-thumbnails/49-best-ai-social-media-tools.svg", alt: "Best AI Social Media Tools for Small Businesses" },
-  50: { src: "/blog-thumbnails/50-ai-email-marketing.svg", alt: "AI Email Marketing for Small Businesses" },
+  41: { emoji: "IMG41", gradient: ["#00c78a", "#008a66"] },
+  42: { emoji: "IMG42", gradient: ["#ff9a18", "#f36b21"] },
+  43: { emoji: "IMG43", gradient: ["#f02bb6", "#b715d8"] },
+  44: { emoji: "IMG44", gradient: ["#00cfc1", "#0093a7"] },
+  45: { emoji: "IMG45", gradient: ["#0b7cff", "#0047c7"] },
+  46: { emoji: "IMG46", gradient: ["#d5ff35", "#41c96b"] },
+  47: { emoji: "IMG47", gradient: ["#5b2fd6", "#20115f"] },
+  48: { emoji: "IMG48", gradient: ["#09c7f7", "#00a5d4"] },
+  49: { emoji: "IMG49", gradient: ["#e54cf8", "#8b2bd6"] },
+  50: { emoji: "IMG50", gradient: ["#00b7c7", "#007f9e"] },
   51: { emoji: "🔎", gradient: ["#1d4ed8", "#0ea5e9"] },
   52: { emoji: "🌐", gradient: ["#6366f1", "#8b5cf6"] },
   53: { emoji: "🗓️", gradient: ["#f59e0b", "#dc2626"] },
