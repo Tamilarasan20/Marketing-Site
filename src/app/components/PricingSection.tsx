@@ -155,8 +155,11 @@ export default function PricingSection({ className = "" }: { className?: string 
   const [selectedTiers, setSelectedTiers] = useState<Record<string, number>>({
     STARTER: 0, GROWTH: 0, SCALE: 0, ENTERPRISE: 0,
   });
+  const [pendingPlanId, setPendingPlanId] = useState<string | null>(null);
 
   function handleGetStarted(plan: Plan) {
+    if (pendingPlanId === plan.id) return;
+    setPendingPlanId(plan.id);
     const tierIdx = selectedTiers[plan.id] ?? 0;
     const url = new URL(`${APP_URL}/pricing`);
     url.searchParams.set("plan", plan.id);
@@ -274,14 +277,15 @@ export default function PricingSection({ className = "" }: { className?: string 
                     <button
                       type="button"
                       onClick={() => handleGetStarted(plan)}
+                      disabled={pendingPlanId === plan.id}
                       style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                      className={`w-full h-[40px] rounded-full text-[14px] transition-all ${
+                      className={`w-full h-[40px] rounded-full text-[14px] transition-all disabled:opacity-60 ${
                         plan.highlighted
                           ? "bg-[#1877F2] text-white hover:bg-[#0f66d0]"
                           : "bg-[#EEF4FF] text-[#1877F2] border border-[#D1D5DB] hover:bg-[#dce8ff]"
                       }`}
                     >
-                      Get Started
+                      {pendingPlanId === plan.id ? "Loading…" : "Get Started"}
                     </button>
 
                     {/* Credit chips */}
