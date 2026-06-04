@@ -20,31 +20,116 @@ import imgLogos4 from "../../imports/Solution-1/62fcac5886e5a57ef8f7cf8f439afb75
 const aiEmployees = [
   {
     name: "Lora",
-    role: "AI Marketing Lead",
+    role: "AI CMO",
     image: imgLora,
     isSoon: false,
     title: (
       <>
-        Meet <span className="text-[#9131ea]">Lora</span> Autonomous
+        Meet <span className="text-[#9131ea]">Lora</span> Your
         <br />
-        <span className="text-[#9131ea]">AI Marketing Lead</span>
+        <span className="text-[#9131ea]">AI CMO</span>
       </>
     ),
-    subtext: "Lora supports your marketing from start to finish. She understands your goals and audience. No waiting for instructions; she plans content, runs ads, guides AI, creates content, tracks performance, and boosts results, report back to you. She's smart, quick, & easy to work with!",
+    subtext: "Lora is your AI Chief Marketing Officer. She owns growth strategy, coordinates every AI specialist, sets priorities, allocates budget, and reports back to you — one leader, one source of truth.",
+    oldWayLabel: "You doing all work",
+    oldWayItems: [
+      "AI just assists you — you still do everything manually",
+      "Spending 30+ hrs/week creating and managing content",
+      "Checking multiple tools just to understand performance",
+      "$5,000 to hire freelancers or teams to manage marketing",
+      "Running ads without knowing what actually works",
+      "Paying $1,000+ for various disconnected marketing tools",
+    ],
+    newWayLabel: "One AI CMO, a full specialist team, zero overhead.",
+    newWayItems: [
+      { text: "Coordinates all AI Employees for execution in your voice", color: "#9131ea", bgColor: "#f2e7ff", icon: Users },
+      { text: "Analyse performance across all channels in one place", color: "#1877f2", bgColor: "#eef4ff", icon: BarChart2 },
+      { text: "Track competitors and market shifts in real-time", color: "#ec4899", bgColor: "#fce7f3", icon: Target },
+      { text: "Share daily insights and plan next marketing moves", color: "#14a148", bgColor: "#eefdf3", icon: CheckCircle },
+      { text: "Discover trends, ideas, and winning strategies instantly", color: "#d77504", bgColor: "#fffaea", icon: Lightbulb },
+    ],
   },
   {
     name: "Sam",
-    role: "SEO/GEO Manager",
+    role: "AI Market Intelligence Manager",
     image: imgSam,
     isSoon: false,
     title: (
       <>
         Meet <span className="text-[#1877f2]">Sam</span> Your
         <br />
-        <span className="text-[#1877f2]">SEO/GEO Manager</span>
+        <span className="text-[#1877f2]">AI Market Intelligence Manager</span>
       </>
     ),
-    subtext: "I rank your site on Google and AI search engines like ChatGPT and Perplexity. Keyword research, content, and technical SEO — on autopilot. You review. I grow.",
+    subtext: "I analyze millions of data points, spot trends, and flag what matters. Executive-ready insights, no dashboards. Just signal, not noise.",
+    oldWayLabel: "Manual research, missed signals, decisions made blind.",
+    oldWayItems: [
+      "Paying analysts $4,000/mo for reports that arrive too late to act on",
+      "Competitor moves go unnoticed until they've already taken market share",
+      "Trend spotting relies on gut feel and industry newsletters",
+      "Customer sentiment buried in review sites nobody checks weekly",
+      "No unified view — data scattered across 6 different tools",
+      "Strategic decisions made without knowing what the market is actually doing",
+    ],
+    newWayLabel: "Real-time intelligence, executive-ready insights, zero dashboards.",
+    newWayItems: [
+      { text: "Competitor moves tracked daily — positioning, pricing, campaigns", color: "#1877f2", bgColor: "#eef4ff", icon: Target },
+      { text: "Trend signals from millions of data points, distilled to what matters", color: "#9131ea", bgColor: "#f2e7ff", icon: TrendingUp },
+      { text: "Customer sentiment monitored across every channel automatically", color: "#14a148", bgColor: "#eefdf3", icon: LineChart },
+      { text: "Market insights delivered in plain English, not dashboards", color: "#ec4899", bgColor: "#fce7f3", icon: FileText },
+      { text: "Opportunity alerts before competitors spot them", color: "#d77504", bgColor: "#fffaea", icon: Lightbulb },
+      { text: "Executive briefing ready every morning — signal, not noise", color: "#0ea5e9", bgColor: "#e0f2fe", icon: BarChart2 },
+    ],
+    stats: [
+      { value: "10M+", label: "data points analyzed daily across competitors, trends, and sentiment" },
+      { value: "3X", label: "faster strategic decisions with real-time market intelligence" },
+    ],
+    solutions: [
+      {
+        title: "Competitor intelligence on autopilot",
+        description: "I track competitor positioning, pricing changes, ad creative, and content strategy daily. You get a digest of what's moving before it impacts your market share.",
+        image: imgLogos,
+      },
+      {
+        title: "Trend spotting before it peaks",
+        description: "I scan millions of signals across social, search, and industry sources. When a trend is building, you hear about it early — not after your competitors have already moved.",
+        image: imgLogos1,
+      },
+      {
+        title: "Customer sentiment, synthesised",
+        description: "Reviews, social mentions, support tickets — I monitor them all and surface the patterns. You know what customers love, what frustrates them, and what they're asking for next.",
+        image: imgImage187,
+      },
+      {
+        title: "Market gap analysis on demand",
+        description: "Ask me what opportunities your competitors are missing. I'll cross-reference market demand, your positioning, and competitor blind spots to surface whitespace worth owning.",
+        image: imgLogos2,
+      },
+      {
+        title: "Insights for every team",
+        description: "Product roadmap intelligence. Comms-ready competitor summaries. Sales battle cards. I tailor the same data into the format each team actually needs.",
+        image: imgLogos3,
+      },
+      {
+        title: "Executive briefing, every morning",
+        description: "Brand health, competitive landscape, emerging trends — synthesised overnight and delivered at 8am. No charts to build, no dashboards to check.",
+        image: imgLogos4,
+      },
+    ],
+  },
+  {
+    name: "Ben",
+    role: "AI SEO & GEO Manager",
+    image: imgSam,
+    isSoon: false,
+    title: (
+      <>
+        Meet <span className="text-[#14a148]">Ben</span> Your
+        <br />
+        <span className="text-[#14a148]">AI SEO & GEO Manager</span>
+      </>
+    ),
+    subtext: "I make sure your brand gets discovered wherever people search — Google, ChatGPT, Claude, Gemini, and Perplexity. No agencies. No guesswork. No endless audits. Just sustainable organic growth.",
     oldWayLabel: "Manual SEO, no GEO strategy, invisible to AI search engines.",
     oldWayItems: [
       "No keyword strategy — publishing blind, hoping something ranks",
@@ -56,9 +141,9 @@ const aiEmployees = [
     ],
     newWayLabel: "SEO + GEO running 24/7. Ranked on Google and AI search.",
     newWayItems: [
-      { text: "Weekly keyword research — GSC quick wins + AI citation scoring", color: "#1877f2", bgColor: "#eef4ff", icon: TrendingUp },
+      { text: "Weekly keyword research — GSC quick wins + AI citation scoring", color: "#14a148", bgColor: "#eefdf3", icon: TrendingUp },
       { text: "Blog briefs with FAQ schema so ChatGPT and Perplexity cite you", color: "#9131ea", bgColor: "#f2e7ff", icon: FileText },
-      { text: "5 underperforming pages optimised every cycle — automatic", color: "#14a148", bgColor: "#eefdf3", icon: Wrench },
+      { text: "5 underperforming pages optimised every cycle — automatic", color: "#1877f2", bgColor: "#eef4ff", icon: Wrench },
       { text: "Weekly GSC audit — indexation errors and Core Web Vitals fixed first", color: "#ec4899", bgColor: "#fce7f3", icon: Target },
       { text: "Monthly hub-and-spoke internal link map for conversion pages", color: "#d77504", bgColor: "#fffaea", icon: Link },
       { text: "Daily scorecard: clicks, CTR, ranking changes, AI citation alerts", color: "#0ea5e9", bgColor: "#e0f2fe", icon: LineChart },
@@ -109,24 +194,10 @@ const aiEmployees = [
       <>
         Meet <span className="text-[#9131ea]">Clara</span> Your
         <br />
-        <span className="text-[#9131ea]">Autonomous AI Content Writer</span>
+        <span className="text-[#9131ea]">AI Content Writer</span>
       </>
     ),
     subtext: "Clara writes content that attracts customers for blogs, emails, social posts, and more. She understands your brand voice and creates persuasive content that drives action.",
-  },
-  {
-    name: "Steve",
-    role: "AI Visual Designer",
-    image: imgSteve,
-    isSoon: true,
-    title: (
-      <>
-        Meet <span className="text-[#d77504]">Steve</span> Your
-        <br />
-        <span className="text-[#d77504]">Autonomous AI Visual Designer</span>
-      </>
-    ),
-    subtext: "Steve creates scroll-stopping visuals for social media, ads, and your website. He ensures your brand looks professional and consistent across all platforms.",
   },
   {
     name: "Sarah",
@@ -137,21 +208,63 @@ const aiEmployees = [
       <>
         Meet <span className="text-[#14a148]">Sarah</span> Your
         <br />
-        <span className="text-[#14a148]">Autonomous AI Social Media Manager</span>
+        <span className="text-[#14a148]">AI Social Media Manager</span>
       </>
     ),
     subtext: "Sarah manages your social media presence 24/7. She schedules posts, engages with your audience, and tracks performance to grow your brand's reach.",
   },
   {
+    name: "Elena",
+    role: "AI Ads Manager",
+    image: imgSarah,
+    isSoon: true,
+    title: (
+      <>
+        Meet <span className="text-[#ec4899]">Elena</span> Your
+        <br />
+        <span className="text-[#ec4899]">AI Ads Manager</span>
+      </>
+    ),
+    subtext: "Elena runs your paid campaigns across Meta, Google, and TikTok. She optimises for ROAS daily, kills losing ads automatically, and scales winners — no agency required.",
+  },
+  {
+    name: "Steve",
+    role: "AI Creative Producer",
+    image: imgSteve,
+    isSoon: true,
+    title: (
+      <>
+        Meet <span className="text-[#d77504]">Steve</span> Your
+        <br />
+        <span className="text-[#d77504]">AI Creative Producer</span>
+      </>
+    ),
+    subtext: "Steve creates scroll-stopping visuals, ad creatives, and brand assets. He ensures your brand looks professional and consistent across every platform and campaign.",
+  },
+  {
+    name: "Nick",
+    role: "AI Marketing Analyst",
+    image: imgClara,
+    isSoon: true,
+    title: (
+      <>
+        Meet <span className="text-[#0ea5e9]">Nick</span> Your
+        <br />
+        <span className="text-[#0ea5e9]">AI Marketing Analyst</span>
+      </>
+    ),
+    subtext: "Nick tracks every channel, validates what's working, and surfaces the numbers that matter. He turns raw data into clear performance reports so Lora can make better decisions faster.",
+  },
+  {
     name: "Elliot",
-    role: "Email Marketer",
+    role: "AI Email Marketer",
     image: imgSam,
     isSoon: false,
     title: (
       <>
         Meet <span className="text-[#ec4899]">Elliot</span> Your
         <br />
-        <span className="text-[#ec4899]">Email Marketer</span>
+        <span className="text-[#ec4899]">AI Email Marketer</span>
       </>
     ),
     subtext: "Send me a one-line brief, and I'll analyse, design, and schedule the campaign inside your Klaviyo or Mailchimp. You approve. I send.",
@@ -213,20 +326,20 @@ const aiEmployees = [
 ];
 
 const defaultOldWayProblems = [
-  "AI just assist you do all manually",
-  "Spending 30+ hrs/week creating & managing contents",
+  "AI just assists you — you still do everything manually",
+  "Spending 30+ hrs/week creating and managing content",
   "Checking multiple tools just to understand performance",
-  "$5000 to Hire freelancers or teams for manage marketing.",
+  "$5,000 to hire freelancers or teams to manage marketing",
   "Running ads without knowing what actually works",
-  "Paying $1000 for various marketing tools.",
+  "Paying $1,000+ for various disconnected marketing tools",
 ];
 
 const defaultNewWayBenefits = [
-  { text: "Coordinates all AI Employees for execution in your voice", color: "#14a148", bgColor: "#eefdf3", icon: Users },
-  { text: "Analyze performance across all channels", color: "#1877f2", bgColor: "#eef4ff", icon: BarChart2 },
+  { text: "Coordinates all AI Employees for execution in your voice", color: "#9131ea", bgColor: "#f2e7ff", icon: Users },
+  { text: "Analyse performance across all channels in one place", color: "#1877f2", bgColor: "#eef4ff", icon: BarChart2 },
   { text: "Track competitors and market shifts in real-time", color: "#ec4899", bgColor: "#fce7f3", icon: Target },
-  { text: "Share daily insights & Plan next marketing", color: "#9131ea", bgColor: "#f2e7ff", icon: CheckCircle },
-  { text: "Discover trends, ideas & winning strategies instantly", color: "#d77504", bgColor: "#fffaea", icon: Lightbulb },
+  { text: "Share daily insights and plan next marketing moves", color: "#14a148", bgColor: "#eefdf3", icon: CheckCircle },
+  { text: "Discover trends, ideas, and winning strategies instantly", color: "#d77504", bgColor: "#fffaea", icon: Lightbulb },
 ];
 
 const faqItems = [
