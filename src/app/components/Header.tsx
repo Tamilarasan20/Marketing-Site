@@ -122,12 +122,12 @@ const aiAgents = [
   },
   {
     name: "Sam",
-    role: "AI Strategist",
+    role: "SEO/GEO Manager",
     img: imgSam,
     bg: "#E5E7EB",
     scale: 1.3,
     offsetY: "2px",
-    isSoon: true,
+    isSoon: false,
   },
   {
     name: "Clara",

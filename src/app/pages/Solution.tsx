@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect, useMemo } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import { useNavigate, useSearchParams } from "react-router";
 import { Frame35_Auth } from "../../imports/LandingPage/LandingPage";
-import { ChevronDown, Users, BarChart2, Target, Lightbulb, CheckCircle } from "lucide-react";
+import { ChevronDown, Users, BarChart2, Target, Lightbulb, CheckCircle, TrendingUp, FileText, Wrench, Link, LineChart } from "lucide-react";
 import imgLora from "../../imports/Home-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
 import imgSam from "../../imports/Home-1/67e2795861635095f78d499d37fb8c47640346cd.png";
 import imgClara from "../../imports/Home-1/a6c396695db2f4867d2b2cf94c4c4013fb4aa21a.png";
@@ -34,17 +34,71 @@ const aiEmployees = [
   },
   {
     name: "Sam",
-    role: "AI Strategist",
+    role: "SEO/GEO Manager",
     image: imgSam,
-    isSoon: true,
+    isSoon: false,
     title: (
       <>
-        Meet <span className="text-[#1877f2]">Sam</span> Autonomous
+        Meet <span className="text-[#1877f2]">Sam</span> Your
         <br />
-        <span className="text-[#1877f2]">AI Strategist</span>
+        <span className="text-[#1877f2]">SEO/GEO Manager</span>
       </>
     ),
-    subtext: "Sam plans your marketing every day. He checks your brand, audience, competitors, and trends to decide what your team should focus on next. He helps choose content ideas, campaign plans, product angles & growth opportunities. No guessing Sam gives your AI team a clear direction so your marketing stays smart, active, and focused on results. Sam helps your brand grow with better daily marketing decisions.",
+    subtext: "I rank your site on Google and AI search engines like ChatGPT and Perplexity. Keyword research, content, and technical SEO — on autopilot. You review. I grow.",
+    oldWayLabel: "Manual SEO, no GEO strategy, invisible to AI search engines.",
+    oldWayItems: [
+      "No keyword strategy — publishing blind, hoping something ranks",
+      "Zero GEO optimisation — invisible to ChatGPT, Perplexity, and AI overviews",
+      "Paying an SEO agency $3,000/mo for monthly reports you can't act on",
+      "Content that ignores FAQ schema, semantic clusters, and internal linking",
+      "Technical issues sitting unfixed for months because no one's watching",
+      "No daily visibility into what's ranking, dropping, or getting cited by AI",
+    ],
+    newWayLabel: "SEO + GEO running 24/7. Ranked on Google and AI search.",
+    newWayItems: [
+      { text: "Weekly keyword research — GSC quick wins + AI citation scoring", color: "#1877f2", bgColor: "#eef4ff", icon: TrendingUp },
+      { text: "Blog briefs with FAQ schema so ChatGPT and Perplexity cite you", color: "#9131ea", bgColor: "#f2e7ff", icon: FileText },
+      { text: "5 underperforming pages optimised every cycle — automatic", color: "#14a148", bgColor: "#eefdf3", icon: Wrench },
+      { text: "Weekly GSC audit — indexation errors and Core Web Vitals fixed first", color: "#ec4899", bgColor: "#fce7f3", icon: Target },
+      { text: "Monthly hub-and-spoke internal link map for conversion pages", color: "#d77504", bgColor: "#fffaea", icon: Link },
+      { text: "Daily scorecard: clicks, CTR, ranking changes, AI citation alerts", color: "#0ea5e9", bgColor: "#e0f2fe", icon: LineChart },
+    ],
+    stats: [
+      { value: "340%", label: "increase in SEO + GEO organic traffic in 6 months" },
+      { value: "8X", label: "more keywords ranking in Google + AI search engines" },
+    ],
+    solutions: [
+      {
+        title: "SEO + GEO keyword research every week",
+        description: "I mine GSC for quick wins, run competitor gap analysis, and score every keyword for Google rankings and AI citation potential.",
+        image: imgLogos,
+      },
+      {
+        title: "Content that ranks on Google and AI",
+        description: "Complete blog briefs with semantic clusters, FAQ schema, and internal linking — structured so Google and AI engines like ChatGPT and Perplexity cite you.",
+        image: imgLogos1,
+      },
+      {
+        title: "SEO/GEO content optimisation on autopilot",
+        description: "I find underperforming pages, rewrite title tags, add GEO-friendly FAQ schema, expand thin content, and fix internal links — 5 pages per cycle.",
+        image: imgImage187,
+      },
+      {
+        title: "Technical SEO monitoring weekly",
+        description: "I check GSC for indexation errors, Core Web Vitals failures, and crawl anomalies. You get a prioritised fix list before problems hit rankings.",
+        image: imgLogos2,
+      },
+      {
+        title: "Strategic internal linking every month",
+        description: "I map your topical clusters, identify authority hubs, and build hub-and-spoke link structures that push link equity to your conversion pages.",
+        image: imgLogos3,
+      },
+      {
+        title: "Daily SEO/GEO scorecard in your inbox",
+        description: "Every morning: clicks, impressions, CTR, position changes, AI citation tracking, and instant alerts for ranking drops.",
+        image: imgLogos4,
+      },
+    ],
   },
   {
     name: "Clara",
@@ -88,9 +142,77 @@ const aiEmployees = [
     ),
     subtext: "Sarah manages your social media presence 24/7. She schedules posts, engages with your audience, and tracks performance to grow your brand's reach.",
   },
+  {
+    name: "Elliot",
+    role: "Email Marketer",
+    image: imgSam,
+    isSoon: false,
+    title: (
+      <>
+        Meet <span className="text-[#ec4899]">Elliot</span> Your
+        <br />
+        <span className="text-[#ec4899]">Email Marketer</span>
+      </>
+    ),
+    subtext: "Send me a one-line brief, and I'll analyse, design, and schedule the campaign inside your Klaviyo or Mailchimp. You approve. I send.",
+    oldWayLabel: "Scattered sends, no strategy, revenue left on the table.",
+    oldWayItems: [
+      "Spending hours writing emails that underperform or never get sent",
+      "No campaign strategy — blasting the same list with the same message",
+      "Paying $2,000/mo to an agency for 2 campaigns and a monthly report",
+      "Templates that don't match your brand, voice, or mobile layout",
+      "Revenue gaps you don't notice until weeks have passed",
+      "No visibility into what's working — just open rates in a dashboard you barely check",
+    ],
+    newWayLabel: "Automated campaigns running 24/7. Your revenue engine on autopilot.",
+    newWayItems: [
+      { text: "5 finished campaigns per week — written, designed, and scheduled", color: "#ec4899", bgColor: "#fce7f3", icon: FileText },
+      { text: "Strategy, creation, and execution. You just approve.", color: "#9131ea", bgColor: "#f2e7ff", icon: CheckCircle },
+      { text: "Performance improves every week — opens, clicks, revenue tracked", color: "#14a148", bgColor: "#eefdf3", icon: TrendingUp },
+      { text: "Revenue gaps caught automatically — Elliot drafts before you notice", color: "#d77504", bgColor: "#fffaea", icon: Target },
+      { text: "Agency-quality design in your brand colours and voice", color: "#1877f2", bgColor: "#eef4ff", icon: Lightbulb },
+      { text: "One-click Klaviyo + Mailchimp integration, zero migration", color: "#0ea5e9", bgColor: "#e0f2fe", icon: LineChart },
+    ],
+    stats: [
+      { value: "85%", label: "average increase in email open rate" },
+      { value: "85%", label: "average increase in email attributed revenue" },
+    ],
+    solutions: [
+      {
+        title: "5 campaigns per week, fully done",
+        description: "Written, designed, on-brand, mobile-optimised, scheduled. Promotions, product launches, seasonal sends, win-backs. You describe it in a sentence. I build it in seconds.",
+        image: imgLogos,
+      },
+      {
+        title: "Your creative partner when you're stuck",
+        description: "Don't know what to send? Ask me for ideas. I'll come back with ready-to-use campaign concepts based on your products, calendar, and what's been working.",
+        image: imgLogos1,
+      },
+      {
+        title: "Performance that improves every week",
+        description: "I monitor opens, clicks, and conversions across every send. Weekly check-ins tell you what's working and what I'm adjusting. No dashboards to read.",
+        image: imgImage187,
+      },
+      {
+        title: "Catches what you'd miss",
+        description: "Haven't emailed in 12 days? I'll notice before you do. I'll draft a campaign and ping you. Revenue gaps don't stay gaps for long.",
+        image: imgLogos2,
+      },
+      {
+        title: "Agency-quality design, no agency",
+        description: "Custom images, your brand colours and voice, mobile-optimised layouts. Every campaign I send looks like a professional designed it.",
+        image: imgLogos3,
+      },
+      {
+        title: "Connects in seconds",
+        description: "Klaviyo, Mailchimp, and more. One-click integration, zero migration. I plug into your existing setup and start working immediately.",
+        image: imgLogos4,
+      },
+    ],
+  },
 ];
 
-const oldWayProblems = [
+const defaultOldWayProblems = [
   "AI just assist you do all manually",
   "Spending 30+ hrs/week creating & managing contents",
   "Checking multiple tools just to understand performance",
@@ -99,37 +221,12 @@ const oldWayProblems = [
   "Paying $1000 for various marketing tools.",
 ];
 
-const newWayBenefits = [
-  {
-    text: "Coordinates all AI Employees for execution in your voice",
-    color: "#14a148",
-    bgColor: "#eefdf3",
-    icon: Users,
-  },
-  {
-    text: "Analyze performance across all channels",
-    color: "#1877f2",
-    bgColor: "#eef4ff",
-    icon: BarChart2,
-  },
-  {
-    text: "Track competitors and market shifts in real-time",
-    color: "#ec4899",
-    bgColor: "#fce7f3",
-    icon: Target,
-  },
-  {
-    text: "Share daily insights & Plan next marketing",
-    color: "#9131ea",
-    bgColor: "#f2e7ff",
-    icon: CheckCircle,
-  },
-  {
-    text: "Discover trends, ideas & winning strategies instantly",
-    color: "#d77504",
-    bgColor: "#fffaea",
-    icon: Lightbulb,
-  },
+const defaultNewWayBenefits = [
+  { text: "Coordinates all AI Employees for execution in your voice", color: "#14a148", bgColor: "#eefdf3", icon: Users },
+  { text: "Analyze performance across all channels", color: "#1877f2", bgColor: "#eef4ff", icon: BarChart2 },
+  { text: "Track competitors and market shifts in real-time", color: "#ec4899", bgColor: "#fce7f3", icon: Target },
+  { text: "Share daily insights & Plan next marketing", color: "#9131ea", bgColor: "#f2e7ff", icon: CheckCircle },
+  { text: "Discover trends, ideas & winning strategies instantly", color: "#d77504", bgColor: "#fffaea", icon: Lightbulb },
 ];
 
 const faqItems = [
@@ -160,6 +257,18 @@ export default function Solution() {
     }
     return 0;
   }, [agentParam]);
+
+  const currentAgent = aiEmployees[selectedEmployee] as typeof aiEmployees[0] & {
+    oldWayLabel?: string;
+    oldWayItems?: string[];
+    newWayLabel?: string;
+    newWayItems?: { text: string; color: string; bgColor: string; icon: React.ComponentType<{ size?: number; style?: React.CSSProperties; className?: string }> }[];
+    stats?: { value: string; label: string }[];
+    solutions?: { title: string; description: string; image: string }[];
+  };
+
+  const activeOldWayItems = currentAgent.oldWayItems ?? defaultOldWayProblems;
+  const activeNewWayItems = currentAgent.newWayItems ?? defaultNewWayBenefits;
 
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -209,7 +318,7 @@ export default function Solution() {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - (scrollRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2; // Scroll speed
+    const walk = (x - startX) * 2;
     if (scrollRef.current) {
       scrollRef.current.scrollLeft = scrollLeft - walk;
     }
@@ -317,24 +426,24 @@ export default function Solution() {
       <div className="bg-white flex flex-col items-center justify-center px-4 py-12 md:p-12 lg:p-[80px] w-full">
         <div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[1120px] px-4 md:px-6 lg:px-0">
           <h2 className="font-bold font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-8 md:mb-12">
-            Old vs New AI Way!
+            The old way vs. the {currentAgent.name} way
           </h2>
 
-          <div className="relative rounded-2xl md:rounded-3xl border border-[#e5e7eb] overflow-hidden">
+          <div className="relative rounded-2xl md:rounded-3xl border border-[#e5e7eb] overflow-hidden w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Old Way */}
               <div className="bg-white p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-[#e5e7eb]">
                 <div className="flex flex-col items-center gap-1 mb-6 md:mb-8">
-                  <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">Old way</p>
-                  <h3 className="font-bold font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-2xl md:text-3xl text-center">
-                    You doing all work
+                  <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">The old way</p>
+                  <h3 className="font-bold font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-xl md:text-2xl text-center max-w-[320px]">
+                    {currentAgent.oldWayLabel ?? "You doing all work"}
                   </h3>
                 </div>
                 <div className="bg-[#f9fafc] rounded-2xl p-6">
-                  <div className="flex flex-col gap-6">
-                    {oldWayProblems.map((problem, index) => (
+                  <div className="flex flex-col gap-5">
+                    {activeOldWayItems.map((problem, index) => (
                       <div key={index} className="flex gap-3 items-start">
-                        
+                        <span className="text-[#ef4444] mt-0.5 shrink-0">✕</span>
                         <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#1f2937] text-base">
                           {problem}
                         </p>
@@ -347,13 +456,13 @@ export default function Solution() {
               {/* New Way */}
               <div className="bg-white p-6 md:p-10">
                 <div className="flex flex-col items-center gap-1 mb-6 md:mb-8">
-                  <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">New way</p>
-                  <h3 className="font-bold font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-2xl md:text-3xl text-center">
-                    AI Agents work while you sleep
+                  <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">My way</p>
+                  <h3 className="font-bold font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-xl md:text-2xl text-center max-w-[320px]">
+                    {currentAgent.newWayLabel ?? "AI Agents work while you sleep"}
                   </h3>
                 </div>
                 <div className="flex flex-wrap gap-3 justify-center">
-                  {newWayBenefits.map((benefit, index) => {
+                  {activeNewWayItems.map((benefit, index) => {
                     const IconComponent = benefit.icon;
                     return (
                       <div
@@ -387,17 +496,62 @@ export default function Solution() {
         </div>
       </div>
 
-      {/* What You Get Section */}
-      <div className="bg-[#f9fafc] flex flex-col items-center justify-center px-4 py-12 md:p-12 lg:p-[80px] w-full">
-        <div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[1120px] px-4 md:px-6 lg:px-0">
-          <div className="w-full flex flex-col gap-8 md:gap-12">
-            <h2 className="font-bold font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-6">
-              What you get it
-            </h2>
-            <Frame35_Auth />
+      {/* Stats Section — only shown for agents with stats */}
+      {currentAgent.stats && (
+        <div className="bg-[#1877f2] px-4 py-12 md:py-16 w-full">
+          <div className="max-w-[800px] mx-auto flex flex-col sm:flex-row gap-10 items-center justify-center">
+            {currentAgent.stats.map((stat, i) => (
+              <div key={i} className="flex flex-col items-center text-center gap-2">
+                <p className="font-bold font-['Satoshi:Bold',sans-serif] text-5xl md:text-6xl text-white tracking-tight">
+                  ↗ {stat.value}
+                </p>
+                <p className="font-['General_Sans:Medium',sans-serif] text-white/80 text-base md:text-lg max-w-[240px]">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      )}
+
+      {/* Solutions Section — agent-specific if available, else shared */}
+      {currentAgent.solutions ? (
+        <div className="bg-[#f9fafc] flex flex-col items-center justify-center px-4 py-12 md:p-12 lg:p-[80px] w-full">
+          <div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[1120px] px-4 md:px-6 lg:px-0">
+            <h2 className="font-bold font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-10 md:mb-14">
+              Solutions — fully handled. You just review.
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+              {currentAgent.solutions.map((sol, i) => (
+                <div key={i} className="bg-white rounded-2xl border border-[#e5e7eb] overflow-hidden flex flex-col">
+                  <div className="h-44 overflow-hidden">
+                    <img src={sol.image} alt={sol.title} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-6 flex flex-col gap-2 flex-1">
+                    <h3 className="font-bold font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-lg leading-tight">
+                      {sol.title}
+                    </h3>
+                    <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm leading-[22px]">
+                      {sol.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="bg-[#f9fafc] flex flex-col items-center justify-center px-4 py-12 md:p-12 lg:p-[80px] w-full">
+          <div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[1120px] px-4 md:px-6 lg:px-0">
+            <div className="w-full flex flex-col gap-8 md:gap-12">
+              <h2 className="font-bold font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-6">
+                What you get
+              </h2>
+              <Frame35_Auth />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* FAQ Section */}
       <div className="bg-white px-4 md:px-20 py-12 md:py-20">
