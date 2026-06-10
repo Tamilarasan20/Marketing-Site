@@ -18,8 +18,11 @@ import ForAgencies from "./pages/ForAgencies";
 import ForFreelancers from "./pages/ForFreelancers";
 import ForEcommerce from "./pages/ForEcommerce";
 import ForCreators from "./pages/ForCreators";
+import BrandKnowledgeReview from "./pages/BrandKnowledgeReview";
 
 export const router = createBrowserRouter([
+  // App-style page with its own chrome — intentionally outside the marketing Layout
+  { path: "/brand/knowledge/:id/review", Component: BrandKnowledgeReview },
   {
     path: "/",
     Component: Layout,
