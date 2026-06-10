@@ -92,38 +92,50 @@ function XIcon({ size }: { size: number }) {
   );
 }
 
+function headingToId(text: string): string {
+  return 'section-' + text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function scrollToHeading(text: string) {
+  const el = document.getElementById(headingToId(text));
+  if (el) {
+    const top = el.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+}
+
 function renderSection(section: ContentSection, index: number) {
   switch (section.type) {
     case "heading":
       return (
-        <h2 key={index} className="font-['Satoshi:Bold',sans-serif] leading-tight text-[#0f172a] text-3xl md:text-[32px] mt-14 mb-4 tracking-[-0.5px]">
+        <h2 key={index} id={headingToId(section.text)} className="font-['Satoshi:Bold',sans-serif] leading-snug text-[#0f172a] text-[22px] md:text-[24px] mt-12 mb-3 tracking-[-0.3px]">
           {section.text}
         </h2>
       );
     case "subheading":
       return (
-        <h3 key={index} className="font-['Satoshi:Bold',sans-serif] leading-snug text-[#1e293b] text-2xl mt-8 mb-3">
+        <h3 key={index} className="font-['Satoshi:Bold',sans-serif] leading-snug text-[#1e293b] text-[18px] md:text-[20px] mt-7 mb-2">
           {section.text}
         </h3>
       );
     case "paragraph":
       return (
-        <p key={index} className="font-['General_Sans:Medium',sans-serif] text-[#374151] text-lg md:text-[19px] leading-[1.85] tracking-[0.01em]">
+        <p key={index} className="font-['General_Sans:Medium',sans-serif] text-[#374151] text-[16px] md:text-[17px] leading-[1.82] tracking-[0.01em]">
           {section.text}
         </p>
       );
     case "callout":
       return (
-        <div key={index} className="border-l-[5px] border-[#1877f2] bg-gradient-to-r from-[#eff6ff] to-[#f8faff] rounded-r-2xl px-6 py-5 my-2">
-          <p className="font-['Satoshi:Bold',sans-serif] text-[#1e40af] text-lg md:text-xl leading-[1.7]">{section.text}</p>
+        <div key={index} className="border-l-[4px] border-[#1877f2] bg-gradient-to-r from-[#eff6ff] to-[#f8faff] rounded-r-2xl px-5 py-4 my-2">
+          <p className="font-['Satoshi:Bold',sans-serif] text-[#1e40af] text-[16px] md:text-[17px] leading-[1.75]">{section.text}</p>
         </div>
       );
     case "list":
       return (
-        <ul key={index} className="space-y-3 font-['General_Sans:Medium',sans-serif] text-[#374151] text-lg md:text-[19px]">
+        <ul key={index} className="space-y-2.5 font-['General_Sans:Medium',sans-serif] text-[#374151] text-[16px] md:text-[17px]">
           {section.items.map((item, i) => (
-            <li key={i} className="flex gap-3 items-start leading-[1.8]">
-              <span className="mt-[6px] w-2 h-2 rounded-full bg-[#1877f2] shrink-0" />
+            <li key={i} className="flex gap-3 items-start leading-[1.78]">
+              <span className="mt-[7px] w-[6px] h-[6px] rounded-full bg-[#1877f2] shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -131,10 +143,10 @@ function renderSection(section: ContentSection, index: number) {
       );
     case "numbered-list":
       return (
-        <ol key={index} className="space-y-3 font-['General_Sans:Medium',sans-serif] text-[#374151] text-lg md:text-[19px]">
+        <ol key={index} className="space-y-2.5 font-['General_Sans:Medium',sans-serif] text-[#374151] text-[16px] md:text-[17px]">
           {section.items.map((item, i) => (
-            <li key={i} className="flex gap-4 items-start leading-[1.8]">
-              <span className="shrink-0 w-7 h-7 rounded-full bg-[#eef4ff] text-[#1877f2] font-['Satoshi:Bold',sans-serif] text-sm flex items-center justify-center mt-0.5">{i + 1}</span>
+            <li key={i} className="flex gap-3.5 items-start leading-[1.78]">
+              <span className="shrink-0 w-6 h-6 rounded-full bg-[#eef4ff] text-[#1877f2] font-['Satoshi:Bold',sans-serif] text-[12px] flex items-center justify-center mt-0.5">{i + 1}</span>
               <span className="pt-0.5">{item}</span>
             </li>
           ))}
@@ -142,15 +154,15 @@ function renderSection(section: ContentSection, index: number) {
       );
     case "faq":
       return (
-        <div key={index} className="flex flex-col gap-4 mt-4">
+        <div key={index} className="flex flex-col gap-3 mt-4">
           {section.items.map((item, i) => (
             <details key={i} className="border border-[#e2e8f0] rounded-2xl overflow-hidden group">
-              <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none bg-[#f8fafc] hover:bg-[#f0f7ff] transition-colors">
-                <p className="font-['Satoshi:Bold',sans-serif] text-[#0f172a] text-base md:text-lg">{item.q}</p>
-                <span className="text-[#1877f2] text-xl font-bold shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+              <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none bg-[#f8fafc] hover:bg-[#f0f7ff] transition-colors">
+                <p className="font-['Satoshi:Bold',sans-serif] text-[#0f172a] text-[15px] md:text-base leading-snug">{item.q}</p>
+                <span className="text-[#1877f2] text-lg font-bold shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
               </summary>
-              <div className="px-6 py-5 border-t border-[#e2e8f0]">
-                <p className="font-['General_Sans:Medium',sans-serif] text-[#475569] text-base md:text-lg leading-[1.8]">{item.a}</p>
+              <div className="px-5 py-4 border-t border-[#e2e8f0]">
+                <p className="font-['General_Sans:Medium',sans-serif] text-[#475569] text-[15px] md:text-base leading-[1.78]">{item.a}</p>
               </div>
             </details>
           ))}
@@ -158,13 +170,13 @@ function renderSection(section: ContentSection, index: number) {
       );
     case "cta":
       return (
-        <div key={index} className="bg-gradient-to-br from-[#1877f2] to-[#0d5ed9] rounded-3xl p-8 md:p-10 mt-12 text-white">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[1.4] text-xl md:text-2xl mb-6 text-white/95">{section.text}</p>
+        <div key={index} className="bg-gradient-to-br from-[#1877f2] to-[#0d5ed9] rounded-3xl p-7 md:p-9 mt-10 text-white">
+          <p className="font-['Satoshi:Bold',sans-serif] leading-[1.45] text-[18px] md:text-[20px] mb-5 text-white/95">{section.text}</p>
           <a
             href="https://loraloop.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-[#1877f2] font-['Satoshi:Bold',sans-serif] px-8 py-4 rounded-full text-base hover:bg-blue-50 transition-colors shadow-sm"
+            className="inline-block bg-white text-[#1877f2] font-['Satoshi:Bold',sans-serif] px-7 py-3.5 rounded-full text-[15px] hover:bg-blue-50 transition-colors shadow-sm"
           >
             Try Loraloop Free →
           </a>
@@ -308,11 +320,15 @@ export default function BlogDetail() {
               <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-3xl p-6">
                 <h3 className="font-['Satoshi:Bold',sans-serif] text-[#0f172a] text-base mb-4">In this article</h3>
                 <div className="h-px bg-[#e2e8f0] mb-4" />
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-0.5">
                   {post.tableOfContents.map((item, i) => (
-                    <span key={i} className="font-['General_Sans:Medium',sans-serif] text-[#1877f2] text-sm leading-[1.6] py-1 px-2 rounded-lg hover:bg-[#eff6ff] cursor-pointer transition-colors block">
+                    <button
+                      key={i}
+                      onClick={() => scrollToHeading(item)}
+                      className="font-['General_Sans:Medium',sans-serif] text-[#1877f2] text-[13px] leading-[1.55] py-1.5 px-2.5 rounded-lg hover:bg-[#eff6ff] cursor-pointer transition-colors text-left w-full"
+                    >
                       {i + 1}. {item}
-                    </span>
+                    </button>
                   ))}
                 </div>
               </div>
