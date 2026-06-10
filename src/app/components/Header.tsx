@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
 import appLogo from "../../assets/loraloop-icon.svg";
 import i18n from "../../i18n";
+import { supabase } from "../../lib/supabase";
 
 // ── Language config ──────────────────────────────────────────────────────────
 const LANGUAGES = [
@@ -158,14 +159,40 @@ const aiAgents = [
   },
 ];
 
+function truncateName(name: string, max = 20): string {
+  return name.length > max ? name.slice(0, max) + "…" : name;
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [currentUser, setCurrentUser] = useState<{ name: string } | null>(null);
   const pillRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const { t } = useTranslation();
 
   const closeAll = useCallback(() => setOpen(false), []);
+
+  useEffect(() => {
+    if (!supabase) return;
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        const meta = session.user.user_metadata as Record<string, string> | undefined;
+        const name = meta?.full_name ?? meta?.name ?? session.user.email?.split("@")[0] ?? "User";
+        setCurrentUser({ name });
+      }
+    });
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        const meta = session.user.user_metadata as Record<string, string> | undefined;
+        const name = meta?.full_name ?? meta?.name ?? session.user.email?.split("@")[0] ?? "User";
+        setCurrentUser({ name });
+      } else {
+        setCurrentUser(null);
+      }
+    });
+    return () => subscription.unsubscribe();
+  }, []);
 
   // Subtle background shift on scroll for depth cue
   useEffect(() => {
@@ -292,14 +319,30 @@ export default function Header() {
           {/* Globe / language picker — icon only */}
           <LanguagePicker />
 
-          <a
-            href="https://app.loraloop.com/signin"
-            className="flex items-center justify-center px-3 md:px-5 py-2 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors duration-150"
-          >
-            <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-[#0f172a] whitespace-nowrap">
-              {t('nav.signIn')}
-            </span>
-          </a>
+          {currentUser ? (
+            <a
+              href="https://app.loraloop.com/dashboard"
+              className="flex items-center gap-2 px-3 md:px-4 py-[6px] rounded-full bg-white hover:bg-[#f3f4f6] transition-colors duration-150"
+            >
+              <div className="w-6 h-6 rounded-full bg-[#1877f2] flex items-center justify-center shrink-0">
+                <span className="font-['Satoshi',sans-serif] font-bold text-[10px] text-white leading-none">
+                  {currentUser.name.charAt(0).toUpperCase()}
+                </span>
+              </div>
+              <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-[#0f172a] whitespace-nowrap">
+                {truncateName(currentUser.name)}
+              </span>
+            </a>
+          ) : (
+            <a
+              href="https://app.loraloop.com/signin"
+              className="flex items-center justify-center px-3 md:px-5 py-2 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors duration-150"
+            >
+              <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-[#0f172a] whitespace-nowrap">
+                {t('nav.signIn')}
+              </span>
+            </a>
+          )}
           <a
             href={`https://app.loraloop.com/signup?lang=${typeof window !== 'undefined' ? (localStorage.getItem('loraloop_language') ?? 'en') : 'en'}`}
             className="bg-[#1877f2] hover:bg-[#1565c0] active:bg-[#1256b0] transition-colors duration-150 rounded-full px-3 md:px-5 py-2 flex items-center justify-center"
