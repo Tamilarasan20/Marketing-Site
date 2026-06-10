@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useParams, Link } from "react-router";
-import { ChevronRight, Link as LinkIcon, Clock, Check } from "lucide-react";
+import { ChevronRight, Link as LinkIcon, Clock, Check, Sparkles, X as XClose } from "lucide-react";
 import imgCallToActionSection from "../../imports/BlogL2-1/226049655f3871f3dac264b316138eae1882ff2f.png";
 import imgFeatureImageSmall from "../../imports/BlogL2-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
 import imgLogos from "../../imports/BlogL2-1/808cf4a87ce2d856a11af393004688f1a9052950.png";
@@ -96,14 +96,6 @@ function headingToId(text: string): string {
   return 'section-' + text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-function scrollToHeading(text: string) {
-  const el = document.getElementById(headingToId(text));
-  if (el) {
-    const top = el.getBoundingClientRect().top + window.scrollY - 100;
-    window.scrollTo({ top, behavior: 'smooth' });
-  }
-}
-
 function renderSection(section: ContentSection, index: number) {
   switch (section.type) {
     case "heading":
@@ -154,7 +146,7 @@ function renderSection(section: ContentSection, index: number) {
       );
     case "faq":
       return (
-        <div key={index} className="flex flex-col gap-3 mt-4">
+        <div key={index} id="section-faq" className="flex flex-col gap-3 mt-4">
           {section.items.map((item, i) => (
             <details key={i} className="border border-[#e2e8f0] rounded-2xl overflow-hidden group">
               <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none bg-[#f8fafc] hover:bg-[#f0f7ff] transition-colors">
@@ -192,6 +184,23 @@ export default function BlogDetail() {
   const post = slug ? (getBlogPostBySlug(slug) ?? getBlogPost(Number(slug))) : undefined;
   const currentUrl = typeof window !== "undefined" ? window.location.href : "";
   const [copied, setCopied] = useState(false);
+  const [summariseOpen, setSummariseOpen] = useState(false);
+  const articleRef = useRef<HTMLDivElement>(null);
+
+  function handleTocClick(tocIndex: number) {
+    if (!articleRef.current) return;
+    const h2s = articleRef.current.querySelectorAll('h2');
+    let target: HTMLElement | null = null;
+    if (tocIndex < h2s.length) {
+      target = h2s[tocIndex] as HTMLElement;
+    } else {
+      // Last TOC entry is typically "Frequently Asked Questions" — scroll to the faq block
+      target = articleRef.current.querySelector('#section-faq') as HTMLElement | null;
+    }
+    if (!target) return;
+    const top = target.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
 
   function handleShare(platform: "facebook" | "linkedin" | "x" | "copy") {
     if (platform === "copy") {
@@ -310,7 +319,7 @@ export default function BlogDetail() {
 
             {/* Article body — max width for readability */}
             <div className="flex-1 min-w-0">
-              <div className="max-w-[740px] flex flex-col gap-6">
+              <div ref={articleRef} className="max-w-[740px] flex flex-col gap-6">
                 {post.content.map((section, index) => renderSection(section, index))}
               </div>
             </div>
@@ -324,7 +333,7 @@ export default function BlogDetail() {
                   {post.tableOfContents.map((item, i) => (
                     <button
                       key={i}
-                      onClick={() => scrollToHeading(item)}
+                      onClick={() => handleTocClick(i)}
                       className="font-['General_Sans:Medium',sans-serif] text-[#1877f2] text-[13px] leading-[1.55] py-1.5 px-2.5 rounded-lg hover:bg-[#eff6ff] cursor-pointer transition-colors text-left w-full"
                     >
                       {i + 1}. {item}
@@ -391,19 +400,45 @@ export default function BlogDetail() {
           </div>
         </div>
 
-        {/* Floating bar */}
-        <div className="fixed bottom-4 left-3 right-3 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-max z-50 backdrop-blur-[10px] bg-[rgba(0,0,0,0.88)] rounded-2xl md:rounded-[30px] shadow-xl px-4 py-3">
-          <div className="flex flex-row items-center gap-3 overflow-x-auto">
-            <p className="font-['General_Sans:Medium',sans-serif] text-[#9ca3af] text-xs whitespace-nowrap flex-shrink-0">Quick Summarise with</p>
-            <div className="w-px h-4 bg-[#444] flex-shrink-0" />
-            {aiTools.map((ai) => (
-              <a key={ai.name} href={getSummarizeUrl(ai.name, currentUrl)} target="_blank" rel="noopener noreferrer"
-                className="bg-white flex gap-1.5 items-center px-3 py-1.5 rounded-2xl border border-[#e5e7eb] hover:bg-gray-100 transition-colors flex-shrink-0">
-                <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
-                <span className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-sm whitespace-nowrap">{ai.name}</span>
-              </a>
-            ))}
-          </div>
+        {/* Summarise FAB */}
+        {summariseOpen && (
+          <div className="fixed inset-0 z-40" onClick={() => setSummariseOpen(false)} />
+        )}
+        <div className="fixed bottom-6 right-5 md:right-8 z-50 flex flex-col items-end gap-3">
+          {summariseOpen && (
+            <div className="bg-[rgba(12,12,12,0.93)] backdrop-blur-md rounded-2xl p-4 flex flex-col gap-3 shadow-2xl border border-white/10 w-[188px]">
+              <p className="font-['General_Sans:Medium',sans-serif] text-[#9ca3af] text-[11px] uppercase tracking-wider">Quick Summarise with</p>
+              <div className="flex flex-col gap-1.5">
+                {aiTools.map((ai) => (
+                  <a
+                    key={ai.name}
+                    href={getSummarizeUrl(ai.name, currentUrl)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setSummariseOpen(false)}
+                    className="flex gap-2.5 items-center px-3 py-2 rounded-xl bg-white/8 hover:bg-white/15 transition-colors"
+                  >
+                    <img src={ai.icon} alt={ai.name} className="w-[18px] h-[18px]" />
+                    <span className="font-['Satoshi:Bold',sans-serif] text-white text-[13px] whitespace-nowrap">{ai.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+          <button
+            onClick={() => setSummariseOpen((v) => !v)}
+            title="Quick Summarise with AI"
+            className={`w-14 h-14 rounded-full shadow-xl flex flex-col items-center justify-center gap-0.5 transition-all active:scale-95 ${
+              summariseOpen
+                ? 'bg-[#1f2937] text-white hover:bg-[#374151]'
+                : 'bg-[#1877f2] text-white hover:bg-[#1565c0]'
+            }`}
+          >
+            {summariseOpen
+              ? <XClose size={20} />
+              : <><Sparkles size={18} /><span className="text-[9px] font-['Satoshi:Bold',sans-serif] leading-none">AI</span></>
+            }
+          </button>
         </div>
 
       </div>
