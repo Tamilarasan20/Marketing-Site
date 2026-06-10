@@ -117,6 +117,12 @@ function buildPage({ path, title, description, bodyHtml, extraHead = '', ogType 
   const img = esc(ogImage);
   let html = template
     .replace(/<title>[^<]*<\/title>/, `<title>${t} | Loraloop</title>`)
+    // Drop the template's static meta tags so prerendered pages don't carry duplicates
+    .replace(/\s*<meta name="description"[^>]*\/>/, '')
+    .replace(/\s*<meta property="og:title"[^>]*\/>/, '')
+    .replace(/\s*<meta property="og:description"[^>]*\/>/, '')
+    .replace(/\s*<meta property="og:type"[^>]*\/>/, '')
+    .replace(/\s*<meta name="theme-color"[^>]*\/>/, '')
     .replace('</head>',
       `  <meta name="description" content="${d}" />
   <meta name="robots" content="index, follow" />
