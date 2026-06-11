@@ -320,37 +320,44 @@ export default function Header() {
           <LanguagePicker />
 
           {currentUser ? (
+            /* Logged-in & recognized → single brand pill that opens the chat in the main app */
             <a
-              href="https://app.loraloop.com/dashboard"
-              className="flex items-center gap-2 px-3 md:px-4 py-[6px] rounded-full bg-white hover:bg-[#f3f4f6] transition-colors duration-150"
+              href="https://app.loraloop.com/chat"
+              aria-label={`Open Loraloop chat as ${currentUser.name}`}
+              className="flex items-center gap-2.5 pl-[5px] pr-3 md:pr-4 py-[5px] rounded-full bg-white border border-[#e5e7eb] hover:border-[#d1d5db] hover:bg-[#f9fafb] shadow-[0px_1px_2px_rgba(16,24,40,0.05)] transition-colors duration-150"
             >
-              <div className="w-6 h-6 rounded-full bg-[#1877f2] flex items-center justify-center shrink-0">
-                <span className="font-['Satoshi',sans-serif] font-bold text-[10px] text-white leading-none">
+              <span
+                className="flex items-center justify-center w-7 h-7 rounded-[9px] shrink-0 overflow-hidden"
+                style={{ background: "linear-gradient(135deg, #3a2a8c 0%, #4338ca 48%, #3b82f6 100%)" }}
+              >
+                <span className="font-['Satoshi',sans-serif] font-bold text-[12px] text-white leading-none">
                   {currentUser.name.charAt(0).toUpperCase()}
                 </span>
-              </div>
-              <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-[#0f172a] whitespace-nowrap">
+              </span>
+              <span className="font-['Satoshi',sans-serif] font-semibold text-[13px] md:text-[14px] leading-5 text-[#1f2a44] whitespace-nowrap">
                 {truncateName(currentUser.name)}
               </span>
             </a>
           ) : (
-            <a
-              href="https://app.loraloop.com/signin"
-              className="flex items-center justify-center px-3 md:px-5 py-2 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors duration-150"
-            >
-              <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-[#0f172a] whitespace-nowrap">
-                {t('nav.signIn')}
-              </span>
-            </a>
+            <>
+              <a
+                href="https://app.loraloop.com/signin"
+                className="flex items-center justify-center px-3 md:px-5 py-2 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors duration-150"
+              >
+                <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-[#0f172a] whitespace-nowrap">
+                  {t('nav.signIn')}
+                </span>
+              </a>
+              <a
+                href={`https://app.loraloop.com/signup?lang=${typeof window !== 'undefined' ? (localStorage.getItem('loraloop_language') ?? 'en') : 'en'}`}
+                className="bg-[#1877f2] hover:bg-[#1565c0] active:bg-[#1256b0] transition-colors duration-150 rounded-full px-3 md:px-5 py-2 flex items-center justify-center"
+              >
+                <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-white whitespace-nowrap">
+                  {t('nav.getStarted')}
+                </span>
+              </a>
+            </>
           )}
-          <a
-            href={`https://app.loraloop.com/signup?lang=${typeof window !== 'undefined' ? (localStorage.getItem('loraloop_language') ?? 'en') : 'en'}`}
-            className="bg-[#1877f2] hover:bg-[#1565c0] active:bg-[#1256b0] transition-colors duration-150 rounded-full px-3 md:px-5 py-2 flex items-center justify-center"
-          >
-            <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-white whitespace-nowrap">
-              {t('nav.getStarted')}
-            </span>
-          </a>
         </div>
 
         {/* AI Employees dropdown — always rendered, hidden via CSS for smooth transitions */}
