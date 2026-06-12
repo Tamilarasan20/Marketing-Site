@@ -50,13 +50,13 @@ function Image() {
 
 function TextGroupVertical2() {
   return (
-    <div className="content-stretch flex flex-col font-['Satoshi:Medium',sans-serif] font-medium items-center justify-center relative shrink-0 text-[36px] tracking-[-1.2px] whitespace-nowrap" data-name="TextGroupVertical2">
-      <p className="leading-[0] relative shrink-0 text-white font-medium">
-        <span className="leading-[40px]">{`Meet `}</span>
-        <span className="leading-[40px] text-[#14a148]">Lora</span>
+    <div className="content-stretch flex flex-col font-['Satoshi:Bold',sans-serif] font-bold items-center justify-center relative shrink-0 text-[36px] tracking-[-1.2px] whitespace-nowrap" data-name="TextGroupVertical2">
+      <p className="leading-[0] relative shrink-0 text-white font-bold">
+        <span className="leading-[38px]">{`Meet `}</span>
+        <span className="leading-[38px] text-[#14a148]">Lora</span>
       </p>
-      <p className="leading-[40px] relative shrink-0 text-white font-medium">{`your Autonomous `}</p>
-      <p className="leading-[40px] relative shrink-0 text-[#14a148] font-medium">{`AI Marketing Team `}</p>
+      <p className="leading-[38px] relative shrink-0 text-white font-bold">{`your Autonomous `}</p>
+      <p className="leading-[38px] relative shrink-0 text-[#14a148] font-bold">{`AI Marketing Team `}</p>
     </div>
   );
 }
@@ -156,7 +156,7 @@ function ButtonContainer() {
 
 function Frame25() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[24px] items-start left-0 px-[24px] top-[114px] w-full">
+    <div className="content-stretch flex flex-col gap-[24px] items-start px-[24px] pt-[114px] pb-[140px] w-full">
       <TextGroupVertical1 />
       <WaitlistForm />
     </div>
@@ -322,9 +322,9 @@ function LandingPage() {
 
 function IntroSection() {
   return (
-    <div className="bg-black h-[748px] relative shrink-0 w-full" data-name="IntroSection">
-      <Image />
+    <div className="bg-black relative shrink-0 w-full" data-name="IntroSection">
       <Frame25 />
+      <Image />
     </div>
   );
 }

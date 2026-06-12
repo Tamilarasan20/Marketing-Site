@@ -166,7 +166,7 @@ function truncateName(name: string, max = 20): string {
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [currentUser, setCurrentUser] = useState<{ name: string } | null>(null);
+  const [currentUser, setCurrentUser] = useState<{ name: string; avatarUrl?: string } | null>(null);
   const pillRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const { t } = useTranslation();
@@ -179,14 +179,16 @@ export default function Header() {
       if (session?.user) {
         const meta = session.user.user_metadata as Record<string, string> | undefined;
         const name = meta?.full_name ?? meta?.name ?? session.user.email?.split("@")[0] ?? "User";
-        setCurrentUser({ name });
+        const avatarUrl = meta?.avatar_url ?? meta?.picture ?? undefined;
+        setCurrentUser({ name, avatarUrl });
       }
     });
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       if (session?.user) {
         const meta = session.user.user_metadata as Record<string, string> | undefined;
         const name = meta?.full_name ?? meta?.name ?? session.user.email?.split("@")[0] ?? "User";
-        setCurrentUser({ name });
+        const avatarUrl = meta?.avatar_url ?? meta?.picture ?? undefined;
+        setCurrentUser({ name, avatarUrl });
       } else {
         setCurrentUser(null);
       }
@@ -320,19 +322,30 @@ export default function Header() {
           <LanguagePicker />
 
           {currentUser ? (
-            /* Logged-in & recognized → single brand pill that opens the chat in the main app */
+            /* Logged-in & recognized → profile pill linking to app */
             <a
               href="https://app.loraloop.com/chat"
-              aria-label={`Open Loraloop chat as ${currentUser.name}`}
-              className="flex items-center gap-2.5 pl-[5px] pr-3 md:pr-4 py-[5px] rounded-full bg-white border border-[#e5e7eb] hover:border-[#d1d5db] hover:bg-[#f9fafb] shadow-[0px_1px_2px_rgba(16,24,40,0.05)] transition-colors duration-150"
+              aria-label={`Open Loraloop as ${currentUser.name}`}
+              className="flex items-center gap-2 pl-[5px] pr-4 py-[5px] rounded-full bg-white border border-[#e5e7eb] hover:border-[#d1d5db] hover:bg-[#f9fafb] shadow-[0px_1px_2px_rgba(16,24,40,0.05)] transition-colors duration-150"
             >
-              <span
-                className="flex items-center justify-center w-7 h-7 rounded-[9px] shrink-0 overflow-hidden"
-                style={{ background: "linear-gradient(135deg, #3a2a8c 0%, #4338ca 48%, #3b82f6 100%)" }}
-              >
-                <span className="font-['Satoshi',sans-serif] font-bold text-[12px] text-white leading-none">
-                  {currentUser.name.charAt(0).toUpperCase()}
-                </span>
+              <span className="flex items-center justify-center w-7 h-7 rounded-full shrink-0 overflow-hidden">
+                {currentUser.avatarUrl ? (
+                  <img
+                    src={currentUser.avatarUrl}
+                    alt={currentUser.name}
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <span
+                    className="w-full h-full flex items-center justify-center"
+                    style={{ background: "linear-gradient(135deg, #3a2a8c 0%, #4338ca 48%, #3b82f6 100%)" }}
+                  >
+                    <span className="font-['Satoshi',sans-serif] font-bold text-[12px] text-white leading-none">
+                      {currentUser.name.charAt(0).toUpperCase()}
+                    </span>
+                  </span>
+                )}
               </span>
               <span className="font-['Satoshi',sans-serif] font-semibold text-[13px] md:text-[14px] leading-5 text-[#1f2a44] whitespace-nowrap">
                 {truncateName(currentUser.name)}
