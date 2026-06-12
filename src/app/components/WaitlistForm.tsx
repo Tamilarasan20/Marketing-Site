@@ -3,10 +3,10 @@ import { createPortal } from 'react-dom';
 import { useLocation } from 'react-router';
 import ClaudeConnectModal from './ClaudeConnectModal';
 import { supabase } from '../../lib/supabase';
-import imgClaude from '../../assets/platform-claude.svg';
-import imgChatGPT from '../../assets/platform-chatgpt.svg';
-import imgOpenClaw from '../../assets/platform-openclaw.svg';
-import imgHermes from '../../assets/platform-hermes.svg';
+import imgClaude from '../../assets/platform-claude.png';
+import imgChatGPT from '../../assets/platform-chatgpt.png';
+import imgOpenClaw from '../../assets/platform-openclaw.png';
+import imgHermes from '../../assets/platform-hermes.png';
 
 const WEBSITE_REGEX = /^(https?:\/\/)?(www\.)?([a-z0-9-]+\.)+[a-z]{2,}(\/[^\s]*)?$/i;
 
@@ -116,23 +116,23 @@ export default function WaitlistForm() {
 
       <div className="w-full max-w-[420px] h-px bg-[rgba(255,255,255,0.1)] my-1" />
 
-      {/* Connect with — Figma design */}
-      <div className="flex flex-col gap-[8px] items-center justify-center w-full" data-name="Segmenter">
+      {/* Connect with — Figma node 70041:4251 */}
+      <div className="bg-[#111720] flex flex-col gap-[16px] items-center px-[16px] md:px-[32px] py-[16px] rounded-[24px] w-full max-w-[420px]" data-name="Segmenter">
         <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] text-[12px] text-[#9ca3af] text-center whitespace-nowrap">
           Connect with
         </p>
-        <div className="bg-[#1b212a] flex gap-[16px] md:gap-[24px] items-center px-[16px] md:px-[20px] py-[10px] md:py-[12px] rounded-[20px] md:rounded-[24px]">
+        <div className="flex gap-[8px] items-center">
           {[
-            { src: imgClaude,   label: 'Claude'   },
-            { src: imgChatGPT,  label: 'ChatGPT'  },
-            { src: imgOpenClaw, label: 'OpenClaw' },
-            { src: imgHermes,   label: 'Hermes'   },
-          ].map(({ src, label }) => (
-            <div key={label} className="flex flex-col gap-[2px] items-center justify-center">
-              <div className="w-[32px] h-[32px] md:w-[40px] md:h-[40px] overflow-hidden rounded-full shrink-0">
-                <img alt={label} src={src} className="w-full h-full object-contain" />
+            { src: imgClaude,   label: 'Claude',   rounded: false },
+            { src: imgChatGPT,  label: 'ChatGPT',  rounded: false },
+            { src: imgOpenClaw, label: 'OpenClaw', rounded: false },
+            { src: imgHermes,   label: 'Hermes',   rounded: true  },
+          ].map(({ src, label, rounded }) => (
+            <div key={label} className="flex flex-col gap-[4px] items-center justify-center p-[8px]">
+              <div className={`overflow-hidden shrink-0 size-[40px]${rounded ? ' rounded-[40px]' : ''}`}>
+                <img alt={label} src={src} className="w-full h-full object-cover" />
               </div>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] md:leading-[20px] text-[12px] md:text-[14px] text-white text-center whitespace-nowrap">
+              <p className="font-['Satoshi:Medium',sans-serif] leading-[20px] text-[14px] text-[#9ca3af] text-center whitespace-nowrap">
                 {label}
               </p>
             </div>
@@ -141,26 +141,26 @@ export default function WaitlistForm() {
         {isSignedIn ? (
           <a
             href="https://app.loraloop.com/chat"
-            className="bg-[#14a148]/15 hover:bg-[#14a148]/25 transition-colors flex gap-[8px] items-center justify-center px-[12px] py-[7px] md:py-[8px] rounded-[20px] mt-[12px]"
+            className="bg-[#14a148]/15 hover:bg-[#14a148]/25 transition-colors flex gap-[4px] items-center justify-center px-[16px] py-[12px] rounded-[32px] w-full"
             data-name="Sign in to Connect"
           >
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" className="shrink-0">
+            <svg width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true" className="shrink-0">
               <path d="M2 6l3 3 5-5" stroke="#14a148" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[13px] md:text-[14px] text-[#14a148] tracking-[0.21px] whitespace-nowrap">
+            <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] text-[16px] text-[#14a148] text-center whitespace-nowrap">
               Connected
             </p>
           </a>
         ) : (
           <a
             href="https://app.loraloop.com/signin"
-            className="bg-[#313b4a] hover:bg-[#3d4a5c] transition-colors flex gap-[8px] items-center justify-center px-[12px] py-[7px] md:py-[8px] rounded-[20px] mt-[12px]"
+            className="bg-[#313b4a] hover:bg-[#3d4a5c] transition-colors flex gap-[4px] items-center justify-center px-[16px] py-[12px] rounded-[32px] w-full"
             data-name="Sign in to Connect"
           >
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[13px] md:text-[14px] text-white tracking-[0.21px] whitespace-nowrap">
+            <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] text-[16px] text-white text-center whitespace-nowrap">
               Sign in to Connect
             </p>
-            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0">
               <path d="M6 4l4 4-4 4" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
