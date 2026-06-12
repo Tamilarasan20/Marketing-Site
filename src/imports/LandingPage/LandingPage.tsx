@@ -41,21 +41,21 @@ import { imgGroup, imgFeatureImageSmall4, imgGroup1, imgColor } from "./svg-4yq2
 
 function TextGroupVertical3() {
   return (
-    <div className="content-stretch flex flex-col items-start mb-[-1px] pb-[14px] relative shrink-0 text-white w-full" data-name="Text Group Vertical">
-      <p className="leading-[0] relative shrink-0 text-[0px] w-full font-medium">
-        <span className="text-[36px] md:text-[68px] leading-[1.05] font-medium">{`Meet `}</span>
-        <span className="text-[36px] md:text-[68px] leading-[1.05] text-[#14a148] font-medium">Lora</span>
+    <div className="content-stretch flex flex-col items-start mb-[-1px] pb-[6px] relative shrink-0 text-white w-full" data-name="Text Group Vertical">
+      <p className="leading-[0] relative shrink-0 text-[0px] w-full font-bold">
+        <span className="text-[36px] md:text-[68px] leading-[1.0] font-bold">{`Meet `}</span>
+        <span className="text-[36px] md:text-[68px] leading-[1.0] text-[#14a148] font-bold">Lora</span>
       </p>
-      <p className="text-[36px] md:text-[68px] leading-[1.05] relative shrink-0 w-full font-medium">{`your Autonomous `}</p>
+      <p className="text-[36px] md:text-[68px] leading-[1.0] relative shrink-0 w-full font-bold">{`your Autonomous `}</p>
     </div>
   );
 }
 
 function TextGroupVertical2() {
   return (
-    <div className="content-stretch flex flex-col font-['Satoshi:Medium',sans-serif] font-medium items-start pb-px relative shrink-0 tracking-[-1.2px] w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col font-['Satoshi:Bold',sans-serif] font-bold items-start pb-px relative shrink-0 tracking-[-1.2px] w-full" data-name="Text Group Vertical">
       <TextGroupVertical3 />
-      <p className="text-[36px] md:text-[68px] leading-[1.05] relative shrink-0 text-[#14a148] w-full font-medium">{`AI Marketing Team `}</p>
+      <p className="text-[36px] md:text-[68px] leading-[1.0] relative shrink-0 text-[#14a148] w-full font-bold">{`AI Marketing Team `}</p>
     </div>
   );
 }
@@ -116,9 +116,9 @@ function TextGroupVertical() {
 
 function IntroSection() {
   return (
-    <div className="relative z-30 w-full min-h-[600px] md:min-h-[920px]" data-name="Intro Section">
+    <div className="relative z-30 w-full" data-name="Intro Section">
       <div className="absolute bg-black inset-0 w-full h-full pointer-events-none" data-name="Background Shape" />
-      <div className="relative z-40 pt-24 md:pt-32 pb-12 md:pb-0">
+      <div className="relative z-40 pt-24 md:pt-32 pb-[193px] md:pb-[223px]">
         <TextGroupVertical />
       </div>
       {/* Avatar strip — bottom-[0] = container bottom == IntroSection bottom == VideoSection top */}

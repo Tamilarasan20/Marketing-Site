@@ -2,6 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocation } from 'react-router';
 import ClaudeConnectModal from './ClaudeConnectModal';
+import { supabase } from '../../lib/supabase';
+import imgClaude from '../../assets/platform-claude.svg';
+import imgChatGPT from '../../assets/platform-chatgpt.svg';
+import imgOpenClaw from '../../assets/platform-openclaw.svg';
+import imgHermes from '../../assets/platform-hermes.svg';
 
 const WEBSITE_REGEX = /^(https?:\/\/)?(www\.)?([a-z0-9-]+\.)+[a-z]{2,}(\/[^\s]*)?$/i;
 
@@ -9,8 +14,20 @@ export default function WaitlistForm() {
   const [website, setWebsite] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [claudeModalOpen, setClaudeModalOpen] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const location = useLocation();
+
+  useEffect(() => {
+    if (!supabase) return;
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setIsSignedIn(!!session?.user);
+    });
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsSignedIn(!!session?.user);
+    });
+    return () => subscription.unsubscribe();
+  }, []);
 
   const isValid = WEBSITE_REGEX.test(website.trim());
 
@@ -99,31 +116,56 @@ export default function WaitlistForm() {
 
       <div className="w-full max-w-[420px] h-px bg-[rgba(255,255,255,0.1)] my-1" />
 
-      <button
-        type="button"
-        disabled
-        aria-disabled="true"
-        title="Coming soon"
-        className="content-stretch flex gap-[10px] items-center justify-center pl-[8px] pr-[16px] py-[8px] relative rounded-full shrink-0 bg-[#1f2937] opacity-50 cursor-not-allowed select-none"
-        data-name="Connect with Claude (disabled)"
-      >
-        <div className="flex items-center justify-center w-[32px] h-[32px] rounded-[8px] bg-[#d97757] shrink-0">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <g stroke="#fff" strokeWidth="1.6" strokeLinecap="round">
-              <line x1="12" y1="2" x2="12" y2="22" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
-              <line x1="19.07" y1="4.93" x2="4.93" y2="19.07" />
-            </g>
-          </svg>
-        </div>
-        <p className="font-['General_Sans:Medium',sans-serif] leading-[20px] not-italic relative shrink-0 text-white text-[15px] whitespace-nowrap">
-          Connect with Claude
+      {/* Connect with — Figma design */}
+      <div className="flex flex-col gap-[8px] items-center justify-center w-full" data-name="Segmenter">
+        <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] text-[12px] text-[#9ca3af] text-center whitespace-nowrap">
+          Connect with
         </p>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0">
-          <path d="M6 4l4 4-4 4" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
+        <div className="bg-[#1b212a] flex gap-[16px] md:gap-[24px] items-center px-[16px] md:px-[20px] py-[10px] md:py-[12px] rounded-[20px] md:rounded-[24px]">
+          {[
+            { src: imgClaude,   label: 'Claude'   },
+            { src: imgChatGPT,  label: 'ChatGPT'  },
+            { src: imgOpenClaw, label: 'OpenClaw' },
+            { src: imgHermes,   label: 'Hermes'   },
+          ].map(({ src, label }) => (
+            <div key={label} className="flex flex-col gap-[2px] items-center justify-center">
+              <div className="w-[32px] h-[32px] md:w-[40px] md:h-[40px] overflow-hidden rounded-full shrink-0">
+                <img alt={label} src={src} className="w-full h-full object-contain" />
+              </div>
+              <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] md:leading-[20px] text-[12px] md:text-[14px] text-white text-center whitespace-nowrap">
+                {label}
+              </p>
+            </div>
+          ))}
+        </div>
+        {isSignedIn ? (
+          <a
+            href="https://app.loraloop.com/chat"
+            className="bg-[#14a148]/15 hover:bg-[#14a148]/25 transition-colors flex gap-[8px] items-center justify-center px-[12px] py-[7px] md:py-[8px] rounded-[20px] mt-[12px]"
+            data-name="Sign in to Connect"
+          >
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" className="shrink-0">
+              <path d="M2 6l3 3 5-5" stroke="#14a148" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[13px] md:text-[14px] text-[#14a148] tracking-[0.21px] whitespace-nowrap">
+              Connected
+            </p>
+          </a>
+        ) : (
+          <a
+            href="https://app.loraloop.com/signin"
+            className="bg-[#313b4a] hover:bg-[#3d4a5c] transition-colors flex gap-[8px] items-center justify-center px-[12px] py-[7px] md:py-[8px] rounded-[20px] mt-[12px]"
+            data-name="Sign in to Connect"
+          >
+            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[13px] md:text-[14px] text-white tracking-[0.21px] whitespace-nowrap">
+              Sign in to Connect
+            </p>
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0">
+              <path d="M6 4l4 4-4 4" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        )}
+      </div>
 
       <ClaudeConnectModal open={claudeModalOpen} onOpenChange={setClaudeModalOpen} />
     </form>
