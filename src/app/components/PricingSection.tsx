@@ -6,8 +6,8 @@ import imgAgentBanner from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f9
 type BillingPeriod = "monthly" | "quarterly" | "annual";
 
 interface Tier {
-  credits: number;
-  compareAt: number;
+  credits?: number;
+  compareAt?: number;
   prices: { monthly: number; quarterly: number; annual: number };
 }
 
@@ -66,6 +66,51 @@ const PLANS: Plan[] = [
       { credits: 6000, compareAt: 799, prices: { monthly: 599, quarterly: 509, annual: 419 } },
     ],
     features: ["All 9 helpers", "4,500 monthly AI credits", "Unlimited Seats", "Unlimited Workspaces", "Priority Support 24/7"],
+  },
+];
+
+// ─── No-AI-Agent plans — integration-based, no AI features, all unlimited posts ─
+// Each tier is cumulative: higher plans inherit everything below via "Everything in …".
+const NO_AGENT_PLANS: Plan[] = [
+  {
+    id: "CREATOR",
+    name: "Creator",
+    description: "Solo creators getting started",
+    tiers: [{ prices: { monthly: 9, quarterly: 8, annual: 6 } }],
+    features: [
+      "25 social media integrations",
+      "Unlimited posts",
+      "Schedule & calendar planning",
+      "Carousel & bulk video posts",
+      "Human support",
+    ],
+  },
+  {
+    id: "PRO",
+    name: "Pro",
+    description: "Growing teams & agencies",
+    highlighted: true,
+    tiers: [{ prices: { monthly: 39, quarterly: 33, annual: 27 } }],
+    features: [
+      "Everything in Creator",
+      "50 social media integrations",
+      "Multiple accounts per platform",
+      "Analytics & post comments",
+      "Priority support",
+    ],
+  },
+  {
+    id: "ULTRA",
+    name: "Ultra",
+    description: "Scaling brands & power users",
+    tiers: [{ prices: { monthly: 89, quarterly: 76, annual: 62 } }],
+    features: [
+      "Everything in Pro",
+      "Unlimited social integrations",
+      "Unlimited team members",
+      "API & webhooks access",
+      "Dedicated account manager",
+    ],
   },
 ];
 
@@ -139,7 +184,7 @@ function CreditChips({ plan, tierIdx, onChange }: {
                   : "border-white/[0.07] text-[#6B7280] hover:text-[#9CA3AF] hover:border-white/15"
               }`}
             >
-              {fmt(t.credits)}
+              {fmt(t.credits ?? 0)}
             </button>
           );
         })}
@@ -167,6 +212,8 @@ export default function PricingSection({ className = "" }: { className?: string 
     url.searchParams.set("period", period);
     window.location.href = url.toString();
   }
+
+  const activePlans = withAgents ? PLANS : NO_AGENT_PLANS;
 
   return (
     <section className={`bg-black ${className}`}>
@@ -233,17 +280,17 @@ export default function PricingSection({ className = "" }: { className?: string 
             </div>
           </div>
 
-          {/* Plan cards — items-end so Growth floats above with "Most popular" */}
+          {/* Plan cards — items-end so the highlighted plan floats above with "Most popular" */}
           <div className="flex items-end gap-4 w-full">
-            {PLANS.map((plan) => {
+            {activePlans.map((plan) => {
               const tierIdx = selectedTiers[plan.id] ?? 0;
               const tier    = plan.tiers[tierIdx];
               const price   = tier.prices[period];
 
               const cardInner = (
                 <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full">
-                  <CardHeader />
-                  <div className="flex flex-col gap-6 pt-4 px-5 pb-6">
+                  {withAgents && <CardHeader />}
+                  <div className={`flex flex-col gap-6 ${withAgents ? "pt-4" : "pt-7"} px-5 pb-6`}>
 
                     {/* Name + desc */}
                     <div>
@@ -257,12 +304,14 @@ export default function PricingSection({ className = "" }: { className?: string 
                       </p>
                     </div>
 
-                    {/* Price — compareAt always struck through */}
+                    {/* Price — compareAt struck through when present (AI plans) */}
                     <div className="flex items-baseline gap-2">
-                      <span style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                        className="text-[18px] text-[#4B5563] line-through leading-[28px]">
-                        ${tier.compareAt}
-                      </span>
+                      {tier.compareAt ? (
+                        <span style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
+                          className="text-[18px] text-[#4B5563] line-through leading-[28px]">
+                          ${tier.compareAt}
+                        </span>
+                      ) : null}
                       <span style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
                         className="text-[20px] text-white leading-[28px]">
                         ${price % 1 !== 0 ? price.toFixed(2) : price}
@@ -288,12 +337,14 @@ export default function PricingSection({ className = "" }: { className?: string 
                       {pendingPlanId === plan.id ? "Loading…" : "Get Started"}
                     </button>
 
-                    {/* Credit chips */}
-                    <CreditChips
-                      plan={plan}
-                      tierIdx={tierIdx}
-                      onChange={(i) => setSelectedTiers((s) => ({ ...s, [plan.id]: i }))}
-                    />
+                    {/* Credit chips — AI-Agent plans only */}
+                    {withAgents && (
+                      <CreditChips
+                        plan={plan}
+                        tierIdx={tierIdx}
+                        onChange={(i) => setSelectedTiers((s) => ({ ...s, [plan.id]: i }))}
+                      />
+                    )}
 
                     {/* Features */}
                     <div className="flex flex-col gap-3">
