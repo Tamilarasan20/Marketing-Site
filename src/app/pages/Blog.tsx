@@ -72,8 +72,8 @@ export default function Blog() {
       <div className="pt-20 md:pt-32 pb-10">
 
         {/* Featured post — always the newest */}
-        <div className="px-4 md:px-20 py-12 md:py-20">
-          <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-10 md:gap-14 items-start md:items-center">
+        <div className="px-4 sm:px-6 md:px-20 py-12 md:py-20">
+          <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row gap-10 md:gap-14 items-start md:items-center">
             <Link to={`/blog/${featuredPost.slug}`} className="h-[320px] md:h-[400px] w-full md:w-[560px] rounded-3xl overflow-hidden shrink-0 hover:scale-[1.01] transition-transform duration-300">
               <BlogThumbnail emoji={featuredThumb.emoji} gradient={featuredThumb.gradient} category={featuredPost.category} />
             </Link>
@@ -104,8 +104,8 @@ export default function Blog() {
         </div>
 
         {/* Grid */}
-        <div className="bg-[#f8fafc] px-4 md:px-20 py-12">
-          <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
+        <div className="bg-[#f8fafc] px-4 sm:px-6 md:px-20 py-12">
+          <div className="max-w-[1280px] mx-auto flex flex-col gap-10">
 
             {/* Filters + search */}
             <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">

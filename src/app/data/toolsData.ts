@@ -40,7 +40,7 @@ export const tools: Tool[] = [
   { name: 'Expand This Text Generator', slug: 'expand-text', description: 'Turn brief notes into full, fleshed-out content', category: 'Writing', icon: '📈' },
   { name: 'Reduce This Paragraph Generator', slug: 'reduce-paragraph', description: 'Condense long paragraphs without losing meaning', category: 'Writing', icon: '📉' },
   { name: 'Ask Any Question', slug: 'ask-any-question', description: 'Get clear, detailed answers to any question instantly', category: 'Writing', icon: '❓' },
-  { name: 'Question Maker', slug: 'question-maker', description: 'Generate insightful questions for any topic or topic', category: 'Writing', icon: '🧠' },
+  { name: 'Question Maker', slug: 'question-maker', description: 'Generate insightful questions for any topic or subject', category: 'Writing', icon: '🧠' },
 
   // ── Blog ─────────────────────────────────────────────────────
   { name: 'AI Blog Ideas And Titles Generator', slug: 'blog-title-generator', description: 'Generate 10 SEO-optimized blog title options instantly', category: 'Blog', icon: '💡' },

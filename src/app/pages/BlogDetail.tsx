@@ -199,7 +199,7 @@ export default function BlogDetail() {
 
   if (!post) {
     return (
-      <div className="bg-white pt-32 pb-20 px-4 md:px-20 text-center">
+      <div className="bg-white pt-32 pb-20 px-4 sm:px-6 md:px-20 text-center">
         <h1 className="font-['Satoshi:Bold',sans-serif] text-4xl text-[#1f2937]">Blog post not found</h1>
         <Link to="/blog" className="text-[#1877f2] hover:underline mt-4 inline-block text-xl">← Back to Blog</Link>
       </div>
@@ -217,8 +217,8 @@ export default function BlogDetail() {
       <div className="pt-20 md:pt-28 pb-36">
 
         {/* Header */}
-        <div className="px-4 md:px-20 py-10 md:py-14 border-b border-[#f1f5f9]">
-          <div className="max-w-[1200px] mx-auto">
+        <div className="px-4 sm:px-6 md:px-20 py-10 md:py-14 border-b border-[#f1f5f9]">
+          <div className="max-w-[1280px] mx-auto">
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
               <div className="flex-1 flex flex-col gap-6">
                 {/* Breadcrumb */}
@@ -280,7 +280,7 @@ export default function BlogDetail() {
                     className={`w-[30px] h-[30px] rounded-xl flex items-center justify-center transition-all active:scale-95 ${copied ? "bg-green-500 text-white" : "bg-[#f1f5f9] text-[#64748b] hover:bg-[#e2e8f0]"}`}>
                     {copied ? <Check size={16} /> : <LinkIcon size={16} />}
                   </button>
-                  {copied && <span className="text-xs text-green-600 font-['General_Sans:Medium',sans-serif]">Copied!</span>}
+                  {copied && <span className="text-sm text-green-600 font-['General_Sans:Medium',sans-serif]">Copied!</span>}
                 </div>
               </div>
 
@@ -293,8 +293,8 @@ export default function BlogDetail() {
         </div>
 
         {/* Content + Sidebar */}
-        <div className="px-4 md:px-20 py-12">
-          <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-14 items-start">
+        <div className="px-4 sm:px-6 md:px-20 py-12">
+          <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-14 items-start">
 
             {/* Article body — max width for readability */}
             <div className="flex-1 min-w-0">
@@ -341,8 +341,8 @@ export default function BlogDetail() {
         </div>
 
         {/* Related articles */}
-        <div className="px-4 md:px-20 py-10 border-t border-[#f1f5f9]">
-          <div className="max-w-[1200px] mx-auto flex flex-col gap-8">
+        <div className="px-4 sm:px-6 md:px-20 py-10 border-t border-[#f1f5f9]">
+          <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
             <div className="flex items-center justify-between">
               <h2 className="font-['Satoshi:Bold',sans-serif] text-[#0f172a] text-2xl md:text-3xl">More articles</h2>
               <Link to="/blog" className="bg-[#1877f2] flex gap-2 h-10 items-center justify-center px-5 rounded-full hover:bg-[#1565d8] transition-colors">

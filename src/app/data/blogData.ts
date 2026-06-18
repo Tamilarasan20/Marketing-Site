@@ -2268,7 +2268,7 @@ export const blogPosts: BlogPost[] = [
 
   {
     id: 26,
-    slug: 'ai-marketing-agent-vs-social-media-scheduler',
+    slug: 'ai-marketing-agent-vs-social-media-scheduler-difference',
     title: "AI Marketing Agent vs Social Media Scheduler: What's the Difference?",
     seoTitle: "AI Marketing Agent vs Social Media Scheduler: What's the Difference in 2026?",
     description: "AI marketing agents and social media schedulers both touch marketing — but they solve completely different problems. Here is how to know which one your business actually needs.",
