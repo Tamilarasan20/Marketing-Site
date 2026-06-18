@@ -65,7 +65,7 @@ export default function ForFounders() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {painPoints.map((p) => (
               <div key={p.stat} className="text-center">
-                <p className="text-5xl font-extrabold mb-2" style={{ fontFamily: 'Satoshi, sans-serif', background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{p.stat}</p>
+                <p className="text-4xl md:text-5xl font-extrabold mb-2" style={{ fontFamily: 'Satoshi, sans-serif', background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{p.stat}</p>
                 <p className="text-sm text-gray-500 leading-relaxed">{p.label}</p>
               </div>
             ))}

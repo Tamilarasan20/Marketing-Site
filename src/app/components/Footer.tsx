@@ -123,7 +123,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col items-center gap-4 sm:gap-6">
               <div className="flex items-center justify-center">
-                <p className="font-['Satoshi:Bold',sans-serif] leading-tight text-[clamp(2.5rem,8vw,5rem)] text-black whitespace-nowrap">LoraLoop</p>
+                <p className="font-['Satoshi:Bold',sans-serif] leading-tight text-[clamp(2.5rem,8vw,5rem)] text-black whitespace-nowrap">Loraloop</p>
               </div>
               <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#6b7280] text-sm sm:text-base text-center">Copyright © 2026 Orimoretail Pvt. Ltd. All rights reserved.</p>
             </div>

@@ -30,7 +30,7 @@ const aiEmployees = [
         <span className="text-[#9131ea]">AI Marketing Lead</span>
       </>
     ),
-    subtext: "Lora supports your marketing from start to finish. She understands your goals and audience. No waiting for instructions; she plans content, runs ads, guides AI, creates content, tracks performance, and boosts results, report back to you. She's smart, quick, & easy to work with!",
+    subtext: "Lora supports your marketing from start to finish. She understands your goals and audience. No waiting for instructions; she plans content, runs ads, guides AI, creates content, tracks performance, and boosts results, then reports back to you. She's smart, quick, & easy to work with!",
   },
   {
     name: "Sam",
@@ -44,7 +44,7 @@ const aiEmployees = [
         <span className="text-[#1877f2]">AI Strategist</span>
       </>
     ),
-    subtext: "Sam plans your marketing every day. He checks your brand, audience, competitors, and trends to decide what your team should focus on next. He helps choose content ideas, campaign plans, product angles & growth opportunities. No guessing Sam gives your AI team a clear direction so your marketing stays smart, active, and focused on results. Sam helps your brand grow with better daily marketing decisions.",
+    subtext: "Sam plans your marketing every day. He checks your brand, audience, competitors, and trends to decide what your team should focus on next. He helps choose content ideas, campaign plans, product angles & growth opportunities. No guessing — Sam gives your AI team a clear direction so your marketing stays smart, active, and focused on results. Sam helps your brand grow with better daily marketing decisions.",
   },
   {
     name: "Clara",
@@ -91,10 +91,10 @@ const aiEmployees = [
 ];
 
 const oldWayProblems = [
-  "AI just assist you do all manually",
-  "Spending 30+ hrs/week creating & managing contents",
+  "AI only assists — you still do everything manually",
+  "Spending 30+ hrs/week creating & managing content",
   "Checking multiple tools just to understand performance",
-  "$5000 to Hire freelancers or teams for manage marketing.",
+  "$5000 to hire freelancers or teams to manage marketing.",
   "Running ads without knowing what actually works",
   "Paying $1000 for various marketing tools.",
 ];
@@ -392,7 +392,7 @@ export default function Solution() {
         <div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[1120px] px-4 md:px-6 lg:px-0">
           <div className="w-full flex flex-col gap-8 md:gap-12">
             <h2 className="font-bold font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-6">
-              What you get it
+              What you get
             </h2>
             <Frame35_Auth />
           </div>
@@ -440,11 +440,11 @@ export default function Solution() {
       <div className="relative bg-black w-full flex flex-col gap-12 md:gap-[80px] items-center overflow-clip pt-12 md:pt-[80px] px-4" data-name="Outro">
         <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full max-w-[740px]" data-name="Call to Action Group">
           <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
-            <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleep</p>
+            <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleeps</p>
             <p className="font-['General_Sans:Medium',sans-serif] leading-[24px] md:leading-[28px] relative shrink-0 text-[#9ca3af] text-[16px] md:text-[20px] w-full">
-              Social media tools are easy to buy, but hard to keep up with. loraloop is your AI marketing team like 10 year employees marketing team for you to
+              Social media tools are easy to buy, but hard to keep up with. Loraloop is your AI marketing team — like a 10-year experienced marketing team working for you to
               <br aria-hidden="true" className="hidden md:block" />
-              {`manage `} marketing {` end to end, So you focus on your work.`}
+              {`manage `} marketing {` end to end, so you focus on your work.`}
             </p>
           </div>
           <div 

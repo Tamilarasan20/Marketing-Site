@@ -83,7 +83,7 @@ export default function BlogTitleGenerator() {
           </div>
           {output && !isLoading && (
             <div className="mt-6 p-6 bg-violet-50 border border-violet-100 rounded-xl">
-              <p className="font-semibold text-violet-900 mb-1">Want Helena to write the full SEO article for this title?</p>
+              <p className="font-semibold text-violet-900 mb-1">Want Clara to write the full SEO article for this title?</p>
               <p className="text-sm text-violet-700 mb-4">Loraloop generates complete SEO and GEO-optimized blog articles in your brand voice — keyword-targeted, structured for AI search citation, and ready for your approval.</p>
               <a href="https://app.loraloop.com" className="inline-block px-5 py-2.5 bg-violet-600 text-white text-sm font-semibold rounded-lg hover:bg-violet-700 transition-colors">Write the Full Article with Loraloop →</a>
             </div>

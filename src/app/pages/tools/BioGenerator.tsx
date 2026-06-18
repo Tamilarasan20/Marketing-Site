@@ -83,7 +83,7 @@ export default function BioGenerator() {
           {output && !isLoading && (
             <div className="mt-6 p-6 bg-violet-50 border border-violet-100 rounded-xl">
               <p className="font-semibold text-violet-900 mb-1">Store your bio in your brand knowledge base.</p>
-              <p className="text-sm text-violet-700 mb-4">Inside Loraloop, your bio becomes part of your brand identity — so every piece of content Helena generates stays consistent with how you present yourself.</p>
+              <p className="text-sm text-violet-700 mb-4">Inside Loraloop, your bio becomes part of your brand identity — so every piece of content Clara generates stays consistent with how you present yourself.</p>
               <a href="https://app.loraloop.com" className="inline-block px-5 py-2.5 bg-violet-600 text-white text-sm font-semibold rounded-lg hover:bg-violet-700 transition-colors">Try Loraloop Free →</a>
             </div>
           )}

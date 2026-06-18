@@ -28,7 +28,7 @@ export default function NextToolsSection({ currentSlug }: Props) {
               <p className="font-semibold text-gray-900 text-sm leading-snug group-hover:text-violet-700 transition-colors">
                 {tool.name}
               </p>
-              <p className="text-xs text-gray-500 mt-0.5 leading-relaxed line-clamp-1">
+              <p className="text-sm text-gray-500 mt-0.5 leading-relaxed line-clamp-1">
                 {tool.description}
               </p>
               <span className="text-xs text-violet-500 font-medium mt-1 inline-block opacity-0 group-hover:opacity-100 transition-opacity">

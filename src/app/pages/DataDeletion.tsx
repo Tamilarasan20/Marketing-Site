@@ -4,7 +4,7 @@ export default function DataDeletion() {
       <div className="max-w-[860px] px-4 md:px-8 mx-auto">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-3">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[56px] text-[#101828] text-5xl tracking-[-1.2px]">User Data Deletion</p>
+            <p className="font-['Satoshi:Bold',sans-serif] leading-tight text-[#101828] text-4xl md:text-5xl tracking-[-1.2px]">User Data Deletion</p>
             <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-base">
               Effective Date: May 1, 2026 &nbsp;|&nbsp; Last Updated: May 1, 2026
             </p>

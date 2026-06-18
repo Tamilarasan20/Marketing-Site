@@ -2926,7 +2926,7 @@ function Container70() {
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-col items-center justify-center size-full">
         <div className="content-stretch flex flex-col items-center justify-center pl-[25px] pr-[24px] pt-[16px] relative size-full">
-          <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#51a2ff] text-[14px] tracking-[0.1996px] whitespace-nowrap">AI Marketing Team (LoraLoop)</p>
+          <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#51a2ff] text-[14px] tracking-[0.1996px] whitespace-nowrap">AI Marketing Team (Loraloop)</p>
         </div>
       </div>
     </div>

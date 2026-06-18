@@ -88,7 +88,7 @@ export default function ForAgencies() {
               <div key={f.title} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
                 <div className="text-2xl mb-3">{f.icon}</div>
                 <h3 className="font-bold text-gray-900 text-sm mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{f.title}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{f.desc}</p>
+                <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

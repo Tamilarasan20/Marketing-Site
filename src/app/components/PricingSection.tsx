@@ -217,7 +217,7 @@ export default function PricingSection({ className = "" }: { className?: string 
 
   return (
     <section className={`bg-black ${className}`}>
-      <div className="max-w-[1280px] mx-auto px-[46px] pt-[40px] pb-[80px]">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-20 pt-[40px] pb-[80px]">
         <div className="flex flex-col items-center gap-[42px]">
 
           {/* Title */}
@@ -352,7 +352,7 @@ export default function PricingSection({ className = "" }: { className?: string 
                         <div key={f} className="flex items-start gap-2">
                           <CheckIcon />
                           <span style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                            className="text-[12px] text-[#D1D5DB] leading-[14px]">
+                            className="text-[12px] text-[#D1D5DB] leading-[16px]">
                             {f}
                           </span>
                         </div>

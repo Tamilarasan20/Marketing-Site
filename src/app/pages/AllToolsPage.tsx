@@ -118,7 +118,7 @@ export default function AllToolsPage() {
                     <p className="font-semibold text-gray-900 text-sm leading-snug group-hover:text-violet-700 transition-colors">
                       {tool.name}
                     </p>
-                    <p className="text-xs text-gray-500 mt-1 leading-relaxed">{tool.description}</p>
+                    <p className="text-sm text-gray-500 mt-1 leading-relaxed">{tool.description}</p>
                   </div>
                 </div>
                 <div className="flex items-center justify-between mt-1">

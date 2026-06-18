@@ -4128,7 +4128,7 @@ function Container41() {
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-col items-center justify-center size-full">
         <div className="content-stretch flex flex-col items-center justify-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] pt-[16px] relative size-full">
-          <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#51a2ff] text-[14px] tracking-[0.1996px]">AI Marketing Team (LoraLoop)</p>
+          <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#51a2ff] text-[14px] tracking-[0.1996px]">AI Marketing Team (Loraloop)</p>
         </div>
       </div>
     </div>
@@ -6375,7 +6375,7 @@ function Container116() {
 function Frame65() {
   return (
     <div className="content-stretch flex flex-col items-center not-italic relative shrink-0 whitespace-nowrap">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[100px] relative shrink-0 text-[78.571px] text-black text-center">LoraLoop</p>
+      <p className="font-['Satoshi:Bold',sans-serif] leading-[100px] relative shrink-0 text-[78.571px] text-black text-center">Loraloop</p>
       <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#6b7280] text-[16px]">Copyright © 2026 Orimoretail Pvt. Ltd. All rights reserved.</p>
     </div>
   );

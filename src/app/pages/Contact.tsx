@@ -4,11 +4,11 @@ import imgLogos2 from "../../imports/ResponsiveWebsiteDesign/62fcac5886e5a57ef8f
 
 export default function Contact() {
   return (
-    <div className="pt-20 md:pt-32 pb-20 px-4">
-      <div className="max-w-[1280px] px-4 md:px-16 mx-auto">
+    <div className="pt-20 md:pt-32 pb-20">
+      <div className="max-w-[1280px] px-4 sm:px-6 md:px-20 mx-auto">
         <div className="flex flex-col gap-14">
           <div className="flex flex-col gap-4 py-[2px]">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[56px] text-[#101828] text-5xl tracking-[-1.2px]">Contact Us/Support</p>
+            <p className="font-['Satoshi:Bold',sans-serif] leading-tight text-[#101828] text-4xl md:text-5xl tracking-[-1.2px]">Contact Us/Support</p>
             <p className="font-['General_Sans:Medium',sans-serif] leading-7 text-[#6b7280] text-lg">Not surprisingly, we encourage you to communicate freely. Whether you have a question, comment or just want to share some #loracheer in social media, we'd love to hear from you.</p>
           </div>
 

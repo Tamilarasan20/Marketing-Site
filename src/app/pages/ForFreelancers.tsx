@@ -71,7 +71,7 @@ export default function ForFreelancers() {
                   <span className="text-gray-300">→</span>
                   <span className="text-emerald-600 font-bold text-sm">{c.after}</span>
                 </div>
-                <p className="text-xs text-gray-500">{c.label}</p>
+                <p className="text-sm text-gray-500">{c.label}</p>
               </div>
             ))}
           </div>
