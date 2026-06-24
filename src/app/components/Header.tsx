@@ -159,7 +159,7 @@ const aiAgents = [
   },
 ];
 
-function truncateName(name: string, max = 20): string {
+function truncateName(name: string, max = 24): string {
   return name.length > max ? name.slice(0, max) + "…" : name;
 }
 
