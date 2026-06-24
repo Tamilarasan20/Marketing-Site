@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import appLogo from "../../assets/app_logo.png";
-import { supabase } from "../../lib/supabase";
+import { useCurrentUser } from "../../app/hooks/useCurrentUser";
 
-function truncateName(name: string, max = 20): string {
+function truncateName(name: string, max = 24): string {
   return name.length > max ? name.slice(0, max) + "…" : name;
 }
 
@@ -36,30 +35,7 @@ function Logo() {
 }
 
 export default function HamburgerMenu() {
-  const [currentUser, setCurrentUser] = useState<{ name: string; avatarUrl?: string } | null>(null);
-
-  useEffect(() => {
-    if (!supabase) return;
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user) {
-        const meta = session.user.user_metadata as Record<string, string> | undefined;
-        const name = meta?.full_name ?? meta?.name ?? session.user.email?.split("@")[0] ?? "User";
-        const avatarUrl = meta?.avatar_url ?? meta?.picture ?? undefined;
-        setCurrentUser({ name, avatarUrl });
-      }
-    });
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) {
-        const meta = session.user.user_metadata as Record<string, string> | undefined;
-        const name = meta?.full_name ?? meta?.name ?? session.user.email?.split("@")[0] ?? "User";
-        const avatarUrl = meta?.avatar_url ?? meta?.picture ?? undefined;
-        setCurrentUser({ name, avatarUrl });
-      } else {
-        setCurrentUser(null);
-      }
-    });
-    return () => subscription.unsubscribe();
-  }, []);
+  const { user: currentUser, loading: authLoading } = useCurrentUser();
 
   return (
     <div className="bg-[rgba(243,246,251,0.9)] backdrop-blur-[8px] content-stretch flex items-center justify-between px-[12px] py-[4px] relative rounded-[20px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] size-full" data-name="Hamburger menu">
@@ -68,7 +44,10 @@ export default function HamburgerMenu() {
         <Menu />
       </div>
 
-      {currentUser ? (
+      {authLoading ? (
+        <div className="h-9 w-24 rounded-full bg-black/5 animate-pulse" />
+      ) : currentUser ? (
+        /* Signed-in → profile pill */
         <a
           href="https://app.loraloop.com/chat"
           aria-label={`Open Loraloop as ${currentUser.name}`}
@@ -98,6 +77,7 @@ export default function HamburgerMenu() {
           </span>
         </a>
       ) : (
+        /* Signed-out → Sign in + Get Started */
         <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
           <a
             href="https://app.loraloop.com/signin"

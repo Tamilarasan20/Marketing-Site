@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
 import appLogo from "../../assets/loraloop-icon.svg";
 import i18n from "../../i18n";
-import { supabase } from "../../lib/supabase";
+import { useCurrentUser } from "../hooks/useCurrentUser";
 
 // ── Language config ──────────────────────────────────────────────────────────
 const LANGUAGES = [
@@ -166,35 +166,12 @@ function truncateName(name: string, max = 24): string {
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [currentUser, setCurrentUser] = useState<{ name: string; avatarUrl?: string } | null>(null);
+  const { user: currentUser, loading: authLoading } = useCurrentUser();
   const pillRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const { t } = useTranslation();
 
   const closeAll = useCallback(() => setOpen(false), []);
-
-  useEffect(() => {
-    if (!supabase) return;
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user) {
-        const meta = session.user.user_metadata as Record<string, string> | undefined;
-        const name = meta?.full_name ?? meta?.name ?? session.user.email?.split("@")[0] ?? "User";
-        const avatarUrl = meta?.avatar_url ?? meta?.picture ?? undefined;
-        setCurrentUser({ name, avatarUrl });
-      }
-    });
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) {
-        const meta = session.user.user_metadata as Record<string, string> | undefined;
-        const name = meta?.full_name ?? meta?.name ?? session.user.email?.split("@")[0] ?? "User";
-        const avatarUrl = meta?.avatar_url ?? meta?.picture ?? undefined;
-        setCurrentUser({ name, avatarUrl });
-      } else {
-        setCurrentUser(null);
-      }
-    });
-    return () => subscription.unsubscribe();
-  }, []);
 
   // Subtle background shift on scroll for depth cue
   useEffect(() => {
@@ -321,8 +298,11 @@ export default function Header() {
           {/* Globe / language picker — icon only */}
           <LanguagePicker />
 
-          {currentUser ? (
-            /* Logged-in & recognized → profile pill linking to app */
+          {authLoading ? (
+            /* Skeleton prevents layout shift while session resolves */
+            <div className="h-9 w-28 rounded-full bg-black/5 animate-pulse" />
+          ) : currentUser ? (
+            /* Signed-in → profile pill linking to app */
             <a
               href="https://app.loraloop.com/chat"
               aria-label={`Open Loraloop as ${currentUser.name}`}
@@ -352,6 +332,7 @@ export default function Header() {
               </span>
             </a>
           ) : (
+            /* Signed-out → Sign in + Get Started */
             <>
               <a
                 href="https://app.loraloop.com/signin"
