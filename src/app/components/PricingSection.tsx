@@ -255,7 +255,7 @@ export default function PricingSection({ className = "" }: { className?: string 
                   type="button"
                   onClick={() => setWithAgents(v)}
                   style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                  className={`flex items-center gap-[6px] px-4 py-[9px] rounded-full text-[16px] transition-all ${
+                  className={`flex items-center gap-[6px] px-3 sm:px-4 py-[9px] rounded-full text-[14px] sm:text-[16px] whitespace-nowrap transition-all ${
                     withAgents === v ? "bg-[#1F2937] text-white" : "text-[#9CA3AF] hover:text-white"
                   }`}
                 >
@@ -265,31 +265,42 @@ export default function PricingSection({ className = "" }: { className?: string 
               ))}
             </div>
 
-            {/* Billing period toggle */}
-            <div className="flex items-center gap-[2px] border border-[#374151] rounded-[12px] px-[2px] py-[1px]">
-              {BILLING_OPTS.map((opt) => (
-                <button
-                  key={opt.id}
-                  type="button"
-                  onClick={() => setPeriod(opt.id)}
-                  style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                  className={`flex items-center gap-[4px] h-[36px] px-4 rounded-[8px] text-[18px] tracking-[0.21px] transition-all ${
-                    period === opt.id ? "bg-[#1877F2] text-white" : "text-white hover:bg-white/5"
-                  }`}
-                >
-                  {opt.label}
-                  {opt.badge && (
-                    <span style={{
-                      fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500,
-                      background: "#151109", border: "0.749px solid rgba(213,165,91,0.4)",
-                      color: "#D5A55B", fontSize: "11px", padding: "3px 5px",
-                      borderRadius: "999px", lineHeight: "1",
-                    }}>
-                      {opt.badge}
-                    </span>
-                  )}
-                </button>
-              ))}
+            {/* Billing period toggle — Save badges float above each option so the
+                three pills (Monthly / 3-month / 12-month) always stay on one line */}
+            <div className="relative pt-4">
+              {/* Floating Save badges above each option */}
+              <div className="absolute -top-0 left-0 right-0 flex items-center gap-[2px] px-[2px] pointer-events-none">
+                {BILLING_OPTS.map((opt) => (
+                  <div key={opt.id} className="flex-1 flex justify-center">
+                    {opt.badge ? (
+                      <span style={{
+                        fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500,
+                        background: "#151109", border: "0.749px solid rgba(213,165,91,0.4)",
+                        color: "#D5A55B", fontSize: "11px", padding: "3px 8px",
+                        borderRadius: "999px", lineHeight: "1", whiteSpace: "nowrap",
+                      }}>
+                        {opt.badge}
+                      </span>
+                    ) : <span />}
+                  </div>
+                ))}
+              </div>
+              {/* Pill buttons — label only, no inline badge */}
+              <div className="flex items-center gap-[2px] border border-[#374151] rounded-[12px] px-[2px] py-[1px]">
+                {BILLING_OPTS.map((opt) => (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    onClick={() => setPeriod(opt.id)}
+                    style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
+                    className={`flex-1 h-[36px] px-3 sm:px-4 rounded-[8px] text-[14px] sm:text-[18px] tracking-[0.21px] whitespace-nowrap transition-all ${
+                      period === opt.id ? "bg-[#1877F2] text-white" : "text-white hover:bg-white/5"
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
