@@ -179,7 +179,7 @@ function CreditChips({ plan, tierIdx, onChange }: {
   const fmt = (c: number) => c >= 1000 ? `${c / 1000}k` : `${c}`;
   return (
     <div className="flex flex-col items-center gap-2 w-full">
-      <p style={{ fontFamily: "General Sans, Inter, sans-serif" }} className="text-[11px] text-[#9CA3AF] leading-[16px]">
+      <p style={{ fontFamily: "General Sans, Inter, sans-serif" }} className="text-[15px] text-[#9CA3AF] leading-[20px]">
         Monthly credits
       </p>
       <div className="flex items-center gap-1.5 w-full">
@@ -191,7 +191,7 @@ function CreditChips({ plan, tierIdx, onChange }: {
               type="button"
               onClick={() => onChange(i)}
               style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-              className={`flex-1 py-[6px] rounded-[8px] text-[11px] tracking-[0.2px] border transition-all ${
+              className={`flex-1 py-[6px] rounded-[8px] text-[15px] tracking-[0.2px] border transition-all ${
                 active
                   ? "border-white/20 text-[#D1D5DB] bg-white/[0.06]"
                   : "border-white/[0.07] text-[#6B7280] hover:text-[#9CA3AF] hover:border-white/15"
@@ -236,7 +236,7 @@ export default function PricingSection({ className = "" }: { className?: string 
           {/* Title */}
           <h2
             style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-            className="text-[40px] text-white text-center tracking-[-0.8px] leading-[48px]"
+            className="text-[44px] text-white text-center tracking-[-0.8px] leading-[52px]"
           >
             Pricing
           </h2>
@@ -255,7 +255,7 @@ export default function PricingSection({ className = "" }: { className?: string 
                   type="button"
                   onClick={() => setWithAgents(v)}
                   style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                  className={`flex items-center gap-[6px] px-4 py-[9px] rounded-full text-[12px] transition-all ${
+                  className={`flex items-center gap-[6px] px-4 py-[9px] rounded-full text-[16px] transition-all ${
                     withAgents === v ? "bg-[#1F2937] text-white" : "text-[#9CA3AF] hover:text-white"
                   }`}
                 >
@@ -273,7 +273,7 @@ export default function PricingSection({ className = "" }: { className?: string 
                   type="button"
                   onClick={() => setPeriod(opt.id)}
                   style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                  className={`flex items-center gap-[4px] h-[36px] px-4 rounded-[8px] text-[14px] tracking-[0.21px] transition-all ${
+                  className={`flex items-center gap-[4px] h-[36px] px-4 rounded-[8px] text-[18px] tracking-[0.21px] transition-all ${
                     period === opt.id ? "bg-[#1877F2] text-white" : "text-white hover:bg-white/5"
                   }`}
                 >
@@ -309,11 +309,11 @@ export default function PricingSection({ className = "" }: { className?: string 
                     {/* Name + desc */}
                     <div>
                       <p style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                        className="text-[14px] text-white tracking-[0.21px] leading-[20px]">
+                        className="text-[18px] text-white tracking-[0.21px] leading-[24px]">
                         {plan.name}
                       </p>
                       <p style={{ fontFamily: "General Sans, Inter, sans-serif" }}
-                        className="text-[12px] text-[#9CA3AF] leading-[16px]">
+                        className="text-[16px] text-[#9CA3AF] leading-[20px]">
                         {plan.description}
                       </p>
                     </div>
@@ -322,16 +322,16 @@ export default function PricingSection({ className = "" }: { className?: string 
                     <div className="flex items-baseline gap-2">
                       {tier.compareAt ? (
                         <span style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                          className="text-[18px] text-[#4B5563] line-through leading-[28px]">
+                          className="text-[22px] text-[#4B5563] line-through leading-[32px]">
                           ${tier.compareAt}
                         </span>
                       ) : null}
                       <span style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                        className="text-[20px] text-white leading-[28px]">
+                        className="text-[24px] text-white leading-[32px]">
                         ${price % 1 !== 0 ? price.toFixed(2) : price}
                       </span>
                       <span style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                        className="text-[12px] text-[#6B7280] tracking-[0.6px] leading-[16px]">
+                        className="text-[16px] text-[#6B7280] tracking-[0.6px] leading-[20px]">
                         /mo
                       </span>
                     </div>
@@ -342,7 +342,7 @@ export default function PricingSection({ className = "" }: { className?: string 
                       onClick={() => handleGetStarted(plan)}
                       disabled={pendingPlanId === plan.id}
                       style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                      className={`w-full h-[40px] rounded-full text-[14px] transition-all disabled:opacity-60 ${
+                      className={`w-full h-[44px] rounded-full text-[18px] transition-all disabled:opacity-60 ${
                         plan.highlighted
                           ? "bg-[#1877F2] text-white hover:bg-[#0f66d0]"
                           : "bg-[#EEF4FF] text-[#1877F2] border border-[#D1D5DB] hover:bg-[#dce8ff]"
@@ -366,7 +366,7 @@ export default function PricingSection({ className = "" }: { className?: string 
                         <div key={f} className="flex items-start gap-2">
                           <CheckIcon />
                           <span style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                            className="text-[12px] text-[#D1D5DB] leading-[16px]">
+                            className="text-[16px] text-[#D1D5DB] leading-[20px]">
                             {f}
                           </span>
                         </div>
@@ -381,7 +381,7 @@ export default function PricingSection({ className = "" }: { className?: string 
                   <div key={plan.id} className="flex flex-col items-center gap-2"
                     style={{ background: "#1877F2", borderRadius: "16px", padding: "8px 2px 2px" }}>
                     <p style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                      className="text-[12px] text-white tracking-[0.6px] leading-[16px]">
+                      className="text-[16px] text-white tracking-[0.6px] leading-[20px]">
                       Most popular
                     </p>
                     <div className="w-full overflow-hidden"
