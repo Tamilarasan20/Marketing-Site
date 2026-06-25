@@ -293,8 +293,9 @@ export default function PricingSection({ className = "" }: { className?: string 
             </div>
           </div>
 
-          {/* Plan cards — items-end so the highlighted plan floats above with "Most popular" */}
-          <div className="flex items-end gap-4 w-full">
+          {/* Plan cards — stack vertically on mobile, 2-up on small screens, 4-up on large.
+              items-end so the highlighted plan floats above with "Most popular" */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-end gap-4 w-full">
             {activePlans.map((plan) => {
               const tierIdx = selectedTiers[plan.id] ?? 0;
               const tier    = plan.tiers[tierIdx];
@@ -377,7 +378,7 @@ export default function PricingSection({ className = "" }: { className?: string 
 
               if (plan.highlighted) {
                 return (
-                  <div key={plan.id} className="flex-1 flex flex-col items-center gap-2"
+                  <div key={plan.id} className="flex flex-col items-center gap-2"
                     style={{ background: "#1877F2", borderRadius: "16px", padding: "8px 2px 2px" }}>
                     <p style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
                       className="text-[12px] text-white tracking-[0.6px] leading-[16px]">
@@ -392,7 +393,7 @@ export default function PricingSection({ className = "" }: { className?: string 
               }
 
               return (
-                <div key={plan.id} className="flex-1 overflow-hidden"
+                <div key={plan.id} className="overflow-hidden"
                   style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
                   {cardInner}
                 </div>
