@@ -73,6 +73,19 @@ const PLANS: Plan[] = [
 // Each tier is cumulative: higher plans inherit everything below via "Everything in …".
 const NO_AGENT_PLANS: Plan[] = [
   {
+    id: "LITE",
+    name: "Lite",
+    description: "Entry plan for getting started",
+    tiers: [{ prices: { monthly: 9, quarterly: 8, annual: 6 } }],
+    features: [
+      "Up to 5 account integrations",
+      "200 posts per month",
+      "X (Twitter) not included",
+      "Schedule & calendar planning",
+      "Human support",
+    ],
+  },
+  {
     id: "CREATOR",
     name: "Creator",
     description: "Solo creators getting started",
