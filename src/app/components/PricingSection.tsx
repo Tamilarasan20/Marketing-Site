@@ -89,7 +89,7 @@ const NO_AGENT_PLANS: Plan[] = [
     id: "CREATOR",
     name: "Creator",
     description: "Solo creators getting started",
-    tiers: [{ prices: { monthly: 9, quarterly: 8, annual: 6 } }],
+    tiers: [{ prices: { monthly: 19, quarterly: 16, annual: 13 } }],
     features: [
       "25 social media integrations",
       "Unlimited posts",
