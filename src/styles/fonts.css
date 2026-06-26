@@ -1,0 +1,15 @@
+/* ─── Font families ──────────────────────────────────────────────────────────
+ *
+ * The actual @font-face data is loaded at runtime from Fontshare via a <link>
+ * in index.html (Satoshi for display/headings, General Sans for body/UI).
+ *
+ * These variables are the single source of truth for the font stacks. Inline
+ * `fontFamily: "Satoshi, …"` / `"General Sans, …"` strings throughout the app
+ * resolve to the same loaded families; new code should prefer these tokens or
+ * the Tailwind `font-display` / `font-sans` utilities mapped to them.
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --font-display: 'Satoshi', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: 'General Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}

@@ -136,39 +136,54 @@
 
   body {
     @apply bg-background text-foreground overflow-x-hidden;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+    text-rendering: optimizeLegibility;
   }
 
   /**
   * Default typography styles for HTML elements (h1-h4, p, label, button, input).
-  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  * Headings use the Satoshi display family with tight tracking + line-height for
+  * a modern, clay.com-style hierarchy. All rules live in @layer base, so Tailwind
+  * utility classes (text-sm, font-bold, tracking-tight, …) still override them.
   */
 
   html {
     font-size: var(--font-size);
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.022em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
   h1 {
     font-size: var(--text-2xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
   }
 
   h2 {
     font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
   }
 
   h3 {
     font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+    letter-spacing: -0.018em;
+    line-height: 1.2;
   }
 
   h4 {
     font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+    letter-spacing: -0.014em;
+    line-height: 1.3;
   }
 
   label {
