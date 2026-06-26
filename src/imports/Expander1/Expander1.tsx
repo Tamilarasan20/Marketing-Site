@@ -38,14 +38,14 @@ function Frame6() {
         className="bg-white content-stretch flex h-[40px] items-center justify-center px-[18px] relative rounded-[120px] shrink-0"
         data-name="Signin"
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Signin</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Signin</p>
       </a>
       <a
         href="/app/signup"
         className="bg-[#1877f2] content-stretch flex h-[40px] items-center justify-center px-[18px] relative rounded-[120px] shrink-0"
         data-name="Get Start"
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
       </a>
     </div>
   );
@@ -92,7 +92,7 @@ function Container() {
 function Paragraph() {
   return (
     <div className="absolute h-[25px] left-[17.93px] top-0 w-[119px]" data-name="Paragraph">
-      <p className="-translate-x-1/2 absolute font-['Satoshi:Bold',sans-serif] leading-[24.818px] left-[59.85px] not-italic text-[#1f2937] text-[19.5px] text-center top-[0.67px] whitespace-nowrap">oraLoop.com</p>
+      <p className="-translate-x-1/2 absolute font-['Satoshi',sans-serif] font-bold leading-[24.818px] left-[59.85px] not-italic text-[#1f2937] text-[19.5px] text-center top-[0.67px] whitespace-nowrap">oraLoop.com</p>
     </div>
   );
 }
@@ -141,7 +141,7 @@ function Frame2() {
     <div className="relative shrink-0 w-full">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[2px] items-center px-[8px] py-[12px] relative size-full">
-          <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[24px] min-w-px not-italic relative text-[#1f2937] text-[16px]">AI Employees</p>
+          <p className="flex-[1_0_0] font-['Satoshi',sans-serif] font-bold leading-[24px] min-w-px not-italic relative text-[#1f2937] text-[16px]">AI Employees</p>
           <Frame8 />
         </div>
       </div>
@@ -154,7 +154,7 @@ function Frame4() {
     <Link to="/solution" className="relative shrink-0 w-full block">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[8px] py-[12px] relative size-full">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Solution</p>
+          <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Solution</p>
         </div>
       </div>
     </Link>
@@ -166,7 +166,7 @@ function Frame5() {
     <Link to="/pricing" className="relative shrink-0 w-full block">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[8px] py-[12px] relative size-full">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Pricing</p>
+          <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Pricing</p>
         </div>
       </div>
     </Link>
@@ -178,7 +178,7 @@ function FrameBlogs() {
     <Link to="/blog" className="relative shrink-0 w-full block">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[8px] py-[12px] relative size-full">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Blogs</p>
+          <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Blogs</p>
         </div>
       </div>
     </Link>

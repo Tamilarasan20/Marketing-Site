@@ -55,7 +55,7 @@ function LinkButton({ href, children }: { href: string; children: React.ReactNod
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 bg-[#ebebeb] hover:bg-[#dedede] transition-colors text-[#1a1a1a] text-[13px] font-['General_Sans:Medium',sans-serif] px-4 py-2 rounded-[8px] mt-2 w-fit"
+      className="inline-flex items-center gap-2 bg-[#ebebeb] hover:bg-[#dedede] transition-colors text-[#1a1a1a] text-[13px] font-['General_Sans',sans-serif] font-medium px-4 py-2 rounded-[8px] mt-2 w-fit"
     >
       {children}
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -72,14 +72,14 @@ function StepRow({ number, title, children }: { number: number; title: string; c
   return (
     <div className="flex gap-4">
       <div className="flex flex-col items-center shrink-0">
-        <div className="w-[30px] h-[30px] rounded-full bg-[#2563eb] text-white flex items-center justify-center text-[13px] font-['Satoshi:Bold',sans-serif] shrink-0">
+        <div className="w-[30px] h-[30px] rounded-full bg-[#2563eb] text-white flex items-center justify-center text-[13px] font-['Satoshi',sans-serif] font-bold shrink-0">
           {number}
         </div>
         {number < 3 && <div className="w-px flex-1 bg-[#ddd] mt-2 min-h-[24px]" />}
       </div>
       <div className="pb-6 flex-1 min-w-0">
-        <p className="font-['Satoshi:Bold',sans-serif] text-[15px] text-[#111] leading-tight mb-1">{title}</p>
-        <div className="text-[14px] text-[#555] font-['General_Sans:Medium',sans-serif] leading-relaxed">
+        <p className="font-['Satoshi',sans-serif] font-bold text-[15px] text-[#111] leading-tight mb-1">{title}</p>
+        <div className="text-[14px] text-[#555] font-['General_Sans',sans-serif] font-medium leading-relaxed">
           {children}
         </div>
       </div>
@@ -192,7 +192,7 @@ export default function ClaudeConnectModal({ open, onOpenChange }: ClaudeConnect
           <div className="flex justify-center mb-5">
             <div className="inline-flex items-center gap-2 border border-[#d4d4cc] rounded-full px-4 py-1.5 bg-white/60">
               <AnthropicIcon size={14} />
-              <span className="text-[12px] font-['Satoshi:Bold',sans-serif] tracking-wider text-[#555] uppercase">
+              <span className="text-[12px] font-['Satoshi',sans-serif] font-bold tracking-wider text-[#555] uppercase">
                 Loraloop · Claude · MCP
               </span>
             </div>
@@ -200,10 +200,10 @@ export default function ClaudeConnectModal({ open, onOpenChange }: ClaudeConnect
 
           {/* Heading */}
           <div className="text-center mb-6">
-            <h2 className="font-['Satoshi:Bold',sans-serif] text-[26px] text-[#111] leading-tight mb-1.5">
+            <h2 className="font-['Satoshi',sans-serif] font-bold text-[26px] text-[#111] leading-tight mb-1.5">
               Connect Loraloop to Claude
             </h2>
-            <p className="text-[14px] text-[#777] font-['General_Sans:Medium',sans-serif]">
+            <p className="text-[14px] text-[#777] font-['General_Sans',sans-serif] font-medium">
               Three steps to plug Loraloop into Claude.
             </p>
           </div>
@@ -215,7 +215,7 @@ export default function ClaudeConnectModal({ open, onOpenChange }: ClaudeConnect
                 key={tab}
                 type="button"
                 onClick={() => setActiveTab(tab)}
-                className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-[9px] text-[14px] font-['Satoshi:Bold',sans-serif] transition-all ${
+                className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-[9px] text-[14px] font-['Satoshi',sans-serif] font-bold transition-all ${
                   activeTab === tab
                     ? 'bg-white shadow-sm text-[#111] border border-[#e0e0da]'
                     : 'text-[#777] hover:text-[#444]'
@@ -228,7 +228,7 @@ export default function ClaudeConnectModal({ open, onOpenChange }: ClaudeConnect
           </div>
 
           {/* Tab description */}
-          <p className="text-[12px] text-[#999] font-['General_Sans:Medium',sans-serif] text-center mt-2 mb-1">
+          <p className="text-[12px] text-[#999] font-['General_Sans',sans-serif] font-medium text-center mt-2 mb-1">
             {activeTab === 'mcp'
               ? 'For Claude.ai — no installation needed'
               : 'For Claude Code & Claude Desktop — runs locally'}

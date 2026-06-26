@@ -67,7 +67,7 @@ export default function WaitlistForm() {
     >
       {error && createPortal(
         <div className="fixed top-6 left-1/2 -translate-x-1/2 bg-[#ef4444] flex items-center justify-between px-[24px] py-[10px] rounded-[20px] w-full max-w-[420px] z-[10000] animate-in fade-in slide-in-from-top-4 duration-300 shadow-lg">
-          <p className="font-['General_Sans:Medium',sans-serif] text-white text-[14px] whitespace-nowrap">{error}</p>
+          <p className="font-['General_Sans',sans-serif] font-medium text-white text-[14px] whitespace-nowrap">{error}</p>
           <button
             type="button"
             onClick={() => setError(null)}
@@ -94,7 +94,7 @@ export default function WaitlistForm() {
             setWebsite(e.target.value);
             if (error) setError(null);
           }}
-          className="bg-transparent flex-1 font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-px not-italic relative text-white text-[16px] md:text-[18px] outline-none placeholder:text-[#9ca3af]"
+          className="bg-transparent flex-1 font-['General_Sans',sans-serif] font-medium leading-[28px] min-w-px not-italic relative text-white text-[16px] md:text-[18px] outline-none placeholder:text-[#9ca3af]"
         />
       </div>
 
@@ -109,7 +109,7 @@ export default function WaitlistForm() {
         }`}
         data-name="Button"
       >
-        <p className={`font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] whitespace-nowrap ${isValid ? 'text-white' : 'text-[#6b7280]'}`}>
+        <p className={`font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] whitespace-nowrap ${isValid ? 'text-white' : 'text-[#6b7280]'}`}>
           Get Started
         </p>
       </button>
@@ -118,7 +118,7 @@ export default function WaitlistForm() {
 
       {/* Connect with — Figma node 70041:4251 */}
       <div className="bg-[#111720] flex flex-col gap-[16px] items-center px-[16px] md:px-[32px] py-[16px] rounded-[24px] w-full max-w-[420px]" data-name="Segmenter">
-        <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] text-[12px] text-[#9ca3af] text-center whitespace-nowrap">
+        <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] text-[12px] text-[#9ca3af] text-center whitespace-nowrap">
           Connect with
         </p>
         <div className="flex gap-[8px] items-center">
@@ -132,7 +132,7 @@ export default function WaitlistForm() {
               <div className={`overflow-hidden shrink-0 size-[40px]${rounded ? ' rounded-[40px]' : ''}`}>
                 <img alt={label} src={src} className="w-full h-full object-cover" />
               </div>
-              <p className="font-['Satoshi:Medium',sans-serif] leading-[20px] text-[14px] text-[#9ca3af] text-center whitespace-nowrap">
+              <p className="font-['Satoshi',sans-serif] font-medium leading-[20px] text-[14px] text-[#9ca3af] text-center whitespace-nowrap">
                 {label}
               </p>
             </div>
@@ -147,7 +147,7 @@ export default function WaitlistForm() {
             <svg width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true" className="shrink-0">
               <path d="M2 6l3 3 5-5" stroke="#14a148" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] text-[16px] text-[#14a148] text-center whitespace-nowrap">
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] text-[16px] text-[#14a148] text-center whitespace-nowrap">
               Connected
             </p>
           </a>
@@ -157,7 +157,7 @@ export default function WaitlistForm() {
             className="bg-[#313b4a] hover:bg-[#3d4a5c] transition-colors flex gap-[4px] items-center justify-center px-[16px] py-[12px] rounded-[32px] w-full"
             data-name="Sign in to Connect"
           >
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] text-[16px] text-white text-center whitespace-nowrap">
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] text-[16px] text-white text-center whitespace-nowrap">
               Sign in to Connect
             </p>
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0">

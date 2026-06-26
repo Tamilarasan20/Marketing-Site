@@ -4,8 +4,8 @@ export default function PrivacyPolicy() {
       <div className="max-w-[860px] px-4 md:px-8 mx-auto">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-3">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-tight text-[#101828] text-4xl md:text-5xl tracking-[-1.2px]">Privacy Policy</p>
-            <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-base">
+            <p className="font-['Satoshi',sans-serif] font-bold leading-tight text-[#101828] text-4xl md:text-5xl tracking-[-1.2px]">Privacy Policy</p>
+            <p className="font-['General_Sans',sans-serif] font-medium text-[#6b7280] text-base">
               Effective Date: May 1, 2026 &nbsp;|&nbsp; Last Updated: May 1, 2026
             </p>
           </div>
@@ -247,8 +247,8 @@ export default function PrivacyPolicy() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-4">
-      <p className="font-['Satoshi:Bold',sans-serif] text-[#101828] text-2xl leading-8">{title}</p>
-      <div className="flex flex-col gap-3 font-['General_Sans:Medium',sans-serif] text-[#374151] text-base leading-7 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-1">
+      <p className="font-['Satoshi',sans-serif] font-bold text-[#101828] text-2xl leading-8">{title}</p>
+      <div className="flex flex-col gap-3 font-['General_Sans',sans-serif] font-medium text-[#374151] text-base leading-7 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-1">
         {children}
       </div>
     </div>
@@ -258,7 +258,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function SubSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-2 mt-1">
-      <p className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-lg leading-7">{title}</p>
+      <p className="font-['Satoshi',sans-serif] font-bold text-[#1f2937] text-lg leading-7">{title}</p>
       <div className="flex flex-col gap-2">{children}</div>
     </div>
   );

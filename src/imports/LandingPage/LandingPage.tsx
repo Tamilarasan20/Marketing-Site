@@ -53,7 +53,7 @@ function TextGroupVertical3() {
 
 function TextGroupVertical2() {
   return (
-    <div className="content-stretch flex flex-col font-['Satoshi:Bold',sans-serif] font-bold items-start pb-px relative shrink-0 tracking-[-1.2px] w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col font-['Satoshi',sans-serif] font-bold font-bold items-start pb-px relative shrink-0 tracking-[-1.2px] w-full" data-name="Text Group Vertical">
       <TextGroupVertical3 />
       <p className="text-[36px] md:text-[68px] leading-[1.0] relative shrink-0 text-[#14a148] w-full font-bold">{`AI Marketing Team `}</p>
     </div>
@@ -64,7 +64,7 @@ function TextGroupVertical1() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
       <TextGroupVertical2 />
-      <p className="font-['General_Sans:Medium',sans-serif] text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full max-w-[720px] px-4 md:px-0">
+      <p className="font-['General_Sans',sans-serif] font-medium text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full max-w-[720px] px-4 md:px-0">
         {`An AI agents work as a team that plans content, creates, publishes,  tracks performance, manages ads & keeps improving itself on autopilot your 24/7 marketing team that never sleeps.`}
       </p>
     </div>
@@ -76,10 +76,10 @@ function ButtonContainer() {
     <div className="content-stretch flex flex-col gap-[16px] items-center relative z-50 shrink-0 w-full px-4 md:px-0" data-name="Button Container">
       <div className="bg-[#1f2937] content-stretch flex gap-[12px] items-center px-[24px] py-[16px] relative rounded-[24px] shrink-0 w-full max-w-[480px]" data-name="Marketting/Input field">
         <div aria-hidden="true" className="absolute border-2 border-[rgba(147,197,253,0.4)] border-solid inset-[-2px] pointer-events-none rounded-[26px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
-        <p className="flex-1 font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-px not-italic relative text-[#9ca3af] text-[16px] md:text-[18px]">enter your mail</p>
+        <p className="flex-1 font-['General_Sans',sans-serif] font-medium leading-[28px] min-w-px not-italic relative text-[#9ca3af] text-[16px] md:text-[18px]">enter your mail</p>
       </div>
       <div className="bg-[#2a3040] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[40px] shrink-0 w-full max-w-[220px]" data-name="Button">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Join Waitlist</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Join Waitlist</p>
       </div>
       <div 
         onClick={() => {
@@ -90,7 +90,7 @@ function ButtonContainer() {
         className="content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative z-[9999] rounded-[16px] shrink-0 w-full max-w-[220px]" 
         data-name="Button"
       >
-        <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#d1d5db] text-[16px] whitespace-nowrap">See Solution</p>
+        <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#d1d5db] text-[16px] whitespace-nowrap">See Solution</p>
         <div className="overflow-clip relative shrink-0 size-[24px]" data-name="Right Icon">
           <div className="absolute bottom-1/4 left-[29.17%] right-[29.17%] top-1/4" data-name="Icon">
             <div className="absolute inset-[-5.42%_-6.5%]">
@@ -132,8 +132,8 @@ function IntroSection() {
 function Cotnet() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] text-[28px] md:text-[40px] leading-[1.2] md:leading-[48px] relative shrink-0 text-[#1f2937] tracking-[-0.8px]">See it in action</p>
-      <p className="font-['General_Sans:Medium',sans-serif] text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#374151]">Watch how Loraloop manage marketing end to end</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[28px] md:text-[40px] leading-[1.2] md:leading-[48px] relative shrink-0 text-[#1f2937] tracking-[-0.8px]">See it in action</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#374151]">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
 }
@@ -160,8 +160,8 @@ function VideoSection() {
 function Cotnet1() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] md:gap-[12px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] text-[28px] md:text-[40px] leading-[1.1] md:leading-[1.12] relative shrink-0 text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
-      <p className="font-normal font-['General_Sans:Regular',sans-serif] text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full">
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[28px] md:text-[40px] leading-[1.1] md:leading-[1.12] relative shrink-0 text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
+      <p className="font-normal font-['General_Sans',sans-serif] font-normal text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full">
         {`You don’t need a large team to grow a business. Loraloop provides AI employees for marketing that handle daily work. From planning to execution, work gets done efficiently, 24/7. `}
         <span className="font-medium text-white">10x your marketing with 10x less expansive.</span>
       </p>
@@ -173,8 +173,8 @@ function BadgeM() {
   return (
     <div className="bg-[#1558b0] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[82px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Strategist</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[82px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Strategist</p>
       </div>
     </div>
   );
@@ -184,8 +184,8 @@ function TextGroupVertical4() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM />
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] text-[20px] md:text-[32px] leading-[1.2] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-0.48px]">Identify what’s trending and what my competitors are doing</p>
-      <p className="font-['General_Sans:Medium',sans-serif] text-[14px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-80 relative shrink-0 text-white">Sam analyzes market trends and competitor actions. He identifies which content types or topics will help me grow.</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[20px] md:text-[32px] leading-[1.2] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-0.48px]">Identify what’s trending and what my competitors are doing</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[14px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-80 relative shrink-0 text-white">Sam analyzes market trends and competitor actions. He identifies which content types or topics will help me grow.</p>
     </div>
   );
 }
@@ -193,7 +193,7 @@ function TextGroupVertical4() {
 function LearnMoreContainer() {
   return (
     <Link to="/solution?agent=sam" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[16px] md:px-[24px] py-[8px] md:py-[12px] relative rounded-[24px] md:rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[14px] md:text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[14px] md:text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </Link>
   );
 }
@@ -215,7 +215,7 @@ function FeatureImageLarge() {
         <TextGroupVertical4 />
         <LearnMoreContainer />
       </div>
-      <p className="absolute bottom-[20px] right-[180px] md:right-[260px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic text-[#134d91] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Sam</p>
+      <p className="absolute bottom-[20px] right-[180px] md:right-[260px] font-['Kalam',sans-serif] font-bold leading-[34px] not-italic text-[#134d91] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Sam</p>
       <div className="absolute bottom-0 flex h-[150px] md:h-[219px] items-center justify-center right-0 md:right-[3px] w-[180px] md:w-[262px]">
         <div className="-scale-y-100 flex-none rotate-180">
           <div className="h-[150px] md:h-[219px] relative w-[180px] md:w-[262px]" data-name="Feature Image Small">
@@ -233,8 +233,8 @@ function BadgeM1() {
   return (
     <div className="bg-[#137e3b] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[146px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI SEO/GEO Manager</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[146px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI SEO/GEO Manager</p>
       </div>
     </div>
   );
@@ -244,8 +244,8 @@ function TextGroupVertical5() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM1 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Optimize my content for SEO and GEO to improve discoverability.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black whitespace-pre-wrap">{`Shopie create seo optimised contents so ranks well whether in google or GEO like chatgpt, claude,  people find me easily.`}</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Optimize my content for SEO and GEO to improve discoverability.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black whitespace-pre-wrap">{`Shopie create seo optimised contents so ranks well whether in google or GEO like chatgpt, claude,  people find me easily.`}</p>
     </div>
   );
 }
@@ -253,7 +253,7 @@ function TextGroupVertical5() {
 function LearnMoreContainer1() {
   return (
     <Link to="/solution?agent=sophie" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </Link>
   );
 }
@@ -280,7 +280,7 @@ function FeatureImageLarge1() {
           <img alt="" className="absolute h-[99.91%] left-[-0.01%] max-w-none top-[0.09%] w-[100.02%]" src={imgFeatureImageSmall1} />
         </div>
       </div>
-      <p className="-translate-x-full absolute bottom-[55px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[302px] not-italic text-[#143b2c] text-[28px] text-right tracking-[-0.48px] translate-y-full w-[78px]">Sophie</p>
+      <p className="-translate-x-full absolute bottom-[55px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[302px] not-italic text-[#143b2c] text-[28px] text-right tracking-[-0.48px] translate-y-full w-[78px]">Sophie</p>
     </div>
   );
 }
@@ -289,8 +289,8 @@ function BadgeM2() {
   return (
     <div className="bg-[#fce453] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[0px] tracking-[0.21px] whitespace-nowrap">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Ads Manager</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[0px] tracking-[0.21px] whitespace-nowrap">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Ads Manager</p>
       </div>
     </div>
   );
@@ -300,12 +300,12 @@ function TextGroupVertical6() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM2 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] whitespace-pre-wrap">
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] whitespace-pre-wrap">
         {`Run and improve my `}
         <br aria-hidden="true" />
         Ad campaigns
       </p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Elena runs and scales my ad campaigns, making sure you get the best return on investment.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Elena runs and scales my ad campaigns, making sure you get the best return on investment.</p>
     </div>
   );
 }
@@ -313,7 +313,7 @@ function TextGroupVertical6() {
 function LearnMoreContainer2() {
   return (
     <Link to="/solution?agent=elena" className="bg-white content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-gray-100 transition-colors" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </Link>
   );
 }
@@ -341,7 +341,7 @@ function FeatureImageLarge2() {
             <img alt="" className="absolute h-[173.5%] left-[-36.83%] max-w-none top-[-28.37%] w-[173.67%]" src={imgBannerImageSideRight} />
           </div>
         </div>
-        <p className="absolute bottom-[54.67px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[227px] not-italic text-[#aa9302] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Elena</p>
+        <p className="absolute bottom-[54.67px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[227px] not-italic text-[#aa9302] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Elena</p>
       </div>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-2px_1px_0px_rgba(255,241,151,0.4)]" />
       <div aria-hidden="true" className="absolute border border-[#fff6bc] border-solid inset-0 pointer-events-none rounded-[30px] shadow-[0px_11.392px_22.336px_0px_rgba(255,227,42,0.19)]" />
@@ -353,8 +353,8 @@ function BadgeM3() {
   return (
     <div className="bg-[#691fa6] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] whitespace-nowrap">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Marketing Lead</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] whitespace-nowrap">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Marketing Lead</p>
       </div>
     </div>
   );
@@ -364,8 +364,8 @@ function TextGroupVertical7() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM3 />
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-1px]">Plan a marketing strategy for my business</p>
-      <p className="font-['General_Sans:Medium',sans-serif] text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-90 relative shrink-0 text-white">{`Lora turn my business goals into a clear execution plan. lora breaks down what needs to be done, assigns tasks to the right team, right members, & keeps everything aligned so my marketing runs in my voice.`}</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-1px]">Plan a marketing strategy for my business</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-90 relative shrink-0 text-white">{`Lora turn my business goals into a clear execution plan. lora breaks down what needs to be done, assigns tasks to the right team, right members, & keeps everything aligned so my marketing runs in my voice.`}</p>
     </div>
   );
 }
@@ -373,7 +373,7 @@ function TextGroupVertical7() {
 function LearnMoreContainer3() {
   return (
     <Link to="/solution?agent=lora" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </Link>
   );
 }
@@ -402,7 +402,7 @@ function FeatureHighlight1() {
       <div className="absolute bottom-[-1px] h-[220px] md:h-[285px] right-[-20px] md:right-0 w-[240px] md:w-[314px]" data-name="Feature Image Small">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFeatureImageSmall2} />
       </div>
-      <p className="absolute bottom-[20px] right-[210px] md:right-[310px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic text-[#501481] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Lora</p>
+      <p className="absolute bottom-[20px] right-[210px] md:right-[310px] font-['Kalam',sans-serif] font-bold leading-[34px] not-italic text-[#501481] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Lora</p>
     </div>
   );
 }
@@ -411,8 +411,8 @@ function BadgeM4() {
   return (
     <div className="bg-[#0d746c] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#eefdf9] text-[0px] tracking-[0.21px] w-[167px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Social Media Manager</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#eefdf9] text-[0px] tracking-[0.21px] w-[167px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Social Media Manager</p>
       </div>
     </div>
   );
@@ -422,8 +422,8 @@ function TextGroupVertical8() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM4 />
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-[#1f2937] tracking-[-0.48px]">{`Schedule publish my posts, contents & Engage with audiences`}</p>
-      <p className="font-['General_Sans:Medium',sans-serif] text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic relative shrink-0 text-[#1f2937]">Sarah schedules my social posts, handles community engagement, replying and nurturing relationships.</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-[#1f2937] tracking-[-0.48px]">{`Schedule publish my posts, contents & Engage with audiences`}</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic relative shrink-0 text-[#1f2937]">Sarah schedules my social posts, handles community engagement, replying and nurturing relationships.</p>
     </div>
   );
 }
@@ -431,7 +431,7 @@ function TextGroupVertical8() {
 function LearnMoreContainer4() {
   return (
     <Link to="/solution?agent=sarah" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </Link>
   );
 }
@@ -462,7 +462,7 @@ function FeatureImageLarge3() {
           <img alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgFeatureImageSmall3} />
         </div>
       </div>
-      <p className="absolute bottom-[20px] right-[210px] md:right-[260px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic text-[#fafcfb] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Sarah</p>
+      <p className="absolute bottom-[20px] right-[210px] md:right-[260px] font-['Kalam',sans-serif] font-bold leading-[34px] not-italic text-[#fafcfb] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Sarah</p>
     </div>
   );
 }
@@ -471,8 +471,8 @@ function BadgeM5() {
   return (
     <div className="bg-[#3e7ff9] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] whitespace-nowrap">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Analyst</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] whitespace-nowrap">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Analyst</p>
       </div>
     </div>
   );
@@ -482,8 +482,8 @@ function TextGroupVertical9() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[732px]" data-name="Text Group Vertical">
       <BadgeM5 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Analyze every content performance and determine what’s working whats not</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] not-italic opacity-60 relative shrink-0 text-[18px] text-black whitespace-pre-wrap">
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Analyze every content performance and determine what’s working whats not</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px] not-italic opacity-60 relative shrink-0 text-[18px] text-black whitespace-pre-wrap">
         {`Nick tracks performs of contes, posts, ads. `}
         <br aria-hidden="true" />
         He reports on what worked, what didn’t, and what to improve next.
@@ -495,7 +495,7 @@ function TextGroupVertical9() {
 function LearnMoreContainer5() {
   return (
     <Link to="/solution?agent=nick" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </Link>
   );
 }
@@ -523,7 +523,7 @@ function FeatureImageLarge4() {
             <img alt="" className="absolute h-[120.44%] left-[-48.18%] max-w-none top-0 w-[193.05%]" src={imgImage168} />
           </div>
         </div>
-        <p className="absolute bottom-[44px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic right-[302px] text-[28px] text-white tracking-[-0.48px] translate-x-full translate-y-full whitespace-nowrap">Nick</p>
+        <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] not-italic right-[302px] text-[28px] text-white tracking-[-0.48px] translate-x-full translate-y-full whitespace-nowrap">Nick</p>
       </div>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-2px_1px_0px_rgba(151,193,255,0.4)]" />
       <div aria-hidden="true" className="absolute border border-[#c4dcff] border-solid inset-0 pointer-events-none rounded-[30px] shadow-[0px_11.392px_22.336px_0px_rgba(53,106,185,0.09)]" />
@@ -535,8 +535,8 @@ function BadgeM6() {
   return (
     <div className="bg-[#0abcfb] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] w-[119px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Content Writer</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] w-[119px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Content Writer</p>
       </div>
     </div>
   );
@@ -546,8 +546,8 @@ function TextGroupVertical10() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM6 />
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">{`Writes content that attracts customers for blog, mail & more..`}</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Clara writes my blogs, emails, threads, newsletters, Social posts and other persuasive content that drives action.</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">{`Writes content that attracts customers for blog, mail & more..`}</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Clara writes my blogs, emails, threads, newsletters, Social posts and other persuasive content that drives action.</p>
     </div>
   );
 }
@@ -555,7 +555,7 @@ function TextGroupVertical10() {
 function LearnMoreContainer6() {
   return (
     <Link to="/solution?agent=clara" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </Link>
   );
 }
@@ -578,7 +578,7 @@ function FeatureHighlight2() {
           <img alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgGeminiGeneratedImageBewxcwbewxcwbewx2} />
         </div>
       </div>
-      <p className="absolute bottom-[20px] right-[160px] md:right-[180px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic text-[#286a8f] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Clara</p>
+      <p className="absolute bottom-[20px] right-[160px] md:right-[180px] font-['Kalam',sans-serif] font-bold leading-[34px] not-italic text-[#286a8f] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Clara</p>
     </div>
   );
 }
@@ -587,8 +587,8 @@ function BadgeM7() {
   return (
     <div className="bg-[#5762e5] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[123px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Video Producer</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[123px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Video Producer</p>
       </div>
     </div>
   );
@@ -598,8 +598,8 @@ function TextGroupVertical11() {
   return (
     <div className="content-stretch flex flex-1 flex-col gap-[16px] items-start min-h-px relative w-full" data-name="Text Group Vertical">
       <BadgeM7 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Create Videos for TikTok, Insta, YouTube etc.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Theo turns your ideas into engaging video content for your brand. plans and scripts your short-form videos for platforms like TikTok or YouTube, boosting engagement.</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Create Videos for TikTok, Insta, YouTube etc.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Theo turns your ideas into engaging video content for your brand. plans and scripts your short-form videos for platforms like TikTok or YouTube, boosting engagement.</p>
     </div>
   );
 }
@@ -607,7 +607,7 @@ function TextGroupVertical11() {
 function LearnMoreContainer7() {
   return (
     <Link to="/solution?agent=theo" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </Link>
   );
 }
@@ -635,7 +635,7 @@ function FeatureImageLarge5() {
             <img alt="" className="absolute h-[373.26%] left-[-76.92%] max-w-none top-[-12.2%] w-[251.46%]" src={imgObject} />
           </div>
         </div>
-        <p className="absolute bottom-[44px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[120px] not-italic text-[#06074e] text-[28px] tracking-[-0.48px] translate-y-full w-[57px]">Theo</p>
+        <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[120px] not-italic text-[#06074e] text-[28px] tracking-[-0.48px] translate-y-full w-[57px]">Theo</p>
       </div>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-2px_1px_0px_rgba(151,193,255,0.4)]" />
       <div aria-hidden="true" className="absolute border border-[#c4dcff] border-solid inset-0 pointer-events-none rounded-[30px] shadow-[0px_11.392px_22.336px_0px_rgba(53,106,185,0.09)]" />
@@ -647,8 +647,8 @@ function BadgeM8() {
   return (
     <div className="bg-[#fdc9a8] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] w-[123px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Visual Designer</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] w-[123px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Visual Designer</p>
       </div>
     </div>
   );
@@ -658,8 +658,8 @@ function TextGroupVertical12() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM8 />
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Steve Design scroll-stopping visuals and carousels that reflect my brand and grab attention in all platforms</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Steve Design scroll-stopping visuals and carousels that reflect my brand and grab attention in all platforms</p>
     </div>
   );
 }
@@ -667,7 +667,7 @@ function TextGroupVertical12() {
 function LearnMoreContainer8() {
   return (
     <Link to="/solution?agent=steve" className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0 no-underline hover:bg-[rgba(255,255,255,0.8)] transition-colors" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </Link>
   );
 }
@@ -694,7 +694,7 @@ function FeatureImageLarge6() {
           <img alt="" className="absolute h-[102.18%] left-[-33.01%] max-w-none top-0 w-[168.71%]" src={imgFeatureImage} />
         </div>
       </div>
-      <p className="absolute bottom-[20px] right-[180px] md:right-[200px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic text-[#8e492b] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Steve</p>
+      <p className="absolute bottom-[20px] right-[180px] md:right-[200px] font-['Kalam',sans-serif] font-bold leading-[34px] not-italic text-[#8e492b] text-[24px] md:text-[28px] tracking-[-0.48px] whitespace-nowrap z-20">Steve</p>
     </div>
   );
 }
@@ -734,7 +734,7 @@ function AiAgents() {
         className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 w-[140px] cursor-pointer hover:opacity-90 transition-opacity" 
         data-name="Button"
       >
-        <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
+        <p className="font-['General_Sans',sans-serif] font-semibold leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
       </div>
     </div>
   );
@@ -743,8 +743,8 @@ function AiAgents() {
 function Frame17() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] w-full">The AI Employees that actually does stuff.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#374151] text-[20px] w-full">Loraloop plans your marketing, creates your content, and runs campaigns before you even wake up.</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] w-full">The AI Employees that actually does stuff.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px] relative shrink-0 text-[#374151] text-[20px] w-full">Loraloop plans your marketing, creates your content, and runs campaigns before you even wake up.</p>
     </div>
   );
 }
@@ -752,7 +752,7 @@ function Frame17() {
 function Frame16() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-[620px]">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] w-full">HOW IT WORKS</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] w-full">HOW IT WORKS</p>
       <Frame17 />
     </div>
   );
@@ -762,7 +762,7 @@ function Text() {
   return (
     <div className="bg-[#f9fafc] relative rounded-[8px] shrink-0 w-[20px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-center justify-center px-[7px] relative size-full">
-        <p className="font-['General_Sans:Semibold',sans-serif] leading-[22px] not-italic relative shrink-0 text-[#6b7280] text-[16px] w-full">1</p>
+        <p className="font-['General_Sans',sans-serif] font-semibold leading-[22px] not-italic relative shrink-0 text-[#6b7280] text-[16px] w-full">1</p>
       </div>
     </div>
   );
@@ -772,7 +772,7 @@ function Container3() {
   return (
     <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Container">
       <div className="mt-1"><Text /></div>
-      <p className="font-bold flex-1 font-['Satoshi:Bold',sans-serif] leading-[28px] min-w-px not-italic relative text-[#1f2937] text-[18px] md:text-[20px]">Enter Your Website</p>
+      <p className="font-bold flex-1 font-['Satoshi',sans-serif] font-bold leading-[28px] min-w-px not-italic relative text-[#1f2937] text-[18px] md:text-[20px]">Enter Your Website</p>
     </div>
   );
 }
@@ -782,7 +782,7 @@ function Container2() {
     <div className="flex-1 min-h-[220px] md:min-aspect-[540/300] h-auto min-h-[300px] relative w-full" data-name="Container">
       <div className="content-stretch flex flex-col gap-[12px] items-start px-[24px] md:px-[32px] py-[24px] relative size-full">
         <Container3 />
-        <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
+        <ul className="block font-['General_Sans',sans-serif] font-medium leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
           <li className="mb-2 ms-[24px]">
             <span className="leading-[22px]">Drop your website URL</span>
           </li>
@@ -813,7 +813,7 @@ function Text1() {
   return (
     <div className="bg-[#f9fafc] relative rounded-[8px] shrink-0 w-[20px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-center justify-center px-[7px] relative size-full">
-        <p className="font-['General_Sans:Semibold',sans-serif] leading-[22px] not-italic relative shrink-0 text-[#6b7280] text-[16px] w-full">2</p>
+        <p className="font-['General_Sans',sans-serif] font-semibold leading-[22px] not-italic relative shrink-0 text-[#6b7280] text-[16px] w-full">2</p>
       </div>
     </div>
   );
@@ -823,7 +823,7 @@ function Container6() {
   return (
     <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Container">
       <div className="mt-1"><Text1 /></div>
-      <p className="font-bold flex-1 font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[18px] md:text-[20px]">AI Team Manage Marketing</p>
+      <p className="font-bold flex-1 font-['Satoshi',sans-serif] font-bold leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[18px] md:text-[20px]">AI Team Manage Marketing</p>
     </div>
   );
 }
@@ -833,7 +833,7 @@ function Container5() {
     <div className="flex-1 min-h-[220px] md:min-aspect-[540/300] h-auto min-h-[300px] relative w-full" data-name="Container">
       <div className="content-stretch flex flex-col gap-[12px] items-start px-[24px] md:px-[32px] py-[24px] relative size-full">
         <Container6 />
-        <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
+        <ul className="block font-['General_Sans',sans-serif] font-medium leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
           <li className="mb-2 ms-[24px]">
             <span className="leading-[22px]">{`Social, content, leads, engagement, Ads launched and optimized automatically. `}</span>
           </li>
@@ -864,7 +864,7 @@ function Text2() {
   return (
     <div className="bg-[#f9fafc] relative rounded-[8px] shrink-0 w-[20px]" data-name="Text">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-center justify-center px-[7px] relative size-full">
-        <p className="font-['General_Sans:Semibold',sans-serif] leading-[22px] not-italic relative shrink-0 text-[#6b7280] text-[16px] w-full">3</p>
+        <p className="font-['General_Sans',sans-serif] font-semibold leading-[22px] not-italic relative shrink-0 text-[#6b7280] text-[16px] w-full">3</p>
       </div>
     </div>
   );
@@ -874,7 +874,7 @@ function Container9() {
   return (
     <div className="content-stretch flex gap-[12px] items-start relative shrink-0 w-full" data-name="Container">
       <div className="mt-1"><Text2 /></div>
-      <p className="font-bold flex-1 font-['Satoshi:Bold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[18px] md:text-[20px]">Grow on autopilot</p>
+      <p className="font-bold flex-1 font-['Satoshi',sans-serif] font-bold leading-[28px] not-italic relative shrink-0 text-[#1f2937] text-[18px] md:text-[20px]">Grow on autopilot</p>
     </div>
   );
 }
@@ -884,7 +884,7 @@ function Container8() {
     <div className="flex-1 min-h-[220px] md:min-aspect-[540/300] h-auto min-h-[300px] relative w-full" data-name="Container">
       <div className="content-stretch flex flex-col gap-[12px] items-start px-[24px] md:px-[32px] py-[24px] relative size-full">
         <Container9 />
-        <ul className="block font-['General_Sans:Medium',sans-serif] leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
+        <ul className="block font-['General_Sans',sans-serif] font-medium leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
           <li className="mb-2 ms-[24px]">
             <span className="leading-[22px]">{`Track performance. Scale what works. Improve continuously. `}</span>
           </li>
@@ -938,8 +938,8 @@ function HowItWorks() {
 function Frame18() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 text-white w-full">
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[1.2] md:leading-[56px] relative shrink-0 text-[32px] md:text-[48px] tracking-[-1.2px] text-center w-full">100+ Integrations supported.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[1.4] md:leading-[28px] relative shrink-0 text-[16px] md:text-[20px] text-center max-w-[800px] w-full">From social media platforms to ecommerce, leads etc, our integrations make it easy to keep everything connected.</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[1.2] md:leading-[56px] relative shrink-0 text-[32px] md:text-[48px] tracking-[-1.2px] text-center w-full">100+ Integrations supported.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[1.4] md:leading-[28px] relative shrink-0 text-[16px] md:text-[20px] text-center max-w-[800px] w-full">From social media platforms to ecommerce, leads etc, our integrations make it easy to keep everything connected.</p>
     </div>
   );
 }
@@ -947,7 +947,7 @@ function Frame18() {
 function Container11() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] mx-auto" data-name="Container">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap w-full text-center">INTEGRATION</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap w-full text-center">INTEGRATION</p>
       <Frame18 />
     </div>
   );
@@ -1194,7 +1194,7 @@ function GoogleAds() {
 function More() {
   return (
     <div className="bg-[#e5e7eb] content-stretch flex flex-col items-center justify-center p-[8px] relative rounded-[40px] shrink-0" data-name="More">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#9ca3af] text-[14px] whitespace-nowrap">{`& More`}</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[#9ca3af] text-[14px] whitespace-nowrap">{`& More`}</p>
     </div>
   );
 }
@@ -1535,8 +1535,8 @@ function Integration() {
 function Frame19_Auth() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center not-italic relative shrink-0 text-center w-full whitespace-nowrap">
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[60px] relative shrink-0 text-[#101828] text-[56px] tracking-[-1.4px]">Solution</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">What you get with loraloop</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[60px] relative shrink-0 text-[#101828] text-[56px] tracking-[-1.4px]">Solution</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">What you get with loraloop</p>
     </div>
   );
 }
@@ -1553,7 +1553,7 @@ function StatusLine_Auth() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
         <p className="leading-[16px]">Done</p>
       </div>
     </div>
@@ -1565,9 +1565,9 @@ function Content_Auth() {
     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
       <div className="flex items-center gap-[4px] mb-[4px]">
         <img src={imgPoint} alt="" className="w-[16px] h-[16px]" />
-        <span className="font-['General_Sans:Medium',sans-serif] text-[12px] text-[#6b7280]">AI Agents Deep Analyse</span>
+        <span className="font-['General_Sans',sans-serif] font-medium text-[12px] text-[#6b7280]">AI Agents Deep Analyse</span>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
         <p className="leading-[18px]">Analysed market trends, Monitor Competitors<br/>across social media platforms</p>
       </div>
       <StatusLine_Auth />
@@ -1599,7 +1599,7 @@ function Container13_Auth() {
     <div className="absolute bg-white content-stretch flex items-center justify-between left-[40px] px-[16px] py-[12px] rounded-[16px] top-[20px] w-[460px] shadow-sm" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <AvatarWithTitle_Auth />
-      <p className="font-['General_Sans:Medium',sans-serif] text-[12px] text-[#6b7280] self-end mt-auto ml-2">05:11 AM</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[12px] text-[#6b7280] self-end mt-auto ml-2">05:11 AM</p>
     </div>
   );
 }
@@ -1616,7 +1616,7 @@ function StatusLine1_Auth() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
         <p className="leading-[16px]">Done</p>
       </div>
     </div>
@@ -1626,7 +1626,7 @@ function StatusLine1_Auth() {
 function Content1_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
         <p className="leading-[18px]">Posts created across channels Insta, X, TikTok,<br/>Youtube, etc.</p>
       </div>
       <StatusLine1_Auth />
@@ -1658,7 +1658,7 @@ function Container14_Auth() {
     <div className="absolute bg-white content-stretch flex items-center justify-between left-[40px] px-[16px] py-[12px] rounded-[16px] top-[128px] w-[460px] shadow-sm" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <AvatarWithTitle1_Auth />
-      <p className="font-['General_Sans:Medium',sans-serif] text-[12px] text-[#6b7280] self-end mt-auto ml-2">05:12 AM</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[12px] text-[#6b7280] self-end mt-auto ml-2">05:12 AM</p>
     </div>
   );
 }
@@ -1669,7 +1669,7 @@ function StatusLine2_Auth() {
       <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Status Icon">
         <img src={imgStatusCheckmark} alt="" className="w-full h-full object-contain" />
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
         <p className="leading-[16px]">Published</p>
       </div>
     </div>
@@ -1679,7 +1679,7 @@ function StatusLine2_Auth() {
 function Content2_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
         <p className="leading-[18px]">Published Posts, Blogs, Videos, Ads</p>
       </div>
       <StatusLine2_Auth />
@@ -1711,7 +1711,7 @@ function Container15_Auth() {
     <div className="absolute bg-white content-stretch flex items-center justify-between left-[40px] px-[16px] py-[12px] rounded-[16px] top-[210px] w-[460px] shadow-sm" data-name="Container">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <AvatarWithTitle2_Auth />
-      <p className="font-['General_Sans:Medium',sans-serif] text-[12px] text-[#6b7280] self-end mt-auto ml-2">05:13 AM</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[12px] text-[#6b7280] self-end mt-auto ml-2">05:13 AM</p>
     </div>
   );
 }
@@ -1728,7 +1728,7 @@ function StatusLine3_Auth() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[12px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[12px] whitespace-nowrap">
         <p className="leading-[16px]">Need Review</p>
       </div>
     </div>
@@ -1738,7 +1738,7 @@ function StatusLine3_Auth() {
 function Content3_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
         <p className="leading-[18px]">{`Last 10 posts analytics reviewed `}</p>
       </div>
       <StatusLine3_Auth />
@@ -1787,7 +1787,7 @@ function StatusLine4_Auth() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
         <p className="leading-[16px]">In Progress</p>
       </div>
     </div>
@@ -1797,7 +1797,7 @@ function StatusLine4_Auth() {
 function Content4_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
         <p className="leading-[18px]">Draft Q2 Content Calendar</p>
       </div>
       <StatusLine4_Auth />
@@ -1831,7 +1831,7 @@ function Container17_Auth() {
       <AvatarWithTitle4_Auth />
       <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Edit</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Edit</p>
       </div>
     </div>
   );
@@ -1849,7 +1849,7 @@ function StatusLine5_Auth() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#14a148] text-[12px] whitespace-nowrap">
         <p className="leading-[16px]">Pending</p>
       </div>
     </div>
@@ -1859,7 +1859,7 @@ function StatusLine5_Auth() {
 function Content5_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
         <p className="leading-[18px]">Finalize Q1 Report</p>
       </div>
       <StatusLine5_Auth />
@@ -1908,7 +1908,7 @@ function StatusLine6_Auth() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[12px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[12px] whitespace-nowrap">
         <p className="leading-[16px]">Approved</p>
       </div>
     </div>
@@ -1918,7 +1918,7 @@ function StatusLine6_Auth() {
 function Content6_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
         <p className="leading-[18px]">Email Newsletter design</p>
       </div>
       <StatusLine6_Auth />
@@ -1967,7 +1967,7 @@ function StatusLine7_Auth() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[12px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[12px] whitespace-nowrap">
         <p className="leading-[16px]">In Progress</p>
       </div>
     </div>
@@ -1977,7 +1977,7 @@ function StatusLine7_Auth() {
 function Content7_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">
         <p className="leading-[18px]">Competitor Analysis Update</p>
       </div>
       <StatusLine7_Auth />
@@ -2011,7 +2011,7 @@ function Container20_Auth() {
       <AvatarWithTitle7_Auth />
       <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Edit</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Edit</p>
       </div>
     </div>
   );
@@ -2046,12 +2046,12 @@ function DescriptionSection_Auth() {
       <div className="bg-white relative shrink-0 flex-1 w-full" data-name="Description Section">
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative size-full text-center">
-          <div className="flex flex-col font-bold font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[0px] tracking-[-0.5px] w-full">
+          <div className="flex flex-col font-bold font-['Satoshi',sans-serif] font-bold justify-center relative shrink-0 text-[#1f2937] text-[0px] tracking-[-0.5px] w-full">
             <p className="text-[24px]">
-              <span className="font-bold font-['Satoshi:Bold',sans-serif] leading-[32px] not-italic text-[#14a148]">Social Media handled End to End</span>
+              <span className="font-bold font-['Satoshi',sans-serif] font-bold leading-[32px] not-italic text-[#14a148]">Social Media handled End to End</span>
             </p>
           </div>
-          <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
+          <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
             <p className="leading-[22px]">Lora understand you end to end, Turn your goals into a structured marketing plan with clear next steps acct like personal marketing lead.</p>
           </div>
         </div>
@@ -2075,8 +2075,8 @@ function MaskGroup_Auth() {
 function Content8_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">10 New trending topic detected</p>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] relative shrink-0 text-[#14a148] text-[12px]">
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">10 New trending topic detected</p>
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#14a148] text-[12px]">
         <p className="leading-[16px]">AI Content for today</p>
       </div>
     </div>
@@ -2112,7 +2112,7 @@ function Container21_Auth() {
       <AvatarWithTitle8_Auth />
       <div className="bg-white content-stretch flex gap-[4px] h-[32px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Explore</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[16px] not-italic relative shrink-0 text-[#111827] text-[12px] tracking-[0.3px] whitespace-nowrap">Explore</p>
       </div>
     </div>
   );
@@ -2133,8 +2133,8 @@ function MaskGroup1_Auth() {
 function Content9_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Competitor analysis ready</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#155dfc] text-[12px]">30 new growth opportunity detected</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Competitor analysis ready</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#155dfc] text-[12px]">30 new growth opportunity detected</p>
     </div>
   );
 }
@@ -2195,7 +2195,7 @@ function StatusLine8_Auth() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[12px] whitespace-nowrap">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[12px] whitespace-nowrap">
         <p className="leading-[16px]">Need Approval</p>
       </div>
     </div>
@@ -2205,7 +2205,7 @@ function StatusLine8_Auth() {
 function Content10_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0" data-name="Content">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-nowrap">Trending content spotted 10x view</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px] whitespace-nowrap">Trending content spotted 10x view</p>
       <StatusLine8_Auth />
     </div>
   );
@@ -2258,8 +2258,8 @@ function MaskGroup3_Auth() {
 function Content11_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Content trending idea generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#d77504] text-[12px]">12 Ideas ready</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Content trending idea generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#d77504] text-[12px]">12 Ideas ready</p>
     </div>
   );
 }
@@ -2311,8 +2311,8 @@ function MaskGroup4_Auth() {
 function Content12_Auth() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Content trending idea generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#d77504] text-[12px]">12 Ideas ready</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] relative shrink-0 text-[#101828] text-[14px] tracking-[0.21px]">Content trending idea generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#d77504] text-[12px]">12 Ideas ready</p>
     </div>
   );
 }
@@ -2373,12 +2373,12 @@ function Slot1_Auth() {
 function DescriptionSection1_Auth() {
     return (
       <div className="bg-white content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative shrink-0 text-center flex-1 w-full" data-name="Description Section">
-      <div className="flex flex-col font-bold font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
+      <div className="flex flex-col font-bold font-['Satoshi',sans-serif] font-bold justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
         <p>
           <span className="leading-[32px] text-[#14a148]">Discover ideas, trends, monitor competitor</span><span className="leading-[32px] text-[#1f2937]"> your marketing 10x value content</span>
         </p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
         <p className="leading-[22px]">Effortlessly find current trends, demands, monitor competitor doing etc. Based on create content types, ideas, topics to grow social media and ROI more.</p>
       </div>
     </div>
@@ -2388,7 +2388,7 @@ function DescriptionSection1_Auth() {
 function Frame38_Auth() {
   return (
     <div className="bg-[#14a148] content-stretch flex items-center justify-center px-[16px] py-[8px] relative rounded-[20px] shrink-0">
-      <p className="font-['Bricolage_Grotesque:Bold',sans-serif] font-bold leading-[16px] relative shrink-0 text-[14px] text-center text-white whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
+      <p className="font-['Bricolage_Grotesque',sans-serif] font-bold font-bold leading-[16px] relative shrink-0 text-[14px] text-center text-white whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
         New Idea
       </p>
     </div>
@@ -2398,7 +2398,7 @@ function Frame38_Auth() {
 function Frame39_Auth() {
   return (
     <div className="content-stretch flex items-center relative shrink-0">
-      <p className="font-['Bricolage_Grotesque:Bold',sans-serif] font-bold leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] text-center whitespace-pre" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>{`Or Existing  Content`}</p>
+      <p className="font-['Bricolage_Grotesque',sans-serif] font-bold font-bold leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] text-center whitespace-pre" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>{`Or Existing  Content`}</p>
     </div>
   );
 }
@@ -2666,7 +2666,7 @@ function Frame49_Auth() {
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center p-[10px] relative size-full">
-          <p className="font-['Bricolage_Grotesque:Bold',sans-serif] font-bold leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] text-center whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
+          <p className="font-['Bricolage_Grotesque',sans-serif] font-bold font-bold leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] text-center whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
             More..
           </p>
         </div>
@@ -2706,7 +2706,7 @@ function Frame33_Auth() {
   return (
     <div className="bg-white content-stretch flex gap-[2px] items-center p-[8px] relative rounded-[20px] shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[20px]" />
-      <p className="font-['Bricolage_Grotesque:Bold',sans-serif] font-bold leading-[16px] relative shrink-0 text-[#14a148] text-[12px] text-center whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
+      <p className="font-['Bricolage_Grotesque',sans-serif] font-bold font-bold leading-[16px] relative shrink-0 text-[#14a148] text-[12px] text-center whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
         Create / Repurpose
       </p>
       <div className="overflow-clip relative shrink-0 size-[16px]" data-name="> Chevron Right">
@@ -3076,7 +3076,7 @@ function Frame63_Auth() {
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center p-[10px] relative size-full">
-          <p className="font-['Bricolage_Grotesque:Bold',sans-serif] font-bold leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] text-center whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
+          <p className="font-['Bricolage_Grotesque',sans-serif] font-bold font-bold leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] text-center whitespace-nowrap" style={{ fontVariationSettings: "'opsz' 14, 'wdth' 100" }}>
             More..
           </p>
         </div>
@@ -3124,12 +3124,12 @@ function Slot2_Auth() {
 function DescriptionSection2_Auth() {
     return (
       <div className="bg-white content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative shrink-0 text-center flex-1 w-full" data-name="Description Section">
-      <div className="flex flex-col font-bold font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[24px] tracking-[-0.5px] w-full">
+      <div className="flex flex-col font-bold font-['Satoshi',sans-serif] font-bold justify-center relative shrink-0 text-[#1f2937] text-[24px] tracking-[-0.5px] w-full">
         <p>
           <span className="leading-[32px] text-[#14a148]">Turn idea/existing content</span><span className="leading-[32px] text-[#1f2937]"> into social posts, blogs, TikToks, YouTube videos in minutes.</span>
         </p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
         <p className="leading-[22px]">Use one idea or existing content to create everything you need posts and videos ready to publish, without doing the work yourself grow social media presence while you sleep.</p>
       </div>
     </div>
@@ -3698,7 +3698,7 @@ function Container28_Auth() {
 
 function Content13_Auth() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start justify-center leading-[0] not-italic pb-[3px] relative shrink-0 whitespace-nowrap" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start justify-center leading-[0] not-italic pb-[3px] relative shrink-0 whitespace-nowrap" data-name="Content">
       <div className="flex flex-col justify-center mb-[-3px] relative shrink-0 text-[#1f2937] text-[21px]">
         <p className="leading-[27px]">TikTok</p>
       </div>
@@ -3738,7 +3738,7 @@ function Container29_Auth() {
 
 function Content14_Auth() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start justify-center leading-[0] not-italic pb-[3px] relative shrink-0 whitespace-nowrap" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start justify-center leading-[0] not-italic pb-[3px] relative shrink-0 whitespace-nowrap" data-name="Content">
       <div className="flex flex-col justify-center mb-[-3px] relative shrink-0 text-[#1f2937] text-[21px]">
         <p className="leading-[27px]">X (Twitter)</p>
       </div>
@@ -3782,7 +3782,7 @@ function Container30_Auth() {
 
 function Content15_Auth() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start justify-center leading-[0] not-italic pb-[3px] relative shrink-0 whitespace-nowrap" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start justify-center leading-[0] not-italic pb-[3px] relative shrink-0 whitespace-nowrap" data-name="Content">
       <div className="flex flex-col justify-center mb-[-3px] relative shrink-0 text-[#1f2937] text-[21px]">
         <p className="leading-[27px]">Instagram</p>
       </div>
@@ -3867,12 +3867,12 @@ function DescriptionSection3_Auth() {
       <div className="bg-white relative shrink-0 flex-1 w-full" data-name="Description Section">
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative size-full text-center">
-          <div className="flex flex-col font-bold font-['Satoshi:Bold',sans-serif] justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
+          <div className="flex flex-col font-bold font-['Satoshi',sans-serif] font-bold justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
             <p>
               <span className="leading-[32px] text-[#14a148]">Smart Multi-Platform Publishing</span><span className="leading-[32px] text-[#1f2937]"> based on realtime audiance & performance data!</span>
             </p>
           </div>
-          <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
+          <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
             <p className="leading-[22px]">Share content across platforms like Instagram, X, Wordpress, TikTok, and YouTube etc. based on platform realtime algorithms and previous past performance.</p>
           </div>
         </div>
@@ -3936,7 +3936,7 @@ function Frame64_Auth() {
         className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 w-[140px] cursor-pointer hover:opacity-90 transition-opacity" 
         data-name="Button"
       >
-        <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
+        <p className="font-['General_Sans',sans-serif] font-semibold leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
       </div>
       <Link 
         to="/solution" 
@@ -3944,7 +3944,7 @@ function Frame64_Auth() {
         data-name="Button"
       >
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-bold font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[#111827] text-[18px] whitespace-nowrap">View More Solution</p>
+        <p className="font-bold font-['General_Sans',sans-serif] font-semibold leading-[28px] not-italic relative shrink-0 text-[#111827] text-[18px] whitespace-nowrap">View More Solution</p>
       </Link>
     </div>
   );
@@ -3962,8 +3962,8 @@ function Solution1_Auth({ className }: { className?: string }) {
 function Frame20_Auth() {
   return (
     <div className="content-stretch flex flex-col items-center not-italic relative shrink-0 text-center w-full whitespace-nowrap">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[36px] relative shrink-0 text-[#1f2937] text-[28px] tracking-[-0.28px]">{`Don't take our word for it`}</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">Ask any AI about Loraloop</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[36px] relative shrink-0 text-[#1f2937] text-[28px] tracking-[-0.28px]">{`Don't take our word for it`}</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">Ask any AI about Loraloop</p>
     </div>
   );
 }
@@ -3974,7 +3974,7 @@ function Container33_Auth() {
       <div className="relative shrink-0 size-[24px]" data-name="image 154">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage154} />
       </div>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask ChatGPT</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask ChatGPT</p>
     </div>
   );
 }
@@ -4004,7 +4004,7 @@ function Container34_Auth() {
       <div className="relative shrink-0 size-[24px]" data-name="image 154">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage155} />
       </div>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask Perplexity</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask Perplexity</p>
     </div>
   );
 }
@@ -4034,7 +4034,7 @@ function Container35_Auth() {
       <div className="relative shrink-0 size-[24px]" data-name="image 154">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage156} />
       </div>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask Claude</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask Claude</p>
     </div>
   );
 }
@@ -4089,9 +4089,9 @@ function Solution_Auth() {
 function Cotnet2() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px]" data-name="Cotnet">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">WHY US?</p>
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[1.2] md:leading-[48px] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.8px]">Marketing that runs itself.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] text-[16px] md:text-[20px] whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">WHY US?</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[1.2] md:leading-[48px] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.8px]">Marketing that runs itself.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] text-[16px] md:text-[20px] whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
     </div>
   );
 }
@@ -4105,7 +4105,7 @@ function Container39() {
     <div className="bg-[rgba(24,24,27,0.5)] flex-1 h-auto min-h-[52px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#27272a] border-l border-solid inset-0 pointer-events-none" />
       <div className="content-stretch flex flex-col items-start pl-2 md:pl-[25px] pr-2 md:pr-[24px] pt-[16px] relative size-full">
-        <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[0.1996px]">Independent Talent</p>
+        <p className="font-['Inter',sans-serif] font-medium font-medium leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[0.1996px]">Independent Talent</p>
       </div>
     </div>
   );
@@ -4116,7 +4116,7 @@ function Container40() {
     <div className="bg-[rgba(24,24,27,0.5)] flex-1 h-auto min-h-[52px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#27272a] border-l border-solid inset-0 pointer-events-none" />
       <div className="content-stretch flex flex-col items-start pl-2 md:pl-[25px] pr-2 md:pr-[24px] pt-[16px] relative size-full">
-        <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[0.1996px]">Agencies</p>
+        <p className="font-['Inter',sans-serif] font-medium font-medium leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[0.1996px]">Agencies</p>
       </div>
     </div>
   );
@@ -4128,7 +4128,7 @@ function Container41() {
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-col items-center justify-center size-full">
         <div className="content-stretch flex flex-col items-center justify-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] pt-[16px] relative size-full">
-          <p className="font-['Inter:Medium',sans-serif] font-medium leading-[20px] not-italic relative shrink-0 text-[#51a2ff] text-[14px] tracking-[0.1996px]">AI Marketing Team (Loraloop)</p>
+          <p className="font-['Inter',sans-serif] font-medium font-medium leading-[20px] not-italic relative shrink-0 text-[#51a2ff] text-[14px] tracking-[0.1996px]">AI Marketing Team (Loraloop)</p>
         </div>
       </div>
     </div>
@@ -4154,7 +4154,7 @@ function Container43() {
     <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
-          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Cost</p>
+          <p className="font-['Inter',sans-serif] font-bold font-bold leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Cost</p>
         </div>
       </div>
     </div>
@@ -4165,10 +4165,10 @@ function Container45() {
   return (
     <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-end justify-center not-italic py-[2px] relative size-full text-[#6b7280]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$4k</p>
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">to</p>
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$8k</p>
-        <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">/ month</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] relative shrink-0 text-[18px]">$4k</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] relative shrink-0 text-[18px]">to</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] relative shrink-0 text-[18px]">$8k</p>
+        <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">/ month</p>
       </div>
     </div>
   );
@@ -4191,10 +4191,10 @@ function Container47() {
   return (
     <div className="relative shrink-0" data-name="Container">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-end justify-center not-italic py-[2px] relative size-full text-[#6b7280]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$5k</p>
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">to</p>
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$15k</p>
-        <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">/ month</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] relative shrink-0 text-[18px]">$5k</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] relative shrink-0 text-[18px]">to</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] relative shrink-0 text-[18px]">$15k</p>
+        <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">/ month</p>
       </div>
     </div>
   );
@@ -4217,9 +4217,9 @@ function Frame23() {
   return (
     <div className="relative shrink-0">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-center not-italic relative size-full text-white">
-        <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">Starts</p>
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] relative shrink-0 text-[18px]">$9.99</p>
-        <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">/ month</p>
+        <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">Starts</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] relative shrink-0 text-[18px]">$9.99</p>
+        <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">/ month</p>
       </div>
     </div>
   );
@@ -4231,7 +4231,7 @@ function Container48() {
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[10px] items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[28px] not-italic relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px] whitespace-nowrap">💡</p>
+          <p className="font-['Inter',sans-serif] font-bold font-bold leading-[28px] not-italic relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px] whitespace-nowrap">💡</p>
           <Frame23 />
         </div>
       </div>
@@ -4258,7 +4258,7 @@ function Container50() {
     <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Availability</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Availability</p>
         </div>
       </div>
     </div>
@@ -4271,7 +4271,7 @@ function Container51() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Limited hours</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Limited hours</p>
         </div>
       </div>
     </div>
@@ -4284,7 +4284,7 @@ function Container52() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Business hours only</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Business hours only</p>
         </div>
       </div>
     </div>
@@ -4304,7 +4304,7 @@ function Container53() {
               </svg>
             </div>
           </div>
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">24/7, always on</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">24/7, always on</p>
         </div>
       </div>
     </div>
@@ -4330,7 +4330,7 @@ function Container55() {
     <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Downtime</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Downtime</p>
         </div>
       </div>
     </div>
@@ -4343,7 +4343,7 @@ function Container56() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Leaves, sick days</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Leaves, sick days</p>
         </div>
       </div>
     </div>
@@ -4356,7 +4356,7 @@ function Container57() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">{`Holidays & breaks`}</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">{`Holidays & breaks`}</p>
         </div>
       </div>
     </div>
@@ -4376,7 +4376,7 @@ function Container58() {
               </svg>
             </div>
           </div>
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Never stops</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Never stops</p>
         </div>
       </div>
     </div>
@@ -4402,7 +4402,7 @@ function Container60() {
     <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Overhead</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Overhead</p>
         </div>
       </div>
     </div>
@@ -4415,7 +4415,7 @@ function Container61() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Benefits, tools, extras</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Benefits, tools, extras</p>
         </div>
       </div>
     </div>
@@ -4428,7 +4428,7 @@ function Container62() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">High retainers</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">High retainers</p>
         </div>
       </div>
     </div>
@@ -4448,7 +4448,7 @@ function Container63() {
               </svg>
             </div>
           </div>
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">No overhead</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">No overhead</p>
         </div>
       </div>
     </div>
@@ -4474,7 +4474,7 @@ function Container65() {
     <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Setup Time</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Setup Time</p>
         </div>
       </div>
     </div>
@@ -4487,7 +4487,7 @@ function Container66() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Weeks to start</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Weeks to start</p>
         </div>
       </div>
     </div>
@@ -4500,7 +4500,7 @@ function Container67() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">1–2 weeks onboarding</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">1–2 weeks onboarding</p>
         </div>
       </div>
     </div>
@@ -4512,7 +4512,7 @@ function Container68() {
     <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex font-['Inter',sans-serif] font-normal font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <p className="leading-[28px] relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px]">⚡</p>
           <p className="leading-[20px] relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Ready in 5 minutes</p>
         </div>
@@ -4540,7 +4540,7 @@ function Container70() {
     <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Continuity</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Continuity</p>
         </div>
       </div>
     </div>
@@ -4553,7 +4553,7 @@ function Container71() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Can quit anytime</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Can quit anytime</p>
         </div>
       </div>
     </div>
@@ -4566,7 +4566,7 @@ function Container72() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Team changes</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Team changes</p>
         </div>
       </div>
     </div>
@@ -4586,7 +4586,7 @@ function Container73() {
               </svg>
             </div>
           </div>
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Never leaves</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Never leaves</p>
         </div>
       </div>
     </div>
@@ -4612,7 +4612,7 @@ function Container75() {
     <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Skill Coverage</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Skill Coverage</p>
         </div>
       </div>
     </div>
@@ -4625,7 +4625,7 @@ function Container76() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Limited to one skillset</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Limited to one skillset</p>
         </div>
       </div>
     </div>
@@ -4638,7 +4638,7 @@ function Container77() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Depends on team</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Depends on team</p>
         </div>
       </div>
     </div>
@@ -4650,7 +4650,7 @@ function Container78() {
     <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex font-['Inter',sans-serif] font-normal font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <p className="leading-[28px] relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px]">🌐</p>
           <p className="leading-[20px] relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Works across all platforms</p>
         </div>
@@ -4678,7 +4678,7 @@ function Container80() {
     <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Speed</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Speed</p>
         </div>
       </div>
     </div>
@@ -4691,7 +4691,7 @@ function Container81() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Slow, needs follow-ups</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Slow, needs follow-ups</p>
         </div>
       </div>
     </div>
@@ -4704,7 +4704,7 @@ function Container82() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Queue-based delays</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Queue-based delays</p>
         </div>
       </div>
     </div>
@@ -4716,7 +4716,7 @@ function Container83() {
     <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex font-['Inter',sans-serif] font-normal font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <p className="leading-[28px] relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px]">⚡</p>
           <p className="leading-[20px] relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Executes in minutes</p>
         </div>
@@ -4744,7 +4744,7 @@ function Container85() {
     <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Scalability</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">Scalability</p>
         </div>
       </div>
     </div>
@@ -4757,7 +4757,7 @@ function Container86() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Hire more people</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Hire more people</p>
         </div>
       </div>
     </div>
@@ -4770,7 +4770,7 @@ function Container87() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Pay more to scale</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">Pay more to scale</p>
         </div>
       </div>
     </div>
@@ -4782,7 +4782,7 @@ function Container88() {
     <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex font-['Inter',sans-serif] font-normal font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <p className="leading-[28px] relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px]">🚀</p>
           <p className="leading-[20px] relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">Instant scaling</p>
         </div>
@@ -4810,7 +4810,7 @@ function Container90() {
     <div className="flex-1 h-auto min-h-[56px] min-w-px relative" data-name="Container">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-2 md:px-6 py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">How It Works</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#d4d4d8] text-[14px] tracking-[-0.1504px]">How It Works</p>
         </div>
       </div>
     </div>
@@ -4823,7 +4823,7 @@ function Container91() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">You manage them</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">You manage them</p>
         </div>
       </div>
     </div>
@@ -4836,7 +4836,7 @@ function Container92() {
       <div aria-hidden="true" className="absolute border-[rgba(39,39,42,0.5)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
-          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">They plan first</p>
+          <p className="font-['Inter',sans-serif] font-normal font-normal leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[-0.1504px]">They plan first</p>
         </div>
       </div>
     </div>
@@ -4848,7 +4848,7 @@ function Container93() {
     <div className="bg-gradient-to-r flex-1 from-[rgba(38,87,161,0.2)] h-auto min-h-[56px] min-w-px relative to-[rgba(3,113,230,0.2)]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[rgba(28,57,142,0.3)] border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
-        <div className="content-stretch flex font-['Inter:Regular',sans-serif] font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
+        <div className="content-stretch flex font-['Inter',sans-serif] font-normal font-normal gap-[10px] items-center not-italic pl-2 md:pl-[25px] pr-2 md:pr-[24px] py-[14px] relative size-full">
           <p className="leading-[28px] relative shrink-0 text-[#0a0a0a] text-[18px] tracking-[-0.4395px]">🎯</p>
           <p className="leading-[20px] relative shrink-0 text-[#dbeafe] text-[14px] tracking-[-0.1504px]">You approve, we execute</p>
         </div>
@@ -4904,7 +4904,7 @@ function Frame22() {
 function Cotnet3() {
   return (
     <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full" data-name="Cotnet">
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[48px] not-italic relative shrink-0 text-[40px] text-center text-white tracking-[-0.8px]">Pricing</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[48px] not-italic relative shrink-0 text-[40px] text-center text-white tracking-[-0.8px]">Pricing</p>
     </div>
   );
 }
@@ -4912,7 +4912,7 @@ function Cotnet3() {
 function Button() {
   return (
     <div className="bg-[#1f2937] content-stretch flex items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0" data-name="Button">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">Month plan</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">Month plan</p>
     </div>
   );
 }
@@ -4921,7 +4921,7 @@ function Container94() {
   return (
     <div className="-translate-x-1/2 absolute bg-[#151109] content-stretch flex items-center justify-center left-1/2 px-[16.749px] py-[2.749px] rounded-[1280px] top-[-14px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[0.749px] border-[rgba(213,165,91,0.4)] border-solid inset-0 pointer-events-none rounded-[1280px]" />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#d5a55b] text-[12px] tracking-[0.3px]">Save 30%</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[16px] not-italic relative shrink-0 text-[#d5a55b] text-[12px] tracking-[0.3px]">Save 30%</p>
     </div>
   );
 }
@@ -4930,7 +4930,7 @@ function Button1() {
   return (
     <div className="content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0" data-name="Button">
       <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[300px]" />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">12-month plan</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">12-month plan</p>
       <Container94 />
     </div>
   );
@@ -4940,7 +4940,7 @@ function Container95() {
   return (
     <div className="-translate-x-1/2 absolute bg-[#151109] content-stretch flex items-start left-[calc(50%+0.25px)] px-[16.749px] py-[2.749px] rounded-[1280px] top-[-15px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[0.749px] border-[rgba(213,165,91,0.4)] border-solid inset-0 pointer-events-none rounded-[1280px]" />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[16px] not-italic relative shrink-0 text-[#d5a55b] text-[12px] tracking-[0.3px] whitespace-nowrap">Save 15%</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[16px] not-italic relative shrink-0 text-[#d5a55b] text-[12px] tracking-[0.3px] whitespace-nowrap">Save 15%</p>
     </div>
   );
 }
@@ -4949,7 +4949,7 @@ function Button2() {
   return (
     <div className="content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0" data-name="Button">
       <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[300px]" />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">3-month plan</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">3-month plan</p>
       <Container95 />
     </div>
   );
@@ -5006,20 +5006,20 @@ function SegmenterModified({ selectedPlan, setSelectedPlan }: { selectedPlan: st
         onClick={() => setSelectedPlan('month')}
         className={`cursor-pointer content-stretch flex items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0 ${selectedPlan === 'month' ? 'bg-[#1f2937]' : ''}`}
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">Month plan</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">Month plan</p>
       </div>
       <div
         onClick={() => setSelectedPlan('12month')}
         className={`cursor-pointer content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0 ${selectedPlan !== '12month' ? 'border border-[#374151] border-solid' : 'bg-[#1f2937]'}`}
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">12-month plan</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px]">12-month plan</p>
         <Container94 />
       </div>
       <div
         onClick={() => setSelectedPlan('3month')}
         className={`cursor-pointer content-stretch flex gap-[2px] items-center justify-center px-[16px] py-[14px] relative rounded-[300px] shrink-0 ${selectedPlan !== '3month' ? 'border border-[#374151] border-solid' : 'bg-[#1f2937]'}`}
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">3-month plan</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white tracking-[0.21px] whitespace-nowrap">3-month plan</p>
         <Container95 />
       </div>
     </div>
@@ -5029,7 +5029,7 @@ function SegmenterModified({ selectedPlan, setSelectedPlan }: { selectedPlan: st
 function Container97() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Solo</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Solo</p>
     </div>
   );
 }
@@ -5037,8 +5037,8 @@ function Container97() {
 function Frame12() {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">$9.99</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[20px] text-white">$9.99</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
     </div>
   );
 }
@@ -5046,7 +5046,7 @@ function Frame12() {
 function Container98() {
   return (
     <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
-      <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$19</p>
+      <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi',sans-serif] font-bold leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$19</p>
       <Frame12 />
     </div>
   );
@@ -5069,7 +5069,7 @@ function Pricing() {
         <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[120px]" />
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
           </div>
         </div>
       </div>
@@ -5093,7 +5093,7 @@ function ListItem() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">All 9 helpers</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">All 9 helpers</p>
     </div>
   );
 }
@@ -5114,7 +5114,7 @@ function ListItem1() {
   return (
     <div className="content-stretch flex gap-[8px] items-end relative shrink-0 w-full" data-name="List Item">
       <Icon1 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">100 monthly AI credits</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">100 monthly AI credits</p>
     </div>
   );
 }
@@ -5135,7 +5135,7 @@ function ListItem2() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon2 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">2 Seats</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">2 Seats</p>
     </div>
   );
 }
@@ -5156,7 +5156,7 @@ function ListItem3() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon3 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">1 Workspace</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">1 Workspace</p>
     </div>
   );
 }
@@ -5177,7 +5177,7 @@ function ListItem4() {
   return (
     <div className="content-stretch flex gap-[8px] items-end relative shrink-0 w-full" data-name="List Item">
       <Icon4 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Support working hours</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Support working hours</p>
     </div>
   );
 }
@@ -5228,13 +5228,13 @@ function Container96Modified({ calculatePrice }: { calculatePrice: (price: numbe
             <div className="font-bold content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
               <div className="font-bold content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
                 <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
-                  <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Solo</p>
+                  <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Solo</p>
                 </div>
                 <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
-                  <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$19</p>
+                  <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi',sans-serif] font-bold leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$19</p>
                   <div className="content-stretch flex items-end justify-center relative shrink-0">
-                    <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
-                    <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+                    <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
+                    <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
                   </div>
                 </div>
               </div>
@@ -5242,7 +5242,7 @@ function Container96Modified({ calculatePrice }: { calculatePrice: (price: numbe
                 <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[120px]" />
                 <div className="flex flex-row items-center justify-center size-full">
                   <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
-                    <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
+                    <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
                   </div>
                 </div>
               </div>
@@ -5273,7 +5273,7 @@ function Container96() {
 function Container100() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Pro</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Pro</p>
     </div>
   );
 }
@@ -5281,8 +5281,8 @@ function Container100() {
 function Frame13() {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">$29.99</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[20px] text-white">$29.99</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
     </div>
   );
 }
@@ -5290,7 +5290,7 @@ function Frame13() {
 function Container101() {
   return (
     <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
-      <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$49</p>
+      <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi',sans-serif] font-bold leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$49</p>
       <Frame13 />
     </div>
   );
@@ -5312,7 +5312,7 @@ function Pricing1() {
       <div className="bg-[#1877f2] h-[40px] relative rounded-[120px] shrink-0 w-full" data-name="Button">
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">Get Loraloop</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">Get Loraloop</p>
           </div>
         </div>
       </div>
@@ -5336,7 +5336,7 @@ function ListItem5() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon5 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">All 9 helpers</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">All 9 helpers</p>
     </div>
   );
 }
@@ -5357,7 +5357,7 @@ function ListItem6() {
   return (
     <div className="content-stretch flex gap-[8px] items-end relative shrink-0 w-full" data-name="List Item">
       <Icon6 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">500 monthly AI credits</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">500 monthly AI credits</p>
     </div>
   );
 }
@@ -5378,7 +5378,7 @@ function ListItem7() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon7 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">5 Seats</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">5 Seats</p>
     </div>
   );
 }
@@ -5399,7 +5399,7 @@ function ListItem8() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon8 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">3 Workspace</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">3 Workspace</p>
     </div>
   );
 }
@@ -5420,7 +5420,7 @@ function ListItem9() {
   return (
     <div className="content-stretch flex gap-[8px] items-end relative shrink-0 w-full" data-name="List Item">
       <Icon9 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Support 24/7</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Support 24/7</p>
     </div>
   );
 }
@@ -5474,7 +5474,7 @@ function Container99() {
 function PricingCard() {
   return (
     <div className="font-bold bg-[#1877f2] content-stretch flex flex-col gap-[8px] items-center justify-center pb-[2px] pt-[8px] px-[2px] relative rounded-[16px]" data-name="PricingCard">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-white tracking-[0.6px] whitespace-nowrap">Most popular</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[12px] text-white tracking-[0.6px] whitespace-nowrap">Most popular</p>
       <div className="font-bold bg-[#151515] relative rounded-[16px] w-[282px]" data-name="PricingCard">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <Container99 />
@@ -5489,7 +5489,7 @@ function PricingCardModified({ calculatePrice }: { calculatePrice: (price: numbe
   const discountedPrice = calculatePrice(69.99);
   return (
     <div className="font-bold bg-[#1877f2] content-stretch flex flex-col gap-[8px] items-center justify-center pb-[2px] pt-[8px] px-[2px] relative rounded-[16px]" data-name="PricingCard">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] not-italic relative shrink-0 text-[12px] text-white tracking-[0.6px] whitespace-nowrap">Most popular</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[12px] text-white tracking-[0.6px] whitespace-nowrap">Most popular</p>
       <div className="font-bold bg-[#151515] relative rounded-[16px] w-[282px]" data-name="PricingCard">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip p-[0.781px] relative rounded-[inherit] size-full">
           <div className="bg-[#131313] relative shrink-0 w-[280px]" data-name="Container">
@@ -5504,20 +5504,20 @@ function PricingCardModified({ calculatePrice }: { calculatePrice: (price: numbe
                   <div className="font-bold content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
                     <div className="font-bold content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
                       <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
-                        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Agency</p>
+                        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Agency</p>
                       </div>
                       <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
-                        <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$89</p>
+                        <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi',sans-serif] font-bold leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$89</p>
                         <div className="content-stretch flex items-end justify-center relative shrink-0">
-                          <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
-                          <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+                          <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
+                          <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
                         </div>
                       </div>
                     </div>
                     <div className="bg-[#1877f2] h-[40px] relative rounded-[120px] shrink-0 w-full" data-name="Button">
                       <div className="flex flex-row items-center justify-center size-full">
                         <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
-                          <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">Get Loraloop</p>
+                          <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">Get Loraloop</p>
                         </div>
                       </div>
                     </div>
@@ -5537,7 +5537,7 @@ function PricingCardModified({ calculatePrice }: { calculatePrice: (price: numbe
 function Container103() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Agency</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Agency</p>
     </div>
   );
 }
@@ -5545,8 +5545,8 @@ function Container103() {
 function Frame14() {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">$69.99</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[20px] text-white">$69.99</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
     </div>
   );
 }
@@ -5554,7 +5554,7 @@ function Frame14() {
 function Container104() {
   return (
     <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
-      <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$89</p>
+      <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi',sans-serif] font-bold leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$89</p>
       <Frame14 />
     </div>
   );
@@ -5577,7 +5577,7 @@ function Pricing2() {
         <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[120px]" />
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
           </div>
         </div>
       </div>
@@ -5601,7 +5601,7 @@ function ListItem10() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon10 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">All 9 helpers</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">All 9 helpers</p>
     </div>
   );
 }
@@ -5622,7 +5622,7 @@ function ListItem11() {
   return (
     <div className="content-stretch flex gap-[8px] items-end relative shrink-0 w-full" data-name="List Item">
       <Icon11 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">1200 monthly AI credits</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">1200 monthly AI credits</p>
     </div>
   );
 }
@@ -5643,7 +5643,7 @@ function ListItem12() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon12 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">25 Seats</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">25 Seats</p>
     </div>
   );
 }
@@ -5664,7 +5664,7 @@ function ListItem13() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon13 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">10 Workspace</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">10 Workspace</p>
     </div>
   );
 }
@@ -5685,7 +5685,7 @@ function ListItem14() {
   return (
     <div className="content-stretch flex gap-[8px] items-end relative shrink-0 w-full" data-name="List Item">
       <Icon14 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Support 24/7</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Support 24/7</p>
     </div>
   );
 }
@@ -5736,20 +5736,20 @@ function Container102Modified({ calculatePrice }: { calculatePrice: (price: numb
             <div className="font-bold content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
               <div className="font-bold content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
                 <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
-                  <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Pro</p>
+                  <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Pro</p>
                 </div>
                 <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
-                  <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$49</p>
+                  <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi',sans-serif] font-bold leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$49</p>
                   <div className="content-stretch flex items-end justify-center relative shrink-0">
-                    <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
-                    <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+                    <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
+                    <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
                   </div>
                 </div>
               </div>
               <div className="bg-[#1877f2] h-[40px] relative rounded-[120px] shrink-0 w-full" data-name="Button">
                 <div className="flex flex-row items-center justify-center size-full">
                   <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
-                    <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">Get Loraloop</p>
+                    <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">Get Loraloop</p>
                   </div>
                 </div>
               </div>
@@ -5780,7 +5780,7 @@ function Container102() {
 function Container106() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Enterprise</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Enterprise</p>
     </div>
   );
 }
@@ -5788,8 +5788,8 @@ function Container106() {
 function Frame15() {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">$149.99</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[20px] text-white">$149.99</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
     </div>
   );
 }
@@ -5797,7 +5797,7 @@ function Frame15() {
 function Container107() {
   return (
     <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
-      <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$199</p>
+      <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi',sans-serif] font-bold leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$199</p>
       <Frame15 />
     </div>
   );
@@ -5820,7 +5820,7 @@ function Pricing3() {
         <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[120px]" />
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
           </div>
         </div>
       </div>
@@ -5844,7 +5844,7 @@ function ListItem15() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon15 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">All 9 helpers</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">All 9 helpers</p>
     </div>
   );
 }
@@ -5865,7 +5865,7 @@ function ListItem16() {
   return (
     <div className="content-stretch flex gap-[8px] items-end relative shrink-0 w-full" data-name="List Item">
       <Icon16 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">2500 monthly AI credits</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">2500 monthly AI credits</p>
     </div>
   );
 }
@@ -5886,7 +5886,7 @@ function ListItem17() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon17 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Unlimited Seats</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Unlimited Seats</p>
     </div>
   );
 }
@@ -5907,7 +5907,7 @@ function ListItem18() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-name="List Item">
       <Icon18 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Unlimited Workspace</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Unlimited Workspace</p>
     </div>
   );
 }
@@ -5928,7 +5928,7 @@ function ListItem19() {
   return (
     <div className="content-stretch flex gap-[8px] items-end relative shrink-0 w-full" data-name="List Item">
       <Icon19 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Priority Support 24/7</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[14px] not-italic relative shrink-0 text-[#d1d5db] text-[12px] whitespace-nowrap">Priority Support 24/7</p>
     </div>
   );
 }
@@ -5979,13 +5979,13 @@ function Container105Modified({ calculatePrice }: { calculatePrice: (price: numb
             <div className="font-bold content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Pricing">
               <div className="font-bold content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Pricing Details">
                 <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="Container">
-                  <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Enterprise</p>
+                  <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white tracking-[0.21px] whitespace-nowrap">Enterprise</p>
                 </div>
                 <div className="content-stretch flex gap-[8px] items-baseline not-italic relative shrink-0 whitespace-nowrap" data-name="Container">
-                  <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi:Bold',sans-serif] leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$199</p>
+                  <p className="[text-decoration-skip-ink:none] decoration-solid font-['Satoshi',sans-serif] font-bold leading-[28px] line-through relative shrink-0 text-[#6b7280] text-[20px]">$199</p>
                   <div className="content-stretch flex items-end justify-center relative shrink-0">
-                    <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
-                    <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
+                    <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[20px] text-white">${discountedPrice}</p>
+                    <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
                   </div>
                 </div>
               </div>
@@ -5993,7 +5993,7 @@ function Container105Modified({ calculatePrice }: { calculatePrice: (price: numb
                 <div aria-hidden="true" className="absolute border border-[#374151] border-solid inset-0 pointer-events-none rounded-[120px]" />
                 <div className="flex flex-row items-center justify-center size-full">
                   <div className="content-stretch flex gap-[4px] items-center justify-center px-[12px] relative size-full">
-                    <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
+                    <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Loraloop</p>
                   </div>
                 </div>
               </div>
@@ -6109,8 +6109,8 @@ function Price() {
 function Cotnet4() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center" data-name="Cotnet">
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">Frequently Asked Questions</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">Watch how Loraloop manage marketing end to end</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">Frequently Asked Questions</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
 }
@@ -6121,7 +6121,7 @@ function FaqItem({ question, answer, isExpanded, onToggle }: { question: string;
       <div aria-hidden="true" className="absolute border-[#e5e7eb] border-[0.819px] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <div className="content-stretch flex flex-col p-[24px] relative">
         <div className="flex gap-[32px] items-center justify-between w-full">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] opacity-88 relative text-[#1f2937] text-[18px] md:text-[20px]">{question}</p>
+          <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] opacity-88 relative text-[#1f2937] text-[18px] md:text-[20px]">{question}</p>
           <div className={`bg-[#1f2937] content-stretch flex items-center p-[2px] relative rounded-[32px] shrink-0 transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
             <div className="relative shrink-0 size-[20px]" data-name="chevron-down">
               <div className="absolute inset-[33.33%_20.83%]" data-name="path">
@@ -6133,7 +6133,7 @@ function FaqItem({ question, answer, isExpanded, onToggle }: { question: string;
           </div>
         </div>
         <div className={`transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[500px] mt-[16px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-          <div className="font-['General_Sans:Medium',sans-serif] leading-[22px] opacity-80 relative text-[#374151] text-[16px] whitespace-pre-wrap">
+          <div className="font-['General_Sans',sans-serif] font-medium leading-[22px] opacity-80 relative text-[#374151] text-[16px] whitespace-pre-wrap">
             {answer}
           </div>
         </div>
@@ -6196,8 +6196,8 @@ function Faq({ className, children = null }: FaqProps) {
 function TextGroupVertical13() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleep</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[0] relative shrink-0 text-[#9ca3af] text-[20px] w-full">
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleep</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[0] relative shrink-0 text-[#9ca3af] text-[20px] w-full">
         <span className="leading-[28px]">
           Social media tools are easy to buy, but hard to keep up with. loraloop is your AI marketing team like 10 year employees marketing team for you to
           <br aria-hidden="true" />
@@ -6222,7 +6222,7 @@ function CallToActionGroup() {
         className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 cursor-pointer hover:opacity-90 transition-opacity" 
         data-name="Button"
       >
-        <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
+        <p className="font-['General_Sans',sans-serif] font-semibold leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
       </div>
     </div>
   );
@@ -6244,12 +6244,12 @@ function Outro() {
 function Container112() {
   return (
     <div className="content-stretch flex flex-1 flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] w-full">Agents</p>
-      <Link to="/solution?agent=lora" className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Lora - AI Marketing Lead</Link>
-      <Link to="/solution?agent=sam" className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Sam - AI Strategist</Link>
-      <Link to="/solution?agent=clara" className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Clara - AI Content Writer</Link>
-      <Link to="/solution?agent=steve" className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Steve - AI Visual Designer</Link>
-      <Link to="/solution?agent=sarah" className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Sarah - AI Social Media Manager</Link>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] w-full">Agents</p>
+      <Link to="/solution?agent=lora" className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Lora - AI Marketing Lead</Link>
+      <Link to="/solution?agent=sam" className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Sam - AI Strategist</Link>
+      <Link to="/solution?agent=clara" className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Clara - AI Content Writer</Link>
+      <Link to="/solution?agent=steve" className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Steve - AI Visual Designer</Link>
+      <Link to="/solution?agent=sarah" className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full no-underline hover:text-[#1877f2]">Sarah - AI Social Media Manager</Link>
     </div>
   );
 }
@@ -6257,10 +6257,10 @@ function Container112() {
 function Container113() {
   return (
     <div className="content-stretch flex flex-1 flex-col gap-[14px] h-full items-start min-w-px not-italic relative whitespace-nowrap" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px]">Company</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">About us</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Contact Us/Support</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#9ca3af] text-[16px]">Become Affiliate (Soon)</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[#1f2937] text-[20px]">Company</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">About us</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Contact Us/Support</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#9ca3af] text-[16px]">Become Affiliate (Soon)</p>
     </div>
   );
 }
@@ -6268,16 +6268,16 @@ function Container113() {
 function Container114() {
   return (
     <div className="content-stretch flex flex-1 flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Blog</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 1</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 2</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog3</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 4</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 5</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 6</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 7</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 8</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] w-[169px]">View more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Blog</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 1</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 2</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog3</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 4</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 5</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 6</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 7</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Blog 8</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] w-[169px]">View more</p>
     </div>
   );
 }
@@ -6285,18 +6285,18 @@ function Container114() {
 function Container115() {
   return (
     <div className="content-stretch flex flex-1 flex-col gap-[12px] h-full items-start min-w-px not-italic relative" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Free AI Tools</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Article Writer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Audio Ad Creator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Conclusion Paragraph Generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Ideas And Titles Generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Introduction Generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Blog Outline Generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Blog Section Completer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Brand Voice Analyzer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Carousel Maker</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Cold Email Generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] whitespace-nowrap">View more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Free AI Tools</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Article Writer</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Audio Ad Creator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Conclusion Paragraph Generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Ideas And Titles Generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Introduction Generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Blog Outline Generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Blog Section Completer</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Brand Voice Analyzer</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Carousel Maker</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Cold Email Generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] whitespace-nowrap">View more</p>
     </div>
   );
 }
@@ -6375,8 +6375,8 @@ function Container116() {
 function Frame65() {
   return (
     <div className="content-stretch flex flex-col items-center not-italic relative shrink-0 whitespace-nowrap">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[100px] relative shrink-0 text-[78.571px] text-black text-center">Loraloop</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#6b7280] text-[16px]">Copyright © 2026 Orimoretail Pvt. Ltd. All rights reserved.</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[100px] relative shrink-0 text-[78.571px] text-black text-center">Loraloop</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#6b7280] text-[16px]">Copyright © 2026 Orimoretail Pvt. Ltd. All rights reserved.</p>
     </div>
   );
 }
@@ -6402,7 +6402,7 @@ function Frame9() {
           </svg>
         </div>
       </div>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24.818px] not-italic relative shrink-0 text-[19.5px] text-black text-center whitespace-nowrap">oraLoop.com</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24.818px] not-italic relative shrink-0 text-[19.5px] text-black text-center whitespace-nowrap">oraLoop.com</p>
     </div>
   );
 }
@@ -6437,7 +6437,7 @@ function AIEmployeesDropdown() {
         className="content-stretch flex gap-[2px] items-center justify-center p-[8px] relative shrink-0 cursor-pointer select-none"
         onClick={() => setOpen(!open)}
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">AI Employees</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">AI Employees</p>
         <div className="content-stretch flex items-center pt-[4px] relative shrink-0">
           <div className="relative shrink-0 size-[16px]" data-name="chevron-down">
             <div className="absolute inset-[33.33%_20.83%]" data-name="path">
@@ -6489,8 +6489,8 @@ function AIEmployeesDropdown() {
                 />
               </div>
               <div className="flex flex-col min-w-0">
-                <p className="font-['Satoshi:Bold',sans-serif] text-[13px] leading-[18px] text-[#1f2937] whitespace-nowrap overflow-hidden text-ellipsis no-underline">{agent.role}</p>
-                <p className="font-['General_Sans:Medium',sans-serif] text-[11px] leading-[16px] text-[#6b7280] whitespace-nowrap no-underline">{agent.name}</p>
+                <p className="font-['Satoshi',sans-serif] font-bold text-[13px] leading-[18px] text-[#1f2937] whitespace-nowrap overflow-hidden text-ellipsis no-underline">{agent.role}</p>
+                <p className="font-['General_Sans',sans-serif] font-medium text-[11px] leading-[16px] text-[#6b7280] whitespace-nowrap no-underline">{agent.name}</p>
               </div>
             </Link>
           ))}
@@ -6503,7 +6503,7 @@ function AIEmployeesDropdown() {
 function Frame3() {
   return (
     <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Solution</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Solution</p>
     </div>
   );
 }
@@ -6511,7 +6511,7 @@ function Frame3() {
 function Frame5() {
   return (
     <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Blogs</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Blogs</p>
     </div>
   );
 }
@@ -6519,7 +6519,7 @@ function Frame5() {
 function Frame4() {
   return (
     <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Pricing</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Pricing</p>
     </div>
   );
 }
@@ -6549,7 +6549,7 @@ function Frame() {
 function Frame2() {
   return (
     <div className="content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#0279ec] text-[16px] whitespace-nowrap">Login</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#0279ec] text-[16px] whitespace-nowrap">Login</p>
     </div>
   );
 }
@@ -6561,7 +6561,7 @@ function Frame8() {
         <Frame2 />
       </div>
       <div className="bg-[#1877f2] content-stretch flex gap-[4px] h-[36px] md:h-[40px] items-center justify-center px-4 md:px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[13px] md:text-[14px] text-white whitespace-nowrap">Get Start</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[13px] md:text-[14px] text-white whitespace-nowrap">Get Start</p>
       </div>
     </div>
   );

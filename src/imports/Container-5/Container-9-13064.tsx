@@ -2,7 +2,7 @@ import imgSteve1 from "./c9c2f9a7adf5d78f4c0df2eea6a47b4ab705250b.png";
 
 function Content() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[117px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[117px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI Visual Designer</p>
       </div>

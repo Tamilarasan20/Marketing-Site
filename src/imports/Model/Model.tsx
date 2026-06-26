@@ -24,7 +24,7 @@ function TextGroupVertical3() {
 
 function TextGroupVertical2() {
   return (
-    <div className="content-stretch flex flex-col font-['Satoshi:Bold',sans-serif] font-bold items-start pb-px relative shrink-0 tracking-[-1.2px] w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col font-['Satoshi',sans-serif] font-bold font-bold items-start pb-px relative shrink-0 tracking-[-1.2px] w-full" data-name="Text Group Vertical">
       <TextGroupVertical3 />
       <p className="leading-[76px] relative shrink-0 text-[#14a148] text-[68px] w-full font-bold">{`AI Marketing Team `}</p>
     </div>
@@ -35,7 +35,7 @@ function TextGroupVertical1() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
       <TextGroupVertical2 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[29px] relative shrink-0 text-[#9ca3af] text-[20px] w-[720px] whitespace-pre-wrap">
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[29px] relative shrink-0 text-[#9ca3af] text-[20px] w-[720px] whitespace-pre-wrap">
         {`An AI agents work as a team that plans content, creates, publishes,  tracks performance, manages ads & keeps improving itself on autopilot`}
         <br aria-hidden="true" />
         your 24/7 marketing team that never sleeps.
@@ -49,10 +49,10 @@ function Frame10() {
     <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0">
       <div className="bg-[#1f2937] content-stretch flex gap-[12px] h-[68px] items-center px-[24px] py-[16px] relative rounded-[24px] shrink-0 w-[480px]" data-name="Marketting/Input field">
         <div aria-hidden="true" className="absolute border-2 border-[rgba(147,197,253,0.4)] border-solid inset-[-2px] pointer-events-none rounded-[26px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
-        <p className="flex-[1_0_0] font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-px not-italic relative text-[#9ca3af] text-[18px]">enter your mail</p>
+        <p className="flex-[1_0_0] font-['General_Sans',sans-serif] font-medium leading-[28px] min-w-px not-italic relative text-[#9ca3af] text-[18px]">enter your mail</p>
       </div>
       <div className="bg-[#2a3040] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[16px] shrink-0 w-[182px]" data-name="Button">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Join Waitlist</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Join Waitlist</p>
       </div>
     </div>
   );
@@ -141,7 +141,7 @@ function Frame9() {
           </svg>
         </div>
       </div>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24.818px] not-italic relative shrink-0 text-[19.5px] text-black text-center whitespace-nowrap">oraLoop.com</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24.818px] not-italic relative shrink-0 text-[19.5px] text-black text-center whitespace-nowrap">oraLoop.com</p>
     </div>
   );
 }
@@ -171,7 +171,7 @@ function Frame7() {
 function Frame1() {
   return (
     <div className="content-stretch flex gap-[2px] items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">AI Employees</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">AI Employees</p>
       <Frame7 />
     </div>
   );
@@ -180,7 +180,7 @@ function Frame1() {
 function Frame3() {
   return (
     <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Solution</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Solution</p>
     </div>
   );
 }
@@ -188,7 +188,7 @@ function Frame3() {
 function Frame5() {
   return (
     <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Blogs</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Blogs</p>
     </div>
   );
 }
@@ -196,7 +196,7 @@ function Frame5() {
 function Frame4() {
   return (
     <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Pricing</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Pricing</p>
     </div>
   );
 }
@@ -224,7 +224,7 @@ function Frame() {
 function Frame2() {
   return (
     <div className="content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#0279ec] text-[16px] whitespace-nowrap">Login</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#0279ec] text-[16px] whitespace-nowrap">Login</p>
     </div>
   );
 }
@@ -234,7 +234,7 @@ function Frame8() {
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
       <Frame2 />
       <div className="bg-[#1877f2] content-stretch flex gap-[4px] h-[40px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
       </div>
     </div>
   );
@@ -243,8 +243,8 @@ function Frame8() {
 function Container() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-center not-italic relative shrink-0 text-center" data-name="Container">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Thanks for your interest!</p>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] w-[420px]">Our team will be reach out to you.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Thanks for your interest!</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] w-[420px]">Our team will be reach out to you.</p>
     </div>
   );
 }
@@ -256,7 +256,7 @@ function Data() {
         <div className="content-stretch flex flex-col gap-[16px] items-center px-[32px] py-[24px] relative size-full">
           <Container />
           <div className="bg-[#1877f2] content-stretch flex gap-[4px] h-[40px] items-center justify-center px-[12px] relative rounded-[120px] shrink-0 w-[120px]" data-name="Button">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Close</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Close</p>
           </div>
         </div>
       </div>

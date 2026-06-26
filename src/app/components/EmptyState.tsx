@@ -65,7 +65,7 @@ export default function EmptyState({
       <div className="flex flex-col gap-2">
         <h3
           className={cn(
-            "font-['Satoshi:Bold',sans-serif] text-[#0f172a] leading-tight",
+            "font-['Satoshi',sans-serif] font-bold text-[#0f172a] leading-tight",
             compact ? "text-lg" : "text-xl md:text-2xl"
           )}
         >
@@ -74,7 +74,7 @@ export default function EmptyState({
         {description && (
           <p
             className={cn(
-              "font-['General_Sans:Medium',sans-serif] text-[#64748b] leading-relaxed",
+              "font-['General_Sans',sans-serif] font-medium text-[#64748b] leading-relaxed",
               compact ? "text-sm" : "text-base md:text-lg"
             )}
           >
@@ -90,7 +90,7 @@ export default function EmptyState({
             const isPrimary = action.variant === "primary" || i === 0;
             const baseClass = cn(
               "w-full sm:w-auto inline-flex items-center justify-center rounded-full px-5 py-2.5",
-              "font-['Satoshi:Bold',sans-serif] text-sm transition-colors duration-150",
+              "font-['Satoshi',sans-serif] font-bold text-sm transition-colors duration-150",
               isPrimary
                 ? "bg-[#1877f2] text-white hover:bg-[#1565c0] active:bg-[#1256b0]"
                 : "bg-white border border-[#e2e8f0] text-[#374151] hover:bg-[#f8fafc] hover:border-[#cbd5e1]"

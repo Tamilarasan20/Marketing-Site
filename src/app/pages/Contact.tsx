@@ -8,8 +8,8 @@ export default function Contact() {
       <div className="max-w-[1280px] px-4 sm:px-6 md:px-20 mx-auto">
         <div className="flex flex-col gap-14">
           <div className="flex flex-col gap-4 py-[2px]">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-tight text-[#101828] text-4xl md:text-5xl tracking-[-1.2px]">Contact Us/Support</p>
-            <p className="font-['General_Sans:Medium',sans-serif] leading-7 text-[#6b7280] text-lg">Not surprisingly, we encourage you to communicate freely. Whether you have a question, comment or just want to share some #loracheer in social media, we'd love to hear from you.</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-tight text-[#101828] text-4xl md:text-5xl tracking-[-1.2px]">Contact Us/Support</p>
+            <p className="font-['General_Sans',sans-serif] font-medium leading-7 text-[#6b7280] text-lg">Not surprisingly, we encourage you to communicate freely. Whether you have a question, comment or just want to share some #loracheer in social media, we'd love to hear from you.</p>
           </div>
 
           <div className="flex flex-col gap-10">
@@ -24,11 +24,11 @@ export default function Contact() {
                   <path d="M26.7 3.8c-2.1-1-4.4-1.7-6.8-2.1-.3.5-.6 1.2-.8 1.7-2.5-.4-5-.4-7.5 0-.2-.5-.5-1.2-.8-1.7-2.4.4-4.7 1.1-6.8 2.1C.8 8.9-.5 13.8.2 18.7c2.8 2 5.5 3.3 8.1 4.1.7-.9 1.3-1.8 1.8-2.9-.9-.3-1.8-.8-2.6-1.3.2-.2.4-.3.6-.5 5 2.3 10.4 2.3 15.3 0 .2.2.4.3.6.5-.8.5-1.7.9-2.6 1.3.5 1 1.1 2 1.8 2.9 2.6-.8 5.3-2 8.1-4.1.8-5.7-.8-10.6-3.6-15z" />
                 </svg>
               </div>
-              <span className="font-['General_Sans:Semibold',sans-serif] leading-[22px] text-base text-white">Join Discord</span>
+              <span className="font-['General_Sans',sans-serif] font-semibold leading-[22px] text-base text-white">Join Discord</span>
             </a>
 
             <div className="flex flex-col gap-2">
-              <p className="font-['General_Sans:Semibold',sans-serif] leading-7 text-[#1f2937] text-lg">Social Media</p>
+              <p className="font-['General_Sans',sans-serif] font-semibold leading-7 text-[#1f2937] text-lg">Social Media</p>
               <div className="flex gap-2">
                 <a href="https://www.linkedin.com/company/loraloop/" target="_blank" rel="noopener noreferrer" className="rounded-[11.365px] w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
                   <img alt="LinkedIn" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos} />
@@ -44,12 +44,12 @@ export default function Contact() {
 
             <div className="flex flex-col gap-2 leading-[22px] text-base">
               <div className="flex gap-2 items-center">
-                <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280]">Email:</p>
-                <a href="mailto:loraloopai@gmail.com" className="font-['General_Sans:Semibold',sans-serif] text-[#1877f2] underline underline-offset-4 hover:opacity-80 transition-opacity">loraloopai@gmail.com</a>
+                <p className="font-['General_Sans',sans-serif] font-medium text-[#6b7280]">Email:</p>
+                <a href="mailto:loraloopai@gmail.com" className="font-['General_Sans',sans-serif] font-semibold text-[#1877f2] underline underline-offset-4 hover:opacity-80 transition-opacity">loraloopai@gmail.com</a>
               </div>
               <div className="flex gap-2 items-center">
-                <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280]">Discord Community:</p>
-                <a href="https://discord.gg/ynrBvXUY" target="_blank" rel="noopener noreferrer" className="font-['General_Sans:Semibold',sans-serif] text-[#1877f2] underline underline-offset-4 hover:opacity-80 transition-opacity">https://discord.gg/ynrBvXUY</a>
+                <p className="font-['General_Sans',sans-serif] font-medium text-[#6b7280]">Discord Community:</p>
+                <a href="https://discord.gg/ynrBvXUY" target="_blank" rel="noopener noreferrer" className="font-['General_Sans',sans-serif] font-semibold text-[#1877f2] underline underline-offset-4 hover:opacity-80 transition-opacity">https://discord.gg/ynrBvXUY</a>
               </div>
             </div>
           </div>

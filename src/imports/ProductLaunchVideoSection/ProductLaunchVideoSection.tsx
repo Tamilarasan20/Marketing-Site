@@ -15,8 +15,8 @@ import imgFeatureImage from "./81459e21086bbb45f043de724414eb6c6a228454.png";
 function Cotnet() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">See it in action</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px]  relative shrink-0 text-[#374151] text-[20px] ">Watch how Loraloop manage marketing end to end</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">See it in action</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px]  relative shrink-0 text-[#374151] text-[20px] ">Watch how Loraloop manage marketing end to end</p>
     </div>
   );
 }
@@ -41,8 +41,8 @@ function VideoSection() {
 function Cotnet1() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[0] relative shrink-0 text-[#9ca3af] text-[20px] w-full whitespace-pre-wrap">
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[0] relative shrink-0 text-[#9ca3af] text-[20px] w-full whitespace-pre-wrap">
         <span className="leading-[28px]">{`You don’t need a large team to grow a business. Loraloop provides AI employees for marketing that handle daily work. From planning to execution, work gets done efficiently, 24/7.  `}</span>
         <span className="leading-[28px] text-white">10x your marketing with 10x less expansive.</span>
       </p>
@@ -54,8 +54,8 @@ function BadgeM() {
   return (
     <div className="bg-[#1558b0] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[82px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Strategist</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[82px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Strategist</p>
       </div>
     </div>
   );
@@ -65,8 +65,8 @@ function TextGroupVertical() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-white tracking-[-0.48px] ">Identify what’s trending and what my competitors are doing</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-80 relative shrink-0 text-[16px] text-white ">Sam analyzes market trends and competitor actions. He identifies which content types or topics will help me grow.</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px]  not-italic relative shrink-0 text-[32px] text-white tracking-[-0.48px] ">Identify what’s trending and what my competitors are doing</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  not-italic opacity-80 relative shrink-0 text-[16px] text-white ">Sam analyzes market trends and competitor actions. He identifies which content types or topics will help me grow.</p>
     </div>
   );
 }
@@ -74,7 +74,7 @@ function TextGroupVertical() {
 function LearnMoreContainer() {
   return (
     <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </div>
   );
 }
@@ -96,7 +96,7 @@ function FeatureImageLarge() {
         <div className="absolute bg-size-[307.20001220703125px_307.20001220703125px] bg-top-left inset-0 mix-blend-plus-lighter opacity-40 rounded-[30px]" style={{ backgroundImage: `url('${imgFeatureImageLarge}')` }} />
       </div>
       <FeatureTextGroup />
-      <p className="absolute bottom-[54px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[217px] not-italic text-[#134d91] text-[28px] tracking-[-0.48px] translate-y-full w-[52px]">Sam</p>
+      <p className="absolute bottom-[54px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[217px] not-italic text-[#134d91] text-[28px] tracking-[-0.48px] translate-y-full w-[52px]">Sam</p>
       <div className="absolute bottom-0 flex h-[219px] items-center justify-center right-[3px] w-[262px]">
         <div className="-scale-y-100 flex-none rotate-180">
           <div className="h-[219px] relative w-[262px]" data-name="Feature Image Small">
@@ -114,8 +114,8 @@ function BadgeM1() {
   return (
     <div className="bg-[#137e3b] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[146px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI SEO/GEO Manager</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[146px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI SEO/GEO Manager</p>
       </div>
     </div>
   );
@@ -125,8 +125,8 @@ function TextGroupVertical1() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM1 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Optimize my content for SEO and GEO to improve discoverability.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black  whitespace-pre-wrap">{`Shopie create seo optimised contents so ranks well whether in google or GEO like chatgpt, claude,  people find me easily.`}</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Optimize my content for SEO and GEO to improve discoverability.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black  whitespace-pre-wrap">{`Shopie create seo optimised contents so ranks well whether in google or GEO like chatgpt, claude,  people find me easily.`}</p>
     </div>
   );
 }
@@ -134,7 +134,7 @@ function TextGroupVertical1() {
 function LearnMoreContainer1() {
   return (
     <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </div>
   );
 }
@@ -161,7 +161,7 @@ function FeatureImageLarge1() {
           <img alt="" className="absolute h-[99.91%] left-[-0.01%] max-w-none top-[0.09%] w-[100.02%]" src={imgFeatureImageSmall1} />
         </div>
       </div>
-      <p className="-translate-x-full absolute bottom-[55px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[302px] not-italic text-[#143b2c] text-[28px] text-right tracking-[-0.48px] translate-y-full w-[78px]">Sophie</p>
+      <p className="-translate-x-full absolute bottom-[55px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[302px] not-italic text-[#143b2c] text-[28px] text-right tracking-[-0.48px] translate-y-full w-[78px]">Sophie</p>
     </div>
   );
 }
@@ -170,8 +170,8 @@ function BadgeM2() {
   return (
     <div className="bg-[#fce453] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[0px] tracking-[0.21px] whitespace-nowrap">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Ads Manager</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#b25107] text-[0px] tracking-[0.21px] whitespace-nowrap">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Ads Manager</p>
       </div>
     </div>
   );
@@ -181,12 +181,12 @@ function TextGroupVertical2() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM2 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content] whitespace-pre-wrap">
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] min-w-full not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] w-[min-content] whitespace-pre-wrap">
         {`Run and improve my `}
         <br aria-hidden="true" />
         Ad campaigns
       </p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Elena runs and scales my ad campaigns, making sure you get the best return on investment.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Elena runs and scales my ad campaigns, making sure you get the best return on investment.</p>
     </div>
   );
 }
@@ -194,7 +194,7 @@ function TextGroupVertical2() {
 function LearnMoreContainer2() {
   return (
     <div className="bg-white content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </div>
   );
 }
@@ -222,7 +222,7 @@ function FeatureImageLarge2() {
             <img alt="" className="absolute h-[173.5%] left-[-36.83%] max-w-none top-[-28.37%] w-[173.67%]" src={imgBannerImageSideRight} />
           </div>
         </div>
-        <p className="absolute bottom-[54.67px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[227px] not-italic text-[#aa9302] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Elena</p>
+        <p className="absolute bottom-[54.67px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[227px] not-italic text-[#aa9302] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Elena</p>
       </div>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-2px_1px_0px_rgba(255,241,151,0.4)]" />
       <div aria-hidden="true" className="absolute border border-[#fff6bc] border-solid inset-0 pointer-events-none rounded-[30px] shadow-[0px_11.392px_22.336px_0px_rgba(255,227,42,0.19)]" />
@@ -234,8 +234,8 @@ function BadgeM3() {
   return (
     <div className="bg-[#691fa6] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] whitespace-nowrap">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Marketing Lead</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] whitespace-nowrap">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Marketing Lead</p>
       </div>
     </div>
   );
@@ -245,8 +245,8 @@ function TextGroupVertical3() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM3 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-white tracking-[-1px] ">Plan a marketing strategy for my business</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-90 relative shrink-0 text-[16px] text-white ">{`Lora turn my business goals into a clear execution plan. lora breaks down what needs to be done, assigns tasks to the right team, right members, & keeps everything aligned so my marketing runs in my voice.`}</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px]  not-italic relative shrink-0 text-[32px] text-white tracking-[-1px] ">Plan a marketing strategy for my business</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  not-italic opacity-90 relative shrink-0 text-[16px] text-white ">{`Lora turn my business goals into a clear execution plan. lora breaks down what needs to be done, assigns tasks to the right team, right members, & keeps everything aligned so my marketing runs in my voice.`}</p>
     </div>
   );
 }
@@ -254,7 +254,7 @@ function TextGroupVertical3() {
 function LearnMoreContainer3() {
   return (
     <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </div>
   );
 }
@@ -279,7 +279,7 @@ function FeatureHighlight1() {
       <div className="absolute bottom-[-1px] h-[285px] right-0 w-[314px]" data-name="Feature Image Small">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFeatureImageSmall2} />
       </div>
-      <p className="absolute font-['Kalam:Bold',sans-serif] leading-[34px] left-[780px] not-italic text-[#501481] text-[28px] top-[321px] tracking-[-0.48px] whitespace-nowrap">Lora</p>
+      <p className="absolute font-['Kalam',sans-serif] font-bold leading-[34px] left-[780px] not-italic text-[#501481] text-[28px] top-[321px] tracking-[-0.48px] whitespace-nowrap">Lora</p>
     </div>
   );
 }
@@ -288,8 +288,8 @@ function BadgeM4() {
   return (
     <div className="bg-[#0d746c] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#eefdf9] text-[0px] tracking-[0.21px] w-[167px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Social Media Manager</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#eefdf9] text-[0px] tracking-[0.21px] w-[167px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Social Media Manager</p>
       </div>
     </div>
   );
@@ -299,8 +299,8 @@ function TextGroupVertical4() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM4 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[#1f2937] text-[32px] tracking-[-0.48px] ">{`Schedule publish my posts, contents & Engage with audiences `}</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic relative shrink-0 text-[#1f2937] text-[16px] ">Sarah schedules my social posts, handles community engagement, replying and nurturing relationships.</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px]  not-italic relative shrink-0 text-[#1f2937] text-[32px] tracking-[-0.48px] ">{`Schedule publish my posts, contents & Engage with audiences `}</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  not-italic relative shrink-0 text-[#1f2937] text-[16px] ">Sarah schedules my social posts, handles community engagement, replying and nurturing relationships.</p>
     </div>
   );
 }
@@ -308,7 +308,7 @@ function TextGroupVertical4() {
 function LearnMoreContainer4() {
   return (
     <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </div>
   );
 }
@@ -335,7 +335,7 @@ function FeatureImageLarge3() {
           <img alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgFeatureImageSmall3} />
         </div>
       </div>
-      <p className="-translate-x-full absolute bottom-[55px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[301px] not-italic text-[#fafcfb] text-[28px] text-right tracking-[-0.48px] translate-y-full whitespace-nowrap">Sarah</p>
+      <p className="-translate-x-full absolute bottom-[55px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[301px] not-italic text-[#fafcfb] text-[28px] text-right tracking-[-0.48px] translate-y-full whitespace-nowrap">Sarah</p>
     </div>
   );
 }
@@ -344,8 +344,8 @@ function BadgeM5() {
   return (
     <div className="bg-[#3e7ff9] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] whitespace-nowrap">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Analyst</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] whitespace-nowrap">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Analyst</p>
       </div>
     </div>
   );
@@ -355,8 +355,8 @@ function TextGroupVertical5() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[732px]" data-name="Text Group Vertical">
       <BadgeM5 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Analyze every content performance and determine what’s working whats not</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px] min-w-full not-italic opacity-60 relative shrink-0 text-[18px] text-black w-[min-content] whitespace-pre-wrap">
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Analyze every content performance and determine what’s working whats not</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px] min-w-full not-italic opacity-60 relative shrink-0 text-[18px] text-black w-[min-content] whitespace-pre-wrap">
         {`Nick tracks performs of contes, posts, ads. `}
         <br aria-hidden="true" />
         He reports on what worked, what didn’t, and what to improve next.
@@ -368,7 +368,7 @@ function TextGroupVertical5() {
 function LearnMoreContainer5() {
   return (
     <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </div>
   );
 }
@@ -396,7 +396,7 @@ function FeatureImageLarge4() {
             <img alt="" className="absolute h-[120.44%] left-[-48.18%] max-w-none top-0 w-[193.05%]" src={imgImage168} />
           </div>
         </div>
-        <p className="absolute bottom-[44px] font-['Kalam:Bold',sans-serif] leading-[34px] not-italic right-[302px] text-[28px] text-white tracking-[-0.48px] translate-x-full translate-y-full whitespace-nowrap">Nick</p>
+        <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] not-italic right-[302px] text-[28px] text-white tracking-[-0.48px] translate-x-full translate-y-full whitespace-nowrap">Nick</p>
       </div>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-2px_1px_0px_rgba(151,193,255,0.4)]" />
       <div aria-hidden="true" className="absolute border border-[#c4dcff] border-solid inset-0 pointer-events-none rounded-[30px] shadow-[0px_11.392px_22.336px_0px_rgba(53,106,185,0.09)]" />
@@ -408,8 +408,8 @@ function BadgeM6() {
   return (
     <div className="bg-[#0abcfb] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] w-[119px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Content Writer</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] w-[119px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Content Writer</p>
       </div>
     </div>
   );
@@ -419,8 +419,8 @@ function TextGroupVertical6() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM6 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">{`Writes content that attracts customers for blog, mail & more..`}</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Clara writes my blogs, emails, threads, newsletters, Social posts and other persuasive content that drives action.</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">{`Writes content that attracts customers for blog, mail & more..`}</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Clara writes my blogs, emails, threads, newsletters, Social posts and other persuasive content that drives action.</p>
     </div>
   );
 }
@@ -428,7 +428,7 @@ function TextGroupVertical6() {
 function LearnMoreContainer6() {
   return (
     <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </div>
   );
 }
@@ -451,7 +451,7 @@ function FeatureHighlight2() {
           <img alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgGeminiGeneratedImageBewxcwbewxcwbewx2} />
         </div>
       </div>
-      <p className="absolute bottom-[44px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[120px] not-italic text-[#286a8f] text-[28px] tracking-[-0.48px] translate-y-full w-[62px]">Clara</p>
+      <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[120px] not-italic text-[#286a8f] text-[28px] tracking-[-0.48px] translate-y-full w-[62px]">Clara</p>
     </div>
   );
 }
@@ -460,8 +460,8 @@ function BadgeM7() {
   return (
     <div className="bg-[#5762e5] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[123px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Video Producer</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[0px] text-white tracking-[0.21px] w-[123px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Video Producer</p>
       </div>
     </div>
   );
@@ -471,8 +471,8 @@ function TextGroupVertical7() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-h-px relative w-full" data-name="Text Group Vertical">
       <BadgeM7 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Create Videos for TikTok, Insta, YouTube etc.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Theo turns your ideas into engaging video content for your brand. plans and scripts your short-form videos for platforms like TikTok or YouTube, boosting engagement.</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Create Videos for TikTok, Insta, YouTube etc.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Theo turns your ideas into engaging video content for your brand. plans and scripts your short-form videos for platforms like TikTok or YouTube, boosting engagement.</p>
     </div>
   );
 }
@@ -480,7 +480,7 @@ function TextGroupVertical7() {
 function LearnMoreContainer7() {
   return (
     <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </div>
   );
 }
@@ -508,7 +508,7 @@ function FeatureImageLarge5() {
             <img alt="" className="absolute h-[373.26%] left-[-76.92%] max-w-none top-[-12.2%] w-[251.46%]" src={imgObject} />
           </div>
         </div>
-        <p className="absolute bottom-[44px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[120px] not-italic text-[#06074e] text-[28px] tracking-[-0.48px] translate-y-full w-[57px]">Theo</p>
+        <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[120px] not-italic text-[#06074e] text-[28px] tracking-[-0.48px] translate-y-full w-[57px]">Theo</p>
       </div>
       <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-2px_1px_0px_rgba(151,193,255,0.4)]" />
       <div aria-hidden="true" className="absolute border border-[#c4dcff] border-solid inset-0 pointer-events-none rounded-[30px] shadow-[0px_11.392px_22.336px_0px_rgba(53,106,185,0.09)]" />
@@ -520,8 +520,8 @@ function BadgeM8() {
   return (
     <div className="bg-[#fdc9a8] content-stretch flex items-center px-[14px] py-[8px] relative rounded-[50px] shrink-0" data-name="Badge/M">
       <div aria-hidden="true" className="absolute border border-[rgba(255,255,255,0.15)] border-solid inset-0 pointer-events-none rounded-[50px]" />
-      <div className="flex flex-col font-['Satoshi:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] w-[123px]">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] text-[14px]">AI Visual Designer</p>
+      <div className="flex flex-col font-['Satoshi',sans-serif] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#374151] text-[0px] tracking-[0.21px] w-[123px]">
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] text-[14px]">AI Visual Designer</p>
       </div>
     </div>
   );
@@ -531,8 +531,8 @@ function TextGroupVertical8() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM8 />
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Steve Design scroll-stopping visuals and carousels that reflect my brand and grab attention in all platforms</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px]  not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] ">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  not-italic opacity-60 relative shrink-0 text-[16px] text-black ">Steve Design scroll-stopping visuals and carousels that reflect my brand and grab attention in all platforms</p>
     </div>
   );
 }
@@ -540,7 +540,7 @@ function TextGroupVertical8() {
 function LearnMoreContainer8() {
   return (
     <div className="bg-[rgba(255,255,255,0.6)] content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0" data-name="Learn More Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[normal] not-italic relative shrink-0 text-[16px] text-black tracking-[-0.16px] whitespace-nowrap">Learn more</p>
     </div>
   );
 }
@@ -567,7 +567,7 @@ function FeatureImageLarge6() {
           <img alt="" className="absolute h-[102.18%] left-[-33.01%] max-w-none top-0 w-[168.71%]" src={imgFeatureImage} />
         </div>
       </div>
-      <p className="absolute bottom-[44px] font-['Kalam:Bold',sans-serif] leading-[34px] left-[120px] not-italic text-[#8e492b] text-[28px] tracking-[-0.48px] translate-y-full w-[66px]">Steve</p>
+      <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[120px] not-italic text-[#8e492b] text-[28px] tracking-[-0.48px] translate-y-full w-[66px]">Steve</p>
     </div>
   );
 }
@@ -604,7 +604,7 @@ function MainContent() {
       <Cotnet1 />
       <FeatureHighlight />
       <div className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[16px] relative rounded-[120px] shrink-0 w-[140px]" data-name="Button">
-        <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
+        <p className="font-['General_Sans',sans-serif] font-semibold leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Start</p>
       </div>
     </div>
   );

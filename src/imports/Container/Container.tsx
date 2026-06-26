@@ -11,10 +11,10 @@ import imgNick1 from "./6ec3052296e3932fcfa638bc419f504d211f1c3c.png";
 function Content() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center leading-[0] not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Semibold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[14px]">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-semibold justify-center relative shrink-0 text-[#1f2937] text-[14px]">
         <p className="leading-[18px]">AI Marketing Lead</p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[12px]">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[12px]">
         <p className="leading-[16px]">Lora</p>
       </div>
     </div>
@@ -34,7 +34,7 @@ function Container1() {
 
 function Content1() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[82px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[82px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI Strategist</p>
       </div>
@@ -58,7 +58,7 @@ function Container2() {
 
 function Content2() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[142px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[142px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI SEO/GEO Manager</p>
       </div>
@@ -82,7 +82,7 @@ function Container3() {
 
 function Content3() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[114px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[114px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI Content Writer</p>
       </div>
@@ -106,7 +106,7 @@ function Container4() {
 
 function Content4() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[117px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[117px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI Visual Designer</p>
       </div>
@@ -130,7 +130,7 @@ function Container5() {
 
 function Content5() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[117px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[117px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI Video Producer</p>
       </div>
@@ -154,7 +154,7 @@ function Container6() {
 
 function Content6() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[160px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[160px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI Social Media Manager</p>
       </div>
@@ -178,7 +178,7 @@ function Container7() {
 
 function Content7() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[103px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[103px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI Ads Manager</p>
       </div>
@@ -202,7 +202,7 @@ function Container8() {
 
 function Content8() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[66px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[66px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI Analyst</p>
       </div>
