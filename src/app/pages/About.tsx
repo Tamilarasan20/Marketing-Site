@@ -6,8 +6,8 @@ export default function About() {
       <div className="max-w-[1280px] px-4 sm:px-6 md:px-20 mx-auto">
         <div className="flex flex-col gap-[88px]">
           <div className="flex flex-col gap-14">
-            <p className="font-['Satoshi',sans-serif] font-bold leading-tight text-[#101828] text-4xl md:text-5xl tracking-[-1.2px]">About Loraloop</p>
-            <div className="flex flex-col gap-4 font-['General_Sans',sans-serif] font-medium leading-7 text-[#374151] text-lg">
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[1.05] text-[#0f172a] text-4xl sm:text-5xl lg:text-[64px] tracking-[-0.03em] text-balance">About Loraloop</p>
+            <div className="flex flex-col gap-4 font-['General_Sans',sans-serif] leading-[1.6] text-[#4b5563] text-[18px] md:text-[20px]">
               <p>Loraloop is building the future of AI marketing — where SMBs, businesses, creators, and eCommerce brands don't rely on large teams or endless manual effort to grow.</p>
               <p>We created Loraloop to solve a simple problem: marketing is complex, time-consuming, and hard to scale. From content creation to ads, analytics to optimization — it demands constant attention.</p>
               <p>Loraloop introduces autonomous AI employees that run your entire marketing engine. They plan, create, publish, analyze, and improve — continuously, intelligently, and without burnout.</p>
@@ -17,32 +17,32 @@ export default function About() {
           </div>
 
           <div className="flex flex-col gap-10">
-            <p className="font-['Satoshi',sans-serif] font-bold leading-tight text-[#101828] text-3xl md:text-4xl tracking-[-0.54px]">What Makes Loraloop Different</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[1.1] text-[#111827] text-3xl md:text-[40px] tracking-[-0.02em]">What Makes Loraloop Different</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               <div>
-                <p className="font-['Satoshi',sans-serif] font-bold leading-8 text-[#101828] text-2xl">Always On</p>
-                <p className="font-['General_Sans',sans-serif] font-medium leading-7 text-[#374151] text-lg">Your marketing never stops. Loraloop works around the clock.</p>
+                <p className="font-['Satoshi',sans-serif] font-semibold leading-[1.25] text-[#111827] text-[22px] tracking-[-0.015em]">Always On</p>
+                <p className="font-['General_Sans',sans-serif] leading-[1.6] text-[#4b5563] text-[16px]">Your marketing never stops. Loraloop works around the clock.</p>
               </div>
               <div>
-                <p className="font-['Satoshi',sans-serif] font-bold leading-8 text-[#101828] text-2xl">End-to-End Execution</p>
-                <p className="font-['General_Sans',sans-serif] font-medium leading-7 text-[#374151] text-lg">From strategy to results — everything is handled in one place.</p>
+                <p className="font-['Satoshi',sans-serif] font-semibold leading-[1.25] text-[#111827] text-[22px] tracking-[-0.015em]">End-to-End Execution</p>
+                <p className="font-['General_Sans',sans-serif] leading-[1.6] text-[#4b5563] text-[16px]">From strategy to results — everything is handled in one place.</p>
               </div>
               <div>
-                <p className="font-['Satoshi',sans-serif] font-bold leading-8 text-[#101828] text-2xl">Data-Driven Decisions</p>
-                <p className="font-['General_Sans',sans-serif] font-medium leading-7 text-[#374151] text-lg">Every action is based on real performance insights, not guesswork.</p>
+                <p className="font-['Satoshi',sans-serif] font-semibold leading-[1.25] text-[#111827] text-[22px] tracking-[-0.015em]">Data-Driven Decisions</p>
+                <p className="font-['General_Sans',sans-serif] leading-[1.6] text-[#4b5563] text-[16px]">Every action is based on real performance insights, not guesswork.</p>
               </div>
               <div>
-                <p className="font-['Satoshi',sans-serif] font-bold leading-8 text-[#101828] text-2xl">Built for Growth</p>
-                <p className="font-['General_Sans',sans-serif] font-medium leading-7 text-[#374151] text-lg">Designed to scale with your business, from startup to enterprise.</p>
+                <p className="font-['Satoshi',sans-serif] font-semibold leading-[1.25] text-[#111827] text-[22px] tracking-[-0.015em]">Built for Growth</p>
+                <p className="font-['General_Sans',sans-serif] leading-[1.6] text-[#4b5563] text-[16px]">Designed to scale with your business, from startup to enterprise.</p>
               </div>
             </div>
           </div>
 
           <div className="bg-[#101828] rounded-[40px] px-8 py-10">
             <div className="flex flex-col gap-2">
-              <p className="font-['Satoshi',sans-serif] font-bold leading-tight text-3xl md:text-[40px] text-white tracking-[-0.8px]">Our Vision</p>
-              <p className="font-['Inter',sans-serif] font-normal font-normal leading-8 text-[#d1d5dc] text-[22px]">We believe the future belongs to businesses that move faster, smarter, and more efficiently.</p>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-8 text-[22px] text-white">Loraloop is not just a tool — it's your AI-powered marketing team, built to help you grow without limits.</p>
+              <p className="font-['Satoshi',sans-serif] font-bold leading-[1.1] text-3xl md:text-[40px] text-white tracking-[-0.02em]">Our Vision</p>
+              <p className="font-['Inter',sans-serif] font-normal leading-[1.6] text-[#d1d5dc] text-[18px] md:text-[20px]">We believe the future belongs to businesses that move faster, smarter, and more efficiently.</p>
+              <p className="font-['General_Sans',sans-serif] font-medium leading-[1.6] text-[18px] md:text-[20px] text-white">Loraloop is not just a tool — it's your AI-powered marketing team, built to help you grow without limits.</p>
             </div>
           </div>
         </div>

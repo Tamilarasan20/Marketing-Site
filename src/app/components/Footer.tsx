@@ -38,7 +38,7 @@ export default function Footer() {
         <div className="flex flex-col gap-12 md:gap-16">
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 xl:grid-cols-5 xl:gap-12">
             <div className="flex flex-col gap-[13px] items-center text-center sm:items-start sm:text-left">
-              <p className="font-['Satoshi',sans-serif] font-bold leading-7 text-[#1f2937] text-xl">Solutions</p>
+              <p className="font-['General_Sans',sans-serif] font-semibold uppercase tracking-[0.08em] leading-5 text-[#6b7280] text-[13px]">Solutions</p>
               {audienceLinks.map((link) => (
                 <Link
                   key={link.to}
@@ -51,7 +51,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-[13px] items-center text-center sm:items-start sm:text-left">
-              <p className="font-['Satoshi',sans-serif] font-bold leading-7 text-[#1f2937] text-xl">Agents</p>
+              <p className="font-['General_Sans',sans-serif] font-semibold uppercase tracking-[0.08em] leading-5 text-[#6b7280] text-[13px]">Agents</p>
               <Link to="/solution" className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Lora - AI Marketing Lead</Link>
               <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Sam - AI Strategist (Soon)</p>
               <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Sophie - AI SEO/GEO Manager (Soon)</p>
@@ -64,7 +64,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-[13px] items-center text-center sm:items-start sm:text-left">
-              <p className="font-['Satoshi',sans-serif] font-bold leading-7 text-[#1f2937] text-xl">AI Tools</p>
+              <p className="font-['General_Sans',sans-serif] font-semibold uppercase tracking-[0.08em] leading-5 text-[#6b7280] text-[13px]">AI Tools</p>
               {aiTools.map((tool) => (
                 <Link
                   key={tool.to}
@@ -83,7 +83,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-[13px] items-center text-center sm:items-start sm:text-left">
-              <p className="font-['Satoshi',sans-serif] font-bold leading-7 text-[#1f2937] text-xl">Blog</p>
+              <p className="font-['General_Sans',sans-serif] font-semibold uppercase tracking-[0.08em] leading-5 text-[#6b7280] text-[13px]">Blog</p>
               {blogLinks.map((link) => (
                 <Link
                   key={link.to}
@@ -99,7 +99,7 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-[14px] items-center text-center sm:items-start sm:text-left">
-              <p className="font-['Satoshi',sans-serif] font-bold leading-7 text-[#1f2937] text-xl">Company</p>
+              <p className="font-['General_Sans',sans-serif] font-semibold uppercase tracking-[0.08em] leading-5 text-[#6b7280] text-[13px]">Company</p>
               <Link to="/about" className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">About us</Link>
               <Link to="/privacy-policy" className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Privacy Policy</Link>
               <Link to="/terms" className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Terms of Service</Link>
@@ -123,7 +123,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col items-center gap-4 sm:gap-6">
               <div className="flex items-center justify-center">
-                <p className="font-['Satoshi',sans-serif] font-bold leading-tight text-[clamp(2.5rem,8vw,5rem)] text-black whitespace-nowrap">Loraloop</p>
+                <p className="font-['Satoshi',sans-serif] font-bold leading-[0.95] tracking-[-0.04em] text-[clamp(2.5rem,8vw,5rem)] text-[#0f172a] whitespace-nowrap">Loraloop</p>
               </div>
               <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#6b7280] text-sm sm:text-base text-center">Copyright © 2026 Orimoretail Pvt. Ltd. All rights reserved.</p>
             </div>

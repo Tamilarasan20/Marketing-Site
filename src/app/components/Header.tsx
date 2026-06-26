@@ -228,7 +228,7 @@ export default function Header() {
             alt="Loraloop logo"
             className="w-[34px] h-[34px] object-contain shrink-0"
           />
-          <span className="font-['Satoshi',sans-serif] font-medium text-[19.5px] leading-[24.82px] text-black whitespace-nowrap">
+          <span className="font-['Satoshi',sans-serif] font-bold text-[19.5px] leading-[24.82px] tracking-[-0.02em] text-[#0f172a] whitespace-nowrap">
             Loraloop
           </span>
         </Link>

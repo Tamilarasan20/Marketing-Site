@@ -8,8 +8,8 @@ export default function Contact() {
       <div className="max-w-[1280px] px-4 sm:px-6 md:px-20 mx-auto">
         <div className="flex flex-col gap-14">
           <div className="flex flex-col gap-4 py-[2px]">
-            <p className="font-['Satoshi',sans-serif] font-bold leading-tight text-[#101828] text-4xl md:text-5xl tracking-[-1.2px]">Contact Us/Support</p>
-            <p className="font-['General_Sans',sans-serif] font-medium leading-7 text-[#6b7280] text-lg">Not surprisingly, we encourage you to communicate freely. Whether you have a question, comment or just want to share some #loracheer in social media, we'd love to hear from you.</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[1.05] text-[#0f172a] text-4xl sm:text-5xl lg:text-[64px] tracking-[-0.03em] text-balance">Contact Us/Support</p>
+            <p className="font-['General_Sans',sans-serif] leading-[1.6] text-[#4b5563] text-[18px] md:text-[20px]">Not surprisingly, we encourage you to communicate freely. Whether you have a question, comment or just want to share some #loracheer in social media, we'd love to hear from you.</p>
           </div>
 
           <div className="flex flex-col gap-10">
@@ -28,7 +28,7 @@ export default function Contact() {
             </a>
 
             <div className="flex flex-col gap-2">
-              <p className="font-['General_Sans',sans-serif] font-semibold leading-7 text-[#1f2937] text-lg">Social Media</p>
+              <p className="font-['Satoshi',sans-serif] font-semibold leading-[1.25] text-[#111827] text-[22px] tracking-[-0.015em]">Social Media</p>
               <div className="flex gap-2">
                 <a href="https://www.linkedin.com/company/loraloop/" target="_blank" rel="noopener noreferrer" className="rounded-[11.365px] w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
                   <img alt="LinkedIn" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos} />
@@ -42,7 +42,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2 leading-[22px] text-base">
+            <div className="flex flex-col gap-2 leading-[1.6] text-[14px]">
               <div className="flex gap-2 items-center">
                 <p className="font-['General_Sans',sans-serif] font-medium text-[#6b7280]">Email:</p>
                 <a href="mailto:loraloopai@gmail.com" className="font-['General_Sans',sans-serif] font-semibold text-[#1877f2] underline underline-offset-4 hover:opacity-80 transition-opacity">loraloopai@gmail.com</a>

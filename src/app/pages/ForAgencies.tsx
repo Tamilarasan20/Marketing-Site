@@ -37,13 +37,13 @@ export default function ForAgencies() {
         <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
           <span>For Marketing Agencies</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+        <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
           Scale client marketing output<br />
           <span style={{ background: 'linear-gradient(135deg, #1d4ed8, #7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             without hiring more people
           </span>
         </h1>
-        <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto mb-10">
           Manage 5, 10, or 20 client brands with one AI marketing platform. Generate content, run approval workflows, and deliver reports — without growing your headcount.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -62,17 +62,17 @@ export default function ForAgencies() {
             See Agency pricing →
           </Link>
         </div>
-        <p className="mt-4 text-sm text-gray-400">Agency plan includes multi-brand workspace, team access, and client approval workflow.</p>
+        <p className="mt-4 text-[14px] text-[#6b7280]">Agency plan includes multi-brand workspace, team access, and client approval workflow.</p>
       </section>
 
       {/* The agency capacity wall */}
       <section className="py-16 bg-gray-50 border-y border-gray-100">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Every agency hits the same wall</h2>
-          <p className="text-gray-500 text-lg leading-relaxed mb-4">
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Every agency hits the same wall</h2>
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] mb-4">
             More clients means more content, more strategy hours, more reports, more coordination. The only solution agencies have had is hiring — which compresses margins and adds management overhead.
           </p>
-          <p className="text-gray-500 text-lg leading-relaxed">
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6]">
             Loraloop breaks the link between client count and headcount. Your team focuses on client relationships and quality control. Loraloop handles the production.
           </p>
         </div>
@@ -81,14 +81,14 @@ export default function ForAgencies() {
       {/* Features grid */}
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Built for multi-client marketing operations</h2>
-          <p className="text-gray-500 text-center mb-12 max-w-xl mx-auto">Every feature is designed for agencies managing multiple brands, not solo users posting once a day.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Built for multi-client marketing operations</h2>
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Every feature is designed for agencies managing multiple brands, not solo users posting once a day.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {agencyFeatures.map((f) => (
               <div key={f.title} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
                 <div className="text-2xl mb-3">{f.icon}</div>
-                <h3 className="font-bold text-gray-900 text-sm mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{f.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
+                <h3 className="font-semibold text-[#111827] text-[15px] leading-[1.25] tracking-[-0.015em] mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{f.title}</h3>
+                <p className="text-[14px] text-[#4b5563] leading-[1.6]">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -98,7 +98,7 @@ export default function ForAgencies() {
       {/* Before / After comparison */}
       <section className="py-16 px-4 bg-gray-50 border-y border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-10" style={{ fontFamily: 'Satoshi, sans-serif' }}>What changes when you run Loraloop</h2>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-10" style={{ fontFamily: 'Satoshi, sans-serif' }}>What changes when you run Loraloop</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -111,9 +111,9 @@ export default function ForAgencies() {
               <tbody className="divide-y divide-gray-100">
                 {comparisonRows.map((row) => (
                   <tr key={row.aspect}>
-                    <td className="py-4 pr-6 font-medium text-gray-900">{row.aspect}</td>
-                    <td className="py-4 pr-6 text-gray-500">{row.without}</td>
-                    <td className="py-4 text-gray-700">{row.with}</td>
+                    <td className="py-4 pr-6 font-semibold text-[#111827]">{row.aspect}</td>
+                    <td className="py-4 pr-6 text-[#4b5563]">{row.without}</td>
+                    <td className="py-4 text-[#4b5563]">{row.with}</td>
                   </tr>
                 ))}
               </tbody>
@@ -126,8 +126,8 @@ export default function ForAgencies() {
       <section className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center rounded-3xl p-12" style={{ background: 'linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%)' }}>
           <div className="inline-block bg-white bg-opacity-20 text-white text-xs font-bold px-3 py-1 rounded-full mb-4">Agency Offer</div>
-          <h2 className="text-3xl font-extrabold text-white mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Run 3 client brands with Loraloop — free for 7 days</h2>
-          <p className="text-blue-100 mb-6 leading-relaxed">Test the full agency workflow: multi-brand workspace, client approval, content generation, and performance reporting — on 3 real client accounts, no card required.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Run 3 client brands with Loraloop — free for 7 days</h2>
+          <p className="text-blue-100 text-[16px] mb-6 leading-[1.6]">Test the full agency workflow: multi-brand workspace, client approval, content generation, and performance reporting — on 3 real client accounts, no card required.</p>
           <div className="space-y-3">
             {['Multi-brand workspace', 'Client approval workflow', 'SEO + GEO blog generation', 'Monthly performance reports', 'Team access'].map((item) => (
               <div key={item} className="flex items-center justify-center gap-2 text-white text-sm">
@@ -148,21 +148,21 @@ export default function ForAgencies() {
 
       {/* FAQ */}
       <section className="py-16 px-4 max-w-3xl mx-auto pb-24">
-        <h2 className="text-2xl font-extrabold text-gray-900 mb-8" style={{ fontFamily: 'Satoshi, sans-serif' }}>Agency questions answered</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-8" style={{ fontFamily: 'Satoshi, sans-serif' }}>Agency questions answered</h2>
         <div className="space-y-2">
           {faqs.map((faq) => (
             <details key={faq.q} className="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary className="px-6 py-4 cursor-pointer font-medium text-gray-900 text-sm flex items-center justify-between list-none" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+              <summary className="px-6 py-4 cursor-pointer font-semibold text-[#111827] text-[16px] flex items-center justify-between list-none" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                 {faq.q}
                 <span className="text-blue-500 text-lg group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <p className="px-6 pb-5 text-sm text-gray-500 leading-relaxed">{faq.a}</p>
+              <p className="px-6 pb-5 text-[14px] text-[#4b5563] leading-[1.6]">{faq.a}</p>
             </details>
           ))}
         </div>
         <div className="mt-10 text-center">
-          <p className="text-gray-400 text-sm mb-4">Want to talk through agency pricing for your team?</p>
-          <Link to="/contact" className="text-blue-600 font-semibold text-sm hover:underline">Contact us →</Link>
+          <p className="text-[#6b7280] text-[14px] mb-4">Want to talk through agency pricing for your team?</p>
+          <Link to="/contact" className="text-blue-600 font-semibold text-[14px] hover:underline">Contact us →</Link>
         </div>
       </section>
     </div>

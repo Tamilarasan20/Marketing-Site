@@ -39,13 +39,13 @@ export default function ForEcommerce() {
         <div className="inline-flex items-center gap-2 bg-orange-50 text-orange-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
           <span>For eCommerce Brands</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+        <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
           Plan, create, and schedule<br />
           <span style={{ background: 'linear-gradient(135deg, #ea580c, #7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             product marketing that sells
           </span>
         </h1>
-        <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto mb-10">
           Loraloop creates product posts, seasonal campaigns, SEO content, ad copy, and emails for your eCommerce brand — all from your brand and product knowledge base.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -69,11 +69,11 @@ export default function ForEcommerce() {
       {/* eCommerce content demand */}
       <section className="py-14 bg-gray-50 border-y border-gray-100">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>eCommerce brands need more content than anyone else</h2>
-          <p className="text-gray-500 text-lg leading-relaxed mb-4">
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>eCommerce brands need more content than anyone else</h2>
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] mb-4">
             New products, weekly promotions, seasonal campaigns, product education, competitor responses, ad creative, email campaigns, SEO articles — the content demand for an eCommerce brand never stops.
           </p>
-          <p className="text-gray-500 text-lg leading-relaxed">
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6]">
             Loraloop handles the full content workload from your brand knowledge base — so your marketing stays consistent, on-brand, and published every week without a full marketing team.
           </p>
         </div>
@@ -82,13 +82,13 @@ export default function ForEcommerce() {
       {/* Content types */}
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Every type of eCommerce content, automated</h2>
-          <p className="text-gray-500 text-center mb-12 max-w-xl mx-auto">Loraloop covers the full content mix eCommerce brands need every week — not just social scheduling.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Every type of eCommerce content, automated</h2>
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Loraloop covers the full content mix eCommerce brands need every week — not just social scheduling.</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16">
             {contentTypes.map((c) => (
               <div key={c.type} className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
-                <p className="font-bold text-gray-900 text-sm mb-1" style={{ fontFamily: 'Satoshi, sans-serif' }}>{c.type}</p>
-                <p className="text-sm text-gray-500 leading-relaxed">{c.desc}</p>
+                <p className="font-semibold text-[#111827] text-[15px] leading-[1.25] tracking-[-0.015em] mb-1" style={{ fontFamily: 'Satoshi, sans-serif' }}>{c.type}</p>
+                <p className="text-[14px] text-[#4b5563] leading-[1.6]">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -96,8 +96,8 @@ export default function ForEcommerce() {
             {features.map((f) => (
               <div key={f.title} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
                 <div className="text-2xl mb-3">{f.icon}</div>
-                <h3 className="font-bold text-gray-900 text-sm mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{f.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
+                <h3 className="font-semibold text-[#111827] text-[15px] leading-[1.25] tracking-[-0.015em] mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{f.title}</h3>
+                <p className="text-[14px] text-[#4b5563] leading-[1.6]">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -107,8 +107,8 @@ export default function ForEcommerce() {
       {/* CTA Banner */}
       <section className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center rounded-3xl p-12" style={{ background: 'linear-gradient(135deg, #ea580c 0%, #7c3aed 100%)' }}>
-          <h2 className="text-3xl font-extrabold text-white mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Give your eCommerce brand a full AI marketing team</h2>
-          <p className="text-orange-100 mb-8 leading-relaxed">Build your brand knowledge base, connect your channels, and get your first month of product marketing content — all in one session.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Give your eCommerce brand a full AI marketing team</h2>
+          <p className="text-orange-100 text-[16px] mb-8 leading-[1.6]">Build your brand knowledge base, connect your channels, and get your first month of product marketing content — all in one session.</p>
           <a
             href="/app/signup"
             className="inline-flex items-center justify-center px-8 py-4 bg-white rounded-full text-orange-700 font-bold text-base hover:bg-gray-50 transition-all"
@@ -121,21 +121,21 @@ export default function ForEcommerce() {
 
       {/* FAQ */}
       <section className="py-16 px-4 max-w-3xl mx-auto pb-24">
-        <h2 className="text-2xl font-extrabold text-gray-900 mb-8" style={{ fontFamily: 'Satoshi, sans-serif' }}>eCommerce questions answered</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-8" style={{ fontFamily: 'Satoshi, sans-serif' }}>eCommerce questions answered</h2>
         <div className="space-y-2">
           {faqs.map((faq) => (
             <details key={faq.q} className="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary className="px-6 py-4 cursor-pointer font-medium text-gray-900 text-sm flex items-center justify-between list-none" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+              <summary className="px-6 py-4 cursor-pointer font-semibold text-[#111827] text-[16px] flex items-center justify-between list-none" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                 {faq.q}
                 <span className="text-orange-500 text-lg group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <p className="px-6 pb-5 text-sm text-gray-500 leading-relaxed">{faq.a}</p>
+              <p className="px-6 pb-5 text-[14px] text-[#4b5563] leading-[1.6]">{faq.a}</p>
             </details>
           ))}
         </div>
         <div className="mt-10 text-center">
-          <p className="text-gray-400 text-sm mb-4">Questions about using Loraloop for your eCommerce brand?</p>
-          <Link to="/contact" className="text-orange-600 font-semibold text-sm hover:underline">Talk to us →</Link>
+          <p className="text-[#6b7280] text-[14px] mb-4">Questions about using Loraloop for your eCommerce brand?</p>
+          <Link to="/contact" className="text-orange-600 font-semibold text-[14px] hover:underline">Talk to us →</Link>
         </div>
       </section>
     </div>

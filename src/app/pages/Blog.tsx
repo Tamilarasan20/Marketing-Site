@@ -84,17 +84,17 @@ export default function Blog() {
                 <span className="font-['Satoshi',sans-serif] font-bold text-xs text-white bg-[#1877f2] px-3 py-1 rounded-full">Latest</span>
               </div>
               <Link to={`/blog/${featuredPost.slug}`}>
-                <h1 className="font-['Satoshi',sans-serif] font-bold leading-[1.12] text-[#0f172a] text-4xl md:text-5xl tracking-[-1.5px] hover:text-[#1877f2] transition-colors">
+                <h1 className="font-['Satoshi',sans-serif] font-bold leading-[1.05] text-[#0f172a] text-4xl sm:text-5xl lg:text-[64px] tracking-[-0.03em] text-balance hover:text-[#1877f2] transition-colors">
                   {featuredPost.title}
                 </h1>
               </Link>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-[1.75] text-[#475569] text-lg md:text-xl">
+              <p className="font-['General_Sans',sans-serif] leading-[1.6] text-[#4b5563] text-[18px] md:text-[20px]">
                 {featuredPost.description}
               </p>
               <div className="flex items-center gap-3">
-                <span className="font-['General_Sans',sans-serif] font-medium text-[#94a3b8] text-sm">{featuredPost.date}</span>
+                <span className="font-['General_Sans',sans-serif] font-medium text-[#6b7280] text-[14px]">{featuredPost.date}</span>
                 <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
-                <span className="font-['General_Sans',sans-serif] font-medium text-[#94a3b8] text-sm">Loraloop Team</span>
+                <span className="font-['General_Sans',sans-serif] font-medium text-[#6b7280] text-[14px]">Loraloop Team</span>
               </div>
               <Link to={`/blog/${featuredPost.slug}`} className="inline-flex items-center gap-2 text-[#1877f2] font-['Satoshi',sans-serif] font-bold text-base hover:gap-3 transition-all">
                 Read article →
@@ -130,7 +130,7 @@ export default function Blog() {
             </div>
 
             {/* Result count */}
-            <p className="font-['General_Sans',sans-serif] font-medium text-[#94a3b8] text-sm -mt-4">
+            <p className="font-['General_Sans',sans-serif] font-medium text-[#6b7280] text-[14px] -mt-4">
               {filteredPosts.length} {filteredPosts.length === 1 ? "article" : "articles"}
               {selectedCategory !== "All" ? ` in ${selectedCategory}` : ""}
               {searchQuery ? ` matching "${searchQuery}"` : ""}
@@ -156,14 +156,14 @@ export default function Blog() {
                           <span className="font-['Satoshi',sans-serif] font-bold text-xs text-[#1877f2] bg-[#eff6ff] px-2.5 py-0.5 rounded-full">{post.category}</span>
                           <span className="flex items-center gap-1 text-xs text-[#94a3b8] font-['General_Sans',sans-serif] font-medium"><Clock size={11} />{rt} min</span>
                         </div>
-                        <h3 className="font-['Satoshi',sans-serif] font-bold leading-[1.35] text-[#0f172a] text-xl group-hover:text-[#1877f2] transition-colors line-clamp-2">
+                        <h3 className="font-['Satoshi',sans-serif] font-semibold leading-[1.25] text-[#111827] text-[22px] tracking-[-0.015em] group-hover:text-[#1877f2] transition-colors line-clamp-2">
                           {post.title}
                         </h3>
-                        <p className="font-['General_Sans',sans-serif] font-medium leading-[1.65] text-[#64748b] text-base line-clamp-3">
+                        <p className="font-['General_Sans',sans-serif] leading-[1.6] text-[#4b5563] text-[16px] line-clamp-3">
                           {post.description}
                         </p>
                         <div className="flex items-center justify-between pt-1">
-                          <span className="font-['General_Sans',sans-serif] font-medium text-[#94a3b8] text-xs">{post.date}</span>
+                          <span className="font-['General_Sans',sans-serif] font-medium text-[#6b7280] text-[14px]">{post.date}</span>
                           <span className="text-[#1877f2] text-sm font-['Satoshi',sans-serif] font-bold opacity-0 group-hover:opacity-100 transition-opacity">Read →</span>
                         </div>
                       </div>
@@ -177,8 +177,8 @@ export default function Blog() {
                   🔍
                 </div>
                 <div className="flex flex-col gap-2">
-                  <p className="font-['Satoshi',sans-serif] font-bold text-[#1f2937] text-xl">No articles found</p>
-                  <p className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-base leading-relaxed">
+                  <p className="font-['Satoshi',sans-serif] font-semibold leading-[1.25] tracking-[-0.015em] text-[#111827] text-[22px]">No articles found</p>
+                  <p className="font-['General_Sans',sans-serif] text-[#4b5563] text-[16px] leading-[1.6]">
                     {searchQuery
                       ? `We couldn't find any articles matching "${searchQuery}". Try a different search term.`
                       : `There are no articles in the "${selectedCategory}" category yet. Check back soon.`}
