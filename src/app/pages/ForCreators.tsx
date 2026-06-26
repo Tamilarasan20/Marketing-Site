@@ -35,13 +35,13 @@ export default function ForCreators() {
         <div className="inline-flex items-center gap-2 bg-pink-50 text-pink-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
           <span>For Creators & Personal Brands</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+        <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
           Turn your ideas into<br />
           <span style={{ background: 'linear-gradient(135deg, #db2777, #7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             consistent content across platforms
           </span>
         </h1>
-        <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto mb-10">
           Loraloop helps creators build content pillars, repurpose ideas across every platform, and stay consistent — without spending your whole week on production.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -65,11 +65,11 @@ export default function ForCreators() {
       {/* Creator burnout problem */}
       <section className="py-14 bg-gray-50 border-y border-gray-100">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Creators burn out managing multiple platforms</h2>
-          <p className="text-gray-500 text-lg leading-relaxed mb-4">
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Creators burn out managing multiple platforms</h2>
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] mb-4">
             Building a personal brand in 2026 means showing up on LinkedIn, Instagram, TikTok, X, and your newsletter — consistently. The ideas aren't the problem. The production time is.
           </p>
-          <p className="text-gray-500 text-lg leading-relaxed">
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6]">
             Loraloop turns your ideas into a full cross-platform content set and handles the scheduling — so you stay consistent on every platform without blocking your whole calendar.
           </p>
         </div>
@@ -78,14 +78,14 @@ export default function ForCreators() {
       {/* Features */}
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Built for creators who want to scale without burning out</h2>
-          <p className="text-gray-500 text-center mb-12 max-w-xl mx-auto">Strategy, repurposing, scheduling, and growth insights — everything your content operation needs.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Built for creators who want to scale without burning out</h2>
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Strategy, repurposing, scheduling, and growth insights — everything your content operation needs.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => (
               <div key={f.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
                 <div className="text-3xl mb-3">{f.icon}</div>
-                <h3 className="font-bold text-gray-900 mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{f.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
+                <h3 className="text-[22px] font-semibold text-[#111827] leading-[1.25] tracking-[-0.015em] mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{f.title}</h3>
+                <p className="text-[14px] text-[#4b5563] leading-[1.6]">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -95,12 +95,12 @@ export default function ForCreators() {
       {/* Creator types */}
       <section className="py-16 px-4 bg-gray-50 border-y border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-10" style={{ fontFamily: 'Satoshi, sans-serif' }}>How different creators use Loraloop</h2>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-10" style={{ fontFamily: 'Satoshi, sans-serif' }}>How different creators use Loraloop</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {creatorTypes.map((c) => (
               <div key={c.type} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
-                <h3 className="font-bold text-gray-900 text-sm mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{c.type}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{c.use}</p>
+                <h3 className="font-semibold text-[#111827] text-[15px] leading-[1.25] tracking-[-0.015em] mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{c.type}</h3>
+                <p className="text-[14px] text-[#4b5563] leading-[1.6]">{c.use}</p>
               </div>
             ))}
           </div>
@@ -110,8 +110,8 @@ export default function ForCreators() {
       {/* CTA Banner */}
       <section className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center rounded-3xl p-12" style={{ background: 'linear-gradient(135deg, #db2777 0%, #7c3aed 100%)' }}>
-          <h2 className="text-3xl font-extrabold text-white mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Grow consistently without burning out</h2>
-          <p className="text-pink-100 mb-8 leading-relaxed">Build your content pillars, repurpose your ideas, and stay on schedule across every platform — starting today.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Grow consistently without burning out</h2>
+          <p className="text-pink-100 text-[16px] mb-8 leading-[1.6]">Build your content pillars, repurpose your ideas, and stay on schedule across every platform — starting today.</p>
           <a
             href="/app/signup"
             className="inline-flex items-center justify-center px-8 py-4 bg-white rounded-full text-pink-700 font-bold text-base hover:bg-gray-50 transition-all"
@@ -124,21 +124,21 @@ export default function ForCreators() {
 
       {/* FAQ */}
       <section className="py-16 px-4 max-w-3xl mx-auto pb-24">
-        <h2 className="text-2xl font-extrabold text-gray-900 mb-8" style={{ fontFamily: 'Satoshi, sans-serif' }}>Questions from creators</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-8" style={{ fontFamily: 'Satoshi, sans-serif' }}>Questions from creators</h2>
         <div className="space-y-2">
           {faqs.map((faq) => (
             <details key={faq.q} className="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary className="px-6 py-4 cursor-pointer font-medium text-gray-900 text-sm flex items-center justify-between list-none" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+              <summary className="px-6 py-4 cursor-pointer font-semibold text-[#111827] text-[16px] flex items-center justify-between list-none" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                 {faq.q}
                 <span className="text-pink-500 text-lg group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <p className="px-6 pb-5 text-sm text-gray-500 leading-relaxed">{faq.a}</p>
+              <p className="px-6 pb-5 text-[14px] text-[#4b5563] leading-[1.6]">{faq.a}</p>
             </details>
           ))}
         </div>
         <div className="mt-10 text-center">
-          <p className="text-gray-400 text-sm mb-4">Questions about Loraloop for your creator business?</p>
-          <Link to="/contact" className="text-pink-600 font-semibold text-sm hover:underline">Talk to us →</Link>
+          <p className="text-[#6b7280] text-[14px] mb-4">Questions about Loraloop for your creator business?</p>
+          <Link to="/contact" className="text-pink-600 font-semibold text-[14px] hover:underline">Talk to us →</Link>
         </div>
       </section>
     </div>

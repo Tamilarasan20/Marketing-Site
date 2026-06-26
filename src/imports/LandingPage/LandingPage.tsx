@@ -53,7 +53,7 @@ function TextGroupVertical3() {
 
 function TextGroupVertical2() {
   return (
-    <div className="content-stretch flex flex-col font-['Satoshi',sans-serif] font-bold font-bold items-start pb-px relative shrink-0 tracking-[-1.2px] w-full" data-name="Text Group Vertical">
+    <div className="content-stretch flex flex-col font-['Satoshi',sans-serif] font-bold items-start pb-px relative shrink-0 tracking-[-0.02em] md:tracking-[-0.035em] w-full" data-name="Text Group Vertical">
       <TextGroupVertical3 />
       <p className="text-[36px] md:text-[68px] leading-[1.0] relative shrink-0 text-[#14a148] w-full font-bold">{`AI Marketing Team `}</p>
     </div>

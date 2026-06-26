@@ -31,13 +31,13 @@ export default function ForFounders() {
         <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
           <span>For Founders & Indie Hackers</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+        <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
           Your AI marketing team<br />
           <span style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             when you don't have time to market
           </span>
         </h1>
-        <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto mb-10">
           Loraloop builds your strategy, writes your content, optimizes for SEO and AI search, and presents everything for your approval — so you can focus on building the business.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -61,12 +61,12 @@ export default function ForFounders() {
       {/* Pain stats */}
       <section className="py-14 bg-gray-50 border-y border-gray-100">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">The founder marketing problem</p>
+          <p className="text-center text-[13px] font-semibold text-[#6b7280] uppercase tracking-[0.08em] mb-8">The founder marketing problem</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {painPoints.map((p) => (
               <div key={p.stat} className="text-center">
                 <p className="text-4xl md:text-5xl font-extrabold mb-2" style={{ fontFamily: 'Satoshi, sans-serif', background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{p.stat}</p>
-                <p className="text-sm text-gray-500 leading-relaxed">{p.label}</p>
+                <p className="text-[14px] text-[#6b7280] leading-[1.6]">{p.label}</p>
               </div>
             ))}
           </div>
@@ -75,11 +75,11 @@ export default function ForFounders() {
 
       {/* Problem → Solution */}
       <section className="py-20 px-4 max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-extrabold text-gray-900 mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Marketing is the job that never ends</h2>
-        <p className="text-gray-500 text-lg leading-relaxed mb-4">
+        <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Marketing is the job that never ends</h2>
+        <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] mb-4">
           Most founders know they need consistent marketing — but between building the product, handling customers, and everything else, marketing always falls behind. You post when you remember. The blog never gets written. The SEO strategy stays a note in Notion.
         </p>
-        <p className="text-gray-500 text-lg leading-relaxed">
+        <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6]">
           Loraloop solves this by giving you a team of AI employees who handle marketing full-time. You review and approve. They execute.
         </p>
       </section>
@@ -87,14 +87,14 @@ export default function ForFounders() {
       {/* Features */}
       <section className="py-16 px-4 bg-gray-50 border-y border-gray-100">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Everything a marketing team does — without the team</h2>
-          <p className="text-gray-500 text-center mb-12 max-w-xl mx-auto">Loraloop covers the full marketing stack so you don't need to hire a strategist, copywriter, SEO specialist, or social media manager.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Everything a marketing team does — without the team</h2>
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Loraloop covers the full marketing stack so you don't need to hire a strategist, copywriter, SEO specialist, or social media manager.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => (
               <div key={f.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
                 <div className="text-3xl mb-3">{f.icon}</div>
-                <h3 className="font-bold text-gray-900 mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{f.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{f.desc}</p>
+                <h3 className="text-[22px] font-semibold text-[#111827] leading-[1.25] tracking-[-0.015em] mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{f.title}</h3>
+                <p className="text-[14px] text-[#4b5563] leading-[1.6]">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -103,7 +103,7 @@ export default function ForFounders() {
 
       {/* How it works */}
       <section className="py-20 px-4 max-w-3xl mx-auto">
-        <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12" style={{ fontFamily: 'Satoshi, sans-serif' }}>How it works for founders</h2>
+        <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-12" style={{ fontFamily: 'Satoshi, sans-serif' }}>How it works for founders</h2>
         <div className="space-y-8">
           {[
             { step: '01', title: 'Build your brand knowledge base', desc: 'Spend 30 minutes answering questions about your business, audience, voice, and goals. Loraloop stores this permanently and uses it for every piece of content it creates.' },
@@ -114,8 +114,8 @@ export default function ForFounders() {
             <div key={s.step} className="flex gap-6">
               <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>{s.step}</div>
               <div>
-                <h3 className="font-bold text-gray-900 mb-1" style={{ fontFamily: 'Satoshi, sans-serif' }}>{s.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+                <h3 className="text-[22px] font-semibold text-[#111827] leading-[1.25] tracking-[-0.015em] mb-1" style={{ fontFamily: 'Satoshi, sans-serif' }}>{s.title}</h3>
+                <p className="text-[#4b5563] text-[14px] leading-[1.6]">{s.desc}</p>
               </div>
             </div>
           ))}
@@ -125,8 +125,8 @@ export default function ForFounders() {
       {/* CTA Banner */}
       <section className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center rounded-3xl p-12" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)' }}>
-          <h2 className="text-3xl font-extrabold text-white mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Run your marketing while you build your business</h2>
-          <p className="text-violet-100 mb-8 leading-relaxed">Start free. Build your brand knowledge base in 30 minutes. Get your first monthly plan and content drafts the same day.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Run your marketing while you build your business</h2>
+          <p className="text-violet-100 text-[16px] mb-8 leading-[1.6]">Start free. Build your brand knowledge base in 30 minutes. Get your first monthly plan and content drafts the same day.</p>
           <a
             href="/app/signup"
             className="inline-flex items-center justify-center px-8 py-4 bg-white rounded-full text-violet-700 font-bold text-base hover:bg-gray-50 transition-all"
@@ -139,21 +139,21 @@ export default function ForFounders() {
 
       {/* FAQ */}
       <section className="py-16 px-4 max-w-3xl mx-auto pb-24">
-        <h2 className="text-2xl font-extrabold text-gray-900 mb-8" style={{ fontFamily: 'Satoshi, sans-serif' }}>Frequently asked questions</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-8" style={{ fontFamily: 'Satoshi, sans-serif' }}>Frequently asked questions</h2>
         <div className="space-y-2">
           {faqs.map((faq) => (
             <details key={faq.q} className="bg-white border border-gray-200 rounded-xl overflow-hidden group">
-              <summary className="px-6 py-4 cursor-pointer font-medium text-gray-900 text-sm flex items-center justify-between list-none" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+              <summary className="px-6 py-4 cursor-pointer font-semibold text-[#111827] text-[16px] flex items-center justify-between list-none" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                 {faq.q}
                 <span className="text-violet-500 text-lg group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <p className="px-6 pb-5 text-sm text-gray-500 leading-relaxed">{faq.a}</p>
+              <p className="px-6 pb-5 text-[14px] text-[#4b5563] leading-[1.6]">{faq.a}</p>
             </details>
           ))}
         </div>
         <div className="mt-10 text-center">
-          <p className="text-gray-400 text-sm mb-4">Still have questions?</p>
-          <Link to="/contact" className="text-violet-600 font-semibold text-sm hover:underline">Talk to us →</Link>
+          <p className="text-[#6b7280] text-[14px] mb-4">Still have questions?</p>
+          <Link to="/contact" className="text-violet-600 font-semibold text-[14px] hover:underline">Talk to us →</Link>
         </div>
       </section>
     </div>
