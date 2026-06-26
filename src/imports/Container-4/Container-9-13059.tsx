@@ -2,7 +2,7 @@ import imgClara1 from "./b77f42882a70f9452bf0bb5a474a1ad9b31a04fc.png";
 
 function Content() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[114px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[114px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI Content Writer</p>
       </div>

@@ -17,10 +17,10 @@ function Image() {
 function Container() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start not-italic relative shrink-0 w-[530px]" data-name="Container">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[20px] relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">Business</p>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[56px]  relative shrink-0 text-[#1f2937] text-[48px] tracking-[-1.2px] ">8 Best Relevance AI Alternatives and Competitors in 2026</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, and real-world business use cases.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[20px] relative shrink-0 text-[#1f2937] text-[14px] whitespace-nowrap">Business</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[56px]  relative shrink-0 text-[#1f2937] text-[48px] tracking-[-1.2px] ">8 Best Relevance AI Alternatives and Competitors in 2026</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, and real-world business use cases.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
     </div>
   );
 }
@@ -44,17 +44,17 @@ function Container2() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8px] items-center relative size-full">
         <div className="bg-[#eef4ff] h-[40px] relative rounded-[120px] shrink-0" data-name="Button">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-center justify-center px-[20px] relative size-full">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#1877f2] text-[14px] whitespace-nowrap">All</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#1877f2] text-[14px] whitespace-nowrap">All</p>
           </div>
         </div>
         <div className="bg-white h-[40px] relative rounded-[120px] shrink-0" data-name="Button">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-center justify-center px-[20px] relative size-full">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#374151] text-[14px] whitespace-nowrap">Product</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#374151] text-[14px] whitespace-nowrap">Product</p>
           </div>
         </div>
         <div className="bg-white h-[40px] relative rounded-[120px] shrink-0" data-name="Button">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-center justify-center px-[20px] relative size-full">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#374151] text-[14px] whitespace-nowrap">Business</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#374151] text-[14px] whitespace-nowrap">Business</p>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@ function TextInput() {
     <div className="bg-white flex-[1_0_0] h-[40px] min-w-px relative rounded-[40px]" data-name="Text Input">
       <div className="flex flex-row items-center overflow-clip rounded-[inherit] size-full">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center px-[16px] py-[12px] relative size-full">
-          <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#9ca3af] text-[14px] whitespace-nowrap">Search blog posts</p>
+          <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[#9ca3af] text-[14px] whitespace-nowrap">Search blog posts</p>
         </div>
       </div>
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[40px]" />
@@ -83,7 +83,7 @@ function Container3() {
         <div className="bg-white h-[40px] relative rounded-[120px] shrink-0" data-name="Button">
           <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
           <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-center justify-center px-[20px] relative size-full">
-            <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[#111827] text-[14px] whitespace-nowrap">Search</p>
+            <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#111827] text-[14px] whitespace-nowrap">Search</p>
           </div>
         </div>
       </div>
@@ -113,8 +113,8 @@ function Image1() {
 function Frame22() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">8 Best Relevance AI Alternatives for Automated Workflows</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">{`Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, `}</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">8 Best Relevance AI Alternatives for Automated Workflows</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">{`Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, `}</p>
     </div>
   );
 }
@@ -123,7 +123,7 @@ function Frame11() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <Frame22 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
     </div>
   );
 }
@@ -131,7 +131,7 @@ function Frame11() {
 function Container4() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start not-italic relative shrink-0 w-full" data-name="Container">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Business</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Business</p>
       <Frame11 />
     </div>
   );
@@ -157,8 +157,8 @@ function Image2() {
 function Frame23() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">Best DeepSeek Alternatives for 2026</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">Overview of the best DeepSeek alternatives in 2026, comparing tools like Sintra AI, ChatGPT, and Claude across workflows, research.Overview of the best DeepSeek alternatives in 2026, comparing tools like Sintra AI, ChatGPT, and Claude across workflows, research.</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">Best DeepSeek Alternatives for 2026</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">Overview of the best DeepSeek alternatives in 2026, comparing tools like Sintra AI, ChatGPT, and Claude across workflows, research.Overview of the best DeepSeek alternatives in 2026, comparing tools like Sintra AI, ChatGPT, and Claude across workflows, research.</p>
     </div>
   );
 }
@@ -167,7 +167,7 @@ function Frame12() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <Frame23 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
     </div>
   );
 }
@@ -175,7 +175,7 @@ function Frame12() {
 function Container5() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start not-italic relative shrink-0 w-full" data-name="Container">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Product</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Product</p>
       <Frame12 />
     </div>
   );
@@ -192,8 +192,8 @@ function Image3() {
 function Frame24() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">8 Best Relevance AI Alternatives for Automated Workflows</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">{`Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, `}</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">8 Best Relevance AI Alternatives for Automated Workflows</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">{`Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, `}</p>
     </div>
   );
 }
@@ -202,7 +202,7 @@ function Frame14() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <Frame24 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
     </div>
   );
 }
@@ -210,7 +210,7 @@ function Frame14() {
 function Container6() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start not-italic relative shrink-0 w-full" data-name="Container">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Business</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Business</p>
       <Frame14 />
     </div>
   );
@@ -243,8 +243,8 @@ function Image4() {
 function Frame25() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">8 Best Relevance AI Alternatives for Automated Workflows</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">{`Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, `}</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">8 Best Relevance AI Alternatives for Automated Workflows</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">{`Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, `}</p>
     </div>
   );
 }
@@ -253,7 +253,7 @@ function Frame15() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <Frame25 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
     </div>
   );
 }
@@ -261,7 +261,7 @@ function Frame15() {
 function Container7() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start not-italic relative shrink-0 w-full" data-name="Container">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Business</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Business</p>
       <Frame15 />
     </div>
   );
@@ -278,8 +278,8 @@ function Image5() {
 function Frame26() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">8 Best Relevance AI Alternatives for Automated Workflows</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">{`Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, `}</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">8 Best Relevance AI Alternatives for Automated Workflows</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">{`Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, `}</p>
     </div>
   );
 }
@@ -288,7 +288,7 @@ function Frame16() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <Frame26 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
     </div>
   );
 }
@@ -296,7 +296,7 @@ function Frame16() {
 function Container8() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start not-italic relative shrink-0 w-full" data-name="Container">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Business</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Business</p>
       <Frame16 />
     </div>
   );
@@ -313,8 +313,8 @@ function Image6() {
 function Frame27() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">8 Best Relevance AI Alternatives for Automated Workflows</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">{`Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, `}</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] overflow-hidden relative shrink-0 text-[#1f2937] text-[20px] text-ellipsis w-full">8 Best Relevance AI Alternatives for Automated Workflows</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] overflow-hidden relative shrink-0 text-[#6b7280] text-[14px] text-ellipsis w-full">{`Best Relevance AI alternatives in 2026 compared, including Sintra AI, Lindy, and Flowise, covering AI agents, automation workflows, pricing, features, `}</p>
     </div>
   );
 }
@@ -323,7 +323,7 @@ function Frame18() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <Frame27 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[20px] relative shrink-0 text-[#6b7280] text-[14px] whitespace-nowrap">April 6, 2026</p>
     </div>
   );
 }
@@ -331,7 +331,7 @@ function Frame18() {
 function Container9() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start not-italic relative shrink-0 w-full" data-name="Container">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Business</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#1f2937] text-[12px] whitespace-nowrap">Business</p>
       <Frame18 />
     </div>
   );
@@ -392,52 +392,52 @@ function Frame20() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0">
       <div className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap">1</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap">1</p>
       </div>
       <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">2</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">2</p>
       </div>
       <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">3</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">3</p>
       </div>
       <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">4</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">4</p>
       </div>
       <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">5</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">5</p>
       </div>
       <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">6</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">6</p>
       </div>
       <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">7</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">7</p>
       </div>
       <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">8</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">8</p>
       </div>
       <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">9</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">9</p>
       </div>
       <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">10</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">10</p>
       </div>
       <Frame21 />
       <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">24</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">24</p>
       </div>
       <div className="bg-white content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[20px] relative rounded-[120px] shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[120px]" />
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">Next</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#111827] text-[16px] whitespace-nowrap">Next</p>
       </div>
     </div>
   );
@@ -459,17 +459,17 @@ function UiDesignCreation() {
 function Container10() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] w-full">Agents</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Lora - AI Marketing Lead</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Sam - AI Strategist</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Sophie - AI SEO/GEO Manager</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Clara - AI Content Writer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Clara - AI Content Writer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Theo - AI Video Producer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Steve - AI Visual Designer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Sarah - AI Social Media Manager</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Elena - AI Ads Manager</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Nick - AI Analyst</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] w-full">Agents</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Lora - AI Marketing Lead</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Sam - AI Strategist</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Sophie - AI SEO/GEO Manager</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Clara - AI Content Writer</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Clara - AI Content Writer</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Theo - AI Video Producer</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Steve - AI Visual Designer</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Sarah - AI Social Media Manager</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Elena - AI Ads Manager</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-full">Nick - AI Analyst</p>
     </div>
   );
 }
@@ -477,10 +477,10 @@ function Container10() {
 function Container11() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] h-full items-start min-w-px not-italic relative whitespace-nowrap" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px]">Company</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">About us</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Contact Us/Support</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#9ca3af] text-[16px]">Become Affiliate (Soon)</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[#1f2937] text-[20px]">Company</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">About us</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px]">Contact Us/Support</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#9ca3af] text-[16px]">Become Affiliate (Soon)</p>
     </div>
   );
 }
@@ -488,16 +488,16 @@ function Container11() {
 function Container12() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[13px] h-full items-start min-w-px not-italic relative" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Blog</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 1</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 2</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog3</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 4</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 5</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 6</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 7</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 8</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] w-[169px]">View more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Blog</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 1</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 2</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog3</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 4</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 5</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 6</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 7</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px]  relative shrink-0 text-[#374151] text-[16px] ">Blog 8</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] w-[169px]">View more</p>
     </div>
   );
 }
@@ -505,18 +505,18 @@ function Container12() {
 function Container13() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] h-full items-start min-w-px not-italic relative" data-name="Container">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Free AI Tools</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Article Writer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Audio Ad Creator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Conclusion Paragraph Generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Ideas And Titles Generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Introduction Generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Blog Outline Generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Blog Section Completer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Brand Voice Analyzer</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Carousel Maker</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Cold Email Generator</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] whitespace-nowrap">View more</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[#1f2937] text-[20px] whitespace-nowrap">Free AI Tools</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Article Writer</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Audio Ad Creator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Conclusion Paragraph Generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Ideas And Titles Generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] w-[169px]">AI Blog Introduction Generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Blog Outline Generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Blog Section Completer</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Brand Voice Analyzer</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Carousel Maker</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#374151] text-[16px] whitespace-nowrap">AI Cold Email Generator</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] relative shrink-0 text-[#1877f2] text-[16px] whitespace-nowrap">View more</p>
     </div>
   );
 }
@@ -602,7 +602,7 @@ function Frame9() {
           </svg>
         </div>
       </div>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[100px] not-italic relative shrink-0 text-[78.571px] text-black text-center whitespace-nowrap">oraLoop</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[100px] not-italic relative shrink-0 text-[78.571px] text-black text-center whitespace-nowrap">oraLoop</p>
     </div>
   );
 }
@@ -611,7 +611,7 @@ function Frame28() {
   return (
     <div className="content-stretch flex flex-col items-center relative shrink-0">
       <Frame9 />
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] not-italic relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Copyright © 2026 Orimoretail Pvt. Ltd. All rights reserved.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic relative shrink-0 text-[#6b7280] text-[16px] whitespace-nowrap">Copyright © 2026 Orimoretail Pvt. Ltd. All rights reserved.</p>
     </div>
   );
 }
@@ -641,7 +641,7 @@ function Frame10() {
           </svg>
         </div>
       </div>
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24.818px] not-italic relative shrink-0 text-[19.5px] text-black text-center whitespace-nowrap">oraLoop.com</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24.818px] not-italic relative shrink-0 text-[19.5px] text-black text-center whitespace-nowrap">oraLoop.com</p>
     </div>
   );
 }
@@ -671,7 +671,7 @@ function Frame7() {
 function Frame1() {
   return (
     <div className="content-stretch flex gap-[2px] items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">AI Employees</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">AI Employees</p>
       <Frame7 />
     </div>
   );
@@ -680,7 +680,7 @@ function Frame1() {
 function Frame3() {
   return (
     <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Solution</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Solution</p>
     </div>
   );
 }
@@ -688,7 +688,7 @@ function Frame3() {
 function Frame5() {
   return (
     <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Blogs</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Blogs</p>
     </div>
   );
 }
@@ -696,7 +696,7 @@ function Frame5() {
 function Frame4() {
   return (
     <div className="content-stretch flex items-center justify-center p-[8px] relative shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Pricing</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[16px] text-black text-center whitespace-nowrap">Pricing</p>
     </div>
   );
 }
@@ -724,7 +724,7 @@ function Frame() {
 function Frame2() {
   return (
     <div className="content-stretch flex items-center justify-center px-[24px] py-[12px] relative rounded-[34px] shrink-0">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#0279ec] text-[16px] whitespace-nowrap">Login</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#0279ec] text-[16px] whitespace-nowrap">Login</p>
     </div>
   );
 }
@@ -734,7 +734,7 @@ function Frame8() {
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
       <Frame2 />
       <div className="bg-[#1877f2] content-stretch flex gap-[4px] h-[40px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0" data-name="Button">
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
       </div>
     </div>
   );

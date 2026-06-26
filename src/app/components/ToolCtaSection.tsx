@@ -24,19 +24,19 @@ export default function ToolCtaSection() {
         }}
       />
       <div className="relative z-10 px-8 py-14 sm:px-14 sm:py-16 text-center">
-        <span className="inline-block font-['General_Sans:Medium',sans-serif] text-xs font-medium text-violet-200 tracking-widest uppercase mb-4">
+        <span className="inline-block font-['General_Sans',sans-serif] font-medium text-xs font-medium text-violet-200 tracking-widest uppercase mb-4">
           Powered by AI Agents
         </span>
-        <h2 className="font-['Satoshi:Bold',sans-serif] text-2xl sm:text-4xl font-bold text-white leading-tight mb-4 max-w-2xl mx-auto">
+        <h2 className="font-['Satoshi',sans-serif] font-bold text-2xl sm:text-4xl font-bold text-white leading-tight mb-4 max-w-2xl mx-auto">
           Want AI that does more than generate text?
         </h2>
-        <p className="font-['General_Sans:Medium',sans-serif] text-[#cbd5e1] text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8">
+        <p className="font-['General_Sans',sans-serif] font-medium text-[#cbd5e1] text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8">
           Loraloop's marketing agents plan, create, schedule and publish content in your brand voice — so you can focus on growing your business.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
             href="/pricing"
-            className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-['Satoshi:Bold',sans-serif] font-bold px-7 py-3.5 rounded-xl hover:bg-gray-100 transition-colors text-sm"
+            className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-['Satoshi',sans-serif] font-bold font-bold px-7 py-3.5 rounded-xl hover:bg-gray-100 transition-colors text-sm"
           >
             Get Started
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -45,7 +45,7 @@ export default function ToolCtaSection() {
           </a>
           <Link
             to="/tools"
-            className="inline-flex items-center justify-center gap-2 border border-white/20 text-white font-['Satoshi:Bold',sans-serif] font-semibold px-7 py-3.5 rounded-xl hover:bg-white/10 transition-colors text-sm"
+            className="inline-flex items-center justify-center gap-2 border border-white/20 text-white font-['Satoshi',sans-serif] font-bold font-semibold px-7 py-3.5 rounded-xl hover:bg-white/10 transition-colors text-sm"
           >
             Browse all free tools
           </Link>

@@ -79,24 +79,24 @@ export default function Blog() {
             </Link>
             <div className="flex flex-col gap-5 w-full">
               <div className="flex items-center gap-3">
-                <span className="font-['Satoshi:Bold',sans-serif] text-xs text-[#1877f2] bg-[#eff6ff] px-3 py-1 rounded-full">{featuredPost.category}</span>
-                <span className="flex items-center gap-1.5 font-['General_Sans:Medium',sans-serif] text-[#64748b] text-xs"><Clock size={12} />{featuredReadTime} min read</span>
-                <span className="font-['Satoshi:Bold',sans-serif] text-xs text-white bg-[#1877f2] px-3 py-1 rounded-full">Latest</span>
+                <span className="font-['Satoshi',sans-serif] font-bold text-xs text-[#1877f2] bg-[#eff6ff] px-3 py-1 rounded-full">{featuredPost.category}</span>
+                <span className="flex items-center gap-1.5 font-['General_Sans',sans-serif] font-medium text-[#64748b] text-xs"><Clock size={12} />{featuredReadTime} min read</span>
+                <span className="font-['Satoshi',sans-serif] font-bold text-xs text-white bg-[#1877f2] px-3 py-1 rounded-full">Latest</span>
               </div>
               <Link to={`/blog/${featuredPost.slug}`}>
-                <h1 className="font-['Satoshi:Bold',sans-serif] leading-[1.12] text-[#0f172a] text-4xl md:text-5xl tracking-[-1.5px] hover:text-[#1877f2] transition-colors">
+                <h1 className="font-['Satoshi',sans-serif] font-bold leading-[1.12] text-[#0f172a] text-4xl md:text-5xl tracking-[-1.5px] hover:text-[#1877f2] transition-colors">
                   {featuredPost.title}
                 </h1>
               </Link>
-              <p className="font-['General_Sans:Medium',sans-serif] leading-[1.75] text-[#475569] text-lg md:text-xl">
+              <p className="font-['General_Sans',sans-serif] font-medium leading-[1.75] text-[#475569] text-lg md:text-xl">
                 {featuredPost.description}
               </p>
               <div className="flex items-center gap-3">
-                <span className="font-['General_Sans:Medium',sans-serif] text-[#94a3b8] text-sm">{featuredPost.date}</span>
+                <span className="font-['General_Sans',sans-serif] font-medium text-[#94a3b8] text-sm">{featuredPost.date}</span>
                 <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
-                <span className="font-['General_Sans:Medium',sans-serif] text-[#94a3b8] text-sm">Loraloop Team</span>
+                <span className="font-['General_Sans',sans-serif] font-medium text-[#94a3b8] text-sm">Loraloop Team</span>
               </div>
-              <Link to={`/blog/${featuredPost.slug}`} className="inline-flex items-center gap-2 text-[#1877f2] font-['Satoshi:Bold',sans-serif] text-base hover:gap-3 transition-all">
+              <Link to={`/blog/${featuredPost.slug}`} className="inline-flex items-center gap-2 text-[#1877f2] font-['Satoshi',sans-serif] font-bold text-base hover:gap-3 transition-all">
                 Read article →
               </Link>
             </div>
@@ -112,7 +112,7 @@ export default function Blog() {
               <div className="flex flex-wrap gap-2">
                 {["All", "Product", "Business"].map((category) => (
                   <button key={category} onClick={() => setSelectedCategory(category)}
-                    className={`px-5 py-2.5 rounded-full font-['Satoshi:Bold',sans-serif] text-sm transition-colors ${
+                    className={`px-5 py-2.5 rounded-full font-['Satoshi',sans-serif] font-bold text-sm transition-colors ${
                       selectedCategory === category
                         ? "bg-[#1877f2] text-white shadow-sm"
                         : "bg-white text-[#374151] border border-[#e2e8f0] hover:border-[#1877f2] hover:text-[#1877f2]"
@@ -124,13 +124,13 @@ export default function Blog() {
               <div className="flex gap-2 w-full md:w-[360px]">
                 <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search articles..."
-                  className="flex-1 h-10 px-4 rounded-full border border-[#e2e8f0] bg-white font-['General_Sans:Medium',sans-serif] text-[#64748b] text-sm focus:outline-none focus:border-[#1877f2] focus:ring-2 focus:ring-[#1877f2]/10"
+                  className="flex-1 h-10 px-4 rounded-full border border-[#e2e8f0] bg-white font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm focus:outline-none focus:border-[#1877f2] focus:ring-2 focus:ring-[#1877f2]/10"
                 />
               </div>
             </div>
 
             {/* Result count */}
-            <p className="font-['General_Sans:Medium',sans-serif] text-[#94a3b8] text-sm -mt-4">
+            <p className="font-['General_Sans',sans-serif] font-medium text-[#94a3b8] text-sm -mt-4">
               {filteredPosts.length} {filteredPosts.length === 1 ? "article" : "articles"}
               {selectedCategory !== "All" ? ` in ${selectedCategory}` : ""}
               {searchQuery ? ` matching "${searchQuery}"` : ""}
@@ -153,18 +153,18 @@ export default function Blog() {
                       </div>
                       <div className="flex flex-col gap-3 p-5">
                         <div className="flex items-center gap-2">
-                          <span className="font-['Satoshi:Bold',sans-serif] text-xs text-[#1877f2] bg-[#eff6ff] px-2.5 py-0.5 rounded-full">{post.category}</span>
-                          <span className="flex items-center gap-1 text-xs text-[#94a3b8] font-['General_Sans:Medium',sans-serif]"><Clock size={11} />{rt} min</span>
+                          <span className="font-['Satoshi',sans-serif] font-bold text-xs text-[#1877f2] bg-[#eff6ff] px-2.5 py-0.5 rounded-full">{post.category}</span>
+                          <span className="flex items-center gap-1 text-xs text-[#94a3b8] font-['General_Sans',sans-serif] font-medium"><Clock size={11} />{rt} min</span>
                         </div>
-                        <h3 className="font-['Satoshi:Bold',sans-serif] leading-[1.35] text-[#0f172a] text-xl group-hover:text-[#1877f2] transition-colors line-clamp-2">
+                        <h3 className="font-['Satoshi',sans-serif] font-bold leading-[1.35] text-[#0f172a] text-xl group-hover:text-[#1877f2] transition-colors line-clamp-2">
                           {post.title}
                         </h3>
-                        <p className="font-['General_Sans:Medium',sans-serif] leading-[1.65] text-[#64748b] text-base line-clamp-3">
+                        <p className="font-['General_Sans',sans-serif] font-medium leading-[1.65] text-[#64748b] text-base line-clamp-3">
                           {post.description}
                         </p>
                         <div className="flex items-center justify-between pt-1">
-                          <span className="font-['General_Sans:Medium',sans-serif] text-[#94a3b8] text-xs">{post.date}</span>
-                          <span className="text-[#1877f2] text-sm font-['Satoshi:Bold',sans-serif] opacity-0 group-hover:opacity-100 transition-opacity">Read →</span>
+                          <span className="font-['General_Sans',sans-serif] font-medium text-[#94a3b8] text-xs">{post.date}</span>
+                          <span className="text-[#1877f2] text-sm font-['Satoshi',sans-serif] font-bold opacity-0 group-hover:opacity-100 transition-opacity">Read →</span>
                         </div>
                       </div>
                     </Link>
@@ -177,8 +177,8 @@ export default function Blog() {
                   🔍
                 </div>
                 <div className="flex flex-col gap-2">
-                  <p className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-xl">No articles found</p>
-                  <p className="font-['General_Sans:Medium',sans-serif] text-[#64748b] text-base leading-relaxed">
+                  <p className="font-['Satoshi',sans-serif] font-bold text-[#1f2937] text-xl">No articles found</p>
+                  <p className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-base leading-relaxed">
                     {searchQuery
                       ? `We couldn't find any articles matching "${searchQuery}". Try a different search term.`
                       : `There are no articles in the "${selectedCategory}" category yet. Check back soon.`}
@@ -186,7 +186,7 @@ export default function Blog() {
                 </div>
                 <button
                   onClick={() => { setSearchQuery(""); setSelectedCategory("All"); }}
-                  className="px-6 py-2.5 rounded-full bg-[#1877f2] text-white font-['Satoshi:Bold',sans-serif] text-sm hover:bg-[#1565c0] transition-colors duration-150"
+                  className="px-6 py-2.5 rounded-full bg-[#1877f2] text-white font-['Satoshi',sans-serif] font-bold text-sm hover:bg-[#1565c0] transition-colors duration-150"
                 >
                   View all articles
                 </button>
@@ -199,19 +199,19 @@ export default function Blog() {
                 <button
                   onClick={() => goTo(safePage - 1)}
                   disabled={safePage === 1}
-                  className="h-10 px-4 rounded-full font-['Satoshi:Bold',sans-serif] text-sm border border-[#e2e8f0] bg-white text-[#374151] hover:border-[#1877f2] hover:text-[#1877f2] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  className="h-10 px-4 rounded-full font-['Satoshi',sans-serif] font-bold text-sm border border-[#e2e8f0] bg-white text-[#374151] hover:border-[#1877f2] hover:text-[#1877f2] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
                   ← Prev
                 </button>
 
                 {pageNumbers.map((p, i) =>
                   p === "…" ? (
-                    <span key={`ellipsis-${i}`} className="h-10 w-10 flex items-center justify-center text-[#94a3b8] font-['General_Sans:Medium',sans-serif] text-sm">…</span>
+                    <span key={`ellipsis-${i}`} className="h-10 w-10 flex items-center justify-center text-[#94a3b8] font-['General_Sans',sans-serif] font-medium text-sm">…</span>
                   ) : (
                     <button
                       key={p}
                       onClick={() => goTo(p as number)}
-                      className={`h-10 w-10 rounded-full font-['Satoshi:Bold',sans-serif] text-sm transition-colors ${
+                      className={`h-10 w-10 rounded-full font-['Satoshi',sans-serif] font-bold text-sm transition-colors ${
                         safePage === p
                           ? "bg-[#1877f2] text-white shadow-sm"
                           : "bg-white text-[#374151] border border-[#e2e8f0] hover:border-[#1877f2] hover:text-[#1877f2]"
@@ -225,7 +225,7 @@ export default function Blog() {
                 <button
                   onClick={() => goTo(safePage + 1)}
                   disabled={safePage === totalPages}
-                  className="h-10 px-4 rounded-full font-['Satoshi:Bold',sans-serif] text-sm border border-[#e2e8f0] bg-white text-[#374151] hover:border-[#1877f2] hover:text-[#1877f2] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  className="h-10 px-4 rounded-full font-['Satoshi',sans-serif] font-bold text-sm border border-[#e2e8f0] bg-white text-[#374151] hover:border-[#1877f2] hover:text-[#1877f2] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
                   Next →
                 </button>

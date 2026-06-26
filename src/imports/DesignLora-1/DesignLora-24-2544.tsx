@@ -6,8 +6,8 @@ import { imgGroup } from "./svg-k82gg";
 function Frame() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 text-white w-full">
-      <p className="font-['Satoshi:Bold',sans-serif] leading-[56px] relative shrink-0 text-[48px] tracking-[-1.2px] whitespace-nowrap">100+ Integrations supported.</p>
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[28px]  relative shrink-0 text-[20px] ">From social media platforms to ecommerce, leads etc, our integrations make it easy to keep everything connected.</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[56px] relative shrink-0 text-[48px] tracking-[-1.2px] whitespace-nowrap">100+ Integrations supported.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px]  relative shrink-0 text-[20px] ">From social media platforms to ecommerce, leads etc, our integrations make it easy to keep everything connected.</p>
     </div>
   );
 }
@@ -15,7 +15,7 @@ function Frame() {
 function Container1() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Container">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">INTEGRATION</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">INTEGRATION</p>
       <Frame />
     </div>
   );
@@ -262,7 +262,7 @@ function GoogleAds() {
 function More() {
   return (
     <div className="bg-[#e5e7eb] content-stretch flex flex-col items-center justify-center p-[8px] relative rounded-[40px] shrink-0" data-name="More">
-      <p className="font-['General_Sans:Medium',sans-serif] leading-[18px] not-italic relative shrink-0 text-[#9ca3af] text-[14px] whitespace-nowrap">{`& More`}</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[#9ca3af] text-[14px] whitespace-nowrap">{`& More`}</p>
     </div>
   );
 }

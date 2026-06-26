@@ -2,7 +2,7 @@ import imgElena1 from "./9e93997490a115f5175753dac42207acd80356eb.png";
 
 function Content() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[103px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[103px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI Ads Manager</p>
       </div>

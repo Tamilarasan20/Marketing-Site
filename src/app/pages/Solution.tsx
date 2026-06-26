@@ -222,7 +222,7 @@ export default function Solution() {
         <div className="flex flex-col gap-6 md:gap-8 items-center max-w-[800px] mx-auto">
           {/* Badge */}
           <div className="bg-[#eefdf3] px-3 py-1 rounded-full">
-            <p className="font-semibold font-['General_Sans:Semibold',sans-serif] leading-[18px] text-[#14a148] text-sm">
+            <p className="font-semibold font-['General_Sans',sans-serif] font-semibold leading-[18px] text-[#14a148] text-sm">
               AI Employees / Solution
             </p>
           </div>
@@ -261,14 +261,14 @@ export default function Solution() {
                   <div className="flex flex-col items-start min-w-0 pointer-events-none">
                     <p className={`leading-[18px] text-sm whitespace-nowrap ${
                       index === selectedEmployee
-                        ? "font-['General_Sans:Semibold',sans-serif] text-[#1f2937]"
+                        ? "font-['General_Sans',sans-serif] font-semibold text-[#1f2937]"
                         : employee.isSoon
-                        ? "font-['General_Sans:Medium',sans-serif] text-[#9ca3af]"
-                        : "font-['General_Sans:Medium',sans-serif] text-[#374151]"
+                        ? "font-['General_Sans',sans-serif] font-medium text-[#9ca3af]"
+                        : "font-['General_Sans',sans-serif] font-medium text-[#374151]"
                     }`}>
                       {employee.role}
                     </p>
-                    <p className={`font-['General_Sans:Medium',sans-serif] leading-4 text-xs ${
+                    <p className={`font-['General_Sans',sans-serif] font-medium leading-4 text-xs ${
                       employee.isSoon ? "text-[#9ca3af]" : "text-[#6b7280]"
                     }`}>
                       {employee.name}
@@ -281,10 +281,10 @@ export default function Solution() {
 
           {/* Title */}
           <div className="flex flex-col gap-4 items-center text-center">
-            <h1 className="font-bold font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[60px] text-[#1f2937] text-3xl md:text-5xl lg:text-[56px] tracking-[-1px] md:tracking-[-1.4px]">
+            <h1 className="font-bold font-['Satoshi',sans-serif] font-bold leading-tight md:leading-[60px] text-[#1f2937] text-3xl md:text-5xl lg:text-[56px] tracking-[-1px] md:tracking-[-1.4px]">
               {aiEmployees[selectedEmployee].title}
             </h1>
-            <p className="font-['General_Sans:Medium',sans-serif] leading-6 md:leading-7 text-[#6b7280] text-base md:text-lg max-w-[800px]">
+            <p className="font-['General_Sans',sans-serif] font-medium leading-6 md:leading-7 text-[#6b7280] text-base md:text-lg max-w-[800px]">
               {aiEmployees[selectedEmployee].subtext}
             </p>
           </div>
@@ -294,7 +294,7 @@ export default function Solution() {
             onClick={handleGetStart}
             className="bg-[#1877f2] h-12 px-6 rounded-full hover:bg-[#1565d8] transition-colors cursor-pointer"
           >
-            <span className="font-['Satoshi:Bold',sans-serif] leading-6 text-white text-base">Get Started</span>
+            <span className="font-['Satoshi',sans-serif] font-bold leading-6 text-white text-base">Get Started</span>
           </button>
         </div>
       </div>
@@ -316,7 +316,7 @@ export default function Solution() {
       {/* Old vs New Way Section */}
       <div className="bg-white flex flex-col items-center justify-center px-4 py-12 md:p-12 lg:p-[80px] w-full">
         <div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[1120px] px-4 md:px-6 lg:px-0">
-          <h2 className="font-bold font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-8 md:mb-12">
+          <h2 className="font-bold font-['Satoshi',sans-serif] font-bold leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-8 md:mb-12">
             Old vs New AI Way!
           </h2>
 
@@ -325,8 +325,8 @@ export default function Solution() {
               {/* Old Way */}
               <div className="bg-white p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-[#e5e7eb]">
                 <div className="flex flex-col items-center gap-1 mb-6 md:mb-8">
-                  <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">Old way</p>
-                  <h3 className="font-bold font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-2xl md:text-3xl text-center">
+                  <p className="font-['General_Sans',sans-serif] font-medium text-[#6b7280] text-sm">Old way</p>
+                  <h3 className="font-bold font-['Satoshi',sans-serif] font-bold leading-8 text-[#1f2937] text-2xl md:text-3xl text-center">
                     You doing all work
                   </h3>
                 </div>
@@ -335,7 +335,7 @@ export default function Solution() {
                     {oldWayProblems.map((problem, index) => (
                       <div key={index} className="flex gap-3 items-start">
                         
-                        <p className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-[#1f2937] text-base">
+                        <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#1f2937] text-base">
                           {problem}
                         </p>
                       </div>
@@ -347,8 +347,8 @@ export default function Solution() {
               {/* New Way */}
               <div className="bg-white p-6 md:p-10">
                 <div className="flex flex-col items-center gap-1 mb-6 md:mb-8">
-                  <p className="font-['General_Sans:Medium',sans-serif] text-[#6b7280] text-sm">New way</p>
-                  <h3 className="font-bold font-['Satoshi:Bold',sans-serif] leading-8 text-[#1f2937] text-2xl md:text-3xl text-center">
+                  <p className="font-['General_Sans',sans-serif] font-medium text-[#6b7280] text-sm">New way</p>
+                  <h3 className="font-bold font-['Satoshi',sans-serif] font-bold leading-8 text-[#1f2937] text-2xl md:text-3xl text-center">
                     AI Agents work while you sleep
                   </h3>
                 </div>
@@ -363,7 +363,7 @@ export default function Solution() {
                       >
                         <IconComponent size={20} style={{ color: benefit.color }} className="shrink-0 mt-0.5" />
                         <p
-                          className="font-['General_Sans:Medium',sans-serif] leading-[22px] text-base"
+                          className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-base"
                           style={{ color: benefit.color }}
                         >
                           {benefit.text}
@@ -391,7 +391,7 @@ export default function Solution() {
       <div className="bg-[#f9fafc] flex flex-col items-center justify-center px-4 py-12 md:p-12 lg:p-[80px] w-full">
         <div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[1120px] px-4 md:px-6 lg:px-0">
           <div className="w-full flex flex-col gap-8 md:gap-12">
-            <h2 className="font-bold font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-6">
+            <h2 className="font-bold font-['Satoshi',sans-serif] font-bold leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-6">
               What you get
             </h2>
             <Frame35_Auth />
@@ -402,7 +402,7 @@ export default function Solution() {
       {/* FAQ Section */}
       <div className="bg-white px-4 md:px-20 py-12 md:py-20">
         <div className="max-w-[800px] mx-auto">
-          <h2 className="font-bold font-['Satoshi:Bold',sans-serif] leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-10 md:mb-12">
+          <h2 className="font-bold font-['Satoshi',sans-serif] font-bold leading-tight md:leading-[48px] text-[#1f2937] text-3xl md:text-[40px] text-center tracking-[-0.6px] md:tracking-[-0.8px] mb-10 md:mb-12">
             Frequently Asked Questions
           </h2>
 
@@ -413,7 +413,7 @@ export default function Solution() {
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full flex items-center justify-between p-5 md:p-6 text-left hover:bg-gray-50 transition-colors cursor-pointer"
                 >
-                  <span className="font-['Satoshi:Bold',sans-serif] leading-6 text-[#1f2937] text-base md:text-lg pr-4">
+                  <span className="font-['Satoshi',sans-serif] font-bold leading-6 text-[#1f2937] text-base md:text-lg pr-4">
                     {item.question}
                   </span>
                   <ChevronDown
@@ -425,7 +425,7 @@ export default function Solution() {
                 </button>
                 {openFaq === index && (
                   <div className="px-5 md:px-6 pb-5 md:pb-6">
-                    <p className="font-['General_Sans:Medium',sans-serif] leading-6 text-[#6b7280] text-base">
+                    <p className="font-['General_Sans',sans-serif] font-medium leading-6 text-[#6b7280] text-base">
                       {item.answer}
                     </p>
                   </div>
@@ -440,8 +440,8 @@ export default function Solution() {
       <div className="relative bg-black w-full flex flex-col gap-12 md:gap-[80px] items-center overflow-clip pt-12 md:pt-[80px] px-4" data-name="Outro">
         <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full max-w-[740px]" data-name="Call to Action Group">
           <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
-            <p className="font-bold font-['Satoshi:Bold',sans-serif] leading-[48px] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleeps</p>
-            <p className="font-['General_Sans:Medium',sans-serif] leading-[24px] md:leading-[28px] relative shrink-0 text-[#9ca3af] text-[16px] md:text-[20px] w-full">
+            <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[48px] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleeps</p>
+            <p className="font-['General_Sans',sans-serif] font-medium leading-[24px] md:leading-[28px] relative shrink-0 text-[#9ca3af] text-[16px] md:text-[20px] w-full">
               Social media tools are easy to buy, but hard to keep up with. Loraloop is your AI marketing team — like a 10-year experienced marketing team working for you to
               <br aria-hidden="true" className="hidden md:block" />
               {`manage `} marketing {` end to end, so you focus on your work.`}
@@ -452,7 +452,7 @@ export default function Solution() {
             className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0 cursor-pointer hover:opacity-90 transition-opacity" 
             data-name="Button"
           >
-            <p className="font-['General_Sans:Semibold',sans-serif] leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Started</p>
+            <p className="font-['General_Sans',sans-serif] font-semibold leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Started</p>
           </div>
         </div>
         <div className="h-[150px] md:h-[258px] relative shrink-0 w-full max-w-[1002px]" data-name="image 172">

@@ -3,10 +3,10 @@ import imgLora2 from "./32264b1854d55ff26d5f28cf2aff116c87c1ae73.png";
 function Content() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center leading-[0] not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Semibold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[14px]">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-semibold justify-center relative shrink-0 text-[#1f2937] text-[14px]">
         <p className="leading-[18px]">AI Marketing Lead</p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[12px]">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[12px]">
         <p className="leading-[16px]">Lora</p>
       </div>
     </div>

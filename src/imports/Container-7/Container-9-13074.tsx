@@ -2,7 +2,7 @@ import imgSarah1 from "./7afe4355de0c7c959afd51dd8847ac323e91965e.png";
 
 function Content() {
   return (
-    <div className="content-stretch flex flex-col font-['General_Sans:Medium',sans-serif] items-start leading-[0] not-italic relative shrink-0 w-[160px]" data-name="Content">
+    <div className="content-stretch flex flex-col font-['General_Sans',sans-serif] font-medium items-start leading-[0] not-italic relative shrink-0 w-[160px]" data-name="Content">
       <div className="flex flex-col justify-center relative shrink-0 text-[#374151] text-[0px] w-full">
         <p className="leading-[18px] text-[14px]">AI Social Media Manager</p>
       </div>

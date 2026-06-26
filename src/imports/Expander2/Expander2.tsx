@@ -43,14 +43,14 @@ function Frame6() {
         className="bg-white content-stretch flex h-[40px] items-center justify-center px-[18px] relative rounded-[120px] shrink-0"
         data-name="Signin"
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Signin</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Signin</p>
       </a>
       <a
         href="/app/signup"
         className="bg-[#1877f2] content-stretch flex h-[40px] items-center justify-center px-[18px] relative rounded-[120px] shrink-0"
         data-name="Get Start"
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
       </a>
     </div>
   );
@@ -97,7 +97,7 @@ function Container() {
 function Paragraph() {
   return (
     <div className="absolute h-[25px] left-[17.93px] top-0 w-[119px]" data-name="Paragraph">
-      <p className="-translate-x-1/2 absolute font-['Satoshi:Bold',sans-serif] leading-[24.818px] left-[59.85px] not-italic text-[#1f2937] text-[19.5px] text-center top-[0.67px] whitespace-nowrap">oraLoop.com</p>
+      <p className="-translate-x-1/2 absolute font-['Satoshi',sans-serif] font-bold leading-[24.818px] left-[59.85px] not-italic text-[#1f2937] text-[19.5px] text-center top-[0.67px] whitespace-nowrap">oraLoop.com</p>
     </div>
   );
 }
@@ -132,7 +132,7 @@ function Frame2() {
     <div className="bg-[#eef4ff] relative rounded-[16px] shrink-0 w-full">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[2px] items-center px-[8px] py-[12px] relative size-full">
-          <p className="flex-[1_0_0] font-['Satoshi:Bold',sans-serif] leading-[24px] min-w-px not-italic relative text-[#1877f2] text-[16px]">AI Employees</p>
+          <p className="flex-[1_0_0] font-['Satoshi',sans-serif] font-bold leading-[24px] min-w-px not-italic relative text-[#1877f2] text-[16px]">AI Employees</p>
           <div className="overflow-clip relative shrink-0 size-[16px]" data-name="Chevron Up">
             <div className="absolute flex inset-[34.05%_21.55%_34.05%_22.98%] items-center justify-center" style={{ containerType: "size" }}>
               <div className="-rotate-90 flex-none h-[100cqw] w-[100cqh]">
@@ -153,10 +153,10 @@ function Frame2() {
 function Content() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center leading-[0] not-italic relative shrink-0 whitespace-nowrap" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Semibold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[14px]">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-semibold justify-center relative shrink-0 text-[#1f2937] text-[14px]">
         <p className="leading-[18px]">AI Marketing Lead</p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[12px]">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[12px]">
         <p className="leading-[16px]">Lora</p>
       </div>
     </div>
@@ -180,10 +180,10 @@ function Container2() {
 function Content1() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col items-start leading-[0] min-w-px not-italic relative" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Semibold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-semibold justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
         <p className="leading-[18px]">AI Strategist</p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
         <p className="leading-[16px]">Sam</p>
       </div>
     </div>
@@ -204,10 +204,10 @@ function Container3() {
 function Content2() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col items-start leading-[0] min-w-px not-italic relative" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Semibold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-semibold justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
         <p className="leading-[18px]">AI SEO/GEO Manager</p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
         <p className="leading-[16px]">Sophie</p>
       </div>
     </div>
@@ -228,10 +228,10 @@ function Container4() {
 function Content3() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col items-start leading-[0] min-w-px not-italic relative" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Semibold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-semibold justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
         <p className="leading-[18px]">AI Content Writer</p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
         <p className="leading-[16px]">Clara</p>
       </div>
     </div>
@@ -252,10 +252,10 @@ function Container5() {
 function Content4() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col items-start leading-[0] min-w-px not-italic relative" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Semibold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-semibold justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
         <p className="leading-[18px]">AI Video Producer</p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
         <p className="leading-[16px]">Theo</p>
       </div>
     </div>
@@ -276,10 +276,10 @@ function Container6() {
 function Content5() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col items-start leading-[0] min-w-px not-italic relative" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Semibold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-semibold justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
         <p className="leading-[18px]">AI Visual Designer</p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
         <p className="leading-[16px]">Steve</p>
       </div>
     </div>
@@ -300,10 +300,10 @@ function Container7() {
 function Content6() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col items-start leading-[0] min-w-px not-italic relative" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Semibold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-semibold justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
         <p className="leading-[18px]">AI Ads Manager</p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
         <p className="leading-[16px]">Elena</p>
       </div>
     </div>
@@ -324,10 +324,10 @@ function Container8() {
 function Content7() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col items-start leading-[0] min-w-px not-italic relative" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Semibold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-semibold justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
         <p className="leading-[18px]">AI Social Media Manager</p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
         <p className="leading-[16px]">Sarah</p>
       </div>
     </div>
@@ -348,10 +348,10 @@ function Container9() {
 function Content8() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col items-start leading-[0] min-w-px not-italic relative" data-name="Content">
-      <div className="flex flex-col font-['General_Sans:Semibold',sans-serif] justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-semibold justify-center relative shrink-0 text-[#1f2937] text-[14px] w-full">
         <p className="leading-[18px]">AI Analyst</p>
       </div>
-      <div className="flex flex-col font-['General_Sans:Medium',sans-serif] justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
+      <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[12px] w-full">
         <p className="leading-[16px]">Nick</p>
       </div>
     </div>
@@ -372,7 +372,7 @@ function Container10() {
 function UpdatingSoonBadge() {
   return (
     <div className="bg-[#e5e7eb] px-[10px] py-[4px] rounded-[100px] inline-flex">
-      <p className="font-['General_Sans:Medium',sans-serif] text-[11px] text-[#4b5563] leading-[14px]">Contents Updating soon</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[11px] text-[#4b5563] leading-[14px]">Contents Updating soon</p>
     </div>
   );
 }
@@ -406,7 +406,7 @@ function Frame4() {
     <Link to="/solution" className="relative shrink-0 w-full block">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[8px] py-[12px] relative size-full">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Solution</p>
+          <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Solution</p>
         </div>
       </div>
     </Link>
@@ -418,7 +418,7 @@ function FrameBlogs() {
     <Link to="/blog" className="relative shrink-0 w-full block">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[8px] py-[12px] relative size-full">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Blogs</p>
+          <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Blogs</p>
         </div>
       </div>
     </Link>
@@ -430,7 +430,7 @@ function Frame5() {
     <Link to="/pricing" className="relative shrink-0 w-full block">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[8px] py-[12px] relative size-full">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Pricing</p>
+          <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Pricing</p>
         </div>
       </div>
     </Link>
@@ -457,14 +457,14 @@ function Frame9() {
         className="bg-white flex-1 h-[40px] flex items-center justify-center rounded-[120px]"
         data-name="Signin"
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Signin</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Signin</p>
       </a>
       <a
         href="/app/signup"
         className="bg-[#1877f2] flex-1 h-[40px] flex items-center justify-center rounded-[120px]"
         data-name="Get Start"
       >
-        <p className="font-['Satoshi:Bold',sans-serif] leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">Get Start</p>
       </a>
     </div>
   );

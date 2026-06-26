@@ -96,31 +96,31 @@ function renderSection(section: ContentSection, index: number) {
   switch (section.type) {
     case "heading":
       return (
-        <h2 key={index} className="font-['Satoshi:Bold',sans-serif] leading-tight text-[#0f172a] text-3xl md:text-[32px] mt-14 mb-4 tracking-[-0.5px]">
+        <h2 key={index} className="font-['Satoshi',sans-serif] font-bold leading-tight text-[#0f172a] text-3xl md:text-[32px] mt-14 mb-4 tracking-[-0.5px]">
           {section.text}
         </h2>
       );
     case "subheading":
       return (
-        <h3 key={index} className="font-['Satoshi:Bold',sans-serif] leading-snug text-[#1e293b] text-2xl mt-8 mb-3">
+        <h3 key={index} className="font-['Satoshi',sans-serif] font-bold leading-snug text-[#1e293b] text-2xl mt-8 mb-3">
           {section.text}
         </h3>
       );
     case "paragraph":
       return (
-        <p key={index} className="font-['General_Sans:Medium',sans-serif] text-[#374151] text-lg md:text-[19px] leading-[1.85] tracking-[0.01em]">
+        <p key={index} className="font-['General_Sans',sans-serif] font-medium text-[#374151] text-lg md:text-[19px] leading-[1.85] tracking-[0.01em]">
           {section.text}
         </p>
       );
     case "callout":
       return (
         <div key={index} className="border-l-[5px] border-[#1877f2] bg-gradient-to-r from-[#eff6ff] to-[#f8faff] rounded-r-2xl px-6 py-5 my-2">
-          <p className="font-['Satoshi:Bold',sans-serif] text-[#1e40af] text-lg md:text-xl leading-[1.7]">{section.text}</p>
+          <p className="font-['Satoshi',sans-serif] font-bold text-[#1e40af] text-lg md:text-xl leading-[1.7]">{section.text}</p>
         </div>
       );
     case "list":
       return (
-        <ul key={index} className="space-y-3 font-['General_Sans:Medium',sans-serif] text-[#374151] text-lg md:text-[19px]">
+        <ul key={index} className="space-y-3 font-['General_Sans',sans-serif] font-medium text-[#374151] text-lg md:text-[19px]">
           {section.items.map((item, i) => (
             <li key={i} className="flex gap-3 items-start leading-[1.8]">
               <span className="mt-[6px] w-2 h-2 rounded-full bg-[#1877f2] shrink-0" />
@@ -131,10 +131,10 @@ function renderSection(section: ContentSection, index: number) {
       );
     case "numbered-list":
       return (
-        <ol key={index} className="space-y-3 font-['General_Sans:Medium',sans-serif] text-[#374151] text-lg md:text-[19px]">
+        <ol key={index} className="space-y-3 font-['General_Sans',sans-serif] font-medium text-[#374151] text-lg md:text-[19px]">
           {section.items.map((item, i) => (
             <li key={i} className="flex gap-4 items-start leading-[1.8]">
-              <span className="shrink-0 w-7 h-7 rounded-full bg-[#eef4ff] text-[#1877f2] font-['Satoshi:Bold',sans-serif] text-sm flex items-center justify-center mt-0.5">{i + 1}</span>
+              <span className="shrink-0 w-7 h-7 rounded-full bg-[#eef4ff] text-[#1877f2] font-['Satoshi',sans-serif] font-bold text-sm flex items-center justify-center mt-0.5">{i + 1}</span>
               <span className="pt-0.5">{item}</span>
             </li>
           ))}
@@ -146,11 +146,11 @@ function renderSection(section: ContentSection, index: number) {
           {section.items.map((item, i) => (
             <details key={i} className="border border-[#e2e8f0] rounded-2xl overflow-hidden group">
               <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none bg-[#f8fafc] hover:bg-[#f0f7ff] transition-colors">
-                <p className="font-['Satoshi:Bold',sans-serif] text-[#0f172a] text-base md:text-lg">{item.q}</p>
+                <p className="font-['Satoshi',sans-serif] font-bold text-[#0f172a] text-base md:text-lg">{item.q}</p>
                 <span className="text-[#1877f2] text-xl font-bold shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
               </summary>
               <div className="px-6 py-5 border-t border-[#e2e8f0]">
-                <p className="font-['General_Sans:Medium',sans-serif] text-[#475569] text-base md:text-lg leading-[1.8]">{item.a}</p>
+                <p className="font-['General_Sans',sans-serif] font-medium text-[#475569] text-base md:text-lg leading-[1.8]">{item.a}</p>
               </div>
             </details>
           ))}
@@ -159,12 +159,12 @@ function renderSection(section: ContentSection, index: number) {
     case "cta":
       return (
         <div key={index} className="bg-gradient-to-br from-[#1877f2] to-[#0d5ed9] rounded-3xl p-8 md:p-10 mt-12 text-white">
-          <p className="font-['Satoshi:Bold',sans-serif] leading-[1.4] text-xl md:text-2xl mb-6 text-white/95">{section.text}</p>
+          <p className="font-['Satoshi',sans-serif] font-bold leading-[1.4] text-xl md:text-2xl mb-6 text-white/95">{section.text}</p>
           <a
             href="https://loraloop.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-[#1877f2] font-['Satoshi:Bold',sans-serif] px-8 py-4 rounded-full text-base hover:bg-blue-50 transition-colors shadow-sm"
+            className="inline-block bg-white text-[#1877f2] font-['Satoshi',sans-serif] font-bold px-8 py-4 rounded-full text-base hover:bg-blue-50 transition-colors shadow-sm"
           >
             Try Loraloop Free →
           </a>
@@ -200,7 +200,7 @@ export default function BlogDetail() {
   if (!post) {
     return (
       <div className="bg-white pt-32 pb-20 px-4 sm:px-6 md:px-20 text-center">
-        <h1 className="font-['Satoshi:Bold',sans-serif] text-4xl text-[#1f2937]">Blog post not found</h1>
+        <h1 className="font-['Satoshi',sans-serif] font-bold text-4xl text-[#1f2937]">Blog post not found</h1>
         <Link to="/blog" className="text-[#1877f2] hover:underline mt-4 inline-block text-xl">← Back to Blog</Link>
       </div>
     );
@@ -223,42 +223,42 @@ export default function BlogDetail() {
               <div className="flex-1 flex flex-col gap-6">
                 {/* Breadcrumb */}
                 <div className="flex gap-2 items-center">
-                  <Link to="/blog" className="font-['General_Sans:Medium',sans-serif] text-sm text-[#64748b] hover:text-[#1877f2] transition-colors">Blog</Link>
+                  <Link to="/blog" className="font-['General_Sans',sans-serif] font-medium text-sm text-[#64748b] hover:text-[#1877f2] transition-colors">Blog</Link>
                   <ChevronRight size={14} className="text-[#cbd5e1]" />
-                  <span className="font-['General_Sans:Medium',sans-serif] text-sm text-[#1877f2] bg-[#eff6ff] px-2.5 py-0.5 rounded-full">{post.category}</span>
+                  <span className="font-['General_Sans',sans-serif] font-medium text-sm text-[#1877f2] bg-[#eff6ff] px-2.5 py-0.5 rounded-full">{post.category}</span>
                 </div>
 
                 {/* Title */}
-                <h1 className="font-['Satoshi:Bold',sans-serif] leading-[1.12] text-[#0f172a] text-4xl md:text-5xl tracking-[-1.5px]">
+                <h1 className="font-['Satoshi',sans-serif] font-bold leading-[1.12] text-[#0f172a] text-4xl md:text-5xl tracking-[-1.5px]">
                   {post.title}
                 </h1>
 
                 {/* Description */}
-                <p className="font-['General_Sans:Medium',sans-serif] text-[#475569] text-lg md:text-xl leading-[1.7]">
+                <p className="font-['General_Sans',sans-serif] font-medium text-[#475569] text-lg md:text-xl leading-[1.7]">
                   {post.description}
                 </p>
 
                 {/* Meta row */}
                 <div className="flex flex-wrap gap-4 items-center">
-                  <span className="font-['General_Sans:Medium',sans-serif] text-[#64748b] text-sm">{post.date}</span>
+                  <span className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm">{post.date}</span>
                   <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
-                  <span className="flex items-center gap-1.5 font-['General_Sans:Medium',sans-serif] text-[#64748b] text-sm">
+                  <span className="flex items-center gap-1.5 font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm">
                     <Clock size={13} />
                     {readTime} min read
                   </span>
                   <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
-                  <span className="font-['General_Sans:Medium',sans-serif] text-[#64748b] text-sm">Loraloop Team</span>
+                  <span className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm">Loraloop Team</span>
                 </div>
 
                 {/* Summarise */}
                 <div className="flex flex-col gap-2.5">
-                  <p className="font-['Satoshi:Bold',sans-serif] text-[#0f172a] text-sm uppercase tracking-wider">Summarise with AI</p>
+                  <p className="font-['Satoshi',sans-serif] font-bold text-[#0f172a] text-sm uppercase tracking-wider">Summarise with AI</p>
                   <div className="flex flex-wrap gap-2">
                     {aiTools.map((ai) => (
                       <a key={ai.name} href={getSummarizeUrl(ai.name, currentUrl)} target="_blank" rel="noopener noreferrer"
                         className="bg-white flex gap-2 items-center px-4 py-2 rounded-xl border border-[#e2e8f0] shadow-sm hover:border-[#1877f2] hover:bg-[#f8faff] transition-all">
                         <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
-                        <span className="font-['General_Sans:Medium',sans-serif] text-[#334155] text-sm">{ai.name}</span>
+                        <span className="font-['General_Sans',sans-serif] font-medium text-[#334155] text-sm">{ai.name}</span>
                       </a>
                     ))}
                   </div>
@@ -266,7 +266,7 @@ export default function BlogDetail() {
 
                 {/* Share */}
                 <div className="flex gap-3 items-center flex-wrap">
-                  <p className="font-['General_Sans:Medium',sans-serif] text-[#64748b] text-sm">Share:</p>
+                  <p className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm">Share:</p>
                   <button onClick={() => handleShare("facebook")} title="Share on Facebook" className="rounded-xl hover:opacity-80 active:scale-95 transition-all">
                     <FacebookIcon size={ICON_SIZE} />
                   </button>
@@ -280,7 +280,7 @@ export default function BlogDetail() {
                     className={`w-[30px] h-[30px] rounded-xl flex items-center justify-center transition-all active:scale-95 ${copied ? "bg-green-500 text-white" : "bg-[#f1f5f9] text-[#64748b] hover:bg-[#e2e8f0]"}`}>
                     {copied ? <Check size={16} /> : <LinkIcon size={16} />}
                   </button>
-                  {copied && <span className="text-sm text-green-600 font-['General_Sans:Medium',sans-serif]">Copied!</span>}
+                  {copied && <span className="text-sm text-green-600 font-['General_Sans',sans-serif] font-medium">Copied!</span>}
                 </div>
               </div>
 
@@ -306,11 +306,11 @@ export default function BlogDetail() {
             {/* Sidebar */}
             <div className="w-full lg:w-[280px] flex flex-col gap-6 lg:sticky lg:top-24 shrink-0">
               <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-3xl p-6">
-                <h3 className="font-['Satoshi:Bold',sans-serif] text-[#0f172a] text-base mb-4">In this article</h3>
+                <h3 className="font-['Satoshi',sans-serif] font-bold text-[#0f172a] text-base mb-4">In this article</h3>
                 <div className="h-px bg-[#e2e8f0] mb-4" />
                 <div className="flex flex-col gap-1">
                   {post.tableOfContents.map((item, i) => (
-                    <span key={i} className="font-['General_Sans:Medium',sans-serif] text-[#1877f2] text-sm leading-[1.6] py-1 px-2 rounded-lg hover:bg-[#eff6ff] cursor-pointer transition-colors block">
+                    <span key={i} className="font-['General_Sans',sans-serif] font-medium text-[#1877f2] text-sm leading-[1.6] py-1 px-2 rounded-lg hover:bg-[#eff6ff] cursor-pointer transition-colors block">
                       {i + 1}. {item}
                     </span>
                   ))}
@@ -320,7 +320,7 @@ export default function BlogDetail() {
               {/* Read time */}
               <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-2xl px-5 py-4 flex items-center gap-3">
                 <Clock size={16} className="text-[#64748b] shrink-0" />
-                <span className="font-['General_Sans:Medium',sans-serif] text-[#475569] text-sm">{readTime} min read</span>
+                <span className="font-['General_Sans',sans-serif] font-medium text-[#475569] text-sm">{readTime} min read</span>
               </div>
 
               {/* CTA card */}
@@ -332,8 +332,8 @@ export default function BlogDetail() {
                   <img alt="" className="w-full h-full object-cover" src={imgFeatureImageSmall} />
                 </div>
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 flex flex-col gap-3 items-center w-[220px]">
-                  <p className="font-['Satoshi:Bold',sans-serif] leading-[1.4] text-base text-center text-white">Your AI marketing team that delivers results, never sleeps!</p>
-                  <a href="https://loraloop.com" target="_blank" rel="noopener noreferrer" className="bg-white text-[#0073ff] px-5 py-2.5 rounded-full font-['Satoshi:Bold',sans-serif] text-sm hover:bg-blue-50 transition-colors">Get Started</a>
+                  <p className="font-['Satoshi',sans-serif] font-bold leading-[1.4] text-base text-center text-white">Your AI marketing team that delivers results, never sleeps!</p>
+                  <a href="https://loraloop.com" target="_blank" rel="noopener noreferrer" className="bg-white text-[#0073ff] px-5 py-2.5 rounded-full font-['Satoshi',sans-serif] font-bold text-sm hover:bg-blue-50 transition-colors">Get Started</a>
                 </div>
               </div>
             </div>
@@ -344,9 +344,9 @@ export default function BlogDetail() {
         <div className="px-4 sm:px-6 md:px-20 py-10 border-t border-[#f1f5f9]">
           <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
             <div className="flex items-center justify-between">
-              <h2 className="font-['Satoshi:Bold',sans-serif] text-[#0f172a] text-2xl md:text-3xl">More articles</h2>
+              <h2 className="font-['Satoshi',sans-serif] font-bold text-[#0f172a] text-2xl md:text-3xl">More articles</h2>
               <Link to="/blog" className="bg-[#1877f2] flex gap-2 h-10 items-center justify-center px-5 rounded-full hover:bg-[#1565d8] transition-colors">
-                <span className="font-['Satoshi:Bold',sans-serif] text-sm text-white">View All</span>
+                <span className="font-['Satoshi',sans-serif] font-bold text-sm text-white">View All</span>
               </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -362,11 +362,11 @@ export default function BlogDetail() {
                     </div>
                     <div className="flex flex-col gap-2 px-5 pb-5">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-['Satoshi:Bold',sans-serif] text-[#1877f2] bg-[#eff6ff] px-2.5 py-0.5 rounded-full">{article.category}</span>
-                        <span className="flex items-center gap-1 text-xs text-[#94a3b8] font-['General_Sans:Medium',sans-serif]"><Clock size={11} />{rt} min</span>
+                        <span className="text-xs font-['Satoshi',sans-serif] font-bold text-[#1877f2] bg-[#eff6ff] px-2.5 py-0.5 rounded-full">{article.category}</span>
+                        <span className="flex items-center gap-1 text-xs text-[#94a3b8] font-['General_Sans',sans-serif] font-medium"><Clock size={11} />{rt} min</span>
                       </div>
-                      <h3 className="font-['Satoshi:Bold',sans-serif] leading-[1.35] text-[#0f172a] text-lg group-hover:text-[#1877f2] transition-colors line-clamp-2">{article.title}</h3>
-                      <p className="font-['General_Sans:Medium',sans-serif] text-[#64748b] text-sm">{article.date}</p>
+                      <h3 className="font-['Satoshi',sans-serif] font-bold leading-[1.35] text-[#0f172a] text-lg group-hover:text-[#1877f2] transition-colors line-clamp-2">{article.title}</h3>
+                      <p className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm">{article.date}</p>
                     </div>
                   </Link>
                 );
@@ -378,13 +378,13 @@ export default function BlogDetail() {
         {/* Floating bar */}
         <div className="fixed bottom-4 left-3 right-3 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-max z-50 backdrop-blur-[10px] bg-[rgba(0,0,0,0.88)] rounded-2xl md:rounded-[30px] shadow-xl px-4 py-3">
           <div className="flex flex-row items-center gap-3 overflow-x-auto">
-            <p className="font-['General_Sans:Medium',sans-serif] text-[#9ca3af] text-xs whitespace-nowrap flex-shrink-0">Quick Summarise with</p>
+            <p className="font-['General_Sans',sans-serif] font-medium text-[#9ca3af] text-xs whitespace-nowrap flex-shrink-0">Quick Summarise with</p>
             <div className="w-px h-4 bg-[#444] flex-shrink-0" />
             {aiTools.map((ai) => (
               <a key={ai.name} href={getSummarizeUrl(ai.name, currentUrl)} target="_blank" rel="noopener noreferrer"
                 className="bg-white flex gap-1.5 items-center px-3 py-1.5 rounded-2xl border border-[#e5e7eb] hover:bg-gray-100 transition-colors flex-shrink-0">
                 <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
-                <span className="font-['Satoshi:Bold',sans-serif] text-[#1f2937] text-sm whitespace-nowrap">{ai.name}</span>
+                <span className="font-['Satoshi',sans-serif] font-bold text-[#1f2937] text-sm whitespace-nowrap">{ai.name}</span>
               </a>
             ))}
           </div>
