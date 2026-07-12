@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
 import imgAgentBanner from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
+import CreditUsageBlock from "./CreditUsageBlock";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type BillingPeriod = "monthly" | "quarterly" | "annual";
@@ -207,7 +208,15 @@ function CreditChips({ plan, tierIdx, onChange }: {
 }
 
 // ─── Main pricing section ─────────────────────────────────────────────────────
-export default function PricingSection({ className = "" }: { className?: string }) {
+export default function PricingSection({
+  className = "",
+  showCreditUsage = true,
+}: {
+  className?: string;
+  /** Renders the Credit Usage breakdown below the plans. On by default so pricing
+   *  stays consistent everywhere; pass false to hide it on a given surface. */
+  showCreditUsage?: boolean;
+}) {
   const [period, setPeriod] = useState<BillingPeriod>("monthly");
   const [withAgents, setWithAgents] = useState(true);
   const [selectedTiers, setSelectedTiers] = useState<Record<string, number>>({
@@ -411,6 +420,15 @@ export default function PricingSection({ className = "" }: { className?: string 
               );
             })}
           </div>
+
+          {/* ── Credit Usage — how far each plan's credits stretch (AI plans only) ── */}
+          {showCreditUsage && withAgents && (
+            <div className="w-full pt-8 mt-2 border-t border-white/[0.06]">
+              <CreditUsageBlock
+                planCredits={PLANS.map((p) => ({ name: p.name, credits: p.tiers[0].credits ?? 0 }))}
+              />
+            </div>
+          )}
 
         </div>
       </div>
