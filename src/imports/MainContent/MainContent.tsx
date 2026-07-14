@@ -62,7 +62,7 @@ function Group1() {
   return (
     <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid justify-self-start place-items-start relative row-2 self-start shrink-0">
       <div className="col-1 h-[530px] ml-[80px] mt-[400px] relative row-1 w-[540px]" data-name="image 193">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage193} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage193} />
       </div>
       <FeatureTextGroup />
     </div>
@@ -111,7 +111,7 @@ function Group2() {
   return (
     <div className="col-2 grid-cols-[max-content] grid-rows-[max-content] inline-grid justify-self-start place-items-start relative row-2 self-start shrink-0">
       <div className="col-1 h-[530px] ml-[660px] mt-[400px] relative row-1 w-[540px]" data-name="image 194">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage194} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage194} />
       </div>
       <FeatureTextGroup1 />
     </div>
@@ -164,7 +164,7 @@ function Group7() {
   return (
     <div className="col-2 grid-cols-[max-content] grid-rows-[max-content] inline-grid justify-self-start place-items-start relative row-4 self-start shrink-0">
       <div className="col-1 h-[535px] ml-[660px] mt-[1540px] relative row-1 w-[540px]" data-name="image 199">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage199} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage199} />
       </div>
       <FeatureTextGroup2 />
     </div>
@@ -213,7 +213,7 @@ function Group() {
   return (
     <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid justify-self-start place-items-start relative row-1 self-start shrink-0">
       <div className="col-1 h-[360px] ml-[80px] mt-0 relative row-1 w-full max-w-[1120px] px-4" data-name="image 192">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage192} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage192} />
       </div>
       <FeatureTextGroup3 />
     </div>
@@ -262,7 +262,7 @@ function Group6() {
   return (
     <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid justify-self-start place-items-start relative row-4 self-start shrink-0">
       <div className="col-1 h-[535px] ml-[80px] mt-[1540px] relative row-1 w-[540px]" data-name="image 198">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage198} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage198} />
       </div>
       <FeatureTextGroup4 />
     </div>
@@ -315,7 +315,7 @@ function Group8() {
   return (
     <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid justify-self-start place-items-start relative row-5 self-start shrink-0">
       <div className="col-1 h-[360px] ml-[80px] mt-[2115px] relative row-1 w-full max-w-[1120px] px-4" data-name="image 200">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage200} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage200} />
       </div>
       <FeatureTextGroup5 />
     </div>
@@ -364,7 +364,7 @@ function Group3() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
       <div className="col-1 h-[530px] ml-0 mt-0 relative row-1 w-[346px]" data-name="image 195">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage195} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage195} />
       </div>
       <FeatureTextGroup6 />
     </div>
@@ -413,7 +413,7 @@ function Group4() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
       <div className="col-1 h-[530px] ml-0 mt-0 relative row-1 w-[346px]" data-name="image 196">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage196} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage196} />
       </div>
       <FeatureTextGroup7 />
     </div>
@@ -462,7 +462,7 @@ function Group5() {
   return (
     <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start relative shrink-0">
       <div className="col-1 h-[530px] ml-0 mt-0 relative row-1 w-[346px]" data-name="image 197">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage197} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage197} />
       </div>
       <FeatureTextGroup8 />
     </div>

@@ -25,7 +25,7 @@ function Container1() {
   return (
     <div className="bg-[#dbeafe] content-stretch flex gap-[12px] items-center p-[8px] relative rounded-[20px] shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
       <Content />
     </div>
@@ -49,7 +49,7 @@ function Container2() {
   return (
     <div className="content-stretch flex gap-[12px] items-center py-[8px] relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[40px]" data-name="Mark 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgMark1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgMark1} />
       </div>
       <Content1 />
     </div>
@@ -73,7 +73,7 @@ function Container3() {
   return (
     <div className="content-stretch flex gap-[12px] items-center py-[8px] relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[40px]" data-name="Sophie 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSophie1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSophie1} />
       </div>
       <Content2 />
     </div>
@@ -97,7 +97,7 @@ function Container4() {
   return (
     <div className="content-stretch flex gap-[12px] items-center py-[8px] relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[40px]" data-name="Clara 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgClara1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgClara1} />
       </div>
       <Content3 />
     </div>
@@ -121,7 +121,7 @@ function Container5() {
   return (
     <div className="content-stretch flex gap-[12px] items-center py-[8px] relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[40px]" data-name="Steve 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSteve1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSteve1} />
       </div>
       <Content4 />
     </div>
@@ -145,7 +145,7 @@ function Container6() {
   return (
     <div className="content-stretch flex gap-[12px] items-center py-[8px] relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[40px]" data-name="Theo 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgTheo1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgTheo1} />
       </div>
       <Content5 />
     </div>
@@ -169,7 +169,7 @@ function Container7() {
   return (
     <div className="content-stretch flex gap-[12px] items-center py-[8px] relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[40px]" data-name="Sarah 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSarah1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSarah1} />
       </div>
       <Content6 />
     </div>
@@ -193,7 +193,7 @@ function Container8() {
   return (
     <div className="content-stretch flex gap-[12px] items-center py-[8px] relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[40px]" data-name="Elena 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgElena1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgElena1} />
       </div>
       <Content7 />
     </div>
@@ -217,7 +217,7 @@ function Container9() {
   return (
     <div className="content-stretch flex gap-[12px] items-center py-[8px] relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[40px]" data-name="Nick 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgNick1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgNick1} />
       </div>
       <Content8 />
     </div>

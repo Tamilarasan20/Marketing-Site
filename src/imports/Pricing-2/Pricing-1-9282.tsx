@@ -278,7 +278,7 @@ function Container4() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.81%] w-[100.18%]" src={imgImage} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.81%] w-[100.18%]" src={imgImage} />
           </div>
         </div>
         <Content />
@@ -479,7 +479,7 @@ function Container7() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.15%] w-[100.18%]" src={imgImage} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.15%] w-[100.18%]" src={imgImage} />
           </div>
         </div>
         <Content1 />
@@ -695,7 +695,7 @@ function Container10() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.15%] w-[100.18%]" src={imgImage} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.15%] w-[100.18%]" src={imgImage} />
           </div>
         </div>
         <Content2 />
@@ -897,7 +897,7 @@ function Container13() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[150px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-7.97%] w-[100.18%]" src={imgImage} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-7.97%] w-[100.18%]" src={imgImage} />
           </div>
         </div>
         <Content3 />
@@ -1857,7 +1857,7 @@ function LinkYouTube() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[11.364px] relative size-full">
         <div className="relative shrink-0 size-[36.367px]" data-name="Logos">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
           </div>
         </div>
       </div>
@@ -1871,7 +1871,7 @@ function LinkFacebook() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[11.364px] relative size-full">
         <div className="relative shrink-0 size-[36.367px]" data-name="Logos">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos1} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos1} />
           </div>
         </div>
       </div>
@@ -1885,7 +1885,7 @@ function LinkFacebook1() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[11.364px] relative size-full">
         <div className="relative shrink-0 size-[36.367px]" data-name="Logos">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos2} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos2} />
           </div>
         </div>
       </div>

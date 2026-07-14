@@ -140,7 +140,7 @@ const APP_URL = "https://app.loraloop.com";
 function CardHeader() {
   return (
     <div className="relative h-[150px] w-full shrink-0 overflow-hidden">
-      <img
+      <img loading="lazy" decoding="async"
         src={imgAgentBanner}
         alt="AI Agent team"
         className="absolute inset-0 w-full h-full object-cover object-top"

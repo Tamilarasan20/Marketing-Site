@@ -273,7 +273,7 @@ function Container2() {
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-center flex flex-wrap gap-[40px] items-center justify-center p-[24px] relative size-full">
           <div className="relative shrink-0 size-[40px]" data-name="Logos">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
           </div>
           <div className="relative shrink-0 size-[40px]" data-name="Social Icons">
             <div className="absolute inset-[4%_5.61%_0_19.67%]" data-name="Vector">
@@ -335,7 +335,7 @@ function Container2() {
           </div>
           <div className="relative shrink-0 size-[40px]" data-name="Logos">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <img alt="" className="absolute left-[-5.44%] max-w-none size-[114.01%] top-[-5.88%]" src={imgLogos1} />
+              <img loading="lazy" decoding="async" alt="" className="absolute left-[-5.44%] max-w-none size-[114.01%] top-[-5.88%]" src={imgLogos1} />
             </div>
           </div>
           <div className="overflow-clip relative shrink-0 size-[40px]" data-name="Social Icons">

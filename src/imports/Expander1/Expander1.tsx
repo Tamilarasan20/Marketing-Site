@@ -21,7 +21,7 @@ function Menu() {
 function Logo() {
   return (
     <Link to="/" className="flex items-center gap-[6px] shrink-0 ml-[4px]">
-      <img
+      <img loading="lazy" decoding="async"
         src={appLogo}
         alt="Loraloop logo"
         style={{ width: 34, height: 34, objectFit: "contain", flexShrink: 0 }}

@@ -31,13 +31,13 @@ export default function Contact() {
               <p className="font-['Satoshi',sans-serif] font-semibold leading-[1.25] text-[#111827] text-[22px] tracking-[-0.015em]">Social Media</p>
               <div className="flex gap-2">
                 <a href="https://www.linkedin.com/company/loraloop/" target="_blank" rel="noopener noreferrer" className="rounded-[11.365px] w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
-                  <img alt="LinkedIn" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos} />
+                  <img loading="lazy" decoding="async" alt="LinkedIn" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos} />
                 </a>
                 <a href="https://www.instagram.com/loraloop_ai?igsh=YXR6bnpjcXB3bXFi" target="_blank" rel="noopener noreferrer" className="rounded-[11.365px] w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
-                  <img alt="Instagram" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos1} />
+                  <img loading="lazy" decoding="async" alt="Instagram" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos1} />
                 </a>
                 <a href="https://x.com/TKtamilarasan2" target="_blank" rel="noopener noreferrer" className="rounded-[11.365px] w-[50px] h-[50px] flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
-                  <img alt="X (Twitter)" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos2} />
+                  <img loading="lazy" decoding="async" alt="X (Twitter)" className="w-[36.367px] h-[36.367px] object-cover" src={imgLogos2} />
                 </a>
               </div>
             </div>

@@ -24,7 +24,7 @@ function Cotnet() {
 function VideoImage() {
   return (
     <div className="h-[617px] relative rounded-[32px] shrink-0 w-[1115px]" data-name="Video Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[32px] size-full" src={imgVideoImage} />
+      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[32px] size-full" src={imgVideoImage} />
     </div>
   );
 }
@@ -101,7 +101,7 @@ function FeatureImageLarge() {
         <div className="-scale-y-100 flex-none rotate-180">
           <div className="h-[219px] relative w-[262px]" data-name="Feature Image Small">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <img alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall} />
+              <img loading="lazy" decoding="async" alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall} />
             </div>
           </div>
         </div>
@@ -158,7 +158,7 @@ function FeatureImageLarge1() {
       <FeatureTextGroup1 />
       <div className="-translate-x-1/2 absolute bottom-0 h-[262px] left-[calc(50%+154.5px)] w-[263px]" data-name="Feature Image Small">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[99.91%] left-[-0.01%] max-w-none top-[0.09%] w-[100.02%]" src={imgFeatureImageSmall1} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[99.91%] left-[-0.01%] max-w-none top-[0.09%] w-[100.02%]" src={imgFeatureImageSmall1} />
         </div>
       </div>
       <p className="-translate-x-full absolute bottom-[55px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[302px] not-italic text-[#143b2c] text-[28px] text-right tracking-[-0.48px] translate-y-full w-[78px]">Sophie</p>
@@ -219,7 +219,7 @@ function FeatureImageLarge2() {
         <FeatureTextGroup2 />
         <div className="-translate-x-1/2 absolute bottom-0 h-[285px] left-[calc(50%+154px)] w-[344px]" data-name="Banner Image Side Right">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[173.5%] left-[-36.83%] max-w-none top-[-28.37%] w-[173.67%]" src={imgBannerImageSideRight} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[173.5%] left-[-36.83%] max-w-none top-[-28.37%] w-[173.67%]" src={imgBannerImageSideRight} />
           </div>
         </div>
         <p className="absolute bottom-[54.67px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[227px] not-italic text-[#aa9302] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Elena</p>
@@ -277,7 +277,7 @@ function FeatureHighlight1() {
       </div>
       <FeatureTextGroup3 />
       <div className="absolute bottom-[-1px] h-[285px] right-0 w-[314px]" data-name="Feature Image Small">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFeatureImageSmall2} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFeatureImageSmall2} />
       </div>
       <p className="absolute font-['Kalam',sans-serif] font-bold leading-[34px] left-[780px] not-italic text-[#501481] text-[28px] top-[321px] tracking-[-0.48px] whitespace-nowrap">Lora</p>
     </div>
@@ -332,7 +332,7 @@ function FeatureImageLarge3() {
       <FeatureTextGroup4 />
       <div className="-translate-x-1/2 absolute bottom-0 h-[262px] left-[calc(50%+154.5px)] w-[263px]" data-name="Feature Image Small">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgFeatureImageSmall3} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgFeatureImageSmall3} />
         </div>
       </div>
       <p className="-translate-x-full absolute bottom-[55px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[301px] not-italic text-[#fafcfb] text-[28px] text-right tracking-[-0.48px] translate-y-full whitespace-nowrap">Sarah</p>
@@ -393,7 +393,7 @@ function FeatureImageLarge4() {
         <FeatureTextGroup5 />
         <div className="absolute bottom-0 h-[271px] right-[-20px] w-[272px]" data-name="image 168">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[120.44%] left-[-48.18%] max-w-none top-0 w-[193.05%]" src={imgImage168} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[120.44%] left-[-48.18%] max-w-none top-0 w-[193.05%]" src={imgImage168} />
           </div>
         </div>
         <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] not-italic right-[302px] text-[28px] text-white tracking-[-0.48px] translate-x-full translate-y-full whitespace-nowrap">Nick</p>
@@ -448,7 +448,7 @@ function FeatureHighlight2() {
       <FeatureTextGroup6 />
       <div className="absolute bottom-[-22px] h-[218px] right-[-30px] w-[228px]" data-name="Gemini_Generated_Image_bewxcwbewxcwbewx 2">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgGeminiGeneratedImageBewxcwbewxcwbewx2} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgGeminiGeneratedImageBewxcwbewxcwbewx2} />
         </div>
       </div>
       <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[120px] not-italic text-[#286a8f] text-[28px] tracking-[-0.48px] translate-y-full w-[62px]">Clara</p>
@@ -505,7 +505,7 @@ function FeatureImageLarge5() {
         <FeatureTextGroup7 />
         <div className="absolute bottom-[-70px] h-[285px] right-[-69.33px] w-[277px]" data-name="Object">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[373.26%] left-[-76.92%] max-w-none top-[-12.2%] w-[251.46%]" src={imgObject} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[373.26%] left-[-76.92%] max-w-none top-[-12.2%] w-[251.46%]" src={imgObject} />
           </div>
         </div>
         <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[120px] not-italic text-[#06074e] text-[28px] tracking-[-0.48px] translate-y-full w-[57px]">Theo</p>
@@ -564,7 +564,7 @@ function FeatureImageLarge6() {
       <FeatureTextGroup8 />
       <div className="absolute bottom-[-19px] h-[215px] right-[-29.67px] w-[235px]" data-name="Feature Image">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[102.18%] left-[-33.01%] max-w-none top-0 w-[168.71%]" src={imgFeatureImage} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[102.18%] left-[-33.01%] max-w-none top-0 w-[168.71%]" src={imgFeatureImage} />
         </div>
       </div>
       <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[120px] not-italic text-[#8e492b] text-[28px] tracking-[-0.48px] translate-y-full w-[66px]">Steve</p>

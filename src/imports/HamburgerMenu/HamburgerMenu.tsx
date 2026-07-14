@@ -25,7 +25,7 @@ function Menu() {
 function Logo() {
   return (
     <Link to="/" className="flex items-center gap-[6px] shrink-0 ml-[4px]">
-      <img
+      <img loading="lazy" decoding="async"
         src={appLogo}
         alt="Loraloop logo"
         style={{ width: 34, height: 34, objectFit: "contain", flexShrink: 0 }}
@@ -55,7 +55,7 @@ export default function HamburgerMenu() {
         >
           <span className="flex items-center justify-center w-7 h-7 rounded-full shrink-0 overflow-hidden">
             {currentUser.avatarUrl ? (
-              <img
+              <img loading="lazy" decoding="async"
                 src={currentUser.avatarUrl}
                 alt={currentUser.name}
                 className="w-full h-full object-cover"

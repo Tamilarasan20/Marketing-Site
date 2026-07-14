@@ -86,7 +86,7 @@ export default function IntroSection() {
       <div className="absolute bottom-[-134px] h-[537px] right-[249px] w-[786px]" data-name="Banner Image Side Left" />
       <TextGroupVertical />
       <div className="-translate-x-1/2 absolute bottom-0 h-[220px] left-1/2 w-[854px]" data-name="image 174">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage174} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage174} />
       </div>
     </div>
   );

@@ -12,9 +12,12 @@
     <!-- Fonts — Satoshi (display/headings) + General Sans (body) via Fontshare -->
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+    <!-- Load fonts without blocking render: swap media to 'all' once fetched -->
     <link
       rel="stylesheet"
       href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
     <!-- Supporting families used across pages: Inter (UI fallback), Kalam (hand-drawn accents), Bricolage Grotesque (display accents) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,7 +25,19 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=Inter:wght@400;500;700&family=Kalam:wght@400;700&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=general-sans@400,500,600&display=swap"
+      />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=Inter:wght@400;500;700&family=Kalam:wght@400;700&display=swap"
+      />
+    </noscript>
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />

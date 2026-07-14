@@ -17,7 +17,7 @@ export default function Container() {
   return (
     <div className="bg-[#dbeafe] content-stretch flex gap-[12px] items-center p-[8px] relative rounded-[20px] size-full" data-name="Container">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
       <Content />
     </div>
