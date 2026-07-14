@@ -17,7 +17,7 @@ export default function Container() {
   return (
     <div className="content-stretch flex gap-[12px] items-center py-[8px] relative size-full" data-name="Container">
       <div className="relative shrink-0 size-[40px]" data-name="Sophie 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSophie1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgSophie1} />
       </div>
       <Content />
     </div>

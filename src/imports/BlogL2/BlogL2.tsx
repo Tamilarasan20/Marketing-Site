@@ -50,8 +50,8 @@ function ChatGpt() {
     <div className="bg-white content-stretch flex gap-[12px] items-center px-[12px] py-[8px] relative rounded-[12px] shrink-0" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
       <div className="pointer-events-none relative shrink-0 size-[16px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgLogos} />
-        <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgLogos} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgLogos} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgLogos} />
       </div>
       <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[#374151] text-[13px] text-center tracking-[0.3px] whitespace-nowrap">ChatGPT</p>
     </div>
@@ -63,7 +63,7 @@ function ChatGpt1() {
     <div className="bg-white content-stretch flex gap-[12px] items-center px-[12px] py-[8px] relative rounded-[12px] shrink-0" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
       <div className="relative shrink-0 size-[16px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos1} />
       </div>
       <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[#374151] text-[13px] text-center tracking-[0.3px] whitespace-nowrap">Perplexity</p>
     </div>
@@ -75,7 +75,7 @@ function ChatGpt2() {
     <div className="bg-white content-stretch flex gap-[12px] items-center px-[12px] py-[8px] relative rounded-[12px] shrink-0" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
       <div className="relative shrink-0 size-[16px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos2} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos2} />
       </div>
       <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[#374151] text-[13px] text-center tracking-[0.3px] whitespace-nowrap">Claude</p>
     </div>
@@ -87,7 +87,7 @@ function ChatGpt3() {
     <div className="bg-white content-stretch flex gap-[12px] items-center px-[12px] py-[8px] relative rounded-[12px] shrink-0" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
       <div className="relative shrink-0 size-[16px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos3} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos3} />
       </div>
       <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[#374151] text-[13px] text-center tracking-[0.3px] whitespace-nowrap">Grok</p>
     </div>
@@ -99,7 +99,7 @@ function ChatGpt4() {
     <div className="bg-white content-stretch flex gap-[12px] items-center px-[12px] py-[8px] relative rounded-[12px] shrink-0" data-name="ChatGPT">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]" />
       <div className="relative shrink-0 size-[16px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos4} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos4} />
       </div>
       <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] not-italic relative shrink-0 text-[#374151] text-[13px] text-center tracking-[0.3px] whitespace-nowrap">Google AI</p>
     </div>
@@ -133,7 +133,7 @@ function ChatGpt5() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[12px] py-[4px] relative size-full">
           <div className="relative shrink-0 size-[20px]" data-name="Logos">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos5} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos5} />
           </div>
         </div>
       </div>
@@ -147,7 +147,7 @@ function ChatGpt6() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[12px] py-[4px] relative size-full">
           <div className="relative shrink-0 size-[20px]" data-name="Logos">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos6} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos6} />
           </div>
         </div>
       </div>
@@ -161,7 +161,7 @@ function ChatGpt7() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[12px] py-[4px] relative size-full">
           <div className="relative shrink-0 size-[20px]" data-name="Logos">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos7} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos7} />
           </div>
         </div>
       </div>
@@ -230,7 +230,7 @@ function Container() {
 function Image() {
   return (
     <div className="h-[360px] relative rounded-[16px] shrink-0 w-[576px]" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage} />
+      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage} />
     </div>
   );
 }
@@ -446,7 +446,7 @@ function CallToActionSection() {
           <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-2px_1px_0px_rgba(151,158,255,0.4)]" />
         </div>
         <div className="-translate-x-1/2 absolute bottom-[-18px] h-[188px] left-1/2 w-[206px]" data-name="Feature Image Small">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFeatureImageSmall} />
+          <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgFeatureImageSmall} />
         </div>
         <CallToActionGroup />
       </div>
@@ -487,7 +487,7 @@ function Frame15() {
 function Image1() {
   return (
     <div className="h-[200px] relative rounded-[16px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage1} />
+      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage1} />
     </div>
   );
 }
@@ -521,7 +521,7 @@ function Container9() {
 function Image2() {
   return (
     <div className="h-[200px] relative rounded-[16px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage1} />
+      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage1} />
     </div>
   );
 }
@@ -555,7 +555,7 @@ function Container10() {
 function Image3() {
   return (
     <div className="h-[200px] relative rounded-[16px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage1} />
+      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage1} />
     </div>
   );
 }
@@ -829,7 +829,7 @@ function LinkYouTube() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[11.364px] relative size-full">
         <div className="relative shrink-0 size-[36.367px]" data-name="Logos">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos6} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos6} />
           </div>
         </div>
       </div>
@@ -843,7 +843,7 @@ function LinkFacebook() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[11.364px] relative size-full">
         <div className="relative shrink-0 size-[36.367px]" data-name="Logos">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos8} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos8} />
           </div>
         </div>
       </div>
@@ -857,7 +857,7 @@ function LinkFacebook1() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[11.364px] relative size-full">
         <div className="relative shrink-0 size-[36.367px]" data-name="Logos">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos7} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos7} />
           </div>
         </div>
       </div>
@@ -903,8 +903,8 @@ function Container18() {
   return (
     <div className="content-stretch flex gap-[4px] items-center relative shrink-0" data-name="Container">
       <div className="pointer-events-none relative shrink-0 size-[16px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgLogos} />
-        <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgLogos} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgLogos} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgLogos} />
       </div>
       <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] text-center tracking-[0.21px] whitespace-nowrap">ChatGPT</p>
     </div>
@@ -924,7 +924,7 @@ function Container19() {
   return (
     <div className="content-stretch flex gap-[4px] items-center relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[16px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos1} />
       </div>
       <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] text-center tracking-[0.21px] whitespace-nowrap">Perplexity</p>
     </div>
@@ -944,7 +944,7 @@ function Container20() {
   return (
     <div className="content-stretch flex gap-[4px] items-center relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[16px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos2} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos2} />
       </div>
       <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] text-center tracking-[0.21px] whitespace-nowrap">Claude</p>
     </div>
@@ -964,7 +964,7 @@ function Container21() {
   return (
     <div className="content-stretch flex gap-[4px] items-center relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[16px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos3} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos3} />
       </div>
       <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] text-center tracking-[0.21px] whitespace-nowrap">Grok</p>
     </div>
@@ -984,7 +984,7 @@ function Container22() {
   return (
     <div className="content-stretch flex gap-[4px] items-center relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[16px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos4} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos4} />
       </div>
       <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[#1f2937] text-[14px] text-center tracking-[0.21px] whitespace-nowrap">Google AI</p>
     </div>

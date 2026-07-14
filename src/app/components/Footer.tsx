@@ -112,13 +112,13 @@ export default function Footer() {
           <div className="flex flex-col gap-8 items-center border-t border-[#e5e7eb] pt-10">
             <div className="flex gap-4 justify-center">
               <a href="https://www.linkedin.com/company/loraloop/" target="_blank" rel="noopener noreferrer" className="rounded-xl w-12 h-12 flex items-center justify-center hover:bg-gray-100 transition-colors">
-                <img alt="LinkedIn" className="w-9 h-9 object-cover" src={imgLogos} />
+                <img loading="lazy" decoding="async" alt="LinkedIn" className="w-9 h-9 object-cover" src={imgLogos} />
               </a>
               <a href="https://www.instagram.com/loraloop_ai?igsh=YXR6bnpjcXB3bXFi" target="_blank" rel="noopener noreferrer" className="rounded-xl w-12 h-12 flex items-center justify-center hover:bg-gray-100 transition-colors">
-                <img alt="Instagram" className="w-9 h-9 object-cover" src={imgLogos1} />
+                <img loading="lazy" decoding="async" alt="Instagram" className="w-9 h-9 object-cover" src={imgLogos1} />
               </a>
               <a href="https://x.com/TKtamilarasan2" target="_blank" rel="noopener noreferrer" className="rounded-xl w-12 h-12 flex items-center justify-center hover:bg-gray-100 transition-colors">
-                <img alt="X (Twitter)" className="w-9 h-9 object-cover" src={imgLogos2} />
+                <img loading="lazy" decoding="async" alt="X (Twitter)" className="w-9 h-9 object-cover" src={imgLogos2} />
               </a>
             </div>
             <div className="flex flex-col items-center gap-4 sm:gap-6">

@@ -1,23 +1,30 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Pricing from "./pages/Pricing";
-import Solution from "./pages/Solution";
-import Blog from "./pages/Blog";
-import BlogDetail from "./pages/BlogDetailWithAdditional";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Terms from "./pages/Terms";
-import DataDeletion from "./pages/DataDeletion";
-import ToolEmbed from "./pages/ToolEmbed";
-import AllToolsPage from "./pages/AllToolsPage";
-import NotFound from "./pages/NotFound";
-import ForFounders from "./pages/ForFounders";
-import ForAgencies from "./pages/ForAgencies";
-import ForFreelancers from "./pages/ForFreelancers";
-import ForEcommerce from "./pages/ForEcommerce";
-import ForCreators from "./pages/ForCreators";
+
+// Home is the primary landing route, so it stays in the initial bundle to
+// avoid a load waterfall. Every other route is code-split into its own chunk
+// and only fetched when the user navigates to it — this keeps the initial
+// download small (blog data, tool widgets and their heavy deps no longer ship
+// on first paint).
+const Pricing = lazy(() => import("./pages/Pricing"));
+const Solution = lazy(() => import("./pages/Solution"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogDetail = lazy(() => import("./pages/BlogDetailWithAdditional"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const Terms = lazy(() => import("./pages/Terms"));
+const DataDeletion = lazy(() => import("./pages/DataDeletion"));
+const ToolEmbed = lazy(() => import("./pages/ToolEmbed"));
+const AllToolsPage = lazy(() => import("./pages/AllToolsPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const ForFounders = lazy(() => import("./pages/ForFounders"));
+const ForAgencies = lazy(() => import("./pages/ForAgencies"));
+const ForFreelancers = lazy(() => import("./pages/ForFreelancers"));
+const ForEcommerce = lazy(() => import("./pages/ForEcommerce"));
+const ForCreators = lazy(() => import("./pages/ForCreators"));
 
 export const router = createBrowserRouter([
   {

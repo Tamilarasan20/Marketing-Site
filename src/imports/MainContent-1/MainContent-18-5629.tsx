@@ -34,7 +34,7 @@ export default function MainContent() {
       <CallToActionGroup />
       <div className="h-[258px] relative shrink-0 w-[1002px]" data-name="image 172">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[199.29%] left-0 max-w-none top-[-3.87%] w-full" src={imgImage172} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[199.29%] left-0 max-w-none top-[-3.87%] w-full" src={imgImage172} />
         </div>
       </div>
     </div>

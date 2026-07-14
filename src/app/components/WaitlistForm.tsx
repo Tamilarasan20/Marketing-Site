@@ -130,7 +130,7 @@ export default function WaitlistForm() {
           ].map(({ src, label, rounded }) => (
             <div key={label} className="flex flex-col gap-[4px] items-center justify-center p-[8px]">
               <div className={`overflow-hidden shrink-0 size-[40px]${rounded ? ' rounded-[40px]' : ''}`}>
-                <img alt={label} src={src} className="w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" alt={label} src={src} className="w-full h-full object-cover" />
               </div>
               <p className="font-['Satoshi',sans-serif] font-medium leading-[20px] text-[14px] text-[#9ca3af] text-center whitespace-nowrap">
                 {label}

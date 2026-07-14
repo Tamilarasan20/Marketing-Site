@@ -25,14 +25,14 @@ function Frame8() {
     <div className="content-stretch flex items-center pr-[4px] relative shrink-0">
       <div className="mr-[-4px] relative shrink-0 size-[12px]" data-name="Component 2">
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" height="12" src={imgEllipse2} width="12" />
+          <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" height="12" src={imgEllipse2} width="12" />
         </div>
         <MaskGroup />
       </div>
       <div className="mr-[-4px] relative rounded-[50px] shrink-0 size-[12px]" data-name="Component 3">
         <div aria-hidden="true" className="absolute border border-solid border-white inset-[-1px] pointer-events-none rounded-[51px]" />
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" height="12" src={imgEllipse3} width="12" />
+          <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" height="12" src={imgEllipse3} width="12" />
         </div>
         <MaskGroup1 />
       </div>
@@ -94,7 +94,7 @@ function AvatarWithTitle() {
   return (
     <div className="content-stretch flex flex-[1_0_0] gap-[8px] items-start min-w-px relative" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
       <Content />
     </div>
@@ -154,7 +154,7 @@ function Container1() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8px] items-center px-[8px] py-[12px] relative size-full">
           <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
           </div>
           <Frame10 />
           <div className="absolute bottom-[12px] flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic right-[57px] text-[#6b7280] text-[12px] translate-x-full translate-y-1/2 whitespace-nowrap">
@@ -203,7 +203,7 @@ function Container2() {
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8px] items-center px-[8px] py-[12px] relative size-full">
           <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
           </div>
           <Frame11 />
           <div className="absolute bottom-[12px] flex flex-col font-['General_Sans',sans-serif] font-medium justify-center leading-[0] not-italic right-[60px] text-[#6b7280] text-[12px] translate-x-full translate-y-1/2 whitespace-nowrap">
@@ -267,7 +267,7 @@ function AvatarWithTitle1() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
       <TitleWithStatus />
     </div>
@@ -329,7 +329,7 @@ function AvatarWithTitle2() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
       <TitleWithStatus1 />
     </div>
@@ -391,7 +391,7 @@ function AvatarWithTitle3() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
       <TitleWithStatus2 />
     </div>
@@ -453,7 +453,7 @@ function AvatarWithTitle4() {
   return (
     <div className="content-stretch flex gap-[16px] items-center relative shrink-0" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Lora 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLora2} />
       </div>
       <TitleWithStatus3 />
     </div>
@@ -477,7 +477,7 @@ function Slot() {
   return (
     <div className="h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
       <div className="absolute h-[410px] left-0 top-[-25px] w-[582.701px]" data-name="image 185">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage185} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage185} />
       </div>
       <Frame6 />
       <Container3 />
@@ -510,7 +510,7 @@ function MaskGroup2() {
     <div className="absolute contents inset-0" data-name="Mask group">
       <div className="absolute aspect-[1048/954] bottom-[-10.5px] left-[-13.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[5.5px_-2px] mask-size-[40px_40px] right-[-20%]" style={{ maskImage: `url('${imgFeatureImageSmall}')` }} data-name="Feature Image Small">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall1} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall1} />
         </div>
       </div>
     </div>
@@ -541,7 +541,7 @@ function AvatarWithTitle5() {
     <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Component 2">
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse4} width="40" />
+          <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse4} width="40" />
         </div>
         <MaskGroup2 />
       </div>
@@ -568,7 +568,7 @@ function MaskGroup3() {
     <div className="absolute contents inset-0" data-name="Mask group">
       <div className="absolute aspect-[1048/954] bottom-[-10.5px] left-[-13.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[5.5px_-2px] mask-size-[40px_40px] right-[-20%]" style={{ maskImage: `url('${imgFeatureImageSmall}')` }} data-name="Feature Image Small">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall1} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall1} />
         </div>
       </div>
     </div>
@@ -597,7 +597,7 @@ function AvatarWithTitle6() {
     <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Component 2">
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse4} width="40" />
+          <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse4} width="40" />
         </div>
         <MaskGroup3 />
       </div>
@@ -624,7 +624,7 @@ function MaskGroup4() {
     <div className="absolute contents inset-0" data-name="Mask group">
       <div className="absolute aspect-[1048/954] bottom-[-10.5px] left-[-13.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[5.5px_-2px] mask-size-[40px_40px] right-[-20%]" style={{ maskImage: `url('${imgFeatureImageSmall}')` }} data-name="Feature Image Small">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall1} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall1} />
         </div>
       </div>
     </div>
@@ -672,7 +672,7 @@ function AvatarWithTitle7() {
     <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Component 2">
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse4} width="40" />
+          <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse4} width="40" />
         </div>
         <MaskGroup4 />
       </div>
@@ -699,7 +699,7 @@ function MaskGroup5() {
     <div className="absolute contents inset-0" data-name="Mask group">
       <div className="absolute aspect-[1048/954] bottom-[-10.5px] left-[-13.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[5.5px_-2px] mask-size-[40px_40px] right-[-20%]" style={{ maskImage: `url('${imgFeatureImageSmall}')` }} data-name="Feature Image Small">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall1} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall1} />
         </div>
       </div>
     </div>
@@ -728,7 +728,7 @@ function AvatarWithTitle8() {
     <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Component 2">
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse4} width="40" />
+          <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse4} width="40" />
         </div>
         <MaskGroup5 />
       </div>
@@ -755,7 +755,7 @@ function MaskGroup6() {
     <div className="absolute contents inset-0" data-name="Mask group">
       <div className="absolute aspect-[1048/954] bottom-[-10.5px] left-[-13.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[5.5px_-2px] mask-size-[40px_40px] right-[-20%]" style={{ maskImage: `url('${imgFeatureImageSmall}')` }} data-name="Feature Image Small">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall1} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[173.21%] left-[-32.09%] max-w-none top-[-10.42%] w-[158.54%]" src={imgFeatureImageSmall1} />
         </div>
       </div>
     </div>
@@ -784,7 +784,7 @@ function AvatarWithTitle9() {
     <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center min-w-px relative" data-name="Avatar with Title">
       <div className="relative shrink-0 size-[40px]" data-name="Component 2">
         <div className="absolute aspect-[100/100] left-0 right-0 top-0">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse4} width="40" />
+          <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" height="40" src={imgEllipse4} width="40" />
         </div>
         <MaskGroup6 />
       </div>
@@ -810,7 +810,7 @@ function Slot1() {
   return (
     <div className="h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-[540px]" data-name="Slot">
       <div className="absolute h-[411px] left-0 top-[-25px] w-[584px]" data-name="image 185">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage186} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage186} />
       </div>
       <Container7 />
       <Container8 />
@@ -860,7 +860,7 @@ function Frame16() {
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
       <div className="relative shrink-0 size-[24px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
       </div>
     </div>
   );
@@ -952,7 +952,7 @@ function Frame21() {
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
       <div className="relative shrink-0 size-[24px]" data-name="Logos">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute left-[-5.44%] max-w-none size-[114.01%] top-[-5.88%]" src={imgLogos1} />
+          <img loading="lazy" decoding="async" alt="" className="absolute left-[-5.44%] max-w-none size-[114.01%] top-[-5.88%]" src={imgLogos1} />
         </div>
       </div>
     </div>
@@ -1177,7 +1177,7 @@ function Frame27() {
     <div className="bg-[rgba(255,255,255,0.8)] col-1 content-stretch flex items-center justify-self-start p-[10px] relative rounded-[12px] row-1 self-start shrink-0">
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
       <div className="relative shrink-0 size-[24px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
       </div>
     </div>
   );
@@ -1269,7 +1269,7 @@ function Frame32() {
       <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[12px]" />
       <div className="relative shrink-0 size-[24px]" data-name="Logos">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute left-[-5.44%] max-w-none size-[114.01%] top-[-5.88%]" src={imgLogos1} />
+          <img loading="lazy" decoding="async" alt="" className="absolute left-[-5.44%] max-w-none size-[114.01%] top-[-5.88%]" src={imgLogos1} />
         </div>
       </div>
     </div>
@@ -1560,7 +1560,7 @@ function Slot2() {
   return (
     <div className="h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-[540px]" data-name="Slot">
       <div className="absolute h-[411px] left-0 top-[-25px] w-[584px]" data-name="image 185">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage186} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage186} />
       </div>
       <Frame12 />
     </div>
@@ -1825,7 +1825,7 @@ function Container14() {
   return (
     <div className="-translate-x-1/2 -translate-y-1/2 absolute gap-y-[36px] grid grid-cols-[repeat(9,minmax(0,1fr))] grid-rows-[repeat(3,fit-content(100%))] left-[calc(50%-1.5px)] py-[36px] rounded-[60px] top-[calc(50%+1px)] w-[581px]" data-name="Container">
       <div className="col-3 relative row-1 shrink-0 size-[32px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
       </div>
       <div className="col-5 relative row-1 shrink-0 size-[32px]" data-name="Social Icons">
         <div className="absolute inset-[4%_5.61%_0_19.67%]" data-name="Vector">
@@ -1877,7 +1877,7 @@ function Container14() {
       </div>
       <div className="col-7 relative row-1 shrink-0 size-[32px]" data-name="Logos">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute left-[-5.44%] max-w-none size-[114.01%] top-[-5.88%]" src={imgLogos1} />
+          <img loading="lazy" decoding="async" alt="" className="absolute left-[-5.44%] max-w-none size-[114.01%] top-[-5.88%]" src={imgLogos1} />
         </div>
       </div>
       <div className="col-6 overflow-clip relative row-1 shrink-0 size-[32px]" data-name="Social Icons">
@@ -2162,7 +2162,7 @@ function Frame() {
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
       <div className="relative shrink-0 size-[36px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos2} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos2} />
       </div>
       <Content10 />
     </div>
@@ -2246,7 +2246,7 @@ function Frame2() {
   return (
     <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
       <div className="relative shrink-0 size-[36px]" data-name="Logos">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
       </div>
       <Content12 />
     </div>
@@ -2298,7 +2298,7 @@ function Slot3() {
   return (
     <div className="bg-[#f9fafc] h-[300px] opacity-96 relative rounded-[16px] shrink-0 w-full" data-name="Slot">
       <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[360px] left-1/2 opacity-20 top-1/2 w-[640px]" data-name="image 187">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage187} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage187} />
       </div>
       <Group3 />
     </div>

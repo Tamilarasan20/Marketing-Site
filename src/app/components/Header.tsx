@@ -223,7 +223,7 @@ export default function Header() {
       >
         {/* Logo */}
         <Link to="/" className="flex items-center gap-[6px] py-2 shrink-0">
-          <img
+          <img loading="lazy" decoding="async"
             src={appLogo}
             alt="Loraloop logo"
             className="w-[34px] h-[34px] object-contain shrink-0"
@@ -310,7 +310,7 @@ export default function Header() {
             >
               <span className="flex items-center justify-center w-7 h-7 rounded-full shrink-0 overflow-hidden">
                 {currentUser.avatarUrl ? (
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={currentUser.avatarUrl}
                     alt={currentUser.name}
                     className="w-full h-full object-cover"
@@ -442,7 +442,7 @@ function AgentAvatar({
       className="w-12 h-12 min-w-12 rounded-full overflow-hidden relative shrink-0"
       style={{ background: agent.bg }}
     >
-      <img
+      <img loading="lazy" decoding="async"
         alt={agent.name}
         src={agent.img}
         className="absolute inset-0 w-full h-full object-contain"

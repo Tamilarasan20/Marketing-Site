@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import Header from "./Header";
 import MobileNav from "./MobileNav";
 import Footer from "./Footer";
@@ -50,7 +50,9 @@ export default function Layout() {
       <main className="flex-1">
         {/* key forces remount → restarts the page-enter animation on navigation */}
         <div key={location.pathname} className="page-enter">
-          <Outlet />
+          <Suspense fallback={<div className="min-h-[60vh]" aria-hidden="true" />}>
+            <Outlet />
+          </Suspense>
         </div>
       </main>
       <Footer />

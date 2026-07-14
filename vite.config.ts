@@ -20,6 +20,18 @@ export default defineConfig({
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
 
+  build: {
+    rollupOptions: {
+      output: {
+        // Split large, rarely-changing vendor libraries into their own chunks
+        // so they cache independently of app code and don't bloat the entry.
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router'],
+        },
+      },
+    },
+  },
+
   server: {
     port: process.env.PORT ? parseInt(process.env.PORT) : 5173,
     strictPort: false,

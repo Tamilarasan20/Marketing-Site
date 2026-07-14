@@ -72,34 +72,34 @@ function Group() {
     <div className="absolute bottom-[-14px] contents left-[92.04px]">
       <div className="absolute bottom-[-3px] h-[171.256px] left-[728.64px] w-[213.541px]" data-name="Gemini_Generated_Image_bewxcwbewxcwbewx 9">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[506.08%] left-[-81.91%] max-w-none top-[-24.13%] w-[265.87%]" src={imgGeminiGeneratedImageBewxcwbewxcwbewx9} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[506.08%] left-[-81.91%] max-w-none top-[-24.13%] w-[265.87%]" src={imgGeminiGeneratedImageBewxcwbewxcwbewx9} />
         </div>
       </div>
       <div className="absolute bottom-[-13.44px] h-[194.832px] left-[92.04px] w-[213.643px]" data-name="image 132">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage132} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage132} />
       </div>
       <div className="absolute bottom-[-13.44px] h-[196.848px] left-[622.84px] w-[220.362px]" data-name="image 136">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-full left-[-31.11%] max-w-none top-0 w-[161.3%]" src={imgImage136} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-full left-[-31.11%] max-w-none top-0 w-[161.3%]" src={imgImage136} />
         </div>
       </div>
       <div className="absolute bottom-[-13.44px] h-[186.77px] left-[207.6px] w-[194.832px]" data-name="Gemini_Generated_Image_bewxcwbewxcwbewx 6">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgGeminiGeneratedImageBewxcwbewxcwbewx6} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-full left-[-0.11%] max-w-none top-0 w-[100.21%]" src={imgGeminiGeneratedImageBewxcwbewxcwbewx6} />
         </div>
       </div>
       <div className="absolute bottom-[-14px] h-[215px] left-[516.55px] w-[228px]" data-name="image 135">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[100.15%] left-[-35.93%] max-w-none top-[0.06%] w-[170.53%]" src={imgImage135} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[100.15%] left-[-35.93%] max-w-none top-[0.06%] w-[170.53%]" src={imgImage135} />
         </div>
       </div>
       <div className="absolute bottom-[-13.44px] h-[212.972px] left-[303px] w-[213.643px]" data-name="image 131">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[99.91%] left-[-0.01%] max-w-none top-[0.09%] w-[100.02%]" src={imgImage131} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[99.91%] left-[-0.01%] max-w-none top-[0.09%] w-[100.02%]" src={imgImage131} />
         </div>
       </div>
       <div className="-translate-y-1/2 absolute h-[260px] left-[373.54px] top-1/2 w-[285.53px]" data-name="image 133">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage133} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage133} />
       </div>
     </div>
   );
@@ -110,12 +110,12 @@ function Group1() {
     <div className="absolute contents left-[-24.86px] top-0">
       <div className="absolute h-[179.94px] right-[-2.68px] top-[89.06px] w-[202.524px]" data-name="image 168">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[120.61%] left-[-30.46%] max-w-none top-[-2.05%] w-[172.25%]" src={imgImage168} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[120.61%] left-[-30.46%] max-w-none top-[-2.05%] w-[172.25%]" src={imgImage168} />
         </div>
       </div>
       <div className="absolute bottom-[-20.16px] h-[207.597px] left-[-24.86px] w-[250.594px]" data-name="Banner Image Side Right">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[173.5%] left-[-36.83%] max-w-none top-[-28.37%] w-[173.67%]" src={imgBannerImageSideRight} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[173.5%] left-[-36.83%] max-w-none top-[-28.37%] w-[173.67%]" src={imgBannerImageSideRight} />
         </div>
       </div>
       <Group />
@@ -269,7 +269,7 @@ function Model1() {
     <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-white content-stretch flex flex-col items-center left-1/2 overflow-clip rounded-[32px] top-[calc(50%+0.5px)] w-[520px]" data-name="Model">
       <div className="h-[211px] relative shrink-0 w-full" data-name="Thank you">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[126.32%] left-[-5.25%] max-w-none top-[-6.43%] w-[110.73%]" src={imgThankYou} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[126.32%] left-[-5.25%] max-w-none top-[-6.43%] w-[110.73%]" src={imgThankYou} />
         </div>
       </div>
       <Data />

@@ -257,7 +257,7 @@ export default function BlogDetail() {
                     {aiTools.map((ai) => (
                       <a key={ai.name} href={getSummarizeUrl(ai.name, currentUrl)} target="_blank" rel="noopener noreferrer"
                         className="bg-white flex gap-2 items-center px-4 py-2 rounded-xl border border-[#e2e8f0] shadow-sm hover:border-[#1877f2] hover:bg-[#f8faff] transition-all">
-                        <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
+                        <img loading="lazy" decoding="async" src={ai.icon} alt={ai.name} className="w-4 h-4" />
                         <span className="font-['General_Sans',sans-serif] font-medium text-[#334155] text-sm">{ai.name}</span>
                       </a>
                     ))}
@@ -329,7 +329,7 @@ export default function BlogDetail() {
                 <div className="absolute inset-0 opacity-40 mix-blend-plus-lighter" style={{ backgroundImage: `url('${imgCallToActionSection}')`, backgroundSize: "307.2px 307.2px" }} />
                 <div className="absolute inset-0 backdrop-blur-[2px]" />
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[150px] w-[170px]">
-                  <img alt="" className="w-full h-full object-cover" src={imgFeatureImageSmall} />
+                  <img loading="lazy" decoding="async" alt="" className="w-full h-full object-cover" src={imgFeatureImageSmall} />
                 </div>
                 <div className="absolute top-6 left-1/2 -translate-x-1/2 flex flex-col gap-3 items-center w-[220px]">
                   <p className="font-['Satoshi',sans-serif] font-bold leading-[1.4] text-base text-center text-white">Your AI marketing team that delivers results, never sleeps!</p>
@@ -383,7 +383,7 @@ export default function BlogDetail() {
             {aiTools.map((ai) => (
               <a key={ai.name} href={getSummarizeUrl(ai.name, currentUrl)} target="_blank" rel="noopener noreferrer"
                 className="bg-white flex gap-1.5 items-center px-3 py-1.5 rounded-2xl border border-[#e5e7eb] hover:bg-gray-100 transition-colors flex-shrink-0">
-                <img src={ai.icon} alt={ai.name} className="w-4 h-4" />
+                <img loading="lazy" decoding="async" src={ai.icon} alt={ai.name} className="w-4 h-4" />
                 <span className="font-['Satoshi',sans-serif] font-bold text-[#1f2937] text-sm whitespace-nowrap">{ai.name}</span>
               </a>
             ))}

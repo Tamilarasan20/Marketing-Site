@@ -62,7 +62,7 @@ function Container1() {
     <div className="bg-white h-full relative rounded-[24px] shrink-0 w-[357px]" data-name="Container">
       <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
         <div className="h-[240px] relative shrink-0 w-[357px]" data-name="image 177">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage177} />
+          <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage177} />
         </div>
         <Container2 />
       </div>
@@ -111,7 +111,7 @@ function Container4() {
     <div className="bg-white h-full relative rounded-[24px] shrink-0" data-name="Container">
       <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
         <div className="h-[240px] relative shrink-0 w-[357px]" data-name="image 176">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage176} />
+          <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage176} />
         </div>
         <Container5 />
       </div>
@@ -162,7 +162,7 @@ function Container7() {
     <div className="bg-white relative rounded-[24px] shrink-0 w-[357px]" data-name="Container">
       <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
         <div className="h-[240px] relative shrink-0 w-[357px]" data-name="image 179">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage179} />
+          <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage179} />
         </div>
         <Container8 />
       </div>

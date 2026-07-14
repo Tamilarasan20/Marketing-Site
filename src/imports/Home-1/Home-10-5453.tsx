@@ -42,7 +42,7 @@ function Image() {
   return (
     <div className="absolute bottom-[-26px] h-[150px] left-0 w-full" data-name="Image">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img alt="" className="absolute h-[96%] left-[-24.25%] max-w-none top-[0.67%] w-[149.03%]" src={imgImage} />
+        <img loading="eager" fetchPriority="high" decoding="async" alt="" className="absolute h-[96%] left-[-24.25%] max-w-none top-[0.67%] w-[149.03%]" src={imgImage} />
       </div>
     </div>
   );
@@ -343,7 +343,7 @@ import videoImg from "../../assets/video_img.png";
 function VideoImage() {
   return (
     <div className="h-[203.126px] relative rounded-[16px] shrink-0 w-full" data-name="VideoImage">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={videoImg} />
+      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={videoImg} />
     </div>
   );
 }
@@ -435,7 +435,7 @@ function Image1() {
   return (
     <div className="absolute h-[147px] right-[-24.94px] top-[341px] w-[174px]" data-name="Image">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <img alt="" className="absolute h-[119.01%] left-[-5.18%] max-w-none top-[-8.81%] w-[110.47%]" src={imgImage1} />
+        <img loading="lazy" decoding="async" alt="" className="absolute h-[119.01%] left-[-5.18%] max-w-none top-[-8.81%] w-[110.47%]" src={imgImage1} />
       </div>
     </div>
   );
@@ -445,7 +445,7 @@ function Container6() {
   return (
     <div className="absolute h-[468px] left-0 overflow-clip rounded-[20px] top-0 w-[327px]" data-name="Container">
       <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[20px]">
-        <img alt="" className="absolute h-[85.33%] left-0 max-w-none top-0 w-[93.34%]" src={imgContainer} />
+        <img loading="lazy" decoding="async" alt="" className="absolute h-[85.33%] left-0 max-w-none top-0 w-[93.34%]" src={imgContainer} />
       </div>
       <FeatureTextGroup3 />
       <Image1 />
@@ -518,7 +518,7 @@ function Sam() {
       <Frame27 />
       <p className="absolute font-['Kalam',sans-serif] font-bold leading-[34px] left-[131.94px] not-italic text-[#134d91] text-[24px] top-[434px] tracking-[-0.48px] whitespace-nowrap">Sam</p>
       <div className="absolute bottom-[-20px] h-[150px] right-[-29.94px] w-[180px]" data-name="image 191">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage191} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage191} />
       </div>
     </div>
   );
@@ -563,7 +563,7 @@ function Sophie() {
       </div>
       <Frame29 />
       <div className="absolute bottom-[-20px] h-[150px] right-[-29.94px] w-[180px]" data-name="image 191">
-        <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgImage192} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgImage192} />
       </div>
       <p className="-translate-x-full absolute font-['Kalam',sans-serif] font-bold leading-[34px] left-[209.94px] not-italic text-[#143b2c] text-[24px] text-right top-[434px] tracking-[-0.48px] whitespace-nowrap">Sophie</p>
     </div>
@@ -605,7 +605,7 @@ function Clara() {
     <div className="h-[468px] overflow-clip relative rounded-[20px] shrink-0 w-[327px]" style={{ backgroundImage: "linear-gradient(-9.09775deg, rgba(38, 193, 250, 0.8) 0.25815%, rgba(94, 212, 255, 0.8) 83.051%), linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)" }} data-name="Clara">
       <FeatureTextGroup />
       <div className="absolute bottom-[-8px] h-[150px] right-[-20px] w-[180px]" data-name="image 192">
-        <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgImage193} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgImage193} />
       </div>
       <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[120px] not-italic text-[#286a8f] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Clara</p>
     </div>
@@ -652,7 +652,7 @@ function Steve() {
       <FeatureTextGroup1 />
       <div className="absolute bottom-0 h-[150px] right-[-29.67px] w-[180px]" data-name="image 192">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[102.18%] left-[-33.01%] max-w-none top-0 w-[168.71%]" src={imgImage194} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[102.18%] left-[-33.01%] max-w-none top-0 w-[168.71%]" src={imgImage194} />
         </div>
       </div>
       <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[120px] not-italic text-[#8e492b] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Steve</p>
@@ -701,7 +701,7 @@ function Theo() {
         <FeatureTextGroup2 />
         <div className="absolute bottom-0 h-[150px] right-0 w-[180px]" data-name="image 192">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[490.25%] left-[-79%] max-w-none top-[-18.06%] w-[267.62%]" src={imgImage195} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[490.25%] left-[-79%] max-w-none top-[-18.06%] w-[267.62%]" src={imgImage195} />
           </div>
         </div>
         <p className="absolute bottom-[44px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[110px] not-italic text-[#06074e] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Theo</p>
@@ -751,7 +751,7 @@ function Sarah() {
       </div>
       <FeatureTextGroup4 />
       <div className="absolute bottom-0 h-[150px] right-0 w-[180px]" data-name="image 192">
-        <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgImage196} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgImage196} />
       </div>
       <p className="-translate-x-full absolute bottom-[51px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[174px] not-italic text-[#fafcfb] text-[28px] text-right tracking-[-0.48px] translate-y-full whitespace-nowrap">Sarah</p>
     </div>
@@ -802,7 +802,7 @@ function Sarah1() {
       <FeatureTextGroup5 />
       <div className="absolute bottom-[-8px] h-[150px] right-0 w-[180px]" data-name="image 192">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[211.04%] left-[-55.62%] max-w-none top-[-44.03%] w-[211.25%]" src={imgImage197} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[211.04%] left-[-55.62%] max-w-none top-[-44.03%] w-[211.25%]" src={imgImage197} />
         </div>
       </div>
       <p className="absolute bottom-[41px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[86px] not-italic text-[#aa9302] text-[28px] tracking-[-0.48px] translate-y-full whitespace-nowrap">Sarah</p>
@@ -855,7 +855,7 @@ function Sarah2() {
         <FeatureTextGroup6 />
         <div className="absolute bottom-[-8px] h-[150px] right-0 w-[180px]" data-name="image 192">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[133.33%] left-[-39.3%] max-w-none top-[-5.33%] w-[178.6%]" src={imgImage198} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[133.33%] left-[-39.3%] max-w-none top-[-5.33%] w-[178.6%]" src={imgImage198} />
           </div>
         </div>
         <p className="absolute bottom-[41px] font-['Kalam',sans-serif] font-bold leading-[34px] left-[86px] not-italic text-[28px] text-white tracking-[-0.48px] translate-y-full whitespace-nowrap">Nick</p>
@@ -925,7 +925,7 @@ function Container12() {
 function Image2() {
   return (
     <div className="col-1 relative row-1 shrink-0 size-[39.997px]" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
+      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
     </div>
   );
 }
@@ -1151,7 +1151,7 @@ function Container27() {
 function Image3() {
   return (
     <div className="h-[45.598px] relative shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
+      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
     </div>
   );
 }
@@ -2412,7 +2412,7 @@ function Container52() {
     <div className="bg-white relative rounded-[24px] shrink-0 w-full" data-name="Container">
       <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
         <div className="h-[240px] relative shrink-0 w-full" data-name="image 177">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage177} />
+          <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage177} />
         </div>
         <Container53 />
       </div>
@@ -2463,7 +2463,7 @@ function Container55() {
     <div className="bg-white relative rounded-[24px] shrink-0 w-full" data-name="Container">
       <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
         <div className="h-[240px] relative shrink-0 w-full" data-name="image 176">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage176} />
+          <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage176} />
         </div>
         <Container56 />
       </div>
@@ -2514,7 +2514,7 @@ function Container58() {
     <div className="bg-white relative rounded-[24px] shrink-0 w-full" data-name="Container">
       <div className="content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
         <div className="h-[240px] relative shrink-0 w-full" data-name="image 179">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage179} />
+          <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage179} />
         </div>
         <Container59 />
       </div>
@@ -2577,7 +2577,7 @@ function Contianer() {
     <div className="bg-white relative rounded-[20px] shrink-0 w-full" data-name="Contianer">
       <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full">
         <div className="aspect-[1080/600] relative shrink-0 w-full" data-name="image 193">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage199} />
+          <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage199} />
         </div>
         <DescriptionSection />
       </div>
@@ -2611,7 +2611,7 @@ function Contianer1() {
     <div className="bg-white relative rounded-[20px] shrink-0 w-full" data-name="Contianer">
       <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full">
         <div className="aspect-[1080/600] relative shrink-0 w-full" data-name="image 196">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage200} />
+          <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage200} />
         </div>
         <DescriptionSection1 />
       </div>
@@ -2645,7 +2645,7 @@ function Contianer2() {
     <div className="bg-white relative rounded-[20px] shrink-0 w-full" data-name="Contianer">
       <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full">
         <div className="aspect-[1080/600] relative shrink-0 w-full" data-name="image 198">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage201} />
+          <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage201} />
         </div>
         <DescriptionSection2 />
       </div>
@@ -2683,7 +2683,7 @@ function Contianer3() {
     <div className="bg-white relative rounded-[20px] shrink-0 w-full" data-name="Contianer">
       <div className="content-stretch flex flex-col items-center overflow-clip relative rounded-[inherit] size-full">
         <div className="aspect-[1080/600] relative shrink-0 w-full" data-name="image 197">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage202} />
+          <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage202} />
         </div>
         <DescriptionSection3 />
       </div>
@@ -2752,7 +2752,7 @@ function Container62() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[24px]" data-name="image 154">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage154} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage154} />
       </div>
       <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask ChatGPT</p>
     </div>
@@ -2786,7 +2786,7 @@ function Container63() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[24px]" data-name="image 154">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage155} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage155} />
       </div>
       <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask Perplexity</p>
     </div>
@@ -2820,7 +2820,7 @@ function Container64() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-name="Container">
       <div className="relative shrink-0 size-[24px]" data-name="image 154">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage156} />
+        <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage156} />
       </div>
       <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[18px] text-center whitespace-nowrap">Ask Claude</p>
     </div>
@@ -3943,7 +3943,7 @@ function Container125({ calculatePrice }: { calculatePrice: (price: number) => s
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[179.895px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.81%] w-[100.18%]" src={imgImage4} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.81%] w-[100.18%]" src={imgImage4} />
           </div>
         </div>
         <Content calculatePrice={calculatePrice} />
@@ -4144,7 +4144,7 @@ function Container128({ calculatePrice }: { calculatePrice: (price: number) => s
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[179.895px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.15%] w-[100.18%]" src={imgImage4} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.15%] w-[100.18%]" src={imgImage4} />
           </div>
         </div>
         <Content1 calculatePrice={calculatePrice} />
@@ -4360,7 +4360,7 @@ function Container131({ calculatePrice }: { calculatePrice: (price: number) => s
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[179.895px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.15%] w-[100.18%]" src={imgImage4} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-0.15%] w-[100.18%]" src={imgImage4} />
           </div>
         </div>
         <Content2 calculatePrice={calculatePrice} />
@@ -4562,7 +4562,7 @@ function Container134({ calculatePrice }: { calculatePrice: (price: number) => s
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
         <div className="h-[179.895px] relative shrink-0 w-full" data-name="Image">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-7.97%] w-[100.18%]" src={imgImage4} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[101.67%] left-[-0.18%] max-w-none top-[-7.97%] w-[100.18%]" src={imgImage4} />
           </div>
         </div>
         <Content3 calculatePrice={calculatePrice} />
@@ -4826,7 +4826,7 @@ function MainContent() {
       <CallToActionGroup />
       <div className="h-[103px] relative shrink-0 w-full" data-name="image 172">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[199.29%] left-0 max-w-none top-[-3.87%] w-full" src={imgImage172} />
+          <img loading="lazy" decoding="async" alt="" className="absolute h-[199.29%] left-0 max-w-none top-[-3.87%] w-full" src={imgImage172} />
         </div>
       </div>
     </div>
@@ -4915,7 +4915,7 @@ function LinkYouTube() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[11.364px] relative size-full">
         <div className="relative shrink-0 size-[36.367px]" data-name="Logos">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos} />
           </div>
         </div>
       </div>
@@ -4929,7 +4929,7 @@ function LinkFacebook() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[11.364px] relative size-full">
         <div className="relative shrink-0 size-[36.367px]" data-name="Logos">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
           </div>
         </div>
       </div>
@@ -4943,7 +4943,7 @@ function LinkFacebook1() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[11.364px] relative size-full">
         <div className="relative shrink-0 size-[36.367px]" data-name="Logos">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos1} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgLogos1} />
           </div>
         </div>
       </div>

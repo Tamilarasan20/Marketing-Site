@@ -252,7 +252,7 @@ export default function Solution() {
                   }`}
                 >
                   <div className="w-10 h-10 rounded-full overflow-hidden shrink-0 pointer-events-none">
-                    <img 
+                    <img loading="lazy" decoding="async" 
                       alt={employee.name} 
                       className={`w-full h-full object-cover ${employee.isSoon ? "grayscale" : ""}`} 
                       src={employee.image} 
@@ -304,10 +304,10 @@ export default function Solution() {
         <div className="max-w-[1020px] mx-auto">
           <div className="relative">
             <div className="absolute inset-0 -z-10 overflow-hidden">
-              <img alt="" className="w-full h-full object-cover opacity-30" src={imgImage190} />
+              <img loading="lazy" decoding="async" alt="" className="w-full h-full object-cover opacity-30" src={imgImage190} />
             </div>
             <div className="rounded-2xl md:rounded-[32px] overflow-hidden border border-[#e5e7eb] shadow-lg">
-              <img alt="" className="w-full h-auto" src={imgImage189} />
+              <img loading="lazy" decoding="async" alt="" className="w-full h-auto" src={imgImage189} />
             </div>
           </div>
         </div>
@@ -457,7 +457,7 @@ export default function Solution() {
         </div>
         <div className="h-[150px] md:h-[258px] relative shrink-0 w-full max-w-[1002px]" data-name="image 172">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[199.29%] left-0 max-w-none top-[-3.87%] w-full object-cover md:object-fill" src={imgImage172} />
+            <img loading="lazy" decoding="async" alt="" className="absolute h-[199.29%] left-0 max-w-none top-[-3.87%] w-full object-cover md:object-fill" src={imgImage172} />
           </div>
         </div>
       </div>
