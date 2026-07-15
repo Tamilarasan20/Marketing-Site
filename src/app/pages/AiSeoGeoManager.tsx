@@ -122,34 +122,90 @@ export default function AiSeoGeoManager() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero */}
-      <section className="pt-32 pb-20 px-4 text-center max-w-4xl mx-auto">
-        <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-          <span>🔍 Sophie — AI SEO/GEO Manager</span>
-        </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-          Rank on Google.<br />
-          <span style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            Get cited by AI search.
-          </span>
-        </h1>
-        <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto mb-10">
-          Sophie handles keyword research, content briefs, on-page fixes, and technical SEO on autopilot — optimized for Google rankings and citations in ChatGPT, Perplexity, and Google AI Overviews.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/app/signup"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
-            style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}
-          >
-            Hire Sophie Free — No credit card
-          </a>
-          <Link
-            to="/pricing"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-bold text-base hover:bg-gray-50 transition-all"
-            style={{ fontFamily: 'Satoshi, sans-serif' }}
-          >
-            See pricing →
-          </Link>
+      <section className="pt-32 pb-20 px-4 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Sophie — AI SEO/GEO Manager</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+              Rank on Google.<br />
+              <span style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                Get cited by AI search.
+              </span>
+            </h1>
+            <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto lg:mx-0 mb-8">
+              Sophie handles keyword research, content briefs, on-page fixes, and technical SEO on autopilot — optimized for Google rankings and citations in ChatGPT, Perplexity, and Google AI Overviews.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              <a
+                href="/app/signup"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
+                style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}
+              >
+                Hire Sophie Free
+              </a>
+              <Link
+                to="/pricing"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-bold text-base hover:bg-gray-50 transition-all"
+                style={{ fontFamily: 'Satoshi, sans-serif' }}
+              >
+                See pricing →
+              </Link>
+            </div>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start text-[13px] text-[#6b7280] font-medium">
+              <span><span className="text-emerald-500">✓</span> No credit card</span>
+              <span><span className="text-emerald-500">✓</span> Approval-first — nothing publishes without you</span>
+              <span><span className="text-emerald-500">✓</span> Google + AI search</span>
+            </div>
+          </div>
+
+          {/* Agent mockup panel */}
+          <div className="relative max-w-[520px] w-full mx-auto lg:mx-0">
+            <div className="absolute -inset-8 rounded-[40px] opacity-30 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle at 30% 20%, #a78bfa, transparent 60%), radial-gradient(circle at 80% 80%, #60a5fa, transparent 60%)' }} />
+            <div className="relative bg-white rounded-3xl border border-gray-200 shadow-2xl overflow-hidden text-left">
+              <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100 bg-gray-50/60">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-bold flex-shrink-0" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>S</div>
+                <div className="min-w-0">
+                  <p className="text-[13px] font-bold text-[#111827] leading-tight" style={{ fontFamily: 'Satoshi, sans-serif' }}>Sophie</p>
+                  <p className="text-[11px] text-[#6b7280] leading-tight">AI SEO/GEO Manager</p>
+                </div>
+                <span className="ml-auto inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />Working</span>
+              </div>
+              <div className="p-5 space-y-4">
+                <div className="flex justify-end">
+                  <div className="bg-gray-100 rounded-2xl rounded-br-md px-4 py-2.5 text-[13px] text-[#111827] max-w-[85%] leading-[1.5]">Sophie, find quick wins we can rank for this month.</div>
+                </div>
+                <div className="space-y-2 text-[13px] leading-[1.5]">
+                  <p className="flex items-start gap-2 text-[#4b5563]"><span className="text-emerald-500 flex-shrink-0">✓</span>Scanned Search Console — 1,204 queries analyzed</p>
+                  <p className="flex items-start gap-2 text-[#4b5563]"><span className="text-emerald-500 flex-shrink-0">✓</span>Found 23 pages ranking positions 5–20</p>
+                  <p className="flex items-start gap-2 text-[#4b5563]"><span className="text-emerald-500 flex-shrink-0">✓</span>Scored by volume, difficulty & conversion intent</p>
+                  <p className="flex items-start gap-2 text-[#6b7280]"><span className="w-3.5 h-3.5 mt-0.5 rounded-full border-2 border-violet-300 border-t-violet-600 animate-spin flex-shrink-0" />Preparing optimization briefs…</p>
+                </div>
+                <div className="rounded-xl border border-gray-200 overflow-hidden">
+                  <div className="grid grid-cols-[1fr_auto_auto] gap-3 px-4 py-2 bg-gray-50 text-[10px] font-bold uppercase tracking-[0.06em] text-[#6b7280]">
+                    <span>Keyword</span><span>Pos.</span><span>Potential</span>
+                  </div>
+                  {[
+                    { kw: 'ai marketing tools for startups', pos: '#7', tag: 'High', tone: 'text-emerald-700 bg-emerald-50' },
+                    { kw: 'how to automate seo reports', pos: '#11', tag: 'High', tone: 'text-emerald-700 bg-emerald-50' },
+                    { kw: 'geo optimization checklist', pos: '#14', tag: 'Med', tone: 'text-amber-700 bg-amber-50' },
+                  ].map((r) => (
+                    <div key={r.kw} className="grid grid-cols-[1fr_auto_auto] gap-3 items-center px-4 py-2.5 border-t border-gray-100 text-[12px]">
+                      <span className="text-[#111827] font-medium truncate">{r.kw}</span>
+                      <span className="text-[#6b7280] font-semibold">{r.pos}</span>
+                      <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${r.tone}`}>{r.tag}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center gap-3 pt-1">
+                  <span className="inline-flex items-center justify-center px-4 py-2 rounded-full text-white text-[12px] font-bold" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>Approve plan</span>
+                  <span className="text-[12px] font-semibold text-violet-600">View all 23 →</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -181,6 +237,94 @@ export default function AiSeoGeoManager() {
         <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6]">
           Sophie is an AI employee who runs both, full-time: researching keywords, briefing content, fixing pages, and monitoring your technical health — then presenting everything for your approval.
         </p>
+      </section>
+
+      {/* Deep dive: briefs */}
+      <section className="py-20 px-4 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="text-center lg:text-left order-2 lg:order-1">
+            <p className="text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Content that gets cited</p>
+            <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Briefs built for Google — and for ChatGPT</h2>
+            <p className="text-[#4b5563] text-[17px] leading-[1.7] mb-6">
+              Every brief Sophie delivers is engineered twice: semantic clusters and internal links for Google, answer-first structure and FAQ schema so AI engines can quote you directly.
+            </p>
+            <ul className="space-y-3 text-left max-w-md mx-auto lg:mx-0">
+              {['Full H2/H3 outline with target entities and word counts', 'FAQ blocks pre-formatted for schema markup', 'Internal links mapped to and from every new article'].map((pt) => (
+                <li key={pt} className="flex items-start gap-3 text-[15px] text-[#4b5563] leading-[1.6]">
+                  <span className="w-5 h-5 rounded-full bg-violet-50 text-violet-600 flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✓</span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative max-w-[520px] w-full mx-auto lg:mx-0 order-1 lg:order-2">
+            <div className="absolute -inset-8 rounded-[40px] opacity-20 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle at 70% 30%, #a78bfa, transparent 60%)' }} />
+            <div className="relative bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden text-left">
+              <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/60 flex items-center justify-between">
+                <p className="text-[13px] font-bold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>📝 Content brief — ready for review</p>
+                <span className="text-[11px] font-semibold text-violet-700 bg-violet-50 px-2.5 py-1 rounded-full">Weekly</span>
+              </div>
+              <div className="p-5 space-y-4">
+                <div>
+                  <p className="text-[15px] font-bold text-[#111827] mb-1" style={{ fontFamily: 'Satoshi, sans-serif' }}>"Best CRM for early-stage startups"</p>
+                  <p className="text-[12px] text-[#6b7280]">Volume 2,400/mo · Difficulty 32 · High conversion intent</p>
+                </div>
+                <div className="space-y-2">
+                  {['H2 — Why startups outgrow spreadsheets', 'H2 — 7 CRMs compared (feature table)', 'H2 — How to choose at your stage', 'H2 — FAQ (schema-ready)'].map((h) => (
+                    <div key={h} className="px-3.5 py-2 bg-gray-50 rounded-lg text-[12px] text-[#374151] font-medium">{h}</div>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {['FAQ schema', '6 internal links', 'GEO answer block', 'Semantic cluster'].map((chip) => (
+                    <span key={chip} className="px-2.5 py-1 rounded-full bg-violet-50 text-violet-700 text-[11px] font-semibold">{chip}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deep dive: report */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="relative max-w-[520px] w-full mx-auto lg:mx-0">
+            <div className="absolute -inset-8 rounded-[40px] opacity-20 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle at 30% 70%, #60a5fa, transparent 60%)' }} />
+            <div className="relative bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden text-left">
+              <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/60">
+                <p className="text-[13px] font-bold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>📬 Monday 7:00 AM — Your SEO week in review</p>
+              </div>
+              <div className="p-5 space-y-3">
+                {[
+                  { icon: '📈', text: '12 keywords moved up — 3 hit page one', tone: 'bg-emerald-50 text-emerald-800' },
+                  { icon: '🤖', text: 'Cited in 4 new Perplexity answers this week', tone: 'bg-violet-50 text-violet-800' },
+                  { icon: '⚠️', text: '2 pages lost positions — fixes already queued', tone: 'bg-amber-50 text-amber-800' },
+                  { icon: '✅', text: 'This week: 2 briefs + 5-page optimization awaiting your approval', tone: 'bg-blue-50 text-blue-800' },
+                ].map((r) => (
+                  <div key={r.text} className={`flex items-start gap-3 px-4 py-3 rounded-xl text-[13px] font-medium leading-[1.5] ${r.tone}`}>
+                    <span className="flex-shrink-0">{r.icon}</span>
+                    <span>{r.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="text-center lg:text-left">
+            <p className="text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Reports to your inbox</p>
+            <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Know what moved — without opening a dashboard</h2>
+            <p className="text-[#4b5563] text-[17px] leading-[1.7] mb-6">
+              Every week Sophie reports in plain language: what ranked, where you got cited by AI engines, what broke, and what she's queued for your approval. No pivot tables, no guessing.
+            </p>
+            <ul className="space-y-3 text-left max-w-md mx-auto lg:mx-0">
+              {['Ranking movement with the "why" behind it', 'AI citation tracking across ChatGPT, Perplexity & AI Overviews', 'Issues caught early, with fixes already prepared'].map((pt) => (
+                <li key={pt} className="flex items-start gap-3 text-[15px] text-[#4b5563] leading-[1.6]">
+                  <span className="w-5 h-5 rounded-full bg-violet-50 text-violet-600 flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✓</span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
       {/* Capabilities */}

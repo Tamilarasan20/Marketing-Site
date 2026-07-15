@@ -122,34 +122,85 @@ export default function AiAdsManager() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero */}
-      <section className="pt-32 pb-20 px-4 text-center max-w-4xl mx-auto">
-        <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-          <span>📣 Elena — AI Ads Manager</span>
-        </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-          Paid ads that optimize<br />
-          <span style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            while you sleep
-          </span>
-        </h1>
-        <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto mb-10">
-          Elena plans your campaigns, writes the ads, builds the audiences, and monitors performance daily across Meta, Google, and TikTok — recommending every budget move for your approval.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/app/signup"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
-            style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}
-          >
-            Hire Elena Free — No credit card
-          </a>
-          <Link
-            to="/pricing"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-bold text-base hover:bg-gray-50 transition-all"
-            style={{ fontFamily: 'Satoshi, sans-serif' }}
-          >
-            See pricing →
-          </Link>
+      <section className="pt-32 pb-20 px-4 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Elena — AI Ads Manager</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+              Paid ads that optimize<br />
+              <span style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                while you sleep
+              </span>
+            </h1>
+            <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto lg:mx-0 mb-8">
+              Elena plans your campaigns, writes the ads, builds the audiences, and monitors performance daily across Meta, Google, and TikTok — recommending every budget move for your approval.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              <a
+                href="/app/signup"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
+                style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}
+              >
+                Hire Elena Free
+              </a>
+              <Link
+                to="/pricing"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-bold text-base hover:bg-gray-50 transition-all"
+                style={{ fontFamily: 'Satoshi, sans-serif' }}
+              >
+                See pricing →
+              </Link>
+            </div>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start text-[13px] text-[#6b7280] font-medium">
+              <span><span className="text-emerald-500">✓</span> No credit card</span>
+              <span><span className="text-emerald-500">✓</span> You approve every budget move</span>
+              <span><span className="text-emerald-500">✓</span> Meta · Google · TikTok</span>
+            </div>
+          </div>
+
+          {/* Agent mockup panel */}
+          <div className="relative max-w-[520px] w-full mx-auto lg:mx-0">
+            <div className="absolute -inset-8 rounded-[40px] opacity-30 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle at 30% 20%, #a78bfa, transparent 60%), radial-gradient(circle at 80% 80%, #60a5fa, transparent 60%)' }} />
+            <div className="relative bg-white rounded-3xl border border-gray-200 shadow-2xl overflow-hidden text-left">
+              <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100 bg-gray-50/60">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-bold flex-shrink-0" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>E</div>
+                <div className="min-w-0">
+                  <p className="text-[13px] font-bold text-[#111827] leading-tight" style={{ fontFamily: 'Satoshi, sans-serif' }}>Elena</p>
+                  <p className="text-[11px] text-[#6b7280] leading-tight">AI Ads Manager</p>
+                </div>
+                <span className="ml-auto inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />Daily check · 6:00 AM</span>
+              </div>
+              <div className="p-5 space-y-4">
+                <div className="rounded-xl border border-gray-200 overflow-hidden">
+                  <div className="grid grid-cols-[1fr_auto_auto] gap-3 px-4 py-2 bg-gray-50 text-[10px] font-bold uppercase tracking-[0.06em] text-[#6b7280]">
+                    <span>Campaign</span><span>ROAS</span><span>Call</span>
+                  </div>
+                  {[
+                    { c: 'Prospecting — Meta', r: '3.8x ↑', tag: 'Scale +20%', tone: 'text-emerald-700 bg-emerald-50' },
+                    { c: 'Retargeting 30d — Meta', r: '4.6x →', tag: 'Keep', tone: 'text-blue-700 bg-blue-50' },
+                    { c: 'Broad — TikTok', r: '0.9x ↓', tag: 'Pause', tone: 'text-red-700 bg-red-50' },
+                  ].map((row) => (
+                    <div key={row.c} className="grid grid-cols-[1fr_auto_auto] gap-3 items-center px-4 py-2.5 border-t border-gray-100 text-[12px]">
+                      <span className="text-[#111827] font-medium truncate">{row.c}</span>
+                      <span className="text-[#6b7280] font-semibold whitespace-nowrap">{row.r}</span>
+                      <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${row.tone}`}>{row.tag}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)' }}>E</div>
+                  <div className="bg-violet-50 rounded-2xl rounded-tl-md px-4 py-2.5 text-[13px] text-[#111827] leading-[1.5]">TikTok Broad has been under 1x for 3 days. Shift its $40/day to Meta Prospecting?</div>
+                </div>
+                <div className="flex items-center gap-3 pt-1">
+                  <span className="inline-flex items-center justify-center px-4 py-2 rounded-full text-white text-[12px] font-bold" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>Approve</span>
+                  <span className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-gray-200 text-[#374151] text-[12px] font-bold" style={{ fontFamily: 'Satoshi, sans-serif' }}>Adjust</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -181,6 +232,106 @@ export default function AiAdsManager() {
         <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6]">
           Elena is an AI employee who gives your ad account that daily attention: monitoring performance, refreshing creative, rebalancing budgets — and asking for your approval before anything changes.
         </p>
+      </section>
+
+      {/* Deep dive: launch */}
+      <section className="py-20 px-4 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="text-center lg:text-left order-2 lg:order-1">
+            <p className="text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>From brief to built</p>
+            <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>One instruction. A launch-ready campaign.</h2>
+            <p className="text-[#4b5563] text-[17px] leading-[1.7] mb-6">
+              Tell Elena what you're launching and she builds the whole thing — structure, audiences, exclusions, and a dozen copy variants in your brand voice — then waits for your sign-off.
+            </p>
+            <ul className="space-y-3 text-left max-w-md mx-auto lg:mx-0">
+              {['Full-funnel structure: prospecting, retargeting, retention', 'Copy variants per angle — pain-led, benefit-led, social proof', 'Audiences and exclusions set so you never pay to reach buyers twice'].map((pt) => (
+                <li key={pt} className="flex items-start gap-3 text-[15px] text-[#4b5563] leading-[1.6]">
+                  <span className="w-5 h-5 rounded-full bg-violet-50 text-violet-600 flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✓</span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative max-w-[520px] w-full mx-auto lg:mx-0 order-1 lg:order-2">
+            <div className="absolute -inset-8 rounded-[40px] opacity-20 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle at 70% 30%, #a78bfa, transparent 60%)' }} />
+            <div className="relative bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden text-left">
+              <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/60">
+                <p className="text-[13px] font-bold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>🚀 New campaign build</p>
+              </div>
+              <div className="p-5 space-y-4">
+                <div className="flex justify-end">
+                  <div className="bg-gray-100 rounded-2xl rounded-br-md px-4 py-2.5 text-[13px] text-[#111827] max-w-[85%] leading-[1.5]">We're launching the summer bundle Friday — set up the ads.</div>
+                </div>
+                <div className="space-y-2 text-[13px] leading-[1.5]">
+                  <p className="flex items-start gap-2 text-[#4b5563]"><span className="text-emerald-500 flex-shrink-0">✓</span>Campaign structure — 3 ad sets, full funnel</p>
+                  <p className="flex items-start gap-2 text-[#4b5563]"><span className="text-emerald-500 flex-shrink-0">✓</span>12 ad variants written in your brand voice</p>
+                  <p className="flex items-start gap-2 text-[#4b5563]"><span className="text-emerald-500 flex-shrink-0">✓</span>Audiences, exclusions & budget split set</p>
+                  <p className="flex items-start gap-2 text-[#6b7280]"><span className="w-3.5 h-3.5 mt-0.5 rounded-full border-2 border-violet-300 border-t-violet-600 animate-spin flex-shrink-0" />Creative briefs for your designer…</p>
+                </div>
+                <div className="rounded-xl border border-gray-200 p-4 space-y-2">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.06em] text-[#6b7280]">Ad variant · Hook A</p>
+                  <p className="text-[13px] text-[#111827] font-medium leading-[1.5]">"Your summer wardrobe, solved in one box ☀️ — 20% off launch week only."</p>
+                  <div className="flex gap-2">
+                    <span className="px-2.5 py-1 rounded-full bg-violet-50 text-violet-700 text-[11px] font-semibold">Benefit-led</span>
+                    <span className="px-2.5 py-1 rounded-full bg-violet-50 text-violet-700 text-[11px] font-semibold">Meta · 4:5</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 pt-1">
+                  <span className="inline-flex items-center justify-center px-4 py-2 rounded-full text-white text-[12px] font-bold" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>Approve & launch</span>
+                  <span className="text-[12px] font-semibold text-violet-600">Review all 12 →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deep dive: testing */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="relative max-w-[520px] w-full mx-auto lg:mx-0">
+            <div className="absolute -inset-8 rounded-[40px] opacity-20 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle at 30% 70%, #60a5fa, transparent 60%)' }} />
+            <div className="relative bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden text-left">
+              <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/60 flex items-center justify-between">
+                <p className="text-[13px] font-bold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>🧪 Test #14 — readout</p>
+                <span className="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">Complete</span>
+              </div>
+              <div className="p-5 space-y-4">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="rounded-xl border-2 border-emerald-200 bg-emerald-50/50 p-4">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.06em] text-emerald-700 mb-1">Hook A — Winner</p>
+                    <p className="text-[13px] text-[#111827] font-medium leading-[1.5] mb-2">"Still doing marketing at midnight?"</p>
+                    <p className="text-[20px] font-extrabold text-emerald-700" style={{ fontFamily: 'Satoshi, sans-serif' }}>2.4% CTR</p>
+                  </div>
+                  <div className="rounded-xl border border-gray-200 p-4">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.06em] text-[#6b7280] mb-1">Hook B</p>
+                    <p className="text-[13px] text-[#4b5563] font-medium leading-[1.5] mb-2">"Meet your new marketing team."</p>
+                    <p className="text-[20px] font-extrabold text-[#6b7280]" style={{ fontFamily: 'Satoshi, sans-serif' }}>1.8% CTR</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)' }}>E</div>
+                  <div className="bg-violet-50 rounded-2xl rounded-tl-md px-4 py-2.5 text-[13px] text-[#111827] leading-[1.5]">Pain-led hooks beat feature-led for cold traffic (+31% CTR). Logged — next test: offer framing.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center lg:text-left">
+            <p className="text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Always-on testing</p>
+            <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Every week, your account gets smarter</h2>
+            <p className="text-[#4b5563] text-[17px] leading-[1.7] mb-6">
+              Elena runs a structured testing program — one clean variable at a time, real significance thresholds — and logs every learning so it compounds into your next campaign.
+            </p>
+            <ul className="space-y-3 text-left max-w-md mx-auto lg:mx-0">
+              {['Prioritized test backlog — biggest potential impact first', 'Weekly readouts in plain language, not spreadsheets', 'Learnings applied automatically to future copy and creative'].map((pt) => (
+                <li key={pt} className="flex items-start gap-3 text-[15px] text-[#4b5563] leading-[1.6]">
+                  <span className="w-5 h-5 rounded-full bg-violet-50 text-violet-600 flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✓</span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
       {/* Capabilities */}

@@ -122,34 +122,87 @@ export default function AiEmailMarketer() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero */}
-      <section className="pt-32 pb-20 px-4 text-center max-w-4xl mx-auto">
-        <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-          <span>✉️ Emma — AI Email Marketer</span>
-        </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-          Your email list is<br />
-          <span style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            unclaimed revenue
-          </span>
-        </h1>
-        <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto mb-10">
-          Emma plans your campaigns, writes and designs every send, builds your automated flows, and manages segmentation — inside your Klaviyo or Mailchimp account, with your approval on every email.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/app/signup"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
-            style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}
-          >
-            Hire Emma Free — No credit card
-          </a>
-          <Link
-            to="/pricing"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-bold text-base hover:bg-gray-50 transition-all"
-            style={{ fontFamily: 'Satoshi, sans-serif' }}
-          >
-            See pricing →
-          </Link>
+      <section className="pt-32 pb-20 px-4 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Emma — AI Email Marketer</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+              Your email list is<br />
+              <span style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                unclaimed revenue
+              </span>
+            </h1>
+            <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto lg:mx-0 mb-8">
+              Emma plans your campaigns, writes and designs every send, builds your automated flows, and manages segmentation — inside your Klaviyo or Mailchimp account, with your approval on every email.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              <a
+                href="/app/signup"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
+                style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}
+              >
+                Hire Emma Free
+              </a>
+              <Link
+                to="/pricing"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-bold text-base hover:bg-gray-50 transition-all"
+                style={{ fontFamily: 'Satoshi, sans-serif' }}
+              >
+                See pricing →
+              </Link>
+            </div>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start text-[13px] text-[#6b7280] font-medium">
+              <span><span className="text-emerald-500">✓</span> No credit card</span>
+              <span><span className="text-emerald-500">✓</span> Nothing sends without your approval</span>
+              <span><span className="text-emerald-500">✓</span> Klaviyo · Mailchimp</span>
+            </div>
+          </div>
+
+          {/* Agent mockup panel */}
+          <div className="relative max-w-[520px] w-full mx-auto lg:mx-0">
+            <div className="absolute -inset-8 rounded-[40px] opacity-30 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle at 30% 20%, #a78bfa, transparent 60%), radial-gradient(circle at 80% 80%, #60a5fa, transparent 60%)' }} />
+            <div className="relative bg-white rounded-3xl border border-gray-200 shadow-2xl overflow-hidden text-left">
+              <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100 bg-gray-50/60">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-bold flex-shrink-0" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>E</div>
+                <div className="min-w-0">
+                  <p className="text-[13px] font-bold text-[#111827] leading-tight" style={{ fontFamily: 'Satoshi, sans-serif' }}>Emma</p>
+                  <p className="text-[11px] text-[#6b7280] leading-tight">AI Email Marketer</p>
+                </div>
+                <span className="ml-auto inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />Building</span>
+              </div>
+              <div className="p-5 space-y-4">
+                <div className="flex justify-end">
+                  <div className="bg-gray-100 rounded-2xl rounded-br-md px-4 py-2.5 text-[13px] text-[#111827] max-w-[85%] leading-[1.5]">Send our bestsellers to engaged subscribers — Valentine's angle, 15% off.</div>
+                </div>
+                <div className="space-y-2 text-[13px] leading-[1.5]">
+                  <p className="flex items-start gap-2 text-[#4b5563]"><span className="text-emerald-500 flex-shrink-0">✓</span>Segment: Engaged (opened &lt;60d) · 8,214 subscribers</p>
+                  <p className="flex items-start gap-2 text-[#4b5563]"><span className="text-emerald-500 flex-shrink-0">✓</span>Built in your Klaviyo — brand colors & mobile layout</p>
+                  <p className="flex items-start gap-2 text-[#4b5563]"><span className="text-emerald-500 flex-shrink-0">✓</span>Scheduled: Tue 10:00 AM — your best send window</p>
+                </div>
+                <div className="rounded-xl border border-gray-200 overflow-hidden">
+                  <div className="px-4 py-2.5 bg-gray-50 border-b border-gray-100">
+                    <p className="text-[11px] text-[#6b7280]">From: <span className="text-[#111827] font-medium">Your Brand</span></p>
+                    <p className="text-[12px] text-[#111827] font-semibold">A little something you'll love 💘 15% off bestsellers</p>
+                  </div>
+                  <div className="p-4">
+                    <div className="rounded-lg py-4 text-center text-white text-[15px] font-extrabold mb-3" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>VALENTINE'S — 15% OFF</div>
+                    <div className="grid grid-cols-3 gap-2">
+                      {['🕯️', '🧴', '🎁'].map((p, idx) => (
+                        <div key={idx} className="rounded-lg bg-gray-50 border border-gray-100 h-14 flex items-center justify-center text-xl">{p}</div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 pt-1">
+                  <span className="inline-flex items-center justify-center px-4 py-2 rounded-full text-white text-[12px] font-bold" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>Approve & schedule</span>
+                  <span className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-gray-200 text-[#374151] text-[12px] font-bold" style={{ fontFamily: 'Satoshi, sans-serif' }}>Request changes</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -181,6 +234,106 @@ export default function AiEmailMarketer() {
         <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6]">
           Emma is an AI employee who works your list full-time: proposing campaigns, building them end-to-end, running your automations, and protecting your deliverability — with your approval on every send.
         </p>
+      </section>
+
+      {/* Deep dive: flows */}
+      <section className="py-20 px-4 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="text-center lg:text-left order-2 lg:order-1">
+            <p className="text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Automations that compound</p>
+            <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Flows that sell while you're offline</h2>
+            <p className="text-[#4b5563] text-[17px] leading-[1.7] mb-6">
+              Welcome, abandoned cart, post-purchase, win-back — Emma builds every core automation, watches its revenue, and audits it monthly for drop-off points and copy fatigue.
+            </p>
+            <ul className="space-y-3 text-left max-w-md mx-auto lg:mx-0">
+              {['Every flow tied to the revenue it generates', 'Monthly audits find drop-off points and stale copy', 'New flow drafts appear in your approval queue — never live unseen'].map((pt) => (
+                <li key={pt} className="flex items-start gap-3 text-[15px] text-[#4b5563] leading-[1.6]">
+                  <span className="w-5 h-5 rounded-full bg-violet-50 text-violet-600 flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✓</span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative max-w-[520px] w-full mx-auto lg:mx-0 order-1 lg:order-2">
+            <div className="absolute -inset-8 rounded-[40px] opacity-20 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle at 70% 30%, #a78bfa, transparent 60%)' }} />
+            <div className="relative bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden text-left">
+              <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/60 flex items-center justify-between">
+                <p className="text-[13px] font-bold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>🔁 Your automations — last 30 days</p>
+              </div>
+              <div className="p-5 space-y-3">
+                {[
+                  { name: 'Welcome series', meta: '4 emails', rev: '$12,400', live: true },
+                  { name: 'Abandoned cart', meta: '3 emails', rev: '$8,920', live: true },
+                  { name: 'Win-back', meta: '2 emails', rev: '$3,150', live: true },
+                ].map((f) => (
+                  <div key={f.name} className="flex items-center gap-3 px-4 py-3 rounded-xl border border-gray-200">
+                    <div className="min-w-0">
+                      <p className="text-[13px] font-bold text-[#111827] leading-tight" style={{ fontFamily: 'Satoshi, sans-serif' }}>{f.name}</p>
+                      <p className="text-[11px] text-[#6b7280]">{f.meta}</p>
+                    </div>
+                    <span className="ml-auto text-[14px] font-extrabold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>{f.rev}</span>
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />Live</span>
+                  </div>
+                ))}
+                <div className="flex items-center gap-3 px-4 py-3 rounded-xl border-2 border-dashed border-violet-200 bg-violet-50/40">
+                  <div className="min-w-0">
+                    <p className="text-[13px] font-bold text-[#111827] leading-tight" style={{ fontFamily: 'Satoshi, sans-serif' }}>Post-purchase flow</p>
+                    <p className="text-[11px] text-[#6b7280]">3 emails · drafted by Emma</p>
+                  </div>
+                  <span className="ml-auto inline-flex items-center justify-center px-3 py-1.5 rounded-full text-white text-[11px] font-bold" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>Review →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deep dive: proactive */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="relative max-w-[520px] w-full mx-auto lg:mx-0">
+            <div className="absolute -inset-8 rounded-[40px] opacity-20 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle at 30% 70%, #60a5fa, transparent 60%)' }} />
+            <div className="relative bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden text-left">
+              <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/60">
+                <p className="text-[13px] font-bold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>💡 Proactive nudge — Thursday 9:12 AM</p>
+              </div>
+              <div className="p-5 space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)' }}>E</div>
+                  <div className="bg-violet-50 rounded-2xl rounded-tl-md px-4 py-2.5 text-[13px] text-[#111827] leading-[1.5]">It's been 12 days since your last campaign. I drafted two options from your spring bestsellers:</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="rounded-xl border border-gray-200 px-4 py-3">
+                    <p className="text-[12px] font-bold text-[#111827] mb-0.5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Option A — Spring refresh</p>
+                    <p className="text-[12px] text-[#6b7280] leading-[1.5]">New arrivals to full list · "Fresh starts, fresh picks 🌱"</p>
+                  </div>
+                  <div className="rounded-xl border-2 border-violet-300 bg-violet-50/40 px-4 py-3">
+                    <p className="text-[12px] font-bold text-[#111827] mb-0.5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Option B — VIP early access ✓</p>
+                    <p className="text-[12px] text-[#6b7280] leading-[1.5]">20% off to repeat buyers · "You get first pick (as always)"</p>
+                  </div>
+                </div>
+                <div className="flex justify-end">
+                  <div className="bg-gray-100 rounded-2xl rounded-br-md px-4 py-2.5 text-[13px] text-[#111827] max-w-[85%] leading-[1.5]">Approve option B 👍</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center lg:text-left">
+            <p className="text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>She notices before you do</p>
+            <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Never go quiet on your list again</h2>
+            <p className="text-[#4b5563] text-[17px] leading-[1.7] mb-6">
+              Emma watches your sending rhythm, your catalog, and your calendar. When there's revenue on the table — a gap in sends, a seasonal moment, a product spike — she shows up with options already drafted.
+            </p>
+            <ul className="space-y-3 text-left max-w-md mx-auto lg:mx-0">
+              {['Campaign ideas from your catalog, calendar, and past winners', 'Complete drafts, not suggestions — approve and it\'s scheduled', 'One reply is all it takes to ship a campaign'].map((pt) => (
+                <li key={pt} className="flex items-start gap-3 text-[15px] text-[#4b5563] leading-[1.6]">
+                  <span className="w-5 h-5 rounded-full bg-violet-50 text-violet-600 flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✓</span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
       {/* Capabilities */}
