@@ -25,6 +25,10 @@ const ForAgencies = lazy(() => import("./pages/ForAgencies"));
 const ForFreelancers = lazy(() => import("./pages/ForFreelancers"));
 const ForEcommerce = lazy(() => import("./pages/ForEcommerce"));
 const ForCreators = lazy(() => import("./pages/ForCreators"));
+const AiMarketingLead = lazy(() => import("./pages/AiMarketingLead"));
+const AiSeoGeoStrategist = lazy(() => import("./pages/AiSeoGeoStrategist"));
+const AiEmailMarketer = lazy(() => import("./pages/AiEmailMarketer"));
+const AiAdsManager = lazy(() => import("./pages/AiAdsManager"));
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +52,10 @@ export const router = createBrowserRouter([
       { path: "for-freelancers", Component: ForFreelancers },
       { path: "for-ecommerce", Component: ForEcommerce },
       { path: "for-creators", Component: ForCreators },
+      { path: "ai-marketing-lead", Component: AiMarketingLead },
+      { path: "ai-seo-geo-strategist", Component: AiSeoGeoStrategist },
+      { path: "ai-email-marketer", Component: AiEmailMarketer },
+      { path: "ai-ads-manager", Component: AiAdsManager },
       { path: "*", Component: NotFound },
     ],
   },

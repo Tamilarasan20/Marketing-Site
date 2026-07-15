@@ -104,60 +104,8 @@ function LanguagePicker() {
     </div>
   );
 }
-import imgLora from "../../imports/Home-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
-import imgSam from "../../imports/Home-1/67e2795861635095f78d499d37fb8c47640346cd.png";
-import imgClara from "../../imports/Home-1/a6c396695db2f4867d2b2cf94c4c4013fb4aa21a.png";
-import imgSteve from "../../imports/Home-1/81459e21086bbb45f043de724414eb6c6a228454.png";
-import imgSarah from "../../imports/Home-1/2ede8e04425e852843b64720e2e6023d1ed754cb.png";
 import { cn } from "./ui/utils";
-
-const aiAgents = [
-  {
-    name: "Lora",
-    role: "AI Marketing Lead",
-    img: imgLora,
-    bg: "linear-gradient(160deg, rgb(149,0,229) 0%, rgb(195,29,237) 100%)",
-    scale: 1.3,
-    offsetY: "2px",
-    isSoon: false,
-  },
-  {
-    name: "Sam",
-    role: "AI Strategist",
-    img: imgSam,
-    bg: "#E5E7EB",
-    scale: 1.3,
-    offsetY: "2px",
-    isSoon: true,
-  },
-  {
-    name: "Clara",
-    role: "AI Content Writer",
-    img: imgClara,
-    bg: "#E5E7EB",
-    scale: 1.1,
-    offsetY: "0px",
-    isSoon: true,
-  },
-  {
-    name: "Steve",
-    role: "AI Visual Designer",
-    img: imgSteve,
-    bg: "#E5E7EB",
-    scale: 1.9,
-    offsetY: "2px",
-    isSoon: true,
-  },
-  {
-    name: "Sarah",
-    role: "AI Social Media Manager",
-    img: imgSarah,
-    bg: "#E5E7EB",
-    scale: 1.1,
-    offsetY: "0px",
-    isSoon: true,
-  },
-];
+import { agentList, type Agent } from "../data/agents";
 
 function truncateName(name: string, max = 24): string {
   return name.length > max ? name.slice(0, max) + "…" : name;
@@ -207,8 +155,6 @@ export default function Header() {
     return () => document.removeEventListener("keydown", handler);
   }, [open, closeAll]);
 
-  const activeAgents = aiAgents.filter((a) => !a.isSoon);
-  const soonAgents = aiAgents.filter((a) => a.isSoon);
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50 flex justify-center pointer-events-none">
@@ -374,54 +320,27 @@ export default function Header() {
               : "opacity-0 -translate-y-2 pointer-events-none"
           )}
         >
-          {/* Active agents */}
-          <div className="grid grid-cols-2 gap-4">
-            {activeAgents.map((agent) => (
+          <p className="font-['Satoshi',sans-serif] font-semibold text-[11px] uppercase tracking-[0.08em] text-[#9ca3af] px-2 m-0">
+            Meet your AI marketing team
+          </p>
+          <div className="grid grid-cols-2 gap-2">
+            {agentList.map((agent) => (
               <Link
-                key={agent.name}
-                to={`/solution?agent=${agent.name.toLowerCase()}`}
+                key={agent.key}
+                to={agent.slug}
                 onClick={closeAll}
-                className="flex items-center gap-3 rounded-xl px-2 py-1.5 no-underline transition-colors duration-150 hover:bg-[#f9fafc]"
+                className="flex items-center gap-3 rounded-xl px-2 py-2 no-underline transition-colors duration-150 hover:bg-[#f9fafc]"
               >
                 <AgentAvatar agent={agent} />
                 <div className="flex flex-col min-w-0">
                   <p className="font-['Satoshi',sans-serif] font-bold text-sm leading-5 text-[#1f2937] whitespace-nowrap m-0">
-                    {agent.role}
-                  </p>
-                  <p className="font-['General_Sans',sans-serif] font-medium text-xs leading-4 text-[#6b7280] whitespace-nowrap m-0">
                     {agent.name}
+                  </p>
+                  <p className="font-['General_Sans',sans-serif] font-medium text-xs leading-4 text-[#6b7280] m-0">
+                    {agent.role}
                   </p>
                 </div>
               </Link>
-            ))}
-          </div>
-
-          {/* Coming-soon separator */}
-          <div className="flex items-center gap-3">
-            <div className="flex-1 h-px bg-gray-100" />
-            <span className="font-['Satoshi',sans-serif] font-medium text-xs text-[#9ca3af] whitespace-nowrap">
-              More agents coming soon
-            </span>
-            <div className="flex-1 h-px bg-gray-100" />
-          </div>
-
-          {/* Soon agents */}
-          <div className="grid grid-cols-2 gap-4">
-            {soonAgents.map((agent) => (
-              <div
-                key={agent.name}
-                className="flex items-center gap-3 rounded-xl px-2 py-1.5 opacity-50 cursor-default"
-              >
-                <AgentAvatar agent={agent} grayscale />
-                <div className="flex flex-col min-w-0">
-                  <p className="font-['Satoshi',sans-serif] font-bold text-sm leading-5 text-[#9CA3AF] whitespace-nowrap m-0">
-                    {agent.role}
-                  </p>
-                  <p className="font-['General_Sans',sans-serif] font-medium text-xs leading-4 text-[#9CA3AF] whitespace-nowrap m-0">
-                    {agent.name}
-                  </p>
-                </div>
-              </div>
             ))}
           </div>
         </div>
@@ -430,27 +349,20 @@ export default function Header() {
   );
 }
 
-function AgentAvatar({
-  agent,
-  grayscale = false,
-}: {
-  agent: (typeof aiAgents)[number];
-  grayscale?: boolean;
-}) {
+function AgentAvatar({ agent }: { agent: Agent }) {
   return (
     <div
-      className="w-12 h-12 min-w-12 rounded-full overflow-hidden relative shrink-0"
-      style={{ background: agent.bg }}
+      className="w-11 h-11 min-w-11 rounded-full flex items-center justify-center shrink-0"
+      style={{ background: agent.gradient }}
+      role="img"
+      aria-label={agent.name}
     >
-      <img loading="lazy" decoding="async"
-        alt={agent.name}
-        src={agent.img}
-        className="absolute inset-0 w-full h-full object-contain"
-        style={{
-          transform: `scale(${agent.scale}) translateY(${agent.offsetY})`,
-          filter: grayscale ? "grayscale(100%)" : undefined,
-        }}
-      />
+      <span
+        className="text-xl"
+        style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.15))", lineHeight: 1 }}
+      >
+        {agent.emoji}
+      </span>
     </div>
   );
 }

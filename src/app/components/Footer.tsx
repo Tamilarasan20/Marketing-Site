@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { agentList } from "../data/agents";
 import imgLogos from "../../imports/ResponsiveWebsiteDesign/c7fe7372891e9f00b719c9bfb401718a19a7515e.png";
 import imgLogos1 from "../../imports/ResponsiveWebsiteDesign/4174d16cdcac15f4497d1c39f4b1a5104b45fac1.png";
 import imgLogos2 from "../../imports/ResponsiveWebsiteDesign/62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
@@ -52,15 +53,15 @@ export default function Footer() {
 
             <div className="flex flex-col gap-[13px] items-center text-center sm:items-start sm:text-left">
               <p className="font-['General_Sans',sans-serif] font-semibold uppercase tracking-[0.08em] leading-5 text-[#6b7280] text-[13px]">Agents</p>
-              <Link to="/solution" className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Lora - AI Marketing Lead</Link>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Sam - AI Strategist (Soon)</p>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Sophie - AI SEO/GEO Manager (Soon)</p>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Clara - AI Content Writer (Soon)</p>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Theo - AI Video Producer (Soon)</p>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Steve - AI Visual Designer (Soon)</p>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Sarah - AI Social Media Manager (Soon)</p>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Elena - AI Ads Manager (Soon)</p>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Nick - AI Analyst (Soon)</p>
+              {agentList.map((agent) => (
+                <Link
+                  key={agent.key}
+                  to={agent.slug}
+                  className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words"
+                >
+                  {agent.name} - {agent.role}
+                </Link>
+              ))}
             </div>
 
             <div className="flex flex-col gap-[13px] items-center text-center sm:items-start sm:text-left">
