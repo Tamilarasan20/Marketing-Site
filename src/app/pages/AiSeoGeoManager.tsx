@@ -1,5 +1,9 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router';
+import avatarSophie from '../assets/agents/sophie.png';
+import avatarElena from '../assets/agents/elena.png';
+import avatarEmma from '../assets/agents/emma.png';
+import avatarLora from '../assets/agents/lora.png';
 
 const capabilities = [
   {
@@ -99,9 +103,9 @@ const comparison = [
 ];
 
 const team = [
-  { name: 'Elena', role: 'AI Ads Manager', desc: 'Plans, writes, and optimizes your paid campaigns across Meta, Google, and TikTok.', to: '/ai-ads-manager', icon: '📣' },
-  { name: 'Emma', role: 'AI Email Marketer', desc: 'Builds campaigns and automated flows that turn subscribers into repeat customers.', to: '/ai-email-marketer', icon: '✉️' },
-  { name: 'Lora', role: 'AI Marketing Lead', desc: 'Coordinates your whole AI marketing team and builds your monthly strategy.', to: '/solution', icon: '🧭' },
+  { name: 'Elena', role: 'AI Ads Manager', desc: 'Plans, writes, and optimizes your paid campaigns across Meta, Google, and TikTok.', to: '/ai-ads-manager', avatar: avatarElena, ring: '#34d399' },
+  { name: 'Emma', role: 'AI Email Marketer', desc: 'Builds campaigns and automated flows that turn subscribers into repeat customers.', to: '/ai-email-marketer', avatar: avatarEmma, ring: '#60a5fa' },
+  { name: 'Lora', role: 'AI Marketing Lead', desc: 'Coordinates your whole AI marketing team and builds your monthly strategy.', to: '/solution', avatar: avatarLora, ring: '#c084fc' },
 ];
 
 const faqs = [
@@ -125,9 +129,14 @@ export default function AiSeoGeoManager() {
       <section className="pt-32 pb-20 px-4 overflow-hidden">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Sophie — AI SEO/GEO Manager</span>
+            <div className="inline-flex items-center gap-3 bg-white border border-gray-200 shadow-sm pl-1.5 pr-4 py-1.5 rounded-full mb-6">
+              <span className="relative w-9 h-9 rounded-full overflow-hidden flex-shrink-0" style={{ background: 'linear-gradient(135deg, #fce7f3, #ede9fe)' }}>
+                <img src={avatarSophie} alt="Sophie" className="absolute inset-0 w-full h-full object-cover" />
+              </span>
+              <span className="text-sm font-semibold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>Sophie</span>
+              <span className="w-px h-4 bg-gray-200" />
+              <span className="text-sm font-medium text-[#6b7280]">AI SEO/GEO Manager</span>
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full ml-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />Online</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
               Rank on Google.<br />
@@ -166,12 +175,14 @@ export default function AiSeoGeoManager() {
             <div className="absolute -inset-8 rounded-[40px] opacity-30 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle at 30% 20%, #a78bfa, transparent 60%), radial-gradient(circle at 80% 80%, #60a5fa, transparent 60%)' }} />
             <div className="relative bg-white rounded-3xl border border-gray-200 shadow-2xl overflow-hidden text-left">
               <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100 bg-gray-50/60">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-bold flex-shrink-0" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>S</div>
+                <span className="relative w-9 h-9 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-white shadow-sm" style={{ background: 'linear-gradient(135deg, #fce7f3, #ede9fe)' }}>
+                  <img src={avatarSophie} alt="Sophie" className="absolute inset-0 w-full h-full object-cover" />
+                </span>
                 <div className="min-w-0">
                   <p className="text-[13px] font-bold text-[#111827] leading-tight" style={{ fontFamily: 'Satoshi, sans-serif' }}>Sophie</p>
                   <p className="text-[11px] text-[#6b7280] leading-tight">AI SEO/GEO Manager</p>
                 </div>
-                <span className="ml-auto inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />Working</span>
+                <span className="ml-auto inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />Working</span>
               </div>
               <div className="p-5 space-y-4">
                 <div className="flex justify-end">
@@ -440,7 +451,9 @@ export default function AiSeoGeoManager() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {team.map((m) => (
             <Link key={m.name} to={m.to} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-violet-200 transition-all block">
-              <div className="text-3xl mb-3">{m.icon}</div>
+              <span className="relative block w-16 h-16 rounded-full overflow-hidden mb-4" style={{ background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)', boxShadow: `0 0 0 2px ${m.ring}` }}>
+                <img src={m.avatar} alt={m.name} className="absolute inset-0 w-full h-full object-cover" />
+              </span>
               <h3 className="text-[20px] font-semibold text-[#111827] leading-[1.25] tracking-[-0.015em] mb-1" style={{ fontFamily: 'Satoshi, sans-serif' }}>{m.name}</h3>
               <p className="text-[13px] font-semibold text-violet-600 mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{m.role}</p>
               <p className="text-[14px] text-[#4b5563] leading-[1.6]">{m.desc}</p>

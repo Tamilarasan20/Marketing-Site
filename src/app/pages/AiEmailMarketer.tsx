@@ -1,5 +1,9 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router';
+import avatarSophie from '../assets/agents/sophie.png';
+import avatarElena from '../assets/agents/elena.png';
+import avatarEmma from '../assets/agents/emma.png';
+import avatarLora from '../assets/agents/lora.png';
 
 const capabilities = [
   {
@@ -99,9 +103,9 @@ const comparison = [
 ];
 
 const team = [
-  { name: 'Sophie', role: 'AI SEO/GEO Manager', desc: 'Ranks your site on Google and gets you cited by ChatGPT, Perplexity, and AI Overviews.', to: '/ai-seo-geo-manager', icon: '🔍' },
-  { name: 'Elena', role: 'AI Ads Manager', desc: 'Fills your list with paid traffic that Emma then converts into repeat customers.', to: '/ai-ads-manager', icon: '📣' },
-  { name: 'Lora', role: 'AI Marketing Lead', desc: 'Coordinates your whole AI marketing team and builds your monthly strategy.', to: '/solution', icon: '🧭' },
+  { name: 'Sophie', role: 'AI SEO/GEO Manager', desc: 'Ranks your site on Google and gets you cited by ChatGPT, Perplexity, and AI Overviews.', to: '/ai-seo-geo-manager', avatar: avatarSophie, ring: '#f472b6' },
+  { name: 'Elena', role: 'AI Ads Manager', desc: 'Fills your list with paid traffic that Emma then converts into repeat customers.', to: '/ai-ads-manager', avatar: avatarElena, ring: '#34d399' },
+  { name: 'Lora', role: 'AI Marketing Lead', desc: 'Coordinates your whole AI marketing team and builds your monthly strategy.', to: '/solution', avatar: avatarLora, ring: '#c084fc' },
 ];
 
 const faqs = [
@@ -125,9 +129,14 @@ export default function AiEmailMarketer() {
       <section className="pt-32 pb-20 px-4 overflow-hidden">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Emma — AI Email Marketer</span>
+            <div className="inline-flex items-center gap-3 bg-white border border-gray-200 shadow-sm pl-1.5 pr-4 py-1.5 rounded-full mb-6">
+              <span className="relative w-9 h-9 rounded-full overflow-hidden flex-shrink-0" style={{ background: 'linear-gradient(135deg, #dbeafe, #ede9fe)' }}>
+                <img src={avatarEmma} alt="Emma" className="absolute inset-0 w-full h-full object-cover" />
+              </span>
+              <span className="text-sm font-semibold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>Emma</span>
+              <span className="w-px h-4 bg-gray-200" />
+              <span className="text-sm font-medium text-[#6b7280]">AI Email Marketer</span>
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full ml-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />Online</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
               Your email list is<br />
@@ -166,12 +175,14 @@ export default function AiEmailMarketer() {
             <div className="absolute -inset-8 rounded-[40px] opacity-30 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle at 30% 20%, #a78bfa, transparent 60%), radial-gradient(circle at 80% 80%, #60a5fa, transparent 60%)' }} />
             <div className="relative bg-white rounded-3xl border border-gray-200 shadow-2xl overflow-hidden text-left">
               <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100 bg-gray-50/60">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[13px] font-bold flex-shrink-0" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>E</div>
+                <span className="relative w-9 h-9 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-white shadow-sm" style={{ background: 'linear-gradient(135deg, #dbeafe, #ede9fe)' }}>
+                  <img src={avatarEmma} alt="Emma" className="absolute inset-0 w-full h-full object-cover" />
+                </span>
                 <div className="min-w-0">
                   <p className="text-[13px] font-bold text-[#111827] leading-tight" style={{ fontFamily: 'Satoshi, sans-serif' }}>Emma</p>
                   <p className="text-[11px] text-[#6b7280] leading-tight">AI Email Marketer</p>
                 </div>
-                <span className="ml-auto inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />Building</span>
+                <span className="ml-auto inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />Building</span>
               </div>
               <div className="p-5 space-y-4">
                 <div className="flex justify-end">
@@ -299,7 +310,7 @@ export default function AiEmailMarketer() {
               </div>
               <div className="p-5 space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)' }}>E</div>
+                  <span className="relative w-7 h-7 rounded-full overflow-hidden flex-shrink-0" style={{ background: 'linear-gradient(135deg, #dbeafe, #ede9fe)' }}><img src={avatarEmma} alt="Emma" className="absolute inset-0 w-full h-full object-cover" /></span>
                   <div className="bg-violet-50 rounded-2xl rounded-tl-md px-4 py-2.5 text-[13px] text-[#111827] leading-[1.5]">It's been 12 days since your last campaign. I drafted two options from your spring bestsellers:</div>
                 </div>
                 <div className="space-y-2">
@@ -449,7 +460,9 @@ export default function AiEmailMarketer() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {team.map((m) => (
             <Link key={m.name} to={m.to} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-violet-200 transition-all block">
-              <div className="text-3xl mb-3">{m.icon}</div>
+              <span className="relative block w-16 h-16 rounded-full overflow-hidden mb-4" style={{ background: 'linear-gradient(135deg, #f5f3ff, #eff6ff)', boxShadow: `0 0 0 2px ${m.ring}` }}>
+                <img src={m.avatar} alt={m.name} className="absolute inset-0 w-full h-full object-cover" />
+              </span>
               <h3 className="text-[20px] font-semibold text-[#111827] leading-[1.25] tracking-[-0.015em] mb-1" style={{ fontFamily: 'Satoshi, sans-serif' }}>{m.name}</h3>
               <p className="text-[13px] font-semibold text-violet-600 mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>{m.role}</p>
               <p className="text-[14px] text-[#4b5563] leading-[1.6]">{m.desc}</p>

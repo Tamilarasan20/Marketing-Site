@@ -6,6 +6,10 @@ import imgMark1 from "./b34a04b0d155ad8417b049bc9858620b387d57d6.png";
 import imgClara1 from "./b77f42882a70f9452bf0bb5a474a1ad9b31a04fc.png";
 import imgSteve1 from "./c9c2f9a7adf5d78f4c0df2eea6a47b4ab705250b.png";
 import imgSarah1 from "./7afe4355de0c7c959afd51dd8847ac323e91965e.png";
+import imgSophie1 from "./9e93997490a115f5175753dac42207acd80356eb.png";
+import imgElena1 from "./7f8a67d1c140c52d1b6678ae07c33d1915711c2e.png";
+import imgTheo1 from "./d07ecb97e8b9ee75e5acd60ce6899904cb22a862.png";
+import imgNick1 from "./6ec3052296e3932fcfa638bc419f504d211f1c3c.png";
 
 function Menu() {
   return (
