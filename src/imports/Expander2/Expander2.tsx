@@ -1,6 +1,7 @@
 import svgPaths from "./svg-hjgudbia7v";
 import { Link } from "react-router";
 import appLogo from "../../assets/app_logo.png";
+import { agentList } from "../../app/data/agents";
 import imgLora2 from "./32264b1854d55ff26d5f28cf2aff116c87c1ae73.png";
 import imgMark1 from "./b34a04b0d155ad8417b049bc9858620b387d57d6.png";
 import imgClara1 from "./b77f42882a70f9452bf0bb5a474a1ad9b31a04fc.png";
@@ -381,20 +382,23 @@ function Container1() {
   return (
     <div className="backdrop-blur-[8px] bg-[rgba(247,248,250,0.95)] relative rounded-[16px] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)] shrink-0 w-full" data-name="Container">
       <div className="overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col gap-[8px] items-start px-[8px] py-[16px] relative size-full">
-          <Link to="/solution?agent=lora" className="w-full no-underline"><Container2 /></Link>
-          <div className="w-full grayscale opacity-50 pointer-events-none">
-            <Container3 />
-          </div>
-          <div className="w-full grayscale opacity-50 pointer-events-none">
-            <Container5 />
-          </div>
-          <div className="w-full grayscale opacity-50 pointer-events-none">
-            <Container7 />
-          </div>
-          <div className="w-full grayscale opacity-50 pointer-events-none">
-            <Container9 />
-          </div>
+        <div className="content-stretch flex flex-col gap-[4px] items-start px-[8px] py-[12px] relative size-full">
+          {agentList.map((agent) => (
+            <Link key={agent.key} to={agent.slug} className="w-full no-underline">
+              <div className="flex gap-[13px] items-center py-[8px] w-full">
+                <div
+                  className="shrink-0 size-[40px] rounded-full flex items-center justify-center"
+                  style={{ background: agent.gradient }}
+                >
+                  <span className="text-[20px]" style={{ lineHeight: 1 }}>{agent.emoji}</span>
+                </div>
+                <div className="flex flex-col items-start">
+                  <p className="font-['General_Sans',sans-serif] font-semibold text-[#1f2937] text-[14px] leading-[18px] m-0">{agent.name}</p>
+                  <p className="font-['General_Sans',sans-serif] font-medium text-[#6b7280] text-[12px] leading-[16px] m-0">{agent.role}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
