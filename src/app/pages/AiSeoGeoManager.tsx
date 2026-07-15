@@ -8,68 +8,68 @@ import avatarLora from '../assets/agents/lora.png';
 const capabilities = [
   {
     icon: '🔍',
-    title: 'Keyword research & prioritization',
-    desc: 'Sophie mines your search data for quick wins and runs competitor gap analysis to find keywords you should own.',
+    title: 'I research keywords every week',
+    desc: 'I mine your Search Console for quick wins, run competitor gap analysis, and score every keyword for Google rankings and AI citation potential.',
     points: [
-      'Finds pages ranking 5–20 that can jump to page one',
-      'Competitor gap analysis and long-tail keyword mining',
-      'Every keyword scored by volume, difficulty, and conversion potential',
-      'Prioritized automatically — you get a ranked list, not a data dump',
+      'I find pages ranking 5–20 that can jump to page one',
+      'Competitor gaps, long-tail mining, and trendjacking',
+      'Every keyword scored by volume, difficulty, and conversion intent',
+      'You get a ranked, prioritized list — not a data dump',
     ],
   },
   {
     icon: '📝',
-    title: 'Content briefs & SEO articles',
-    desc: 'Complete blog briefs and drafts with semantic clusters, FAQ schema, and internal links — structured so both Google and AI engines cite you.',
+    title: 'I write content that ranks on Google and AI',
+    desc: 'I build complete blog briefs with semantic clusters, FAQ schema, and internal linking — structured so both Google and AI engines like ChatGPT and Perplexity cite you.',
     points: [
-      'Full outlines with H2/H3 structure and target entities',
+      'Full H2/H3 outlines with target entities and word counts',
       'FAQ blocks formatted for schema markup and AI citation',
-      'Internal link suggestions to and from every new article',
-      'Written in your brand voice from your knowledge base',
+      'Internal links mapped to and from every new article',
+      'Written in your brand voice, from your knowledge base',
     ],
   },
   {
     icon: '🤖',
-    title: 'GEO — AI search optimization',
-    desc: 'Google is no longer the only search engine. Sophie structures your content so ChatGPT, Perplexity, and Google AI Overviews cite your brand as the answer.',
+    title: 'I get you cited in AI search (GEO)',
+    desc: 'Google is no longer the only search engine. I structure your content so ChatGPT, Perplexity, and Google AI Overviews quote your brand as the answer.',
     points: [
       'Answer-first formatting that AI engines can quote directly',
       'FAQ schema and structured data for AI Overviews',
       'Entity and topical-authority building around your niche',
-      'Tracks where your brand appears in AI-generated answers',
+      'I track where your brand shows up in AI answers',
     ],
   },
   {
     icon: '🛠️',
-    title: 'On-page optimization',
-    desc: 'Sophie finds underperforming pages and tells you exactly how to fix them — title tags, thin content, missing schema, broken internal links.',
+    title: 'I optimize your pages on autopilot',
+    desc: 'I find underperforming pages, rewrite title tags, add GEO-friendly FAQ schema, expand thin content, and fix internal links — 5 pages per cycle.',
     points: [
-      'Rewrites title tags and meta descriptions for CTR',
-      'Expands thin content that is holding rankings back',
-      'Adds GEO-friendly FAQ sections to existing pages',
-      'Fixes orphan pages and weak internal linking',
+      'I rewrite title tags and meta descriptions for CTR',
+      'I expand thin content that is holding rankings back',
+      'I add GEO-friendly FAQ sections to existing pages',
+      'I fix orphan pages and weak internal linking',
     ],
   },
   {
     icon: '⚙️',
-    title: 'Technical SEO monitoring',
-    desc: 'Indexation errors, Core Web Vitals failures, and crawl anomalies get caught before they hit your rankings — with a prioritized fix list.',
+    title: 'I monitor technical SEO weekly',
+    desc: 'I check Search Console for indexation errors, Core Web Vitals failures, and crawl anomalies — and hand you a prioritized fix list before problems hit rankings.',
     points: [
-      'Watches for indexation and crawl errors continuously',
-      'Flags Core Web Vitals regressions per page template',
-      'Detects keyword cannibalization between your own pages',
+      'I watch for indexation and crawl errors continuously',
+      'I flag Core Web Vitals regressions per page template',
+      'I detect keyword cannibalization between your own pages',
       'Every issue ranked by ranking impact, not alphabetically',
     ],
   },
   {
-    icon: '🔗',
-    title: 'Internal linking architecture',
-    desc: 'Sophie maps your topical clusters and builds hub-and-spoke link structures that push authority to the pages that convert.',
+    icon: '📬',
+    title: 'I send a daily scorecard to your inbox',
+    desc: 'Every morning: clicks, impressions, CTR, position changes, and AI-citation tracking — plus instant alerts the moment a ranking drops.',
     points: [
-      'Maps content into topic clusters and authority hubs',
-      'Hub-and-spoke structures around your money pages',
-      'Anchor text suggestions that stay natural',
-      'Monthly linking reviews as your content library grows',
+      'Ranking movement with the "why" behind it',
+      'AI citation tracking across ChatGPT, Perplexity & AI Overviews',
+      'Instant alerts when a key page loses positions',
+      'Monthly strategic review and internal-linking plan',
     ],
   },
 ];
@@ -139,13 +139,13 @@ export default function AiSeoGeoManager() {
               <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full ml-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />Online</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-              Rank on Google.<br />
+              Hi, I'm Sophie —<br />
               <span style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Get cited by AI search.
+                your SEO &amp; GEO manager.
               </span>
             </h1>
             <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto lg:mx-0 mb-8">
-              Sophie handles keyword research, content briefs, on-page fixes, and technical SEO on autopilot — optimized for Google rankings and citations in ChatGPT, Perplexity, and Google AI Overviews.
+              I rank your site on Google and AI search engines like ChatGPT and Perplexity. Keyword research, content, on-page fixes, and technical SEO — on autopilot. <span className="text-[#111827] font-semibold">You review. I grow.</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <a
@@ -153,15 +153,15 @@ export default function AiSeoGeoManager() {
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
                 style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}
               >
-                Hire Sophie Free
+                Get started free
               </a>
-              <Link
-                to="/pricing"
+              <a
+                href="#solutions"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-bold text-base hover:bg-gray-50 transition-all"
                 style={{ fontFamily: 'Satoshi, sans-serif' }}
               >
-                See pricing →
-              </Link>
+                See how I work →
+              </a>
             </div>
             <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start text-[13px] text-[#6b7280] font-medium">
               <span><span className="text-emerald-500">✓</span> No credit card</span>
@@ -220,22 +220,51 @@ export default function AiSeoGeoManager() {
         </div>
       </section>
 
-      {/* Stats band */}
-      <section className="py-14 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-4xl mx-auto px-4">
-          <p className="text-center text-[13px] font-semibold text-[#6b7280] uppercase tracking-[0.08em] mb-8">Why SEO can't be an afterthought anymore</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      {/* Old way vs the Sophie way */}
+      <section className="py-16 px-4 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Why me</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-12" style={{ fontFamily: 'Satoshi, sans-serif' }}>The old way vs. the Sophie way</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-3xl border border-gray-200 bg-white p-8">
+              <p className="text-[13px] font-bold uppercase tracking-[0.06em] text-[#9ca3af] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>The old way</p>
+              <p className="text-[20px] font-semibold text-[#6b7280] leading-[1.4] mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>Manual SEO, no GEO strategy, invisible to AI search engines.</p>
+              <ul className="space-y-3">
+                {['Keyword research that never happens', 'Content optimized for Google only — ignored by ChatGPT & Perplexity', 'Technical issues found months too late', 'Dashboards you have to interpret yourself'].map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-[14px] text-[#6b7280] leading-[1.6]">
+                    <span className="w-5 h-5 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✕</span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-3xl p-8 text-white relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)' }}>
+              <p className="text-[13px] font-bold uppercase tracking-[0.06em] text-violet-200 mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>The Sophie way</p>
+              <p className="text-[20px] font-semibold leading-[1.4] mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>SEO + GEO running 24/7. Ranked on Google and cited in AI search.</p>
+              <ul className="space-y-3">
+                {['Fresh keyword research every week, scored & prioritized', 'Every page structured for Google and for AI answer engines', 'Technical issues caught early with a prioritized fix list', 'A plain-language scorecard in your inbox each morning'].map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-[14px] text-violet-50 leading-[1.6]">
+                    <span className="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✓</span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          {/* Results */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
             {[
-              { stat: '53%', label: 'of all website traffic still comes from organic search' },
-              { stat: '2x', label: 'the work — every page now competes on Google and in AI answers' },
-              { stat: '15+', label: 'hours per week a proper SEO program demands from a human' },
+              { stat: '3–8×', label: 'keyword footprint expansion a well-run SEO + GEO program can deliver' },
+              { stat: '100–340%', label: 'organic traffic growth typically seen within the first 6 months' },
+              { stat: '24/7', label: 'always-on research, optimization, and monitoring — no days off' },
             ].map((p) => (
-              <div key={p.stat} className="text-center">
-                <p className="text-4xl md:text-5xl font-extrabold mb-2" style={{ fontFamily: 'Satoshi, sans-serif', background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{p.stat}</p>
-                <p className="text-[14px] text-[#6b7280] leading-[1.6]">{p.label}</p>
+              <div key={p.stat} className="text-center bg-white rounded-2xl border border-gray-100 shadow-sm py-7 px-4">
+                <p className="text-3xl md:text-4xl font-extrabold mb-2" style={{ fontFamily: 'Satoshi, sans-serif', background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>↗ {p.stat}</p>
+                <p className="text-[13px] text-[#6b7280] leading-[1.6]">{p.label}</p>
               </div>
             ))}
           </div>
+          <p className="text-center text-[12px] text-[#9ca3af] mt-4">Typical ranges for a consistently run SEO + GEO program. Your results depend on your starting point.</p>
         </div>
       </section>
 
@@ -338,11 +367,12 @@ export default function AiSeoGeoManager() {
         </div>
       </section>
 
-      {/* Capabilities */}
-      <section className="py-16 px-4 bg-gray-50 border-y border-gray-100">
+      {/* Solutions */}
+      <section id="solutions" className="py-16 px-4 bg-gray-50 border-y border-gray-100 scroll-mt-24">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Everything an SEO manager does — without the hire</h2>
-          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Sophie covers the full search stack: research, content, on-page, technical, links, and AI-search visibility.</p>
+          <p className="text-center text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Solutions</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>SEO + GEO, fully handled. You just review.</h2>
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Here's everything I take off your plate — research, content, on-page, technical, and AI-search visibility.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {capabilities.map((c) => (
               <div key={c.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
@@ -463,17 +493,35 @@ export default function AiSeoGeoManager() {
         </div>
       </section>
 
+      {/* Pricing band */}
+      <section className="py-20 px-4 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Pricing</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>One subscription. Your whole AI team.</h2>
+          <p className="text-[#4b5563] text-[18px] leading-[1.6] mb-8 max-w-xl mx-auto">You don't hire me alone — every plan includes all 9 AI employees, so your SEO, ads, email, and social all work together.</p>
+          <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white rounded-3xl border border-gray-200 shadow-sm px-10 py-8">
+            <div className="text-left">
+              <p className="text-[13px] text-[#6b7280] mb-1">Plans start at</p>
+              <p className="text-4xl font-extrabold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>$24.90<span className="text-[18px] font-semibold text-[#6b7280]">/mo</span></p>
+              <p className="text-[13px] text-emerald-600 font-semibold mt-1">7-day free trial · no credit card</p>
+            </div>
+            <div className="w-px h-16 bg-gray-200 hidden sm:block" />
+            <Link to="/pricing" className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>See all plans →</Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <section className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center rounded-3xl p-12" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)' }}>
-          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Put your SEO on autopilot</h2>
-          <p className="text-violet-100 text-[16px] mb-8 leading-[1.6]">Start free. Connect your site, get your first SEO + GEO roadmap, and see your quick wins the same day.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Ready to work with me?</h2>
+          <p className="text-violet-100 text-[16px] mb-8 leading-[1.6]">Connect your site, and I'll have your first SEO + GEO roadmap and quick wins ready the same day. You approve — I get to work.</p>
           <a
             href="/app/signup"
             className="inline-flex items-center justify-center px-8 py-4 bg-white rounded-full text-violet-700 font-bold text-base hover:bg-gray-50 transition-all"
             style={{ fontFamily: 'Satoshi, sans-serif' }}
           >
-            Hire Sophie Free →
+            Get started with Sophie →
           </a>
         </div>
       </section>

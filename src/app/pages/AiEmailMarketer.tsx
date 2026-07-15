@@ -8,30 +8,30 @@ import avatarLora from '../assets/agents/lora.png';
 const capabilities = [
   {
     icon: '💡',
-    title: 'Campaign ideas that come to you',
-    desc: 'Emma suggests ready-to-send campaign concepts based on your products, upcoming calendar dates, and what has performed before — no brainstorming required.',
+    title: 'I bring you campaign ideas',
+    desc: 'I suggest ready-to-send campaign concepts based on your products, upcoming calendar dates, and what has worked before — so you never face a blank page.',
     points: [
       'Ideas drawn from your catalog, seasonality, and past winners',
       'Ready-to-approve concepts, not blank-page prompts',
-      'Notices when you haven\'t emailed in a while and drafts proactively',
+      'I notice when you haven\'t emailed in a while and draft proactively',
       'Aligned to your monthly marketing plan and promotions',
     ],
   },
   {
     icon: '✉️',
-    title: 'Complete campaign builds',
-    desc: 'From one instruction — "promote the new collection to engaged subscribers, 15% off" — Emma builds everything: subject line, copy, layout, segment, and schedule.',
+    title: 'I build the whole campaign',
+    desc: 'From one instruction — "promote the new collection to engaged subscribers, 15% off" — I build everything: subject line, copy, layout, segment, and schedule.',
     points: [
       'Subject lines and preview text written to earn the open',
       'Body copy in your brand voice, from your knowledge base',
       'Mobile-optimized layouts with your brand colors and imagery',
-      'Segment and send time chosen for the campaign\'s goal',
+      'The right segment and send time for the campaign\'s goal',
     ],
   },
   {
     icon: '🔁',
-    title: 'Automated flows that print revenue',
-    desc: 'Welcome series, abandoned cart, browse abandonment, post-purchase, win-back — Emma designs and writes the automations that convert on autopilot.',
+    title: 'I run your automated flows',
+    desc: 'Welcome series, abandoned cart, browse abandonment, post-purchase, win-back — I design and write the automations that convert on autopilot.',
     points: [
       'Welcome flows that turn new subscribers into first purchases',
       'Abandoned cart and browse recovery sequences',
@@ -41,30 +41,30 @@ const capabilities = [
   },
   {
     icon: '🧩',
-    title: 'Segmentation & list health',
-    desc: 'Blasting your whole list is how you end up in spam. Emma segments by engagement, purchase history, and lifecycle stage — and keeps your list clean.',
+    title: 'I segment and keep your list healthy',
+    desc: 'Blasting your whole list is how you end up in spam. I segment by engagement, purchase history, and lifecycle stage — and keep your list clean.',
     points: [
       'Engagement-based segments: hot, warm, at-risk, dormant',
       'Purchase-history segments: first-time, repeat, VIP, lapsed',
       'Sunset policies that protect your sender reputation',
-      'List hygiene recommendations to keep deliverability high',
+      'List-hygiene recommendations to keep deliverability high',
     ],
   },
   {
     icon: '📬',
-    title: 'Deliverability protection',
-    desc: 'The best email in the world earns nothing from the spam folder. Emma watches the signals that decide whether you land in the inbox.',
+    title: 'I protect your deliverability',
+    desc: 'The best email in the world earns nothing from the spam folder. I watch the signals that decide whether you land in the inbox.',
     points: [
-      'Monitors open, bounce, and spam-complaint rates per send',
-      'Flags content patterns that trip spam filters',
+      'I monitor open, bounce, and spam-complaint rates per send',
+      'I flag content patterns that trip spam filters',
       'Send-volume pacing that protects your domain reputation',
       'Alerts when engagement drops outside its normal range',
     ],
   },
   {
     icon: '📊',
-    title: 'Testing & revenue reporting',
-    desc: 'Subject line tests, send-time tests, content tests — plus plain-language reports tying every campaign and flow to revenue.',
+    title: 'I test and report on revenue',
+    desc: 'Subject-line tests, send-time tests, content tests — plus plain-language reports tying every campaign and flow back to revenue.',
     points: [
       'A/B tests on subject lines, content, and send times',
       'Campaign and flow revenue attribution in one view',
@@ -139,13 +139,13 @@ export default function AiEmailMarketer() {
               <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full ml-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />Online</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-              Your email list is<br />
+              Hi, I'm Emma —<br />
               <span style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                unclaimed revenue
+                your email marketer.
               </span>
             </h1>
             <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto lg:mx-0 mb-8">
-              Emma plans your campaigns, writes and designs every send, builds your automated flows, and manages segmentation — inside your Klaviyo or Mailchimp account, with your approval on every email.
+              I turn your list into revenue — planning campaigns, writing and designing every send, and building the flows that convert on autopilot. Right inside your Klaviyo or Mailchimp. <span className="text-[#111827] font-semibold">You approve. I send.</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <a
@@ -153,15 +153,15 @@ export default function AiEmailMarketer() {
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
                 style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}
               >
-                Hire Emma Free
+                Get started free
               </a>
-              <Link
-                to="/pricing"
+              <a
+                href="#solutions"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-bold text-base hover:bg-gray-50 transition-all"
                 style={{ fontFamily: 'Satoshi, sans-serif' }}
               >
-                See pricing →
-              </Link>
+                See how I work →
+              </a>
             </div>
             <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start text-[13px] text-[#6b7280] font-medium">
               <span><span className="text-emerald-500">✓</span> No credit card</span>
@@ -217,19 +217,46 @@ export default function AiEmailMarketer() {
         </div>
       </section>
 
-      {/* Stats band */}
-      <section className="py-14 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-4xl mx-auto px-4">
-          <p className="text-center text-[13px] font-semibold text-[#6b7280] uppercase tracking-[0.08em] mb-8">Email is still the highest-ROI channel</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      {/* Old way vs the Emma way */}
+      <section className="py-16 px-4 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Why me</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-12" style={{ fontFamily: 'Satoshi, sans-serif' }}>The old way vs. the Emma way</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-3xl border border-gray-200 bg-white p-8">
+              <p className="text-[13px] font-bold uppercase tracking-[0.06em] text-[#9ca3af] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>The old way</p>
+              <p className="text-[20px] font-semibold text-[#6b7280] leading-[1.4] mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>A list that sits there while revenue quietly walks out the door.</p>
+              <ul className="space-y-3">
+                {['Campaigns sent only when someone remembers', 'A welcome flow written two years ago — if at all', 'Abandoned carts that never get a follow-up', '"We should segment" stuck on the roadmap forever'].map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-[14px] text-[#6b7280] leading-[1.6]">
+                    <span className="w-5 h-5 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✕</span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-3xl p-8 text-white relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)' }}>
+              <p className="text-[13px] font-bold uppercase tracking-[0.06em] text-violet-200 mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>The Emma way</p>
+              <p className="text-[20px] font-semibold leading-[1.4] mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>A consistent program working your list — inside the tools you already use.</p>
+              <ul className="space-y-3">
+                {['Fresh campaigns built and queued every week', 'Every core flow live: welcome, cart, post-purchase, win-back', 'I recover abandoned carts automatically', 'Your list segmented and its deliverability protected'].map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-[14px] text-violet-50 leading-[1.6]">
+                    <span className="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✓</span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
             {[
-              { stat: '$36', label: 'average return for every $1 spent on email marketing' },
-              { stat: '70%', label: 'of abandoned carts are never followed up with a recovery email' },
-              { stat: '20–30%', label: 'of total revenue comes from email for brands that run it consistently' },
+              { stat: '↗ $36', label: 'average return on every $1 spent on email — the highest-ROI channel' },
+              { stat: '20–30%', label: 'of total revenue email drives for brands that run it consistently' },
+              { stat: '↗ 70%', label: 'of abandoned carts get no follow-up today — that\'s revenue I recover' },
             ].map((p) => (
-              <div key={p.stat} className="text-center">
-                <p className="text-4xl md:text-5xl font-extrabold mb-2" style={{ fontFamily: 'Satoshi, sans-serif', background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{p.stat}</p>
-                <p className="text-[14px] text-[#6b7280] leading-[1.6]">{p.label}</p>
+              <div key={p.label} className="text-center bg-white rounded-2xl border border-gray-100 shadow-sm py-7 px-4">
+                <p className="text-3xl md:text-4xl font-extrabold mb-2" style={{ fontFamily: 'Satoshi, sans-serif', background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{p.stat}</p>
+                <p className="text-[13px] text-[#6b7280] leading-[1.6]">{p.label}</p>
               </div>
             ))}
           </div>
@@ -347,11 +374,12 @@ export default function AiEmailMarketer() {
         </div>
       </section>
 
-      {/* Capabilities */}
-      <section className="py-16 px-4 bg-gray-50 border-y border-gray-100">
+      {/* Solutions */}
+      <section id="solutions" className="py-16 px-4 bg-gray-50 border-y border-gray-100 scroll-mt-24">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Everything an email marketer does — without the hire</h2>
-          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Emma covers the full email stack: ideas, campaigns, flows, segments, deliverability, and reporting.</p>
+          <p className="text-center text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Solutions</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Email revenue, fully handled. You just approve.</h2>
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Here's everything I take off your plate — ideas, campaigns, flows, segments, deliverability, and reporting.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {capabilities.map((c) => (
               <div key={c.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
@@ -472,17 +500,35 @@ export default function AiEmailMarketer() {
         </div>
       </section>
 
+      {/* Pricing band */}
+      <section className="py-20 px-4 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Pricing</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>One subscription. Your whole AI team.</h2>
+          <p className="text-[#4b5563] text-[18px] leading-[1.6] mb-8 max-w-xl mx-auto">You don't hire me alone — every plan includes all 9 AI employees, so your email, ads, SEO, and social all pull in the same direction.</p>
+          <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white rounded-3xl border border-gray-200 shadow-sm px-10 py-8">
+            <div className="text-left">
+              <p className="text-[13px] text-[#6b7280] mb-1">Plans start at</p>
+              <p className="text-4xl font-extrabold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>$24.90<span className="text-[18px] font-semibold text-[#6b7280]">/mo</span></p>
+              <p className="text-[13px] text-emerald-600 font-semibold mt-1">7-day free trial · no credit card</p>
+            </div>
+            <div className="w-px h-16 bg-gray-200 hidden sm:block" />
+            <Link to="/pricing" className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>See all plans →</Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <section className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center rounded-3xl p-12" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)' }}>
-          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Turn your list into revenue</h2>
-          <p className="text-violet-100 text-[16px] mb-8 leading-[1.6]">Start free. Connect your email platform, get your email revenue plan, and approve your first campaign the same day.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Ready to work with me?</h2>
+          <p className="text-violet-100 text-[16px] mb-8 leading-[1.6]">Connect your email platform and I'll have your revenue plan and your first campaign ready the same day. You approve — I send.</p>
           <a
             href="/app/signup"
             className="inline-flex items-center justify-center px-8 py-4 bg-white rounded-full text-violet-700 font-bold text-base hover:bg-gray-50 transition-all"
             style={{ fontFamily: 'Satoshi, sans-serif' }}
           >
-            Hire Emma Free →
+            Get started with Emma →
           </a>
         </div>
       </section>

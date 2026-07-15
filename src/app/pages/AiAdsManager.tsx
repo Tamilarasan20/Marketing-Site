@@ -8,52 +8,52 @@ import avatarLora from '../assets/agents/lora.png';
 const capabilities = [
   {
     icon: '🎯',
-    title: 'Campaign strategy & structure',
-    desc: 'Elena plans full-funnel campaign structures — prospecting, retargeting, retention — mapped to your goals and budget, not copied from a template.',
+    title: 'I plan and structure your campaigns',
+    desc: 'I build full-funnel campaign structures — prospecting, retargeting, retention — mapped to your goals and budget, not copied from a template.',
     points: [
       'Full-funnel architecture: awareness, consideration, conversion',
       'Budget split recommendations across Meta, Google, and TikTok',
-      'Campaign objectives matched to your actual revenue goals',
-      'Naming conventions and structure that stay auditable',
+      'Objectives matched to your actual revenue goals',
+      'Clean naming and structure that stay auditable',
     ],
   },
   {
     icon: '✍️',
-    title: 'Ad copy & creative briefs',
+    title: 'I write your ads and creative briefs',
     desc: 'Hooks, headlines, primary text, and CTAs in your brand voice — plus creative briefs your designer (or Steve, your AI Visual Designer) can execute directly.',
     points: [
       'Multiple angles per campaign: pain-led, benefit-led, social proof',
-      'Platform-native copy — Meta, Google RSA, TikTok each get their own',
+      'Platform-native copy — Meta, Google RSA, and TikTok each get their own',
       'Creative briefs with format, ratio, and messaging direction',
       'Every variant written from your brand knowledge base',
     ],
   },
   {
     icon: '👥',
-    title: 'Audience targeting & segmentation',
-    desc: 'Elena builds and refines your audience strategy — cold interest stacks, lookalikes, retargeting windows, and exclusions that stop wasted spend.',
+    title: 'I build and refine your audiences',
+    desc: 'I manage your whole audience strategy — cold interest stacks, lookalikes, retargeting windows, and exclusions that stop wasted spend.',
     points: [
-      'Interest and lookalike audience recommendations per platform',
+      'Interest and lookalike recommendations per platform',
       'Retargeting segments by funnel stage and recency',
       'Exclusion lists so you stop paying to reach existing customers',
-      'Audience overlap checks to prevent self-competition',
+      'Overlap checks to prevent your ads competing with each other',
     ],
   },
   {
     icon: '💸',
-    title: 'Budget & bid optimization',
-    desc: 'Daily budget reallocation toward what\'s working. Elena flags winners to scale and losers to pause — before they burn through your budget.',
+    title: 'I reallocate budget every day',
+    desc: 'I move budget toward what\'s working — flagging winners to scale and losers to pause before they burn through your budget. You approve each move.',
     points: [
       'Daily performance checks across every active campaign',
-      'Reallocation recommendations from losers to winners',
-      'Scaling plans that protect performance while spend grows',
+      'Reallocation from losers to winners, for your sign-off',
+      'Scaling plans that protect performance as spend grows',
       'Fatigue detection before frequency kills your ROAS',
     ],
   },
   {
     icon: '🧪',
-    title: 'A/B testing programs',
-    desc: 'A structured, always-on testing roadmap — hooks, creatives, audiences, and offers — so every month makes your account smarter.',
+    title: 'I run an always-on testing program',
+    desc: 'A structured testing roadmap — hooks, creatives, audiences, and offers — so every week makes your account smarter.',
     points: [
       'Prioritized test backlog: biggest potential impact first',
       'Clean test design — one variable at a time, real significance',
@@ -63,10 +63,10 @@ const capabilities = [
   },
   {
     icon: '📊',
-    title: 'ROAS reporting & insights',
-    desc: 'Plain-language performance reports: what you spent, what you made, what changed, and what Elena recommends next.',
+    title: 'I report ROAS in plain language',
+    desc: 'No dashboards to decode — I tell you what you spent, what you made, what changed, and what I recommend next.',
     points: [
-      'Spend, ROAS, CPA, and CTR tracked across all platforms in one view',
+      'Spend, ROAS, CPA, and CTR across all platforms in one view',
       'Anomaly alerts when a metric moves outside its normal range',
       'Creative-level breakdowns showing which angles convert',
       'Monthly strategy reviews with next month\'s plan',
@@ -139,13 +139,13 @@ export default function AiAdsManager() {
               <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full ml-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />Online</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-              Paid ads that optimize<br />
+              Hi, I'm Elena —<br />
               <span style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                while you sleep
+                your paid ads manager.
               </span>
             </h1>
             <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto lg:mx-0 mb-8">
-              Elena plans your campaigns, writes the ads, builds the audiences, and monitors performance daily across Meta, Google, and TikTok — recommending every budget move for your approval.
+              I plan your campaigns, write the ads, build the audiences, and watch performance every day across Meta, Google, and TikTok. <span className="text-[#111827] font-semibold">You approve every move. I optimize.</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <a
@@ -153,15 +153,15 @@ export default function AiAdsManager() {
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
                 style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}
               >
-                Hire Elena Free
+                Get started free
               </a>
-              <Link
-                to="/pricing"
+              <a
+                href="#solutions"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-bold text-base hover:bg-gray-50 transition-all"
                 style={{ fontFamily: 'Satoshi, sans-serif' }}
               >
-                See pricing →
-              </Link>
+                See how I work →
+              </a>
             </div>
             <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start text-[13px] text-[#6b7280] font-medium">
               <span><span className="text-emerald-500">✓</span> No credit card</span>
@@ -215,19 +215,46 @@ export default function AiAdsManager() {
         </div>
       </section>
 
-      {/* Stats band */}
-      <section className="py-14 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-4xl mx-auto px-4">
-          <p className="text-center text-[13px] font-semibold text-[#6b7280] uppercase tracking-[0.08em] mb-8">Why ad accounts leak money</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      {/* Old way vs the Elena way */}
+      <section className="py-16 px-4 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-center text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Why me</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-12" style={{ fontFamily: 'Satoshi, sans-serif' }}>The old way vs. the Elena way</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-3xl border border-gray-200 bg-white p-8">
+              <p className="text-[13px] font-bold uppercase tracking-[0.06em] text-[#9ca3af] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>The old way</p>
+              <p className="text-[20px] font-semibold text-[#6b7280] leading-[1.4] mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>Set-and-forget ads, stale creative, budget quietly burning.</p>
+              <ul className="space-y-3">
+                {['Campaigns checked once a week — if that', 'Creative that fatigues before anyone notices', 'Budget stuck on losers while winners starve', 'Agency fees of 10–20% of your ad spend'].map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-[14px] text-[#6b7280] leading-[1.6]">
+                    <span className="w-5 h-5 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✕</span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-3xl p-8 text-white relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)' }}>
+              <p className="text-[13px] font-bold uppercase tracking-[0.06em] text-violet-200 mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>The Elena way</p>
+              <p className="text-[20px] font-semibold leading-[1.4] mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>Daily optimization across every platform, every dollar working.</p>
+              <ul className="space-y-3">
+                {['I check every campaign daily and flag the moves', 'Fresh copy and creative angles every week', 'Budget shifted from losers to winners automatically', 'No percentage-of-spend fees — I come with your plan'].map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-[14px] text-violet-50 leading-[1.6]">
+                    <span className="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">✓</span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
             {[
-              { stat: '~26%', label: 'of ad spend is typically wasted on poor targeting and stale creative' },
-              { stat: '72h', label: 'is all it takes for a fatigued ad to burn budget before a weekly check catches it' },
-              { stat: '10–20%', label: 'of your ad spend is what agencies charge just to manage it' },
+              { stat: '~26%', label: 'of ad spend is typically wasted — I hunt it down every day' },
+              { stat: 'Daily', label: 'budget reallocation instead of a weekly agency check-in' },
+              { stat: '0%', label: 'of your ad spend goes to management fees' },
             ].map((p) => (
-              <div key={p.stat} className="text-center">
-                <p className="text-4xl md:text-5xl font-extrabold mb-2" style={{ fontFamily: 'Satoshi, sans-serif', background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{p.stat}</p>
-                <p className="text-[14px] text-[#6b7280] leading-[1.6]">{p.label}</p>
+              <div key={p.stat} className="text-center bg-white rounded-2xl border border-gray-100 shadow-sm py-7 px-4">
+                <p className="text-3xl md:text-4xl font-extrabold mb-2" style={{ fontFamily: 'Satoshi, sans-serif', background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{p.stat}</p>
+                <p className="text-[13px] text-[#6b7280] leading-[1.6]">{p.label}</p>
               </div>
             ))}
           </div>
@@ -345,11 +372,12 @@ export default function AiAdsManager() {
         </div>
       </section>
 
-      {/* Capabilities */}
-      <section className="py-16 px-4 bg-gray-50 border-y border-gray-100">
+      {/* Solutions */}
+      <section id="solutions" className="py-16 px-4 bg-gray-50 border-y border-gray-100 scroll-mt-24">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Everything a paid media manager does — without the retainer</h2>
-          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Elena covers the full paid stack: strategy, copy, audiences, budgets, testing, and reporting.</p>
+          <p className="text-center text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Solutions</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Paid media, fully handled. You just approve.</h2>
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Here's everything I take off your plate — strategy, copy, audiences, budgets, testing, and reporting.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {capabilities.map((c) => (
               <div key={c.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
@@ -470,17 +498,35 @@ export default function AiAdsManager() {
         </div>
       </section>
 
+      {/* Pricing band */}
+      <section className="py-20 px-4 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-[13px] font-bold text-violet-600 uppercase tracking-[0.08em] mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Pricing</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>One subscription. Your whole AI team.</h2>
+          <p className="text-[#4b5563] text-[18px] leading-[1.6] mb-8 max-w-xl mx-auto">You don't hire me alone — every plan includes all 9 AI employees, so your ads, SEO, email, and social all pull in the same direction.</p>
+          <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white rounded-3xl border border-gray-200 shadow-sm px-10 py-8">
+            <div className="text-left">
+              <p className="text-[13px] text-[#6b7280] mb-1">Plans start at</p>
+              <p className="text-4xl font-extrabold text-[#111827]" style={{ fontFamily: 'Satoshi, sans-serif' }}>$24.90<span className="text-[18px] font-semibold text-[#6b7280]">/mo</span></p>
+              <p className="text-[13px] text-emerald-600 font-semibold mt-1">7-day free trial · no credit card</p>
+            </div>
+            <div className="w-px h-16 bg-gray-200 hidden sm:block" />
+            <Link to="/pricing" className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90" style={{ background: 'linear-gradient(135deg, #7c3aed, #2563eb)', fontFamily: 'Satoshi, sans-serif' }}>See all plans →</Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <section className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center rounded-3xl p-12" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)' }}>
-          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Stop leaking ad spend</h2>
-          <p className="text-violet-100 text-[16px] mb-8 leading-[1.6]">Start free. Connect your ad accounts, get a full audit, and see where your budget is being wasted — the same day.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Ready to work with me?</h2>
+          <p className="text-violet-100 text-[16px] mb-8 leading-[1.6]">Connect your ad accounts and I'll audit them the same day — showing you exactly where budget is leaking and what I'd change. You approve; I optimize.</p>
           <a
             href="/app/signup"
             className="inline-flex items-center justify-center px-8 py-4 bg-white rounded-full text-violet-700 font-bold text-base hover:bg-gray-50 transition-all"
             style={{ fontFamily: 'Satoshi, sans-serif' }}
           >
-            Hire Elena Free →
+            Get started with Elena →
           </a>
         </div>
       </section>
