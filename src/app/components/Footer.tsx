@@ -54,12 +54,13 @@ export default function Footer() {
               <p className="font-['General_Sans',sans-serif] font-semibold uppercase tracking-[0.08em] leading-5 text-[#6b7280] text-[13px]">Agents</p>
               <Link to="/solution" className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Lora - AI Marketing Lead</Link>
               <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Sam - AI Strategist (Soon)</p>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Sophie - AI SEO/GEO Manager (Soon)</p>
+              <Link to="/ai-seo-geo-manager" className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Sophie - AI SEO/GEO Manager</Link>
               <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Clara - AI Content Writer (Soon)</p>
               <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Theo - AI Video Producer (Soon)</p>
               <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Steve - AI Visual Designer (Soon)</p>
               <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Sarah - AI Social Media Manager (Soon)</p>
-              <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Elena - AI Ads Manager (Soon)</p>
+              <Link to="/ai-ads-manager" className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Elena - AI Ads Manager</Link>
+              <Link to="/ai-email-marketer" className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#374151] text-sm sm:text-base hover:text-[#1877f2] transition-colors break-words">Emma - AI Email Marketer</Link>
               <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-[#9ca3af] text-sm sm:text-base break-words">Nick - AI Analyst (Soon)</p>
             </div>
 

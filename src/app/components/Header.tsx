@@ -109,6 +109,9 @@ import imgSam from "../../imports/Home-1/67e2795861635095f78d499d37fb8c47640346c
 import imgClara from "../../imports/Home-1/a6c396695db2f4867d2b2cf94c4c4013fb4aa21a.png";
 import imgSteve from "../../imports/Home-1/81459e21086bbb45f043de724414eb6c6a228454.png";
 import imgSarah from "../../imports/Home-1/2ede8e04425e852843b64720e2e6023d1ed754cb.png";
+import imgSophie from "../assets/agents/sophie.png";
+import imgElena from "../assets/agents/elena.png";
+import imgEmma from "../assets/agents/emma.png";
 import { cn } from "./ui/utils";
 
 const aiAgents = [
@@ -116,15 +119,47 @@ const aiAgents = [
     name: "Lora",
     role: "AI Marketing Lead",
     img: imgLora,
+    to: "/solution",
     bg: "linear-gradient(160deg, rgb(149,0,229) 0%, rgb(195,29,237) 100%)",
     scale: 1.3,
     offsetY: "2px",
     isSoon: false,
   },
   {
+    name: "Sophie",
+    role: "AI SEO/GEO Manager",
+    img: imgSophie,
+    to: "/ai-seo-geo-manager",
+    bg: "linear-gradient(160deg, #fbcfe8 0%, #ede9fe 100%)",
+    scale: 1,
+    offsetY: "0px",
+    isSoon: false,
+  },
+  {
+    name: "Elena",
+    role: "AI Ads Manager",
+    img: imgElena,
+    to: "/ai-ads-manager",
+    bg: "linear-gradient(160deg, #bbf7d0 0%, #ede9fe 100%)",
+    scale: 1,
+    offsetY: "0px",
+    isSoon: false,
+  },
+  {
+    name: "Emma",
+    role: "AI Email Marketer",
+    img: imgEmma,
+    to: "/ai-email-marketer",
+    bg: "linear-gradient(160deg, #bfdbfe 0%, #ede9fe 100%)",
+    scale: 1,
+    offsetY: "0px",
+    isSoon: false,
+  },
+  {
     name: "Sam",
     role: "AI Strategist",
     img: imgSam,
+    to: "",
     bg: "#E5E7EB",
     scale: 1.3,
     offsetY: "2px",
@@ -134,6 +169,7 @@ const aiAgents = [
     name: "Clara",
     role: "AI Content Writer",
     img: imgClara,
+    to: "",
     bg: "#E5E7EB",
     scale: 1.1,
     offsetY: "0px",
@@ -143,6 +179,7 @@ const aiAgents = [
     name: "Steve",
     role: "AI Visual Designer",
     img: imgSteve,
+    to: "",
     bg: "#E5E7EB",
     scale: 1.9,
     offsetY: "2px",
@@ -152,6 +189,7 @@ const aiAgents = [
     name: "Sarah",
     role: "AI Social Media Manager",
     img: imgSarah,
+    to: "",
     bg: "#E5E7EB",
     scale: 1.1,
     offsetY: "0px",
@@ -379,7 +417,7 @@ export default function Header() {
             {activeAgents.map((agent) => (
               <Link
                 key={agent.name}
-                to={`/solution?agent=${agent.name.toLowerCase()}`}
+                to={agent.to || `/solution?agent=${agent.name.toLowerCase()}`}
                 onClick={closeAll}
                 className="flex items-center gap-3 rounded-xl px-2 py-1.5 no-underline transition-colors duration-150 hover:bg-[#f9fafc]"
               >
