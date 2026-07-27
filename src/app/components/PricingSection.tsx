@@ -18,6 +18,8 @@ interface Plan {
   highlighted?: boolean;
   /** Entry-level plan sold without the AI agent team — no banner, no credits. */
   noAgent?: boolean;
+  /** Term discounts don't apply — the price stays flat on every billing period. */
+  noDiscount?: boolean;
   tiers: Tier[];
   features: string[];
 }
@@ -30,7 +32,9 @@ const PLANS: Plan[] = [
     name: "Lite (No AI Agent)",
     description: "Entry plan — scheduling without AI agents",
     noAgent: true,
-    tiers: [{ prices: { monthly: 9, quarterly: 8, annual: 6 } }],
+    noDiscount: true,
+    // Flat $9 — the 3-month and 12-month discounts don't apply to Lite.
+    tiers: [{ prices: { monthly: 9, quarterly: 9, annual: 9 } }],
     features: [
       "No AI agents included",
       "Up to 5 account integrations",
@@ -188,7 +192,9 @@ export default function PricingSection({
     const url = new URL(`${APP_URL}/pricing`);
     url.searchParams.set("plan", plan.id);
     url.searchParams.set("tier", String(tierIdx));
-    url.searchParams.set("period", period);
+    // Plans the term discounts don't apply to always bill monthly, so don't
+    // carry a 3-month / 12-month selection over to the app.
+    url.searchParams.set("period", plan.noDiscount ? "monthly" : period);
     window.location.href = url.toString();
   }
 
@@ -289,6 +295,19 @@ export default function PricingSection({
                         className="text-[16px] text-[#6B7280] tracking-[0.6px] leading-[20px]">
                         /mo
                       </span>
+
+                      {/* Term discounts don't apply to this plan — the price is
+                          flat, so say so instead of showing an unchanged number */}
+                      {plan.noDiscount && period !== "monthly" && (
+                        <span style={{
+                          fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500,
+                          background: "#1A1A1A", border: "0.749px solid rgba(255,255,255,0.12)",
+                          color: "#9CA3AF", fontSize: "11px", padding: "3px 8px",
+                          borderRadius: "999px", lineHeight: "1", whiteSpace: "nowrap",
+                        }}>
+                          Not applicable
+                        </span>
+                      )}
                     </div>
 
                     {/* CTA */}
