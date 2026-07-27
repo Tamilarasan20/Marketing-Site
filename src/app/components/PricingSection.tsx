@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Sparkles } from "lucide-react";
 import imgAgentBanner from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
 import CreditUsageBlock from "./CreditUsageBlock";
 
@@ -17,12 +16,29 @@ interface Plan {
   name: string;
   description: string;
   highlighted?: boolean;
+  /** Entry-level plan sold without the AI agent team — no banner, no credits. */
+  noAgent?: boolean;
   tiers: Tier[];
   features: string[];
 }
 
 // ─── Plan data — mirrors apps/web/src/app/pricing/page.tsx exactly ────────────
+// Lite (No AI Agent) is the entry tier; every AI Agent plan follows it.
 const PLANS: Plan[] = [
+  {
+    id: "LITE",
+    name: "Lite (No AI Agent)",
+    description: "Entry plan — scheduling without AI agents",
+    noAgent: true,
+    tiers: [{ prices: { monthly: 9, quarterly: 8, annual: 6 } }],
+    features: [
+      "No AI agents included",
+      "Up to 5 account integrations",
+      "200 posts per month",
+      "Schedule & calendar planning",
+      "Human support",
+    ],
+  },
   {
     id: "STARTER",
     name: "Starter",
@@ -67,64 +83,6 @@ const PLANS: Plan[] = [
       { credits: 6000, compareAt: 799, prices: { monthly: 599, quarterly: 509, annual: 419 } },
     ],
     features: ["All 9 helpers", "4,500 monthly AI credits", "Unlimited Seats", "Unlimited Workspaces", "Priority Support 24/7"],
-  },
-];
-
-// ─── No-AI-Agent plans — integration-based, no AI features, all unlimited posts ─
-// Each tier is cumulative: higher plans inherit everything below via "Everything in …".
-const NO_AGENT_PLANS: Plan[] = [
-  {
-    id: "LITE",
-    name: "Lite",
-    description: "Entry plan for getting started",
-    tiers: [{ prices: { monthly: 9, quarterly: 8, annual: 6 } }],
-    features: [
-      "Up to 5 account integrations",
-      "200 posts per month",
-      "X (Twitter) not included",
-      "Schedule & calendar planning",
-      "Human support",
-    ],
-  },
-  {
-    id: "CREATOR",
-    name: "Creator",
-    description: "Solo creators getting started",
-    tiers: [{ prices: { monthly: 19, quarterly: 16, annual: 13 } }],
-    features: [
-      "25 social media integrations",
-      "Unlimited posts",
-      "Schedule & calendar planning",
-      "Carousel & bulk video posts",
-      "Human support",
-    ],
-  },
-  {
-    id: "PRO",
-    name: "Pro",
-    description: "Growing teams & agencies",
-    highlighted: true,
-    tiers: [{ prices: { monthly: 39, quarterly: 33, annual: 27 } }],
-    features: [
-      "Everything in Creator",
-      "50 social media integrations",
-      "Multiple accounts per platform",
-      "Analytics & post comments",
-      "Priority support",
-    ],
-  },
-  {
-    id: "ULTRA",
-    name: "Ultra",
-    description: "Scaling brands & power users",
-    tiers: [{ prices: { monthly: 89, quarterly: 76, annual: 62 } }],
-    features: [
-      "Everything in Pro",
-      "Unlimited social integrations",
-      "Unlimited team members",
-      "API & webhooks access",
-      "Dedicated account manager",
-    ],
   },
 ];
 
@@ -218,9 +176,8 @@ export default function PricingSection({
   showCreditUsage?: boolean;
 }) {
   const [period, setPeriod] = useState<BillingPeriod>("monthly");
-  const [withAgents, setWithAgents] = useState(true);
   const [selectedTiers, setSelectedTiers] = useState<Record<string, number>>({
-    STARTER: 0, GROWTH: 0, SCALE: 0, ENTERPRISE: 0,
+    LITE: 0, STARTER: 0, GROWTH: 0, SCALE: 0, ENTERPRISE: 0,
   });
   const [pendingPlanId, setPendingPlanId] = useState<string | null>(null);
 
@@ -234,8 +191,6 @@ export default function PricingSection({
     url.searchParams.set("period", period);
     window.location.href = url.toString();
   }
-
-  const activePlans = withAgents ? PLANS : NO_AGENT_PLANS;
 
   return (
     <section className={`bg-black ${className}`}>
@@ -252,27 +207,6 @@ export default function PricingSection({
 
           {/* Controls */}
           <div className="flex flex-col items-center gap-4">
-
-            {/* AI Agents toggle */}
-            <div className="flex items-center gap-[2px] p-[1px] rounded-full border border-[#374151]">
-              {[
-                { v: true,  label: "AI Agents",    icon: true  },
-                { v: false, label: "No AI Agents", icon: false },
-              ].map(({ v, label, icon }) => (
-                <button
-                  key={label}
-                  type="button"
-                  onClick={() => setWithAgents(v)}
-                  style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                  className={`flex items-center gap-[6px] px-3 sm:px-4 py-[9px] rounded-full text-[14px] sm:text-[16px] whitespace-nowrap transition-all ${
-                    withAgents === v ? "bg-[#1F2937] text-white" : "text-[#9CA3AF] hover:text-white"
-                  }`}
-                >
-                  {icon && <Sparkles className="w-3.5 h-3.5" />}
-                  {label}
-                </button>
-              ))}
-            </div>
 
             {/* Billing period toggle — Save badges float above each option so the
                 three pills (Monthly / 3-month / 12-month) always stay on one line */}
@@ -313,18 +247,19 @@ export default function PricingSection({
             </div>
           </div>
 
-          {/* Plan cards — stack vertically on mobile, 2-up on small screens, 4-up on large.
+          {/* Plan cards — stack vertically on mobile, 2-up on small screens, then
+              3-up and 5-up (Lite + the four AI Agent plans) on wider screens.
               items-end so the highlighted plan floats above with "Most popular" */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-end gap-4 w-full">
-            {activePlans.map((plan) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 items-end gap-4 w-full">
+            {PLANS.map((plan) => {
               const tierIdx = selectedTiers[plan.id] ?? 0;
               const tier    = plan.tiers[tierIdx];
               const price   = tier.prices[period];
 
               const cardInner = (
                 <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full">
-                  {withAgents && <CardHeader />}
-                  <div className={`flex flex-col gap-6 ${withAgents ? "pt-4" : "pt-7"} px-5 pb-6`}>
+                  {!plan.noAgent && <CardHeader />}
+                  <div className={`flex flex-col gap-6 ${plan.noAgent ? "pt-7" : "pt-4"} px-5 pb-6`}>
 
                     {/* Name + desc */}
                     <div>
@@ -372,7 +307,7 @@ export default function PricingSection({
                     </button>
 
                     {/* Credit chips — AI-Agent plans only */}
-                    {withAgents && (
+                    {!plan.noAgent && (
                       <CreditChips
                         plan={plan}
                         tierIdx={tierIdx}
@@ -422,10 +357,11 @@ export default function PricingSection({
           </div>
 
           {/* ── Credit Usage — how far each plan's credits stretch (AI plans only) ── */}
-          {showCreditUsage && withAgents && (
+          {showCreditUsage && (
             <div className="w-full pt-8 mt-2 border-t border-white/[0.06]">
               <CreditUsageBlock
-                planCredits={PLANS.map((p) => ({ name: p.name, credits: p.tiers[0].credits ?? 0 }))}
+                planCredits={PLANS.filter((p) => !p.noAgent)
+                  .map((p) => ({ name: p.name, credits: p.tiers[0].credits ?? 0 }))}
               />
             </div>
           )}
