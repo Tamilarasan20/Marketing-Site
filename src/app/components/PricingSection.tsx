@@ -255,15 +255,16 @@ export default function PricingSection({
 
           {/* Plan cards — stack vertically on mobile, 2-up on small screens, then
               3-up and 5-up (Lite + the four AI Agent plans) on wider screens.
-              items-end so the highlighted plan floats above with "Most popular" */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 items-end gap-4 w-full">
+              items-stretch so every card in a row matches the tallest one's height
+              — the highlighted plan's "Most popular" badge is what usually sets it. */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 items-stretch gap-4 w-full">
             {PLANS.map((plan) => {
               const tierIdx = selectedTiers[plan.id] ?? 0;
               const tier    = plan.tiers[tierIdx];
               const price   = tier.prices[period];
 
               const cardInner = (
-                <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full">
+                <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
                   {!plan.noAgent && <CardHeader />}
                   <div className={`flex flex-col gap-6 ${plan.noAgent ? "pt-7" : "pt-4"} px-5 pb-6`}>
 
@@ -352,13 +353,13 @@ export default function PricingSection({
 
               if (plan.highlighted) {
                 return (
-                  <div key={plan.id} className="flex flex-col items-center gap-2"
+                  <div key={plan.id} className="flex flex-col items-center gap-2 h-full"
                     style={{ background: "#1877F2", borderRadius: "16px", padding: "8px 2px 2px" }}>
                     <p style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
                       className="text-[16px] text-white tracking-[0.6px] leading-[20px]">
                       Most popular
                     </p>
-                    <div className="w-full overflow-hidden"
+                    <div className="w-full overflow-hidden flex-1"
                       style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "14px" }}>
                       {cardInner}
                     </div>
@@ -367,7 +368,7 @@ export default function PricingSection({
               }
 
               return (
-                <div key={plan.id} className="overflow-hidden"
+                <div key={plan.id} className="overflow-hidden h-full"
                   style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
                   {cardInner}
                 </div>
