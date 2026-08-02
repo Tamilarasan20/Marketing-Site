@@ -33,8 +33,8 @@ const PLANS: Plan[] = [
     description: "Entry plan — scheduling without AI agents",
     noAgent: true,
     noDiscount: true,
-    // Flat $9 — the 3-month and 12-month discounts don't apply to Lite.
-    tiers: [{ prices: { monthly: 9, quarterly: 9, annual: 9 } }],
+    // Flat $19 — the 3-month and 12-month discounts don't apply to Lite.
+    tiers: [{ prices: { monthly: 19, quarterly: 19, annual: 19 } }],
     features: [
       "No AI agents included",
       "Up to 5 account integrations",
