@@ -3,12 +3,12 @@ import imgAgentBanner from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f9
 import CreditUsageBlock from "./CreditUsageBlock";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
-type BillingPeriod = "monthly" | "quarterly" | "annual";
+type BillingPeriod = "monthly" | "annual";
 
 interface Tier {
   credits?: number;
   compareAt?: number;
-  prices: { monthly: number; quarterly: number; annual: number };
+  prices: { monthly: number; annual: number };
 }
 
 interface Plan {
@@ -33,8 +33,8 @@ const PLANS: Plan[] = [
     description: "Entry plan — scheduling without AI agents",
     noAgent: true,
     noDiscount: true,
-    // Flat $19 — the 3-month and 12-month discounts don't apply to Lite.
-    tiers: [{ prices: { monthly: 19, quarterly: 19, annual: 19 } }],
+    // Flat $19 — the 12-month discount doesn't apply to Lite.
+    tiers: [{ prices: { monthly: 19, annual: 19 } }],
     features: [
       "No AI agents included",
       "Up to 5 account integrations",
@@ -48,9 +48,9 @@ const PLANS: Plan[] = [
     name: "Starter",
     description: "Solo creators, side hustlers, micro brands",
     tiers: [
-      { credits: 100,  compareAt: 39,  prices: { monthly: 24.9, quarterly: 21,  annual: 17  } },
-      { credits: 250,  compareAt: 59,  prices: { monthly: 39,  quarterly: 33,  annual: 27  } },
-      { credits: 400,  compareAt: 79,  prices: { monthly: 59,  quarterly: 50,  annual: 41  } },
+      { credits: 100,  compareAt: 39,  prices: { monthly: 24.9, annual: 17  } },
+      { credits: 250,  compareAt: 59,  prices: { monthly: 39,  annual: 27  } },
+      { credits: 400,  compareAt: 79,  prices: { monthly: 59,  annual: 41  } },
     ],
     features: ["All 9 helpers", "100 monthly AI credits", "2 Seats", "3 Workspaces", "Support 24/7"],
   },
@@ -60,9 +60,9 @@ const PLANS: Plan[] = [
     description: "Small brands, agencies, funded startups",
     highlighted: true,
     tiers: [
-      { credits: 500,  compareAt: 99,  prices: { monthly: 79,  quarterly: 67,  annual: 55  } },
-      { credits: 750,  compareAt: 129, prices: { monthly: 99,  quarterly: 84,  annual: 69  } },
-      { credits: 900,  compareAt: 259, prices: { monthly: 199, quarterly: 169, annual: 139 } },
+      { credits: 500,  compareAt: 99,  prices: { monthly: 79,  annual: 55  } },
+      { credits: 750,  compareAt: 129, prices: { monthly: 99,  annual: 69  } },
+      { credits: 900,  compareAt: 259, prices: { monthly: 199, annual: 139 } },
     ],
     features: ["All 9 helpers", "500 monthly AI credits", "5 Seats", "5 Workspaces", "Support 24/7"],
   },
@@ -71,9 +71,9 @@ const PLANS: Plan[] = [
     name: "Scale",
     description: "Multi-brand, agencies managing clients",
     tiers: [
-      { credits: 1100, compareAt: 199, prices: { monthly: 149, quarterly: 127, annual: 104 } },
-      { credits: 2000, compareAt: 259, prices: { monthly: 199, quarterly: 169, annual: 139 } },
-      { credits: 3000, compareAt: 389, prices: { monthly: 299, quarterly: 254, annual: 209 } },
+      { credits: 1100, compareAt: 199, prices: { monthly: 149, annual: 104 } },
+      { credits: 2000, compareAt: 259, prices: { monthly: 199, annual: 139 } },
+      { credits: 3000, compareAt: 389, prices: { monthly: 299, annual: 209 } },
     ],
     features: ["All 9 helpers", "1,100 monthly AI credits", "25 Seats", "10 Workspaces", "Support 24/7"],
   },
@@ -82,18 +82,17 @@ const PLANS: Plan[] = [
     name: "Enterprise",
     description: "For teams needing AI coverage & governance",
     tiers: [
-      { credits: 4500, compareAt: 499, prices: { monthly: 399, quarterly: 339, annual: 279 } },
-      { credits: 5000, compareAt: 649, prices: { monthly: 499, quarterly: 424, annual: 349 } },
-      { credits: 6000, compareAt: 799, prices: { monthly: 599, quarterly: 509, annual: 419 } },
+      { credits: 4500, compareAt: 499, prices: { monthly: 399, annual: 279 } },
+      { credits: 5000, compareAt: 649, prices: { monthly: 499, annual: 349 } },
+      { credits: 6000, compareAt: 799, prices: { monthly: 599, annual: 419 } },
     ],
     features: ["All 9 helpers", "4,500 monthly AI credits", "Unlimited Seats", "Unlimited Workspaces", "Priority Support 24/7"],
   },
 ];
 
 const BILLING_OPTS: { id: BillingPeriod; label: string; badge?: string }[] = [
-  { id: "monthly",   label: "Monthly" },
-  { id: "quarterly", label: "3-month",  badge: "Save 15%" },
-  { id: "annual",    label: "12-month", badge: "Save 30%" },
+  { id: "monthly", label: "Monthly" },
+  { id: "annual",  label: "12-month", badge: "Save 30%" },
 ];
 
 const APP_URL = "https://app.loraloop.com";
@@ -192,8 +191,8 @@ export default function PricingSection({
     const url = new URL(`${APP_URL}/pricing`);
     url.searchParams.set("plan", plan.id);
     url.searchParams.set("tier", String(tierIdx));
-    // Plans the term discounts don't apply to always bill monthly, so don't
-    // carry a 3-month / 12-month selection over to the app.
+    // Plans the term discount doesn't apply to always bill monthly, so don't
+    // carry a 12-month selection over to the app.
     url.searchParams.set("period", plan.noDiscount ? "monthly" : period);
     window.location.href = url.toString();
   }
@@ -215,7 +214,7 @@ export default function PricingSection({
           <div className="flex flex-col items-center gap-4">
 
             {/* Billing period toggle — Save badges float above each option so the
-                three pills (Monthly / 3-month / 12-month) always stay on one line */}
+                two pills (Monthly / 12-month) always stay on one line */}
             <div className="relative pt-4">
               {/* Floating Save badges above each option */}
               <div className="absolute -top-0 left-0 right-0 flex items-center gap-[2px] px-[2px] pointer-events-none">
