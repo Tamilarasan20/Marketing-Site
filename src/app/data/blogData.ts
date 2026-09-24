@@ -6,7 +6,9 @@ export type ContentSection =
   | { type: 'numbered-list'; items: string[] }
   | { type: 'callout'; text: string }
   | { type: 'faq'; items: { q: string; a: string }[] }
-  | { type: 'cta'; text: string };
+  | { type: 'cta'; text: string }
+  | { type: 'video'; src: string; poster?: string; caption: string; captionLink?: string; title?: string }
+  | { type: 'table'; headers: string[]; rows: string[][] };
 
 export interface BlogPost {
   id: number;

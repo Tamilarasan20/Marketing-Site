@@ -109,4 +109,5 @@ export const blogThumbnails: Record<number, { emoji: string; gradient: [string, 
   118: { emoji: "📝", gradient: ["#2563eb", "#0891b2"] },
   119: { emoji: "🖼️", gradient: ["#7c3aed", "#0ea5e9"] },
   120: { emoji: "🗓️", gradient: ["#f59e0b", "#dc2626"] },
+  121: { emoji: "⚡", gradient: ["#0f172a", "#1877f2"] },
 };

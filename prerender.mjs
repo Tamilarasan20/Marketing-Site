@@ -56,6 +56,8 @@ function renderContentToHtml(content) {
       case 'numbered-list':return `<ol>${s.items.map(i => `<li>${esc(i)}</li>`).join('')}</ol>`;
       case 'faq':          return s.items.map(i => `<details><summary>${esc(i.q)}</summary><p>${esc(i.a)}</p></details>`).join('');
       case 'cta':          return `<div><p>${esc(s.text)}</p><a href="${SITE}">Try Loraloop Free</a></div>`;
+      case 'video':        return `<figure><video src="${esc(s.src)}"${s.poster ? ` poster="${esc(s.poster)}"` : ''} controls playsinline muted preload="none"></video><figcaption>${s.captionLink ? `<a href="${esc(s.captionLink)}">${esc(s.caption)}</a>` : esc(s.caption)}</figcaption></figure>`;
+      case 'table':        return `<table><thead><tr>${s.headers.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${s.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
       default:             return '';
     }
   }).join('\n');
