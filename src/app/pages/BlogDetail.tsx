@@ -170,6 +170,55 @@ function renderSection(section: ContentSection, index: number) {
           </a>
         </div>
       );
+    case "video":
+      return (
+        <figure key={index} className="my-4 flex flex-col gap-3">
+          <div className="rounded-2xl overflow-hidden border border-[#e2e8f0] bg-[#0f172a] shadow-sm">
+            <video
+              src={section.src}
+              poster={section.poster}
+              title={section.title}
+              controls
+              playsInline
+              muted
+              preload="none"
+              className="w-full h-auto block aspect-video"
+            />
+          </div>
+          <figcaption className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm leading-[1.6]">
+            {section.captionLink ? (
+              <a href={section.captionLink} target="_blank" rel="noopener noreferrer" className="hover:text-[#1877f2] underline underline-offset-2">
+                {section.caption}
+              </a>
+            ) : (
+              section.caption
+            )}
+          </figcaption>
+        </figure>
+      );
+    case "table":
+      return (
+        <div key={index} className="my-2 overflow-x-auto rounded-2xl border border-[#e2e8f0]">
+          <table className="w-full min-w-[560px] border-collapse text-left font-['General_Sans',sans-serif]">
+            <thead className="bg-[#f8fafc]">
+              <tr>
+                {section.headers.map((h, i) => (
+                  <th key={i} className="px-4 py-3 font-['Satoshi',sans-serif] font-bold text-[#0f172a] text-sm border-b border-[#e2e8f0] align-top">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {section.rows.map((row, r) => (
+                <tr key={r} className="border-b border-[#f1f5f9] last:border-b-0">
+                  {row.map((cell, c) => (
+                    <td key={c} className="px-4 py-3 font-medium text-[#374151] text-[15px] leading-[1.6] align-top">{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
     default:
       return null;
   }
@@ -297,7 +346,7 @@ export default function BlogDetail() {
           <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-14 items-start">
 
             {/* Article body — max width for readability */}
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 w-full lg:w-auto">
               <div className="max-w-[740px] flex flex-col gap-6">
                 {post.content.map((section, index) => renderSection(section, index))}
               </div>
