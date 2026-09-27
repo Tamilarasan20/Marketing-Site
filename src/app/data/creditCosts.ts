@@ -30,6 +30,8 @@ export const CREDIT_ACTIONS: CreditAction[] = [
   { label: "Video script & storyboard", creditsEach: 2 },
   { label: "Email campaign", creditsEach: 3 },
   { label: "TikTok slideshow", creditsEach: 3 },
+  { label: "SEO/GEO article — research, brief & draft", creditsEach: 5 },
+  { label: "Generated ad — creative, copy & campaign draft", creditsEach: 10 },
   { label: "Video render — short clip (≤6s)", creditsEach: 75, note: true },
   { label: "Video render — premium clip (≤10s)", creditsEach: 150 },
 ];
@@ -39,17 +41,26 @@ export const CREDIT_FOOTNOTES: string[] = [
   "Apollo lookups (people/company search and enrichment) cost 1 credit each; revealing a contact's email costs +1 credit and a phone number +3.",
 ];
 
+/**
+ * One tangible output per Loraloop capability (Ads, Social posts, SEO/GEO,
+ * Email marketing) — single-capability maximums; credits are shared.
+ */
 export interface CreditYield {
+  capability: string;
   label: string;
   cost: number;
   icon: string;
+  /** Not on sale yet — rendered as "Coming soon" instead of a count. */
+  comingSoon?: boolean;
 }
 
 export const CREDIT_YIELDS: CreditYield[] = [
-  { label: "Images", cost: 1, icon: "🖼️" },
-  { label: "Social posts", cost: 1, icon: "📝" },
-  { label: "Blog articles", cost: 2, icon: "📄" },
-  { label: "Short videos", cost: 75, icon: "🎬" },
+  // Generated ad = creative + copy + campaign draft (10 credits), so 300 credits ≈ 30 ads.
+  { capability: "Ads", label: "Generated ads", cost: 10, icon: "📣" },
+  // A social post (1) with its generated image (1).
+  { capability: "Social posts", label: "Social posts with image", cost: 2, icon: "📝" },
+  { capability: "SEO / GEO", label: "SEO/GEO articles", cost: 5, icon: "🔎" },
+  { capability: "Email marketing", label: "Email campaigns", cost: 3, icon: "📧", comingSoon: true },
 ];
 
 export function creditsToUnits(credits: number, cost: number): number {

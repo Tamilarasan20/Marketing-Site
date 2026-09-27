@@ -1,99 +1,109 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import imgAgentBanner from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
 import CreditUsageBlock from "./CreditUsageBlock";
+import { CREDIT_YIELDS, creditsToUnits } from "../data/creditCosts";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type BillingPeriod = "monthly" | "annual";
 
 interface Tier {
-  credits?: number;
-  compareAt?: number;
+  /** Monthly AI credits — per seat on a per-seat plan. */
+  credits: number;
+  /** USD: monthly = per month; annual = per year (10× monthly, 2 months free). */
   prices: { monthly: number; annual: number };
 }
 
+interface FeatureGroup {
+  title: string;
+  items: string[];
+  comingSoon?: boolean;
+}
+
 interface Plan {
+  /** App plan key (Pro is GROWTH in the app). */
   id: string;
   name: string;
   description: string;
   highlighted?: boolean;
-  /** Entry-level plan sold without the AI agent team — no banner, no credits. */
-  noAgent?: boolean;
-  /** Term discounts don't apply — the price stays flat on every billing period. */
-  noDiscount?: boolean;
+  /** Priced per seat; the seat count is carried to the app checkout. */
+  perSeat?: { min: number; max: number };
   tiers: Tier[];
-  features: string[];
+  featuresIntro?: string;
+  features: (credits: number) => FeatureGroup[];
 }
 
-// ─── Plan data — mirrors apps/web/src/app/pricing/page.tsx exactly ────────────
-// Lite (No AI Agent) is the entry tier; every AI Agent plan follows it.
+const fmtNum = (n: number) => n.toLocaleString("en-US");
+
+const yieldLine = (capability: string, credits: number) => {
+  const y = CREDIT_YIELDS.find((c) => c.capability === capability);
+  return y ? `~${fmtNum(creditsToUnits(credits, y.cost))} ${y.label.toLowerCase()} / month` : "";
+};
+
+/** The capability split every plan shares: Ads, Social posts, SEO/GEO, Email (coming soon). */
+function capabilityGroups(
+  credits: number,
+  extra: { ads?: string[]; social?: string[]; seo?: string[] } = {},
+): FeatureGroup[] {
+  return [
+    { title: "Ads", items: [yieldLine("Ads", credits), ...(extra.ads ?? [])] },
+    { title: "Social posts", items: [yieldLine("Social posts", credits), ...(extra.social ?? [])] },
+    { title: "SEO / GEO", items: [yieldLine("SEO / GEO", credits), ...(extra.seo ?? [])] },
+    { title: "Email marketing", items: ["Coming soon"], comingSoon: true },
+  ];
+}
+
+// ─── Plan data — mirrors apps/web/src/features/billing/lib/plans.ts exactly ───
 const PLANS: Plan[] = [
-  {
-    id: "LITE",
-    name: "Lite (No AI Agent)",
-    description: "Entry plan — scheduling without AI agents",
-    noAgent: true,
-    noDiscount: true,
-    // Flat $19 — the 12-month discount doesn't apply to Lite.
-    tiers: [{ prices: { monthly: 19, annual: 19 } }],
-    features: [
-      "No AI agents included",
-      "Up to 5 account integrations",
-      "200 posts per month",
-      "Schedule & calendar planning",
-      "Human support",
-    ],
-  },
   {
     id: "STARTER",
     name: "Starter",
-    description: "Solo creators, side hustlers, micro brands",
-    tiers: [
-      { credits: 100,  compareAt: 39,  prices: { monthly: 24.9, annual: 17  } },
-      { credits: 250,  compareAt: 59,  prices: { monthly: 39,  annual: 27  } },
-      { credits: 400,  compareAt: 79,  prices: { monthly: 59,  annual: 41  } },
+    description: "Solo founders and small brands getting ads live",
+    tiers: [{ credits: 300, prices: { monthly: 39, annual: 390 } }],
+    features: (credits) => [
+      ...capabilityGroups(credits, {
+        ads: ["Ad animation", "Basic competitor ad tracking"],
+        social: ["Scheduling & content calendar"],
+        seo: ["Keyword research & AI search (GEO) optimisation"],
+      }),
+      { title: "Team", items: ["1 seat", "3 workspaces"] },
     ],
-    features: ["All 9 helpers", "100 monthly AI credits", "2 Seats", "3 Workspaces", "Support 24/7"],
   },
   {
     id: "GROWTH",
-    name: "Growth",
-    description: "Small brands, agencies, funded startups",
+    name: "Pro",
+    description: "Growing teams running ads, social and SEO together",
     highlighted: true,
     tiers: [
-      { credits: 500,  compareAt: 99,  prices: { monthly: 79,  annual: 55  } },
-      { credits: 750,  compareAt: 129, prices: { monthly: 99,  annual: 69  } },
-      { credits: 900,  compareAt: 259, prices: { monthly: 199, annual: 139 } },
+      { credits: 1000, prices: { monthly: 99,  annual: 990  } },
+      { credits: 1750, prices: { monthly: 149, annual: 1490 } },
+      { credits: 2500, prices: { monthly: 199, annual: 1990 } },
     ],
-    features: ["All 9 helpers", "500 monthly AI credits", "5 Seats", "5 Workspaces", "Support 24/7"],
-  },
-  {
-    id: "SCALE",
-    name: "Scale",
-    description: "Multi-brand, agencies managing clients",
-    tiers: [
-      { credits: 1100, compareAt: 199, prices: { monthly: 149, annual: 104 } },
-      { credits: 2000, compareAt: 259, prices: { monthly: 199, annual: 139 } },
-      { credits: 3000, compareAt: 389, prices: { monthly: 299, annual: 209 } },
+    featuresIntro: "Everything in Starter, plus",
+    features: (credits) => [
+      ...capabilityGroups(credits),
+      { title: "Team", items: ["Collaborative brand boards", "Multi-seat team access (5 seats)", "5 workspaces"] },
     ],
-    features: ["All 9 helpers", "1,100 monthly AI credits", "25 Seats", "10 Workspaces", "Support 24/7"],
   },
   {
     id: "ENTERPRISE",
     name: "Enterprise",
-    description: "For teams needing AI coverage & governance",
-    tiers: [
-      { credits: 4500, compareAt: 499, prices: { monthly: 399, annual: 279 } },
-      { credits: 5000, compareAt: 649, prices: { monthly: 499, annual: 349 } },
-      { credits: 6000, compareAt: 799, prices: { monthly: 599, annual: 419 } },
+    description: "Large-scale operations with custom integrations",
+    perSeat: { min: 3, max: 500 },
+    tiers: [{ credits: 1000, prices: { monthly: 99, annual: 990 } }],
+    featuresIntro: "Everything in Pro, plus",
+    features: (credits) => [
+      ...capabilityGroups(credits),
+      { title: "Team & platform", items: ["1,000 AI credits per seat", "Custom platform integrations", "Unlimited workspaces", "Priority support"] },
     ],
-    features: ["All 9 helpers", "4,500 monthly AI credits", "Unlimited Seats", "Unlimited Workspaces", "Priority Support 24/7"],
   },
 ];
 
 const BILLING_OPTS: { id: BillingPeriod; label: string; badge?: string }[] = [
   { id: "monthly", label: "Monthly" },
-  { id: "annual",  label: "12-month", badge: "Save 30%" },
+  { id: "annual",  label: "Annual", badge: "2 months free" },
 ];
+
+const formatUsd = (n: number) => `$${n % 1 !== 0 ? n.toFixed(2) : fmtNum(n)}`;
 
 const APP_URL = "https://app.loraloop.com";
 
@@ -159,11 +169,48 @@ function CreditChips({ plan, tierIdx, onChange }: {
                   : "border-white/[0.07] text-[#6B7280] hover:text-[#9CA3AF] hover:border-white/15"
               }`}
             >
-              {fmt(t.credits ?? 0)}
+              {fmt(t.credits)}
             </button>
           );
         })}
       </div>
+    </div>
+  );
+}
+
+// ─── Seat picker — per-seat plans (Enterprise) ───────────────────────────────
+function SeatPicker({ plan, seats, onChange }: {
+  plan: Plan;
+  seats: number;
+  onChange: (n: number) => void;
+}) {
+  const { min, max } = plan.perSeat!;
+  const set = (n: number) => onChange(Math.max(min, Math.min(max, Math.round(n) || min)));
+  // Typed value is clamped on blur/Enter, so "12" isn't clamped at the "1".
+  const [draft, setDraft] = useState(String(seats));
+  useEffect(() => setDraft(String(seats)), [seats]);
+  const commit = () => { set(Number(draft)); setDraft(String(seats)); };
+  const btn = "h-[34px] w-[40px] flex items-center justify-center rounded-[8px] border border-white/[0.07] text-[#9CA3AF] text-[18px] hover:border-white/15 disabled:opacity-40";
+  return (
+    <div className="flex flex-col items-center gap-2 w-full">
+      <p style={{ fontFamily: "General Sans, Inter, sans-serif" }} className="text-[15px] text-[#9CA3AF] leading-[20px]">
+        Seats (min {min})
+      </p>
+      <div className="flex items-center gap-1.5 w-full">
+        <button type="button" onClick={() => set(seats - 1)} disabled={seats <= min} aria-label="Remove a seat" className={btn}>−</button>
+        <input
+          type="number" min={min} max={max} value={draft} aria-label="Seats"
+          onChange={(e) => setDraft(e.target.value)}
+          onBlur={commit}
+          onKeyDown={(e) => { if (e.key === "Enter") commit(); }}
+          style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
+          className="flex-1 min-w-0 h-[34px] rounded-[8px] border border-white/20 bg-white/[0.06] text-center text-[15px] text-[#D1D5DB] [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        />
+        <button type="button" onClick={() => set(seats + 1)} disabled={seats >= max} aria-label="Add a seat" className={btn}>+</button>
+      </div>
+      <p style={{ fontFamily: "General Sans, Inter, sans-serif" }} className="text-[13px] text-[#6B7280] leading-[18px]">
+        {fmtNum(plan.tiers[0].credits * seats)} AI credits / month
+      </p>
     </div>
   );
 }
@@ -180,8 +227,11 @@ export default function PricingSection({
 }) {
   const [period, setPeriod] = useState<BillingPeriod>("monthly");
   const [selectedTiers, setSelectedTiers] = useState<Record<string, number>>({
-    LITE: 0, STARTER: 0, GROWTH: 0, SCALE: 0, ENTERPRISE: 0,
+    STARTER: 0, GROWTH: 0, ENTERPRISE: 0,
   });
+  const [seats, setSeats] = useState<Record<string, number>>(() =>
+    Object.fromEntries(PLANS.filter((p) => p.perSeat).map((p) => [p.id, p.perSeat!.min])),
+  );
   const [pendingPlanId, setPendingPlanId] = useState<string | null>(null);
 
   function handleGetStarted(plan: Plan) {
@@ -191,9 +241,8 @@ export default function PricingSection({
     const url = new URL(`${APP_URL}/pricing`);
     url.searchParams.set("plan", plan.id);
     url.searchParams.set("tier", String(tierIdx));
-    // Plans the term discount doesn't apply to always bill monthly, so don't
-    // carry a 12-month selection over to the app.
-    url.searchParams.set("period", plan.noDiscount ? "monthly" : period);
+    url.searchParams.set("period", period);
+    if (plan.perSeat) url.searchParams.set("seats", String(seats[plan.id] ?? plan.perSeat.min));
     window.location.href = url.toString();
   }
 
@@ -213,8 +262,8 @@ export default function PricingSection({
           {/* Controls */}
           <div className="flex flex-col items-center gap-4">
 
-            {/* Billing period toggle — Save badges float above each option so the
-                two pills (Monthly / 12-month) always stay on one line */}
+            {/* Billing period toggle — the "2 months free" badge floats above the
+                option so the two pills (Monthly / Annual) always stay on one line */}
             <div className="relative pt-4">
               {/* Floating Save badges above each option */}
               <div className="absolute -top-0 left-0 right-0 flex items-center gap-[2px] px-[2px] pointer-events-none">
@@ -252,20 +301,21 @@ export default function PricingSection({
             </div>
           </div>
 
-          {/* Plan cards — stack vertically on mobile, 2-up on small screens, then
-              3-up and 5-up (Lite + the four AI Agent plans) on wider screens.
-              items-stretch so every card in a row matches the tallest one's height
-              — the highlighted plan's "Most popular" badge is what usually sets it. */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 items-stretch gap-4 w-full">
+          {/* Plan cards — Starter / Pro / Enterprise: stack on mobile, 3-up on wider
+              screens. items-stretch so every card in a row matches the tallest
+              one's height — the "Most popular" badge is what usually sets it. */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 items-stretch gap-4 w-full max-w-[1100px]">
             {PLANS.map((plan) => {
-              const tierIdx = selectedTiers[plan.id] ?? 0;
-              const tier    = plan.tiers[tierIdx];
-              const price   = tier.prices[period];
+              const tierIdx   = selectedTiers[plan.id] ?? 0;
+              const tier      = plan.tiers[tierIdx];
+              const seatCount = plan.perSeat ? (seats[plan.id] ?? plan.perSeat.min) : 1;
+              const price     = tier.prices[period];
+              const credits   = tier.credits * seatCount;
 
               const cardInner = (
                 <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
-                  {!plan.noAgent && <CardHeader />}
-                  <div className={`flex flex-col gap-6 ${plan.noAgent ? "pt-7" : "pt-4"} px-5 pb-6`}>
+                  <CardHeader />
+                  <div className="flex flex-col gap-6 pt-4 px-5 pb-6">
 
                     {/* Name + desc */}
                     <div>
@@ -279,34 +329,25 @@ export default function PricingSection({
                       </p>
                     </div>
 
-                    {/* Price — compareAt struck through when present (AI plans) */}
-                    <div className="flex items-baseline gap-2">
-                      {tier.compareAt ? (
+                    {/* Price — per month, or per year on annual billing (per seat on Enterprise) */}
+                    <div className="flex flex-col gap-1">
+                      <div className="flex items-baseline gap-2">
                         <span style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                          className="text-[22px] text-[#4B5563] line-through leading-[32px]">
-                          ${tier.compareAt}
+                          className="text-[24px] text-white leading-[32px]">
+                          {formatUsd(price)}
                         </span>
-                      ) : null}
-                      <span style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                        className="text-[24px] text-white leading-[32px]">
-                        ${price % 1 !== 0 ? price.toFixed(2) : price}
-                      </span>
-                      <span style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                        className="text-[16px] text-[#6B7280] tracking-[0.6px] leading-[20px]">
-                        /mo
-                      </span>
-
-                      {/* Term discounts don't apply to this plan — the price is
-                          flat, so say so instead of showing an unchanged number */}
-                      {plan.noDiscount && period !== "monthly" && (
-                        <span style={{
-                          fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500,
-                          background: "#1A1A1A", border: "0.749px solid rgba(255,255,255,0.12)",
-                          color: "#9CA3AF", fontSize: "11px", padding: "3px 8px",
-                          borderRadius: "999px", lineHeight: "1", whiteSpace: "nowrap",
-                        }}>
-                          Not applicable
+                        <span style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
+                          className="text-[16px] text-[#6B7280] tracking-[0.6px] leading-[20px]">
+                          {plan.perSeat ? "/seat" : ""}{period === "annual" ? "/yr" : "/mo"}
                         </span>
+                      </div>
+                      {(period === "annual" || plan.perSeat) && (
+                        <p style={{ fontFamily: "General Sans, Inter, sans-serif" }}
+                          className="text-[13px] text-[#9CA3AF] leading-[18px]">
+                          {plan.perSeat && `${formatUsd(price * seatCount)}${period === "annual" ? "/yr" : "/mo"} for ${seatCount} seats`}
+                          {plan.perSeat && period === "annual" && " · "}
+                          {period === "annual" && "2 months free vs monthly"}
+                        </p>
                       )}
                     </div>
 
@@ -325,24 +366,57 @@ export default function PricingSection({
                       {pendingPlanId === plan.id ? "Loading…" : "Get Started"}
                     </button>
 
-                    {/* Credit chips — AI-Agent plans only */}
-                    {!plan.noAgent && (
+                    {/* Credits — tier chips (Pro), seat picker (Enterprise) or a fixed allowance (Starter) */}
+                    {plan.perSeat ? (
+                      <SeatPicker
+                        plan={plan}
+                        seats={seatCount}
+                        onChange={(n) => setSeats((s) => ({ ...s, [plan.id]: n }))}
+                      />
+                    ) : plan.tiers.length > 1 ? (
                       <CreditChips
                         plan={plan}
                         tierIdx={tierIdx}
                         onChange={(i) => setSelectedTiers((s) => ({ ...s, [plan.id]: i }))}
                       />
+                    ) : (
+                      <p style={{ fontFamily: "General Sans, Inter, sans-serif" }}
+                        className="text-[15px] text-[#9CA3AF] leading-[20px] text-center">
+                        {fmtNum(credits)} AI credits / month
+                      </p>
                     )}
 
-                    {/* Features */}
-                    <div className="flex flex-col gap-3">
-                      {plan.features.map((f) => (
-                        <div key={f} className="flex items-start gap-2">
-                          <CheckIcon />
-                          <span style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                            className="text-[16px] text-[#D1D5DB] leading-[20px]">
-                            {f}
-                          </span>
+                    {plan.perSeat && (
+                      <a href="/contact"
+                        style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
+                        className="-mt-3 text-center text-[14px] text-[#1877F2] hover:underline">
+                        Custom integrations? Talk to sales →
+                      </a>
+                    )}
+
+                    {/* Features — split by capability: Ads, Social posts, SEO/GEO, Email (coming soon) */}
+                    <div className="flex flex-col gap-4">
+                      {plan.featuresIntro && (
+                        <p style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
+                          className="text-[14px] text-[#9CA3AF] leading-[18px]">
+                          {plan.featuresIntro}
+                        </p>
+                      )}
+                      {plan.features(credits).map((group) => (
+                        <div key={group.title} className="flex flex-col gap-2">
+                          <p style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
+                            className="text-[13px] uppercase tracking-[0.6px] text-[#6B7280]">
+                            {group.title}
+                          </p>
+                          {group.items.map((f) => (
+                            <div key={f} className="flex items-start gap-2">
+                              <CheckIcon />
+                              <span style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
+                                className={`text-[16px] leading-[20px] ${group.comingSoon ? "text-[#6B7280] italic" : "text-[#D1D5DB]"}`}>
+                                {f}
+                              </span>
+                            </div>
+                          ))}
                         </div>
                       ))}
                     </div>
@@ -379,8 +453,8 @@ export default function PricingSection({
           {showCreditUsage && (
             <div className="w-full pt-8 mt-2 border-t border-white/[0.06]">
               <CreditUsageBlock
-                planCredits={PLANS.filter((p) => !p.noAgent)
-                  .map((p) => ({ name: p.name, credits: p.tiers[0].credits ?? 0 }))}
+                planCredits={PLANS.flatMap((p) =>
+                  p.tiers.map((t) => ({ name: p.perSeat ? `${p.name} (per seat)` : p.name, credits: t.credits })))}
               />
             </div>
           )}
