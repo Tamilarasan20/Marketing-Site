@@ -93,15 +93,18 @@ export default function CreditUsageBlock({
                   <th className="px-5 py-3 font-medium">Plan</th>
                   {CREDIT_YIELDS.map((y) => (
                     <th key={y.label} className="px-3 py-3 font-medium text-right whitespace-nowrap">
-                      <span className="mr-1">{y.icon}</span>
-                      {y.label}
+                      <div className="text-[#9CA3AF]">
+                        <span className="mr-1">{y.icon}</span>
+                        {y.capability}
+                      </div>
+                      <div className="text-[11px]">{y.label}</div>
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {planCredits.map((p) => (
-                  <tr key={p.name} className="border-t border-white/[0.04]">
+                  <tr key={`${p.name}-${p.credits}`} className="border-t border-white/[0.04]">
                     <td className="px-5 py-3">
                       <div style={sat} className="text-[14px] text-white">
                         {p.name}
@@ -116,7 +119,9 @@ export default function CreditUsageBlock({
                         style={gen}
                         className="px-3 py-3 text-right text-[14px] text-[#D1D5DB] tabular-nums"
                       >
-                        {y.cost > p.credits ? (
+                        {y.comingSoon ? (
+                          <span className="text-[12px] text-[#6B7280] italic">Soon</span>
+                        ) : y.cost > p.credits ? (
                           <span className="text-[#6B7280]">—</span>
                         ) : (
                           fmt(creditsToUnits(p.credits, y.cost))
@@ -131,8 +136,8 @@ export default function CreditUsageBlock({
 
           <div className="px-5 py-3 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
             <p style={gen} className="text-[12px] text-[#6B7280]">
-              e.g. a Growth plan (500 credits) makes ~500 images, ~250 blog articles, or ~6 short
-              videos each month — or any mix.
+              e.g. Starter (300 credits) makes ~30 generated ads, ~150 social posts with images, or
+              ~60 SEO/GEO articles each month — or any mix. Email marketing is coming soon.
             </p>
           </div>
         </div>
