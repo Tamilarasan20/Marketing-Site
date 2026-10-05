@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build && node prerender.mjs",
-    "dev": "vite"
+    "dev": "vite",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",

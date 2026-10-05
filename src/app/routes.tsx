@@ -29,6 +29,9 @@ const AiMarketingLead = lazy(() => import("./pages/AiMarketingLead"));
 const AiSeoGeoStrategist = lazy(() => import("./pages/AiSeoGeoStrategist"));
 const AiEmailMarketer = lazy(() => import("./pages/AiEmailMarketer"));
 const AiAdsManager = lazy(() => import("./pages/AiAdsManager"));
+const Compare = lazy(() => import("./pages/Compare"));
+const CompareIndex = lazy(() => import("./pages/Compare").then((m) => ({ default: m.CompareIndex })));
+const AuthorPage = lazy(() => import("./pages/AuthorPage"));
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +59,9 @@ export const router = createBrowserRouter([
       { path: "ai-seo-geo-strategist", Component: AiSeoGeoStrategist },
       { path: "ai-email-marketer", Component: AiEmailMarketer },
       { path: "ai-ads-manager", Component: AiAdsManager },
+      { path: "compare", Component: CompareIndex },
+      { path: "compare/:slug", Component: Compare },
+      { path: "authors/:slug", Component: AuthorPage },
       { path: "*", Component: NotFound },
     ],
   },

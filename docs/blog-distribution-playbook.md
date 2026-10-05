@@ -106,9 +106,29 @@ The 50 posts are live at once for indexing, but promote them in waves so each ge
 - Brand mention checks: once a month ask ChatGPT, Perplexity and Gemini the 20 questions your FAQs answer, log whether Loraloop is cited. Loraloop's own competitor-monitoring and GEO tooling can run this.
 - Trial signups by landing post (UTM the CTA buttons per post).
 
-## 9. Content gaps to close next
+## 9. What is already built (and the one-time setup each needs)
 
-- Internal links: the post format is plain text, so add a `relatedSlugs` field (or inline link support) and cross-link each cluster. This is the single biggest on-page SEO lever still open.
-- Author pages with real names and bios (E-E-A-T). "Loraloop Team" is a weak trust signal for AI engines.
-- Case studies with real numbers once customers consent; AI engines prefer specific, first-hand data.
-- Comparison hub pages (`/compare/loraloop-vs-madgicx`) that stay updated, linked from every "vs" post.
+| Lever | Status in repo | What you still do |
+|---|---|---|
+| Free calculators | `/tools/hook-rate-calculator`, `/tools/creative-testing-calculator`, `/tools/break-even-roas-calculator` live, prerendered with HowTo + FAQ schema, linked from the matching posts | Launch each on Product Hunt, r/PPC, r/FacebookAds; add the remaining tools from section 2 |
+| Internal linking | Every post has a "Related reading" block with real anchor tags (hand-picked via `src/app/data/blogRelations.ts` for the 50 new posts, category fallback for older ones) plus "Free tools for this topic" | When you publish a new post, add its slug to `blogRelations.ts` and link 3-4 existing posts back to it |
+| Author pages | `/authors/<slug>` with Person/Organization schema; bylines link to the author; `author` field on posts | Add real people to `src/app/data/authors.ts` (name, role, bio, LinkedIn/X links, headshot URL) and set `author` on their posts. This is the E-E-A-T fix and only you can supply the names |
+| Comparison pages | `/compare`, `/compare/loraloop-vs-madgicx`, `/compare/loraloop-vs-adcreative-ai` with FAQ schema, linked to the long-form posts | Add one entry per competitor to `src/app/data/comparisons.ts`; keep competitor cells general and never state their prices |
+| Technical hygiene | Prerendered pages no longer hide content until React mounts; `sitemap.xml`, `rss.xml`, `robots.txt`, `llms.txt` generated on build; IndexNow key at `public/<key>.txt` and `pnpm indexnow` submits every sitemap URL | After each deploy run `pnpm build && pnpm indexnow`. Add the sitemap once in Google Search Console and Bing Webmaster Tools |
+| Refresh cadence | `updated` field on posts drives `dateModified`, `article:modified_time`, sitemap `lastmod` and an "Updated" label | Follow the monthly checklist below |
+
+## 10. Monthly refresh checklist (first Monday of the month, about two hours)
+
+1. In Search Console, export Performance for the last 28 days filtered to `/blog/`. Sort by impressions descending.
+2. Posts with high impressions and position 8 to 20: add one new H2 that answers a related "People also ask" question, refresh the Quick answer, set `updated` to today, and resubmit the URL.
+3. Posts with falling clicks month over month: check whether an AI Overview now answers the query; if so, tighten the Quick answer to a direct 40-word answer and add a table.
+4. Posts with zero impressions after 90 days: merge into the nearest strong post (add a section, keep the slug as a related link) rather than leaving thin pages.
+5. Ask ChatGPT, Perplexity and Gemini the 20 FAQ questions from your top posts. Log whether Loraloop is cited. Where a competitor is cited instead, read their page and add what yours lacks.
+6. Re-verify every embedded YouTube video still exists and every Pexels photo still loads; swap any that broke.
+7. Run `pnpm build && pnpm indexnow` after the changes deploy.
+
+## 11. Still open
+
+- **First-party data.** One case study with real numbers, or an original benchmark from Loraloop's own account data (for example, median hook rate across accounts by category), will earn more citations than ten guides. This needs real data and customer consent; nothing here should be fabricated.
+- **Dedicated landing pages for buyer intent**, such as "AI ads manager for DTC brands" and "AI marketing for agencies", with the calculators embedded and a trial CTA. The agent pages at `/ai-ads-manager` and the audience pages at `/for-agencies` are the starting point.
+- **More calculators** from section 2: Creative Fatigue Checker, Ad Angle Generator, AI Marketing Worker ROI Calculator, Channel Prioritizer quiz.
