@@ -8,6 +8,10 @@ export type ContentSection =
   | { type: 'faq'; items: { q: string; a: string }[] }
   | { type: 'cta'; text: string }
   | { type: 'video'; src: string; poster?: string; caption: string; captionLink?: string; title?: string }
+  /** Hot-linked photo (e.g. Pexels CDN). `alt` is required for SEO/accessibility; `caption` + `captionLink` credit the source. */
+  | { type: 'image'; src: string; alt: string; caption?: string; captionLink?: string; width?: number; height?: number }
+  /** Embedded YouTube video (privacy-enhanced youtube-nocookie.com player). */
+  | { type: 'youtube'; videoId: string; title: string; caption?: string }
   | { type: 'table'; headers: string[]; rows: string[][] };
 
 export interface BlogPost {
@@ -2581,6 +2585,12 @@ export const blogPosts: BlogPost[] = [
 
 export function getBlogPost(id: number): BlogPost | undefined {
   return blogPosts.find(post => post.id === id);
+}
+
+/** First `image` section of a post, used as its card thumbnail and Open Graph image. */
+export function getHeroImage(post: BlogPost): { src: string; alt: string } | undefined {
+  const section = post.content.find((s) => s.type === 'image');
+  return section && section.type === 'image' ? { src: section.src, alt: section.alt } : undefined;
 }
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

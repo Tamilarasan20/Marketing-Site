@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { Clock } from "lucide-react";
 import "../data/registerAdditionalBlogData";
-import { blogPosts as allBlogPosts } from "../data/blogData";
+import { blogPosts as allBlogPosts, getHeroImage } from "../data/blogData";
 import type { ContentSection } from "../data/blogData";
 import { blogThumbnails } from "../data/blogThumbnails";
 import { BlogThumbnail } from "../components/BlogThumbnail";
@@ -23,6 +23,9 @@ function getReadTime(content: ContentSection[]): number {
 
 // Newest posts first (highest ID = most recent)
 const newestFirst = [...allBlogPosts].reverse();
+
+// Category filters are derived from the data so new categories (e.g. Advertising) appear automatically.
+const categories = ["All", ...Array.from(new Set(allBlogPosts.map((post) => post.category)))];
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -50,6 +53,7 @@ export default function Blog() {
   // Featured = newest post overall (shown above the grid, not duplicated in it)
   const featuredPost = newestFirst[0];
   const featuredThumb = blogThumbnails[featuredPost.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
+  const featuredHero = getHeroImage(featuredPost);
   const featuredReadTime = getReadTime(featuredPost.content);
 
   const goTo = (page: number) => {
@@ -75,7 +79,7 @@ export default function Blog() {
         <div className="px-4 sm:px-6 md:px-20 py-12 md:py-20">
           <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row gap-10 md:gap-14 items-start md:items-center">
             <Link to={`/blog/${featuredPost.slug}`} className="h-[320px] md:h-[400px] w-full md:w-[560px] rounded-3xl overflow-hidden shrink-0 hover:scale-[1.01] transition-transform duration-300">
-              <BlogThumbnail emoji={featuredThumb.emoji} gradient={featuredThumb.gradient} category={featuredPost.category} />
+              <BlogThumbnail emoji={featuredThumb.emoji} gradient={featuredThumb.gradient} src={featuredHero?.src} alt={featuredHero?.alt} category={featuredPost.category} />
             </Link>
             <div className="flex flex-col gap-5 w-full">
               <div className="flex items-center gap-3">
@@ -110,7 +114,7 @@ export default function Blog() {
             {/* Filters + search */}
             <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
               <div className="flex flex-wrap gap-2">
-                {["All", "Product", "Business"].map((category) => (
+                {categories.map((category) => (
                   <button key={category} onClick={() => setSelectedCategory(category)}
                     className={`px-5 py-2.5 rounded-full font-['Satoshi',sans-serif] font-bold text-sm transition-colors ${
                       selectedCategory === category
@@ -142,13 +146,14 @@ export default function Blog() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {pagePosts.map((post) => {
                   const thumb = blogThumbnails[post.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
+                  const hero = getHeroImage(post);
                   const rt = getReadTime(post.content);
                   return (
                     <Link key={post.id} to={`/blog/${post.slug}`}
                       className="group flex flex-col rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#1877f2] hover:shadow-lg transition-all duration-200 overflow-hidden">
                       <div className="h-[220px] overflow-hidden">
                         <div className="w-full h-full group-hover:scale-105 transition-transform duration-300">
-                          <BlogThumbnail emoji={thumb.emoji} gradient={thumb.gradient} category={post.category} />
+                          <BlogThumbnail emoji={thumb.emoji} gradient={thumb.gradient} src={hero?.src} alt={hero?.alt} category={post.category} />
                         </div>
                       </div>
                       <div className="flex flex-col gap-3 p-5">

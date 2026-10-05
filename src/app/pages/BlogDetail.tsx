@@ -11,7 +11,7 @@ import imgLogos4 from "../../imports/BlogL2-1/c19b58cb0cef79f0c6f9f6c2d6119a3abc
 import imgLogos5 from "../../imports/BlogL2-1/215585c81b06ce6b25e4697e64c75a244401e297.png";
 import imgLogos6 from "../../imports/BlogL2-1/c7fe7372891e9f00b719c9bfb401718a19a7515e.png";
 import imgLogos7 from "../../imports/BlogL2-1/62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
-import { getBlogPost, getBlogPostBySlug, blogPosts } from "../data/blogData";
+import { getBlogPost, getBlogPostBySlug, getHeroImage, blogPosts } from "../data/blogData";
 import type { ContentSection } from "../data/blogData";
 import { blogThumbnails } from "../data/blogThumbnails";
 import { BlogThumbnail } from "../components/BlogThumbnail";
@@ -196,6 +196,55 @@ function renderSection(section: ContentSection, index: number) {
           </figcaption>
         </figure>
       );
+    case "image":
+      return (
+        <figure key={index} className="my-4 flex flex-col gap-3">
+          <div className="rounded-2xl overflow-hidden border border-[#e2e8f0] bg-[#f8fafc]">
+            <img
+              src={section.src}
+              alt={section.alt}
+              width={section.width ?? 1200}
+              height={section.height ?? 800}
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-auto block object-cover aspect-[3/2]"
+            />
+          </div>
+          {section.caption && (
+            <figcaption className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm leading-[1.6]">
+              {section.captionLink ? (
+                <a href={section.captionLink} target="_blank" rel="noopener noreferrer nofollow" className="hover:text-[#1877f2] underline underline-offset-2">
+                  {section.caption}
+                </a>
+              ) : (
+                section.caption
+              )}
+            </figcaption>
+          )}
+        </figure>
+      );
+    case "youtube":
+      return (
+        <figure key={index} className="my-4 flex flex-col gap-3">
+          <div className="rounded-2xl overflow-hidden border border-[#e2e8f0] bg-[#0f172a] shadow-sm aspect-video">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${section.videoId}`}
+              title={section.title}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full block"
+            />
+          </div>
+          <figcaption className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm leading-[1.6]">
+            <a href={`https://www.youtube.com/watch?v=${section.videoId}`} target="_blank" rel="noopener noreferrer" className="hover:text-[#1877f2] underline underline-offset-2">
+              {section.caption ?? `Video: ${section.title} (YouTube)`}
+            </a>
+          </figcaption>
+        </figure>
+      );
     case "table":
       return (
         <div key={index} className="my-2 overflow-x-auto rounded-2xl border border-[#e2e8f0]">
@@ -256,6 +305,7 @@ export default function BlogDetail() {
   }
 
   const thumb = blogThumbnails[post.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
+  const hero = getHeroImage(post);
   const relatedPosts = blogPosts.filter((p) => p.id !== post.id && p.category === post.category).slice(0, 3);
   const fallbackRelated = blogPosts.filter((p) => p.id !== post.id).slice(0, 3);
   const displayRelated = relatedPosts.length >= 2 ? relatedPosts : fallbackRelated;
@@ -335,7 +385,7 @@ export default function BlogDetail() {
 
               {/* Thumbnail */}
               <div className="w-full lg:w-[460px] h-[260px] sm:h-[320px] md:h-[380px] rounded-3xl overflow-hidden shrink-0">
-                <BlogThumbnail emoji={thumb.emoji} gradient={thumb.gradient} category={post.category} />
+                <BlogThumbnail emoji={thumb.emoji} gradient={thumb.gradient} src={hero?.src} alt={hero?.alt} category={post.category} />
               </div>
             </div>
           </div>
@@ -401,12 +451,13 @@ export default function BlogDetail() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {displayRelated.map((article) => {
                 const relThumb = blogThumbnails[article.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
+                const relHero = getHeroImage(article);
                 const rt = getReadTime(article.content);
                 return (
                   <Link key={article.id} to={`/blog/${article.slug}`} className="group flex flex-col gap-4 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#1877f2] hover:shadow-md transition-all duration-200 overflow-hidden">
                     <div className="h-[180px] overflow-hidden">
                       <div className="w-full h-full group-hover:scale-105 transition-transform duration-300">
-                        <BlogThumbnail emoji={relThumb.emoji} gradient={relThumb.gradient} category={article.category} />
+                        <BlogThumbnail emoji={relThumb.emoji} gradient={relThumb.gradient} src={relHero?.src} alt={relHero?.alt} category={article.category} />
                       </div>
                     </div>
                     <div className="flex flex-col gap-2 px-5 pb-5">
