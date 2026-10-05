@@ -8,6 +8,10 @@ export type ContentSection =
   | { type: 'faq'; items: { q: string; a: string }[] }
   | { type: 'cta'; text: string }
   | { type: 'video'; src: string; poster?: string; caption: string; captionLink?: string; title?: string }
+  /** Hot-linked photo (e.g. Pexels CDN). `alt` is required for SEO/accessibility; `caption` + `captionLink` credit the source. */
+  | { type: 'image'; src: string; alt: string; caption?: string; captionLink?: string; width?: number; height?: number }
+  /** Embedded YouTube video (privacy-enhanced youtube-nocookie.com player). */
+  | { type: 'youtube'; videoId: string; title: string; caption?: string }
   | { type: 'table'; headers: string[]; rows: string[][] };
 
 export interface BlogPost {
@@ -18,9 +22,17 @@ export interface BlogPost {
   description: string;
   category: string;
   date: string;
+  /** Last substantive update ("October 5, 2026"). Drives dateModified, sitemap lastmod and the "Updated" label. */
+  updated?: string;
+  /** Author slug from authors.ts. Defaults to the Loraloop team. */
+  author?: string;
   imageIndex: number;
   tableOfContents: string[];
   content: ContentSection[];
+  /** Hand-picked internal links to other posts (slugs). Rendered as "Related reading" with real anchor tags. */
+  relatedSlugs?: string[];
+  /** Free tools (slugs from toolsData.ts) that pair with this post. */
+  relatedTools?: string[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -2581,6 +2593,33 @@ export const blogPosts: BlogPost[] = [
 
 export function getBlogPost(id: number): BlogPost | undefined {
   return blogPosts.find(post => post.id === id);
+}
+
+/**
+ * Related posts for internal linking: hand-picked `relatedSlugs` first, then same-category
+ * posts (newest first) to fill up to `count`. Never returns the post itself.
+ */
+export function getRelatedPosts(post: BlogPost, count = 4, pool: BlogPost[] = blogPosts): BlogPost[] {
+  const picked: BlogPost[] = [];
+  const seen = new Set<string>([post.slug]);
+  for (const slug of post.relatedSlugs ?? []) {
+    const match = pool.find((p) => p.slug === slug);
+    if (match && !seen.has(match.slug)) { picked.push(match); seen.add(match.slug); }
+  }
+  if (picked.length < count) {
+    const sameCategory = [...pool].reverse().filter((p) => p.category === post.category && !seen.has(p.slug));
+    for (const p of sameCategory) { if (picked.length >= count) break; picked.push(p); seen.add(p.slug); }
+  }
+  if (picked.length < count) {
+    for (const p of [...pool].reverse()) { if (picked.length >= count) break; if (!seen.has(p.slug)) { picked.push(p); seen.add(p.slug); } }
+  }
+  return picked.slice(0, count);
+}
+
+/** First `image` section of a post, used as its card thumbnail and Open Graph image. */
+export function getHeroImage(post: BlogPost): { src: string; alt: string } | undefined {
+  const section = post.content.find((s) => s.type === 'image');
+  return section && section.type === 'image' ? { src: section.src, alt: section.alt } : undefined;
 }
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

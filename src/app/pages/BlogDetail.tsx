@@ -11,8 +11,10 @@ import imgLogos4 from "../../imports/BlogL2-1/c19b58cb0cef79f0c6f9f6c2d6119a3abc
 import imgLogos5 from "../../imports/BlogL2-1/215585c81b06ce6b25e4697e64c75a244401e297.png";
 import imgLogos6 from "../../imports/BlogL2-1/c7fe7372891e9f00b719c9bfb401718a19a7515e.png";
 import imgLogos7 from "../../imports/BlogL2-1/62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
-import { getBlogPost, getBlogPostBySlug, blogPosts } from "../data/blogData";
+import { getBlogPost, getBlogPostBySlug, getHeroImage, getRelatedPosts } from "../data/blogData";
 import type { ContentSection } from "../data/blogData";
+import { getAuthor } from "../data/authors";
+import { getToolBySlug } from "../data/toolsData";
 import { blogThumbnails } from "../data/blogThumbnails";
 import { BlogThumbnail } from "../components/BlogThumbnail";
 
@@ -196,6 +198,55 @@ function renderSection(section: ContentSection, index: number) {
           </figcaption>
         </figure>
       );
+    case "image":
+      return (
+        <figure key={index} className="my-4 flex flex-col gap-3">
+          <div className="rounded-2xl overflow-hidden border border-[#e2e8f0] bg-[#f8fafc]">
+            <img
+              src={section.src}
+              alt={section.alt}
+              width={section.width ?? 1200}
+              height={section.height ?? 800}
+              loading="lazy"
+              decoding="async"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-auto block object-cover aspect-[3/2]"
+            />
+          </div>
+          {section.caption && (
+            <figcaption className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm leading-[1.6]">
+              {section.captionLink ? (
+                <a href={section.captionLink} target="_blank" rel="noopener noreferrer nofollow" className="hover:text-[#1877f2] underline underline-offset-2">
+                  {section.caption}
+                </a>
+              ) : (
+                section.caption
+              )}
+            </figcaption>
+          )}
+        </figure>
+      );
+    case "youtube":
+      return (
+        <figure key={index} className="my-4 flex flex-col gap-3">
+          <div className="rounded-2xl overflow-hidden border border-[#e2e8f0] bg-[#0f172a] shadow-sm aspect-video">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${section.videoId}`}
+              title={section.title}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full block"
+            />
+          </div>
+          <figcaption className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm leading-[1.6]">
+            <a href={`https://www.youtube.com/watch?v=${section.videoId}`} target="_blank" rel="noopener noreferrer" className="hover:text-[#1877f2] underline underline-offset-2">
+              {section.caption ?? `Video: ${section.title} (YouTube)`}
+            </a>
+          </figcaption>
+        </figure>
+      );
     case "table":
       return (
         <div key={index} className="my-2 overflow-x-auto rounded-2xl border border-[#e2e8f0]">
@@ -256,9 +307,12 @@ export default function BlogDetail() {
   }
 
   const thumb = blogThumbnails[post.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
-  const relatedPosts = blogPosts.filter((p) => p.id !== post.id && p.category === post.category).slice(0, 3);
-  const fallbackRelated = blogPosts.filter((p) => p.id !== post.id).slice(0, 3);
-  const displayRelated = relatedPosts.length >= 2 ? relatedPosts : fallbackRelated;
+  const hero = getHeroImage(post);
+  const author = getAuthor(post.author);
+  // Hand-picked related posts (relatedSlugs) first, then same-category posts: real internal links.
+  const relatedReading = getRelatedPosts(post, 4);
+  const displayRelated = relatedReading.slice(0, 3);
+  const relatedTools = (post.relatedTools ?? []).map((slug) => getToolBySlug(slug)).filter((t): t is NonNullable<typeof t> => Boolean(t));
   const readTime = getReadTime(post.content);
 
   return (
@@ -290,13 +344,16 @@ export default function BlogDetail() {
                 {/* Meta row */}
                 <div className="flex flex-wrap gap-4 items-center">
                   <span className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm">{post.date}</span>
+                  {post.updated && post.updated !== post.date && (
+                    <span className="font-['General_Sans',sans-serif] font-medium text-[#059669] text-sm">Updated {post.updated}</span>
+                  )}
                   <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
                   <span className="flex items-center gap-1.5 font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm">
                     <Clock size={13} />
                     {readTime} min read
                   </span>
                   <span className="w-1 h-1 rounded-full bg-[#cbd5e1]" />
-                  <span className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm">Loraloop Team</span>
+                  <Link to={`/authors/${author.slug}`} rel="author" className="font-['General_Sans',sans-serif] font-medium text-[#64748b] text-sm hover:text-[#1877f2]">{author.name}</Link>
                 </div>
 
                 {/* Summarise */}
@@ -335,7 +392,7 @@ export default function BlogDetail() {
 
               {/* Thumbnail */}
               <div className="w-full lg:w-[460px] h-[260px] sm:h-[320px] md:h-[380px] rounded-3xl overflow-hidden shrink-0">
-                <BlogThumbnail emoji={thumb.emoji} gradient={thumb.gradient} category={post.category} />
+                <BlogThumbnail emoji={thumb.emoji} gradient={thumb.gradient} src={hero?.src} alt={hero?.alt} category={post.category} />
               </div>
             </div>
           </div>
@@ -349,6 +406,36 @@ export default function BlogDetail() {
             <div className="flex-1 min-w-0 w-full lg:w-auto">
               <div className="max-w-[740px] flex flex-col gap-6">
                 {post.content.map((section, index) => renderSection(section, index))}
+
+                {/* Internal links: related reading + paired free tools */}
+                {(relatedReading.length > 0 || relatedTools.length > 0) && (
+                  <aside className="mt-6 rounded-2xl border border-[#e2e8f0] bg-[#f8fafc] p-6 flex flex-col gap-5" aria-label="Related reading">
+                    {relatedReading.length > 0 && (
+                      <div>
+                        <h2 className="font-['Satoshi',sans-serif] font-bold text-[#0f172a] text-lg mb-3">Related reading</h2>
+                        <ul className="flex flex-col gap-2">
+                          {relatedReading.map((p) => (
+                            <li key={p.slug}>
+                              <Link to={`/blog/${p.slug}`} className="font-['General_Sans',sans-serif] font-medium text-[#1877f2] hover:underline text-base leading-[1.6]">{p.title}</Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {relatedTools.length > 0 && (
+                      <div>
+                        <h2 className="font-['Satoshi',sans-serif] font-bold text-[#0f172a] text-lg mb-3">Free tools for this topic</h2>
+                        <div className="flex flex-wrap gap-2">
+                          {relatedTools.map((t) => (
+                            <Link key={t.slug} to={`/tools/${t.slug}`} className="inline-flex items-center gap-2 bg-white border border-[#e2e8f0] hover:border-[#1877f2] rounded-full px-4 py-2 text-sm font-['General_Sans',sans-serif] font-medium text-[#334155]">
+                              <span>{t.icon}</span>{t.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </aside>
+                )}
               </div>
             </div>
 
@@ -393,7 +480,7 @@ export default function BlogDetail() {
         <div className="px-4 sm:px-6 md:px-20 py-10 border-t border-[#f1f5f9]">
           <div className="max-w-[1280px] mx-auto flex flex-col gap-8">
             <div className="flex items-center justify-between">
-              <h2 className="font-['Satoshi',sans-serif] font-bold text-[#0f172a] text-2xl md:text-3xl">More articles</h2>
+              <h2 className="font-['Satoshi',sans-serif] font-bold text-[#0f172a] text-2xl md:text-3xl">Keep reading</h2>
               <Link to="/blog" className="bg-[#1877f2] flex gap-2 h-10 items-center justify-center px-5 rounded-full hover:bg-[#1565d8] transition-colors">
                 <span className="font-['Satoshi',sans-serif] font-bold text-sm text-white">View All</span>
               </Link>
@@ -401,12 +488,13 @@ export default function BlogDetail() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {displayRelated.map((article) => {
                 const relThumb = blogThumbnails[article.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
+                const relHero = getHeroImage(article);
                 const rt = getReadTime(article.content);
                 return (
                   <Link key={article.id} to={`/blog/${article.slug}`} className="group flex flex-col gap-4 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#1877f2] hover:shadow-md transition-all duration-200 overflow-hidden">
                     <div className="h-[180px] overflow-hidden">
                       <div className="w-full h-full group-hover:scale-105 transition-transform duration-300">
-                        <BlogThumbnail emoji={relThumb.emoji} gradient={relThumb.gradient} category={article.category} />
+                        <BlogThumbnail emoji={relThumb.emoji} gradient={relThumb.gradient} src={relHero?.src} alt={relHero?.alt} category={article.category} />
                       </div>
                     </div>
                     <div className="flex flex-col gap-2 px-5 pb-5">

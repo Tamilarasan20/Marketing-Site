@@ -13,9 +13,15 @@ import BioGenerator from './tools/BioGenerator';
 import BlogTitleGenerator from './tools/BlogTitleGenerator';
 import InstagramCaption from './tools/InstagramCaption';
 import GenericTool from './tools/GenericTool';
+import HookRateCalculator from './tools/HookRateCalculator';
+import CreativeTestingCalculator from './tools/CreativeTestingCalculator';
+import BreakEvenRoasCalculator from './tools/BreakEvenRoasCalculator';
 import { getToolBySlug } from '../data/toolsData';
 
 const toolComponents: Record<string, ComponentType> = {
+  'hook-rate-calculator': HookRateCalculator,
+  'creative-testing-calculator': CreativeTestingCalculator,
+  'break-even-roas-calculator': BreakEvenRoasCalculator,
   'brand-voice': BrandVoice,
   'social-calendar': SocialCalendar,
   'content-pillars': ContentPillars,
