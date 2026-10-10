@@ -1,0 +1,172 @@
+import type { BlogPost } from './blogData';
+import { googleAdsClusterA } from './googleAdsClusterA';
+import { googleAdsClusterB } from './googleAdsClusterB';
+import type { PostRelations } from './blogRelations';
+
+// Google Ads cluster (ids 172-182), published October 10, 2026: the pillar post below plus
+// supporting posts in googleAdsClusterA/B, linked to each other and to the free Google Ads tools.
+// Loraloop capability claims follow the Angie Google Ads capability list in the app repo
+// (google-ads.executors.ts, docs/angie/ads-capabilities.md) as of this date.
+const pillarPosts: BlogPost[] = [
+  {
+    id: 172,
+    slug: 'best-ai-for-google-ads-2026',
+    title: 'Best AI for Google Ads in 2026: What to Automate, What to Approve and How to Choose',
+    seoTitle: 'Best AI for Google Ads in 2026: Search, Performance Max, Bidding and Creative',
+    description: "The best AI for Google Ads in 2026 is a stack, not one tool: Google's AI Max, Performance Max and Smart Bidding, plus an AI agent that audits nightly and asks before it spends.",
+    category: 'Advertising',
+    date: 'October 10, 2026',
+    imageIndex: 172,
+    tableOfContents: [
+      'What Is the Best AI for Google Ads in 2026?',
+      "Google's Built-In AI: AI Max, Performance Max and Smart Bidding",
+      'The 6 Jobs AI Can Do in a Google Ads Account',
+      'What You Should Let AI Change Without Asking',
+      '10 Questions to Ask Before an AI Touches Your Google Ads Account',
+      'A Simple AI Setup for Three Budget Levels',
+      'How Loraloop Runs Google Ads',
+      'Frequently Asked Questions',
+    ],
+    content: [
+      { type: 'paragraph', text: "The best AI for Google Ads in 2026 is not a single tool. It is two layers working together. The first layer is Google's own AI: AI Max for Search, Performance Max and Smart Bidding now decide most of the matching, bidding and asset mixing inside an account, and they are free. The second layer is an AI that works for you rather than for the ad platform: it reads your search terms and conversion data every day, finds the money being wasted, drafts the fixes and new campaigns, and asks before it spends more. This guide explains both layers, the six jobs AI can take off your plate, and the part most guides skip: which changes an AI should make on its own, and which should always wait for a person." },
+      { type: 'callout', text: "Quick answer: Turn on Google's native AI first (AI Max for Search, Performance Max and Smart Bidding) with clean conversion tracking. Then add an AI layer that does the daily work Google will not do for you: removing wasted search terms, keeping bids and budgets inside your targets, refreshing weak ads and reporting what changed. Let it make small, reversible, spend-reducing changes on its own; keep new ads, budget increases, targeting changes and switching campaigns on behind a human approval. Loraloop's ads agent, Angie, is built for that second layer." },
+      { type: 'image',
+        src: 'https://images.pexels.com/photos/16368540/pexels-photo-16368540.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        alt: 'Laptop screen showing the Google search home page on a desk',
+        caption: 'Photo: Photo of a Laptop Screen with Google Main Page on It via Pexels',
+        captionLink: 'https://www.pexels.com/photo/photo-of-a-laptop-screen-with-google-main-page-on-it-16368540/' },
+
+      { type: 'heading', text: 'What Is the Best AI for Google Ads in 2026?' },
+      { type: 'paragraph', text: "Google Ads has used machine learning for years, but the balance has shifted. In 2026 the advertiser no longer pulls most of the levers by hand. Google's systems choose which searches to match, set a bid for every auction and mix headlines, images and videos across channels. The advertiser's job is to feed those systems good inputs (accurate conversions, clear goals, strong assets, sensible exclusions) and to check what the machine did with the money." },
+      { type: 'paragraph', text: "That is why the best AI for Google Ads is a combination. Google's AI optimizes inside the campaign toward whatever you tell it counts as success. An outside AI agent watches the account from your side of the table: it asks whether the conversions are real, whether the search terms make sense for your business, whether a campaign is spending without results, and whether a change should be made at all. One without the other leaves a gap. Native AI without oversight drifts into loosely related searches. Oversight without native AI fights the bidding system and loses." },
+      { type: 'table', headers: ['Layer', 'What it decides', 'Who it works for', 'What it needs from you'], rows: [
+        ["Google's native AI (AI Max, Performance Max, Smart Bidding)", 'Query matching, auction bids, asset combinations, channel mix', 'Your stated conversion goal, inside Google’s system', 'Accurate conversion tracking, a target CPA or ROAS, good assets, exclusions'],
+        ['An AI agent on your side (for example Loraloop)', 'What to fix, add, pause or stop, and when to ask a person', 'Your business goals and budget', 'Your targets, spend caps and approval rules'],
+      ]},
+
+      { type: 'heading', text: "Google's Built-In AI: AI Max, Performance Max and Smart Bidding" },
+      { type: 'paragraph', text: "Before paying for anything, make sure you are using what is already in your account. These three features are the foundation every other AI layer sits on." },
+      { type: 'subheading', text: 'AI Max for Search campaigns' },
+      { type: 'paragraph', text: "AI Max is a setting you switch on inside a standard Search campaign. It extends matching beyond your keyword list by reading your landing pages and assets, generates headline and description variations from your site (text customization), and can send a click to the page on your site that best fits the search (final URL expansion). Brand inclusion and exclusion lists and location controls keep it within bounds. It works best when conversion tracking is accurate, because it optimizes toward whatever you count as a conversion." },
+      { type: 'subheading', text: 'Performance Max' },
+      { type: 'paragraph', text: "Performance Max runs one campaign across Google's inventory: Search, Shopping, YouTube, Display, Discover, Gmail and Maps. You supply asset groups (headlines, descriptions, images, videos), audience signals and, for retailers, a product feed. Performance Max now reports results by channel and accepts campaign-level negative keywords, which makes it easier to see where the money goes and to keep it off irrelevant searches." },
+      { type: 'subheading', text: 'Smart Bidding' },
+      { type: 'paragraph', text: "Smart Bidding sets a bid for every auction using signals no person can see in real time, such as device, location, time and query. The common strategies are Maximize conversions, Maximize conversion value, target CPA and target ROAS. The practical rule: pick one goal per campaign, give it enough conversions to learn from, and change targets in small steps rather than big jumps." },
+      { type: 'paragraph', text: "If AI Max is new to you, this explainer from a former Googler covers what it changes inside a Search campaign before you decide what else you need." },
+      { type: 'youtube', videoId: 'wKp8lEICwZQ', title: 'Google Ads AI Max Explained by an Ex-Googler', caption: 'Video: Google Ads AI Max EXPLAINED by an ex-Googler (YouTube)' },
+
+      { type: 'heading', text: 'The 6 Jobs AI Can Do in a Google Ads Account' },
+      { type: 'paragraph', text: "Most AI products for Google Ads do one or two of the jobs below. Start with the job that is costing you the most time or money, not with the longest feature list." },
+      { type: 'table', headers: ['Job', 'What the AI does', 'How to judge it'], rows: [
+        ['1. Search-term and negative keyword hygiene', 'Reads search terms, flags spend with no conversions, proposes negative keywords', 'Precision of the negatives, and whether it waits for late conversions before judging'],
+        ['2. Bidding and budget control', 'Watches pacing, target CPA or ROAS and budget-limited campaigns', 'Small bounded steps, hard spend caps, an undo for every change'],
+        ['3. Ad copy and ad testing', 'Writes responsive search ad headlines and descriptions, replaces weak assets, runs tests', 'Brand fit, Google character limits and policy, test discipline'],
+        ['4. Image and video creative', 'Produces image and video assets for Performance Max, Demand Gen, Display and YouTube', 'Brand fit, asset variety, how much editing you need'],
+        ['5. Product feed quality', 'Improves product titles, fills missing attributes, fixes disapprovals for Shopping and Performance Max', 'Fewer disapprovals, more impressions on key products'],
+        ['6. Account execution and reporting', 'Audits the account daily, files changes, builds campaigns, explains results', 'Approval controls, audit trail, what it does when tracking breaks'],
+      ]},
+      { type: 'subheading', text: '1. Search-term and negative keyword hygiene' },
+      { type: 'paragraph', text: "Broader matching from AI Max and Performance Max means more searches you never chose. Most wasted Google Ads spend sits in the search terms report, not the keyword list. A good AI reads every search term, groups the ones that spend without converting, and proposes negatives at the right level: ad group, campaign or a shared list. The detail that matters most is timing. Conversions often arrive days after the click, so an AI that judges yesterday's search terms will block searches that were about to convert." },
+      { type: 'subheading', text: '2. Bidding and budget control' },
+      { type: 'paragraph', text: "Smart Bidding handles the auction. What it does not do is question your targets. An AI on your side watches whether campaigns are hitting target CPA or ROAS, whether budgets are pacing, and whether a campaign is limited by budget or simply cannot spend. The safe pattern is bounded steps: tighten a target or lower a bid by a small, fixed amount, measure, then repeat. Large swings reset learning and make results harder to read." },
+      { type: 'subheading', text: '3. Ad copy and ad testing' },
+      { type: 'paragraph', text: "Responsive search ads accept up to 15 headlines of 30 characters and 4 descriptions of 90 characters, and Google rates each asset. AI is useful here for producing on-brand variations within the limits, replacing assets Google rates as low, and running clean tests between two ads in the same ad group. Every new ad should still be seen by a person before it runs." },
+      { type: 'subheading', text: '4. Image and video creative' },
+      { type: 'paragraph', text: "Performance Max, Demand Gen and Display campaigns perform better with a variety of images and videos. Google offers its own asset generation, and AI creative generators can produce more on-brand variants. Judge them on brand fit and on how different the variants really are, not on volume alone." },
+      { type: 'subheading', text: '5. Product feed quality' },
+      { type: 'paragraph', text: "For Shopping and Performance Max with a product feed, the feed is the targeting. Clear product titles, complete attributes and zero disapprovals often do more for performance than any bid change. Feed management tools can rewrite titles and fix attributes in bulk; if your catalog is large and messy, fix the feed before you add any other AI." },
+      { type: 'subheading', text: '6. Account execution and reporting' },
+      { type: 'paragraph', text: "This is the job most small teams are missing: someone who opens the account every day, notices the problem, writes the fix and reports back. AI agents now do this work. The ones worth trusting create new campaigns paused, show you each proposed change with the reason, record the before-state so it can be undone, and stop when conversion tracking looks broken. General AI chat assistants can help you analyze an exported report or draft ad copy, but they are not connected to your account and every change stays manual." },
+
+      { type: 'heading', text: 'What You Should Let AI Change Without Asking' },
+      { type: 'paragraph', text: "The useful question about any AI for Google Ads is not whether it can act. It is which actions it takes alone, and which wait for you. A sensible split depends on two things: whether the change spends more money, and whether it can be undone cleanly." },
+      { type: 'table', headers: ['Change', 'Risk', 'Recommended rule'], rows: [
+        ['Adding negative keywords from clearly irrelevant search terms', 'Low: reduces spend and is easy to reverse', 'Can run on its own after a trial period, with a daily list of what was added'],
+        ['Tightening target CPA or ROAS, or lowering a keyword bid, in small steps', 'Low to medium', 'Can run on its own within a bounded step and a spend cap'],
+        ['Pausing a campaign that spent with zero conversions', 'Medium: can stop a slow converter too early', 'Approve, unless spend is far above your target CPA'],
+        ['Raising budgets or bids, or switching a campaign on', 'High: spends more money', 'Always a person'],
+        ['Publishing a new ad, headline, image or video', 'High: brand and policy risk', 'Always a person'],
+        ['Changing locations, audiences or the ad schedule', 'Medium to high: can stop delivery', 'Always a person'],
+        ["Applying Google's own recommendations", 'Varies: many increase spend', 'Review one at a time'],
+      ]},
+      { type: 'paragraph', text: "Loraloop is set up close to this table. By default every change Angie proposes waits for your approval. New ads, switching a campaign on, targeting changes, ad schedules and audience exclusions wait for a person at every autonomy level, and the nightly optimizer only tightens and lowers; it never raises a budget or bid on its own." },
+      { type: 'paragraph', text: "Two details separate a careful AI from a reckless one. First, it should judge keywords and search terms only on data old enough for conversions to have arrived. Loraloop's nightly scan reads the last 30 days but leaves out the most recent 3 for exactly that reason. Second, it should stop when tracking breaks. If a tag dies, every keyword looks like it stopped converting, and an aggressive AI will start pausing your best campaigns. Loraloop checks for a conversion flatline every 15 minutes and holds back fixes on an account whose conversion tracking is down." },
+
+      { type: 'heading', text: '10 Questions to Ask Before an AI Touches Your Google Ads Account' },
+      { type: 'numbered-list', items: [
+        'Does it create new campaigns paused, so nothing spends until a person switches it on?',
+        'Can it raise budgets or bids without a person approving?',
+        'Does every change keep a record of the before-state and a one-click undo?',
+        'Can you set hard daily, monthly and per-campaign spend caps that it checks at the moment it acts?',
+        'Does it read search terms, or only keywords?',
+        'Does it wait for late conversions before calling a keyword or search term a loser?',
+        'What does it do when conversion tracking breaks?',
+        'Does it work with AI Max, Performance Max and Smart Bidding, or fight them with constant manual bids?',
+        'Is there a history of who approved what, and when?',
+        'Is there a kill switch that stops every change at once?',
+      ]},
+      { type: 'paragraph', text: "Ask to see the approval screen before you connect an account. For Loraloop the answers are built into the product: campaigns are created paused, each action stores its before-state and an inverse so it can be undone, spend caps are checked at execution time, approvals are kept in a change history, and a workspace kill switch halts every change." },
+
+      { type: 'heading', text: 'A Simple AI Setup for Three Budget Levels' },
+      { type: 'paragraph', text: "The right amount of AI changes with spend. Treat this as a starting map rather than a rule." },
+      { type: 'table', headers: ['Monthly Google Ads spend', "Google's native AI", 'Daily oversight', 'Creative and feed', 'Who approves'], rows: [
+        ['Under $5,000', 'One Search campaign with Maximize conversions; test AI Max on it', 'An AI agent with approvals, or a weekly search terms review', "Google's asset generation plus AI-drafted ad copy you review", 'The founder, a few minutes a day'],
+        ['$5,000 to $50,000', 'Search plus Performance Max on target CPA or ROAS', 'An AI agent with approvals, or a part-time specialist', 'An AI creative generator for images; a feed tool if you sell products', 'Founder or marketing lead'],
+        ['Over $50,000', 'Full mix with bidding experiments', 'A PPC team with an automation layer', 'In-house creative and a managed product feed', 'The PPC team'],
+      ]},
+      { type: 'paragraph', text: "Notice that Google's native AI never leaves the stack. Every other layer sits on top of it and on top of clean conversion tracking, not instead of them." },
+
+      { type: 'heading', text: 'How Loraloop Runs Google Ads' },
+      { type: 'paragraph', text: "Loraloop is an autonomous AI marketing team: agents that plan, create, run and report on your marketing across ads, social content and SEO/GEO, with you approving the decisions. For Google Ads, the specialist is Angie, the ads agent. You connect Google Ads once (multiple ad accounts and manager accounts are supported) and review Angie's work in the Loraloop inbox or on approval cards in chat." },
+      { type: 'subheading', text: 'Every night' },
+      { type: 'numbered-list', items: [
+        'Pull: search terms, keywords, placements, ads and responsive search ad assets for the last 30 days, leaving out the newest 3 so late conversions can arrive.',
+        'Audit: score the account on wasted spend, CPA, budget pacing, delivery, conversion tracking, search terms, Quality Score, placements, duplicate campaigns and keywords, and impression share lost to ad rank.',
+        'Propose: group wasted search terms into one negative keyword proposal, suggest small bounded steps on target CPA, target ROAS, keyword bids and budgets a campaign cannot spend, exclude wasteful website placements, and rewrite low-rated responsive search ad assets.',
+        'Execute: approved changes run in two daily windows outside your quiet hours, each with an undo.',
+        'Verify: grade each change against a matched comparison, so you see whether it worked, not just that it happened.',
+      ]},
+      { type: 'subheading', text: 'When you ask' },
+      { type: 'paragraph', text: "Ask Lora in chat for a new Search campaign and Angie drafts the full build: campaign, ad group, keywords and a responsive search ad inside Google's character limits, with sitelinks and callouts added the same way. It is created paused and waits for your approval. Search is the most complete build today; Performance Max, Display, Demand Gen, Video, Shopping and App campaigns are drafted the same way, paused and approval-gated. You can also ask for keyword ideas, a performance breakdown by device, location, network or Performance Max channel, delivery alerts for disapproved ads and campaigns that are not serving, a bidding-strategy experiment on part of the traffic, or a branded PDF report." },
+      { type: 'subheading', text: 'How much freedom Angie gets' },
+      { type: 'paragraph', text: "The default is approve-everything. After ten changes in a row that met or beat their goal, Loraloop suggests letting small changes under a daily dollar threshold run on their own. It never promotes itself; a person makes that call. Daily, monthly and per-campaign spend caps, quiet hours, banned brand phrases and a kill switch apply at every level." },
+      { type: 'subheading', text: 'When Loraloop is not the right fit' },
+      { type: 'paragraph', text: "If you are a PPC specialist who wants to write your own scripts and rule logic across dozens of accounts, a dedicated PPC rule engine will suit you better. If your biggest problem is a messy product catalog, fix the feed in Merchant Center first; Loraloop does not edit product feeds. Loraloop fits best when nobody on the team has time to run Google Ads every day and you would rather approve good work than do it yourself." },
+      { type: 'paragraph', text: "Plans start at $39 a month on Starter (300 credits), shared across ads, social and SEO/GEO work. Check the pricing page for current plans." },
+
+      { type: 'heading', text: 'Frequently Asked Questions' },
+      { type: 'faq', items: [
+        { q: 'What is the best AI for Google Ads in 2026?', a: "The best setup is two layers. Use Google's native AI (AI Max for Search, Performance Max and Smart Bidding) for matching, bidding and asset mixing, and add an AI agent on your side that audits the account daily, removes wasted spend, drafts new campaigns and asks before it spends more. Which agent or tool fits depends on your biggest bottleneck: search-term waste, bidding, creative, product feed or simply having no time to run the account." },
+        { q: 'Is Google AI Max worth turning on?', a: "For most Search campaigns with reliable conversion tracking, it is worth testing. Start with one campaign or an experiment, add brand exclusions and negative keywords, and review the search terms report weekly for the first month. If conversion tracking is weak, fix that first, because AI Max optimizes toward whatever you count as a conversion." },
+        { q: 'Can AI manage Google Ads without a human?', a: "It can, but it is not wise for changes that spend more money or publish new ads. A safe setup lets AI add negatives and make small, reversible bid and target changes on its own, while budget increases, new ads, targeting changes and switching campaigns on wait for a person." },
+        { q: "How is an AI agent different from Google's recommendations?", a: "Google's recommendations come from the platform selling the ads, and many of them increase spend. An AI agent working for you reads your search terms, conversion data and goals, proposes changes against your target CPA or ROAS, and records each change with an undo. Use both, but review Google's recommendations one at a time rather than applying them automatically." },
+        { q: 'Does Loraloop work with Performance Max?', a: "Yes. Loraloop reads Performance Max results, including the breakdown by channel, and can draft Performance Max campaigns, asset groups and audience signals for your approval. The deepest daily automation today is in Search: search-term mining, negative keywords, bid and target steps, and responsive search ad refreshes." },
+      ]},
+      { type: 'cta', text: "Let an AI ads manager audit your Google Ads every night, draft the fixes and new campaigns, and keep the final say with you." },
+    ],
+  },
+];
+
+const WASTE = 'google-ads-wasted-spend-finder';
+const BUDGET = 'google-ads-budget-calculator';
+const ROAS = 'break-even-roas-calculator';
+
+/** Internal links for the Google Ads cluster: hand-picked related posts and paired free tools. */
+const googleAdsRelations: Record<string, PostRelations> = {
+  'best-ai-for-google-ads-2026': { related: ['how-to-use-ai-to-manage-google-ads-step-by-step', 'google-ads-audit-checklist-2026', 'ai-max-for-search-campaigns-guide', 'who-should-manage-google-ads-small-business'], tools: [WASTE, BUDGET, 'google-ads-generator'] },
+  'google-ads-audit-checklist-2026': { related: ['google-ads-search-terms-negative-keywords', 'google-ads-conversion-tracking-checklist', 'performance-max-control-2026', 'best-ai-for-google-ads-2026'], tools: [WASTE, BUDGET] },
+  'google-ads-search-terms-negative-keywords': { related: ['google-ads-audit-checklist-2026', 'ai-max-for-search-campaigns-guide', 'performance-max-control-2026', 'google-ads-glossary'], tools: [WASTE] },
+  'ai-max-for-search-campaigns-guide': { related: ['google-ads-search-terms-negative-keywords', 'smart-bidding-target-cpa-vs-target-roas', 'performance-max-control-2026', 'best-ai-for-google-ads-2026'], tools: [WASTE, 'google-ads-generator'] },
+  'performance-max-control-2026': { related: ['ai-max-for-search-campaigns-guide', 'google-ads-search-terms-negative-keywords', 'google-ads-conversion-tracking-checklist', 'smart-bidding-target-cpa-vs-target-roas'], tools: [ROAS, WASTE] },
+  'smart-bidding-target-cpa-vs-target-roas': { related: ['google-ads-conversion-tracking-checklist', 'performance-max-control-2026', 'google-ads-audit-checklist-2026', 'google-ads-glossary'], tools: [BUDGET, ROAS] },
+  'google-ads-conversion-tracking-checklist': { related: ['google-ads-audit-checklist-2026', 'smart-bidding-target-cpa-vs-target-roas', 'how-to-use-ai-to-manage-google-ads-step-by-step', 'google-ads-glossary'], tools: [BUDGET] },
+  'who-should-manage-google-ads-small-business': { related: ['how-to-use-ai-to-manage-google-ads-step-by-step', 'best-ai-for-google-ads-2026', 'ai-media-buyer-vs-human-media-buyer', 'how-to-measure-roi-of-ai-marketing-tools'], tools: [BUDGET, 'ai-roi-calculator'] },
+  'google-ads-glossary': { related: ['google-ads-audit-checklist-2026', 'smart-bidding-target-cpa-vs-target-roas', 'ai-max-for-search-campaigns-guide', 'meta-ads-glossary'], tools: [BUDGET, WASTE] },
+  'how-to-use-ai-to-manage-google-ads-step-by-step': { related: ['best-ai-for-google-ads-2026', 'google-ads-conversion-tracking-checklist', 'human-in-the-loop-marketing-approval-workflow', 'who-should-manage-google-ads-small-business'], tools: [WASTE, BUDGET] },
+  'google-ads-competitor-research': { related: ['google-ads-audit-checklist-2026', 'competitor-ad-research-meta-ad-library', 'ai-max-for-search-campaigns-guide', 'google-ads-glossary'], tools: ['google-ads-generator', 'competitor-audit'] },
+};
+
+export const googleAdsBlogPosts: BlogPost[] = [...pillarPosts, ...googleAdsClusterA, ...googleAdsClusterB].map((post) => {
+  const rel = googleAdsRelations[post.slug];
+  return rel ? { ...post, relatedSlugs: rel.related, relatedTools: rel.tools } : post;
+});

@@ -16,12 +16,16 @@ import GenericTool from './tools/GenericTool';
 import HookRateCalculator from './tools/HookRateCalculator';
 import CreativeTestingCalculator from './tools/CreativeTestingCalculator';
 import BreakEvenRoasCalculator from './tools/BreakEvenRoasCalculator';
+import GoogleAdsWastedSpendFinder from './tools/GoogleAdsWastedSpendFinder';
+import GoogleAdsBudgetCalculator from './tools/GoogleAdsBudgetCalculator';
 import { getToolBySlug } from '../data/toolsData';
 
 const toolComponents: Record<string, ComponentType> = {
   'hook-rate-calculator': HookRateCalculator,
   'creative-testing-calculator': CreativeTestingCalculator,
   'break-even-roas-calculator': BreakEvenRoasCalculator,
+  'google-ads-wasted-spend-finder': GoogleAdsWastedSpendFinder,
+  'google-ads-budget-calculator': GoogleAdsBudgetCalculator,
   'brand-voice': BrandVoice,
   'social-calendar': SocialCalendar,
   'content-pillars': ContentPillars,

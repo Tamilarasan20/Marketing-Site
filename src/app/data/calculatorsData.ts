@@ -92,6 +92,52 @@ export const calculators: CalculatorInfo[] = [
     ],
     relatedPosts: ['how-to-scale-meta-ads-without-killing-roas', 'meta-ads-cpm-rising-how-to-lower-cost-per-result', 'marketing-for-ecommerce-brands-under-1m-revenue', 'meta-ads-glossary'],
   },
+  {
+    slug: 'google-ads-wasted-spend-finder',
+    name: 'Google Ads Wasted Spend Finder',
+    shortDescription: 'Paste a search terms report to find zero-conversion spend, negative keyword candidates and words that never convert',
+    description: 'Free Google Ads wasted spend finder: paste your search terms report to see spend with zero conversions, negative keyword candidates and words that never convert.',
+    intro: 'Most wasted Google Ads spend hides in the search terms report, not the keyword list, and it grows as AI Max, broad match and Performance Max match you to more searches. Paste your report below. The finder adds up spend on searches that never converted, lists the ones that cost more than a conversion is worth, and pulls out the words that only ever appear in non-converting searches.',
+    howTo: [
+      'In Google Ads, open Insights and reports, then Search terms. Pick a date range of 30 to 90 days that ends at least 3 days ago, so late conversions have arrived.',
+      'Make sure the Cost and Conversions columns are showing (Clicks is optional), then download the report as CSV or select the table and copy it.',
+      'Paste it into the box and enter your target cost per conversion. Any search term that spent at least that much with zero conversions is flagged as a negative keyword candidate; half that amount puts it on the watch list.',
+      'Review the words that never convert. Add the ones that signal the wrong intent (jobs, salary, free, DIY, course) as phrase-match negatives at campaign level or in a shared list. Keep words that describe something you sell; they may simply need a better ad or landing page.',
+    ],
+    benchmarks: [
+      { label: 'Share of search term spend with zero conversions (30+ days)', weak: 'Over 30%', ok: '15% to 30%', strong: 'Under 15%' },
+      { label: 'Negative keyword review cadence', weak: 'Monthly or less', ok: 'Every two weeks', strong: 'Weekly, or nightly with an AI agent' },
+    ],
+    faq: [
+      { q: 'How do I find wasted spend in Google Ads?', a: 'Open the search terms report for the last 30 to 90 days, ending at least 3 days ago, and sort by cost. Search terms that spent more than your target cost per conversion without converting are wasted spend; add the wrong-intent ones as negative keywords. This tool does the sorting and adds up the total for you.' },
+      { q: 'What is a negative keyword in Google Ads?', a: 'A negative keyword stops your ads from showing for searches that contain it. Negative keywords can be broad, phrase or exact match and can be added to an ad group, a campaign, a shared list or the whole account. Unlike normal keywords, negatives do not match close variants, so add plurals and misspellings separately.' },
+      { q: 'Should I add every zero-conversion search term as a negative?', a: 'No. Some searches convert slowly, some had too few clicks to judge, and some describe exactly what you sell. Block wrong-intent searches (jobs, free, DIY, competitor support pages) and give relevant searches with no conversions a better ad, landing page or bid instead.' },
+      { q: 'Why does my search terms report not show every search?', a: 'Google only lists search terms that were searched by a significant number of people. The rest are grouped as other search terms. The visible terms still usually account for most of the spend, which is why the report is the best place to start.' },
+      { q: 'Can Loraloop find and add negative keywords for me?', a: "Yes. Loraloop's ads agent, Angie, reads your search terms every night (skipping the most recent 3 days so conversions can settle), groups the wasted ones and files one negative keyword proposal per account. You approve it in the inbox, and every change can be undone." },
+    ],
+    relatedPosts: ['google-ads-search-terms-negative-keywords', 'google-ads-audit-checklist-2026', 'ai-max-for-search-campaigns-guide', 'best-ai-for-google-ads-2026'],
+  },
+  {
+    slug: 'google-ads-budget-calculator',
+    name: 'Google Ads Budget Calculator',
+    shortDescription: 'Turn a conversion goal, CPC, conversion rate and target CPA into a monthly and daily Google Ads budget',
+    description: 'Free Google Ads budget calculator: enter conversions wanted, average CPC, conversion rate and target CPA to get monthly and daily budget and whether the plan is realistic.',
+    intro: 'A Google Ads budget should start from how many conversions you need and what each one is worth, not from a round number. Enter your goal, your cost per click and conversion rate, and the most you can pay per conversion. The calculator returns the monthly and daily budget, the cost per conversion to expect, and whether your target is reachable at today’s numbers.',
+    howTo: [
+      'Enter the number of conversions you want each month: leads, sales, booked calls or sign-ups, matching your primary conversion action.',
+      "Enter your average cost per click. For a new account, use the top-of-page bid range from Keyword Planner for your main keywords.",
+      'Enter your conversion rate (conversions divided by clicks). If you do not know it, 3 to 5 percent is a cautious starting assumption for a focused landing page; replace it with real data after two to four weeks.',
+      'Enter your target cost per conversion. If the expected CPA comes out above target, more budget will not help: lower the CPC with tighter keywords and negatives, or raise the conversion rate on the landing page.',
+    ],
+    faq: [
+      { q: 'How much should I spend on Google Ads per month?', a: 'Multiply the conversions you want by your cost per conversion. If you want 40 leads a month and a lead costs about $70, plan for roughly $2,800. Then divide by 30.4 for the daily budget. Starting below what one or two conversions a day costs makes it hard for Smart Bidding to learn.' },
+      { q: 'How is a Google Ads daily budget charged?', a: 'Google can spend up to twice your average daily budget on a busy day, but across a month you are not charged more than the average daily budget multiplied by 30.4. That is why this calculator divides the monthly figure by 30.4.' },
+      { q: 'What is a good conversion rate for Google Ads?', a: 'It depends on the industry, the offer and the landing page, so your own account is the best benchmark. Treat any published average as a rough reference only, and measure your rate on at least a few hundred clicks before using it to set budgets.' },
+      { q: 'How many conversions does Smart Bidding need?', a: 'Smart Bidding learns faster with more conversions. Many practitioners like about 30 conversions a month per campaign before setting a strict target CPA or target ROAS. With fewer, consolidate campaigns or start with Maximize conversions without a target.' },
+      { q: 'Can Loraloop keep my Google Ads inside this budget?', a: "Loraloop checks daily, monthly and per-campaign spend caps at the moment any change runs, and its nightly optimizer only tightens targets or lowers bids and unspendable budgets. Raising a budget always waits for a person." },
+    ],
+    relatedPosts: ['smart-bidding-target-cpa-vs-target-roas', 'google-ads-conversion-tracking-checklist', 'who-should-manage-google-ads-small-business', 'best-ai-for-google-ads-2026'],
+  },
 ];
 
 export function getCalculator(slug: string): CalculatorInfo | undefined {
