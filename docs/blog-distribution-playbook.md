@@ -110,7 +110,7 @@ The 50 posts are live at once for indexing, but promote them in waves so each ge
 
 | Lever | Status in repo | What you still do |
 |---|---|---|
-| Free calculators | `/tools/hook-rate-calculator`, `/tools/creative-testing-calculator`, `/tools/break-even-roas-calculator` live, prerendered with HowTo + FAQ schema, linked from the matching posts | Launch each on Product Hunt, r/PPC, r/FacebookAds; add the remaining tools from section 2 |
+| Free calculators | `/tools/hook-rate-calculator`, `/tools/creative-testing-calculator`, `/tools/break-even-roas-calculator`, `/tools/google-ads-wasted-spend-finder`, `/tools/google-ads-budget-calculator` live, prerendered with HowTo + FAQ schema, linked from the matching posts | Launch each on Product Hunt, r/PPC, r/FacebookAds; add the remaining tools from section 2 |
 | Internal linking | Every post has a "Related reading" block with real anchor tags (hand-picked via `src/app/data/blogRelations.ts` for the 50 new posts, category fallback for older ones) plus "Free tools for this topic" | When you publish a new post, add its slug to `blogRelations.ts` and link 3-4 existing posts back to it |
 | Author pages | `/authors/<slug>` with Person/Organization schema; bylines link to the author; `author` field on posts | Add real people to `src/app/data/authors.ts` (name, role, bio, LinkedIn/X links, headshot URL) and set `author` on their posts. This is the E-E-A-T fix and only you can supply the names |
 | Comparison pages | `/compare`, `/compare/loraloop-vs-madgicx`, `/compare/loraloop-vs-adcreative-ai` with FAQ schema, linked to the long-form posts | Add one entry per competitor to `src/app/data/comparisons.ts`; keep competitor cells general and never state their prices |
@@ -132,3 +132,75 @@ The 50 posts are live at once for indexing, but promote them in waves so each ge
 - **First-party data.** One case study with real numbers, or an original benchmark from Loraloop's own account data (for example, median hook rate across accounts by category), will earn more citations than ten guides. This needs real data and customer consent; nothing here should be fabricated.
 - **Dedicated landing pages for buyer intent**, such as "AI ads manager for DTC brands" and "AI marketing for agencies", with the calculators embedded and a trial CTA. The agent pages at `/ai-ads-manager` and the audience pages at `/for-agencies` are the starting point.
 - **More calculators** from section 2: Creative Fatigue Checker, Ad Angle Generator, AI Marketing Worker ROI Calculator, Channel Prioritizer quiz.
+
+---
+
+## 10. Google Ads audience (added October 10, 2026)
+
+A third audience with its own search behaviour: **Google Ads advertisers** who do not have a full-time PPC manager. Local service businesses (trades, clinics, legal), B2B lead generation, e-commerce on Search, Shopping and Performance Max, and freelancers or small agencies running several client accounts. Pain: wasted spend in search terms, AI Max and Performance Max spending where they cannot see, no time to check the account daily.
+
+**Rule for everything in this section: no competitor names or head-to-head comparisons on the site.** We compete for the same buyers by answering their questions better (how to choose, what to automate, what to approve), not by naming vendors.
+
+### What is built
+
+| Asset | URL | Search intent it targets |
+|---|---|---|
+| Pillar | `/blog/best-ai-for-google-ads-2026` | best AI for Google Ads, AI Google Ads tools, AI PPC management |
+| Audit | `/blog/google-ads-audit-checklist-2026` | Google Ads audit checklist |
+| Search terms | `/blog/google-ads-search-terms-negative-keywords` | negative keywords, wasted spend, search terms report |
+| AI Max | `/blog/ai-max-for-search-campaigns-guide` | AI Max for Search, should I turn on AI Max |
+| Performance Max | `/blog/performance-max-control-2026` | Performance Max negative keywords, PMax control |
+| Bidding | `/blog/smart-bidding-target-cpa-vs-target-roas` | target CPA vs target ROAS, Google Ads bidding strategy |
+| Tracking | `/blog/google-ads-conversion-tracking-checklist` | Google Ads conversion tracking setup |
+| Who should run it | `/blog/who-should-manage-google-ads-small-business` | Google Ads agency vs freelancer vs AI (catches people comparing providers, without naming any) |
+| Glossary | `/blog/google-ads-glossary` | Google Ads terms and definitions (GEO: definition queries) |
+| How-to | `/blog/how-to-use-ai-to-manage-google-ads-step-by-step` | how to use AI for Google Ads |
+| Competitor research | `/blog/google-ads-competitor-research` | see competitors' Google ads, Auction Insights |
+| Free tool | `/tools/google-ads-wasted-spend-finder` | Google Ads wasted spend, negative keyword finder |
+| Free tool | `/tools/google-ads-budget-calculator` | Google Ads budget calculator |
+
+All eleven posts link to each other and to the two tools (`googleAdsRelations` in `src/app/data/googleAdsBlogData.ts`), and both tools link back to the posts.
+
+### Winning the queries competitors target, without naming them
+
+- **Own the category questions.** The buyer searching for an AI ads agent also searches "best AI for Google Ads", "AI Google Ads management", "Google Ads automation" and "should I hire a Google Ads agency". The pillar, the who-should-run-it post and the how-to post answer those directly, with answer-first intros, quotable Quick answers, tables and FAQ schema, which is what AI engines lift into answers.
+- **Get into third-party lists instead of writing our own vendor lists.** Find the "best AI tools for Google Ads / PPC" articles ranking in the top 10 from neutral publishers (not vendors) and offer the author a free account and a 60-second walkthrough. AI engines weigh these independent lists heavily, and they name us without us naming anyone.
+- **Track competitors privately.** Keep competitor domains in a private rank-tracking list and in GSC query comparisons, never in published copy.
+- **Lead with the permission angle.** "What you should let AI change without asking" and the 10-question checklist are our differentiator: specific, checkable and hard for a competitor to copy honestly.
+
+### Where Google Ads advertisers are
+
+Rule from section 4 applies: answer the question in full, then link the tool or post as "longer version".
+
+- **Reddit:** r/PPC, r/googleads, r/adwords for practitioners; r/smallbusiness, r/Entrepreneur, r/sweatystartup (trades and local services), r/ecommerce for owners. The Wasted Spend Finder is the best opener: "paste your search terms report, it runs in the browser, nothing is uploaded".
+- **Google Ads Community forum** (support.google.com/google-ads/community): thousands of small advertisers asking about wasted spend, disapprovals and Performance Max. Answer with the relevant post's steps.
+- **X:** the #ppcchat community; quote-reply AI Max and Performance Max announcements with the practical post.
+- **LinkedIn:** paid search practitioners share checklists. Turn the audit checklist and the permission table into carousels.
+- **Publications and podcasts:** pitch a practitioner piece (for example "What to let AI change in a Google Ads account") to Search Engine Land and Search Engine Journal contributor programs; send news-hook data to PPC Land and Search Engine Roundtable; pitch the founder as a guest to PPC-focused podcasts such as Marketing O'Clock, Paid Search Podcast and PPC Live The Podcast.
+- **YouTube:** 60-second screen recordings: "Find your Google Ads wasted spend in 60 seconds" (the finder), "Should you turn on AI Max?", "3 Performance Max settings to check today". Embed each back in its post.
+
+### Original data (the strongest link and citation magnet)
+
+If the terms of service and customer consent allow it, publish an aggregated, anonymised benchmark from accounts Loraloop operates, for example "share of search term spend that never converts, by industry" or "how often conversion tracking breaks per quarter". Original numbers are what journalists and AI engines cite. Do not publish until the data, sample size and method can be stated plainly in the post.
+
+### Dogfood it
+
+Run a small Google Ads Search campaign for "google ads wasted spend", "negative keyword tool" and "google ads budget calculator" pointing at the free tools, managed by Angie with approvals. Publish the results after 60 days as a "what Loraloop did for Loraloop" post.
+
+### Six-week Google Ads calendar
+
+| Week | Promote | Community push | Asset |
+|---|---|---|---|
+| 1 | Pillar, How to use AI to manage Google Ads | r/PPC, r/smallbusiness, LinkedIn | Wasted Spend Finder launch |
+| 2 | Search terms and negatives, Audit checklist | Google Ads Community, r/googleads | Audit checklist carousel |
+| 3 | AI Max guide, Performance Max control | #ppcchat, X threads | 60-second YouTube explainers |
+| 4 | Bidding strategies, Conversion tracking | r/PPC, LinkedIn | Budget Calculator launch |
+| 5 | Who should run your Google Ads | r/sweatystartup, r/Entrepreneur, local business groups | Third-party list outreach |
+| 6 | Glossary, Competitor research | Quora answers, YouTube shorts | Contributor article pitch |
+
+### Measure
+
+- GSC: queries containing "google ads", "ai max", "performance max", "negative keyword" per post, weekly.
+- Tool usage: page views and time on page for the two Google Ads tools; UTM-tag the CTA from each tool.
+- AI answers: monthly, ask ChatGPT, Perplexity, Gemini and Google AI Mode "best AI for Google Ads", "how to find wasted spend in Google Ads" and the cluster's FAQ questions; log whether Loraloop is cited.
+- Trial sign-ups attributed to the Google Ads cluster versus the Meta cluster.

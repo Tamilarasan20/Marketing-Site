@@ -1,9 +1,13 @@
 import type { BlogPost } from './blogData';
+import { googleAdsClusterA } from './googleAdsClusterA';
+import { googleAdsClusterB } from './googleAdsClusterB';
+import type { PostRelations } from './blogRelations';
 
-// Best AI for Google Ads in 2026 (id 172). Published October 10, 2026.
+// Google Ads cluster (ids 172-182), published October 10, 2026: the pillar post below plus
+// supporting posts in googleAdsClusterA/B, linked to each other and to the free Google Ads tools.
 // Loraloop capability claims follow the Angie Google Ads capability list in the app repo
 // (google-ads.executors.ts, docs/angie/ads-capabilities.md) as of this date.
-export const googleAdsBlogPosts: BlogPost[] = [
+const pillarPosts: BlogPost[] = [
   {
     id: 172,
     slug: 'best-ai-for-google-ads-2026',
@@ -140,12 +144,29 @@ export const googleAdsBlogPosts: BlogPost[] = [
       ]},
       { type: 'cta', text: "Let an AI ads manager audit your Google Ads every night, draft the fixes and new campaigns, and keep the final say with you." },
     ],
-    relatedSlugs: [
-      'ai-media-buyer-vs-human-media-buyer',
-      'human-in-the-loop-marketing-approval-workflow',
-      'how-to-use-ai-to-manage-meta-ads-step-by-step',
-      'how-to-measure-roi-of-ai-marketing-tools',
-    ],
-    relatedTools: ['google-ads-generator', 'break-even-roas-calculator'],
   },
 ];
+
+const WASTE = 'google-ads-wasted-spend-finder';
+const BUDGET = 'google-ads-budget-calculator';
+const ROAS = 'break-even-roas-calculator';
+
+/** Internal links for the Google Ads cluster: hand-picked related posts and paired free tools. */
+const googleAdsRelations: Record<string, PostRelations> = {
+  'best-ai-for-google-ads-2026': { related: ['how-to-use-ai-to-manage-google-ads-step-by-step', 'google-ads-audit-checklist-2026', 'ai-max-for-search-campaigns-guide', 'who-should-manage-google-ads-small-business'], tools: [WASTE, BUDGET, 'google-ads-generator'] },
+  'google-ads-audit-checklist-2026': { related: ['google-ads-search-terms-negative-keywords', 'google-ads-conversion-tracking-checklist', 'performance-max-control-2026', 'best-ai-for-google-ads-2026'], tools: [WASTE, BUDGET] },
+  'google-ads-search-terms-negative-keywords': { related: ['google-ads-audit-checklist-2026', 'ai-max-for-search-campaigns-guide', 'performance-max-control-2026', 'google-ads-glossary'], tools: [WASTE] },
+  'ai-max-for-search-campaigns-guide': { related: ['google-ads-search-terms-negative-keywords', 'smart-bidding-target-cpa-vs-target-roas', 'performance-max-control-2026', 'best-ai-for-google-ads-2026'], tools: [WASTE, 'google-ads-generator'] },
+  'performance-max-control-2026': { related: ['ai-max-for-search-campaigns-guide', 'google-ads-search-terms-negative-keywords', 'google-ads-conversion-tracking-checklist', 'smart-bidding-target-cpa-vs-target-roas'], tools: [ROAS, WASTE] },
+  'smart-bidding-target-cpa-vs-target-roas': { related: ['google-ads-conversion-tracking-checklist', 'performance-max-control-2026', 'google-ads-audit-checklist-2026', 'google-ads-glossary'], tools: [BUDGET, ROAS] },
+  'google-ads-conversion-tracking-checklist': { related: ['google-ads-audit-checklist-2026', 'smart-bidding-target-cpa-vs-target-roas', 'how-to-use-ai-to-manage-google-ads-step-by-step', 'google-ads-glossary'], tools: [BUDGET] },
+  'who-should-manage-google-ads-small-business': { related: ['how-to-use-ai-to-manage-google-ads-step-by-step', 'best-ai-for-google-ads-2026', 'ai-media-buyer-vs-human-media-buyer', 'how-to-measure-roi-of-ai-marketing-tools'], tools: [BUDGET, 'ai-roi-calculator'] },
+  'google-ads-glossary': { related: ['google-ads-audit-checklist-2026', 'smart-bidding-target-cpa-vs-target-roas', 'ai-max-for-search-campaigns-guide', 'meta-ads-glossary'], tools: [BUDGET, WASTE] },
+  'how-to-use-ai-to-manage-google-ads-step-by-step': { related: ['best-ai-for-google-ads-2026', 'google-ads-conversion-tracking-checklist', 'human-in-the-loop-marketing-approval-workflow', 'who-should-manage-google-ads-small-business'], tools: [WASTE, BUDGET] },
+  'google-ads-competitor-research': { related: ['google-ads-audit-checklist-2026', 'competitor-ad-research-meta-ad-library', 'ai-max-for-search-campaigns-guide', 'google-ads-glossary'], tools: ['google-ads-generator', 'competitor-audit'] },
+};
+
+export const googleAdsBlogPosts: BlogPost[] = [...pillarPosts, ...googleAdsClusterA, ...googleAdsClusterB].map((post) => {
+  const rel = googleAdsRelations[post.slug];
+  return rel ? { ...post, relatedSlugs: rel.related, relatedTools: rel.tools } : post;
+});

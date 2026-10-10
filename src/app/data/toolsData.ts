@@ -31,6 +31,8 @@ export const tools: Tool[] = [
   { name: 'Hook Rate and Hold Rate Calculator', slug: 'hook-rate-calculator', description: 'Turn Ads Manager video metrics into hook rate, hold rate and what to fix first', category: 'Advertising', icon: '⏱️' },
   { name: 'Creative Testing Volume Calculator', slug: 'creative-testing-calculator', description: 'How many ad creatives you can validate per week at your spend and CPA', category: 'Advertising', icon: '🧪' },
   { name: 'Break-even ROAS Calculator', slug: 'break-even-roas-calculator', description: 'Find your break-even ROAS, max CPA and target ROAS from unit economics', category: 'Advertising', icon: '⚖️' },
+  { name: 'Google Ads Wasted Spend Finder', slug: 'google-ads-wasted-spend-finder', description: 'Paste a search terms report to find zero-conversion spend and negative keyword candidates', category: 'Advertising', icon: '🧹' },
+  { name: 'Google Ads Budget Calculator', slug: 'google-ads-budget-calculator', description: 'Monthly and daily Google Ads budget from your conversion goal, CPC and target CPA', category: 'Advertising', icon: '🧮' },
 
   // ── Writing ──────────────────────────────────────────────────
   { name: 'AI Resume Builder', slug: 'ai-resume-builder', description: 'Build a professional, ATS-optimized resume in minutes', category: 'Professional', icon: '📄' },
