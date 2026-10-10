@@ -162,4 +162,5 @@ export const blogThumbnails: Record<number, { emoji: string; gradient: [string, 
   169: { emoji: "💰", gradient: ["#d97706", "#dc2626"] },
   170: { emoji: "📚", gradient: ["#0f766e", "#0ea5e9"] },
   171: { emoji: "🎛️", gradient: ["#1877f2", "#0ea5e9"] },
+  172: { emoji: "🔎", gradient: ["#4285f4", "#34a853"] },
 };
