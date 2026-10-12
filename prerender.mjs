@@ -285,7 +285,7 @@ ${renderContentToHtml(post.content)}
   const html = buildPage({
     path: '/blog',
     title: 'Blog: AI Marketing, Meta Ads Creative Testing, SEO and GEO Guides',
-    description: `${blogPosts.length} practical guides for founders, media buyers and small marketing teams: AI marketing agents, Meta ads creative testing, SEO/GEO, reporting and automation.`,
+    description: `${blogPosts.length} practical guides for marketing managers, growth leads and media buyers at scaling brands: AI marketing agents, Meta and Google ads, SEO/GEO, reporting and automation.`,
     extraHead: `<link rel="alternate" type="application/rss+xml" title="Loraloop Blog" href="${SITE}/rss.xml" />
   <script type="application/ld+json">${JSON.stringify(blogSchema)}</script>`,
     bodyHtml: `<main><h1>Loraloop Blog</h1><p>Guides on ${categories.map(esc).join(', ')}.</p><ul>\n${listHtml}\n</ul></main>`,
@@ -428,7 +428,7 @@ const latestPostDate = blogPosts.map(p => parseIsoDate(p.date)).sort().at(-1) ||
     <title>Loraloop Blog</title>
     <link>${SITE}/blog</link>
     <atom:link href="${SITE}/rss.xml" rel="self" type="application/rss+xml" />
-    <description>AI marketing agents, Meta ads creative testing, SEO and GEO guides for founders, media buyers and small marketing teams.</description>
+    <description>AI marketing agents, Meta and Google ads, SEO and GEO guides for marketing managers, growth leads and media buyers at scaling brands.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${items}
@@ -490,7 +490,7 @@ Sitemap: ${SITE}/sitemap.xml
   ).join('\n\n');
   const llms = `# Loraloop
 
-> Loraloop is an autonomous AI marketing team for founders, e-commerce brands, agencies and small marketing teams. Its AI agents (Lora, the marketing lead and analyst; Sophie, SEO and GEO strategist; Angie, Meta and Google ads manager; Clara, email marketer) plan and execute marketing (ad creatives and campaigns, SEO/GEO articles, social content, email) and send a daily performance briefing. Nothing publishes or changes budget without human approval.
+> Loraloop is an autonomous AI marketing team for lean marketing teams at scaling companies: mid-market B2B SaaS, scale-up D2C and eCommerce brands, CPG brands and fractional marketing agencies (typically 15 to 200 employees, $2M to $50M revenue). It replaces the agency retainer and the ten-dashboard stack for marketing managers and growth leads, reporting to VPs of Marketing, CMOs and founders. Its AI agents (Lora, the marketing lead and analyst; Sophie, SEO and GEO strategist; Angie, Meta and Google ads manager; Clara, email marketer) plan and execute marketing (ad creatives and campaigns, SEO/GEO articles, social content, email) and send a daily performance briefing. Nothing publishes or changes budget without human approval.
 
 Site: ${SITE}
 Pricing: ${SITE}/pricing (Starter $39/mo, Pro from $99/mo, Enterprise per seat; free trial, no credit card)

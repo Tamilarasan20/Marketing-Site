@@ -57,7 +57,7 @@ const PLANS: Plan[] = [
   {
     id: "STARTER",
     name: "Starter",
-    description: "Solo founders and small brands getting ads live",
+    description: "One brand, one marketer: get ads, social and SEO content live",
     tiers: [{ credits: 300, prices: { monthly: 39, annual: 390 } }],
     features: (credits) => [
       ...capabilityGroups(credits, {
@@ -71,7 +71,7 @@ const PLANS: Plan[] = [
   {
     id: "GROWTH",
     name: "Pro",
-    description: "Growing teams running ads, social and SEO together",
+    description: "Lean marketing teams running ads, social and SEO across up to 5 brands",
     highlighted: true,
     tiers: [
       { credits: 1000, prices: { monthly: 99,  annual: 990  } },
@@ -87,7 +87,7 @@ const PLANS: Plan[] = [
   {
     id: "ENTERPRISE",
     name: "Enterprise",
-    description: "Large-scale operations with custom integrations",
+    description: "Multi-brand operations that need custom integrations and unlimited workspaces",
     perSeat: { min: 3, max: 500 },
     tiers: [{ credits: 1000, prices: { monthly: 99, annual: 990 } }],
     featuresIntro: "Everything in Pro, plus",
@@ -252,12 +252,20 @@ export default function PricingSection({
         <div className="flex flex-col items-center gap-[42px]">
 
           {/* Title */}
-          <h2
-            style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-            className="text-[44px] text-white text-center tracking-[-0.8px] leading-[52px]"
-          >
-            Pricing
-          </h2>
+          <div className="flex flex-col items-center gap-3 text-center">
+            <h2
+              style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
+              className="text-[44px] text-white tracking-[-0.8px] leading-[52px]"
+            >
+              Pricing
+            </h2>
+            <p
+              style={{ fontFamily: "General Sans, Inter, sans-serif" }}
+              className="max-w-[560px] text-[16px] md:text-[18px] text-[#9CA3AF] leading-relaxed"
+            >
+              A full AI marketing team for less than a week of an agency retainer. Start free, no credit card, cancel anytime.
+            </p>
+          </div>
 
           {/* Controls */}
           <div className="flex flex-col items-center gap-4">
