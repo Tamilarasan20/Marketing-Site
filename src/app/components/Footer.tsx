@@ -5,11 +5,8 @@ import { agentList } from "../data/agents";
 import appLogo from "../../assets/loraloop-icon.svg";
 
 const audienceLinks = [
-  { name: "For Founders", to: "/for-founders" },
   { name: "For Marketing Agencies", to: "/for-agencies" },
-  { name: "For Freelancers", to: "/for-freelancers" },
   { name: "For eCommerce Brands", to: "/for-ecommerce" },
-  { name: "For Creators", to: "/for-creators" },
 ];
 
 const aiTools = [

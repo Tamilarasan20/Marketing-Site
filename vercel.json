@@ -1,5 +1,10 @@
 {
   "installCommand": "pnpm install --no-frozen-lockfile",
+  "redirects": [
+    { "source": "/for-founders", "destination": "/", "permanent": true },
+    { "source": "/for-freelancers", "destination": "/for-agencies", "permanent": true },
+    { "source": "/for-creators", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/app", "destination": "https://loraloop-main-api.vercel.app/" },
     { "source": "/app/:path*", "destination": "https://loraloop-main-api.vercel.app/:path*" },

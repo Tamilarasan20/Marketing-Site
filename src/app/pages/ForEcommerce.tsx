@@ -1,34 +1,34 @@
 import { Link } from 'react-router';
 
 const features = [
-  { icon: '🛍️', title: 'Product-first content creation', desc: 'Generate posts built around your actual products — features, benefits, use cases, and seasonal angles — not generic marketing copy.' },
-  { icon: '📆', title: 'Seasonal campaign planning', desc: 'Never miss a sales moment. Loraloop builds campaign plans around your store calendar — launches, promotions, holidays, and seasonal pushes.' },
-  { icon: '🔍', title: 'SEO content for product categories', desc: 'Rank for buyer-intent keywords with AI-generated blog articles targeting product category searches, comparison queries, and buying guides.' },
-  { icon: '🤖', title: 'GEO content for AI search', desc: 'Structure your content so Perplexity, ChatGPT, and Google AI Overviews cite your brand when shoppers search with AI.' },
-  { icon: '📣', title: 'Ad copy for product campaigns', desc: 'Generate performance ad copy for Facebook, Instagram, Google, and TikTok — hooks, body copy, and CTAs for each product and offer.' },
-  { icon: '📧', title: 'Email campaigns for launches and promos', desc: 'Create launch sequences, abandoned cart flows, promotional emails, and newsletters in your brand voice — all review-ready.' },
-  { icon: '🕵️', title: 'Competitor tracking and insights', desc: 'Monitor competitor activity, identify content gaps, and get strategic recommendations for staying ahead in your category.' },
-  { icon: '📊', title: 'Performance reporting', desc: 'Track which content drives traffic, engagement, and conversions. Monthly reports with clear actions.' },
+  { icon: '📣', title: 'Ad creative at the volume Meta demands', desc: 'Hooks, body copy, CTAs and generated creative for every product, offer and angle, so your media buyer always has fresh tests to run.' },
+  { icon: '🌙', title: 'Spend watched overnight', desc: 'Meta and Google campaigns are monitored around the clock. Fatigued or underperforming ads are caught and budget moves queued for approval before anyone opens Ads Manager.' },
+  { icon: '🛍️', title: 'Product-first content', desc: 'Posts, articles and emails built around your actual catalogue, features, use cases and seasonal angles, from a knowledge base your team controls.' },
+  { icon: '📆', title: 'Launch and promo calendars', desc: 'Every launch, drop, BFCM push and holiday campaign planned across channels, with the assets produced weeks ahead instead of the night before.' },
+  { icon: '🔍', title: 'SEO for buyer-intent searches', desc: 'Category pages, buying guides and comparison articles that rank for the searches shoppers make before they buy.' },
+  { icon: '🤖', title: 'Cited when shoppers ask AI', desc: 'GEO-structured content so ChatGPT, Perplexity and Google AI Overviews name your brand when someone asks what to buy.' },
+  { icon: '📧', title: 'Email flows and campaigns', desc: 'Launch sequences, promotional sends and newsletters drafted in your voice and scheduled in your Klaviyo or Mailchimp, review-ready.' },
+  { icon: '📊', title: 'One briefing, not ten dashboards', desc: 'ROAS, organic traffic, content output and email performance in one daily report your founder or VP of Marketing can actually read.' },
 ];
 
 const contentTypes = [
-  { type: 'Product posts', desc: 'Feature highlights, before/afters, use cases, testimonials' },
+  { type: 'Ad creative and copy', desc: 'Meta, Instagram, Google and TikTok campaign assets by product and angle' },
+  { type: 'Product posts', desc: 'Feature highlights, before and afters, use cases, testimonials' },
   { type: 'Promotional offers', desc: 'Sale announcements, limited-time deals, bundle offers' },
-  { type: 'Seasonal campaigns', desc: 'Black Friday, BFCM, back-to-school, holiday content' },
-  { type: 'Educational content', desc: 'How-to posts, buyer guides, comparison articles' },
-  { type: 'UGC-style captions', desc: 'Authentic, community-feel copy that converts' },
-  { type: 'SEO blog articles', desc: 'Category and keyword-targeted articles for Google ranking' },
-  { type: 'Ad creative copy', desc: 'Facebook, Instagram, Google, TikTok campaign copy' },
-  { type: 'Email sequences', desc: 'Launch emails, cart recovery, newsletter campaigns' },
+  { type: 'Seasonal campaigns', desc: 'BFCM, back-to-school, holiday and drop content' },
+  { type: 'Email flows', desc: 'Launch sequences, cart recovery, newsletters, win-backs' },
+  { type: 'SEO articles', desc: 'Category, buying-guide and comparison content for Google' },
+  { type: 'GEO content', desc: 'Structured answers that AI assistants cite to shoppers' },
+  { type: 'UGC-style captions', desc: 'Community-feel copy for social and creator briefs' },
 ];
 
 const faqs = [
-  { q: 'How does Loraloop learn about my products?', a: 'During onboarding, you build a brand knowledge base that includes your product catalog, key product details, audience profiles, brand voice, and positioning. Loraloop uses this knowledge base for every piece of content it generates — so posts reference your actual products, not invented details.' },
-  { q: 'Can Loraloop plan seasonal campaigns automatically?', a: 'Yes. Loraloop builds monthly campaign plans that account for your promotional calendar, seasonal moments, and product launches. You define the key dates and offers; Loraloop builds the content plan and generates the assets across channels.' },
-  { q: 'Does Loraloop create ad copy for eCommerce campaigns?', a: 'Yes. Loraloop generates ad copy for Facebook, Instagram, Google, and TikTok — including hooks, body copy, and CTAs for product campaigns, promotional offers, and seasonal events. Content is generated in your brand voice and presented for review before use.' },
-  { q: 'Can Loraloop write SEO blogs for my product categories?', a: 'Yes. Loraloop generates keyword-optimized blog articles targeting product category searches, buying guides, comparison queries, and long-tail keywords relevant to your catalog. This builds organic search visibility that drives shoppers to your store.' },
-  { q: 'Does Loraloop support email marketing for eCommerce?', a: 'Yes. Loraloop generates email campaigns including product launch sequences, promotional offers, newsletter content, and re-engagement flows. Email drafts appear in your approval queue like all other content.' },
-  { q: 'How is Loraloop different from a social media scheduler for eCommerce?', a: 'Social media schedulers distribute content you provide. Loraloop creates the content — strategy, copy, campaign structure, SEO articles, ad copy, emails — and then schedules what you approve. For eCommerce brands that need fresh content every week across multiple channels, Loraloop handles the creation load, not just the distribution.' },
+  { q: 'How does Loraloop learn about our products?', a: 'During onboarding you build a brand knowledge base: catalogue, product details, audience segments, brand voice, positioning and competitors. Every piece of content and every ad is generated from that knowledge base, so outputs reference real products and offers, not invented details.' },
+  { q: 'Will it change our ad budgets without asking?', a: 'No. Loraloop watches Meta and Google spend overnight, flags fatigued or underperforming campaigns and queues the budget move it recommends. Nothing is applied until your media buyer or marketing manager approves it. You set the guardrails once.' },
+  { q: 'We already have a media buyer and an agency. Where does Loraloop fit?', a: 'As the production and monitoring layer underneath them. Your buyer keeps the strategy and gets a steady supply of tested creative and overnight monitoring; most brands then drop the content and reporting retainer rather than the person.' },
+  { q: 'Can Loraloop plan seasonal campaigns?', a: 'Yes. You set the key dates and offers; Loraloop builds the campaign plan across ads, social, email and SEO and produces the assets ahead of time, all landing in your approval queue.' },
+  { q: 'Does Loraloop handle email for eCommerce?', a: 'Yes. Clara, the email agent, drafts launch sequences, promotional sends, newsletters and re-engagement flows in your voice and schedules them inside your Klaviyo or Mailchimp once approved.' },
+  { q: 'Who on our team runs it day to day?', a: 'Usually the marketing manager or growth lead. They review the approval queue, edit what needs editing and approve budget moves. The founder or VP of Marketing reads the daily briefing and never has to log into Ads Manager, Klaviyo and analytics separately.' },
 ];
 
 export default function ForEcommerce() {
@@ -37,16 +37,16 @@ export default function ForEcommerce() {
       {/* Hero */}
       <section className="pt-32 pb-20 px-4 text-center max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-2 bg-orange-50 text-orange-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-          <span>For eCommerce Brands</span>
+          <span>For Scale-up D2C and eCommerce Brands</span>
         </div>
         <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-bold text-[#0f172a] leading-[1.05] tracking-[-0.03em] text-balance mb-6" style={{ fontFamily: 'Satoshi, sans-serif' }}>
-          Plan, create, and schedule<br />
+          Scale creative, content and spend<br />
           <span style={{ background: 'linear-gradient(135deg, #ea580c, #7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            product marketing that sells
+            without scaling the team
           </span>
         </h1>
         <p className="text-[18px] md:text-[20px] text-[#4b5563] leading-[1.6] max-w-2xl mx-auto mb-10">
-          Loraloop creates product posts, seasonal campaigns, SEO content, ad copy, and emails for your eCommerce brand — all from your brand and product knowledge base.
+          Loraloop produces the ad creative, product content and email a growing brand needs every week, watches Meta and Google spend overnight and reports it all in one briefing. Built for D2C, Shopify and CPG brands doing $2M to $50M.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -54,7 +54,7 @@ export default function ForEcommerce() {
             className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, #ea580c, #7c3aed)', fontFamily: 'Satoshi, sans-serif' }}
           >
-            Start Free — No credit card
+            Start free, no credit card
           </a>
           <Link
             to="/pricing"
@@ -69,12 +69,12 @@ export default function ForEcommerce() {
       {/* eCommerce content demand */}
       <section className="py-14 bg-gray-50 border-y border-gray-100">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>eCommerce brands need more content than anyone else</h2>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] mb-5" style={{ fontFamily: 'Satoshi, sans-serif' }}>Growing brands run out of creative before they run out of budget</h2>
           <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] mb-4">
-            New products, weekly promotions, seasonal campaigns, product education, competitor responses, ad creative, email campaigns, SEO articles — the content demand for an eCommerce brand never stops.
+            Meta wants new creative every week. Launches, drops, promos and BFCM all need their own assets. Email flows go stale. And somewhere between the agency deck and the four dashboards, an underperforming ad set spends through the weekend because nobody was looking.
           </p>
           <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6]">
-            Loraloop handles the full content workload from your brand knowledge base — so your marketing stays consistent, on-brand, and published every week without a full marketing team.
+            Loraloop handles the production and the overnight monitoring from your brand and product knowledge base, so a marketing team of two ships like a team of ten and leadership gets one report instead of ten logins.
           </p>
         </div>
       </section>
@@ -82,8 +82,8 @@ export default function ForEcommerce() {
       {/* Content types */}
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Every type of eCommerce content, automated</h2>
-          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Loraloop covers the full content mix eCommerce brands need every week — not just social scheduling.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-3" style={{ fontFamily: 'Satoshi, sans-serif' }}>Every asset a scaling brand needs, produced weekly</h2>
+          <p className="text-[#4b5563] text-[18px] md:text-[20px] leading-[1.6] text-center mb-12 max-w-xl mx-auto">Ads, organic, SEO and email from one knowledge base, all landing in your approval queue before anything goes live.</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16">
             {contentTypes.map((c) => (
               <div key={c.type} className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
@@ -107,14 +107,14 @@ export default function ForEcommerce() {
       {/* CTA Banner */}
       <section className="py-20 px-4">
         <div className="max-w-2xl mx-auto text-center rounded-3xl p-12" style={{ background: 'linear-gradient(135deg, #ea580c 0%, #7c3aed 100%)' }}>
-          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Give your eCommerce brand a full AI marketing team</h2>
-          <p className="text-orange-100 text-[16px] mb-8 leading-[1.6]">Build your brand knowledge base, connect your channels, and get your first month of product marketing content — all in one session.</p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Keep headcount flat through your next growth stage</h2>
+          <p className="text-orange-100 text-[16px] mb-8 leading-[1.6]">Build your brand and product knowledge base, connect your ad accounts and channels, and have the first month of creative, content and email waiting for approval in one session.</p>
           <a
             href="/app/signup"
             className="inline-flex items-center justify-center px-8 py-4 bg-white rounded-full text-orange-700 font-bold text-base hover:bg-gray-50 transition-all"
             style={{ fontFamily: 'Satoshi, sans-serif' }}
           >
-            Try Loraloop Free →
+            Start free →
           </a>
         </div>
       </section>
@@ -134,7 +134,7 @@ export default function ForEcommerce() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <p className="text-[#6b7280] text-[14px] mb-4">Questions about using Loraloop for your eCommerce brand?</p>
+          <p className="text-[#6b7280] text-[14px] mb-4">Running several brands or need a custom integration with your stack?</p>
           <Link to="/contact" className="text-orange-600 font-semibold text-[14px] hover:underline">Talk to us →</Link>
         </div>
       </section>

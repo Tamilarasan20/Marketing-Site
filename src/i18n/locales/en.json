@@ -8,16 +8,16 @@
     "getStarted": "Get Started"
   },
   "hero": {
-    "title": "AI Marketing Agents That Execute 24/7",
-    "subtitle": "Plan, create, schedule, and improve your marketing with AI agents that never sleep.",
+    "title": "The AI Marketing Team That Executes Without Headcount",
+    "subtitle": "Content, SEO, social, email and ads planned, produced and launched 24/7, with your team approving every move.",
     "inputPlaceholder": "yourwebsite.com",
     "cta": "Get Started",
     "connectClaude": "Connect with Claude",
     "trustedBy": "Trusted by 1,000+ brands"
   },
   "features": {
-    "title": "Everything your marketing team needs",
-    "subtitle": "9 AI agents that work together to grow your brand.",
+    "title": "A full marketing team for less than one agency retainer",
+    "subtitle": "AI employees that plan, produce, launch and report across every channel, so headcount stays flat.",
     "content": "Content",
     "contentDesc": "Posts, blogs, emails, and captions in seconds.",
     "social": "Social Media",
@@ -39,7 +39,7 @@
     "perMonth": "/mo"
   },
   "footer": {
-    "tagline": "AI Marketing Agents That Execute 24/7",
+    "tagline": "The AI marketing team that executes without headcount",
     "product": "Product",
     "company": "Company",
     "legal": "Legal",

@@ -46,7 +46,7 @@ function TextGroupVertical3() {
         <span className="text-[36px] md:text-[68px] leading-[1.0] font-bold">{`Meet `}</span>
         <span className="text-[36px] md:text-[68px] leading-[1.0] text-[#14a148] font-bold">Lora</span>
       </p>
-      <p className="text-[36px] md:text-[68px] leading-[1.0] relative shrink-0 w-full font-bold">{`your Autonomous `}</p>
+      <p className="text-[36px] md:text-[68px] leading-[1.0] relative shrink-0 w-full font-bold">{`the AI marketing `}</p>
     </div>
   );
 }
@@ -55,7 +55,7 @@ function TextGroupVertical2() {
   return (
     <div className="content-stretch flex flex-col font-['Satoshi',sans-serif] font-bold items-start pb-px relative shrink-0 tracking-[-0.02em] md:tracking-[-0.035em] w-full" data-name="Text Group Vertical">
       <TextGroupVertical3 />
-      <p className="text-[36px] md:text-[68px] leading-[1.0] relative shrink-0 text-[#14a148] w-full font-bold">{`AI Marketing Team `}</p>
+      <p className="text-[36px] md:text-[68px] leading-[1.0] relative shrink-0 text-[#14a148] w-full font-bold">{`team that executes.`}</p>
     </div>
   );
 }
@@ -65,7 +65,7 @@ function TextGroupVertical1() {
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
       <TextGroupVertical2 />
       <p className="font-['General_Sans',sans-serif] font-medium text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full max-w-[720px] px-4 md:px-0">
-        {`An AI agents work as a team that plans content, creates, publishes,  tracks performance, manages ads & keeps improving itself on autopilot your 24/7 marketing team that never sleeps.`}
+        {`Loraloop plans, produces and launches your content, SEO, social, email and ads around the clock: 50+ on-brand assets a month, ad budgets rebalanced overnight, competitors monitored daily. Your team approves every move.`}
       </p>
     </div>
   );
@@ -133,7 +133,7 @@ function Cotnet() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
       <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[28px] md:text-[40px] leading-[1.2] md:leading-[48px] relative shrink-0 text-[#1f2937] tracking-[-0.8px]">See it in action</p>
-      <p className="font-['General_Sans',sans-serif] font-medium text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#374151]">Watch how Loraloop manage marketing end to end</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#374151]">See how Loraloop runs content, ads and reporting for a scaling brand, end to end.</p>
     </div>
   );
 }
@@ -160,10 +160,10 @@ function VideoSection() {
 function Cotnet1() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] md:gap-[12px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px] px-4" data-name="Cotnet">
-      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[28px] md:text-[40px] leading-[1.1] md:leading-[1.12] relative shrink-0 text-white tracking-[-0.8px] w-full">AI employees that run your marketing end to end even while you sleep.</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[28px] md:text-[40px] leading-[1.1] md:leading-[1.12] relative shrink-0 text-white tracking-[-0.8px] w-full">A full marketing team for less than one agency retainer.</p>
       <p className="font-normal font-['General_Sans',sans-serif] font-normal text-[16px] md:text-[20px] leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] w-full">
-        {`You don’t need a large team to grow a business. Loraloop provides AI employees for marketing that handle daily work. From planning to execution, work gets done efficiently, 24/7. `}
-        <span className="font-medium text-white">10x your marketing with 10x less expansive.</span>
+        {`Scaling companies use Loraloop instead of a second agency or a fourth hire. Eight AI employees plan, produce, launch and report across every channel, 24/7. `}
+        <span className="font-medium text-white">Flat headcount. 10x the output.</span>
       </p>
     </div>
   );
@@ -184,8 +184,8 @@ function TextGroupVertical4() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM />
-      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[20px] md:text-[32px] leading-[1.2] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-0.48px]">Identify what’s trending and what my competitors are doing</p>
-      <p className="font-['General_Sans',sans-serif] font-medium text-[14px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-80 relative shrink-0 text-white">Sam analyzes market trends and competitor actions. He identifies which content types or topics will help me grow.</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[20px] md:text-[32px] leading-[1.2] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-0.48px]">Know what competitors ship before your Monday standup</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[14px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-80 relative shrink-0 text-white">Sam monitors competitors' ads, content and positioning daily and flags the gaps worth acting on.</p>
     </div>
   );
 }
@@ -244,8 +244,8 @@ function TextGroupVertical5() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM1 />
-      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Optimize my content for SEO and GEO to improve discoverability.</p>
-      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black whitespace-pre-wrap">{`Shopie create seo optimised contents so ranks well whether in google or GEO like chatgpt, claude,  people find me easily.`}</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Rank on Google and get cited by ChatGPT and Perplexity</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black whitespace-pre-wrap">{`Sophie researches keywords, briefs and drafts SEO and GEO articles that rank on Google and get cited by AI search, in your brand voice.`}</p>
     </div>
   );
 }
@@ -301,11 +301,11 @@ function TextGroupVertical6() {
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM2 />
       <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px] whitespace-pre-wrap">
-        {`Run and improve my `}
+        {`Stop ad budget leaking `}
         <br aria-hidden="true" />
-        Ad campaigns
+        overnight
       </p>
-      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Elena runs and scales my ad campaigns, making sure you get the best return on investment.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Elena watches Meta and Google spend overnight, catches underperforming campaigns and queues budget moves for approval before your team logs in.</p>
     </div>
   );
 }
@@ -364,8 +364,8 @@ function TextGroupVertical7() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM3 />
-      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-1px]">Plan a marketing strategy for my business</p>
-      <p className="font-['General_Sans',sans-serif] font-medium text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-90 relative shrink-0 text-white">{`Lora turn my business goals into a clear execution plan. lora breaks down what needs to be done, assigns tasks to the right team, right members, & keeps everything aligned so my marketing runs in my voice.`}</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-white tracking-[-1px]">Turn quarterly goals into a plan the team can run</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic opacity-90 relative shrink-0 text-white">{`Lora converts revenue goals into a monthly execution plan, assigns the work to the right AI employee and keeps every channel aligned with your positioning.`}</p>
     </div>
   );
 }
@@ -422,8 +422,8 @@ function TextGroupVertical8() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM4 />
-      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-[#1f2937] tracking-[-0.48px]">{`Schedule publish my posts, contents & Engage with audiences`}</p>
-      <p className="font-['General_Sans',sans-serif] font-medium text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic relative shrink-0 text-[#1f2937]">Sarah schedules my social posts, handles community engagement, replying and nurturing relationships.</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold text-[20px] md:text-[32px] leading-[1.25] md:leading-[34px] not-italic relative shrink-0 text-[#1f2937] tracking-[-0.48px]">{`Publish and engage across every channel`}</p>
+      <p className="font-['General_Sans',sans-serif] font-medium text-[13px] md:text-[16px] leading-[1.4] md:leading-[22px] not-italic relative shrink-0 text-[#1f2937]">Sarah schedules approved posts across LinkedIn, Instagram, X and TikTok and handles replies, so the calendar never goes quiet.</p>
     </div>
   );
 }
@@ -482,9 +482,9 @@ function TextGroupVertical9() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[732px]" data-name="Text Group Vertical">
       <BadgeM5 />
-      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Analyze every content performance and determine what’s working whats not</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">One daily briefing instead of ten dashboards</p>
       <p className="font-['General_Sans',sans-serif] font-medium leading-[28px] not-italic opacity-60 relative shrink-0 text-[18px] text-black whitespace-pre-wrap">
-        {`Nick tracks performs of contes, posts, ads. `}
+        {`Nick pulls ads, organic, SEO and email performance into one daily briefing, so leadership sees what is working without logging into anything.`}
         <br aria-hidden="true" />
         He reports on what worked, what didn’t, and what to improve next.
       </p>
@@ -546,8 +546,8 @@ function TextGroupVertical10() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM6 />
-      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">{`Writes content that attracts customers for blog, mail & more..`}</p>
-      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Clara writes my blogs, emails, threads, newsletters, Social posts and other persuasive content that drives action.</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">{`50+ on-brand assets a month, review-ready`}</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Clara drafts blogs, newsletters, LinkedIn posts, ad copy and email sequences in your voice, so the content calendar never falls behind.</p>
     </div>
   );
 }
@@ -598,8 +598,8 @@ function TextGroupVertical11() {
   return (
     <div className="content-stretch flex flex-1 flex-col gap-[16px] items-start min-h-px relative w-full" data-name="Text Group Vertical">
       <BadgeM7 />
-      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Create Videos for TikTok, Insta, YouTube etc.</p>
-      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Theo turns your ideas into engaging video content for your brand. plans and scripts your short-form videos for platforms like TikTok or YouTube, boosting engagement.</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Short-form video scripts at scale</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Theo turns launches, features and customer stories into scripted short-form video for LinkedIn, TikTok and YouTube.</p>
     </div>
   );
 }
@@ -658,8 +658,8 @@ function TextGroupVertical12() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] h-[302px] items-start relative shrink-0 w-full" data-name="Text Group Vertical">
       <BadgeM8 />
-      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Creates scroll-stopping posts and carousels for Insta, FB etc</p>
-      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Steve Design scroll-stopping visuals and carousels that reflect my brand and grab attention in all platforms</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[34px] not-italic relative shrink-0 text-[32px] text-black tracking-[-0.48px]">Creatives that match your brand system</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[22px] not-italic opacity-60 relative shrink-0 text-[16px] text-black">Steve produces on-brand visuals, carousels and ad creatives for every channel from your brand guidelines.</p>
     </div>
   );
 }
@@ -743,8 +743,8 @@ function AiAgents() {
 function Frame17() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
-      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] w-full">The AI Employees that actually does stuff.</p>
-      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px] relative shrink-0 text-[#374151] text-[20px] w-full">Loraloop plans your marketing, creates your content, and runs campaigns before you even wake up.</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] w-full">The AI employees that actually ship work.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px] relative shrink-0 text-[#374151] text-[20px] w-full">Loraloop plans, produces and launches overnight. Your team reviews and approves in the morning.</p>
     </div>
   );
 }
@@ -787,7 +787,7 @@ function Container2() {
             <span className="leading-[22px]">Drop your website URL</span>
           </li>
           <li className="ms-[24px]">
-            <span className="leading-[22px]">Lora will create your profile, brand guidelines, target audience, goals and more to act like your team and your second brain.</span>
+            <span className="leading-[22px]">Lora builds your brand knowledge base: positioning, ICP, voice, goals and competitors, so every output reads like your team wrote it.</span>
           </li>
         </ul>
       </div>
@@ -835,10 +835,10 @@ function Container5() {
         <Container6 />
         <ul className="block font-['General_Sans',sans-serif] font-medium leading-[0] list-disc not-italic relative shrink-0 text-[#6b7280] text-[15px] md:text-[16px] w-full">
           <li className="mb-2 ms-[24px]">
-            <span className="leading-[22px]">{`Social, content, leads, engagement, Ads launched and optimized automatically. `}</span>
+            <span className="leading-[22px]">{`Content, SEO, social, email and ads planned, produced and launched automatically. `}</span>
           </li>
           <li className="ms-[24px]">
-            <span className="leading-[22px]">Your AI marketing team never sleeps.</span>
+            <span className="leading-[22px]">Nothing publishes or spends without your approval.</span>
           </li>
         </ul>
       </div>
@@ -889,7 +889,7 @@ function Container8() {
             <span className="leading-[22px]">{`Track performance. Scale what works. Improve continuously. `}</span>
           </li>
           <li className="ms-[24px]">
-            <span className="leading-[22px]">More traffic and conversions, ROI your AI team works 24/7.</span>
+            <span className="leading-[22px]">One daily briefing replaces ten dashboards: pipeline, ROAS and content output in one place.</span>
           </li>
         </ul>
       </div>
@@ -939,7 +939,7 @@ function Frame18() {
   return (
     <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 text-white w-full">
       <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[1.2] md:leading-[56px] relative shrink-0 text-[32px] md:text-[48px] tracking-[-1.2px] text-center w-full">100+ Integrations supported.</p>
-      <p className="font-['General_Sans',sans-serif] font-medium leading-[1.4] md:leading-[28px] relative shrink-0 text-[16px] md:text-[20px] text-center max-w-[800px] w-full">From social media platforms to ecommerce, leads etc, our integrations make it easy to keep everything connected.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[1.4] md:leading-[28px] relative shrink-0 text-[16px] md:text-[20px] text-center max-w-[800px] w-full">From Meta and Google Ads to Klaviyo, WordPress and your social channels, connected in minutes without an engineering ticket.</p>
     </div>
   );
 }
@@ -2048,11 +2048,11 @@ function DescriptionSection_Auth() {
         <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative size-full text-center">
           <div className="flex flex-col font-bold font-['Satoshi',sans-serif] font-bold justify-center relative shrink-0 text-[#1f2937] text-[0px] tracking-[-0.5px] w-full">
             <p className="text-[24px]">
-              <span className="font-bold font-['Satoshi',sans-serif] font-bold leading-[32px] not-italic text-[#14a148]">Social Media handled End to End</span>
+              <span className="font-bold font-['Satoshi',sans-serif] font-bold leading-[32px] not-italic text-[#14a148]">Marketing planned end to end</span>
             </p>
           </div>
           <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
-            <p className="leading-[22px]">Lora understand you end to end, Turn your goals into a structured marketing plan with clear next steps acct like personal marketing lead.</p>
+            <p className="leading-[22px]">Lora understands your business end to end and turns revenue goals into a structured monthly plan with clear next steps, like a marketing lead on staff.</p>
           </div>
         </div>
       </div>
@@ -2375,11 +2375,11 @@ function DescriptionSection1_Auth() {
       <div className="bg-white content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative shrink-0 text-center flex-1 w-full" data-name="Description Section">
       <div className="flex flex-col font-bold font-['Satoshi',sans-serif] font-bold justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
         <p>
-          <span className="leading-[32px] text-[#14a148]">Discover ideas, trends, monitor competitor</span><span className="leading-[32px] text-[#1f2937]"> your marketing 10x value content</span>
+          <span className="leading-[32px] text-[#14a148]">Monitor competitors, spot trends</span><span className="leading-[32px] text-[#1f2937]"> and act before they do</span>
         </p>
       </div>
       <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
-        <p className="leading-[22px]">Effortlessly find current trends, demands, monitor competitor doing etc. Based on create content types, ideas, topics to grow social media and ROI more.</p>
+        <p className="leading-[22px]">Loraloop tracks competitor ads, content and positioning daily and turns the gaps into briefs your team can approve in one click.</p>
       </div>
     </div>
   );
@@ -3126,11 +3126,11 @@ function DescriptionSection2_Auth() {
       <div className="bg-white content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative shrink-0 text-center flex-1 w-full" data-name="Description Section">
       <div className="flex flex-col font-bold font-['Satoshi',sans-serif] font-bold justify-center relative shrink-0 text-[#1f2937] text-[24px] tracking-[-0.5px] w-full">
         <p>
-          <span className="leading-[32px] text-[#14a148]">Turn idea/existing content</span><span className="leading-[32px] text-[#1f2937]"> into social posts, blogs, TikToks, YouTube videos in minutes.</span>
+          <span className="leading-[32px] text-[#14a148]">Turn one brief</span><span className="leading-[32px] text-[#1f2937]"> into 50+ review-ready assets a month.</span>
         </p>
       </div>
       <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
-        <p className="leading-[22px]">Use one idea or existing content to create everything you need posts and videos ready to publish, without doing the work yourself grow social media presence while you sleep.</p>
+        <p className="leading-[22px]">One brief becomes a blog, a newsletter, a LinkedIn post, an ad and a video script, all in your voice, without adding a writer to payroll.</p>
       </div>
     </div>
   );
@@ -3869,11 +3869,11 @@ function DescriptionSection3_Auth() {
         <div className="content-stretch flex flex-col gap-[12px] items-center leading-[0] not-italic p-[40px] relative size-full text-center">
           <div className="flex flex-col font-bold font-['Satoshi',sans-serif] font-bold justify-center relative shrink-0 text-[#14a148] text-[24px] tracking-[-0.5px] w-full">
             <p>
-              <span className="leading-[32px] text-[#14a148]">Smart Multi-Platform Publishing</span><span className="leading-[32px] text-[#1f2937]"> based on realtime audiance & performance data!</span>
+              <span className="leading-[32px] text-[#14a148]">Smart Multi-Platform Publishing</span><span className="leading-[32px] text-[#1f2937]"> based on real-time audience and performance data</span>
             </p>
           </div>
           <div className="flex flex-col font-['General_Sans',sans-serif] font-medium justify-center relative shrink-0 text-[#6b7280] text-[16px] w-full">
-            <p className="leading-[22px]">Share content across platforms like Instagram, X, Wordpress, TikTok, and YouTube etc. based on platform realtime algorithms and previous past performance.</p>
+            <p className="leading-[22px]">Approved content goes out across LinkedIn, Instagram, X, TikTok, YouTube and WordPress at the times each platform's data says will perform.</p>
           </div>
         </div>
       </div>
@@ -4090,8 +4090,8 @@ function Cotnet2() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full max-w-[740px]" data-name="Cotnet">
       <p className="font-['General_Sans',sans-serif] font-medium leading-[18px] relative shrink-0 text-[#14a148] text-[13px] tracking-[0.3px] whitespace-nowrap">WHY US?</p>
-      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[1.2] md:leading-[48px] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.8px]">Marketing that runs itself.</p>
-      <p className="font-['General_Sans',sans-serif] font-medium leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] text-[16px] md:text-[20px] whitespace-pre-wrap">{`Get work done across all channels  without hiring or managing people.`}</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[1.2] md:leading-[48px] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.8px]">Replace the retainer, not the team.</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[1.4] md:leading-[28px] relative shrink-0 text-[#9ca3af] text-[16px] md:text-[20px] whitespace-pre-wrap">{`Everything an agency does, run by your own marketing manager, without the $3k to $10k retainer or the turnover.`}</p>
     </div>
   );
 }
@@ -4105,7 +4105,7 @@ function Container39() {
     <div className="bg-[rgba(24,24,27,0.5)] flex-1 h-auto min-h-[52px] min-w-px relative" data-name="Container">
       <div aria-hidden="true" className="absolute border-[#27272a] border-l border-solid inset-0 pointer-events-none" />
       <div className="content-stretch flex flex-col items-start pl-2 md:pl-[25px] pr-2 md:pr-[24px] pt-[16px] relative size-full">
-        <p className="font-['Inter',sans-serif] font-medium font-medium leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[0.1996px]">Independent Talent</p>
+        <p className="font-['Inter',sans-serif] font-medium font-medium leading-[20px] not-italic relative shrink-0 text-[#9f9fa9] text-[14px] tracking-[0.1996px]">Freelancers</p>
       </div>
     </div>
   );
@@ -4218,7 +4218,7 @@ function Frame23() {
     <div className="relative shrink-0">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[4px] items-center not-italic relative size-full text-white">
         <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">Starts</p>
-        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] relative shrink-0 text-[18px]">$9.99</p>
+        <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] relative shrink-0 text-[18px]">$39</p>
         <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[12px] tracking-[0.6px]">/ month</p>
       </div>
     </div>
@@ -5037,7 +5037,7 @@ function Container97() {
 function Frame12() {
   return (
     <div className="content-stretch flex items-end justify-center relative shrink-0">
-      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[20px] text-white">$9.99</p>
+      <p className="font-['Satoshi',sans-serif] font-bold leading-[28px] relative shrink-0 text-[20px] text-white">$39</p>
       <p className="font-['General_Sans',sans-serif] font-medium leading-[16px] relative shrink-0 text-[#6b7280] text-[12px] tracking-[0.6px]">/mo</p>
     </div>
   );
@@ -6110,7 +6110,7 @@ function Cotnet4() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center" data-name="Cotnet">
       <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[48px] relative shrink-0 text-[#1f2937] text-[40px] tracking-[-0.8px] whitespace-nowrap">Frequently Asked Questions</p>
-      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">Watch how Loraloop manage marketing end to end</p>
+      <p className="font-['General_Sans',sans-serif] font-medium leading-[28px] relative shrink-0 text-[#6b7280] text-[20px]">See how Loraloop runs content, ads and reporting for a scaling brand, end to end.</p>
     </div>
   );
 }
@@ -6147,21 +6147,25 @@ function Container108() {
 
   const faqs = [
     {
-      question: "What is Loraloops AI employee?",
+      question: "Who is Loraloop built for?",
       answer: (
         <>
-          <p className="mb-4">Loraloop AI employees are autonomous digital workers that handle your marketing tasks end-to-end.</p>
-          <p>{`They plan campaigns, create content, publish posts, run ads, track performance, and continuously optimize  all without manual effort. Think of them as a full marketing team that works 24/7, never sleeps, and keeps improving results automatically.`}</p>
+          <p className="mb-4">Marketing teams of one to ten at scaling companies: B2B SaaS, D2C and eCommerce brands, CPG brands and fractional marketing agencies, typically 15 to 200 employees.</p>
+          <p>The marketing manager or growth lead runs it day to day. The VP of Marketing, CMO or founder sees the results in one daily briefing instead of ten dashboards.</p>
         </>
       )
     },
     {
-      question: "What can I use Loraloop AI employees for?",
-      answer: "You can use Loraloop AI employees for social media management, content creation, ad campaign optimization, lead generation, and overall marketing strategy execution across multiple platforms."
+      question: "Does Loraloop replace our agency?",
+      answer: "For content production, paid media management and reporting, yes. Loraloop does the work a $3k to $10k a month retainer covers: 50+ posts, articles and emails a month, Meta and Google campaign management, competitor monitoring and reporting. Your team keeps the strategy and the approvals, and most keep a specialist for brand work while dropping the production retainer."
     },
     {
-      question: "Can AI employees replace human employees?",
-      answer: "Loraloop AI employees are designed to augment and empower human teams, taking over repetitive and data-intensive tasks so your people can focus on high-level creativity and strategic decision-making."
+      question: "Will it publish or spend money without us knowing?",
+      answer: "No. Every post, article, email and campaign lands in an approval queue first, and ad budget changes are proposed, not applied, until someone on your team signs off. You set the guardrails once and Loraloop works inside them."
+    },
+    {
+      question: "What is a Loraloop AI employee?",
+      answer: "A specialised agent with a defined job: Lora plans, Sophie handles SEO and GEO, Clara writes, Elena runs ads, Nick reports. They share one brand knowledge base and hand work to each other, so the output reads like one team rather than ten disconnected tools."
     }
   ];
 
@@ -6196,15 +6200,9 @@ function Faq({ className, children = null }: FaqProps) {
 function TextGroupVertical13() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
-      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">AI marketing Team that Never sleep</p>
+      <p className="font-bold font-['Satoshi',sans-serif] font-bold leading-[48px] relative shrink-0 text-[40px] text-white tracking-[-0.8px] w-full">Keep headcount flat. Ship like a team of ten.</p>
       <p className="font-['General_Sans',sans-serif] font-medium leading-[0] relative shrink-0 text-[#9ca3af] text-[20px] w-full">
-        <span className="leading-[28px]">
-          Social media tools are easy to buy, but hard to keep up with. loraloop is your AI marketing team like 10 year employees marketing team for you to
-          <br aria-hidden="true" />
-          {`manage `}
-        </span>
-        <span className="leading-[28px]">marketing</span>
-        <span className="leading-[28px]">{` end to end, So you focus on your work.`}</span>
+        <span className="leading-[28px]">Loraloop is the execution layer for marketing teams at scaling companies. It produces the content, runs the ads and reports the numbers while your team keeps the strategy.</span>
       </p>
     </div>
   );
