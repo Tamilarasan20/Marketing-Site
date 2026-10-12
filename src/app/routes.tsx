@@ -20,11 +20,8 @@ const DataDeletion = lazy(() => import("./pages/DataDeletion"));
 const ToolEmbed = lazy(() => import("./pages/ToolEmbed"));
 const AllToolsPage = lazy(() => import("./pages/AllToolsPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const ForFounders = lazy(() => import("./pages/ForFounders"));
 const ForAgencies = lazy(() => import("./pages/ForAgencies"));
-const ForFreelancers = lazy(() => import("./pages/ForFreelancers"));
 const ForEcommerce = lazy(() => import("./pages/ForEcommerce"));
-const ForCreators = lazy(() => import("./pages/ForCreators"));
 const AiMarketingLead = lazy(() => import("./pages/AiMarketingLead"));
 const AiSeoGeoStrategist = lazy(() => import("./pages/AiSeoGeoStrategist"));
 const AiEmailMarketer = lazy(() => import("./pages/AiEmailMarketer"));
@@ -50,11 +47,8 @@ export const router = createBrowserRouter([
       { path: "privacy-policy", Component: PrivacyPolicy },
       { path: "terms", Component: Terms },
       { path: "data-deletion", Component: DataDeletion },
-      { path: "for-founders", Component: ForFounders },
       { path: "for-agencies", Component: ForAgencies },
-      { path: "for-freelancers", Component: ForFreelancers },
       { path: "for-ecommerce", Component: ForEcommerce },
-      { path: "for-creators", Component: ForCreators },
       { path: "ai-marketing-lead", Component: AiMarketingLead },
       { path: "ai-seo-geo-strategist", Component: AiSeoGeoStrategist },
       { path: "ai-email-marketer", Component: AiEmailMarketer },
