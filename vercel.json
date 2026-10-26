@@ -6,8 +6,6 @@
     { "source": "/for-creators", "destination": "/", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/js/script.js", "destination": "https://minilytics.REPLACE-ME.workers.dev/js/script.js" },
-    { "source": "/api/event", "destination": "https://minilytics.REPLACE-ME.workers.dev/api/event" },
     { "source": "/app", "destination": "https://loraloop-main-api.vercel.app/" },
     { "source": "/app/:path*", "destination": "https://loraloop-main-api.vercel.app/:path*" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
