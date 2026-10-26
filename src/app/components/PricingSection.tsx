@@ -3,7 +3,6 @@ import { Sparkles } from "lucide-react";
 import imgAgentBanner from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
 import CreditUsageBlock from "./CreditUsageBlock";
 import PlanPicker from "./PlanPicker";
-import { CREDIT_YIELDS, creditsToUnits } from "../data/creditCosts";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type BillingPeriod = "monthly" | "annual";
@@ -25,6 +24,8 @@ interface SeatAddon {
 interface FeatureGroup {
   title: string;
   items: string[];
+  /** Named agents shown as pills above the items (Enterprise). */
+  chips?: { name: string; role: string }[];
 }
 
 interface Plan {
@@ -39,21 +40,10 @@ interface Plan {
   seatAddon?: SeatAddon;
   tiers: Tier[];
   featuresIntro: string;
-  features: (credits: number) => FeatureGroup[];
+  features: FeatureGroup[];
 }
 
 const fmtNum = (n: number) => n.toLocaleString("en-US");
-
-const YIELD_LINE: Record<string, string> = {
-  "Ads": "ready-to-launch ads a month",
-  "Social posts": "posts with images a month",
-  "SEO / GEO": "SEO articles a month",
-};
-
-const yieldLine = (capability: string, credits: number) => {
-  const y = CREDIT_YIELDS.find((c) => c.capability === capability);
-  return y ? `~${fmtNum(creditsToUnits(credits, y.cost))} ${YIELD_LINE[capability]}` : "";
-};
 
 const SEAT_ADDON: SeatAddon = { creditsPerSeat: 200, max: 10, prices: { monthly: 39, annual: 351 } };
 
@@ -72,11 +62,11 @@ const PLANS: Plan[] = [
       { credits: 400, prices: { monthly: 79, annual: 711 } },
     ],
     featuresIntro: "Key features",
-    features: (credits) => [
-      { title: "Social & content", items: [yieldLine("Social posts", credits), "Post to 19 channels from one calendar", "Images, carousels & TikTok slideshows", "Ad and content inspiration from top brands"] },
-      { title: "SEO / GEO", items: [yieldLine("SEO / GEO", credits), "Articles written to rank on Google and in AI answers"] },
-      { title: "Strategy & insights", items: ["Learns your brand from your website", "Weekly insights & performance dashboard", "Learns what works from your results"] },
-      { title: "Integrations", items: ["Use Loraloop inside Claude & ChatGPT", "Shopify & Google Analytics"] },
+    features: [
+      { title: "SEO & GEO", items: ["SEO articles you approve", "Optimized for AI answers"] },
+      { title: "Strategy & insights", items: ["Plan built on your data", "Learns from every result", "Daily briefing from Lora", "Performance dashboard"] },
+      { title: "Social & content", items: ["19 channels, one calendar", "Brand knowledge base", "AI videos & TikTok slideshows", "Ad & post inspiration"] },
+      { title: "Integrations", items: ["Claude & ChatGPT (MCP)", "Shopify & Google Analytics"] },
     ],
   },
   {
@@ -92,12 +82,14 @@ const PLANS: Plan[] = [
       { credits: 1100, prices: { monthly: 159, annual: 1431 } },
     ],
     featuresIntro: "Everything in Starter, plus",
-    features: (credits) => [
-      { title: "Paid ads: Google, Meta, TikTok & LinkedIn", items: [yieldLine("Ads", credits), "Ads go live only when you approve", "Keeps spend on budget and flags tired ads and wasted spend", "Daily ads report and a look at competitors' ads", "A/B tests and auto-pause rules"] },
-      { title: "Video studio", items: ["Video ad studio", "AI video clips up to 8 s"] },
-      { title: "Advanced SEO", items: [yieldLine("SEO / GEO", credits), "Site health checks and auto-publishing to WordPress or Webflow"] },
-      { title: "Team", items: ["2 seats included, add more anytime", "Team roles", "Scheduled reports by email, Slack & Teams"] },
-      { title: "Email marketing", items: ["Email campaigns written in your brand voice", "Send and schedule through Mailchimp or Klaviyo"] },
+    features: [
+      { title: "Paid ads", items: ["Google, Meta, TikTok, LinkedIn", "Spend caps & tired-ad alerts", "Live only after you approve"] },
+      { title: "Email marketing", items: ["Mailchimp & Klaviyo", "Campaigns in your brand voice"] },
+      { title: "Advanced SEO", items: ["Technical site checks", "WordPress & Webflow publishing"] },
+      { title: "Market intelligence", items: ["Competitor ad tracking", "Daily ads report"] },
+      { title: "Quality checks", items: ["Brand check on every ad", "Scheduled campaign reviews"] },
+      { title: "Team", items: ["Team seats & roles", "Slack, Teams & Discord updates"] },
+      { title: "Video studio", items: ["Product video ads", "AI presenter ads"] },
     ],
   },
   {
@@ -113,19 +105,29 @@ const PLANS: Plan[] = [
       { credits: 4000, prices: { monthly: 399, annual: 3591 } },
     ],
     featuresIntro: "Everything in Pro, plus",
-    features: (credits) => [
-      { title: "For agencies", items: ["Unlimited client brands", "Check every client's ads in one view", "Client-ready reports on a schedule"] },
-      { title: "More room to grow", items: [yieldLine("Ads", credits), "AI video clips up to 10 s", "5 seats included, add more anytime"] },
+    features: [
+      { title: "For agencies", items: ["Unlimited brands", "A workspace per client", "All-client ads view"] },
+      { title: "Client reporting", items: ["Scheduled client reports", "Sent straight to clients"] },
+      { title: "More room to grow", items: ["More credits, top-ups anytime"] },
       { title: "Support", items: ["Priority support"] },
     ],
   },
 ];
 
 const ENTERPRISE_FEATURES: FeatureGroup[] = [
-  { title: "Built around your team", items: ["Credit volume sized to your team", "Unlimited brands and seats"] },
-  { title: "Your stack", items: ["Custom integrations & API"] },
-  { title: "Expert help", items: ["A dedicated success manager", "Hands-on onboarding for your team"] },
-  { title: "Control & support", items: ["Approval rules for every brand and teammate", "Agreed response times (SLA)"] },
+  {
+    title: "Your agent team",
+    chips: [
+      { name: "Lora", role: "Strategy & social" },
+      { name: "Angie", role: "Paid ads" },
+      { name: "Sophie", role: "SEO & GEO" },
+      { name: "Clara", role: "Email" },
+    ],
+    items: ["Lora leads, specialists deliver", "Top-tier AI models"],
+  },
+  { title: "Your stack", items: ["Custom integrations & API", "Agents in your Slack or Teams"] },
+  { title: "Expert help", items: ["Brand voice tuned to you", "Your own success manager", "Hands-on onboarding"] },
+  { title: "Governance", items: ["Unlimited brands and seats", "Approval rules per brand", "Response-time SLA"] },
 ];
 
 const BILLING_OPTS: { id: BillingPeriod; label: string; badge?: string }[] = [
@@ -188,6 +190,16 @@ function Features({ intro, groups }: { intro: string; groups: FeatureGroup[] }) 
       {groups.map((group) => (
         <div key={group.title} className="flex flex-col gap-1.5">
           <p style={sat} className="text-[13px] text-[#E5E7EB]">{group.title}</p>
+          {group.chips && (
+            <div className="flex flex-wrap gap-1.5 pb-0.5">
+              {group.chips.map((chip) => (
+                <span key={chip.name} style={{ ...gen, fontWeight: 500 }}
+                  className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[12px] leading-[16px] text-[#9CA3AF]">
+                  <span className="font-semibold text-[#E5E7EB]">{chip.name}</span> · {chip.role}
+                </span>
+              ))}
+            </div>
+          )}
           {group.items.map((f) => (
             <div key={f} className="flex items-start gap-2">
               <CheckIcon />
@@ -366,7 +378,7 @@ export default function PricingSection({
                       <p style={gen} className="text-[12px] text-[#9CA3AF] text-center leading-[16px]">No card needed · cancel anytime</p>
                     </div>
 
-                    <Features intro={plan.featuresIntro} groups={plan.features(credits)} />
+                    <Features intro={plan.featuresIntro} groups={plan.features} />
                   </div>
                 </div>
               );
