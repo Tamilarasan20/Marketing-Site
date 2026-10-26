@@ -130,6 +130,7 @@ export default function Header() {
             </span>
           </Link>
           <Link
+            data-ml-goal="pricing_view"
             to="/pricing"
             className="flex items-center justify-center px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-black/5"
           >
@@ -186,6 +187,7 @@ export default function Header() {
                 </span>
               </a>
               <a
+                data-ml-goal="signup_click" data-ml-goal-location="header"
                 href={`https://app.loraloop.com/signup?lang=${typeof window !== 'undefined' ? (localStorage.getItem('loraloop_language') ?? 'en') : 'en'}`}
                 className="bg-[#1877f2] hover:bg-[#1565c0] active:bg-[#1256b0] transition-colors duration-150 rounded-full px-3 md:px-5 py-2 flex items-center justify-center"
               >

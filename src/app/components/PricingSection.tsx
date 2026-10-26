@@ -366,6 +366,7 @@ export default function PricingSection({
                     {/* CTA — every account starts with the free trial */}
                     <div className="flex flex-col gap-1.5">
                       <a
+                        data-ml-goal="start_trial" data-ml-goal-plan={plan.id}
                         href={TRIAL_URL}
                         style={sat}
                         className={`w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] transition-all ${
@@ -427,7 +428,7 @@ export default function PricingSection({
                     </div>
                     <p style={gen} className="mt-1 text-[12px] text-[#9CA3AF] leading-[16px]">Sized to your team and brands</p>
                   </div>
-                  <a href="/contact" style={sat}
+                  <a href="/contact" data-ml-goal="book_demo" data-ml-goal-location="pricing_enterprise" style={sat}
                     className="w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] bg-white text-black hover:bg-gray-200 transition-all">
                     Contact sales
                   </a>

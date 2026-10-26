@@ -99,6 +99,7 @@ export default function WaitlistForm() {
       </div>
 
       <button
+        data-ml-goal="signup_click" data-ml-goal-location="waitlist_form"
         type="submit"
         disabled={!isValid}
         aria-disabled={!isValid}
