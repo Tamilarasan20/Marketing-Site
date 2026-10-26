@@ -15,8 +15,7 @@ export default function Layout() {
     // tagged with data-ml-goal are already counted by the tracker itself.
     const signupGoal = (el: HTMLElement) => {
       if (el.closest("[data-ml-goal]")) return;
-      const w = window as Window & { minilytics?: (...args: unknown[]) => void };
-      w.minilytics?.("goal", "signup_click", { location: "text_match" });
+      window.minilytics?.("goal", "signup_click", { location: "text_match" });
     };
     const handleClick = (e: MouseEvent) => {
       let current = e.target as HTMLElement | null;
