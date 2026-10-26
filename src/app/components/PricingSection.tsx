@@ -63,10 +63,10 @@ const PLANS: Plan[] = [
     ],
     featuresIntro: "Key features",
     features: [
-      { title: "SEO / GEO", items: ["SEO articles that wait for your OK before going live", "Written to be quoted in AI answers"] },
-      { title: "Strategy & insights", items: ["A marketing plan based on your own numbers", "Gets sharper with every result", "A daily briefing from Lora", "Live performance dashboard"] },
-      { title: "Social & content", items: ["Posts for 19 channels on one calendar", "Brand knowledge base built from your site", "Short AI videos, carousels and TikTok slideshows", "Ad and post inspiration from top brands"] },
-      { title: "Integrations", items: ["Work with Loraloop from Claude or ChatGPT", "Shopify & Google Analytics"] },
+      { title: "SEO & GEO", items: ["SEO articles you approve", "Optimized for AI answers"] },
+      { title: "Strategy & insights", items: ["Plan built on your data", "Learns from every result", "Daily briefing from Lora", "Performance dashboard"] },
+      { title: "Social & content", items: ["19 channels, one calendar", "Brand knowledge base", "AI videos & TikTok slideshows", "Ad & post inspiration"] },
+      { title: "Integrations", items: ["Claude & ChatGPT (MCP)", "Shopify & Google Analytics"] },
     ],
   },
   {
@@ -83,13 +83,13 @@ const PLANS: Plan[] = [
     ],
     featuresIntro: "Everything in Starter, plus",
     features: [
-      { title: "Paid ads: Google, Meta, TikTok & LinkedIn", items: ["Spend caps that protect your budget", "Flags tired creatives and wasted spend", "Ads go live only when you approve"] },
-      { title: "Email marketing", items: ["Campaigns and flows in Mailchimp or Klaviyo", "Email campaigns written in your brand voice"] },
-      { title: "Advanced SEO", items: ["Technical site health checks", "Auto-publish to WordPress or Webflow"] },
-      { title: "Market intelligence", items: ["Competitor ad tracking with alerts", "Daily ads report with clear next steps"] },
-      { title: "Built-in quality checks", items: ["Every ad checked against your brand before review", "Scheduled campaign reviews by Angie"] },
-      { title: "Team", items: ["Shared team workspace, add seats anytime", "Updates in Slack, Teams or Discord"] },
-      { title: "Video studio", items: ["Product video ads from your own photos", "Presenter-led ads with AI presenters"] },
+      { title: "Paid ads", items: ["Google, Meta, TikTok, LinkedIn", "Spend caps & tired-ad alerts", "Live only after you approve"] },
+      { title: "Email marketing", items: ["Mailchimp & Klaviyo", "Campaigns in your brand voice"] },
+      { title: "Advanced SEO", items: ["Technical site checks", "WordPress & Webflow publishing"] },
+      { title: "Market intelligence", items: ["Competitor ad tracking", "Daily ads report"] },
+      { title: "Quality checks", items: ["Brand check on every ad", "Scheduled campaign reviews"] },
+      { title: "Team", items: ["Team seats & roles", "Slack, Teams & Discord updates"] },
+      { title: "Video studio", items: ["Product video ads", "AI presenter ads"] },
     ],
   },
   {
@@ -106,9 +106,9 @@ const PLANS: Plan[] = [
     ],
     featuresIntro: "Everything in Pro, plus",
     features: [
-      { title: "For agencies", items: ["Unlimited brands from one login", "A separate workspace for every client", "Check every client's ads in one view"] },
-      { title: "Client reporting", items: ["Client-ready reports on a schedule", "Reports sent straight to each client"] },
-      { title: "More room to grow", items: ["Bigger credit pools, plus top-ups any time"] },
+      { title: "For agencies", items: ["Unlimited brands", "A workspace per client", "All-client ads view"] },
+      { title: "Client reporting", items: ["Scheduled client reports", "Sent straight to clients"] },
+      { title: "More room to grow", items: ["More credits, top-ups anytime"] },
       { title: "Support", items: ["Priority support"] },
     ],
   },
@@ -116,18 +116,18 @@ const PLANS: Plan[] = [
 
 const ENTERPRISE_FEATURES: FeatureGroup[] = [
   {
-    title: "Your full agent team",
+    title: "Your agent team",
     chips: [
       { name: "Lora", role: "Strategy & social" },
       { name: "Angie", role: "Paid ads" },
       { name: "Sophie", role: "SEO & GEO" },
       { name: "Clara", role: "Email" },
     ],
-    items: ["Lora runs the plan, each specialist owns a channel", "Top-tier AI models on every task"],
+    items: ["Lora leads, specialists deliver", "Top-tier AI models"],
   },
-  { title: "Your stack", items: ["Custom integrations & API", "Agents inside your own Slack or Teams"] },
-  { title: "Expert help", items: ["Brand voice tuned on your own content", "A dedicated success manager", "Hands-on onboarding for your team"] },
-  { title: "Governance", items: ["Unlimited brands and seats", "Approval rules for every brand and teammate", "Agreed response times (SLA)"] },
+  { title: "Your stack", items: ["Custom integrations & API", "Agents in your Slack or Teams"] },
+  { title: "Expert help", items: ["Brand voice tuned to you", "Your own success manager", "Hands-on onboarding"] },
+  { title: "Governance", items: ["Unlimited brands and seats", "Approval rules per brand", "Response-time SLA"] },
 ];
 
 const BILLING_OPTS: { id: BillingPeriod; label: string; badge?: string }[] = [
