@@ -35,7 +35,7 @@ export default function CreditUsageBlock({
             Credit Usage
           </span>
         </div>
-        <h2 style={sat} className="text-[28px] sm:text-[32px] text-white tracking-[-0.6px] leading-tight">
+        <h2 style={sat} className="text-[28px] sm:text-[32px] text-white tracking-[-0.15px] leading-tight">
           One credit system, no surprises
         </h2>
         <p style={gen} className="max-w-[560px] text-[16px] text-[#9CA3AF] leading-relaxed">
