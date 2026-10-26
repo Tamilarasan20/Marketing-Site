@@ -85,7 +85,7 @@ const PLANS: Plan[] = [
     features: [
       { title: "Paid ads", items: ["Google, Meta, TikTok, LinkedIn", "Spend caps & tired-ad alerts", "Live only after you approve"] },
       { title: "Email marketing", items: ["Mailchimp & Klaviyo", "Campaigns in your brand voice"] },
-      { title: "Advanced SEO", items: ["Technical site checks", "WordPress & Webflow publishing"] },
+      { title: "Advanced SEO", items: ["Technical site checks", "WordPress & Webflow"] },
       { title: "Market intelligence", items: ["Competitor ad tracking", "Daily ads report"] },
       { title: "Quality checks", items: ["Brand check on every ad", "Scheduled campaign reviews"] },
       { title: "Team", items: ["Team seats & roles", "Slack, Teams & Discord updates"] },
@@ -230,13 +230,14 @@ export default function PricingSection({
     setSelection((prev) => ({ ...prev, [plan.id]: { ...selectionOf(plan), ...change } }));
 
   return (
-    <section className={`bg-black ${className}`}>
+    // Slightly open letter spacing for the whole section; elements with their own tracking override it.
+    <section className={`bg-black ${className}`} style={{ letterSpacing: "0.02em" }}>
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 xl:px-[46px] pt-[40px] pb-[80px]">
         <div className="flex flex-col items-center gap-[42px]">
 
           {/* Title */}
           <div className="flex flex-col items-center gap-3 text-center">
-            <h2 style={sat} className="text-[36px] md:text-[44px] text-white tracking-[-0.8px] leading-tight">
+            <h2 style={sat} className="text-[36px] md:text-[44px] text-white tracking-[-0.2px] leading-tight">
               Pricing
             </h2>
             <p style={gen} className="max-w-[560px] text-[16px] text-[#9CA3AF] leading-relaxed">
@@ -269,7 +270,7 @@ export default function PricingSection({
                   type="button"
                   onClick={() => setPeriod(opt.id)}
                   style={sat}
-                  className={`flex-1 h-[34px] px-3 sm:px-4 rounded-[8px] text-[14px] sm:text-[15px] tracking-[0.21px] whitespace-nowrap transition-all ${
+                  className={`flex-1 h-[34px] px-3 sm:px-4 rounded-[8px] text-[14px] sm:text-[15px] tracking-[0.35px] whitespace-nowrap transition-all ${
                     period === opt.id ? "bg-[#1877F2] text-white" : "text-white hover:bg-white/5"
                   }`}
                 >
@@ -314,7 +315,7 @@ export default function PricingSection({
                     {/* Badge + name + desc */}
                     <div>
                       {plan.badge && <PlanBadge label={plan.badge} />}
-                      <p style={sat} className="text-[17px] text-white tracking-[0.21px] leading-[22px]">{plan.name}</p>
+                      <p style={sat} className="text-[17px] text-white tracking-[0.35px] leading-[22px]">{plan.name}</p>
                       <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[19px]">{plan.description}</p>
                     </div>
 
@@ -325,7 +326,7 @@ export default function PricingSection({
                           <span style={sat} className="text-[16px] text-[#6B7280] line-through leading-[32px]">{formatUsd(monthly)}</span>
                         )}
                         <span style={sat} className="text-[24px] text-white leading-[32px]">{formatUsd(price)}</span>
-                        <span style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-[#6B7280] tracking-[0.4px] leading-[20px]">/mo</span>
+                        <span style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-[#6B7280] tracking-[0.5px] leading-[20px]">/mo</span>
                       </div>
                       {period === "annual" && (
                         <p style={gen} className="text-[12px] text-[#9CA3AF] leading-[16px]">Billed {formatUsd(annual)} yearly</p>
@@ -387,7 +388,7 @@ export default function PricingSection({
                 return (
                   <div key={plan.id} className={`flex flex-col items-center gap-2 ${CARD_SLOT}`}
                     style={{ background: "#1877F2", borderRadius: "16px", padding: "8px 2px 2px" }}>
-                    <p style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-white tracking-[0.4px] leading-[18px]">Most popular</p>
+                    <p style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-white tracking-[0.5px] leading-[18px]">Most popular</p>
                     <div className="w-full overflow-hidden flex-1"
                       style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "14px" }}>
                       {cardInner}
@@ -412,7 +413,7 @@ export default function PricingSection({
                 <div className="flex flex-col gap-5 pt-4 px-5 pb-6">
                   <div>
                     <PlanBadge label="Tailored" />
-                    <p style={sat} className="text-[17px] text-white tracking-[0.21px] leading-[22px]">Enterprise</p>
+                    <p style={sat} className="text-[17px] text-white tracking-[0.35px] leading-[22px]">Enterprise</p>
                     <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[19px]">For larger teams with many brands or custom needs.</p>
                   </div>
                   <div className="flex flex-col gap-1">

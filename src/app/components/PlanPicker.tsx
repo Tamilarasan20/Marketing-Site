@@ -119,7 +119,7 @@ export default function PlanPicker({ label, value, options, onChange }: {
 
   return (
     <div className="flex flex-col gap-1">
-      <span id={`${id}-label`} style={font} className="text-[12px] uppercase tracking-[0.6px] text-[#9CA3AF]">
+      <span id={`${id}-label`} style={font} className="text-[12px] uppercase tracking-[0.75px] text-[#9CA3AF]">
         {label}
       </span>
       {fixed ? (
@@ -153,6 +153,7 @@ export default function PlanPicker({ label, value, options, onChange }: {
           onKeyDown={onListKey}
           style={{
             ...font,
+            letterSpacing: "0.02em",
             position: "fixed",
             left: place.left,
             top: place.top,
