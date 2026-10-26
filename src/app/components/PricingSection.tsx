@@ -1,134 +1,164 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Sparkles } from "lucide-react";
 import imgAgentBanner from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
 import CreditUsageBlock from "./CreditUsageBlock";
+import PlanPicker from "./PlanPicker";
 import { CREDIT_YIELDS, creditsToUnits } from "../data/creditCosts";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type BillingPeriod = "monthly" | "annual";
 
 interface Tier {
-  /** Monthly AI credits — per seat on a per-seat plan. */
+  /** Monthly AI credits. */
   credits: number;
-  /** USD: monthly = per month; annual = per year (10× monthly, 2 months free). */
+  /** USD: monthly = per month; annual = per year (25% off: 12 × monthly × 0.75). */
+  prices: { monthly: number; annual: number };
+}
+
+/** Extra team seats on Pro and Scale, as Enrich Labs: +200 credits a seat. */
+interface SeatAddon {
+  creditsPerSeat: number;
+  max: number;
   prices: { monthly: number; annual: number };
 }
 
 interface FeatureGroup {
   title: string;
   items: string[];
-  comingSoon?: boolean;
 }
 
 interface Plan {
   /** App plan key (Pro is GROWTH in the app). */
-  id: string;
+  id: "STARTER" | "GROWTH" | "SCALE";
   name: string;
+  badge?: string;
   description: string;
+  /** Seats · brands line under the price. */
+  meta: string;
   highlighted?: boolean;
-  /** Priced per seat; the seat count is carried to the app checkout. */
-  perSeat?: { min: number; max: number };
+  seatAddon?: SeatAddon;
   tiers: Tier[];
-  featuresIntro?: string;
+  featuresIntro: string;
   features: (credits: number) => FeatureGroup[];
 }
 
 const fmtNum = (n: number) => n.toLocaleString("en-US");
 
-const yieldLine = (capability: string, credits: number) => {
-  const y = CREDIT_YIELDS.find((c) => c.capability === capability);
-  return y ? `~${fmtNum(creditsToUnits(credits, y.cost))} ${y.label.toLowerCase()} / month` : "";
+const YIELD_LINE: Record<string, string> = {
+  "Ads": "ready-to-launch ads a month",
+  "Social posts": "posts with images a month",
+  "SEO / GEO": "SEO articles a month",
 };
 
-/** The capability split every plan shares: Ads, Social posts, SEO/GEO, Email (coming soon). */
-function capabilityGroups(
-  credits: number,
-  extra: { ads?: string[]; social?: string[]; seo?: string[] } = {},
-): FeatureGroup[] {
-  return [
-    { title: "Ads", items: [yieldLine("Ads", credits), ...(extra.ads ?? [])] },
-    { title: "Social posts", items: [yieldLine("Social posts", credits), ...(extra.social ?? [])] },
-    { title: "SEO / GEO", items: [yieldLine("SEO / GEO", credits), ...(extra.seo ?? [])] },
-    { title: "Email marketing", items: ["Coming soon"], comingSoon: true },
-  ];
-}
+const yieldLine = (capability: string, credits: number) => {
+  const y = CREDIT_YIELDS.find((c) => c.capability === capability);
+  return y ? `~${fmtNum(creditsToUnits(credits, y.cost))} ${YIELD_LINE[capability]}` : "";
+};
 
-// ─── Plan data — mirrors apps/web/src/features/billing/lib/plans.ts exactly ───
+const SEAT_ADDON: SeatAddon = { creditsPerSeat: 200, max: 10, prices: { monthly: 39, annual: 351 } };
+
+// ─── Plan data — mirrors apps/web/src/features/billing/lib/plans.ts in Loraloop-Main-App ───
+// Starter is social, content and SEO/GEO only; paid ads and email marketing start on Pro.
 const PLANS: Plan[] = [
   {
     id: "STARTER",
     name: "Starter",
-    description: "One brand, one marketer: get ads, social and SEO content live",
-    tiers: [{ credits: 300, prices: { monthly: 39, annual: 390 } }],
+    badge: "Essentials",
+    description: "For founders and small brands growing on social and search.",
+    meta: "1 seat · 3 brands",
+    tiers: [
+      { credits: 200, prices: { monthly: 39, annual: 351 } },
+      { credits: 300, prices: { monthly: 59, annual: 531 } },
+      { credits: 400, prices: { monthly: 79, annual: 711 } },
+    ],
+    featuresIntro: "Key features",
     features: (credits) => [
-      ...capabilityGroups(credits, {
-        ads: ["Ad animation", "Basic competitor ad tracking"],
-        social: ["Scheduling & content calendar"],
-        seo: ["Keyword research & AI search (GEO) optimisation"],
-      }),
-      { title: "Team", items: ["1 seat", "3 workspaces"] },
+      { title: "Social & content", items: [yieldLine("Social posts", credits), "Post to 19 channels from one calendar", "Images, carousels & TikTok slideshows", "Ad and content inspiration from top brands"] },
+      { title: "SEO / GEO", items: [yieldLine("SEO / GEO", credits), "Articles written to rank on Google and in AI answers"] },
+      { title: "Strategy & insights", items: ["Learns your brand from your website", "Weekly insights & performance dashboard", "Learns what works from your results"] },
+      { title: "Integrations", items: ["Use Loraloop inside Claude & ChatGPT", "Shopify & Google Analytics"] },
     ],
   },
   {
     id: "GROWTH",
     name: "Pro",
-    description: "Lean marketing teams running ads, social and SEO across up to 5 brands",
+    description: "For DTC and Shopify brands running paid ads.",
+    meta: "2 seats · 5 brands",
     highlighted: true,
+    seatAddon: SEAT_ADDON,
     tiers: [
-      { credits: 1000, prices: { monthly: 99,  annual: 990  } },
-      { credits: 1750, prices: { monthly: 149, annual: 1490 } },
-      { credits: 2500, prices: { monthly: 199, annual: 1990 } },
+      { credits: 700,  prices: { monthly: 99,  annual: 891 } },
+      { credits: 900,  prices: { monthly: 129, annual: 1161 } },
+      { credits: 1100, prices: { monthly: 159, annual: 1431 } },
     ],
     featuresIntro: "Everything in Starter, plus",
     features: (credits) => [
-      ...capabilityGroups(credits),
-      { title: "Team", items: ["Collaborative brand boards", "Multi-seat team access (5 seats)", "5 workspaces"] },
+      { title: "Paid ads: Google, Meta, TikTok & LinkedIn", items: [yieldLine("Ads", credits), "Ads go live only when you approve", "Keeps spend on budget and flags tired ads and wasted spend", "Daily ads report and a look at competitors' ads", "A/B tests and auto-pause rules"] },
+      { title: "Video studio", items: ["Video ad studio", "AI video clips up to 8 s"] },
+      { title: "Advanced SEO", items: [yieldLine("SEO / GEO", credits), "Site health checks and auto-publishing to WordPress or Webflow"] },
+      { title: "Team", items: ["2 seats included, add more anytime", "Team roles", "Scheduled reports by email, Slack & Teams"] },
+      { title: "Email marketing", items: ["Email campaigns written in your brand voice", "Send and schedule through Mailchimp or Klaviyo"] },
     ],
   },
   {
-    id: "ENTERPRISE",
-    name: "Enterprise",
-    description: "Multi-brand operations that need custom integrations and unlimited workspaces",
-    perSeat: { min: 3, max: 500 },
-    tiers: [{ credits: 1000, prices: { monthly: 99, annual: 990 } }],
+    id: "SCALE",
+    name: "Scale",
+    badge: "Multi-brand",
+    description: "For agencies and teams running many brands.",
+    meta: "5 seats · unlimited brands",
+    seatAddon: SEAT_ADDON,
+    tiers: [
+      { credits: 2000, prices: { monthly: 199, annual: 1791 } },
+      { credits: 3000, prices: { monthly: 299, annual: 2691 } },
+      { credits: 4000, prices: { monthly: 399, annual: 3591 } },
+    ],
     featuresIntro: "Everything in Pro, plus",
     features: (credits) => [
-      ...capabilityGroups(credits),
-      { title: "Team & platform", items: ["1,000 AI credits per seat", "Custom platform integrations", "Unlimited workspaces", "Priority support"] },
+      { title: "For agencies", items: ["Unlimited client brands", "Check every client's ads in one view", "Client-ready reports on a schedule"] },
+      { title: "More room to grow", items: [yieldLine("Ads", credits), "AI video clips up to 10 s", "5 seats included, add more anytime"] },
+      { title: "Support", items: ["Priority support"] },
     ],
   },
 ];
 
+const ENTERPRISE_FEATURES: FeatureGroup[] = [
+  { title: "Built around your team", items: ["Credit volume sized to your team", "Unlimited brands and seats"] },
+  { title: "Your stack", items: ["Custom integrations & API"] },
+  { title: "Expert help", items: ["A dedicated success manager", "Hands-on onboarding for your team"] },
+  { title: "Control & support", items: ["Approval rules for every brand and teammate", "Agreed response times (SLA)"] },
+];
+
 const BILLING_OPTS: { id: BillingPeriod; label: string; badge?: string }[] = [
   { id: "monthly", label: "Monthly" },
-  { id: "annual",  label: "Annual", badge: "2 months free" },
+  { id: "annual",  label: "Annual", badge: "Save 25%" },
 ];
 
 const formatUsd = (n: number) => `$${n % 1 !== 0 ? n.toFixed(2) : fmtNum(n)}`;
 
 const APP_URL = "https://app.loraloop.com";
+// New accounts start a 3-day free trial with no card; plans are picked in the app.
+const TRIAL_URL = `${APP_URL}/signup`;
+
+// One row of four cards: side by side from lg up; narrower screens swipe the row.
+const CARD_SLOT = "snap-start shrink-0 w-[84%] max-w-[340px] sm:w-[300px] lg:w-auto lg:max-w-none";
+
+const sat = { fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 } as const;
+const gen = { fontFamily: "General Sans, Inter, sans-serif" } as const;
 
 // ─── Agent banner card header ─────────────────────────────────────────────────
 function CardHeader() {
   return (
-    <div className="relative h-[150px] w-full shrink-0 overflow-hidden">
+    <div className="relative h-[110px] w-full shrink-0 overflow-hidden">
       <img loading="lazy" decoding="async"
         src={imgAgentBanner}
         alt="AI Agent team"
         className="absolute inset-0 w-full h-full object-cover object-top"
         draggable={false}
       />
-      {/* Side vignette */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "linear-gradient(to right, #131313 0%, transparent 20%, transparent 80%, #131313 100%)",
-        }}
-      />
-      {/* Bottom fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-14"
-        style={{ background: "linear-gradient(to top, #131313 0%, transparent 100%)" }}
-      />
+      <div className="absolute inset-0"
+        style={{ background: "linear-gradient(to right, #131313 0%, transparent 20%, transparent 80%, #131313 100%)" }} />
+      <div className="absolute bottom-0 left-0 right-0 h-14"
+        style={{ background: "linear-gradient(to top, #131313 0%, transparent 100%)" }} />
     </div>
   );
 }
@@ -136,81 +166,36 @@ function CardHeader() {
 // ─── SVG checkmark (Figma style) ─────────────────────────────────────────────
 function CheckIcon() {
   return (
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="flex-shrink-0 mt-[1px]">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="flex-shrink-0 mt-[3px]">
       <path d="M2.5 6.5L4.5 8.5L9.5 3.5" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-// ─── Credit chips (3 pills per card) ─────────────────────────────────────────
-function CreditChips({ plan, tierIdx, onChange }: {
-  plan: Plan;
-  tierIdx: number;
-  onChange: (i: number) => void;
-}) {
-  const fmt = (c: number) => c >= 1000 ? `${c / 1000}k` : `${c}`;
+function PlanBadge({ label }: { label: string }) {
   return (
-    <div className="flex flex-col items-center gap-2 w-full">
-      <p style={{ fontFamily: "General Sans, Inter, sans-serif" }} className="text-[15px] text-[#9CA3AF] leading-[20px]">
-        Monthly credits
-      </p>
-      <div className="flex items-center gap-1.5 w-full">
-        {plan.tiers.map((t, i) => {
-          const active = i === tierIdx;
-          return (
-            <button
-              key={i}
-              type="button"
-              onClick={() => onChange(i)}
-              style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-              className={`flex-1 py-[6px] rounded-[8px] text-[15px] tracking-[0.2px] border transition-all ${
-                active
-                  ? "border-white/20 text-[#D1D5DB] bg-white/[0.06]"
-                  : "border-white/[0.07] text-[#6B7280] hover:text-[#9CA3AF] hover:border-white/15"
-              }`}
-            >
-              {fmt(t.credits)}
-            </button>
-          );
-        })}
-      </div>
-    </div>
+    <span style={{ ...gen, fontWeight: 500 }}
+      className="inline-block mb-2 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[11px] text-[#9CA3AF]">
+      {label}
+    </span>
   );
 }
 
-// ─── Seat picker — per-seat plans (Enterprise) ───────────────────────────────
-function SeatPicker({ plan, seats, onChange }: {
-  plan: Plan;
-  seats: number;
-  onChange: (n: number) => void;
-}) {
-  const { min, max } = plan.perSeat!;
-  const set = (n: number) => onChange(Math.max(min, Math.min(max, Math.round(n) || min)));
-  // Typed value is clamped on blur/Enter, so "12" isn't clamped at the "1".
-  const [draft, setDraft] = useState(String(seats));
-  useEffect(() => setDraft(String(seats)), [seats]);
-  const commit = () => { set(Number(draft)); setDraft(String(seats)); };
-  const btn = "h-[34px] w-[40px] flex items-center justify-center rounded-[8px] border border-white/[0.07] text-[#9CA3AF] text-[18px] hover:border-white/15 disabled:opacity-40";
+function Features({ intro, groups }: { intro: string; groups: FeatureGroup[] }) {
   return (
-    <div className="flex flex-col items-center gap-2 w-full">
-      <p style={{ fontFamily: "General Sans, Inter, sans-serif" }} className="text-[15px] text-[#9CA3AF] leading-[20px]">
-        Seats (min {min})
-      </p>
-      <div className="flex items-center gap-1.5 w-full">
-        <button type="button" onClick={() => set(seats - 1)} disabled={seats <= min} aria-label="Remove a seat" className={btn}>−</button>
-        <input
-          type="number" min={min} max={max} value={draft} aria-label="Seats"
-          onChange={(e) => setDraft(e.target.value)}
-          onBlur={commit}
-          onKeyDown={(e) => { if (e.key === "Enter") commit(); }}
-          style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-          className="flex-1 min-w-0 h-[34px] rounded-[8px] border border-white/20 bg-white/[0.06] text-center text-[15px] text-[#D1D5DB] [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-        />
-        <button type="button" onClick={() => set(seats + 1)} disabled={seats >= max} aria-label="Add a seat" className={btn}>+</button>
-      </div>
-      <p style={{ fontFamily: "General Sans, Inter, sans-serif" }} className="text-[13px] text-[#6B7280] leading-[18px]">
-        {fmtNum(plan.tiers[0].credits * seats)} AI credits / month
-      </p>
+    <div className="flex flex-col gap-4">
+      <p style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-[#9CA3AF] leading-[18px]">{intro}</p>
+      {groups.map((group) => (
+        <div key={group.title} className="flex flex-col gap-1.5">
+          <p style={sat} className="text-[13px] text-[#E5E7EB]">{group.title}</p>
+          {group.items.map((f) => (
+            <div key={f} className="flex items-start gap-2">
+              <CheckIcon />
+              <span style={{ ...gen, fontWeight: 500 }} className="text-[14px] leading-[19px] text-[#D1D5DB]">{f}</span>
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
@@ -226,220 +211,171 @@ export default function PricingSection({
   showCreditUsage?: boolean;
 }) {
   const [period, setPeriod] = useState<BillingPeriod>("monthly");
-  const [selectedTiers, setSelectedTiers] = useState<Record<string, number>>({
-    STARTER: 0, GROWTH: 0, ENTERPRISE: 0,
-  });
-  const [seats, setSeats] = useState<Record<string, number>>(() =>
-    Object.fromEntries(PLANS.filter((p) => p.perSeat).map((p) => [p.id, p.perSeat!.min])),
-  );
-  const [pendingPlanId, setPendingPlanId] = useState<string | null>(null);
-
-  function handleGetStarted(plan: Plan) {
-    if (pendingPlanId === plan.id) return;
-    setPendingPlanId(plan.id);
-    const tierIdx = selectedTiers[plan.id] ?? 0;
-    const url = new URL(`${APP_URL}/pricing`);
-    url.searchParams.set("plan", plan.id);
-    url.searchParams.set("tier", String(tierIdx));
-    url.searchParams.set("period", period);
-    if (plan.perSeat) url.searchParams.set("seats", String(seats[plan.id] ?? plan.perSeat.min));
-    window.location.href = url.toString();
-  }
+  // Credit tier + extra seats picked on each card, keyed by plan id.
+  const [selection, setSelection] = useState<Record<string, { tierIdx: number; extraSeats: number }>>({});
+  const selectionOf = (plan: Plan) => selection[plan.id] ?? { tierIdx: 0, extraSeats: 0 };
+  const pick = (plan: Plan, change: Partial<{ tierIdx: number; extraSeats: number }>) =>
+    setSelection((prev) => ({ ...prev, [plan.id]: { ...selectionOf(plan), ...change } }));
 
   return (
     <section className={`bg-black ${className}`}>
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-20 pt-[40px] pb-[80px]">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 xl:px-[46px] pt-[40px] pb-[80px]">
         <div className="flex flex-col items-center gap-[42px]">
 
           {/* Title */}
           <div className="flex flex-col items-center gap-3 text-center">
-            <h2
-              style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-              className="text-[44px] text-white tracking-[-0.8px] leading-[52px]"
-            >
+            <h2 style={sat} className="text-[36px] md:text-[44px] text-white tracking-[-0.8px] leading-tight">
               Pricing
             </h2>
-            <p
-              style={{ fontFamily: "General Sans, Inter, sans-serif" }}
-              className="max-w-[560px] text-[16px] md:text-[18px] text-[#9CA3AF] leading-relaxed"
-            >
-              A full AI marketing team for less than a week of an agency retainer. Start free, no credit card, cancel anytime.
+            <p style={gen} className="max-w-[560px] text-[16px] text-[#9CA3AF] leading-relaxed">
+              Your AI marketing team for ads, social and SEO. Start with a 3-day free trial: no card needed, cancel anytime.
             </p>
           </div>
 
-          {/* Controls */}
-          <div className="flex flex-col items-center gap-4">
-
-            {/* Billing period toggle — the "2 months free" badge floats above the
-                option so the two pills (Monthly / Annual) always stay on one line */}
-            <div className="relative pt-4">
-              {/* Floating Save badges above each option */}
-              <div className="absolute -top-0 left-0 right-0 flex items-center gap-[2px] px-[2px] pointer-events-none">
-                {BILLING_OPTS.map((opt) => (
-                  <div key={opt.id} className="flex-1 flex justify-center">
-                    {opt.badge ? (
-                      <span style={{
-                        fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500,
-                        background: "#151109", border: "0.749px solid rgba(213,165,91,0.4)",
-                        color: "#D5A55B", fontSize: "11px", padding: "3px 8px",
-                        borderRadius: "999px", lineHeight: "1", whiteSpace: "nowrap",
-                      }}>
-                        {opt.badge}
-                      </span>
-                    ) : <span />}
-                  </div>
-                ))}
-              </div>
-              {/* Pill buttons — label only, no inline badge */}
-              <div className="flex items-center gap-[2px] border border-[#374151] rounded-[12px] px-[2px] py-[1px]">
-                {BILLING_OPTS.map((opt) => (
-                  <button
-                    key={opt.id}
-                    type="button"
-                    onClick={() => setPeriod(opt.id)}
-                    style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                    className={`flex-1 h-[36px] px-3 sm:px-4 rounded-[8px] text-[14px] sm:text-[18px] tracking-[0.21px] whitespace-nowrap transition-all ${
-                      period === opt.id ? "bg-[#1877F2] text-white" : "text-white hover:bg-white/5"
-                    }`}
-                  >
-                    {opt.label}
-                  </button>
-                ))}
-              </div>
+          {/* Billing period toggle — the "Save 25%" badge floats above Annual */}
+          <div className="relative pt-4">
+            <div className="absolute -top-0 left-0 right-0 flex items-center gap-[2px] px-[2px] pointer-events-none">
+              {BILLING_OPTS.map((opt) => (
+                <div key={opt.id} className="flex-1 flex justify-center">
+                  {opt.badge ? (
+                    <span style={{
+                      ...gen, fontWeight: 500,
+                      background: "#151109", border: "0.749px solid rgba(213,165,91,0.4)",
+                      color: "#D5A55B", fontSize: "11px", padding: "3px 8px",
+                      borderRadius: "999px", lineHeight: "1", whiteSpace: "nowrap",
+                    }}>
+                      {opt.badge}
+                    </span>
+                  ) : <span />}
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center gap-[2px] border border-[#374151] rounded-[12px] px-[2px] py-[1px]">
+              {BILLING_OPTS.map((opt) => (
+                <button
+                  key={opt.id}
+                  type="button"
+                  onClick={() => setPeriod(opt.id)}
+                  style={sat}
+                  className={`flex-1 h-[34px] px-3 sm:px-4 rounded-[8px] text-[14px] sm:text-[15px] tracking-[0.21px] whitespace-nowrap transition-all ${
+                    period === opt.id ? "bg-[#1877F2] text-white" : "text-white hover:bg-white/5"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Plan cards — Starter / Pro / Enterprise: stack on mobile, 3-up on wider
-              screens. items-stretch so every card in a row matches the tallest
-              one's height — the "Most popular" badge is what usually sets it. */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 items-stretch gap-4 w-full max-w-[1100px]">
+          {/* Plan cards — Starter / Pro / Scale / Enterprise in one row (swipes sideways below lg) */}
+          <div className="flex lg:grid lg:grid-cols-4 items-stretch gap-4 w-full overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-2 lg:pb-0">
             {PLANS.map((plan) => {
-              const tierIdx   = selectedTiers[plan.id] ?? 0;
-              const tier      = plan.tiers[tierIdx];
-              const seatCount = plan.perSeat ? (seats[plan.id] ?? plan.perSeat.min) : 1;
-              const price     = tier.prices[period];
-              const credits   = tier.credits * seatCount;
+              const { tierIdx, extraSeats } = selectionOf(plan);
+              const tier = plan.tiers[tierIdx];
+              const seatAddon = plan.seatAddon;
+              const seatCost = (p: BillingPeriod) => extraSeats * (seatAddon?.prices[p] ?? 0);
+              const monthly = tier.prices.monthly + seatCost("monthly");
+              const annual = tier.prices.annual + seatCost("annual");
+              // Annual shows its monthly equivalent; the yearly charge goes underneath.
+              const price = period === "annual" ? annual / 12 : monthly;
+              const seatCredits = extraSeats * (seatAddon?.creditsPerSeat ?? 0);
+              const credits = tier.credits + seatCredits;
+              const perMonth = (p: { monthly: number; annual: number }) => (period === "annual" ? p.annual / 12 : p.monthly);
+              const creditOptions = plan.tiers.map((t, i) => ({
+                value: i,
+                label: `${fmtNum(t.credits)} credits — ${formatUsd(perMonth(t.prices))}/mo`,
+              }));
+              const seatOptions = seatAddon
+                ? Array.from({ length: seatAddon.max + 1 }, (_, extra) => ({
+                    value: extra,
+                    label: extra === 0
+                      ? "No additional seats"
+                      : `${extra} extra seat${extra === 1 ? "" : "s"} — +${formatUsd(extra * perMonth(seatAddon.prices))}/mo (+${fmtNum(extra * seatAddon.creditsPerSeat)} credits)`,
+                  }))
+                : [{ value: 0, label: "1 seat included" }];
 
               const cardInner = (
                 <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
                   <CardHeader />
-                  <div className="flex flex-col gap-6 pt-4 px-5 pb-6">
+                  <div className="flex flex-col gap-5 pt-4 px-5 pb-6">
 
-                    {/* Name + desc */}
+                    {/* Badge + name + desc */}
                     <div>
-                      <p style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                        className="text-[18px] text-white tracking-[0.21px] leading-[24px]">
-                        {plan.name}
-                      </p>
-                      <p style={{ fontFamily: "General Sans, Inter, sans-serif" }}
-                        className="text-[16px] text-[#9CA3AF] leading-[20px]">
-                        {plan.description}
-                      </p>
+                      {plan.badge && <PlanBadge label={plan.badge} />}
+                      <p style={sat} className="text-[17px] text-white tracking-[0.21px] leading-[22px]">{plan.name}</p>
+                      <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[19px]">{plan.description}</p>
                     </div>
 
-                    {/* Price — per month, or per year on annual billing (per seat on Enterprise) */}
+                    {/* Price — per month; on annual, the monthly equivalent and the yearly charge */}
                     <div className="flex flex-col gap-1">
                       <div className="flex items-baseline gap-2">
-                        <span style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                          className="text-[24px] text-white leading-[32px]">
-                          {formatUsd(price)}
-                        </span>
-                        <span style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                          className="text-[16px] text-[#6B7280] tracking-[0.6px] leading-[20px]">
-                          {plan.perSeat ? "/seat" : ""}{period === "annual" ? "/yr" : "/mo"}
-                        </span>
+                        {period === "annual" && (
+                          <span style={sat} className="text-[16px] text-[#6B7280] line-through leading-[32px]">{formatUsd(monthly)}</span>
+                        )}
+                        <span style={sat} className="text-[24px] text-white leading-[32px]">{formatUsd(price)}</span>
+                        <span style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-[#6B7280] tracking-[0.4px] leading-[20px]">/mo</span>
                       </div>
-                      {(period === "annual" || plan.perSeat) && (
-                        <p style={{ fontFamily: "General Sans, Inter, sans-serif" }}
-                          className="text-[13px] text-[#9CA3AF] leading-[18px]">
-                          {plan.perSeat && `${formatUsd(price * seatCount)}${period === "annual" ? "/yr" : "/mo"} for ${seatCount} seats`}
-                          {plan.perSeat && period === "annual" && " · "}
-                          {period === "annual" && "2 months free vs monthly"}
-                        </p>
+                      {period === "annual" && (
+                        <p style={gen} className="text-[12px] text-[#9CA3AF] leading-[16px]">Billed {formatUsd(annual)} yearly</p>
                       )}
+                      <p style={gen} className="text-[13px] text-[#9CA3AF] leading-[18px]">{plan.meta}</p>
                     </div>
 
-                    {/* CTA */}
-                    <button
-                      type="button"
-                      onClick={() => handleGetStarted(plan)}
-                      disabled={pendingPlanId === plan.id}
-                      style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                      className={`w-full h-[44px] rounded-full text-[18px] transition-all disabled:opacity-60 ${
-                        plan.highlighted
-                          ? "bg-[#1877F2] text-white hover:bg-[#0f66d0]"
-                          : "bg-[#EEF4FF] text-[#1877F2] border border-[#D1D5DB] hover:bg-[#dce8ff]"
-                      }`}
-                    >
-                      {pendingPlanId === plan.id ? "Loading…" : "Get Started"}
-                    </button>
-
-                    {/* Credits — tier chips (Pro), seat picker (Enterprise) or a fixed allowance (Starter) */}
-                    {plan.perSeat ? (
-                      <SeatPicker
-                        plan={plan}
-                        seats={seatCount}
-                        onChange={(n) => setSeats((s) => ({ ...s, [plan.id]: n }))}
-                      />
-                    ) : plan.tiers.length > 1 ? (
-                      <CreditChips
-                        plan={plan}
-                        tierIdx={tierIdx}
-                        onChange={(i) => setSelectedTiers((s) => ({ ...s, [plan.id]: i }))}
-                      />
-                    ) : (
-                      <p style={{ fontFamily: "General Sans, Inter, sans-serif" }}
-                        className="text-[15px] text-[#9CA3AF] leading-[20px] text-center">
-                        {fmtNum(credits)} AI credits / month
+                    {/* Total AI credits a month — the plan's credits plus any extra seats' */}
+                    <div className="rounded-[12px] border border-[#1877F2]/30 bg-[#1877F2]/[0.08] px-3.5 py-3">
+                      <div className="flex items-center gap-2">
+                        <Sparkles className="h-4 w-4 shrink-0 text-[#60A5FA]" />
+                        <span style={sat} className="text-[15px] text-white leading-[20px]">{fmtNum(credits)} AI credits a month</span>
+                      </div>
+                      <p style={gen} className="mt-1 text-[12px] text-[#9CA3AF] leading-[16px]">
+                        {extraSeats > 0
+                          ? `${fmtNum(tier.credits)} plan credits + ${fmtNum(seatCredits)} from extra seats`
+                          : "Shared by your whole team, refreshed every month"}
                       </p>
-                    )}
-
-                    {plan.perSeat && (
-                      <a href="/contact"
-                        style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                        className="-mt-3 text-center text-[14px] text-[#1877F2] hover:underline">
-                        Custom integrations? Talk to sales →
-                      </a>
-                    )}
-
-                    {/* Features — split by capability: Ads, Social posts, SEO/GEO, Email (coming soon) */}
-                    <div className="flex flex-col gap-4">
-                      {plan.featuresIntro && (
-                        <p style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                          className="text-[14px] text-[#9CA3AF] leading-[18px]">
-                          {plan.featuresIntro}
-                        </p>
-                      )}
-                      {plan.features(credits).map((group) => (
-                        <div key={group.title} className="flex flex-col gap-2">
-                          <p style={{ fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 }}
-                            className="text-[13px] uppercase tracking-[0.6px] text-[#6B7280]">
-                            {group.title}
-                          </p>
-                          {group.items.map((f) => (
-                            <div key={f} className="flex items-start gap-2">
-                              <CheckIcon />
-                              <span style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                                className={`text-[16px] leading-[20px] ${group.comingSoon ? "text-[#6B7280] italic" : "text-[#D1D5DB]"}`}>
-                                {f}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      ))}
                     </div>
+
+                    {/* Monthly credits + team seats */}
+                    <div className="flex flex-col gap-2.5">
+                      <PlanPicker
+                        label="Monthly credits"
+                        value={tierIdx}
+                        options={creditOptions}
+                        onChange={(i) => pick(plan, { tierIdx: i })}
+                      />
+                      <PlanPicker
+                        label={seatAddon ? "Additional team seats" : "Team seats"}
+                        value={extraSeats}
+                        options={seatOptions}
+                        onChange={seatAddon ? (n) => pick(plan, { extraSeats: n }) : undefined}
+                      />
+                    </div>
+
+                    {/* CTA — every account starts with the free trial */}
+                    <div className="flex flex-col gap-1.5">
+                      <a
+                        href={TRIAL_URL}
+                        style={sat}
+                        className={`w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] transition-all ${
+                          plan.highlighted
+                            ? "bg-[#1877F2] text-white hover:bg-[#0f66d0]"
+                            : "bg-[#EEF4FF] text-[#1877F2] border border-[#D1D5DB] hover:bg-[#dce8ff]"
+                        }`}
+                      >
+                        Start your 3-day free trial
+                      </a>
+                      <p style={gen} className="text-[12px] text-[#9CA3AF] text-center leading-[16px]">No card needed · cancel anytime</p>
+                    </div>
+
+                    <Features intro={plan.featuresIntro} groups={plan.features(credits)} />
                   </div>
                 </div>
               );
 
               if (plan.highlighted) {
                 return (
-                  <div key={plan.id} className="flex flex-col items-center gap-2 h-full"
+                  <div key={plan.id} className={`flex flex-col items-center gap-2 ${CARD_SLOT}`}
                     style={{ background: "#1877F2", borderRadius: "16px", padding: "8px 2px 2px" }}>
-                    <p style={{ fontFamily: "General Sans, Inter, sans-serif", fontWeight: 500 }}
-                      className="text-[16px] text-white tracking-[0.6px] leading-[20px]">
-                      Most popular
-                    </p>
+                    <p style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-white tracking-[0.4px] leading-[18px]">Most popular</p>
                     <div className="w-full overflow-hidden flex-1"
                       style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "14px" }}>
                       {cardInner}
@@ -449,20 +385,56 @@ export default function PricingSection({
               }
 
               return (
-                <div key={plan.id} className="overflow-hidden h-full"
+                <div key={plan.id} className={`overflow-hidden ${CARD_SLOT}`}
                   style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
                   {cardInner}
                 </div>
               );
             })}
+
+            {/* Enterprise — sales-led, same look as the plan cards */}
+            <div className={`overflow-hidden ${CARD_SLOT}`}
+              style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
+              <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
+                <CardHeader />
+                <div className="flex flex-col gap-5 pt-4 px-5 pb-6">
+                  <div>
+                    <PlanBadge label="Tailored" />
+                    <p style={sat} className="text-[17px] text-white tracking-[0.21px] leading-[22px]">Enterprise</p>
+                    <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[19px]">For larger teams with many brands or custom needs.</p>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <span style={sat} className="text-[24px] text-white leading-[32px]">Custom</span>
+                    <p style={gen} className="text-[13px] text-[#9CA3AF] leading-[18px]">Billed annually · tailored plan</p>
+                  </div>
+                  <div className="rounded-[12px] border border-white/10 bg-white/[0.03] px-3.5 py-3">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="h-4 w-4 shrink-0 text-[#9CA3AF]" />
+                      <span style={sat} className="text-[15px] text-white leading-[20px]">Custom AI credits a month</span>
+                    </div>
+                    <p style={gen} className="mt-1 text-[12px] text-[#9CA3AF] leading-[16px]">Sized to your team and brands</p>
+                  </div>
+                  <a href="/contact" style={sat}
+                    className="w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] bg-white text-black hover:bg-gray-200 transition-all">
+                    Contact sales
+                  </a>
+                  <Features intro="Everything in Scale, plus" groups={ENTERPRISE_FEATURES} />
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* ── Credit Usage — how far each plan's credits stretch (AI plans only) ── */}
+          {/* ── Credit Usage — how far each plan's credits stretch ── */}
           {showCreditUsage && (
             <div className="w-full pt-8 mt-2 border-t border-white/[0.06]">
               <CreditUsageBlock
                 planCredits={PLANS.flatMap((p) =>
-                  p.tiers.map((t) => ({ name: p.perSeat ? `${p.name} (per seat)` : p.name, credits: t.credits })))}
+                  p.tiers.map((t) => ({
+                    name: p.name,
+                    credits: t.credits,
+                    // Starter has no paid ads or email marketing.
+                    excludes: p.id === "STARTER" ? ["Ads", "Email marketing"] : [],
+                  })))}
               />
             </div>
           )}

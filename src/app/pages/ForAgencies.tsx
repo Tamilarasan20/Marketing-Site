@@ -27,7 +27,7 @@ const faqs = [
   { q: 'How does Loraloop keep content sounding different across clients?', a: 'Each client has its own brand knowledge base: voice, audience, positioning, offers, product details and competitors. Loraloop generates every output from that specific knowledge base, so a SaaS client and a DTC client never sound alike.' },
   { q: 'Can Loraloop run paid media for my clients?', a: 'Yes. Loraloop builds and monitors Meta and Google campaigns per client, writes the copy, generates creative, watches spend overnight and queues budget moves for approval. It replaces the daily dashboard check, not your media strategy.' },
   { q: 'Is Loraloop white-label?', a: 'Loraloop is designed as your internal production platform. Reports and content can be exported and delivered under your agency brand. Fully white-labelled client-facing interfaces are on the product roadmap.' },
-  { q: 'How many clients can I run on it?', a: 'Pro covers up to 5 brand workspaces, which suits most fractional practices. For larger rosters, Enterprise gives you unlimited workspaces, 1,000 credits per seat and custom integrations. Contact us if you manage more than 20 brands and we will size it with you.' },
+  { q: 'How many clients can I run on it?', a: 'Pro covers up to 5 brand workspaces, which suits most fractional practices. For larger rosters, Scale gives you unlimited brand workspaces and 5 seats from $199 a month, and Enterprise adds custom integrations. Contact us if you manage more than 20 brands and we will size it with you.' },
 ];
 
 export default function ForAgencies() {
@@ -63,7 +63,7 @@ export default function ForAgencies() {
             See pricing →
           </Link>
         </div>
-        <p className="mt-4 text-[14px] text-[#6b7280]">Pro includes 5 brand workspaces and 5 seats. Enterprise adds unlimited workspaces and custom integrations.</p>
+        <p className="mt-4 text-[14px] text-[#6b7280]">Pro includes 5 brand workspaces and 2 seats; add more seats anytime. Enterprise adds unlimited workspaces and custom integrations.</p>
       </section>
 
       {/* The agency capacity wall */}

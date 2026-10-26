@@ -22,7 +22,8 @@ const fmt = (n: number) => n.toLocaleString("en-US");
 export default function CreditUsageBlock({
   planCredits,
 }: {
-  planCredits: { name: string; credits: number }[];
+  /** excludes = capabilities the plan does not include (shown as —). */
+  planCredits: { name: string; credits: number; excludes?: string[] }[];
 }) {
   return (
     <section className="w-full flex flex-col items-center gap-8">
@@ -65,7 +66,7 @@ export default function CreditUsageBlock({
                   style={gen}
                   className="shrink-0 text-[13px] text-[#9CA3AF] tabular-nums rounded-md border border-white/[0.08] bg-white/[0.03] px-2 py-0.5"
                 >
-                  {a.creditsEach} {a.creditsEach === 1 ? "credit" : "credits"}
+                  {a.creditsMax ? `${a.creditsEach}–${a.creditsMax} credits` : `${a.creditsEach} ${a.creditsEach === 1 ? "credit" : "credits"}`}
                 </span>
               </div>
             ))}
@@ -121,7 +122,7 @@ export default function CreditUsageBlock({
                       >
                         {y.comingSoon ? (
                           <span className="text-[12px] text-[#6B7280] italic">Soon</span>
-                        ) : y.cost > p.credits ? (
+                        ) : p.excludes?.includes(y.capability) || y.cost > p.credits ? (
                           <span className="text-[#6B7280]">—</span>
                         ) : (
                           fmt(creditsToUnits(p.credits, y.cost))
@@ -136,8 +137,9 @@ export default function CreditUsageBlock({
 
           <div className="px-5 py-3 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
             <p style={gen} className="text-[12px] text-[#6B7280]">
-              e.g. Starter (300 credits) makes ~30 generated ads, ~150 social posts with images, or
-              ~60 SEO/GEO articles each month — or any mix. Email marketing is coming soon.
+              e.g. Pro (700 credits) makes ~70 generated ads, ~233 social posts with images or
+              ~140 SEO/GEO articles each month — or any mix. Starter covers social posts and SEO/GEO;
+              paid ads and email marketing start on Pro.
             </p>
           </div>
         </div>

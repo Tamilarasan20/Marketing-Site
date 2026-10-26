@@ -140,7 +140,7 @@ export const googleAdsClusterB: BlogPost[] = [
         ['Agency', 'Monthly fee, often a percentage of spend with a minimum, sometimes a setup fee', '30 to 60 minutes for calls and reports', 'Usually from mid four figures up'],
         ['Freelancer', 'Hourly or monthly retainer', '30 to 60 minutes', 'Small to mid budgets'],
         ['In-house specialist', 'Full salary plus tools', 'Management time', 'Larger budgets or several channels'],
-        ['AI agent', 'Software subscription (Loraloop starts at $39 a month)', '10 to 15 minutes a day approving changes', 'Small budgets up; pairs well with expert review at any size'],
+        ['AI agent', 'Software subscription (Loraloop ads plans start at $99 a month)', '10 to 15 minutes a day approving changes', 'Small budgets up; pairs well with expert review at any size'],
       ]},
 
       { type: 'heading', text: 'What Each Option Is Good and Bad At' },
