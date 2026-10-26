@@ -130,6 +130,7 @@ export default function AgentLandingPage({ agent }: { agent: Agent }) {
             {agent.hero.subhead}
           </p>
           <a
+            data-ml-goal="signup_click" data-ml-goal-location="agent_hero"
             href={SIGNUP_URL}
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-white font-bold text-base transition-transform hover:-translate-y-0.5"
             style={{ background: agent.gradient, ...satoshi }}
@@ -443,6 +444,7 @@ export default function AgentLandingPage({ agent }: { agent: Agent }) {
                 {agent.ctaSubhead}
               </p>
               <a
+                data-ml-goal="signup_click" data-ml-goal-location="agent_footer_cta"
                 href={SIGNUP_URL}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white rounded-full font-bold text-base hover:bg-gray-50 transition-all"
                 style={{ color: agent.color, ...satoshi }}

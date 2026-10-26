@@ -91,7 +91,7 @@ export default function Compare() {
 
         <div className="bg-gradient-to-br from-[#1877f2] to-[#0d5ed9] rounded-3xl p-8 md:p-10 mt-12 text-white">
           <p className="font-['Satoshi',sans-serif] font-bold text-xl md:text-2xl mb-6">See how Loraloop runs your Meta ads with approvals. Free trial, no credit card.</p>
-          <a href="https://app.loraloop.com/signup" className="inline-block bg-white text-[#1877f2] font-['Satoshi',sans-serif] font-bold px-8 py-4 rounded-full hover:bg-blue-50 transition-colors">Try Loraloop Free →</a>
+          <a href="https://app.loraloop.com/signup" data-ml-goal="signup_click" data-ml-goal-location="compare_cta" className="inline-block bg-white text-[#1877f2] font-['Satoshi',sans-serif] font-bold px-8 py-4 rounded-full hover:bg-blue-50 transition-colors">Try Loraloop Free →</a>
         </div>
       </article>
     </div>

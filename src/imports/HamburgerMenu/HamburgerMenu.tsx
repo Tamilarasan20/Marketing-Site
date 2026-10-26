@@ -87,6 +87,7 @@ export default function HamburgerMenu() {
             <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Sign in</p>
           </a>
           <a
+            data-ml-goal="signup_click" data-ml-goal-location="mobile_menu"
             href={`https://app.loraloop.com/signup?lang=${typeof window !== 'undefined' ? (localStorage.getItem('loraloop_language') ?? 'en') : 'en'}`}
             className="bg-[#1877f2] content-stretch flex h-[40px] items-center justify-center px-[18px] relative rounded-[120px] shrink-0"
             data-name="Get Start"

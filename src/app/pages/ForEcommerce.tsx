@@ -50,6 +50,7 @@ export default function ForEcommerce() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
+            data-ml-goal="signup_click" data-ml-goal-location="ecommerce_hero"
             href="/app/signup"
             className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, #ea580c, #7c3aed)', fontFamily: 'Satoshi, sans-serif' }}
@@ -57,6 +58,7 @@ export default function ForEcommerce() {
             Start free, no credit card
           </a>
           <Link
+            data-ml-goal="pricing_view"
             to="/pricing"
             className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-bold text-base hover:bg-gray-50 transition-all"
             style={{ fontFamily: 'Satoshi, sans-serif' }}
@@ -110,6 +112,7 @@ export default function ForEcommerce() {
           <h2 className="text-3xl md:text-[40px] font-bold text-white leading-[1.1] tracking-[-0.02em] mb-4" style={{ fontFamily: 'Satoshi, sans-serif' }}>Keep headcount flat through your next growth stage</h2>
           <p className="text-orange-100 text-[16px] mb-8 leading-[1.6]">Build your brand and product knowledge base, connect your ad accounts and channels, and have the first month of creative, content and email waiting for approval in one session.</p>
           <a
+            data-ml-goal="signup_click" data-ml-goal-location="ecommerce_footer_cta"
             href="/app/signup"
             className="inline-flex items-center justify-center px-8 py-4 bg-white rounded-full text-orange-700 font-bold text-base hover:bg-gray-50 transition-all"
             style={{ fontFamily: 'Satoshi, sans-serif' }}

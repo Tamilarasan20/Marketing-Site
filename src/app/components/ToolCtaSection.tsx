@@ -35,6 +35,7 @@ export default function ToolCtaSection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
+            data-ml-goal="pricing_view"
             href="/pricing"
             className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 font-['Satoshi',sans-serif] font-bold font-bold px-7 py-3.5 rounded-xl hover:bg-gray-100 transition-colors text-sm"
           >

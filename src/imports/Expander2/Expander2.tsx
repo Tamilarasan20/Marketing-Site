@@ -47,6 +47,7 @@ function Frame6() {
         <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Signin</p>
       </a>
       <a
+        data-ml-goal="signup_click" data-ml-goal-location="nav_expander"
         href="/app/signup"
         className="bg-[#1877f2] content-stretch flex h-[40px] items-center justify-center px-[18px] relative rounded-[120px] shrink-0"
         data-name="Get Start"
@@ -431,7 +432,7 @@ function FrameBlogs() {
 
 function Frame5() {
   return (
-    <Link to="/pricing" className="relative shrink-0 w-full block">
+    <Link to="/pricing" data-ml-goal="pricing_view" className="relative shrink-0 w-full block">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center px-[8px] py-[12px] relative size-full">
           <p className="font-['Satoshi',sans-serif] font-bold leading-[24px] not-italic relative shrink-0 text-[#1f2937] text-[16px] text-center whitespace-nowrap">Pricing</p>
@@ -464,6 +465,7 @@ function Frame9() {
         <p className="font-['Satoshi',sans-serif] font-bold leading-[20px] not-italic relative shrink-0 text-[14px] text-[#0f172a] whitespace-nowrap">Signin</p>
       </a>
       <a
+        data-ml-goal="signup_click" data-ml-goal-location="nav_expander"
         href="/app/signup"
         className="bg-[#1877f2] flex-1 h-[40px] flex items-center justify-center rounded-[120px]"
         data-name="Get Start"

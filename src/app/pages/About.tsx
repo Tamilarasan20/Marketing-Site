@@ -44,7 +44,7 @@ export default function About() {
               <p className="font-['Inter',sans-serif] font-normal leading-[1.6] text-[#d1d5dc] text-[18px] md:text-[20px]">The best marketing teams of the next decade will be small, senior and backed by AI that does the production.</p>
               <p className="font-['General_Sans',sans-serif] font-medium leading-[1.6] text-[18px] md:text-[20px] text-white">Loraloop is that team: it keeps your headcount flat and your output growing, while your people keep the strategy.</p>
               <p className="pt-4">
-                <Link to="/pricing" className="font-['Satoshi',sans-serif] font-bold text-[16px] text-[#51a2ff] hover:underline">See pricing →</Link>
+                <Link to="/pricing" data-ml-goal="pricing_view" className="font-['Satoshi',sans-serif] font-bold text-[16px] text-[#51a2ff] hover:underline">See pricing →</Link>
               </p>
             </div>
           </div>

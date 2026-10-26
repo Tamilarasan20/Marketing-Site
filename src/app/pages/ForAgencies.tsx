@@ -49,6 +49,7 @@ export default function ForAgencies() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
+            data-ml-goal="signup_click" data-ml-goal-location="agencies_hero"
             href="/app/signup"
             className="inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base transition-all hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, #1d4ed8, #7c3aed)', fontFamily: 'Satoshi, sans-serif' }}
@@ -56,6 +57,7 @@ export default function ForAgencies() {
             Start free, no credit card
           </a>
           <Link
+            data-ml-goal="pricing_view"
             to="/pricing"
             className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-bold text-base hover:bg-gray-50 transition-all"
             style={{ fontFamily: 'Satoshi, sans-serif' }}
@@ -138,6 +140,7 @@ export default function ForAgencies() {
             ))}
           </div>
           <a
+            data-ml-goal="signup_click" data-ml-goal-location="agencies_footer_cta"
             href="/app/signup"
             className="mt-8 inline-flex items-center justify-center px-8 py-4 bg-white rounded-full text-blue-700 font-bold text-base hover:bg-gray-50 transition-all"
             style={{ fontFamily: 'Satoshi, sans-serif' }}

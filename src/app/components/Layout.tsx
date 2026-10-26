@@ -11,11 +11,19 @@ export default function Layout() {
   useAnalyticsPageviews();
 
   useEffect(() => {
+    // Minilytics goal for the text-matched sign-up buttons below. Elements
+    // tagged with data-ml-goal are already counted by the tracker itself.
+    const signupGoal = (el: HTMLElement) => {
+      if (el.closest("[data-ml-goal]")) return;
+      const w = window as Window & { minilytics?: (...args: unknown[]) => void };
+      w.minilytics?.("goal", "signup_click", { location: "text_match" });
+    };
     const handleClick = (e: MouseEvent) => {
       let current = e.target as HTMLElement | null;
       while (current && current !== document.body) {
         const text = current.textContent?.trim();
         if (text === "Get Start" || text === "Get Started" || text === "Join Waitlist") {
+          signupGoal(current);
           e.preventDefault();
           e.stopPropagation();
           window.location.href = "https://app.loraloop.com/signup";
@@ -28,6 +36,7 @@ export default function Layout() {
           return;
         }
         if (text === "Sign up" || text === "Sign Up" || text === "Signup") {
+          signupGoal(current);
           e.preventDefault();
           e.stopPropagation();
           window.location.href = "https://app.loraloop.com/signup";
