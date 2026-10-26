@@ -110,7 +110,7 @@ export const loraloopAdsBatchA: BlogPost[] = [
       ]},
 
       { type: 'heading', text: 'How Loraloop Fits' },
-      { type: 'paragraph', text: "Loraloop is an AI marketing platform where a team of AI agents plans and executes marketing with a human approval step before anything publishes or spends. For creative testing, Angie, the ads agent, generates ad creatives and copy from your Brand DNA, drafts the test campaign and then handles daily optimisation such as shifting budget toward winners and pausing losers. Each generated ad costs 10 credits, so the $39 Starter plan covers roughly 30 ads a month and Pro covers around 100. You still set the angles and approve every launch. It is a way to keep the weekly batch full without hiring a bigger team." },
+      { type: 'paragraph', text: "Loraloop is an AI marketing platform where a team of AI agents plans and executes marketing with a human approval step before anything publishes or spends. For creative testing, Angie, the ads agent, generates ad creatives and copy from your Brand DNA, drafts the test campaign and then handles daily optimisation such as shifting budget toward winners and pausing losers. Each generated ad costs 10 credits, so the $99 Pro plan covers roughly 70 ads a month and Scale covers around 200. You still set the angles and approve every launch. It is a way to keep the weekly batch full without hiring a bigger team." },
 
       { type: 'heading', text: 'Frequently Asked Questions' },
       { type: 'faq', items: [
@@ -221,7 +221,7 @@ export const loraloopAdsBatchA: BlogPost[] = [
       ]},
 
       { type: 'heading', text: 'How Loraloop Fits' },
-      { type: 'paragraph', text: "The hardest part of testing volume for a small team is production, and that is where Loraloop helps. Angie, the ads agent, generates ad creative, copy and a campaign draft for 10 credits per ad, drawing on the Brand DNA knowledge base so every variant sounds like you. The Starter plan at $39 a month includes 300 credits, roughly 30 generated ads, which covers the 4 to 8 a week range in the table above. Nothing launches or spends until you approve it, and Angie's daily optimisation shifts budget to winners and pauses losers once the batch is live." },
+      { type: 'paragraph', text: "The hardest part of testing volume for a small team is production, and that is where Loraloop helps. Angie, the ads agent, generates ad creative, copy and a campaign draft for 10 credits per ad, drawing on the Brand DNA knowledge base so every variant sounds like you. The Pro plan at $99 a month includes 700 credits, roughly 70 generated ads, which covers the 4 to 8 a week range in the table above. Nothing launches or spends until you approve it, and Angie's daily optimisation shifts budget to winners and pauses losers once the batch is live." },
 
       { type: 'heading', text: 'Frequently Asked Questions' },
       { type: 'faq', items: [
@@ -558,7 +558,7 @@ export const loraloopAdsBatchA: BlogPost[] = [
       { type: 'paragraph', text: "By the end of the month you will know your account's format bias. Most brands land on a mix such as 60% statics and 40% video by ad count, with video taking a larger share of spend because it finds new people. Revisit the mix every quarter, because audiences and placements shift." },
 
       { type: 'heading', text: 'How Loraloop Fits' },
-      { type: 'paragraph', text: "Loraloop helps most on the static side of this plan. Angie, the ads agent, generates ad creatives and copy from your Brand DNA for 10 credits per ad, so producing four statics on one angle for Week 1 is a few minutes of review rather than a design queue, and the Starter plan's 300 credits cover roughly 30 ads a month. Angie also drafts the campaign and, once live, handles daily optimisation such as shifting budget to winners and pausing losers. Creator video still needs creators, but Loraloop's social tools can help with captions and scheduling around the campaign. Nothing launches without your approval." },
+      { type: 'paragraph', text: "Loraloop helps most on the static side of this plan. Angie, the ads agent, generates ad creatives and copy from your Brand DNA for 10 credits per ad, so producing four statics on one angle for Week 1 is a few minutes of review rather than a design queue, and the Pro plan's 700 credits cover roughly 70 ads a month. Angie also drafts the campaign and, once live, handles daily optimisation such as shifting budget to winners and pausing losers. Creator video still needs creators, but Loraloop's social tools can help with captions and scheduling around the campaign. Nothing launches without your approval." },
 
       { type: 'heading', text: 'Frequently Asked Questions' },
       { type: 'faq', items: [
@@ -672,7 +672,7 @@ export const loraloopAdsBatchA: BlogPost[] = [
       ]},
 
       { type: 'heading', text: 'How Loraloop Fits' },
-      { type: 'paragraph', text: "Loraloop sits in the agent-style row of the table above. It learns your brand once through its Brand DNA knowledge base, then Angie, the ads agent, generates ad creative, copy and a campaign draft for 10 credits per ad, so the Starter plan at $39 a month covers roughly 30 generated ads and the Pro plan from $99 covers around 100. Once ads are live, Angie handles daily optimisation such as shifting budget to winners and pausing losers, and tracks competitor ads. The human approval step is built in: nothing publishes or changes budget without your sign-off. It handles the middle of the sandwich, and you keep the research and the final call." },
+      { type: 'paragraph', text: "Loraloop sits in the agent-style row of the table above. It learns your brand once through its Brand DNA knowledge base, then Angie, the ads agent, generates ad creative, copy and a campaign draft for 10 credits per ad, so the Pro plan from $99 a month covers roughly 70 generated ads and Scale from $199 covers around 200. Once ads are live, Angie handles daily optimisation such as shifting budget to winners and pausing losers, and tracks competitor ads. The human approval step is built in: nothing publishes or changes budget without your sign-off. It handles the middle of the sandwich, and you keep the research and the final call." },
 
       { type: 'heading', text: 'Frequently Asked Questions' },
       { type: 'faq', items: [
@@ -902,7 +902,7 @@ export const loraloopAdsBatchA: BlogPost[] = [
       ]},
 
       { type: 'heading', text: 'How Loraloop Fits' },
-      { type: 'paragraph', text: "The demand Andromeda creates is for more distinct creative every week, which is a production problem for most small teams. Loraloop's ads agent, Angie, generates ad creatives and copy from your Brand DNA at 10 credits per ad, so a brand on the Starter plan can draft roughly 30 ads a month and a Pro plan around 100, enough to keep a varied bench supplied. Because Brand DNA holds your audience segments and positioning, you can ask for ads aimed at different personas and proof types rather than variations of one. Angie also drafts the campaign and runs daily optimisation such as shifting budget to winners and pausing losers, with every launch and budget change waiting for your approval." },
+      { type: 'paragraph', text: "The demand Andromeda creates is for more distinct creative every week, which is a production problem for most small teams. Loraloop's ads agent, Angie, generates ad creatives and copy from your Brand DNA at 10 credits per ad, so a brand on the Pro plan can draft roughly 70 ads a month and a Scale plan around 200, enough to keep a varied bench supplied. Because Brand DNA holds your audience segments and positioning, you can ask for ads aimed at different personas and proof types rather than variations of one. Angie also drafts the campaign and runs daily optimisation such as shifting budget to winners and pausing losers, with every launch and budget change waiting for your approval." },
 
       { type: 'heading', text: 'Frequently Asked Questions' },
       { type: 'faq', items: [

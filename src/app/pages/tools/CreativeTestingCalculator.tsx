@@ -57,7 +57,7 @@ export default function CreativeTestingCalculator() {
           <div className="bg-gray-900 text-white rounded-2xl p-6">
             <div className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2">Recommendation</div>
             <p className="text-sm leading-relaxed">{advice}</p>
-            {Number.isFinite(monthlyVariants) && <p className="text-xs text-gray-400 mt-3">That is roughly {monthlyVariants} validated creatives a month. On Loraloop, a generated ad with creative, copy and campaign draft costs 10 credits, so the Starter plan (300 credits) covers about 30 a month.</p>}
+            {Number.isFinite(monthlyVariants) && <p className="text-xs text-gray-400 mt-3">That is roughly {monthlyVariants} validated creatives a month. On Loraloop, a generated ad with creative, copy and campaign draft costs 10 credits, so the Pro plan (700 credits) covers about 70 a month.</p>}
           </div>
         </div>
       </div>

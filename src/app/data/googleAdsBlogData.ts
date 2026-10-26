@@ -132,7 +132,7 @@ const pillarPosts: BlogPost[] = [
       { type: 'paragraph', text: "The default is approve-everything. After ten changes in a row that met or beat their goal, Loraloop suggests letting small changes under a daily dollar threshold run on their own. It never promotes itself; a person makes that call. Daily, monthly and per-campaign spend caps, quiet hours, banned brand phrases and a kill switch apply at every level." },
       { type: 'subheading', text: 'When Loraloop is not the right fit' },
       { type: 'paragraph', text: "If you are a PPC specialist who wants to write your own scripts and rule logic across dozens of accounts, a dedicated PPC rule engine will suit you better. If your biggest problem is a messy product catalog, fix the feed in Merchant Center first; Loraloop does not edit product feeds. Loraloop fits best when nobody on the team has time to run Google Ads every day and you would rather approve good work than do it yourself." },
-      { type: 'paragraph', text: "Plans start at $39 a month on Starter (300 credits), shared across ads, social and SEO/GEO work. Check the pricing page for current plans." },
+      { type: 'paragraph', text: "Google Ads management is on Pro, from $99 a month for 700 credits shared across ads, social and SEO/GEO work. Check the pricing page for current plans." },
 
       { type: 'heading', text: 'Frequently Asked Questions' },
       { type: 'faq', items: [
