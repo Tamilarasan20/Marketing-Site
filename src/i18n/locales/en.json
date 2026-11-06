@@ -65,9 +65,13 @@
     "placeholder": "you@company.com",
     "submit": "Notify me",
     "submitting": "Saving…",
-    "success": "You're on the list. We'll email you when the new website goes live.",
+    "success": "We'll email you when the new website goes live.",
     "invalid": "Please enter a valid email address.",
     "error": "Something went wrong. Please try again.",
-    "close": "Close announcement"
+    "close": "Close announcement",
+    "modalTitle": "Get early access",
+    "successTitle": "You're on the list",
+    "privacy": "We'll only email you about the launch. No spam.",
+    "done": "Done"
   }
 }
