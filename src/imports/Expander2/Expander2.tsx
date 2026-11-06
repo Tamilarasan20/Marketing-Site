@@ -1,6 +1,6 @@
 import svgPaths from "./svg-hjgudbia7v";
 import { Link } from "react-router";
-import appLogo from "../../assets/app_logo.png";
+import appLogo from "../../assets/loraloop-icon.svg";
 import { agentList } from "../../app/data/agents";
 import imgLora2 from "./32264b1854d55ff26d5f28cf2aff116c87c1ae73.png";
 import imgMark1 from "./b34a04b0d155ad8417b049bc9858620b387d57d6.png";
