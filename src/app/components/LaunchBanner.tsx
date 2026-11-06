@@ -140,7 +140,7 @@ export default function LaunchBanner() {
                   <button
                     type="submit"
                     disabled={status === "saving"}
-                    className="h-8 inline-flex items-center gap-1.5 rounded-full bg-[#0b1f44] px-3.5 text-[13px] font-semibold text-white hover:bg-[#06132b] disabled:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                    className="h-8 inline-flex items-center gap-1.5 rounded-full bg-black px-3 text-[12px] font-semibold text-white hover:bg-[#262626] disabled:opacity-70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                   >
                     {status === "saving" && <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />}
                     {status === "saving" ? t("launchBanner.submitting") : t("launchBanner.submit")}
@@ -150,10 +150,10 @@ export default function LaunchBanner() {
                 <button
                   type="button"
                   onClick={openForm}
-                  className="inline-flex items-center gap-1 rounded-full bg-white text-[#1256b0] hover:bg-[#e8f1fe] px-3.5 py-1 font-semibold shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1565c0]"
+                  className="inline-flex items-center gap-1 rounded-full bg-black text-white hover:bg-[#262626] px-3 py-1 text-[12px] font-semibold shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1565c0]"
                 >
                   {t("launchBanner.cta")}
-                  <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180" aria-hidden="true" />
+                  <ArrowRight className="w-3 h-3 rtl:rotate-180" aria-hidden="true" />
                 </button>
               )}
 
