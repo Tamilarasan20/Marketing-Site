@@ -4,6 +4,7 @@ import Header from "./Header";
 import MobileNav from "./MobileNav";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
+import LaunchBanner from "./LaunchBanner";
 import { useAnalyticsPageviews } from "../hooks/useAnalyticsPageviews";
 
 export default function Layout() {
@@ -51,6 +52,7 @@ export default function Layout() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <ScrollToTop />
+      <LaunchBanner />
       <div className="hidden md:block">
         <Header />
       </div>

@@ -35,7 +35,7 @@ export default function MobileNav() {
 
   return (
     <div
-      className="absolute left-[24px] right-[24px] top-[24px] md:hidden z-[60]"
+      className="absolute left-[24px] right-[24px] top-[calc(var(--launch-banner-h,0px)+24px)] md:hidden z-[60]"
       data-name="MobileNav"
       onClick={(e) => {
         const target = e.target as HTMLElement;
