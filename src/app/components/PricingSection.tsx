@@ -1,25 +1,9 @@
 import { useState } from "react";
-import { Sparkles } from "lucide-react";
-import imgAgentBanner from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
-import CreditUsageBlock from "./CreditUsageBlock";
-import PlanPicker from "./PlanPicker";
+import { CREDIT_ACTIONS, CREDIT_FOOTNOTES } from "../data/creditCosts";
+import BookDemoModal from "./BookDemoModal";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type BillingPeriod = "monthly" | "annual";
-
-interface Tier {
-  /** Monthly AI credits. */
-  credits: number;
-  /** USD: monthly = per month; annual = per year (25% off: 12 × monthly × 0.75). */
-  prices: { monthly: number; annual: number };
-}
-
-/** Extra team seats on Pro and Scale, as Enrich Labs: +200 credits a seat. */
-interface SeatAddon {
-  creditsPerSeat: number;
-  max: number;
-  prices: { monthly: number; annual: number };
-}
 
 interface FeatureGroup {
   title: string;
@@ -30,166 +14,141 @@ interface FeatureGroup {
 
 interface Plan {
   /** App plan key (Pro is GROWTH in the app). */
-  id: "STARTER" | "GROWTH" | "SCALE";
+  id: "STARTER" | "GROWTH" | "SCALE" | "ENTERPRISE";
   name: string;
-  badge?: string;
-  description: string;
-  /** Seats · brands line under the price. */
+  /** Small label on the card's top edge. */
+  tag: string;
+  /** Seats · brands. */
   meta: string;
+  /** Who the plan is for (docs/product/target-users.md in Loraloop-Main-App). */
+  audience: string;
+  /** USD; annual = per year (25% off: 12 × monthly × 0.75). Null = custom. */
+  prices: { monthly: number; annual: number } | null;
+  /** Bold part, then the rest of the credits line. */
+  credits: [string, string];
   highlighted?: boolean;
-  seatAddon?: SeatAddon;
-  tiers: Tier[];
   featuresIntro: string;
   features: FeatureGroup[];
 }
 
-const fmtNum = (n: number) => n.toLocaleString("en-US");
+const APP_URL = "https://app.loraloop.com";
+// New accounts start a 3-day free trial with no card; bigger credit options are picked in the app.
+const TRIAL_URL = `${APP_URL}/signup`;
 
-const SEAT_ADDON: SeatAddon = { creditsPerSeat: 200, max: 10, prices: { monthly: 39, annual: 351 } };
-
-// ─── Plan data — mirrors apps/web/src/features/billing/lib/plans.ts in Loraloop-Main-App ───
-// Starter is social, content and SEO/GEO only; paid ads and email marketing start on Pro.
+// ─── Plan data — the entry tier of each plan in apps/web/src/features/billing/lib/plans.ts ───
+// Only shipped features. Starter has no paid ads or email marketing (plan-features.ts).
 const PLANS: Plan[] = [
   {
     id: "STARTER",
     name: "Starter",
-    badge: "Essentials",
-    description: "For founders and small brands growing on social and search.",
+    tag: "Essentials",
     meta: "1 seat · 3 brands",
-    tiers: [
-      { credits: 200, prices: { monthly: 39, annual: 351 } },
-      { credits: 300, prices: { monthly: 59, annual: 531 } },
-      { credits: 400, prices: { monthly: 79, annual: 711 } },
-    ],
+    audience: "For founders, creators and local businesses.",
+    prices: { monthly: 39, annual: 351 },
+    credits: ["200 credits", " per month"],
     featuresIntro: "Key features",
     features: [
       { title: "SEO & GEO", items: ["SEO articles you approve", "Optimized for AI answers"] },
-      { title: "Strategy & insights", items: ["Plan built on your data", "Learns from every result", "Daily briefing from Lora", "Performance dashboard"] },
       { title: "Social & content", items: ["19 channels, one calendar", "Brand knowledge base", "AI videos & TikTok slideshows", "Ad & post inspiration"] },
+      { title: "Strategy & insights", items: ["Plan built on your data", "Learns from every result", "Daily briefing from Lora", "Performance dashboard"] },
       { title: "Integrations", items: ["Claude & ChatGPT (MCP)", "Shopify & Google Analytics"] },
     ],
   },
   {
     id: "GROWTH",
     name: "Pro",
-    description: "For DTC and Shopify brands running paid ads.",
+    tag: "Most popular",
     meta: "2 seats · 5 brands",
+    audience: "For DTC brands, growth leads and lean marketing teams.",
+    prices: { monthly: 99, annual: 891 },
+    credits: ["700 credits", " per month · extra seats $39/mo"],
     highlighted: true,
-    seatAddon: SEAT_ADDON,
-    tiers: [
-      { credits: 700,  prices: { monthly: 99,  annual: 891 } },
-      { credits: 900,  prices: { monthly: 129, annual: 1161 } },
-      { credits: 1100, prices: { monthly: 159, annual: 1431 } },
-    ],
-    featuresIntro: "Everything in Starter, plus",
+    featuresIntro: "All the features of Starter, and:",
     features: [
       { title: "Paid ads", items: ["Google, Meta, TikTok, LinkedIn", "Spend caps & tired-ad alerts", "Live only after you approve"] },
       { title: "Email marketing", items: ["Mailchimp & Klaviyo", "Campaigns in your brand voice"] },
-      { title: "Advanced SEO", items: ["Technical site checks", "WordPress & Webflow"] },
       { title: "Market intelligence", items: ["Competitor ad tracking", "Daily ads report"] },
-      { title: "Quality checks", items: ["Brand check on every ad", "Scheduled campaign reviews"] },
-      { title: "Team", items: ["Team seats & roles", "Slack, Teams & Discord updates"] },
       { title: "Video studio", items: ["Product video ads", "AI presenter ads"] },
+      { title: "Advanced SEO", items: ["Technical site checks", "WordPress & Webflow"] },
+      { title: "Team", items: ["Team seats & roles", "Slack, Teams & Discord updates"] },
     ],
   },
   {
     id: "SCALE",
     name: "Scale",
-    badge: "Multi-brand",
-    description: "For agencies and teams running many brands.",
+    tag: "Multi-brand",
     meta: "5 seats · unlimited brands",
-    seatAddon: SEAT_ADDON,
-    tiers: [
-      { credits: 2000, prices: { monthly: 199, annual: 1791 } },
-      { credits: 3000, prices: { monthly: 299, annual: 2691 } },
-      { credits: 4000, prices: { monthly: 399, annual: 3591 } },
-    ],
-    featuresIntro: "Everything in Pro, plus",
+    audience: "For agencies and teams running many brands.",
+    prices: { monthly: 199, annual: 1791 },
+    credits: ["2,000 credits", " per month · extra seats $39/mo"],
+    featuresIntro: "All the features of Pro, and:",
     features: [
       { title: "For agencies", items: ["Unlimited brands", "A workspace per client", "All-client ads view"] },
       { title: "Client reporting", items: ["Scheduled client reports", "Sent straight to clients"] },
-      { title: "More room to grow", items: ["More credits, top-ups anytime"] },
       { title: "Support", items: ["Priority support"] },
     ],
   },
-];
-
-const ENTERPRISE_FEATURES: FeatureGroup[] = [
   {
-    title: "Your agent team",
-    chips: [
-      { name: "Lora", role: "Strategy & social" },
-      { name: "Angie", role: "Paid ads" },
-      { name: "Sophie", role: "SEO & GEO" },
-      { name: "Clara", role: "Email" },
+    id: "ENTERPRISE",
+    name: "Enterprise",
+    tag: "Tailored",
+    meta: "Annual billing · flexible plans",
+    audience: "For larger teams with many brands or custom needs.",
+    prices: null,
+    credits: ["Custom credits", " and allowances"],
+    featuresIntro: "All the features of Scale, and:",
+    features: [
+      {
+        title: "Your agent team",
+        chips: [
+          { name: "Lora", role: "Strategy & social" },
+          { name: "Sam", role: "Paid ads" },
+          { name: "Sophie", role: "SEO & GEO" },
+          { name: "Elliot", role: "Email" },
+        ],
+        items: ["Lora leads, specialists deliver", "Top-tier AI models"],
+      },
+      { title: "Your stack", items: ["Custom integrations & API", "Agents in your Slack or Teams"] },
+      { title: "Expert help", items: ["Brand voice tuned to you", "Your own success manager", "Hands-on onboarding"] },
+      { title: "Governance", items: ["Unlimited brands and seats", "Approval rules per brand", "Response-time SLA"] },
     ],
-    items: ["Lora leads, specialists deliver", "Top-tier AI models"],
   },
-  { title: "Your stack", items: ["Custom integrations & API", "Agents in your Slack or Teams"] },
-  { title: "Expert help", items: ["Brand voice tuned to you", "Your own success manager", "Hands-on onboarding"] },
-  { title: "Governance", items: ["Unlimited brands and seats", "Approval rules per brand", "Response-time SLA"] },
 ];
 
-const BILLING_OPTS: { id: BillingPeriod; label: string; badge?: string }[] = [
-  { id: "monthly", label: "Monthly" },
-  { id: "annual",  label: "Annual", badge: "Save 25%" },
-];
-
+const fmtNum = (n: number) => n.toLocaleString("en-US");
 const formatUsd = (n: number) => `$${n % 1 !== 0 ? n.toFixed(2) : fmtNum(n)}`;
-
-const APP_URL = "https://app.loraloop.com";
-// New accounts start a 3-day free trial with no card; plans are picked in the app.
-const TRIAL_URL = `${APP_URL}/signup`;
-
-// One row of four cards: side by side from lg up; narrower screens swipe the row.
-const CARD_SLOT = "snap-start shrink-0 w-[84%] max-w-[340px] sm:w-[300px] lg:w-auto lg:max-w-none";
 
 const sat = { fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 } as const;
 const gen = { fontFamily: "General Sans, Inter, sans-serif" } as const;
+const mono = { fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace" } as const;
 
-// ─── Agent banner card header ─────────────────────────────────────────────────
-function CardHeader() {
-  return (
-    <div className="relative h-[110px] w-full shrink-0 overflow-hidden">
-      <img loading="lazy" decoding="async"
-        src={imgAgentBanner}
-        alt="AI Agent team"
-        className="absolute inset-0 w-full h-full object-cover object-top"
-        draggable={false}
-      />
-      <div className="absolute inset-0"
-        style={{ background: "linear-gradient(to right, #131313 0%, transparent 20%, transparent 80%, #131313 100%)" }} />
-      <div className="absolute bottom-0 left-0 right-0 h-14"
-        style={{ background: "linear-gradient(to top, #131313 0%, transparent 100%)" }} />
-    </div>
-  );
-}
+// "How credits work": the canonical credit table, grouped by cost so it reads in a few rows.
+const CREDIT_ROWS = (() => {
+  const byCost = new Map<string, string[]>();
+  for (const action of CREDIT_ACTIONS) {
+    const cost = action.creditsMax ? `${action.creditsEach}–${action.creditsMax}` : String(action.creditsEach);
+    byCost.set(cost, [...(byCost.get(cost) ?? []), action.label]);
+  }
+  return [...byCost.entries()]
+    .sort(([a], [b]) => parseFloat(a) - parseFloat(b) || a.length - b.length)
+    .map(([cost, labels]) => ({ cost, label: labels.join(", "), plural: cost !== "1" }));
+})();
 
-// ─── SVG checkmark (Figma style) ─────────────────────────────────────────────
 function CheckIcon() {
   return (
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="flex-shrink-0 mt-[3px]">
-      <path d="M2.5 6.5L4.5 8.5L9.5 3.5" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="flex-shrink-0 mt-[4px]" aria-hidden="true">
+      <path d="M2.5 6.5L4.5 8.5L9.5 3.5" stroke="#9CA3AF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-  );
-}
-
-function PlanBadge({ label }: { label: string }) {
-  return (
-    <span style={{ ...gen, fontWeight: 500 }}
-      className="inline-block mb-2 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[11px] text-[#9CA3AF]">
-      {label}
-    </span>
   );
 }
 
 function Features({ intro, groups }: { intro: string; groups: FeatureGroup[] }) {
   return (
-    <div className="flex flex-col gap-4">
-      <p style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-[#9CA3AF] leading-[18px]">{intro}</p>
+    <div className="flex flex-col gap-5">
+      <p style={sat} className="text-[14px] text-white leading-[20px]">{intro}</p>
       {groups.map((group) => (
-        <div key={group.title} className="flex flex-col gap-1.5">
-          <p style={sat} className="text-[13px] text-[#E5E7EB]">{group.title}</p>
+        <div key={group.title} className="flex flex-col gap-2">
+          <p style={sat} className="text-[14px] text-[#E5E7EB]">{group.title}</p>
           {group.chips && (
             <div className="flex flex-wrap gap-1.5 pb-0.5">
               {group.chips.map((chip) => (
@@ -200,10 +159,10 @@ function Features({ intro, groups }: { intro: string; groups: FeatureGroup[] }) 
               ))}
             </div>
           )}
-          {group.items.map((f) => (
-            <div key={f} className="flex items-start gap-2">
+          {group.items.map((item) => (
+            <div key={item} className="flex items-start gap-2.5">
               <CheckIcon />
-              <span style={{ ...gen, fontWeight: 500 }} className="text-[14px] leading-[19px] text-[#D1D5DB]">{f}</span>
+              <span style={{ ...gen, fontWeight: 500 }} className="text-[14px] leading-[20px] text-[#D1D5DB]">{item}</span>
             </div>
           ))}
         </div>
@@ -218,243 +177,168 @@ export default function PricingSection({
   showCreditUsage = true,
 }: {
   className?: string;
-  /** Renders the Credit Usage breakdown below the plans. On by default so pricing
-   *  stays consistent everywhere; pass false to hide it on a given surface. */
+  /** Renders "How credits work" below the plans; pass false to hide it on a given surface. */
   showCreditUsage?: boolean;
 }) {
   const [period, setPeriod] = useState<BillingPeriod>("monthly");
-  // Credit tier + extra seats picked on each card, keyed by plan id.
-  const [selection, setSelection] = useState<Record<string, { tierIdx: number; extraSeats: number }>>({});
-  const selectionOf = (plan: Plan) => selection[plan.id] ?? { tierIdx: 0, extraSeats: 0 };
-  const pick = (plan: Plan, change: Partial<{ tierIdx: number; extraSeats: number }>) =>
-    setSelection((prev) => ({ ...prev, [plan.id]: { ...selectionOf(plan), ...change } }));
+  const [demoOpen, setDemoOpen] = useState(false);
 
   return (
-    // Slightly open letter spacing for the whole section; elements with their own tracking override it.
     <section className={`bg-black ${className}`} style={{ letterSpacing: "0.02em" }}>
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 xl:px-[46px] pt-[40px] pb-[80px]">
-        <div className="flex flex-col items-center gap-[42px]">
+        <div className="flex flex-col items-center gap-12">
 
           {/* Title */}
           <div className="flex flex-col items-center gap-3 text-center">
-            <h2 style={sat} className="text-[36px] md:text-[44px] text-white tracking-[-0.2px] leading-tight">
-              Pricing
-            </h2>
+            <h2 style={sat} className="text-[36px] md:text-[44px] text-white tracking-[-0.2px] leading-tight">Pricing</h2>
             <p style={gen} className="max-w-[560px] text-[16px] text-[#9CA3AF] leading-relaxed">
-              Your AI marketing team for ads, social and SEO. Start with a 3-day free trial: no card needed, cancel anytime.
+              Your AI marketing team for ads, social, email and SEO. Every plan starts with a 3-day free trial: no card needed, cancel anytime.
             </p>
           </div>
 
-          {/* Billing period toggle — the "Save 25%" badge floats above Annual */}
-          <div className="relative pt-4">
-            <div className="absolute -top-0 left-0 right-0 flex items-center gap-[2px] px-[2px] pointer-events-none">
-              {BILLING_OPTS.map((opt) => (
-                <div key={opt.id} className="flex-1 flex justify-center">
-                  {opt.badge ? (
-                    <span style={{
-                      ...gen, fontWeight: 500,
-                      background: "#151109", border: "0.749px solid rgba(213,165,91,0.4)",
-                      color: "#D5A55B", fontSize: "11px", padding: "3px 8px",
-                      borderRadius: "999px", lineHeight: "1", whiteSpace: "nowrap",
-                    }}>
-                      {opt.badge}
-                    </span>
-                  ) : <span />}
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center gap-[2px] border border-[#374151] rounded-[12px] px-[2px] py-[1px]">
-              {BILLING_OPTS.map((opt) => (
-                <button
-                  key={opt.id}
-                  type="button"
-                  onClick={() => setPeriod(opt.id)}
-                  style={sat}
-                  className={`flex-1 h-[34px] px-3 sm:px-4 rounded-[8px] text-[14px] sm:text-[15px] tracking-[0.35px] whitespace-nowrap transition-all ${
-                    period === opt.id ? "bg-[#1877F2] text-white" : "text-white hover:bg-white/5"
-                  }`}
-                >
-                  {opt.label}
-                </button>
-              ))}
-            </div>
+          {/* Monthly / Annual */}
+          <div role="tablist" aria-label="Billing period"
+            className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1">
+            {(["monthly", "annual"] as const).map((p) => (
+              <button
+                key={p}
+                type="button"
+                role="tab"
+                aria-selected={period === p}
+                onClick={() => setPeriod(p)}
+                style={sat}
+                className={`flex items-center gap-2 h-10 rounded-full px-5 text-[15px] transition-all ${
+                  period === p ? "bg-white text-black" : "text-[#D1D5DB] hover:text-white"
+                }`}
+              >
+                {p === "monthly" ? "Monthly" : "Annual"}
+                {p === "annual" && (
+                  <span style={{ ...gen, fontWeight: 600 }} className="rounded-full bg-[#1877F2]/20 px-2 py-0.5 text-[12px] text-[#60A5FA]">Save 25%</span>
+                )}
+              </button>
+            ))}
           </div>
 
-          {/* Plan cards — Starter / Pro / Scale / Enterprise in one row (swipes sideways below lg) */}
-          <div className="flex lg:grid lg:grid-cols-4 items-stretch gap-4 w-full overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-2 lg:pb-0">
+          {/* Plans — four in a row from lg up; narrower screens swipe the row */}
+          <div className="flex lg:grid lg:grid-cols-4 items-stretch gap-4 w-full overflow-x-auto lg:overflow-visible snap-x snap-mandatory pt-4 pb-2 lg:pb-0">
             {PLANS.map((plan) => {
-              const { tierIdx, extraSeats } = selectionOf(plan);
-              const tier = plan.tiers[tierIdx];
-              const seatAddon = plan.seatAddon;
-              const seatCost = (p: BillingPeriod) => extraSeats * (seatAddon?.prices[p] ?? 0);
-              const monthly = tier.prices.monthly + seatCost("monthly");
-              const annual = tier.prices.annual + seatCost("annual");
-              // Annual shows its monthly equivalent; the yearly charge goes underneath.
-              const price = period === "annual" ? annual / 12 : monthly;
-              const seatCredits = extraSeats * (seatAddon?.creditsPerSeat ?? 0);
-              const credits = tier.credits + seatCredits;
-              const perMonth = (p: { monthly: number; annual: number }) => (period === "annual" ? p.annual / 12 : p.monthly);
-              const creditOptions = plan.tiers.map((t, i) => ({
-                value: i,
-                label: `${fmtNum(t.credits)} credits — ${formatUsd(perMonth(t.prices))}/mo`,
-              }));
-              const seatOptions = seatAddon
-                ? Array.from({ length: seatAddon.max + 1 }, (_, extra) => ({
-                    value: extra,
-                    label: extra === 0
-                      ? "No additional seats"
-                      : `${extra} extra seat${extra === 1 ? "" : "s"} — +${formatUsd(extra * perMonth(seatAddon.prices))}/mo (+${fmtNum(extra * seatAddon.creditsPerSeat)} credits)`,
-                  }))
-                : [{ value: 0, label: "1 seat included" }];
+              const price = plan.prices && (period === "annual" ? plan.prices.annual / 12 : plan.prices.monthly);
+              const enterprise = plan.prices === null;
+              return (
+                <div
+                  key={plan.id}
+                  className={`relative snap-start shrink-0 w-[84%] max-w-[340px] sm:w-[300px] lg:w-auto lg:max-w-none rounded-[20px] border bg-[#131313] ${
+                    plan.highlighted ? "border-white/60" : "border-white/[0.08]"
+                  }`}
+                >
+                  {/* Tag on the top edge */}
+                  <span style={mono}
+                    className={`absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.12em] ${
+                      plan.highlighted || enterprise ? "bg-white text-black" : "border border-white/10 bg-[#1c1c1c] text-[#9CA3AF]"
+                    }`}>
+                    {plan.tag}
+                  </span>
 
-              const cardInner = (
-                <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
-                  <CardHeader />
-                  <div className="flex flex-col gap-5 pt-4 px-5 pb-6">
-
-                    {/* Badge + name + desc */}
-                    <div>
-                      {plan.badge && <PlanBadge label={plan.badge} />}
-                      <p style={sat} className="text-[17px] text-white tracking-[0.35px] leading-[22px]">{plan.name}</p>
-                      <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[19px]">{plan.description}</p>
-                    </div>
-
-                    {/* Price — per month; on annual, the monthly equivalent and the yearly charge */}
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-baseline gap-2">
-                        {period === "annual" && (
-                          <span style={sat} className="text-[16px] text-[#6B7280] line-through leading-[32px]">{formatUsd(monthly)}</span>
-                        )}
-                        <span style={sat} className="text-[24px] text-white leading-[32px]">{formatUsd(price)}</span>
-                        <span style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-[#6B7280] tracking-[0.5px] leading-[20px]">/mo</span>
-                      </div>
-                      {period === "annual" && (
-                        <p style={gen} className="text-[12px] text-[#9CA3AF] leading-[16px]">Billed {formatUsd(annual)} yearly</p>
-                      )}
-                      <p style={gen} className="text-[13px] text-[#9CA3AF] leading-[18px]">{plan.meta}</p>
-                    </div>
-
-                    {/* Total AI credits a month — the plan's credits plus any extra seats' */}
-                    <div className="rounded-[12px] border border-[#1877F2]/30 bg-[#1877F2]/[0.08] px-3.5 py-3">
-                      <div className="flex items-center gap-2">
-                        <Sparkles className="h-4 w-4 shrink-0 text-[#60A5FA]" />
-                        <span style={sat} className="text-[15px] text-white leading-[20px]">{fmtNum(credits)} AI credits a month</span>
-                      </div>
-                      <p style={gen} className="mt-1 text-[12px] text-[#9CA3AF] leading-[16px]">
-                        {extraSeats > 0
-                          ? `${fmtNum(tier.credits)} plan credits + ${fmtNum(seatCredits)} from extra seats`
-                          : "Shared by your whole team, refreshed every month"}
-                      </p>
-                    </div>
-
-                    {/* Monthly credits + team seats */}
-                    <div className="flex flex-col gap-2.5">
-                      <PlanPicker
-                        label="Monthly credits"
-                        value={tierIdx}
-                        options={creditOptions}
-                        onChange={(i) => pick(plan, { tierIdx: i })}
-                      />
-                      <PlanPicker
-                        label={seatAddon ? "Additional team seats" : "Team seats"}
-                        value={extraSeats}
-                        options={seatOptions}
-                        onChange={seatAddon ? (n) => pick(plan, { extraSeats: n }) : undefined}
-                      />
-                    </div>
-
-                    {/* CTA — every account starts with the free trial */}
+                  <div className="flex flex-col gap-6 px-6 pt-8 pb-7 h-full">
+                    {/* Name, seats, who it's for */}
                     <div className="flex flex-col gap-1.5">
+                      <p style={sat} className="text-[26px] text-white leading-[32px]">{plan.name}</p>
+                      <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[20px]">{plan.meta}</p>
+                      <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[20px] min-h-[40px]">{plan.audience}</p>
+                    </div>
+
+                    {/* Price */}
+                    <div className="min-h-[64px]">
+                      {price === null ? (
+                        <span style={sat} className="text-[40px] text-white leading-[48px]">Custom</span>
+                      ) : (
+                        <>
+                          <div className="flex items-baseline gap-1.5">
+                            <span style={sat} className="text-[40px] text-white leading-[48px]">{formatUsd(price)}</span>
+                            <span style={gen} className="text-[15px] text-[#9CA3AF]">/mo</span>
+                          </div>
+                          {period === "annual" && plan.prices && (
+                            <p style={gen} className="text-[13px] text-[#9CA3AF]">Billed {formatUsd(plan.prices.annual)} yearly</p>
+                          )}
+                        </>
+                      )}
+                    </div>
+
+                    {/* Credits */}
+                    <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[20px] min-h-[40px]">
+                      <span style={sat} className="text-white">{plan.credits[0]}</span>
+                      {plan.credits[1]}
+                    </p>
+
+                    {/* CTA */}
+                    {enterprise ? (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          window.minilytics?.("goal", "book_demo", { location: "pricing_enterprise" });
+                          setDemoOpen(true);
+                        }}
+                        style={sat}
+                        className="h-12 w-full rounded-full bg-white text-[15px] text-black transition-all hover:bg-gray-200"
+                      >
+                        Book a demo
+                      </button>
+                    ) : (
                       <a
                         data-ml-goal="start_trial" data-ml-goal-plan={plan.id}
                         href={TRIAL_URL}
                         style={sat}
-                        className={`w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] transition-all ${
+                        className={`h-12 w-full inline-flex items-center justify-center rounded-full text-[15px] transition-all ${
                           plan.highlighted
-                            ? "bg-[#1877F2] text-white hover:bg-[#0f66d0]"
-                            : "bg-[#EEF4FF] text-[#1877F2] border border-[#D1D5DB] hover:bg-[#dce8ff]"
+                            ? "bg-white text-black hover:bg-gray-200"
+                            : "border border-white/15 text-white hover:bg-white/[0.06]"
                         }`}
                       >
-                        Start your 3-day free trial
+                        Claim your 3-day free trial
                       </a>
-                      <p style={gen} className="text-[12px] text-[#9CA3AF] text-center leading-[16px]">No card needed · cancel anytime</p>
-                    </div>
+                    )}
 
                     <Features intro={plan.featuresIntro} groups={plan.features} />
                   </div>
                 </div>
               );
-
-              if (plan.highlighted) {
-                return (
-                  <div key={plan.id} className={`flex flex-col items-center gap-2 ${CARD_SLOT}`}
-                    style={{ background: "#1877F2", borderRadius: "16px", padding: "8px 2px 2px" }}>
-                    <p style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-white tracking-[0.5px] leading-[18px]">Most popular</p>
-                    <div className="w-full overflow-hidden flex-1"
-                      style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "14px" }}>
-                      {cardInner}
-                    </div>
-                  </div>
-                );
-              }
-
-              return (
-                <div key={plan.id} className={`overflow-hidden ${CARD_SLOT}`}
-                  style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
-                  {cardInner}
-                </div>
-              );
             })}
-
-            {/* Enterprise — sales-led, same look as the plan cards */}
-            <div className={`overflow-hidden ${CARD_SLOT}`}
-              style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
-              <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
-                <CardHeader />
-                <div className="flex flex-col gap-5 pt-4 px-5 pb-6">
-                  <div>
-                    <PlanBadge label="Tailored" />
-                    <p style={sat} className="text-[17px] text-white tracking-[0.35px] leading-[22px]">Enterprise</p>
-                    <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[19px]">For larger teams with many brands or custom needs.</p>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span style={sat} className="text-[24px] text-white leading-[32px]">Custom</span>
-                    <p style={gen} className="text-[13px] text-[#9CA3AF] leading-[18px]">Billed annually · tailored plan</p>
-                  </div>
-                  <div className="rounded-[12px] border border-white/10 bg-white/[0.03] px-3.5 py-3">
-                    <div className="flex items-center gap-2">
-                      <Sparkles className="h-4 w-4 shrink-0 text-[#9CA3AF]" />
-                      <span style={sat} className="text-[15px] text-white leading-[20px]">Custom AI credits a month</span>
-                    </div>
-                    <p style={gen} className="mt-1 text-[12px] text-[#9CA3AF] leading-[16px]">Sized to your team and brands</p>
-                  </div>
-                  <a href="/contact" data-ml-goal="book_demo" data-ml-goal-location="pricing_enterprise" style={sat}
-                    className="w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] bg-white text-black hover:bg-gray-200 transition-all">
-                    Contact sales
-                  </a>
-                  <Features intro="Everything in Scale, plus" groups={ENTERPRISE_FEATURES} />
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* ── Credit Usage — how far each plan's credits stretch ── */}
+          <p style={gen} className="-mt-4 text-center text-[13px] text-[#9CA3AF]">
+            Need more? Every plan has bigger credit options and top-ups in the app.
+          </p>
+
+          {/* How credits work */}
           {showCreditUsage && (
-            <div className="w-full pt-8 mt-2 border-t border-white/[0.06]">
-              <CreditUsageBlock
-                planCredits={PLANS.flatMap((p) =>
-                  p.tiers.map((t) => ({
-                    name: p.name,
-                    credits: t.credits,
-                    // Starter has no paid ads or email marketing.
-                    excludes: p.id === "STARTER" ? ["Ads", "Email marketing"] : [],
-                  })))}
-              />
+            <div className="flex w-full max-w-[760px] flex-col items-center gap-6 pt-8">
+              <div className="flex flex-col items-center gap-2 text-center">
+                <h3 style={sat} className="text-[32px] md:text-[40px] text-white leading-tight">How credits work.</h3>
+                <p style={gen} className="max-w-[560px] text-[15px] text-[#9CA3AF] leading-relaxed">
+                  Every task your AI team runs costs credits. Plan credits refresh each month, and top-ups you buy never expire.
+                </p>
+              </div>
+              <div className="w-full overflow-hidden rounded-[20px] border border-white/[0.08] bg-[#131313]">
+                {CREDIT_ROWS.map((row, i) => (
+                  <div key={row.cost}
+                    className={`flex items-center justify-between gap-6 px-6 py-4 ${i > 0 ? "border-t border-white/[0.06]" : ""}`}>
+                    <span style={gen} className="text-[15px] text-[#D1D5DB] leading-[22px]">{row.label}</span>
+                    <span style={sat} className="shrink-0 text-[15px] text-white">{row.cost} {row.plural ? "credits" : "credit"}</span>
+                  </div>
+                ))}
+              </div>
+              <ul className="flex w-full flex-col gap-1">
+                {CREDIT_FOOTNOTES.map((note) => (
+                  <li key={note} style={gen} className="text-[12px] text-[#6B7280] leading-[18px]">{note}</li>
+                ))}
+              </ul>
             </div>
           )}
 
         </div>
       </div>
+
+      <BookDemoModal open={demoOpen} onOpenChange={setDemoOpen} />
     </section>
   );
 }
