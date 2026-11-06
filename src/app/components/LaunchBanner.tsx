@@ -3,8 +3,6 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { useTranslation } from "react-i18next";
 import { X, ArrowRight, Check, Loader2, Mail } from "lucide-react";
 
-// Bump the version to show the banner again to visitors who closed it.
-const DISMISS_KEY = "loraloop_launch_banner_v1_dismissed";
 const JOINED_KEY = "loraloop_launch_banner_v1_joined";
 // The banner switches itself off after this moment, so it can't go stale.
 const HIDE_AFTER = new Date("2026-12-01T00:00:00Z").getTime();
@@ -14,7 +12,7 @@ const read = (k: string) => {
   try { return localStorage.getItem(k) === "1"; } catch { return false; }
 };
 const write = (k: string) => {
-  try { localStorage.setItem(k, "1"); } catch { /* storage blocked: banner just reappears next visit */ }
+  try { localStorage.setItem(k, "1"); } catch { /* storage blocked: sign-up state just isn't remembered */ }
 };
 const goal = (name: string) => window.minilytics?.("goal", name, { location: "launch_banner" });
 
@@ -22,8 +20,8 @@ type Status = "idle" | "saving" | "done";
 
 export default function LaunchBanner() {
   const { t, i18n } = useTranslation();
-  const [visible, setVisible] = useState(
-    () => typeof window !== "undefined" && Date.now() < HIDE_AFTER && !read(DISMISS_KEY)
+  const [visible] = useState(
+    () => typeof window !== "undefined" && Date.now() < HIDE_AFTER
   );
   const [status, setStatus] = useState<Status>(() => (read(JOINED_KEY) ? "done" : "idle"));
   const [modalOpen, setModalOpen] = useState(false);
@@ -50,12 +48,6 @@ export default function LaunchBanner() {
   }, [visible]);
 
   if (!visible) return null;
-
-  const close = () => {
-    write(DISMISS_KEY);
-    goal("launch_banner_dismiss");
-    setVisible(false);
-  };
 
   const openModal = () => {
     goal("launch_banner_open");
@@ -100,7 +92,7 @@ export default function LaunchBanner() {
         dir={dir}
         className="fixed top-0 inset-x-0 z-[70] bg-[#1565c0] text-white"
       >
-        <div className="mx-auto max-w-[1200px] flex flex-wrap items-center justify-center gap-x-3 gap-y-2 py-2 ps-4 pe-14 md:pe-16 text-[13px] md:text-[14px] leading-snug text-center">
+        <div className="mx-auto max-w-[1200px] flex flex-wrap items-center justify-center gap-x-3 gap-y-2 py-2 px-4 text-[13px] md:text-[14px] leading-snug text-center">
           {status === "done" ? (
             <p className="flex items-center gap-2 font-medium" aria-live="polite">
               <Check className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -128,14 +120,6 @@ export default function LaunchBanner() {
           )}
         </div>
 
-        <button
-          type="button"
-          onClick={close}
-          aria-label={t("launchBanner.close")}
-          className="absolute top-1/2 -translate-y-1/2 end-2 md:end-3 w-9 h-9 inline-flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 active:bg-white/40 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-        >
-          <X className="w-[18px] h-[18px]" strokeWidth={2.5} aria-hidden="true" />
-        </button>
       </div>
       <Dialog.Root open={modalOpen} onOpenChange={setModalOpen}>
         <Dialog.Portal>
