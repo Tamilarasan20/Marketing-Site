@@ -47,7 +47,7 @@ const fmtNum = (n: number) => n.toLocaleString("en-US");
 const SEAT_ADDON: SeatAddon = { creditsPerSeat: 200, max: 10, prices: { monthly: 39, annual: 351 } };
 
 // ─── Plan data — mirrors apps/web/src/features/billing/lib/plans.ts in Loraloop-Main-App ───
-// Starter is social, content and SEO/GEO only; paid ads and email marketing start on Pro.
+// Every plan, Starter included, has paid ads and email marketing (owner decision 2026-11-07).
 const PLANS: Plan[] = [
   {
     id: "STARTER",
@@ -63,6 +63,8 @@ const PLANS: Plan[] = [
     featuresIntro: "Key features",
     features: [
       { title: "SEO & GEO", items: ["SEO articles you approve", "Optimized for AI answers"] },
+      { title: "Paid ads", items: ["Google, Meta, TikTok, LinkedIn", "Spend caps & tired-ad alerts", "Live only after you approve"] },
+      { title: "Email marketing", items: ["Mailchimp & Klaviyo", "Campaigns in your brand voice"] },
       { title: "Strategy & insights", items: ["Plan built on your data", "Learns from every result", "Daily briefing from Lora", "Performance dashboard"] },
       { title: "Social & content", items: ["19 channels, one calendar", "Brand knowledge base", "AI videos & TikTok slideshows", "Ad & post inspiration"] },
       { title: "Integrations", items: ["Claude & ChatGPT (MCP)", "Shopify & Google Analytics"] },
@@ -82,8 +84,6 @@ const PLANS: Plan[] = [
     ],
     featuresIntro: "All the features of Starter, and:",
     features: [
-      { title: "Paid ads", items: ["Google, Meta, TikTok, LinkedIn", "Spend caps & tired-ad alerts", "Live only after you approve"] },
-      { title: "Email marketing", items: ["Mailchimp & Klaviyo", "Campaigns in your brand voice"] },
       { title: "Advanced SEO", items: ["Technical site checks", "WordPress & Webflow"] },
       { title: "Market intelligence", items: ["Competitor ad tracking", "Daily ads report"] },
       { title: "Quality checks", items: ["Brand check on every ad", "Scheduled campaign reviews"] },
