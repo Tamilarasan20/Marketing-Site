@@ -100,7 +100,7 @@ export default function LaunchBanner() {
         role="region"
         aria-label={t("launchBanner.messageShort")}
         dir={i18n.language === "ar" ? "rtl" : "ltr"}
-        className="fixed top-0 inset-x-0 z-[70] bg-gradient-to-r from-[#4f46e5] via-[#6366f1] to-[#8b5cf6] text-white"
+        className="fixed top-0 inset-x-0 z-[70] bg-[#1877f2] text-white"
       >
         <div className="mx-auto max-w-[1200px] flex flex-wrap items-center justify-center gap-x-3 gap-y-2 py-2 ps-4 pe-11 md:pe-12 text-[13px] md:text-[14px] leading-snug text-center">
           {status === "done" ? (
