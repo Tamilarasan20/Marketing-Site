@@ -72,3 +72,19 @@ export function creditsToUnits(credits: number, cost: number): number {
   if (cost <= 0) return 0;
   return Math.floor(credits / cost);
 }
+
+/**
+ * "How credits work" on the pricing page: a short version of CREDIT_ACTIONS,
+ * grouped by cost. Keep the numbers equal to CREDIT_ACTIONS.
+ */
+export const CREDIT_ROWS: { label: string; cost: string }[] = [
+  { label: "Social post", cost: "1" },
+  { label: "Chat message or task", cost: "1–4" },
+  { label: "Image, blog article", cost: "2" },
+  { label: "HD image, ad creative, email campaign", cost: "3" },
+  { label: "SEO/GEO article", cost: "5" },
+  { label: "TikTok slideshow", cost: "9" },
+  { label: "Generated ad (creative, copy and campaign draft)", cost: "10" },
+  { label: "Video (up to 6s)", cost: "50" },
+  { label: "Video (up to 10s)", cost: "80" },
+];

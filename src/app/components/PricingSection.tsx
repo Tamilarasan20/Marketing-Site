@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { Sparkles } from "lucide-react";
 import imgAgentBanner from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
-import CreditUsageBlock from "./CreditUsageBlock";
-import PlanPicker from "./PlanPicker";
+import { CREDIT_ROWS } from "../data/creditCosts";
 import BookDemoModal from "./BookDemoModal";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -225,11 +223,6 @@ export default function PricingSection({
 }) {
   const [period, setPeriod] = useState<BillingPeriod>("monthly");
   const [demoOpen, setDemoOpen] = useState(false);
-  // Credit tier + extra seats picked on each card, keyed by plan id.
-  const [selection, setSelection] = useState<Record<string, { tierIdx: number; extraSeats: number }>>({});
-  const selectionOf = (plan: Plan) => selection[plan.id] ?? { tierIdx: 0, extraSeats: 0 };
-  const pick = (plan: Plan, change: Partial<{ tierIdx: number; extraSeats: number }>) =>
-    setSelection((prev) => ({ ...prev, [plan.id]: { ...selectionOf(plan), ...change } }));
 
   return (
     // Slightly open letter spacing for the whole section; elements with their own tracking override it.
@@ -285,29 +278,12 @@ export default function PricingSection({
           {/* Plan cards — Starter / Pro / Scale / Enterprise in one row (swipes sideways below lg) */}
           <div className="flex lg:grid lg:grid-cols-4 items-stretch gap-4 w-full overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-2 lg:pb-0">
             {PLANS.map((plan) => {
-              const { tierIdx, extraSeats } = selectionOf(plan);
-              const tier = plan.tiers[tierIdx];
-              const seatAddon = plan.seatAddon;
-              const seatCost = (p: BillingPeriod) => extraSeats * (seatAddon?.prices[p] ?? 0);
-              const monthly = tier.prices.monthly + seatCost("monthly");
-              const annual = tier.prices.annual + seatCost("annual");
+              // The marketing page shows each plan's entry tier; bigger credit options are picked in the app.
+              const tier = plan.tiers[0];
+              const monthly = tier.prices.monthly;
+              const annual = tier.prices.annual;
               // Annual shows its monthly equivalent; the yearly charge goes underneath.
               const price = period === "annual" ? annual / 12 : monthly;
-              const seatCredits = extraSeats * (seatAddon?.creditsPerSeat ?? 0);
-              const credits = tier.credits + seatCredits;
-              const perMonth = (p: { monthly: number; annual: number }) => (period === "annual" ? p.annual / 12 : p.monthly);
-              const creditOptions = plan.tiers.map((t, i) => ({
-                value: i,
-                label: `${fmtNum(t.credits)} credits — ${formatUsd(perMonth(t.prices))}/mo`,
-              }));
-              const seatOptions = seatAddon
-                ? Array.from({ length: seatAddon.max + 1 }, (_, extra) => ({
-                    value: extra,
-                    label: extra === 0
-                      ? "No additional seats"
-                      : `${extra} extra seat${extra === 1 ? "" : "s"} — +${formatUsd(extra * perMonth(seatAddon.prices))}/mo (+${fmtNum(extra * seatAddon.creditsPerSeat)} credits)`,
-                  }))
-                : [{ value: 0, label: "1 seat included" }];
 
               const cardInner = (
                 <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
@@ -336,34 +312,11 @@ export default function PricingSection({
                       <p style={gen} className="text-[13px] text-[#9CA3AF] leading-[18px]">{plan.meta}</p>
                     </div>
 
-                    {/* Total AI credits a month — the plan's credits plus any extra seats' */}
-                    <div className="rounded-[12px] border border-[#1877F2]/30 bg-[#1877F2]/[0.08] px-3.5 py-3">
-                      <div className="flex items-center gap-2">
-                        <Sparkles className="h-4 w-4 shrink-0 text-[#60A5FA]" />
-                        <span style={sat} className="text-[15px] text-white leading-[20px]">{fmtNum(credits)} AI credits a month</span>
-                      </div>
-                      <p style={gen} className="mt-1 text-[12px] text-[#9CA3AF] leading-[16px]">
-                        {extraSeats > 0
-                          ? `${fmtNum(tier.credits)} plan credits + ${fmtNum(seatCredits)} from extra seats`
-                          : "Shared by your whole team, refreshed every month"}
-                      </p>
-                    </div>
-
-                    {/* Monthly credits + team seats */}
-                    <div className="flex flex-col gap-2.5">
-                      <PlanPicker
-                        label="Monthly credits"
-                        value={tierIdx}
-                        options={creditOptions}
-                        onChange={(i) => pick(plan, { tierIdx: i })}
-                      />
-                      <PlanPicker
-                        label={seatAddon ? "Additional team seats" : "Team seats"}
-                        value={extraSeats}
-                        options={seatOptions}
-                        onChange={seatAddon ? (n) => pick(plan, { extraSeats: n }) : undefined}
-                      />
-                    </div>
+                    {/* Credits */}
+                    <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[20px]">
+                      <span style={sat} className="text-white">{fmtNum(tier.credits)} credits</span> per month
+                      {plan.seatAddon && ` · extra seats ${formatUsd(plan.seatAddon.prices.monthly)}/mo`}
+                    </p>
 
                     {/* CTA — every account starts with the free trial */}
                     <div className="flex flex-col gap-1.5">
@@ -423,13 +376,9 @@ export default function PricingSection({
                     <span style={sat} className="text-[24px] text-white leading-[32px]">Custom</span>
                     <p style={gen} className="text-[13px] text-[#9CA3AF] leading-[18px]">Billed annually · tailored plan</p>
                   </div>
-                  <div className="rounded-[12px] border border-white/10 bg-white/[0.03] px-3.5 py-3">
-                    <div className="flex items-center gap-2">
-                      <Sparkles className="h-4 w-4 shrink-0 text-[#9CA3AF]" />
-                      <span style={sat} className="text-[15px] text-white leading-[20px]">Custom AI credits a month</span>
-                    </div>
-                    <p style={gen} className="mt-1 text-[12px] text-[#9CA3AF] leading-[16px]">Sized to your team and brands</p>
-                  </div>
+                  <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[20px]">
+                    <span style={sat} className="text-white">Custom credits</span> and allowances
+                  </p>
                   <button type="button" data-ml-goal="book_demo" data-ml-goal-location="pricing_enterprise" style={sat}
                     onClick={() => setDemoOpen(true)}
                     className="w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] bg-white text-black hover:bg-gray-200 transition-all">
@@ -441,18 +390,28 @@ export default function PricingSection({
             </div>
           </div>
 
-          {/* ── Credit Usage — how far each plan's credits stretch ── */}
+          <p style={gen} className="-mt-6 text-center text-[13px] text-[#9CA3AF]">
+            More credits and team seats are available in the app.
+          </p>
+
+          {/* ── How credits work — the credit table grouped by cost ── */}
           {showCreditUsage && (
-            <div className="w-full pt-8 mt-2 border-t border-white/[0.06]">
-              <CreditUsageBlock
-                planCredits={PLANS.flatMap((p) =>
-                  p.tiers.map((t) => ({
-                    name: p.name,
-                    credits: t.credits,
-                    // Starter has no paid ads or email marketing.
-                    excludes: p.id === "STARTER" ? ["Ads", "Email marketing"] : [],
-                  })))}
-              />
+            <div className="flex w-full max-w-[760px] flex-col items-center gap-6 pt-8">
+              <div className="flex flex-col items-center gap-2 text-center">
+                <h3 style={sat} className="text-[32px] md:text-[40px] text-white leading-tight">How credits work</h3>
+                <p style={gen} className="max-w-[560px] text-[15px] text-[#9CA3AF] leading-relaxed">
+                  Every task your AI team runs costs credits. Plan credits refresh every month, and you can top up anytime.
+                </p>
+              </div>
+              <div className="w-full overflow-hidden rounded-[16px] border border-white/[0.08] bg-[#131313]">
+                {CREDIT_ROWS.map((row, i) => (
+                  <div key={row.cost}
+                    className={`flex items-center justify-between gap-6 px-5 py-4 ${i > 0 ? "border-t border-white/[0.06]" : ""}`}>
+                    <span style={gen} className="text-[15px] text-[#D1D5DB] leading-[22px]">{row.label}</span>
+                    <span style={sat} className="shrink-0 text-[15px] text-white">{row.cost} {row.cost === "1" ? "credit" : "credits"}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
