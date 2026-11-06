@@ -56,5 +56,18 @@
     "learnMore": "Learn More",
     "viewAll": "View All",
     "comingSoon": "Coming soon"
+  },
+  "launchBanner": {
+    "message": "Our new website launches later this month: more data, real results, deeper insights.",
+    "messageShort": "Our new website launches later this month",
+    "cta": "Get early access",
+    "emailLabel": "Email address",
+    "placeholder": "you@company.com",
+    "submit": "Notify me",
+    "submitting": "Saving…",
+    "success": "You're on the list. We'll email you when the new website goes live.",
+    "invalid": "Please enter a valid email address.",
+    "error": "Something went wrong. Please try again.",
+    "close": "Close announcement"
   }
 }
