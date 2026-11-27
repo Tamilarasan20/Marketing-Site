@@ -2,12 +2,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { agentList } from "../data/agents";
+import { segments } from "../data/segments";
 import appLogo from "../../assets/loraloop-icon.svg";
 
-const audienceLinks = [
-  { name: "For Marketing Agencies", to: "/for-agencies" },
-  { name: "For eCommerce Brands", to: "/for-ecommerce" },
-];
+const audienceLinks = segments.map((seg) => ({ name: seg.menuLabel, to: seg.slug }));
 
 const aiTools = [
   { name: "Brand Voice Generator", to: "/tools/brand-voice" },
@@ -22,11 +20,11 @@ const aiTools = [
 ];
 
 const blogLinks = [
-  { name: "Why Founders Need an AI Marketing Team", to: "/blog/7" },
-  { name: "Loraloop vs Postiz", to: "/blog/8" },
-  { name: "Loraloop vs Post Bridge", to: "/blog/9" },
-  { name: "Top 10 AI Marketing Tools 2026", to: "/blog/10" },
-  { name: "AI Marketing Automation Guide", to: "/blog/11" },
+  { name: "After Black Friday: 30-day retention plan", to: "/blog/after-black-friday-retention-plan-shopify" },
+  { name: "Meta ads creative testing framework", to: "/blog/meta-ads-creative-testing-framework-2026" },
+  { name: "GEO vs SEO in 2026", to: "/blog/geo-vs-seo-2026" },
+  { name: "How to choose an AI marketing agent", to: "/blog/how-to-choose-ai-marketing-agent" },
+  { name: "BFCM post-mortem template", to: "/blog/bfcm-post-mortem-template-agencies" },
 ];
 
 const companyLinks = [
@@ -74,7 +72,23 @@ const linkClass =
 const metaLinkClass =
   "font-['General_Sans',sans-serif] font-normal text-[13px] leading-5 text-[#9ca3af] hover:text-white transition-colors whitespace-nowrap";
 
-export default function Footer() {
+// Light, warm skin used on the redesigned home page.
+const lightHeadingClass =
+  "font-['Satoshi',sans-serif] font-bold text-[#2c2c2c] text-[17px] leading-6";
+const lightLinkClass =
+  "font-['General_Sans',sans-serif] font-normal text-[15px] leading-[22px] text-[rgba(44,44,44,0.7)] hover:text-[#141412] transition-colors break-words";
+const lightMetaLinkClass =
+  "font-['General_Sans',sans-serif] font-normal text-[13px] leading-5 text-[rgba(44,44,44,0.6)] hover:text-[#141412] transition-colors whitespace-nowrap";
+
+export type FooterVariant = "default" | "light";
+
+export default function Footer({ variant = "default" }: { variant?: FooterVariant } = {}) {
+  const light = variant === "light";
+  const headingCls = light ? lightHeadingClass : headingClass;
+  const linkCls = light ? lightLinkClass : linkClass;
+  const metaLinkCls = light ? lightMetaLinkClass : metaLinkClass;
+  const muted = light ? "text-[rgba(44,44,44,0.6)]" : "text-[#9ca3af]";
+  const divider = light ? "text-[#2c2c2c]/20" : "text-white/20";
   const { i18n } = useTranslation();
   // Initialised after mount so the prerendered markup and the first client
   // render agree, even when a different language is stored locally.
@@ -99,13 +113,17 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#0a0a0a] text-white">
+    <footer
+      className={light
+        ? "relative isolate -mt-12 md:-mt-16 rounded-t-[32px] md:rounded-t-[64px] bg-[#f3f2ef] text-[#141412]"
+        : "bg-[#0a1630] text-white font-['Geist','Inter',sans-serif]"}
+    >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-10 pt-16 md:pt-24 pb-8 md:pb-10">
         {/* Oversized wordmark */}
         <div className="overflow-hidden">
           <p
             aria-hidden="true"
-            className="font-['Satoshi',sans-serif] font-bold text-white whitespace-nowrap select-none leading-[0.82] tracking-[-0.045em] text-[clamp(2.5rem,23vw,19.25rem)] pt-[0.04em] pb-[0.16em]"
+            className={`font-['Satoshi',sans-serif] font-bold ${light ? "text-[#2c2c2c]" : "text-white"} whitespace-nowrap select-none leading-[0.82] tracking-[-0.045em] text-[clamp(2.5rem,23vw,19.25rem)] pt-[0.04em] pb-[0.16em]`}
           >
             Loraloop
           </p>
@@ -131,7 +149,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="text-[#9ca3af] hover:text-white transition-colors"
+                  className={light ? "text-[rgba(44,44,44,0.6)] hover:text-[#141412] transition-colors" : "text-[#9ca3af] hover:text-white transition-colors"}
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -146,10 +164,10 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-[13px]">
-            <p className={headingClass}>Solutions</p>
+            <p className={headingCls}>Solutions</p>
             <div className="flex flex-col gap-[13px] mt-2">
               {audienceLinks.map((link) => (
-                <Link key={link.to} to={link.to} className={linkClass}>
+                <Link key={link.to} to={link.to} className={linkCls}>
                   {link.name}
                 </Link>
               ))}
@@ -157,51 +175,51 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-[13px]">
-            <p className={headingClass}>Agents</p>
+            <p className={headingCls}>Agents</p>
             <div className="flex flex-col gap-[13px] mt-2">
               {agentList.map((agent) => (
-                <Link key={agent.key} to={agent.slug} className={linkClass}>
+                <Link key={agent.key} to={agent.slug} className={linkCls}>
                   {agent.name} - {agent.role}
                 </Link>
               ))}
             </div>
 
-            <p className={`${headingClass} mt-10`}>Company</p>
+            <p className={`${headingCls} mt-10`}>Company</p>
             <div className="flex flex-col gap-[13px] mt-2">
               {companyLinks.map((link) => (
-                <Link key={link.to} to={link.to} className={linkClass}>
+                <Link key={link.to} to={link.to} className={linkCls}>
                   {link.name}
                 </Link>
               ))}
-              <p className="font-['General_Sans',sans-serif] font-normal text-[15px] leading-[22px] text-[#6b7280]">
+              <p className={`font-['General_Sans',sans-serif] font-normal text-[15px] leading-[22px] ${light ? "text-[rgba(44,44,44,0.45)]" : "text-[#6b7280]"}`}>
                 Become Affiliate (Soon)
               </p>
             </div>
           </div>
 
           <div className="flex flex-col gap-[13px]">
-            <p className={headingClass}>AI Tools</p>
+            <p className={headingCls}>AI Tools</p>
             <div className="flex flex-col gap-[13px] mt-2">
               {aiTools.map((tool) => (
-                <Link key={tool.to} to={tool.to} className={linkClass}>
+                <Link key={tool.to} to={tool.to} className={linkCls}>
                   {tool.name}
                 </Link>
               ))}
-              <Link to="/tools" className={linkClass}>
+              <Link to="/tools" className={linkCls}>
                 All tools →
               </Link>
             </div>
           </div>
 
           <div className="flex flex-col gap-[13px]">
-            <p className={headingClass}>Blog</p>
+            <p className={headingCls}>Blog</p>
             <div className="flex flex-col gap-[13px] mt-2">
               {blogLinks.map((link) => (
-                <Link key={link.to} to={link.to} className={linkClass}>
+                <Link key={link.to} to={link.to} className={linkCls}>
                   {link.name}
                 </Link>
               ))}
-              <Link to="/blog" className={linkClass}>
+              <Link to="/blog" className={linkCls}>
                 All posts →
               </Link>
             </div>
@@ -209,22 +227,22 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 md:mt-24 border-t border-white/10 pt-6 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
+        <div className={`mt-16 md:mt-24 border-t ${light ? "border-[#e3e1dc]" : "border-white/10"} pt-6 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-6`}>
           <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 lg:justify-start">
-            <p className="font-['General_Sans',sans-serif] font-normal text-[13px] leading-5 text-[#9ca3af] whitespace-nowrap">
+            <p className={`font-['General_Sans',sans-serif] font-normal text-[13px] leading-5 ${muted} whitespace-nowrap`}>
               © 2026 Orimoretail Pvt. Ltd.
             </p>
-            <span aria-hidden="true" className="text-white/20">
+            <span aria-hidden="true" className={divider}>
               |
             </span>
             {legalLinks.map((link, index) => (
               <span key={link.to} className="flex items-center gap-3">
                 {index > 0 && (
-                  <span aria-hidden="true" className="text-white/20">
+                  <span aria-hidden="true" className={divider}>
                     •
                   </span>
                 )}
-                <Link to={link.to} className={metaLinkClass}>
+                <Link to={link.to} className={metaLinkCls}>
                   {link.name}
                 </Link>
               </span>
@@ -235,25 +253,29 @@ export default function Footer() {
             <button
               type="button"
               onClick={backToTop}
-              className="font-['General_Sans',sans-serif] font-medium text-sm leading-5 text-white rounded-full border border-white/15 px-5 py-2.5 hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className={light
+                ? "font-['General_Sans',sans-serif] font-medium text-sm leading-5 text-[#2c2c2c] rounded-[16px] border border-[#e3e1dc] bg-white/60 px-5 py-2.5 hover:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#141412]/30"
+                : "font-['General_Sans',sans-serif] font-medium text-sm leading-5 text-white rounded-full border border-white/15 px-5 py-2.5 hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"}
             >
               Back to top ↑
             </button>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-4 sm:gap-6">
-            <p className="font-['General_Sans',sans-serif] font-normal text-[13px] leading-5 text-[#9ca3af] text-center lg:whitespace-nowrap">
+            <p className={`font-['General_Sans',sans-serif] font-normal text-[13px] leading-5 ${muted} text-center lg:whitespace-nowrap`}>
               The AI-native marketing team from{" "}
-              <span className="text-white font-medium">Orimoretail</span>
+              <span className={`${light ? "text-[#2c2c2c]" : "text-white"} font-medium`}>Orimoretail</span>
             </p>
-            <label className="flex items-center gap-2 rounded-full border border-white/15 pl-4 pr-3 py-2 hover:bg-white/10 transition-colors">
+            <label className={light
+              ? "flex items-center gap-2 rounded-[16px] border border-[#e3e1dc] bg-white/60 pl-4 pr-3 py-2 hover:bg-white transition-colors"
+              : "flex items-center gap-2 rounded-full border border-white/15 pl-4 pr-3 py-2 hover:bg-white/10 transition-colors"}>
               <span className="sr-only">Select language</span>
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="1.6"
-                className="w-4 h-4 text-[#9ca3af]"
+                className={`w-4 h-4 ${muted}`}
                 aria-hidden="true"
               >
                 <circle cx="12" cy="12" r="9" />
@@ -262,13 +284,13 @@ export default function Footer() {
               <select
                 value={lang}
                 onChange={(e) => changeLanguage(e.target.value)}
-                className="font-['General_Sans',sans-serif] font-medium text-sm leading-5 text-white bg-transparent appearance-none outline-none cursor-pointer pr-1"
+                className={`font-['General_Sans',sans-serif] font-medium text-sm leading-5 ${light ? "text-[#2c2c2c]" : "text-white"} bg-transparent appearance-none outline-none cursor-pointer pr-1`}
               >
                 {languages.map((language) => (
                   <option
                     key={language.code}
                     value={language.code}
-                    className="bg-[#0a0a0a] text-white"
+                    className={light ? "bg-white text-[#2c2c2c]" : "bg-[#0a1630] text-white font-['Geist','Inter',sans-serif]"}
                   >
                     {language.label}
                   </option>

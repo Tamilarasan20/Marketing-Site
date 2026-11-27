@@ -147,8 +147,13 @@ const CARD_SLOT = "snap-start shrink-0 w-[84%] max-w-[340px] sm:w-[300px] lg:w-a
 const sat = { fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 } as const;
 const gen = { fontFamily: "General Sans, Inter, sans-serif" } as const;
 
+/** Card shell for the light skin (white card, warm border). */
+const lightCardStyle = (radius: number) =>
+  ({ background: "#ffffff", border: "1px solid #ddd6ce", borderRadius: `${radius}px` }) as const;
+
 // ─── Agent banner card header ─────────────────────────────────────────────────
-function CardHeader() {
+function CardHeader({ light = false }: { light?: boolean }) {
+  const edge = light ? "#ffffff" : "#131313";
   return (
     <div className="relative h-[110px] w-full shrink-0 overflow-hidden">
       <img loading="lazy" decoding="async"
@@ -158,52 +163,56 @@ function CardHeader() {
         draggable={false}
       />
       <div className="absolute inset-0"
-        style={{ background: "linear-gradient(to right, #131313 0%, transparent 20%, transparent 80%, #131313 100%)" }} />
+        style={{ background: `linear-gradient(to right, ${edge} 0%, transparent 20%, transparent 80%, ${edge} 100%)` }} />
       <div className="absolute bottom-0 left-0 right-0 h-14"
-        style={{ background: "linear-gradient(to top, #131313 0%, transparent 100%)" }} />
+        style={{ background: `linear-gradient(to top, ${edge} 0%, transparent 100%)` }} />
     </div>
   );
 }
 
 // ─── SVG checkmark (Figma style) ─────────────────────────────────────────────
-function CheckIcon() {
+function CheckIcon({ light = false }: { light?: boolean }) {
   return (
     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="flex-shrink-0 mt-[3px]">
-      <path d="M2.5 6.5L4.5 8.5L9.5 3.5" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2.5 6.5L4.5 8.5L9.5 3.5" stroke={light ? "#14a148" : "#6B7280"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-function PlanBadge({ label }: { label: string }) {
+function PlanBadge({ label, light = false }: { label: string; light?: boolean }) {
   return (
     <span style={{ ...gen, fontWeight: 500 }}
-      className="inline-block mb-2 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[11px] text-[#9CA3AF]">
+      className={light
+        ? "inline-block mb-2 rounded-full border border-[#ddd6ce] bg-[#fbf8f5] px-2.5 py-0.5 text-[11px] text-[rgba(44,44,44,0.7)]"
+        : "inline-block mb-2 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[11px] text-[#9CA3AF]"}>
       {label}
     </span>
   );
 }
 
-function Features({ intro, groups }: { intro: string; groups: FeatureGroup[] }) {
+function Features({ intro, groups, light = false }: { intro: string; groups: FeatureGroup[]; light?: boolean }) {
   return (
     <div className="flex flex-col gap-4">
-      <p style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-[#9CA3AF] leading-[18px]">{intro}</p>
+      <p style={{ ...gen, fontWeight: 500 }} className={`text-[13px] ${light ? "text-[rgba(44,44,44,0.6)]" : "text-[#9CA3AF]"} leading-[18px]`}>{intro}</p>
       {groups.map((group) => (
         <div key={group.title} className="flex flex-col gap-1.5">
-          <p style={sat} className="text-[13px] text-[#E5E7EB]">{group.title}</p>
+          <p style={sat} className={`text-[13px] ${light ? "text-[#2c2c2c]" : "text-[#E5E7EB]"}`}>{group.title}</p>
           {group.chips && (
             <div className="flex flex-wrap gap-1.5 pb-0.5">
               {group.chips.map((chip) => (
                 <span key={chip.name} style={{ ...gen, fontWeight: 500 }}
-                  className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[12px] leading-[16px] text-[#9CA3AF]">
-                  <span className="font-semibold text-[#E5E7EB]">{chip.name}</span> · {chip.role}
+                  className={light
+                    ? "rounded-full border border-[#ddd6ce] bg-[#fbf8f5] px-2.5 py-1 text-[12px] leading-[16px] text-[rgba(44,44,44,0.6)]"
+                    : "rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[12px] leading-[16px] text-[#9CA3AF]"}>
+                  <span className={`font-semibold ${light ? "text-[#2c2c2c]" : "text-[#E5E7EB]"}`}>{chip.name}</span> · {chip.role}
                 </span>
               ))}
             </div>
           )}
           {group.items.map((f) => (
             <div key={f} className="flex items-start gap-2">
-              <CheckIcon />
-              <span style={{ ...gen, fontWeight: 500 }} className="text-[14px] leading-[19px] text-[#D1D5DB]">{f}</span>
+              <CheckIcon light={light} />
+              <span style={{ ...gen, fontWeight: 500 }} className={`text-[14px] leading-[19px] ${light ? "text-[rgba(44,44,44,0.85)]" : "text-[#D1D5DB]"}`}>{f}</span>
             </div>
           ))}
         </div>
@@ -216,12 +225,25 @@ function Features({ intro, groups }: { intro: string; groups: FeatureGroup[] }) 
 export default function PricingSection({
   className = "",
   showCreditUsage = true,
+  variant = "dark",
+  headingLevel = "h2",
 }: {
+  /** "h1" when the section is the page itself (/pricing), "h2" when embedded. */
+  headingLevel?: "h1" | "h2";
   className?: string;
   /** Renders the Credit Usage breakdown below the plans. On by default so pricing
    *  stays consistent everywhere; pass false to hide it on a given surface. */
   showCreditUsage?: boolean;
+  /** "dark" (default) is the original black section used by /pricing.
+   *  "light" is the warm home-page skin: transparent background, white cards. */
+  variant?: "dark" | "light";
 }) {
+  const light = variant === "light";
+  const Heading = headingLevel;
+  // Text colour classes per skin; the dark values are the original ones.
+  const ink = light ? "text-[#2c2c2c]" : "text-white";
+  const muted = light ? "text-[rgba(44,44,44,0.6)]" : "text-[#9CA3AF]";
+  const faint = light ? "text-[rgba(44,44,44,0.45)]" : "text-[#6B7280]";
   const [period, setPeriod] = useState<BillingPeriod>("monthly");
   // Credit tier + extra seats picked on each card, keyed by plan id.
   const [selection, setSelection] = useState<Record<string, { tierIdx: number; extraSeats: number }>>({});
@@ -231,16 +253,23 @@ export default function PricingSection({
 
   return (
     // Slightly open letter spacing for the whole section; elements with their own tracking override it.
-    <section className={`bg-black ${className}`} style={{ letterSpacing: "0.02em" }}>
+    <section className={light ? `pricing-light ${className}` : `bg-black ${className}`} style={{ letterSpacing: light ? undefined : "0.02em" }}>
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 xl:px-[46px] pt-[40px] pb-[80px]">
         <div className="flex flex-col items-center gap-[42px]">
 
           {/* Title */}
           <div className="flex flex-col items-center gap-3 text-center">
-            <h2 style={sat} className="text-[36px] md:text-[44px] text-white tracking-[-0.2px] leading-tight">
-              Pricing
-            </h2>
-            <p style={gen} className="max-w-[560px] text-[16px] text-[#9CA3AF] leading-relaxed">
+            {light ? (
+              <Heading id="pricing-heading" className="hv-h2">
+                <span className="text-[#2c2c2c]">Pricing</span>{" "}
+                <span className="text-[rgba(44,44,44,0.55)]">that scales with you.</span>
+              </Heading>
+            ) : (
+              <Heading style={sat} className="text-[36px] md:text-[44px] text-white tracking-[-0.2px] leading-tight">
+                Loraloop pricing
+              </Heading>
+            )}
+            <p style={gen} className={light ? "max-w-[560px] text-[17px] text-[rgba(44,44,44,0.85)] leading-relaxed" : "max-w-[560px] text-[16px] text-[#9CA3AF] leading-relaxed"}>
               Your AI marketing team for ads, social and SEO. Start with a 3-day free trial: no card needed, cancel anytime.
             </p>
           </div>
@@ -253,8 +282,8 @@ export default function PricingSection({
                   {opt.badge ? (
                     <span style={{
                       ...gen, fontWeight: 500,
-                      background: "#151109", border: "0.749px solid rgba(213,165,91,0.4)",
-                      color: "#D5A55B", fontSize: "11px", padding: "3px 8px",
+                      background: light ? "#cfe9d3" : "#151109", border: light ? "0.749px solid rgba(9,68,19,0.15)" : "0.749px solid rgba(213,165,91,0.4)",
+                      color: light ? "#094413" : "#D5A55B", fontSize: "11px", padding: "3px 8px",
                       borderRadius: "999px", lineHeight: "1", whiteSpace: "nowrap",
                     }}>
                       {opt.badge}
@@ -263,16 +292,21 @@ export default function PricingSection({
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-[2px] border border-[#374151] rounded-[12px] px-[2px] py-[1px]">
+            <div className={light ? "flex items-center gap-[2px] border border-[#ddd6ce] bg-white rounded-[14px] p-[3px]" : "flex items-center gap-[2px] border border-[#374151] rounded-[12px] px-[2px] py-[1px]"}>
               {BILLING_OPTS.map((opt) => (
                 <button
                   key={opt.id}
                   type="button"
                   onClick={() => setPeriod(opt.id)}
                   style={sat}
-                  className={`flex-1 h-[34px] px-3 sm:px-4 rounded-[8px] text-[14px] sm:text-[15px] tracking-[0.35px] whitespace-nowrap transition-all ${
-                    period === opt.id ? "bg-[#1877F2] text-white" : "text-white hover:bg-white/5"
-                  }`}
+                  aria-pressed={light ? period === opt.id : undefined}
+                  className={light
+                    ? `flex-1 h-[38px] px-4 sm:px-5 rounded-[11px] text-[14px] sm:text-[15px] whitespace-nowrap transition-all ${
+                        period === opt.id ? "bg-[#094413] text-[#f9f3ed]" : "text-[#2c2c2c] hover:bg-[#f6eee5]"
+                      }`
+                    : `flex-1 h-[34px] px-3 sm:px-4 rounded-[8px] text-[14px] sm:text-[15px] tracking-[0.35px] whitespace-nowrap transition-all ${
+                        period === opt.id ? "bg-[#1877F2] text-white" : "text-white hover:bg-white/5"
+                      }`}
                 >
                   {opt.label}
                 </button>
@@ -308,39 +342,39 @@ export default function PricingSection({
                 : [{ value: 0, label: "1 seat included" }];
 
               const cardInner = (
-                <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
-                  <CardHeader />
+                <div style={{ background: light ? "#ffffff" : "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
+                  <CardHeader light={light} />
                   <div className="flex flex-col gap-5 pt-4 px-5 pb-6">
 
                     {/* Badge + name + desc */}
                     <div>
-                      {plan.badge && <PlanBadge label={plan.badge} />}
-                      <p style={sat} className="text-[17px] text-white tracking-[0.35px] leading-[22px]">{plan.name}</p>
-                      <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[19px]">{plan.description}</p>
+                      {plan.badge && <PlanBadge label={plan.badge} light={light} />}
+                      <p style={sat} className={`text-[17px] ${ink} tracking-[0.35px] leading-[22px]`}>{plan.name}</p>
+                      <p style={gen} className={`text-[14px] ${muted} leading-[19px]`}>{plan.description}</p>
                     </div>
 
                     {/* Price — per month; on annual, the monthly equivalent and the yearly charge */}
                     <div className="flex flex-col gap-1">
                       <div className="flex items-baseline gap-2">
                         {period === "annual" && (
-                          <span style={sat} className="text-[16px] text-[#6B7280] line-through leading-[32px]">{formatUsd(monthly)}</span>
+                          <span style={sat} className={`text-[16px] ${faint} line-through leading-[32px]`}>{formatUsd(monthly)}</span>
                         )}
-                        <span style={sat} className="text-[24px] text-white leading-[32px]">{formatUsd(price)}</span>
-                        <span style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-[#6B7280] tracking-[0.5px] leading-[20px]">/mo</span>
+                        <span style={sat} className={`text-[24px] ${ink} leading-[32px]`}>{formatUsd(price)}</span>
+                        <span style={{ ...gen, fontWeight: 500 }} className={`text-[13px] ${faint} tracking-[0.5px] leading-[20px]`}>/mo</span>
                       </div>
                       {period === "annual" && (
-                        <p style={gen} className="text-[12px] text-[#9CA3AF] leading-[16px]">Billed {formatUsd(annual)} yearly</p>
+                        <p style={gen} className={`text-[12px] ${muted} leading-[16px]`}>Billed {formatUsd(annual)} yearly</p>
                       )}
-                      <p style={gen} className="text-[13px] text-[#9CA3AF] leading-[18px]">{plan.meta}</p>
+                      <p style={gen} className={`text-[13px] ${muted} leading-[18px]`}>{plan.meta}</p>
                     </div>
 
                     {/* Total AI credits a month — the plan's credits plus any extra seats' */}
-                    <div className="rounded-[12px] border border-[#1877F2]/30 bg-[#1877F2]/[0.08] px-3.5 py-3">
+                    <div className={light ? "rounded-[12px] border border-[#cfe9d3] bg-[#f1f8f2] px-3.5 py-3" : "rounded-[12px] border border-[#1877F2]/30 bg-[#1877F2]/[0.08] px-3.5 py-3"}>
                       <div className="flex items-center gap-2">
-                        <Sparkles className="h-4 w-4 shrink-0 text-[#60A5FA]" />
-                        <span style={sat} className="text-[15px] text-white leading-[20px]">{fmtNum(credits)} AI credits a month</span>
+                        <Sparkles className={`h-4 w-4 shrink-0 ${light ? "text-[#14a148]" : "text-[#60A5FA]"}`} />
+                        <span style={sat} className={`text-[15px] ${ink} leading-[20px]`}>{fmtNum(credits)} AI credits a month</span>
                       </div>
-                      <p style={gen} className="mt-1 text-[12px] text-[#9CA3AF] leading-[16px]">
+                      <p style={gen} className={`mt-1 text-[12px] ${muted} leading-[16px]`}>
                         {extraSeats > 0
                           ? `${fmtNum(tier.credits)} plan credits + ${fmtNum(seatCredits)} from extra seats`
                           : "Shared by your whole team, refreshed every month"}
@@ -369,18 +403,24 @@ export default function PricingSection({
                         data-ml-goal="start_trial" data-ml-goal-plan={plan.id}
                         href={TRIAL_URL}
                         style={sat}
-                        className={`w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] transition-all ${
-                          plan.highlighted
-                            ? "bg-[#1877F2] text-white hover:bg-[#0f66d0]"
-                            : "bg-[#EEF4FF] text-[#1877F2] border border-[#D1D5DB] hover:bg-[#dce8ff]"
-                        }`}
+                        className={light
+                          ? `w-full h-[48px] inline-flex items-center justify-center rounded-[16px] text-[15px] transition-all ${
+                              plan.highlighted
+                                ? "bg-[#094413] text-[#f9f3ed] hover:bg-[#0d5a1a]"
+                                : "bg-[#f6eee5] text-[#2c2c2c] hover:bg-[#efe4d8]"
+                            }`
+                          : `w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] transition-all ${
+                              plan.highlighted
+                                ? "bg-[#1877F2] text-white hover:bg-[#0f66d0]"
+                                : "bg-[#EEF4FF] text-[#1877F2] border border-[#D1D5DB] hover:bg-[#dce8ff]"
+                            }`}
                       >
                         Start your 3-day free trial
                       </a>
-                      <p style={gen} className="text-[12px] text-[#9CA3AF] text-center leading-[16px]">No card needed · cancel anytime</p>
+                      <p style={gen} className={`text-[12px] ${muted} text-center leading-[16px]`}>No card needed · cancel anytime</p>
                     </div>
 
-                    <Features intro={plan.featuresIntro} groups={plan.features} />
+                    <Features intro={plan.featuresIntro} groups={plan.features} light={light} />
                   </div>
                 </div>
               );
@@ -388,10 +428,10 @@ export default function PricingSection({
               if (plan.highlighted) {
                 return (
                   <div key={plan.id} className={`flex flex-col items-center gap-2 ${CARD_SLOT}`}
-                    style={{ background: "#1877F2", borderRadius: "16px", padding: "8px 2px 2px" }}>
-                    <p style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-white tracking-[0.5px] leading-[18px]">Most popular</p>
+                    style={{ background: light ? "#094413" : "#1877F2", borderRadius: light ? "24px" : "16px", padding: "8px 2px 2px" }}>
+                    <p style={{ ...gen, fontWeight: 500 }} className={`text-[13px] ${light ? "text-[#f9f3ed]" : "text-white"} tracking-[0.5px] leading-[18px]`}>Most popular</p>
                     <div className="w-full overflow-hidden flex-1"
-                      style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "14px" }}>
+                      style={light ? lightCardStyle(22) : { background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "14px" }}>
                       {cardInner}
                     </div>
                   </div>
@@ -400,7 +440,7 @@ export default function PricingSection({
 
               return (
                 <div key={plan.id} className={`overflow-hidden ${CARD_SLOT}`}
-                  style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
+                  style={light ? lightCardStyle(24) : { background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
                   {cardInner}
                 </div>
               );
@@ -408,31 +448,33 @@ export default function PricingSection({
 
             {/* Enterprise — sales-led, same look as the plan cards */}
             <div className={`overflow-hidden ${CARD_SLOT}`}
-              style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
-              <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
-                <CardHeader />
+              style={light ? lightCardStyle(24) : { background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
+              <div style={{ background: light ? "#ffffff" : "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
+                <CardHeader light={light} />
                 <div className="flex flex-col gap-5 pt-4 px-5 pb-6">
                   <div>
-                    <PlanBadge label="Tailored" />
-                    <p style={sat} className="text-[17px] text-white tracking-[0.35px] leading-[22px]">Enterprise</p>
-                    <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[19px]">For larger teams with many brands or custom needs.</p>
+                    <PlanBadge label="Tailored" light={light} />
+                    <p style={sat} className={`text-[17px] ${ink} tracking-[0.35px] leading-[22px]`}>Enterprise</p>
+                    <p style={gen} className={`text-[14px] ${muted} leading-[19px]`}>For larger teams with many brands or custom needs.</p>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <span style={sat} className="text-[24px] text-white leading-[32px]">Custom</span>
-                    <p style={gen} className="text-[13px] text-[#9CA3AF] leading-[18px]">Billed annually · tailored plan</p>
+                    <span style={sat} className={`text-[24px] ${ink} leading-[32px]`}>Custom</span>
+                    <p style={gen} className={`text-[13px] ${muted} leading-[18px]`}>Billed annually · tailored plan</p>
                   </div>
-                  <div className="rounded-[12px] border border-white/10 bg-white/[0.03] px-3.5 py-3">
+                  <div className={light ? "rounded-[12px] border border-[#ddd6ce] bg-[#fbf8f5] px-3.5 py-3" : "rounded-[12px] border border-white/10 bg-white/[0.03] px-3.5 py-3"}>
                     <div className="flex items-center gap-2">
-                      <Sparkles className="h-4 w-4 shrink-0 text-[#9CA3AF]" />
-                      <span style={sat} className="text-[15px] text-white leading-[20px]">Custom AI credits a month</span>
+                      <Sparkles className={`h-4 w-4 shrink-0 ${light ? "text-[rgba(44,44,44,0.5)]" : "text-[#9CA3AF]"}`} />
+                      <span style={sat} className={`text-[15px] ${ink} leading-[20px]`}>Custom AI credits a month</span>
                     </div>
-                    <p style={gen} className="mt-1 text-[12px] text-[#9CA3AF] leading-[16px]">Sized to your team and brands</p>
+                    <p style={gen} className={`mt-1 text-[12px] ${muted} leading-[16px]`}>Sized to your team and brands</p>
                   </div>
                   <a href="/contact" data-ml-goal="book_demo" data-ml-goal-location="pricing_enterprise" style={sat}
-                    className="w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] bg-white text-black hover:bg-gray-200 transition-all">
+                    className={light
+                      ? "w-full h-[48px] inline-flex items-center justify-center rounded-[16px] text-[15px] bg-[#2c2c2c] text-white hover:bg-black transition-all"
+                      : "w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] bg-white text-black hover:bg-gray-200 transition-all"}>
                     Contact sales
                   </a>
-                  <Features intro="Everything in Scale, plus" groups={ENTERPRISE_FEATURES} />
+                  <Features intro="Everything in Scale, plus" groups={ENTERPRISE_FEATURES} light={light} />
                 </div>
               </div>
             </div>

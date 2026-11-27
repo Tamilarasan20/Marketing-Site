@@ -1,0 +1,96 @@
+/* ─── Loraloop site v5 ────────────────────────────────────────────────────────
+ * Enrich-style concept, Loraloop content: a quiet light-grey ground with a faint dot
+ * grid, regular-weight two-tone headlines (ink, then grey), monospace uppercase labels
+ * with a blue square, warm rounded cards that hold white product views, and blue pill
+ * buttons. No frame lines, ribbons or dark bands.
+ * Scoped to `.lx` so routes not yet redesigned are untouched.
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+.lx {
+  --lx-ink: #111110;          /* headings, primary text */
+  --lx-slate: #6f6f69;        /* secondary text, the grey half of headlines */
+  --lx-mute: #9a9a93;         /* captions, labels */
+  --lx-line: #e6e5e0;         /* borders */
+  --lx-mist: #efeee9;         /* warm card fill */
+  --lx-ground: #f7f7f6;       /* page ground */
+  --lx-blue: #2563eb;         /* buttons and the label square */
+  --lx-blue-ink: #1d4fd8;
+  --lx-blue-wash: #e8efff;
+  --lx-green: #15803d;        /* success states only */
+  --lx-amber: #a15c00;        /* needs-approval states only */
+
+  color: var(--lx-ink);
+  font-family: "Geist", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: -0.006em;
+  background-color: var(--lx-ground);
+  background-image: radial-gradient(rgba(17, 17, 16, 0.075) 1px, transparent 1px);
+  background-size: 20px 20px;
+  overflow-x: clip;
+}
+
+/* Type */
+.lx .lx-display {
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 3.9rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.lx .lx-h2 {
+  font-weight: 400;
+  font-size: clamp(1.85rem, 3.4vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+.lx .lx-soft { color: var(--lx-slate); }
+.lx .lx-lead {
+  font-size: clamp(1.05rem, 1.4vw, 1.18rem);
+  line-height: 1.6;
+  color: var(--lx-slate);
+}
+.lx .lx-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lx-slate);
+}
+.lx .lx-kicker::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  background: var(--lx-blue);
+}
+.lx .lx-mono {
+  font-family: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sections */
+.lx .lx-mist { background: transparent; }
+
+/* Product view type inside cards. */
+.lx .lx-ui {
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--lx-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Marquee for the integrations row. */
+.lx .lx-marquee { mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+@media (prefers-reduced-motion: no-preference) {
+  .lx .lx-marquee__track { animation: lx-marquee 40s linear infinite; width: max-content; }
+}
+@keyframes lx-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.lx :focus-visible { outline: 2px solid var(--lx-blue); outline-offset: 3px; }

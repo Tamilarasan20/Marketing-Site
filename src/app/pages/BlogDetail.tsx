@@ -407,6 +407,23 @@ export default function BlogDetail() {
               <div className="max-w-[740px] flex flex-col gap-6">
                 {post.content.map((section, index) => renderSection(section, index))}
 
+                {/* Meta ads posts bring most search visitors: offer the free audit where the problem is fresh. */}
+                {/meta|facebook|instagram|advantage|andromeda|creative|ugc|cpm|roas|hook-rate|media-buyer/.test(post.slug) && !/google/.test(post.slug) && (
+                  <aside className="mt-6 rounded-2xl bg-[#0f172a] p-6 md:p-8 flex flex-col gap-4" aria-label="Free Meta ads audit">
+                    <p className="font-['Satoshi',sans-serif] font-bold text-white text-xl md:text-2xl leading-[1.3]">Check your own account for this, free.</p>
+                    <p className="font-['General_Sans',sans-serif] font-medium text-[#cbd5e1] text-base leading-[1.6]">
+                      Connect your Meta ad account and get a score, the spend at stake each month and a ranked list of fixes: wasted spend, tracking, placements, budgets and creative fatigue.
+                    </p>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <Link to="/free-meta-ads-audit" data-ml-goal="meta_audit_cta" data-ml-goal-location="blog_post"
+                        className="inline-flex h-11 items-center rounded-full bg-[#1877f2] px-5 font-['Satoshi',sans-serif] font-bold text-white text-[15px] hover:bg-[#1466d8] transition-colors">
+                        Get a free Meta ads audit →
+                      </Link>
+                      <span className="font-['General_Sans',sans-serif] font-medium text-[#94a3b8] text-sm">3-day free trial · no credit card</span>
+                    </div>
+                  </aside>
+                )}
+
                 {/* Internal links: related reading + paired free tools */}
                 {(relatedReading.length > 0 || relatedTools.length > 0) && (
                   <aside className="mt-6 rounded-2xl border border-[#e2e8f0] bg-[#f8fafc] p-6 flex flex-col gap-5" aria-label="Related reading">

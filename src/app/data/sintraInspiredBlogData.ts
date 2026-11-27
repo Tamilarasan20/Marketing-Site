@@ -1,4 +1,5 @@
 import type { BlogPost, ContentSection } from './blogData';
+import { RETIRED_BLOG_IDS } from './retiredBlogPosts';
 
 type Topic = {
   id: number;
@@ -121,7 +122,7 @@ function buildContent(topic: Topic): ContentSection[] {
   ];
 }
 
-export const sintraInspiredBlogPosts: BlogPost[] = topics.map((topic) => ({
+export const sintraInspiredBlogPosts: BlogPost[] = topics.filter((topic) => !RETIRED_BLOG_IDS.has(topic.id)).map((topic) => ({
   id: topic.id,
   slug: slugify(topic.title),
   title: topic.title,

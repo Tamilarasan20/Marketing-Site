@@ -10,7 +10,7 @@ const OG_IMAGE = `${SITE}/og-image.png`;
 const OG_IMAGE_WIDTH = '1200';
 const OG_IMAGE_HEIGHT = '630';
 const TWITTER_HANDLE = '@loraloop_ai';
-const THEME_COLOR = '#6366f1';
+const THEME_COLOR = '#14A148';
 
 // ── 1. Compile the prerender data entry (blog posts, calculators, comparisons, authors) ──
 const tmpOut = join(__dirname, '_blogdata_tmp.mjs');
@@ -22,7 +22,7 @@ await build({
   outfile: tmpOut,
   logLevel: 'silent',
 });
-const { blogPosts, calculators, comparisons, authors, getAuthor, DEFAULT_AUTHOR, tools } = await import(tmpOut + '?t=' + Date.now());
+const { blogPosts, calculators, comparisons, authors, getAuthor, DEFAULT_AUTHOR, tools, pageMeta, HOME_H1, HOME_LEAD, HOME_STACK, HOME_GUARDRAILS, HOME_DEFINITION, HOME_FAQ } = await import(tmpOut + '?t=' + Date.now());
 const toolBySlug = (slug) => tools.find(t => t.slug === slug);
 const postBySlug = (slug) => blogPosts.find(p => p.slug === slug);
 
@@ -152,16 +152,18 @@ function parseIsoDate(dateStr) {
 const distDir = join(__dirname, 'dist');
 const template = readFileSync(join(distDir, 'index.html'), 'utf8');
 
-function buildPage({ path, title, description, bodyHtml, extraHead = '', ogType = 'website', ogImage = OG_IMAGE, ogImageWidth = OG_IMAGE_WIDTH, ogImageHeight = OG_IMAGE_HEIGHT, ogImageAlt }) {
+function buildPage({ path, title, fullTitle, description, bodyHtml, extraHead = '', ogType = 'website', ogImage = OG_IMAGE, ogImageWidth = OG_IMAGE_WIDTH, ogImageHeight = OG_IMAGE_HEIGHT, ogImageAlt, hideUntilMount = false }) {
   const url = `${SITE}${path}`;
-  const t = esc(title);
+  const t = esc(fullTitle || `${title} | Loraloop`);
   const d = esc(description);
   const img = esc(ogImage);
   let html = template
-    .replace(/<title>[^<]*<\/title>/, `<title>${t} | Loraloop</title>`)
-    // The SPA hides #root until React mounts (App.tsx removes this tag). Prerendered pages
-    // already carry real content, so show it immediately to crawlers and users.
-    .replace(/\s*<style id="s">[^<]*<\/style>/, '')
+    .replace(/<title>[^<]*<\/title>/, `<title>${t}</title>`)
+    // The SPA hides #root until React mounts (App.tsx removes this tag). Blog-style pages
+    // already carry readable content, so show it immediately. Designed app pages (home,
+    // pricing, buyer pages) keep it hidden: crawlers still read the HTML, and visitors
+    // don't see a flash of unstyled text before React paints the real page.
+    .replace(/\s*<style id="s">[^<]*<\/style>/, hideUntilMount ? '$&' : '')
     // Drop the template's static meta tags so prerendered pages don't carry duplicates
     .replace(/\s*<meta name="description"[^>]*\/>/, '')
     .replace(/\s*<meta property="og:title"[^>]*\/>/, '')
@@ -175,7 +177,7 @@ function buildPage({ path, title, description, bodyHtml, extraHead = '', ogType 
   <link rel="canonical" href="${url}" />
   <link rel="alternate" hreflang="en" href="${url}" />
   <link rel="alternate" hreflang="x-default" href="${url}" />
-  <meta property="og:title" content="${t} | Loraloop" />
+  <meta property="og:title" content="${t}" />
   <meta property="og:description" content="${d}" />
   <meta property="og:url" content="${url}" />
   <meta property="og:type" content="${ogType}" />
@@ -183,11 +185,11 @@ function buildPage({ path, title, description, bodyHtml, extraHead = '', ogType 
   <meta property="og:image" content="${img}" />
   <meta property="og:image:width" content="${ogImageWidth}" />
   <meta property="og:image:height" content="${ogImageHeight}" />
-  <meta property="og:image:alt" content="${esc(ogImageAlt || `${title} | Loraloop`)}" />
+  <meta property="og:image:alt" content="${esc(ogImageAlt || fullTitle || `${title} | Loraloop`)}" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="${TWITTER_HANDLE}" />
-  <meta name="twitter:title" content="${t} | Loraloop" />
+  <meta name="twitter:title" content="${t}" />
   <meta name="twitter:description" content="${d}" />
   <meta name="twitter:image" content="${img}" />
   <meta name="theme-color" content="${THEME_COLOR}" />
@@ -371,6 +373,80 @@ for (const a of authors) {
   writePage(`/authors/${a.slug}`, html);
 }
 
+// ── 4b. Main pages: home, pricing, buyer and agent pages ─────────────────────
+// Before this, every route below served the home page's generic <title>, description and
+// no canonical, H1 or schema. Each page now gets its own, from src/app/data/pageMeta.ts.
+const ORG_ID = `${SITE}/#organization`;
+const orgSchema = {
+  '@context': 'https://schema.org', '@type': 'Organization', '@id': ORG_ID, name: 'Loraloop', url: SITE,
+  logo: `${SITE}/favicon.svg`, sameAs: ['https://x.com/loraloop_ai'],
+};
+const websiteSchema = { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${SITE}/#website`, name: 'Loraloop', url: SITE, publisher: { '@id': ORG_ID } };
+const softwareSchema = {
+  '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Loraloop', url: SITE,
+  applicationCategory: 'BusinessApplication', operatingSystem: 'Web', publisher: { '@id': ORG_ID },
+  description: 'An AI marketing team that runs ads, email, SEO and social for lean marketing teams, with human approval on every change.',
+  offers: [
+    { '@type': 'Offer', name: 'Starter', price: '39', priceCurrency: 'USD' },
+    { '@type': 'Offer', name: 'Pro', price: '99', priceCurrency: 'USD' },
+    { '@type': 'Offer', name: 'Scale', price: '199', priceCurrency: 'USD' },
+  ],
+};
+const ldTag = (obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
+const faqPage = (items) => ({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: items.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
+const linkList = (links = []) => links.length ? `<ul>${links.map(l => `<li><a href="${SITE}${l.href}">${esc(l.label)}</a></li>`).join('')}</ul>` : '';
+const faqHtml = (items = []) => items.length ? `<h2>Frequently asked questions</h2>${items.map(f => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join('')}` : '';
+
+for (const m of pageMeta) {
+  const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE }, { '@type': 'ListItem', position: 2, name: m.title, item: `${SITE}${m.path}` }] };
+  const webPage = { '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${SITE}${m.path}`, name: m.title, description: m.description, isPartOf: { '@id': `${SITE}/#website` }, publisher: { '@id': ORG_ID } };
+  const schemas = [webPage, crumbs, ...(m.product ? [softwareSchema] : []), ...(m.faq?.length ? [faqPage(m.faq)] : [])];
+  writePage(m.path, buildPage({
+    path: m.path,
+    title: m.title,
+    fullTitle: m.fullTitle,
+    description: m.description,
+    hideUntilMount: true,
+    extraHead: schemas.map(ldTag).join('\n  '),
+    bodyHtml: `<main><h1>${esc(m.h1)}</h1><p>${esc(m.summary)}</p>${linkList(m.links)}${faqHtml(m.faq)}</main>`,
+  }));
+}
+
+// Home last: it replaces dist/index.html. The untouched SPA shell is kept as /_spa.html,
+// which vercel.json serves for routes that have no prerendered file, so those routes
+// don't inherit the home page's canonical link and title.
+writeFileSync(join(distDir, '_spa.html'), template, 'utf8');
+{
+  const homeTitle = 'Loraloop: AI Marketing Team for Ads, Email, SEO and Social';
+  const homeDescription = 'An AI marketing team that runs Meta and Google ads, Klaviyo email, SEO and social for scaling brands and agencies. You approve every move.';
+  const bodyHtml = `<main>
+  <h1>${esc(HOME_H1)}</h1>
+  <p>${esc(HOME_LEAD)}</p>
+  <p>Works with ${HOME_STACK.map(esc).join(', ')} and 4,000+ more integrations.</p>
+  <h2>${esc(HOME_DEFINITION.question)}</h2>
+  <p>${esc(HOME_DEFINITION.answer)}</p>
+  <ul>${HOME_DEFINITION.roles.map(r => `<li>${esc(r)}</li>`).join('')}</ul>
+  <p>${esc(HOME_DEFINITION.data)}</p>
+  <p>${esc(HOME_DEFINITION.contrast)}</p>
+  <h2>You stay in control</h2>
+  ${HOME_GUARDRAILS.map(g => `<h3>${esc(g.title)}</h3><p>${esc(g.body)}</p>`).join('')}
+  <h2>Free Meta ads audit</h2>
+  <p>Connect your Meta ad account and get a score, the spend at stake each month and a ranked list of fixes. <a href="${SITE}/free-meta-ads-audit">Get a free Meta ads audit</a>.</p>
+  <h2>Who it's for</h2>
+  ${linkList([...pageMeta.filter(m => m.path.startsWith('/for-')).map(m => ({ href: m.path, label: m.title })), { href: '/pricing', label: 'Pricing' }, { href: '/blog', label: 'Guides and playbooks' }])}
+  ${faqHtml(HOME_FAQ)}
+</main>`;
+  writePage('/', buildPage({
+    path: '/',
+    title: homeTitle,
+    fullTitle: homeTitle,
+    description: homeDescription,
+    hideUntilMount: true,
+    extraHead: [orgSchema, websiteSchema, softwareSchema, faqPage(HOME_FAQ)].map(ldTag).join('\n  '),
+    bodyHtml,
+  }));
+}
+
 // ── 5. Discovery files: sitemap.xml, rss.xml, robots.txt, llms.txt ───────────
 const STATIC_ROUTES = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
@@ -380,12 +456,12 @@ const STATIC_ROUTES = [
   { path: '/tools', priority: '0.8', changefreq: 'monthly' },
   { path: '/about', priority: '0.5', changefreq: 'yearly' },
   { path: '/contact', priority: '0.5', changefreq: 'yearly' },
-  { path: '/for-agencies', priority: '0.7', changefreq: 'monthly' },
-  { path: '/for-ecommerce', priority: '0.7', changefreq: 'monthly' },
+  ...['/for-ecommerce', '/for-saas', '/for-agencies', '/for-media-buyers', '/for-marketing-teams', '/for-local-businesses'].map((path) => ({ path, priority: '0.9', changefreq: 'monthly' })),
   { path: '/ai-marketing-lead', priority: '0.8', changefreq: 'monthly' },
   { path: '/ai-seo-geo-strategist', priority: '0.8', changefreq: 'monthly' },
   { path: '/ai-email-marketer', priority: '0.8', changefreq: 'monthly' },
   { path: '/ai-ads-manager', priority: '0.8', changefreq: 'monthly' },
+  { path: '/free-meta-ads-audit', priority: '0.9', changefreq: 'monthly' },
 ];
 
 const today = new Date().toISOString().split('T')[0];
@@ -497,6 +573,10 @@ Pricing: ${SITE}/pricing (Starter from $39/mo, Pro from $99/mo, Scale from $199/
 Blog index: ${SITE}/blog
 RSS: ${SITE}/rss.xml
 Sitemap: ${SITE}/sitemap.xml
+
+## Industry pages
+
+${pageMeta.filter(m => m.path.startsWith('/for-')).map(m => `- [${m.title}](${SITE}${m.path}): ${m.description}`).join('\n')}
 
 ## Product pages
 

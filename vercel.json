@@ -3,11 +3,60 @@
   "redirects": [
     { "source": "/for-founders", "destination": "/", "permanent": true },
     { "source": "/for-freelancers", "destination": "/for-agencies", "permanent": true },
-    { "source": "/for-creators", "destination": "/", "permanent": true }
+    { "source": "/for-creators", "destination": "/", "permanent": true },
+    { "source": "/blog/ai-marketing-agents-vs-ai-content-tools-2026", "destination": "/blog/ai-marketing-assistant-vs-ai-marketing-agent", "permanent": true },
+    { "source": "/blog/30-day-ai-marketing-calendar-small-business", "destination": "/blog/multi-channel-content-calendar-with-ai", "permanent": true },
+    { "source": "/blog/geo-for-small-businesses-ai-search", "destination": "/blog/how-to-get-brand-mentioned-chatgpt-perplexity-gemini", "permanent": true },
+    { "source": "/blog/ai-brand-voice-stop-generic-content", "destination": "/blog/brand-voice-consistency-across-channels-ai", "permanent": true },
+    { "source": "/blog/agencies-use-ai-without-losing-strategic-value", "destination": "/blog/ai-marketing-tools-for-agencies-scale-delivery", "permanent": true },
+    { "source": "/blog/ai-content-approval-workflows-auto-publishing-risk", "destination": "/blog/human-in-the-loop-marketing-approval-workflow", "permanent": true },
+    { "source": "/blog/ai-social-commerce-ecommerce-brands-2026", "destination": "/blog/ai-marketing-ecommerce-guide-2026", "permanent": true },
+    { "source": "/blog/how-to-automate-marketing-with-ai-without-losing-brand-quality", "destination": "/blog/ai-marketing-automation-guide-2026", "permanent": true },
+    { "source": "/blog/10-business-process-automation-examples-for-marketing-teams", "destination": "/blog/ai-marketing-automation-small-business-roadmap", "permanent": true },
+    { "source": "/blog/ai-for-directors-and-managers-how-to-delegate-marketing-execution-without-losing-control", "destination": "/blog/how-to-delegate-marketing-to-ai", "permanent": true },
+    { "source": "/blog/ai-workflows-explained-a-simple-guide-for-marketing-teams", "destination": "/blog/ai-marketing-automation-guide-2026", "permanent": true },
+    { "source": "/blog/best-ai-social-media-tools-for-small-businesses-in-2026", "destination": "/blog/ai-social-media-manager-small-business", "permanent": true },
+    { "source": "/blog/ai-content-calendar-vs-social-scheduler-why-planning-comes-before-posting", "destination": "/blog/multi-channel-content-calendar-with-ai", "permanent": true },
+    { "source": "/blog/how-ai-agents-help-agencies-scale-client-delivery-without-hiring-too-fast", "destination": "/blog/ai-marketing-tools-for-agencies-scale-delivery", "permanent": true },
+    { "source": "/blog/ai-ad-copy-generator-vs-ai-ads-manager-what-growth-teams-really-need", "destination": "/blog/ai-generated-ad-copy-best-practices", "permanent": true },
+    { "source": "/blog/ai-analytics-for-marketing-how-to-turn-reports-into-better-decisions", "destination": "/blog/automated-marketing-reporting-small-business", "permanent": true },
+    { "source": "/blog/the-ai-marketing-stack-for-startups-tools-workflows-and-priorities", "destination": "/blog/best-ai-marketing-tools-small-business-2026", "permanent": true },
+    { "source": "/blog/ai-personal-brand-content-system-how-founders-can-stay-consistent", "destination": "/blog/founder-led-marketing-without-doing-everything", "permanent": true },
+    { "source": "/blog/ai-newsletter-workflow-how-to-create-useful-emails-every-week", "destination": "/blog/ai-email-marketing-for-small-businesses-campaigns-newsletters-and-flows", "permanent": true },
+    { "source": "/blog/ai-agent-marketplace-vs-ai-team-platform-which-one-fits-your-business", "destination": "/blog/how-to-choose-ai-marketing-agent", "permanent": true },
+    { "source": "/blog/ai-marketing-prompts-vs-brand-dna-why-context-beats-better-prompting", "destination": "/blog/brand-knowledge-base-ai-marketing-brand-dna", "permanent": true },
+    { "source": "/blog/best-ai-tools-for-agencies-in-2026-strategy-content-social-email-ads-and-reporting", "destination": "/blog/ai-marketing-tool-for-agencies-2026", "permanent": true },
+    { "source": "/blog/ai-content-strategy-for-founders-from-random-posts-to-repeatable-growth", "destination": "/blog/content-marketing-machine-solo-founder", "permanent": true },
+    { "source": "/blog/ai-competitor-analysis-for-marketing-what-to-track-and-how-to-use-it", "destination": "/blog/ai-competitor-monitoring-small-business", "permanent": true },
+    { "source": "/blog/ai-market-research-for-small-businesses-a-practical-step-by-step-guide", "destination": "/blog/how-to-write-marketing-strategy-with-ai", "permanent": true },
+    { "source": "/blog/ai-marketing-kpis-what-to-measure-beyond-content-volume", "destination": "/blog/how-to-measure-roi-of-ai-marketing-tools", "permanent": true },
+    { "source": "/blog/ai-content-governance-policy-rules-every-brand-should-create-before-scaling-ai", "destination": "/blog/human-in-the-loop-marketing-approval-workflow", "permanent": true },
+    { "source": "/blog/ai-marketing-for-local-businesses-seo-social-reviews-and-offers", "destination": "/blog/ai-marketing-for-local-service-businesses", "permanent": true },
+    { "source": "/blog/ai-linkedin-content-for-founders-how-to-write-without-sounding-generic", "destination": "/blog/founder-led-marketing-without-doing-everything", "permanent": true },
+    { "source": "/blog/ai-campaign-brief-generator-how-to-create-better-marketing-plans-before-drafting", "destination": "/blog/ai-content-brief-template-what-to-include-before-generating-anything", "permanent": true },
+    { "source": "/blog/ai-marketing-for-freelancers-how-to-get-more-clients-with-less-content-chaos", "destination": "/blog/ai-marketing-for-freelancers-2026", "permanent": true },
+    { "source": "/blog/ai-marketing-for-real-estate-listings-local-seo-social-email-and-follow-up", "destination": "/blog/ai-marketing-for-local-service-businesses", "permanent": true },
+    { "source": "/blog/ai-marketing-for-restaurants-local-content-offers-events-reviews-and-social", "destination": "/blog/ai-marketing-for-local-service-businesses", "permanent": true },
+    { "source": "/blog/ai-multichannel-marketing-workflow-how-to-connect-blog-social-email-ads-and-video", "destination": "/blog/multi-channel-content-calendar-with-ai", "permanent": true },
+    { "source": "/blog/loraloop-vs-sintra-ai-which-ai-team-is-better-for-marketing-automation", "destination": "/blog/loraloop-vs-sintra-ai", "permanent": true },
+    { "source": "/blog/7", "destination": "/blog/why-founders-need-ai-marketing-team", "permanent": true },
+    { "source": "/blog/8", "destination": "/blog/loraloop-vs-postiz", "permanent": true },
+    { "source": "/blog/9", "destination": "/blog/loraloop-vs-post-bridge", "permanent": true },
+    { "source": "/blog/10", "destination": "/blog/top-10-ai-marketing-tools-founders-2026", "permanent": true },
+    { "source": "/blog/11", "destination": "/blog/ai-marketing-automation-guide-2026", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/app", "destination": "https://loraloop-main-api.vercel.app/" },
-    { "source": "/app/:path*", "destination": "https://loraloop-main-api.vercel.app/:path*" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    {
+      "source": "/app",
+      "destination": "https://loraloop-main-api.vercel.app/"
+    },
+    {
+      "source": "/app/:path*",
+      "destination": "https://loraloop-main-api.vercel.app/:path*"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/_spa.html"
+    }
   ]
 }

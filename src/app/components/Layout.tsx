@@ -8,6 +8,10 @@ import { useAnalyticsPageviews } from "../hooks/useAnalyticsPageviews";
 
 export default function Layout() {
   const location = useLocation();
+  // The redesigned home page uses the warm light skin for header and footer;
+  // every other route keeps the original look until it is redesigned.
+  // v4: one header and one navy footer on every route.
+  const chrome = "default" as const;
   useAnalyticsPageviews();
 
   useEffect(() => {
@@ -52,7 +56,7 @@ export default function Layout() {
     <div className="min-h-screen bg-white flex flex-col">
       <ScrollToTop />
       <div className="hidden md:block">
-        <Header />
+        <Header variant={chrome} />
       </div>
       <MobileNav />
       <main className="flex-1">
@@ -63,7 +67,7 @@ export default function Layout() {
           </Suspense>
         </div>
       </main>
-      <Footer />
+      <Footer variant={chrome} />
     </div>
   );
 }

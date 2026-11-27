@@ -1,0 +1,238 @@
+/* ─── Home v2 — warm light theme, scoped to the `/` route ───────────────────
+ *
+ * Everything here hangs off `.home-v2` (the HomePage root) or a clearly named
+ * home-only class, so other routes are untouched. Components use Tailwind
+ * arbitrary values for one-off layout; the shared tokens and the effects that
+ * Tailwind cannot express (contour arcs, grain, marquee) live here.
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+.home-v2 {
+  /* Surfaces */
+  --hv-white: #ffffff;
+  --hv-taupe-50: #fbf8f5;
+  --hv-taupe-100: #f9f3ed;
+  --hv-taupe-200: #f6eee5;
+  --hv-border: #ddd6ce;
+
+  /* Text */
+  --hv-ink: #2c2c2c;
+  --hv-ink-85: rgba(44, 44, 44, 0.85);
+  --hv-ink-50: rgba(44, 44, 44, 0.5);
+
+  /* Greens */
+  --hv-green-900: #094413;
+  --hv-green-accent: #14a148;
+  --hv-mint: #cfe9d3;
+  --hv-cream: #f9f3ed;
+
+  /* Gradients */
+  --hv-grad-green: linear-gradient(160deg, #3f9a3a 0%, #6cc067 55%, #8fdc8a 100%);
+  --hv-grad-forest: linear-gradient(160deg, #094413 0%, #1f6b26 55%, #3f9a3a 100%);
+  --hv-grad-violet: linear-gradient(160deg, #5b5ce6 0%, #8a9cf0 55%, #bcd6f5 100%);
+
+  /* v3 (Helena x Cardboard): neutral ground, ink panels, serif display, black pills. */
+  --hv-ground: #f7f7f5;
+  --hv-card: #efede8;
+  --hv-ink-panel: #0e0e0d;
+  --hv-ink-card: #1b1b19;
+  --hv-serif: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+
+  color: var(--hv-ink);
+  font-family: "Inter", var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.006em;
+  background: var(--hv-ground);
+  overflow-x: clip;
+}
+
+/* ─── Type scale ───────────────────────────────────────────────────────────── */
+.home-v2 .hv-h1 {
+  font-family: var(--hv-serif);
+  font-weight: 400;
+  font-size: clamp(2.8rem, 7.2vw, 5.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+/* Serif italic accent inside headlines (one phrase per heading at most). */
+.home-v2 .hv-em {
+  font-style: italic;
+}
+/* Ink (dark) panels: hero, steps, closing call to action. */
+.home-v2 .hv-ink {
+  background: var(--hv-ink-panel);
+  color: #f2f1ed;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ─── Helena-style restraint (Nov 2026) ───────────────────────────────────── */
+/* Faint dot grid on the page ground; panels stay solid so text never sits on it. */
+.home-v2 {
+  background-image: radial-gradient(rgba(44, 44, 44, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.home-v2 .hv-ink .hv-label {
+  color: rgba(242, 241, 237, 0.6);
+}
+/* Small monospace label above a heading, with a green square. */
+.home-v2 .hv-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(44, 44, 44, 0.6);
+}
+.home-v2 .hv-label::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  background: var(--hv-green-accent);
+}
+/* Product views inside feature cards: small UI type. */
+.home-v2 .hv-ui {
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--hv-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The home H1 is a full sentence (problem and promise), so it runs a step smaller. */
+.home-v2 .hv-h1--long {
+  font-size: clamp(2.5rem, 5.6vw, 4.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+.home-v2 .hv-h2 {
+  font-family: var(--hv-serif);
+  font-weight: 400;
+  font-size: clamp(2.3rem, 5vw, 3.9rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.home-v2 .hv-h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.home-v2 .hv-lead {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.5;
+  color: var(--hv-ink-85);
+}
+
+/* ─── Contour gradient panel ──────────────────────────────────────────────── */
+.hv-contour {
+  position: relative;
+  isolation: isolate;
+  background: var(--hv-grad-green);
+}
+.hv-contour[data-tone="forest"] {
+  background: var(--hv-grad-forest);
+}
+.hv-contour[data-tone="violet"] {
+  background: var(--hv-grad-violet);
+}
+
+/* Clip layer for the arcs and grain, so the panel itself can let a mock
+   overlap its top edge. */
+.hv-contour__fx {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hv-contour__arcs {
+  position: absolute;
+  inset: -10%;
+  width: 120%;
+  height: 120%;
+  color: rgba(255, 255, 255, 0.22);
+}
+
+.hv-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* ─── Frosted UI chip (mocks) ─────────────────────────────────────────────── */
+.hv-frost {
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+/* ─── Marquee ──────────────────────────────────────────────────────────────── */
+@keyframes hv-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hv-marquee {
+  mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
+.hv-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: hv-marquee 40s linear infinite;
+}
+
+.hv-marquee:hover .hv-marquee__track {
+  animation-play-state: paused;
+}
+
+/* ─── Focus ring on dark-green / gradient surfaces ────────────────────────── */
+.home-v2 :focus-visible {
+  outline-color: #094413;
+}
+.home-v2 .hv-on-dark :focus-visible {
+  outline-color: #ffffff;
+}
+
+/* ─── PricingSection variant="light" — PlanPicker is shared and dark-styled,
+ *     so its trigger is re-skinned here (selectors only match inside the
+ *     light pricing section). The portalled menu keeps its dark look. ───── */
+.pricing-light [aria-haspopup="listbox"],
+.pricing-light [aria-labelledby$="-label"]:not(ul) {
+  background: #ffffff;
+  border-color: #ddd6ce;
+  color: #2c2c2c;
+}
+.pricing-light [aria-haspopup="listbox"]:hover {
+  border-color: #b9b0a6;
+}
+.pricing-light [aria-haspopup="listbox"][aria-expanded="true"],
+.pricing-light [aria-haspopup="listbox"]:focus-visible {
+  border-color: #094413;
+}
+.pricing-light [aria-haspopup="listbox"] svg {
+  color: rgba(44, 44, 44, 0.5);
+}
+.pricing-light span[id$="-label"] {
+  color: rgba(44, 44, 44, 0.6);
+}

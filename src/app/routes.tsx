@@ -20,8 +20,7 @@ const DataDeletion = lazy(() => import("./pages/DataDeletion"));
 const ToolEmbed = lazy(() => import("./pages/ToolEmbed"));
 const AllToolsPage = lazy(() => import("./pages/AllToolsPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const ForAgencies = lazy(() => import("./pages/ForAgencies"));
-const ForEcommerce = lazy(() => import("./pages/ForEcommerce"));
+const SegmentPage = lazy(() => import("./pages/SegmentPage"));
 const AiMarketingLead = lazy(() => import("./pages/AiMarketingLead"));
 const AiSeoGeoStrategist = lazy(() => import("./pages/AiSeoGeoStrategist"));
 const AiEmailMarketer = lazy(() => import("./pages/AiEmailMarketer"));
@@ -29,6 +28,7 @@ const AiAdsManager = lazy(() => import("./pages/AiAdsManager"));
 const Compare = lazy(() => import("./pages/Compare"));
 const CompareIndex = lazy(() => import("./pages/Compare").then((m) => ({ default: m.CompareIndex })));
 const AuthorPage = lazy(() => import("./pages/AuthorPage"));
+const FreeMetaAdsAudit = lazy(() => import("./pages/FreeMetaAdsAudit"));
 
 export const router = createBrowserRouter([
   {
@@ -47,8 +47,12 @@ export const router = createBrowserRouter([
       { path: "privacy-policy", Component: PrivacyPolicy },
       { path: "terms", Component: Terms },
       { path: "data-deletion", Component: DataDeletion },
-      { path: "for-agencies", Component: ForAgencies },
-      { path: "for-ecommerce", Component: ForEcommerce },
+      { path: "for-ecommerce", Component: SegmentPage },
+      { path: "for-saas", Component: SegmentPage },
+      { path: "for-agencies", Component: SegmentPage },
+      { path: "for-media-buyers", Component: SegmentPage },
+      { path: "for-marketing-teams", Component: SegmentPage },
+      { path: "for-local-businesses", Component: SegmentPage },
       { path: "ai-marketing-lead", Component: AiMarketingLead },
       { path: "ai-seo-geo-strategist", Component: AiSeoGeoStrategist },
       { path: "ai-email-marketer", Component: AiEmailMarketer },
@@ -56,6 +60,7 @@ export const router = createBrowserRouter([
       { path: "compare", Component: CompareIndex },
       { path: "compare/:slug", Component: Compare },
       { path: "authors/:slug", Component: AuthorPage },
+      { path: "free-meta-ads-audit", Component: FreeMetaAdsAudit },
       { path: "*", Component: NotFound },
     ],
   },
