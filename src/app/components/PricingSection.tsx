@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Check, ChevronDown, Sparkles, Tag } from "lucide-react";
+import { Check, ChevronDown, Sparkles, Tag, Users } from "lucide-react";
 import { CREDIT_ROWS } from "../data/creditCosts";
 import BookDemoModal from "./BookDemoModal";
 
@@ -39,6 +39,8 @@ interface Plan {
   seatAddon?: SeatAddon;
   tiers: Tier[];
   featuresIntro: string;
+  /** The 4-5 lines a card shows; "See all features" opens `features`. */
+  highlights: string[];
   features: FeatureGroup[];
 }
 
@@ -61,6 +63,7 @@ const PLANS: Plan[] = [
       { credits: 400, prices: { monthly: 79, annual: 711 } },
     ],
     featuresIntro: "Key features",
+    highlights: ["SEO articles you approve", "19 channels, one calendar", "AI videos & TikTok slideshows", "Daily briefing from Lora", "Claude & ChatGPT (MCP)"],
     features: [
       { title: "SEO & GEO", items: ["SEO articles you approve", "Optimized for AI answers"] },
       { title: "Strategy & insights", items: ["Plan built on your data", "Learns from every result", "Daily briefing from Lora", "Performance dashboard"] },
@@ -80,7 +83,8 @@ const PLANS: Plan[] = [
       { credits: 900,  prices: { monthly: 129, annual: 1161 } },
       { credits: 1100, prices: { monthly: 159, annual: 1431 } },
     ],
-    featuresIntro: "All the features of Starter, and:",
+    featuresIntro: "Everything in Starter",
+    highlights: ["Google, Meta, TikTok, LinkedIn ads", "Mailchimp & Klaviyo", "Competitor ad tracking", "Product video ads", "Team seats & roles"],
     features: [
       { title: "Paid ads", items: ["Google, Meta, TikTok, LinkedIn", "Spend caps & tired-ad alerts", "Live only after you approve"] },
       { title: "Email marketing", items: ["Mailchimp & Klaviyo", "Campaigns in your brand voice"] },
@@ -103,7 +107,8 @@ const PLANS: Plan[] = [
       { credits: 3000, prices: { monthly: 299, annual: 2691 } },
       { credits: 4000, prices: { monthly: 399, annual: 3591 } },
     ],
-    featuresIntro: "All the features of Pro, and:",
+    featuresIntro: "Everything in Pro",
+    highlights: ["Unlimited brands", "A workspace per client", "Scheduled client reports", "Priority support"],
     features: [
       { title: "For agencies", items: ["Unlimited brands", "A workspace per client", "All-client ads view"] },
       { title: "Client reporting", items: ["Scheduled client reports", "Sent straight to clients"] },
@@ -128,6 +133,8 @@ const ENTERPRISE_FEATURES: FeatureGroup[] = [
   { title: "Expert help", items: ["Brand voice tuned to you", "Your own success manager", "Hands-on onboarding"] },
   { title: "Governance", items: ["Unlimited brands and seats", "Approval rules per brand", "Response-time SLA"] },
 ];
+
+const ENTERPRISE_HIGHLIGHTS = ["Custom integrations & API", "Your own success manager", "Approval rules per brand", "Response-time SLA"];
 
 const BILLING_OPTS: { id: BillingPeriod; label: string; badge?: string }[] = [
   { id: "monthly", label: "Monthly" },
@@ -207,7 +214,7 @@ function Countdown({ endsAt }: { endsAt: number }) {
 function Badge({ label, tag }: { label?: string; tag?: string }) {
   if (!label && !tag) return null;
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-[10px] bg-white/[0.05] p-1 whitespace-nowrap" style={medium}>
+    <span className="inline-flex h-[30px] items-center gap-1.5 rounded-[10px] bg-white/[0.05] px-1 whitespace-nowrap" style={medium}>
       {label && <span className="text-[13px] text-white px-1.5">{label}</span>}
       {tag && <span className="text-[13px] rounded-[6px] px-1.5 py-0.5" style={IRIDESCENT}>{tag}</span>}
     </span>
@@ -230,50 +237,65 @@ function NotchBadge({ label, tag }: { label?: string; tag?: string }) {
   );
 }
 
-function Features({ intro, groups, accent }: { intro: string; groups: FeatureGroup[]; accent?: boolean }) {
-  return (
-    <div className="flex flex-col gap-5">
-      <p style={gen} className="text-[15px] text-white/60 leading-[21px]">{intro}</p>
-      {groups.map((group) => (
-        <div key={group.title} className="flex flex-col gap-2.5">
-          <p style={medium} className="text-[13px] text-white/45">{group.title}</p>
-          {group.chips && (
-            <div className="flex flex-wrap gap-1.5">
-              {group.chips.map((chip) => (
-                <span key={chip.name} style={medium}
-                  className="rounded-[8px] bg-white/[0.05] px-2 py-1 text-[12px] leading-[16px] text-white/50">
-                  <span className="text-white">{chip.name}</span> · {chip.role}
-                </span>
-              ))}
-            </div>
-          )}
-          {group.items.map((f) => (
-            <div key={f} className="flex items-start gap-2.5">
-              <Check className={`w-3.5 h-3.5 mt-[4px] shrink-0 ${accent ? "text-[#6E9BFF]" : "text-white/60"}`} strokeWidth={2.25} />
-              <span style={gen} className="text-[15px] leading-[21px] text-white">{f}</span>
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-// Features always show from md up; phones fold them behind "See all features".
-function FoldedFeatures({ open, onToggle, children }: { open: boolean; onToggle: () => void; children: React.ReactNode }) {
+// The 4-5 lines a card shows; "See all features" opens the full grouped list.
+function FeatureList({ intro, highlights, groups, accent, open, onToggle }: {
+  intro?: string; highlights: string[]; groups: FeatureGroup[]; accent?: boolean; open: boolean; onToggle: () => void;
+}) {
+  const check = `w-3.5 h-3.5 mt-[4px] shrink-0 ${accent ? "text-[#6E9BFF]" : "text-white/60"}`;
   return (
     <>
-      <div className={`${open ? "block" : "hidden"} md:block mt-5 pt-5 md:mt-6 md:pt-6 border-t border-white/[0.06]`}>
-        {children}
+      {/* Phones: the whole list folds; md+: highlights always show */}
+      <div className={`${open ? "flex" : "hidden"} md:flex flex-col gap-3 pt-6 border-t border-white/[0.06]`}>
+        {intro && (
+          <div className="flex items-start gap-2.5">
+            <Check className="w-3.5 h-3.5 mt-[4px] shrink-0 text-white/40" strokeWidth={2.25} />
+            <span style={gen} className="text-[15px] leading-[21px] text-white/55">{intro}</span>
+          </div>
+        )}
+        {highlights.map((f) => (
+          <div key={f} className="flex items-start gap-2.5">
+            <Check className={check} strokeWidth={2.25} />
+            <span style={gen} className="text-[15px] leading-[21px] text-white">{f}</span>
+          </div>
+        ))}
+        {open && (
+          <div className="mt-3 pt-4 border-t border-white/[0.06] flex flex-col gap-4">
+            {groups.map((group) => (
+              <div key={group.title} className="flex flex-col gap-2">
+                <p style={medium} className="text-[13px] text-white/45">{group.title}</p>
+                {group.items.map((f) => (
+                  <div key={f} className="flex items-start gap-2.5">
+                    <Check className="w-3.5 h-3.5 mt-[3px] shrink-0 text-white/40" strokeWidth={2.25} />
+                    <span style={gen} className="text-[14px] leading-[20px] text-white/80">{f}</span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       <button type="button" onClick={onToggle} aria-expanded={open} style={gen}
-        className="md:hidden mt-4 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[15px] text-white/60">
+        className="-mt-2 md:mt-0 pt-4 border-t border-white/[0.06] md:border-0 md:pt-0 flex items-center justify-between md:justify-start md:gap-2 text-[15px] md:text-[13px] text-white/60 md:text-white/50 hover:text-white">
         {open ? "Hide features" : "See all features"}
-        <span className="w-6 h-6 rounded-full bg-white/[0.08] flex items-center justify-center">
+        <span className="w-6 h-6 md:w-4 md:h-4 rounded-full bg-white/[0.08] md:bg-transparent flex items-center justify-center">
           <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
         </span>
       </button>
     </>
+  );
+}
+
+// One usage line: icon, a white line, and a muted line under it.
+function UsageRow({ icon, title, sub, accent }: { icon: "credits" | "team"; title: string; sub?: string; accent?: boolean }) {
+  const Icon = icon === "credits" ? Sparkles : Users;
+  return (
+    <div className="flex items-start gap-2.5">
+      <Icon className={`w-3.5 h-3.5 mt-[3px] shrink-0 ${accent ? "text-[#6E9BFF]" : "text-white/50"}`} />
+      <div className="min-w-0">
+        <p style={gen} className="text-[15px] text-white leading-[21px]">{title}</p>
+        {sub && <p style={gen} className="text-[13px] text-[#848484] leading-[18px] mt-0.5">{sub}</p>}
+      </div>
+    </div>
   );
 }
 
@@ -365,18 +387,21 @@ export default function PricingSection({
 
             return (
               <div key={plan.id}
-                className={`relative flex flex-col rounded-[20px] p-5 pt-11 md:p-6 border ${rec ? "order-first md:order-none border-[rgba(110,155,255,0.16)]" : "border-transparent"}`}
+                className={`relative flex flex-col gap-6 rounded-[20px] p-5 pt-11 md:p-6 border ${rec ? "order-first md:order-none border-[rgba(110,155,255,0.16)]" : "border-transparent"}`}
                 style={{ background: rec ? REC_BG : CARD_BG }}>
                 <NotchBadge label={label} tag={tag} />
 
-                <div className="flex items-start justify-between gap-3">
-                  <h3 style={medium} className="text-[20px] leading-[28px] text-white">{plan.name}</h3>
-                  <div className="hidden md:block shrink-0"><Badge label={label} tag={tag} /></div>
+                {/* 1. Name + badge */}
+                <div>
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 style={medium} className="text-[20px] leading-[28px] text-white">{plan.name}</h3>
+                    <div className="hidden md:block shrink-0"><Badge label={label} tag={tag} /></div>
+                  </div>
+                  <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5 xl:min-h-[36px]">{plan.description}</p>
                 </div>
-                <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5 xl:min-h-[36px]">{plan.description}</p>
 
-                {/* Price - per month; on annual, the monthly equivalent and the yearly charge */}
-                <div className="mt-4">
+                {/* 2. Price + one line under it */}
+                <div>
                   <div className="flex items-baseline gap-2 flex-wrap">
                     {period === "annual" && (
                       <span style={serif} className="text-[24px] text-white/35 line-through decoration-[1.5px]">{formatUsd(monthly)}</span>
@@ -384,73 +409,59 @@ export default function PricingSection({
                     <span style={{ ...serif, letterSpacing: "-0.02em" }} className="text-[44px] md:text-[48px] leading-[1.1] text-white">{formatUsd(price)}</span>
                     <span className="text-[15px] text-[#848484]">/mo</span>
                   </div>
-                  <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5">
-                    {period === "annual" && <span className="text-white">Billed {formatUsd(annual)} yearly · </span>}
-                    {plan.meta}
+                  <p className="text-[13px] text-[#848484] leading-[18px] mt-1">
+                    {period === "annual" ? `Billed ${formatUsd(annual)} yearly` : "No card needed · cancel anytime"}
                   </p>
                 </div>
 
-                {/* CTA - every account starts with the free trial */}
-                <div className="flex flex-col gap-1.5 mt-5">
-                  <a data-ml-goal="start_trial" data-ml-goal-plan={plan.id} href={TRIAL_URL} style={medium}
-                    className={`w-full h-[40px] inline-flex items-center justify-center rounded-[12px] text-[15px] transition-colors ${
-                      rec ? "bg-white text-black hover:bg-white/90" : "bg-[#212121] text-white hover:bg-[#2b2b2b]"
-                    }`}>
-                    Start your 3-day free trial
-                  </a>
-                  <p className="text-[12px] text-white/45 text-center leading-[16px]">No card needed · cancel anytime</p>
+                {/* 3. CTA - every account starts with the free trial */}
+                <a data-ml-goal="start_trial" data-ml-goal-plan={plan.id} href={TRIAL_URL} style={medium}
+                  className={`w-full h-[40px] inline-flex items-center justify-center rounded-[12px] text-[15px] transition-colors ${
+                    rec ? "bg-white text-black hover:bg-white/90" : "bg-[#212121] text-white hover:bg-[#2b2b2b]"
+                  }`}>
+                  Start your 3-day free trial
+                </a>
+
+                {/* 4. Usage */}
+                <div className="pt-6 border-t border-white/[0.06] flex flex-col gap-4 xl:min-h-[124px]">
+                  <UsageRow icon="credits" accent={rec} title={`${fmtNum(tier.credits)} AI credits a month`}
+                    sub={`Up to ${fmtNum(plan.tiers[plan.tiers.length - 1].credits)} in the app`} />
+                  <UsageRow icon="team" accent={rec} title={plan.meta}
+                    sub={plan.seatAddon ? `Extra seats ${formatUsd(plan.seatAddon.prices.monthly)}/mo` : undefined} />
                 </div>
 
-                {/* Credits */}
-                <div className="mt-5 pt-5 border-t border-white/[0.06] flex items-start gap-2.5">
-                  <Sparkles className={`w-3.5 h-3.5 mt-[3px] shrink-0 ${rec ? "text-[#6E9BFF]" : "text-white/50"}`} />
-                  <div className="min-w-0">
-                    <p className="text-[14px] text-white leading-[20px]">{fmtNum(tier.credits)} AI credits a month</p>
-                    <p className="text-[12px] text-[#848484] leading-[17px]">
-                      {plan.seatAddon
-                        ? `More credits in the app · extra seats ${formatUsd(plan.seatAddon.prices.monthly)}/mo`
-                        : "More credits in the app"}
-                    </p>
-                  </div>
-                </div>
-
-                <FoldedFeatures open={!!expanded[plan.id]} onToggle={() => toggle(plan.id)}>
-                  <Features intro={plan.featuresIntro} groups={plan.features} accent={rec} />
-                </FoldedFeatures>
+                {/* 5. What this plan adds */}
+                <FeatureList intro={plan.featuresIntro === "Key features" ? undefined : plan.featuresIntro} highlights={plan.highlights} groups={plan.features} accent={rec}
+                  open={!!expanded[plan.id]} onToggle={() => toggle(plan.id)} />
               </div>
             );
           })}
 
-          {/* Enterprise - sales-led, same look as the plan cards */}
-          <div className="relative flex flex-col rounded-[20px] p-5 pt-11 md:p-6" style={{ background: CARD_BG }}>
+          {/* Enterprise - sales-led, same zones as the plan cards */}
+          <div className="relative flex flex-col gap-6 rounded-[20px] p-5 pt-11 md:p-6" style={{ background: CARD_BG }}>
             <NotchBadge label="Tailored" />
-            <div className="flex items-start justify-between gap-3">
-              <h3 style={medium} className="text-[20px] leading-[28px] text-white">Enterprise</h3>
-              <div className="hidden md:block shrink-0"><Badge label="Tailored" /></div>
-            </div>
-            <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5 xl:min-h-[36px]">For larger teams with many brands or custom needs.</p>
-            <div className="mt-4">
-              <span style={{ ...serif, letterSpacing: "-0.02em" }} className="text-[44px] md:text-[48px] leading-[1.1] text-white">Custom</span>
-              <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5">Billed annually · tailored plan</p>
-            </div>
-            <div className="flex flex-col gap-1.5 mt-5">
-              <button type="button" data-ml-goal="book_demo" data-ml-goal-location="pricing_enterprise" style={medium}
-                onClick={() => setDemoOpen(true)}
-                className="w-full h-[40px] inline-flex items-center justify-center rounded-[12px] text-[15px] bg-[#212121] text-white hover:bg-[#2b2b2b] transition-colors">
-                Book a demo
-              </button>
-              <p className="text-[12px] text-white/45 text-center leading-[16px]">Talk to us about volume</p>
-            </div>
-            <div className="mt-5 pt-5 border-t border-white/[0.06] flex items-start gap-2.5">
-              <Sparkles className="w-3.5 h-3.5 mt-[3px] shrink-0 text-white/50" />
-              <div className="min-w-0">
-                <p className="text-[14px] text-white leading-[20px]">Custom AI credits</p>
-                <p className="text-[12px] text-[#848484] leading-[17px]">Credits and allowances sized to your team</p>
+            <div>
+              <div className="flex items-start justify-between gap-3">
+                <h3 style={medium} className="text-[20px] leading-[28px] text-white">Enterprise</h3>
+                <div className="hidden md:block shrink-0"><Badge label="Tailored" /></div>
               </div>
+              <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5 xl:min-h-[36px]">For larger teams with many brands or custom needs.</p>
             </div>
-            <FoldedFeatures open={!!expanded.ENTERPRISE} onToggle={() => toggle("ENTERPRISE")}>
-              <Features intro="All the features of Scale, and:" groups={ENTERPRISE_FEATURES} />
-            </FoldedFeatures>
+            <div>
+              <div className="flex items-baseline"><span style={{ ...serif, letterSpacing: "-0.02em" }} className="text-[44px] md:text-[48px] leading-[1.1] text-white">Custom</span></div>
+              <p className="text-[13px] text-[#848484] leading-[18px] mt-1">Billed annually · tailored plan</p>
+            </div>
+            <button type="button" data-ml-goal="book_demo" data-ml-goal-location="pricing_enterprise" style={medium}
+              onClick={() => setDemoOpen(true)}
+              className="w-full h-[40px] inline-flex items-center justify-center rounded-[12px] text-[15px] bg-[#212121] text-white hover:bg-[#2b2b2b] transition-colors">
+              Book a demo
+            </button>
+            <div className="pt-6 border-t border-white/[0.06] flex flex-col gap-4 xl:min-h-[124px]">
+              <UsageRow icon="credits" title="Custom AI credits" sub="Sized to your team" />
+              <UsageRow icon="team" title="Unlimited brands and seats" />
+            </div>
+            <FeatureList intro="Everything in Scale" highlights={ENTERPRISE_HIGHLIGHTS} groups={ENTERPRISE_FEATURES}
+              open={!!expanded.ENTERPRISE} onToggle={() => toggle("ENTERPRISE")} />
           </div>
         </div>
 
