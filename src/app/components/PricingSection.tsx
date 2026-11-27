@@ -142,7 +142,7 @@ const TRIAL_URL = `${APP_URL}/signup`;
 
 // Black Friday 2026 - mirrors BLACK_FRIDAY_PROMO in the app's billing service:
 // 20% off the first month of a monthly plan, applied automatically at checkout.
-const BLACK_FRIDAY_ENDS_AT = Date.parse("2026-12-20T23:59:59Z");
+const BLACK_FRIDAY_ENDS_AT = Date.parse("2026-11-29T23:59:59Z");
 
 // ─── Design tokens: black page, #111214 cards, light serif display + General Sans ──
 const serif = { fontFamily: "Newsreader, Georgia, serif", fontWeight: 300 } as const;
@@ -320,7 +320,7 @@ export default function PricingSection({
                 Black Friday: <span className="relative inline-block">20% off<Scribble className="-bottom-1 h-[9px]" /></span> your first month
               </p>
               <p className="text-[13px] text-white/50 mt-1.5 leading-[1.45]">
-                Monthly plans, applied automatically at checkout. Ends Dec 20.
+                Monthly plans, applied automatically at checkout. Ends Nov 29.
               </p>
             </div>
             <Countdown endsAt={BLACK_FRIDAY_ENDS_AT} />
