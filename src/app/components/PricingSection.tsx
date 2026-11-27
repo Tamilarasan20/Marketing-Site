@@ -1,5 +1,5 @@
-import { useState } from "react";
-import imgAgentBanner from "../../imports/Pricing-2/f053ba404d6494c8dc33306c55f94bfec50ce84c.png";
+import { useEffect, useState } from "react";
+import { Check, ChevronDown, Sparkles, Tag } from "lucide-react";
 import { CREDIT_ROWS } from "../data/creditCosts";
 import BookDemoModal from "./BookDemoModal";
 
@@ -140,74 +140,140 @@ const APP_URL = "https://app.loraloop.com";
 // New accounts start a 3-day free trial with no card; plans are picked in the app.
 const TRIAL_URL = `${APP_URL}/signup`;
 
-// One row of four cards: side by side from lg up; narrower screens swipe the row.
-const CARD_SLOT = "snap-start shrink-0 w-[84%] max-w-[340px] sm:w-[300px] lg:w-auto lg:max-w-none";
+// Black Friday 2026 - mirrors BLACK_FRIDAY_PROMO in the app's billing service:
+// 20% off the first month of a monthly plan, applied automatically at checkout.
+const BLACK_FRIDAY_ENDS_AT = Date.parse("2026-12-20T23:59:59Z");
 
-const sat = { fontFamily: "Satoshi, Inter, sans-serif", fontWeight: 700 } as const;
+// ─── Design tokens: black page, #111214 cards, light serif display + General Sans ──
+const serif = { fontFamily: "Newsreader, Georgia, serif", fontWeight: 300 } as const;
 const gen = { fontFamily: "General Sans, Inter, sans-serif" } as const;
+const medium = { ...gen, fontWeight: 500 } as const;
+const CARD_BG = "#111214";
+const ACCENT = "#6E9BFF";
+const REC_BG = `radial-gradient(120% 70% at 50% 110%, rgba(70,120,230,0.22), transparent 70%), radial-gradient(80% 50% at 0% 0%, rgba(110,155,255,0.06), transparent 70%), ${CARD_BG}`;
+// Pastel "iridescent" tag used for savings.
+const IRIDESCENT = {
+  background:
+    "radial-gradient(55% 90% at 6% 8%, rgba(255,224,196,0.85), rgba(0,0,0,0) 60%)," +
+    "radial-gradient(40% 80% at 16% 100%, rgba(196,255,228,0.7), rgba(0,0,0,0) 60%)," +
+    "radial-gradient(45% 90% at 95% 20%, rgba(214,200,255,0.9), rgba(0,0,0,0) 60%)," +
+    "radial-gradient(50% 90% at 80% 100%, rgba(186,214,255,0.9), rgba(0,0,0,0) 60%), #E9ECF4",
+  color: "#16181D",
+} as const;
 
-// ─── Agent banner card header ─────────────────────────────────────────────────
-function CardHeader() {
+// Blue hand-drawn underline under one headline word.
+function Scribble({ className = "" }: { className?: string }) {
   return (
-    <div className="relative h-[110px] w-full shrink-0 overflow-hidden">
-      <img loading="lazy" decoding="async"
-        src={imgAgentBanner}
-        alt="AI Agent team"
-        className="absolute inset-0 w-full h-full object-cover object-top"
-        draggable={false}
-      />
-      <div className="absolute inset-0"
-        style={{ background: "linear-gradient(to right, #131313 0%, transparent 20%, transparent 80%, #131313 100%)" }} />
-      <div className="absolute bottom-0 left-0 right-0 h-14"
-        style={{ background: "linear-gradient(to top, #131313 0%, transparent 100%)" }} />
-    </div>
-  );
-}
-
-// ─── SVG checkmark (Figma style) ─────────────────────────────────────────────
-function CheckIcon() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="flex-shrink-0 mt-[3px]">
-      <path d="M2.5 6.5L4.5 8.5L9.5 3.5" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <svg aria-hidden viewBox="0 0 220 14" preserveAspectRatio="none" className={`absolute left-0 w-full ${className}`}>
+      <path d="M3 9.5 C 40 4, 90 3.5, 130 5.5 S 200 9, 217 6" stroke={ACCENT} strokeWidth="3.2" fill="none" strokeLinecap="round" />
+      <path d="M12 11.5 C 60 7.5, 140 7, 205 9.5" stroke={ACCENT} strokeOpacity="0.55" strokeWidth="1.6" fill="none" strokeLinecap="round" />
     </svg>
   );
 }
 
-function PlanBadge({ label }: { label: string }) {
+// ─── Black Friday countdown (days / hours / min / sec) ────────────────────────
+function Countdown({ endsAt }: { endsAt: number }) {
+  const [now, setNow] = useState<number | null>(null);
+  useEffect(() => {
+    setNow(Date.now());
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const left = Math.max(0, endsAt - (now ?? endsAt));
+  const units = [
+    { v: Math.floor(left / 86_400_000), l: "days" },
+    { v: Math.floor(left / 3_600_000) % 24, l: "hours" },
+    { v: Math.floor(left / 60_000) % 60, l: "min" },
+    { v: Math.floor(left / 1000) % 60, l: "sec" },
+  ];
   return (
-    <span style={{ ...gen, fontWeight: 500 }}
-      className="inline-block mb-2 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[11px] text-[#9CA3AF]">
-      {label}
+    <div className="flex items-start gap-2">
+      {units.map((u) => (
+        <div key={u.l} className="flex flex-col items-center gap-1">
+          <div className="w-[52px] h-[52px] sm:w-[60px] sm:h-[60px] rounded-[14px] border border-white/[0.06] flex items-center justify-center"
+            style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))" }}>
+            <span style={medium} className="text-[22px] sm:text-[26px] text-white tabular-nums">
+              {now === null ? "--" : String(u.v).padStart(2, "0")}
+            </span>
+          </div>
+          <span style={medium} className="text-[12px] text-white/60">{u.l}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ─── Card badge: "Most popular [20% off]" (desktop, top right) ───────────────
+function Badge({ label, tag }: { label?: string; tag?: string }) {
+  if (!label && !tag) return null;
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-[10px] bg-white/[0.05] p-1 whitespace-nowrap" style={medium}>
+      {label && <span className="text-[13px] text-white px-1.5">{label}</span>}
+      {tag && <span className="text-[13px] rounded-[6px] px-1.5 py-0.5" style={IRIDESCENT}>{tag}</span>}
     </span>
   );
 }
 
-function Features({ intro, groups }: { intro: string; groups: FeatureGroup[] }) {
+// Phones: the badge sits in a notch on the card's top edge.
+function NotchBadge({ label, tag }: { label?: string; tag?: string }) {
+  if (!label && !tag) return null;
   return (
-    <div className="flex flex-col gap-4">
-      <p style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-[#9CA3AF] leading-[18px]">{intro}</p>
+    <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 flex items-center gap-2 px-6 py-1.5 whitespace-nowrap"
+      style={{ ...medium, background: "#1B1C20", clipPath: "polygon(0 0, 100% 0, 92% 100%, 8% 100%)" }}>
+      {label && <span className="text-[13px] text-white">{label}</span>}
+      {tag && (
+        <span className="inline-flex items-center gap-1 text-[12px] rounded-full px-2 py-0.5 text-[#CFE0FF]" style={{ background: "rgba(110,155,255,0.18)" }}>
+          <Tag className="w-3 h-3" />{tag}
+        </span>
+      )}
+    </div>
+  );
+}
+
+function Features({ intro, groups, accent }: { intro: string; groups: FeatureGroup[]; accent?: boolean }) {
+  return (
+    <div className="flex flex-col gap-5">
+      <p style={gen} className="text-[15px] text-white/60 leading-[21px]">{intro}</p>
       {groups.map((group) => (
-        <div key={group.title} className="flex flex-col gap-1.5">
-          <p style={sat} className="text-[13px] text-[#E5E7EB]">{group.title}</p>
+        <div key={group.title} className="flex flex-col gap-2.5">
+          <p style={medium} className="text-[13px] text-white/45">{group.title}</p>
           {group.chips && (
-            <div className="flex flex-wrap gap-1.5 pb-0.5">
+            <div className="flex flex-wrap gap-1.5">
               {group.chips.map((chip) => (
-                <span key={chip.name} style={{ ...gen, fontWeight: 500 }}
-                  className="rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[12px] leading-[16px] text-[#9CA3AF]">
-                  <span className="font-semibold text-[#E5E7EB]">{chip.name}</span> · {chip.role}
+                <span key={chip.name} style={medium}
+                  className="rounded-[8px] bg-white/[0.05] px-2 py-1 text-[12px] leading-[16px] text-white/50">
+                  <span className="text-white">{chip.name}</span> · {chip.role}
                 </span>
               ))}
             </div>
           )}
           {group.items.map((f) => (
-            <div key={f} className="flex items-start gap-2">
-              <CheckIcon />
-              <span style={{ ...gen, fontWeight: 500 }} className="text-[14px] leading-[19px] text-[#D1D5DB]">{f}</span>
+            <div key={f} className="flex items-start gap-2.5">
+              <Check className={`w-3.5 h-3.5 mt-[4px] shrink-0 ${accent ? "text-[#6E9BFF]" : "text-white/60"}`} strokeWidth={2.25} />
+              <span style={gen} className="text-[15px] leading-[21px] text-white">{f}</span>
             </div>
           ))}
         </div>
       ))}
     </div>
+  );
+}
+
+// Features always show from md up; phones fold them behind "See all features".
+function FoldedFeatures({ open, onToggle, children }: { open: boolean; onToggle: () => void; children: React.ReactNode }) {
+  return (
+    <>
+      <div className={`${open ? "block" : "hidden"} md:block mt-5 pt-5 md:mt-6 md:pt-6 border-t border-white/[0.06]`}>
+        {children}
+      </div>
+      <button type="button" onClick={onToggle} aria-expanded={open} style={gen}
+        className="md:hidden mt-4 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[15px] text-white/60">
+        {open ? "Hide features" : "See all features"}
+        <span className="w-6 h-6 rounded-full bg-white/[0.08] flex items-center justify-center">
+          <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
+        </span>
+      </button>
+    </>
   );
 }
 
@@ -223,199 +289,194 @@ export default function PricingSection({
 }) {
   const [period, setPeriod] = useState<BillingPeriod>("monthly");
   const [demoOpen, setDemoOpen] = useState(false);
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  // Decided after mount so the prerendered HTML never shows an expired offer.
+  const [promoActive, setPromoActive] = useState(false);
+  useEffect(() => { setPromoActive(Date.now() <= BLACK_FRIDAY_ENDS_AT); }, []);
+  const toggle = (id: string) => setExpanded((s) => ({ ...s, [id]: !s[id] }));
 
   return (
     // Slightly open letter spacing for the whole section; elements with their own tracking override it.
-    <section className={`bg-black ${className}`} style={{ letterSpacing: "0.02em" }}>
+    <section className={`bg-black text-[#D9D9D9] ${className}`} style={{ ...gen, letterSpacing: "0.02em" }}>
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 xl:px-[46px] pt-[40px] pb-[80px]">
-        <div className="flex flex-col items-center gap-[42px]">
 
-          {/* Title */}
-          <div className="flex flex-col items-center gap-3 text-center">
-            <h2 style={sat} className="text-[36px] md:text-[44px] text-white tracking-[-0.2px] leading-tight">
-              Pricing
-            </h2>
-            <p style={gen} className="max-w-[560px] text-[16px] text-[#9CA3AF] leading-relaxed">
-              Your AI marketing team for ads, social and SEO. Start with a 3-day free trial: no card needed, cancel anytime.
-            </p>
+        {/* Title */}
+        <div className="flex flex-col items-center gap-4 text-center">
+          <h2 style={{ ...serif, letterSpacing: "-0.01em" }} className="text-[40px] sm:text-[56px] text-white leading-[1.1] max-w-[640px]">
+            Pricing for every stage of{" "}
+            <span className="relative inline-block">growth<Scribble className="-bottom-0.5 h-[12px]" /></span>
+          </h2>
+          <p className="max-w-[560px] text-[15px] sm:text-[16px] text-white/50 leading-relaxed">
+            Your AI marketing team for ads, social and SEO. Start with a 3-day free trial: no card needed, cancel anytime.
+          </p>
+        </div>
+
+        {/* Black Friday - countdown + how it applies */}
+        {promoActive && (
+          <div className="mt-8 mx-auto max-w-[760px] flex flex-col sm:flex-row items-center justify-between gap-4 rounded-[20px] border border-white/[0.06] px-5 py-4"
+            style={{ background: CARD_BG }}>
+            <div className="text-center sm:text-left">
+              <p style={medium} className="text-[18px] text-white">
+                Black Friday: <span className="relative inline-block">20% off<Scribble className="-bottom-1 h-[9px]" /></span> your first month
+              </p>
+              <p className="text-[13px] text-white/50 mt-1.5 leading-[1.45]">
+                Monthly plans, applied automatically at checkout. Ends Dec 20.
+              </p>
+            </div>
+            <Countdown endsAt={BLACK_FRIDAY_ENDS_AT} />
           </div>
+        )}
 
-          {/* Billing period toggle — the "Save 25%" badge floats above Annual */}
-          <div className="relative pt-4">
-            <div className="absolute -top-0 left-0 right-0 flex items-center gap-[2px] px-[2px] pointer-events-none">
-              {BILLING_OPTS.map((opt) => (
-                <div key={opt.id} className="flex-1 flex justify-center">
-                  {opt.badge ? (
-                    <span style={{
-                      ...gen, fontWeight: 500,
-                      background: "#151109", border: "0.749px solid rgba(213,165,91,0.4)",
-                      color: "#D5A55B", fontSize: "11px", padding: "3px 8px",
-                      borderRadius: "999px", lineHeight: "1", whiteSpace: "nowrap",
-                    }}>
+        {/* Billing period toggle */}
+        <div className="mt-8 mb-8 flex justify-center">
+          <div className="flex items-center gap-1 rounded-[14px] p-1" style={{ background: "#212121" }}>
+            {BILLING_OPTS.map((opt) => {
+              const active = period === opt.id;
+              return (
+                <button key={opt.id} type="button" onClick={() => setPeriod(opt.id)} style={medium}
+                  className={`flex items-center gap-2 h-[41px] px-4 rounded-[10px] text-[15px] transition-all whitespace-nowrap ${
+                    active ? "bg-white text-[#08090A]" : "text-white/70 hover:text-white"
+                  }`}>
+                  {opt.label}
+                  {opt.badge && (
+                    <span className="text-[12px] rounded-full px-[7px] py-[2px] text-[#CFE0FF]" style={{ background: "rgba(110,155,255,0.18)" }}>
                       {opt.badge}
                     </span>
-                  ) : <span />}
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center gap-[2px] border border-[#374151] rounded-[12px] px-[2px] py-[1px]">
-              {BILLING_OPTS.map((opt) => (
-                <button
-                  key={opt.id}
-                  type="button"
-                  onClick={() => setPeriod(opt.id)}
-                  style={sat}
-                  className={`flex-1 h-[34px] px-3 sm:px-4 rounded-[8px] text-[14px] sm:text-[15px] tracking-[0.35px] whitespace-nowrap transition-all ${
-                    period === opt.id ? "bg-[#1877F2] text-white" : "text-white hover:bg-white/5"
-                  }`}
-                >
-                  {opt.label}
+                  )}
                 </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Plan cards — Starter / Pro / Scale / Enterprise in one row (swipes sideways below lg) */}
-          <div className="flex lg:grid lg:grid-cols-4 items-stretch gap-4 w-full overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-2 lg:pb-0">
-            {PLANS.map((plan) => {
-              // The marketing page shows each plan's entry tier; bigger credit options are picked in the app.
-              const tier = plan.tiers[0];
-              const monthly = tier.prices.monthly;
-              const annual = tier.prices.annual;
-              // Annual shows its monthly equivalent; the yearly charge goes underneath.
-              const price = period === "annual" ? annual / 12 : monthly;
-
-              const cardInner = (
-                <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
-                  <CardHeader />
-                  <div className="flex flex-col gap-5 pt-4 px-5 pb-6">
-
-                    {/* Badge + name + desc */}
-                    <div>
-                      {plan.badge && <PlanBadge label={plan.badge} />}
-                      <p style={sat} className="text-[17px] text-white tracking-[0.35px] leading-[22px]">{plan.name}</p>
-                      <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[19px]">{plan.description}</p>
-                    </div>
-
-                    {/* Price — per month; on annual, the monthly equivalent and the yearly charge */}
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-baseline gap-2">
-                        {period === "annual" && (
-                          <span style={sat} className="text-[16px] text-[#6B7280] line-through leading-[32px]">{formatUsd(monthly)}</span>
-                        )}
-                        <span style={sat} className="text-[24px] text-white leading-[32px]">{formatUsd(price)}</span>
-                        <span style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-[#6B7280] tracking-[0.5px] leading-[20px]">/mo</span>
-                      </div>
-                      {period === "annual" && (
-                        <p style={gen} className="text-[12px] text-[#9CA3AF] leading-[16px]">Billed {formatUsd(annual)} yearly</p>
-                      )}
-                      <p style={gen} className="text-[13px] text-[#9CA3AF] leading-[18px]">{plan.meta}</p>
-                    </div>
-
-                    {/* Credits */}
-                    <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[20px]">
-                      <span style={sat} className="text-white">{fmtNum(tier.credits)} credits</span> per month
-                      {plan.seatAddon && ` · extra seats ${formatUsd(plan.seatAddon.prices.monthly)}/mo`}
-                    </p>
-
-                    {/* CTA — every account starts with the free trial */}
-                    <div className="flex flex-col gap-1.5">
-                      <a
-                        data-ml-goal="start_trial" data-ml-goal-plan={plan.id}
-                        href={TRIAL_URL}
-                        style={sat}
-                        className={`w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] transition-all ${
-                          plan.highlighted
-                            ? "bg-[#1877F2] text-white hover:bg-[#0f66d0]"
-                            : "bg-[#EEF4FF] text-[#1877F2] border border-[#D1D5DB] hover:bg-[#dce8ff]"
-                        }`}
-                      >
-                        Start your 3-day free trial
-                      </a>
-                      <p style={gen} className="text-[12px] text-[#9CA3AF] text-center leading-[16px]">No card needed · cancel anytime</p>
-                    </div>
-
-                    <Features intro={plan.featuresIntro} groups={plan.features} />
-                  </div>
-                </div>
-              );
-
-              if (plan.highlighted) {
-                return (
-                  <div key={plan.id} className={`flex flex-col items-center gap-2 ${CARD_SLOT}`}
-                    style={{ background: "#1877F2", borderRadius: "16px", padding: "8px 2px 2px" }}>
-                    <p style={{ ...gen, fontWeight: 500 }} className="text-[13px] text-white tracking-[0.5px] leading-[18px]">Most popular</p>
-                    <div className="w-full overflow-hidden flex-1"
-                      style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "14px" }}>
-                      {cardInner}
-                    </div>
-                  </div>
-                );
-              }
-
-              return (
-                <div key={plan.id} className={`overflow-hidden ${CARD_SLOT}`}
-                  style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
-                  {cardInner}
-                </div>
               );
             })}
+          </div>
+        </div>
 
-            {/* Enterprise — sales-led, same look as the plan cards */}
-            <div className={`overflow-hidden ${CARD_SLOT}`}
-              style={{ background: "#151515", border: "0.781px solid rgba(255,255,255,0.05)", borderRadius: "16px" }}>
-              <div style={{ background: "#131313", borderRadius: "inherit" }} className="flex flex-col w-full h-full">
-                <CardHeader />
-                <div className="flex flex-col gap-5 pt-4 px-5 pb-6">
-                  <div>
-                    <PlanBadge label="Tailored" />
-                    <p style={sat} className="text-[17px] text-white tracking-[0.35px] leading-[22px]">Enterprise</p>
-                    <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[19px]">For larger teams with many brands or custom needs.</p>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span style={sat} className="text-[24px] text-white leading-[32px]">Custom</span>
-                    <p style={gen} className="text-[13px] text-[#9CA3AF] leading-[18px]">Billed annually · tailored plan</p>
-                  </div>
-                  <p style={gen} className="text-[14px] text-[#9CA3AF] leading-[20px]">
-                    <span style={sat} className="text-white">Custom credits</span> and allowances
-                  </p>
-                  <button type="button" data-ml-goal="book_demo" data-ml-goal-location="pricing_enterprise" style={sat}
-                    onClick={() => setDemoOpen(true)}
-                    className="w-full h-[40px] inline-flex items-center justify-center rounded-full text-[15px] bg-white text-black hover:bg-gray-200 transition-all">
-                    Book a demo
-                  </button>
-                  <Features intro="All the features of Scale, and:" groups={ENTERPRISE_FEATURES} />
+        {/* Plan cards - one row of four on wide screens, 2x2 on tablets/laptops,
+            one column on phones (Pro first) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          {PLANS.map((plan) => {
+            // The marketing page shows each plan's entry tier; bigger credit options are picked in the app.
+            const tier = plan.tiers[0];
+            const monthly = tier.prices.monthly;
+            const annual = tier.prices.annual;
+            // Annual shows its monthly equivalent; the yearly charge goes underneath.
+            const price = period === "annual" ? annual / 12 : monthly;
+            const rec = !!plan.highlighted;
+            const label = rec ? "Most popular" : plan.badge;
+            const tag = period === "annual" ? "Save 25%" : promoActive ? "20% off" : undefined;
+
+            return (
+              <div key={plan.id}
+                className={`relative flex flex-col rounded-[20px] p-5 pt-11 md:p-6 border ${rec ? "order-first md:order-none border-[rgba(110,155,255,0.16)]" : "border-transparent"}`}
+                style={{ background: rec ? REC_BG : CARD_BG }}>
+                <NotchBadge label={label} tag={tag} />
+
+                <div className="flex items-start justify-between gap-3">
+                  <h3 style={medium} className="text-[20px] leading-[28px] text-white">{plan.name}</h3>
+                  <div className="hidden md:block shrink-0"><Badge label={label} tag={tag} /></div>
                 </div>
+                <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5 xl:min-h-[36px]">{plan.description}</p>
+
+                {/* Price - per month; on annual, the monthly equivalent and the yearly charge */}
+                <div className="mt-4">
+                  <div className="flex items-baseline gap-2 flex-wrap">
+                    {period === "annual" && (
+                      <span style={serif} className="text-[24px] text-white/35 line-through decoration-[1.5px]">{formatUsd(monthly)}</span>
+                    )}
+                    <span style={{ ...serif, letterSpacing: "-0.02em" }} className="text-[44px] md:text-[48px] leading-[1.1] text-white">{formatUsd(price)}</span>
+                    <span className="text-[15px] text-[#848484]">/mo</span>
+                  </div>
+                  <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5">
+                    {period === "annual" && <span className="text-white">Billed {formatUsd(annual)} yearly · </span>}
+                    {plan.meta}
+                  </p>
+                </div>
+
+                {/* CTA - every account starts with the free trial */}
+                <div className="flex flex-col gap-1.5 mt-5">
+                  <a data-ml-goal="start_trial" data-ml-goal-plan={plan.id} href={TRIAL_URL} style={medium}
+                    className={`w-full h-[40px] inline-flex items-center justify-center rounded-[12px] text-[15px] transition-colors ${
+                      rec ? "bg-white text-black hover:bg-white/90" : "bg-[#212121] text-white hover:bg-[#2b2b2b]"
+                    }`}>
+                    Start your 3-day free trial
+                  </a>
+                  <p className="text-[12px] text-white/45 text-center leading-[16px]">No card needed · cancel anytime</p>
+                </div>
+
+                {/* Credits */}
+                <div className="mt-5 pt-5 border-t border-white/[0.06] flex items-start gap-2.5">
+                  <Sparkles className={`w-3.5 h-3.5 mt-[3px] shrink-0 ${rec ? "text-[#6E9BFF]" : "text-white/50"}`} />
+                  <div className="min-w-0">
+                    <p className="text-[14px] text-white leading-[20px]">{fmtNum(tier.credits)} AI credits a month</p>
+                    <p className="text-[12px] text-[#848484] leading-[17px]">
+                      {plan.seatAddon
+                        ? `More credits in the app · extra seats ${formatUsd(plan.seatAddon.prices.monthly)}/mo`
+                        : "More credits in the app"}
+                    </p>
+                  </div>
+                </div>
+
+                <FoldedFeatures open={!!expanded[plan.id]} onToggle={() => toggle(plan.id)}>
+                  <Features intro={plan.featuresIntro} groups={plan.features} accent={rec} />
+                </FoldedFeatures>
               </div>
+            );
+          })}
+
+          {/* Enterprise - sales-led, same look as the plan cards */}
+          <div className="relative flex flex-col rounded-[20px] p-5 pt-11 md:p-6" style={{ background: CARD_BG }}>
+            <NotchBadge label="Tailored" />
+            <div className="flex items-start justify-between gap-3">
+              <h3 style={medium} className="text-[20px] leading-[28px] text-white">Enterprise</h3>
+              <div className="hidden md:block shrink-0"><Badge label="Tailored" /></div>
+            </div>
+            <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5 xl:min-h-[36px]">For larger teams with many brands or custom needs.</p>
+            <div className="mt-4">
+              <span style={{ ...serif, letterSpacing: "-0.02em" }} className="text-[44px] md:text-[48px] leading-[1.1] text-white">Custom</span>
+              <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5">Billed annually · tailored plan</p>
+            </div>
+            <div className="flex flex-col gap-1.5 mt-5">
+              <button type="button" data-ml-goal="book_demo" data-ml-goal-location="pricing_enterprise" style={medium}
+                onClick={() => setDemoOpen(true)}
+                className="w-full h-[40px] inline-flex items-center justify-center rounded-[12px] text-[15px] bg-[#212121] text-white hover:bg-[#2b2b2b] transition-colors">
+                Book a demo
+              </button>
+              <p className="text-[12px] text-white/45 text-center leading-[16px]">Talk to us about volume</p>
+            </div>
+            <div className="mt-5 pt-5 border-t border-white/[0.06] flex items-start gap-2.5">
+              <Sparkles className="w-3.5 h-3.5 mt-[3px] shrink-0 text-white/50" />
+              <div className="min-w-0">
+                <p className="text-[14px] text-white leading-[20px]">Custom AI credits</p>
+                <p className="text-[12px] text-[#848484] leading-[17px]">Credits and allowances sized to your team</p>
+              </div>
+            </div>
+            <FoldedFeatures open={!!expanded.ENTERPRISE} onToggle={() => toggle("ENTERPRISE")}>
+              <Features intro="All the features of Scale, and:" groups={ENTERPRISE_FEATURES} />
+            </FoldedFeatures>
+          </div>
+        </div>
+
+        <p className="mt-5 text-center text-[13px] text-white/40">
+          Prices in USD. More credits and team seats are available in the app.
+        </p>
+
+        {/* ── How credits work - plain rows, two columns on wide screens ── */}
+        {showCreditUsage && (
+          <div className="mt-24 sm:mt-32 flex w-full flex-col gap-10">
+            <div className="flex flex-col gap-3">
+              <h3 style={{ ...serif, letterSpacing: "-0.01em" }} className="text-[34px] sm:text-[44px] text-white leading-[1.05]">How credits work</h3>
+              <p className="max-w-[560px] text-[15px] text-white/50 leading-relaxed">
+                Every task your AI team runs costs credits. Plan credits refresh every month, and you can top up anytime.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 border-b border-white/[0.08]">
+              {CREDIT_ROWS.map((row) => (
+                <div key={row.cost} className="flex items-center justify-between gap-6 py-3.5 border-t border-white/[0.08]">
+                  <span className="text-[14px] sm:text-[15px] text-white leading-[22px]">{row.label}</span>
+                  <span className="shrink-0 text-[14px] sm:text-[15px] text-white/50 tabular-nums">{row.cost} {row.cost === "1" ? "credit" : "credits"}</span>
+                </div>
+              ))}
             </div>
           </div>
-
-          <p style={gen} className="-mt-6 text-center text-[13px] text-[#9CA3AF]">
-            More credits and team seats are available in the app.
-          </p>
-
-          {/* ── How credits work — the credit table grouped by cost ── */}
-          {showCreditUsage && (
-            <div className="flex w-full max-w-[760px] flex-col items-center gap-6 pt-8">
-              <div className="flex flex-col items-center gap-2 text-center">
-                <h3 style={sat} className="text-[32px] md:text-[40px] text-white leading-tight">How credits work</h3>
-                <p style={gen} className="max-w-[560px] text-[15px] text-[#9CA3AF] leading-relaxed">
-                  Every task your AI team runs costs credits. Plan credits refresh every month, and you can top up anytime.
-                </p>
-              </div>
-              <div className="w-full overflow-hidden rounded-[16px] border border-white/[0.08] bg-[#131313]">
-                {CREDIT_ROWS.map((row, i) => (
-                  <div key={row.cost}
-                    className={`flex items-center justify-between gap-6 px-5 py-4 ${i > 0 ? "border-t border-white/[0.06]" : ""}`}>
-                    <span style={gen} className="text-[15px] text-[#D1D5DB] leading-[22px]">{row.label}</span>
-                    <span style={sat} className="shrink-0 text-[15px] text-white">{row.cost} {row.cost === "1" ? "credit" : "credits"}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-        </div>
+        )}
       </div>
 
       <BookDemoModal open={demoOpen} onOpenChange={setDemoOpen} />
