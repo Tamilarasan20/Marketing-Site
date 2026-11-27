@@ -391,27 +391,33 @@ export default function PricingSection({
                 style={{ background: rec ? REC_BG : CARD_BG }}>
                 <NotchBadge label={label} tag={tag} />
 
-                {/* 1. Name + badge */}
+                {/* 1. Name + one short line; phones put the price on the right */}
                 <div>
-                  <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
                     <h3 style={medium} className="text-[20px] leading-[28px] text-white">{plan.name}</h3>
-                    <div className="hidden md:block shrink-0"><Badge label={label} tag={tag} /></div>
+                    <p className="md:hidden text-[13px] text-[#848484] leading-[18px] mt-0.5">No card needed</p>
                   </div>
-                  <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5 xl:min-h-[36px]">{plan.description}</p>
+                  <div className="hidden md:block shrink-0"><Badge label={label} tag={tag} /></div>
+                  <div className="md:hidden shrink-0 text-right">
+                    <span style={{ ...serif, letterSpacing: "-0.02em" }} className="text-[40px] leading-none text-white">{formatUsd(price)}</span>
+                    <span className="text-[13px] text-[#848484]"> /mo</span>
+                    {period === "annual" && <p className="text-[12px] text-[#848484] mt-1">Billed {formatUsd(annual)} yearly</p>}
+                  </div>
+                </div>
+                <p className="hidden md:block text-[13px] text-[#848484] leading-[18px] mt-0.5">No card needed</p>
                 </div>
 
-                {/* 2. Price + one line under it */}
-                <div>
+                {/* 2. Price (md+) */}
+                <div className="hidden md:block">
                   <div className="flex items-baseline gap-2 flex-wrap">
                     {period === "annual" && (
                       <span style={serif} className="text-[24px] text-white/35 line-through decoration-[1.5px]">{formatUsd(monthly)}</span>
                     )}
-                    <span style={{ ...serif, letterSpacing: "-0.02em" }} className="text-[44px] md:text-[48px] leading-[1.1] text-white">{formatUsd(price)}</span>
+                    <span style={{ ...serif, letterSpacing: "-0.02em" }} className="text-[48px] leading-[1.1] text-white">{formatUsd(price)}</span>
                     <span className="text-[15px] text-[#848484]">/mo</span>
                   </div>
-                  <p className="text-[13px] text-[#848484] leading-[18px] mt-1">
-                    {period === "annual" ? `Billed ${formatUsd(annual)} yearly` : "No card needed · cancel anytime"}
-                  </p>
+                  {period === "annual" && <p className="text-[13px] text-[#848484] leading-[18px] mt-1">Billed {formatUsd(annual)} yearly</p>}
                 </div>
 
                 {/* 3. CTA - every account starts with the free trial */}
@@ -423,9 +429,8 @@ export default function PricingSection({
                 </a>
 
                 {/* 4. Usage */}
-                <div className="pt-6 border-t border-white/[0.06] flex flex-col gap-4 xl:min-h-[124px]">
-                  <UsageRow icon="credits" accent={rec} title={`${fmtNum(tier.credits)} AI credits a month`}
-                    sub={`Up to ${fmtNum(plan.tiers[plan.tiers.length - 1].credits)} in the app`} />
+                <div className="pt-6 border-t border-white/[0.06] flex flex-col gap-4 xl:min-h-[110px]">
+                  <UsageRow icon="credits" accent={rec} title={`${fmtNum(tier.credits)} AI credits a month`} />
                   <UsageRow icon="team" accent={rec} title={plan.meta}
                     sub={plan.seatAddon ? `Extra seats ${formatUsd(plan.seatAddon.prices.monthly)}/mo` : undefined} />
                 </div>
@@ -442,22 +447,25 @@ export default function PricingSection({
             <NotchBadge label="Tailored" />
             <div>
               <div className="flex items-start justify-between gap-3">
-                <h3 style={medium} className="text-[20px] leading-[28px] text-white">Enterprise</h3>
+                <div className="min-w-0">
+                  <h3 style={medium} className="text-[20px] leading-[28px] text-white">Enterprise</h3>
+                  <p className="md:hidden text-[13px] text-[#848484] leading-[18px] mt-0.5">Billed annually</p>
+                </div>
                 <div className="hidden md:block shrink-0"><Badge label="Tailored" /></div>
+                <span style={{ ...serif, letterSpacing: "-0.02em" }} className="md:hidden shrink-0 text-[40px] leading-none text-white">Custom</span>
               </div>
-              <p className="text-[13px] text-[#848484] leading-[18px] mt-0.5 xl:min-h-[36px]">For larger teams with many brands or custom needs.</p>
+              <p className="hidden md:block text-[13px] text-[#848484] leading-[18px] mt-0.5">Billed annually</p>
             </div>
-            <div>
-              <div className="flex items-baseline"><span style={{ ...serif, letterSpacing: "-0.02em" }} className="text-[44px] md:text-[48px] leading-[1.1] text-white">Custom</span></div>
-              <p className="text-[13px] text-[#848484] leading-[18px] mt-1">Billed annually · tailored plan</p>
+            <div className="hidden md:flex items-baseline">
+              <span style={{ ...serif, letterSpacing: "-0.02em" }} className="text-[48px] leading-[1.1] text-white">Custom</span>
             </div>
             <button type="button" data-ml-goal="book_demo" data-ml-goal-location="pricing_enterprise" style={medium}
               onClick={() => setDemoOpen(true)}
               className="w-full h-[40px] inline-flex items-center justify-center rounded-[12px] text-[15px] bg-[#212121] text-white hover:bg-[#2b2b2b] transition-colors">
               Book a demo
             </button>
-            <div className="pt-6 border-t border-white/[0.06] flex flex-col gap-4 xl:min-h-[124px]">
-              <UsageRow icon="credits" title="Custom AI credits" sub="Sized to your team" />
+            <div className="pt-6 border-t border-white/[0.06] flex flex-col gap-4 xl:min-h-[110px]">
+              <UsageRow icon="credits" title="Custom AI credits" />
               <UsageRow icon="team" title="Unlimited brands and seats" />
             </div>
             <FeatureList intro="Everything in Scale" highlights={ENTERPRISE_HIGHLIGHTS} groups={ENTERPRISE_FEATURES}
