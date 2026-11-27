@@ -171,7 +171,7 @@ export default function Header(_props: { variant?: HeaderVariant } = {}) {
   const active = MENUS.find((m) => m.key === menu) ?? null;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 font-['Geist','Inter',sans-serif]" onMouseLeave={closeAll}>
+    <header className="fixed inset-x-0 top-[var(--launch-banner-h,0px)] z-50 font-['Geist','Inter',sans-serif]" onMouseLeave={closeAll}>
       <div
         ref={barRef}
         className={cn(

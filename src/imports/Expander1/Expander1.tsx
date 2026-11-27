@@ -1,6 +1,6 @@
 import svgPaths from "./svg-vqugh1pll5";
 import { Link } from "react-router";
-import appLogo from "../../assets/app_logo.png";
+import appLogo from "../../assets/loraloop-icon.svg";
 
 function Menu() {
   return (

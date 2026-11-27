@@ -31,7 +31,7 @@ export default function MobileNav() {
 
   return (
     <div className="md:hidden font-['Geist','Inter',sans-serif]">
-      <div className="fixed inset-x-0 top-0 z-[60] flex h-14 items-center justify-between border-b border-[#e3e8ef] bg-white/95 px-4 backdrop-blur">
+      <div className="fixed inset-x-0 top-[var(--launch-banner-h,0px)] z-[60] flex h-14 items-center justify-between border-b border-[#e3e8ef] bg-white/95 px-4 backdrop-blur">
         <Link to="/" className="flex items-center gap-2">
           <img src={appLogo} alt="" className="size-7" />
           <span className="text-[18px] font-semibold tracking-[-0.03em] text-[#0b1b33]">Loraloop</span>
@@ -62,7 +62,7 @@ export default function MobileNav() {
         id="mobile-menu"
         hidden={!open}
         aria-label="Main"
-        className="fixed inset-x-0 bottom-0 top-14 z-[60] overflow-y-auto bg-white px-5 pb-10 pt-4"
+        className="fixed inset-x-0 bottom-0 top-[calc(var(--launch-banner-h,0px)+3.5rem)] z-[60] overflow-y-auto bg-white px-5 pb-10 pt-4"
       >
         <p className={group}>Product</p>
         <ul className="mb-6 mt-1">

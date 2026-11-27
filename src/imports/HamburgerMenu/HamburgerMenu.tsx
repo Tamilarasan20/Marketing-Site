@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import appLogo from "../../assets/app_logo.png";
+import appLogo from "../../assets/loraloop-icon.svg";
 import { useCurrentUser } from "../../app/hooks/useCurrentUser";
 
 function truncateName(name: string, max = 24): string {
