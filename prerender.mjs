@@ -464,6 +464,7 @@ const STATIC_ROUTES = [
   { path: '/ai-email-marketer', priority: '0.8', changefreq: 'monthly' },
   { path: '/ai-ads-manager', priority: '0.8', changefreq: 'monthly' },
   { path: '/free-meta-ads-audit', priority: '0.9', changefreq: 'monthly' },
+  ...['/terms', '/privacy-policy', '/data-deletion'].map((path) => ({ path, priority: '0.3', changefreq: 'yearly' })),
 ];
 
 const today = new Date().toISOString().split('T')[0];

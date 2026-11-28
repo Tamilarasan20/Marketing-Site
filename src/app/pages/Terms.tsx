@@ -4,7 +4,7 @@ export default function Terms() {
       <div className="max-w-[860px] px-4 md:px-8 mx-auto">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-3">
-            <p className="font-['Satoshi',sans-serif] font-bold leading-tight text-[#101828] text-4xl md:text-5xl tracking-[-1.2px]">Terms of Service</p>
+            <h1 className="font-['Satoshi',sans-serif] font-bold leading-tight text-[#101828] text-4xl md:text-5xl tracking-[-1.2px]">Terms of Service</h1>
             <p className="font-['General_Sans',sans-serif] font-medium text-[#6b7280] text-base">
               Effective Date: May 1, 2026 &nbsp;|&nbsp; Last Updated: May 1, 2026
             </p>

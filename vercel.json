@@ -47,6 +47,10 @@
   ],
   "rewrites": [
     {
+      "source": "/favicon.ico",
+      "destination": "/favicon.png"
+    },
+    {
       "source": "/app",
       "destination": "https://loraloop-main-api.vercel.app/"
     },
