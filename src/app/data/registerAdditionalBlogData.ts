@@ -11,8 +11,9 @@ import { decemberBlogPosts } from './decemberBlogData';
 import { decemberBlogPostsB } from './decemberBlogDataB';
 import { salesBlogPosts } from './salesBlogData';
 import { demandBlogPosts } from './demandBlogData';
+import { demandBlogPostsB } from './demandBlogDataB';
 
-for (const post of [...additionalBlogPosts, ...sintraInspiredBlogPosts, ...seoGeoBlogPosts, ...loraloopTrendingBlogPosts, ...jevBlogPosts, ...loraloopGrowthBlogPosts, ...googleAdsBlogPosts, ...bfcmBlogPosts, ...decemberBlogPosts, ...decemberBlogPostsB, ...salesBlogPosts, ...demandBlogPosts]) {
+for (const post of [...additionalBlogPosts, ...sintraInspiredBlogPosts, ...seoGeoBlogPosts, ...loraloopTrendingBlogPosts, ...jevBlogPosts, ...loraloopGrowthBlogPosts, ...googleAdsBlogPosts, ...bfcmBlogPosts, ...decemberBlogPosts, ...decemberBlogPostsB, ...salesBlogPosts, ...demandBlogPosts, ...demandBlogPostsB]) {
   const alreadyExists = blogPosts.some((existingPost) => existingPost.id === post.id || existingPost.slug === post.slug);
 
   if (!alreadyExists) {
