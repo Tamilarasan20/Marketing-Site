@@ -59,6 +59,19 @@ export interface AgentTestimonial {
   title: string;
   metrics?: string[];
 }
+export interface AgentCadence {
+  freq: string;
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+}
+export interface AgentComparisonRow {
+  label: string;
+  agent: string;
+  specialist: string;
+  agency: string;
+  diy: string;
+}
 export interface AgentFaq {
   q: string;
   a: string;
@@ -94,6 +107,12 @@ export interface Agent {
   /** Optional "How I work" section — only some agents have one. */
   stepsHeading?: string;
   steps?: AgentStep[];
+  /** Daily / weekly / monthly routine (from the July agent-page drafts, PR #40). */
+  cadence?: AgentCadence[];
+  /** Tools this agent works with, shown as chips. */
+  integrations?: string[];
+  /** Agent vs specialist vs agency vs doing it yourself. Plain wording only: no salary or fee figures. */
+  comparison?: AgentComparisonRow[];
   testimonials: AgentTestimonial[];
   faqs: AgentFaq[];
   ctaSubhead: string;
@@ -291,6 +310,23 @@ const sophie: Agent = {
       desc: "Every morning: clicks, impressions, CTR, position changes, AI-citation tracking, and instant alerts for ranking drops.",
     },
   ],
+  cadence: [
+    { freq: "Daily", icon: Activity, title: "Rankings and AI-citation tracking", desc: "Your Google positions and AI-search citations are tracked, and meaningful moves up or down are flagged." },
+    { freq: "Weekly", icon: Search, title: "Keyword research", desc: "Fresh opportunities every week: competitor gaps, long-tail finds and trending topics in your niche, scored and prioritized." },
+    { freq: "Weekly", icon: PenLine, title: "Content briefs", desc: "Article briefs built for Google and AI search land in your approval queue, ready to draft." },
+    { freq: "Every two weeks", icon: Wrench, title: "On-page optimization", desc: "A batch of underperforming pages gets a full pass: titles, content, schema and internal links." },
+    { freq: "Ongoing", icon: Bell, title: "Technical health", desc: "Indexing, Core Web Vitals and crawl issues are watched, with a prioritized fix list when something breaks." },
+    { freq: "Monthly", icon: CalendarClock, title: "Linking and strategy review", desc: "Internal links, topic coverage and next month's SEO and AI-search priorities, laid out for your approval." },
+  ],
+  integrations: ["Google Search Console", "Google Analytics", "WordPress", "Webflow", "Shopify"],
+  comparison: [
+    { label: "Cost", agent: "Included in your Loraloop plan", specialist: "A full-time salary", agency: "A monthly retainer", diy: "Tool subscriptions and your time" },
+    { label: "Keyword research", agent: "Every week, prioritized", specialist: "When there is time", agency: "Monthly, if in scope", diy: "By hand" },
+    { label: "AI search (GEO) optimization", agent: "Built into every brief", specialist: "Depends on their skills", agency: "Often an add-on", diy: "Rarely covered" },
+    { label: "Technical monitoring", agent: "Ongoing", specialist: "Periodic audits", agency: "Usually quarterly audits", diy: "You read the dashboards" },
+    { label: "Uses your brand voice", agent: "Yes, from your brand knowledge base", specialist: "After ramp-up", agency: "Once briefed well", diy: "Yes" },
+    { label: "Publishes without your approval", agent: "Never", specialist: "Depends on the setup", agency: "Depends on the contract", diy: "You decide each time" },
+  ],
   testimonials: [
     {
       quote:
@@ -425,6 +461,23 @@ const clara: Agent = {
       desc: "Custom images, your brand colors and voice, mobile-optimized layouts. Every campaign she sends looks like a professional designed it.",
     },
   ],
+  cadence: [
+    { freq: "Daily", icon: Activity, title: "Performance check", desc: "Opens, clicks, revenue and spam complaints are watched across campaigns and flows, with an alert when something moves." },
+    { freq: "Weekly", icon: Lightbulb, title: "Campaign ideas, fully built", desc: "New campaigns land in your approval queue with subject line, copy, design, segment and send time ready." },
+    { freq: "Weekly", icon: Sparkles, title: "Test read-outs and next tests", desc: "Finished subject-line and content tests are read out, what was learned is logged and the next test is queued." },
+    { freq: "Every two weeks", icon: Users, title: "Segment refresh", desc: "Engagement and lifecycle segments are rebuilt as subscribers move between active, at-risk and dormant." },
+    { freq: "Monthly", icon: Mail, title: "Flow review", desc: "Welcome, abandoned-cart, post-purchase and win-back flows are checked for drop-off and tired copy." },
+    { freq: "Monthly", icon: CalendarClock, title: "Revenue and plan review", desc: "Email's revenue share, list growth and deliverability, with next month's email calendar for your approval." },
+  ],
+  integrations: ["Klaviyo", "Mailchimp", "Shopify", "Google Analytics"],
+  comparison: [
+    { label: "Cost", agent: "Included in your Loraloop plan", specialist: "A full-time salary", agency: "A monthly retainer", diy: "Hours you don't have" },
+    { label: "Campaign output", agent: "Every week, fully built", specialist: "A few each month", agency: "As the scope allows", diy: "Whenever you get to it" },
+    { label: "Flow coverage", agent: "All core flows, reviewed monthly", specialist: "Built once, rarely revisited", agency: "Often a setup fee per flow", diy: "Usually just a welcome email" },
+    { label: "Fresh ideas", agent: "Yes, from your products and calendar", specialist: "Sometimes", agency: "You write the brief", diy: "Blank page" },
+    { label: "Uses your brand voice", agent: "Yes, from your brand knowledge base", specialist: "After ramp-up", agency: "Once briefed well", diy: "Yes" },
+    { label: "Sends without your approval", agent: "Never", specialist: "Depends on the setup", agency: "Depends on the contract", diy: "You decide each time" },
+  ],
   testimonials: [
     {
       quote:
@@ -542,6 +595,23 @@ const angie: Agent = {
       title: "Approval before spend",
       desc: "Nothing launches without your sign-off. Review the plan, the creative, and the budget first.",
     },
+  ],
+  cadence: [
+    { freq: "Daily", icon: Activity, title: "Performance check", desc: "Every active campaign is checked for spend pacing, ROAS, CPA and frequency, with an alert when something moves outside its normal range." },
+    { freq: "Daily", icon: TrendingUp, title: "Budget recommendations", desc: "Winners are flagged to scale and losers to pause. Nothing changes in your ad account until you approve." },
+    { freq: "Weekly", icon: PenLine, title: "Fresh copy and creative angles", desc: "New hooks, headlines and creative briefs land in your approval queue, so your account never runs stale creative." },
+    { freq: "Weekly", icon: Lightbulb, title: "Test read-outs and next tests", desc: "Angie reads out finished tests, logs what was learned and queues the next test." },
+    { freq: "Every two weeks", icon: Users, title: "Audience refresh", desc: "Retargeting windows, lookalikes and exclusions are reviewed as your data grows." },
+    { freq: "Monthly", icon: CalendarClock, title: "Strategy and budget review", desc: "What worked, what didn't, and where next month's budget should go across Meta and Google." },
+  ],
+  integrations: ["Meta Ads", "Google Ads", "Facebook", "Instagram", "Google Analytics", "Shopify"],
+  comparison: [
+    { label: "Cost", agent: "Included in your Loraloop plan", specialist: "A full-time salary", agency: "A monthly retainer or a share of ad spend", diy: "Your evenings and weekends" },
+    { label: "How often campaigns are checked", agent: "Every day, every campaign", specialist: "Most working days", agency: "Usually weekly", diy: "When you find time" },
+    { label: "Creative refresh", agent: "New angles every week", specialist: "When there is time", agency: "Often monthly, sometimes extra cost", diy: "Now and then" },
+    { label: "Minimum ad spend", agent: "None", specialist: "Needs enough spend to justify the hire", agency: "Many set a minimum", diy: "None" },
+    { label: "Uses your brand voice", agent: "Yes, from your brand knowledge base", specialist: "After ramp-up", agency: "Once briefed well", diy: "Yes" },
+    { label: "Spends without your approval", agent: "Never", specialist: "Depends on the setup", agency: "Depends on the contract", diy: "You decide each time" },
   ],
   testimonials: [
     {
