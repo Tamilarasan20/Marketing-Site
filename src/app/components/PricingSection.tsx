@@ -346,7 +346,7 @@ export default function PricingSection({
                 Black Friday: <span className="relative inline-block">20% off<Scribble className="-bottom-1 h-[9px]" /></span> your first month
               </p>
               <p className="text-[13px] text-white/50 mt-1.5 leading-[1.45]">
-                Monthly plans, applied automatically at checkout. Ends Nov 29.
+                Monthly plans, applied automatically at checkout. Ends Nov 29 at 11:59 PM UTC (6:59 PM ET).
               </p>
             </div>
             <Countdown endsAt={BLACK_FRIDAY_ENDS_AT} />
