@@ -4,7 +4,6 @@ import { Clock } from "lucide-react";
 import "../data/registerAdditionalBlogData";
 import { blogPosts as allBlogPosts, getHeroImage } from "../data/blogData";
 import type { ContentSection } from "../data/blogData";
-import { blogThumbnails } from "../data/blogThumbnails";
 import { BlogThumbnail } from "../components/BlogThumbnail";
 
 const POSTS_PER_PAGE = 15;
@@ -52,7 +51,6 @@ export default function Blog() {
 
   // Featured = newest post overall (shown above the grid, not duplicated in it)
   const featuredPost = newestFirst[0];
-  const featuredThumb = blogThumbnails[featuredPost.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
   const featuredHero = getHeroImage(featuredPost);
   const featuredReadTime = getReadTime(featuredPost.content);
 
@@ -79,7 +77,7 @@ export default function Blog() {
         <div className="px-4 sm:px-6 md:px-20 py-12 md:py-20">
           <div className="max-w-[1280px] mx-auto flex flex-col md:flex-row gap-10 md:gap-14 items-start md:items-center">
             <Link to={`/blog/${featuredPost.slug}`} className="h-[320px] md:h-[400px] w-full md:w-[560px] rounded-3xl overflow-hidden shrink-0 hover:scale-[1.01] transition-transform duration-300">
-              <BlogThumbnail emoji={featuredThumb.emoji} gradient={featuredThumb.gradient} src={featuredHero?.src} alt={featuredHero?.alt} category={featuredPost.category} />
+              <BlogThumbnail src={featuredHero?.src} alt={featuredHero?.alt} category={featuredPost.category} />
             </Link>
             <div className="flex flex-col gap-5 w-full">
               <div className="flex items-center gap-3">
@@ -145,7 +143,6 @@ export default function Blog() {
             {pagePosts.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {pagePosts.map((post) => {
-                  const thumb = blogThumbnails[post.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
                   const hero = getHeroImage(post);
                   const rt = getReadTime(post.content);
                   return (
@@ -153,7 +150,7 @@ export default function Blog() {
                       className="group flex flex-col rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#1877f2] hover:shadow-lg transition-all duration-200 overflow-hidden">
                       <div className="h-[220px] overflow-hidden">
                         <div className="w-full h-full group-hover:scale-105 transition-transform duration-300">
-                          <BlogThumbnail emoji={thumb.emoji} gradient={thumb.gradient} src={hero?.src} alt={hero?.alt} category={post.category} />
+                          <BlogThumbnail src={hero?.src} alt={hero?.alt} category={post.category} />
                         </div>
                       </div>
                       <div className="flex flex-col gap-3 p-5">

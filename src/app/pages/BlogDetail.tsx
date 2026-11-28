@@ -15,7 +15,6 @@ import { getBlogPost, getBlogPostBySlug, getHeroImage, getRelatedPosts } from ".
 import type { ContentSection } from "../data/blogData";
 import { getAuthor } from "../data/authors";
 import { getToolBySlug } from "../data/toolsData";
-import { blogThumbnails } from "../data/blogThumbnails";
 import { BlogThumbnail } from "../components/BlogThumbnail";
 
 const aiTools = [
@@ -306,7 +305,6 @@ export default function BlogDetail() {
     );
   }
 
-  const thumb = blogThumbnails[post.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
   const hero = getHeroImage(post);
   const author = getAuthor(post.author);
   // Hand-picked related posts (relatedSlugs) first, then same-category posts: real internal links.
@@ -392,7 +390,7 @@ export default function BlogDetail() {
 
               {/* Thumbnail */}
               <div className="w-full lg:w-[460px] h-[260px] sm:h-[320px] md:h-[380px] rounded-3xl overflow-hidden shrink-0">
-                <BlogThumbnail emoji={thumb.emoji} gradient={thumb.gradient} src={hero?.src} alt={hero?.alt} category={post.category} />
+                <BlogThumbnail src={hero?.src} alt={hero?.alt} category={post.category} />
               </div>
             </div>
           </div>
@@ -504,14 +502,13 @@ export default function BlogDetail() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {displayRelated.map((article) => {
-                const relThumb = blogThumbnails[article.id] ?? { emoji: "📝", gradient: ["#6d28d9", "#4f46e5"] as [string, string] };
                 const relHero = getHeroImage(article);
                 const rt = getReadTime(article.content);
                 return (
                   <Link key={article.id} to={`/blog/${article.slug}`} className="group flex flex-col gap-4 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#1877f2] hover:shadow-md transition-all duration-200 overflow-hidden">
                     <div className="h-[180px] overflow-hidden">
                       <div className="w-full h-full group-hover:scale-105 transition-transform duration-300">
-                        <BlogThumbnail emoji={relThumb.emoji} gradient={relThumb.gradient} src={relHero?.src} alt={relHero?.alt} category={article.category} />
+                        <BlogThumbnail src={relHero?.src} alt={relHero?.alt} category={article.category} />
                       </div>
                     </div>
                     <div className="flex flex-col gap-2 px-5 pb-5">

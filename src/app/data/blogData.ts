@@ -1,3 +1,5 @@
+import { blogCovers } from './blogCovers';
+
 export type ContentSection =
   | { type: 'paragraph'; text: string }
   | { type: 'heading'; text: string }
@@ -2616,8 +2618,10 @@ export function getRelatedPosts(post: BlogPost, count = 4, pool: BlogPost[] = bl
   return picked.slice(0, count);
 }
 
-/** First `image` section of a post, used as its card thumbnail and Open Graph image. */
+/** The post's cover photo (blogCovers.ts), else its first `image` section: card thumbnail, header and Open Graph image. */
 export function getHeroImage(post: BlogPost): { src: string; alt: string } | undefined {
+  const cover = blogCovers[post.slug];
+  if (cover) return { src: cover.src, alt: cover.alt };
   const section = post.content.find((s) => s.type === 'image');
   return section && section.type === 'image' ? { src: section.src, alt: section.alt } : undefined;
 }
