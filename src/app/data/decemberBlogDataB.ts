@@ -1,6 +1,6 @@
 import type { BlogPost } from './blogData';
 
-// December batch B (ids 192-196), written November 28, 2026 for Dec 1-7.
+// December batch B: ids 195-196 remain here (192-194 were rewritten into guideBlogDataE/F.ts), written November 28, 2026.
 // Topics picked from Loraloop market data (Treg): live Google results and People Also Ask for
 // "how to get your SaaS recommended by ChatGPT", r/FacebookAds threads on ad account bans and a
 // slow Black Friday, UK Google suggestions for "boxing day marketing ideas", plus Nevo David's
@@ -8,93 +8,6 @@ import type { BlogPost } from './blogData';
 const publishDate = 'November 28, 2026';
 
 export const decemberBlogPostsB: BlogPost[] = [
-  {
-    id: 194,
-    slug: 'boxing-day-january-sales-marketing-uk',
-    title: 'Boxing Day and January Sales Marketing Ideas for UK Brands',
-    seoTitle: 'Boxing Day Marketing Ideas for UK Brands: 2026 Plan',
-    description: 'Boxing Day and January sales marketing ideas for UK eCommerce brands: when to announce, how to use Black Friday learnings, email and Meta ads timing, and how to avoid training customers to wait.',
-    category: 'Business',
-    date: publishDate,
-    imageIndex: 194,
-    tableOfContents: [
-      'Why Boxing Day Still Matters After Black Friday',
-      'Decide What the Sale Is For',
-      'Five Boxing Day Marketing Ideas',
-      'The Timeline From December 20 to January 31',
-      'Email and Ads Plan',
-      'Mistakes to Avoid',
-      'How Loraloop Fits',
-      'Frequently Asked Questions',
-    ],
-    content: [
-      { type: 'paragraph', text: "In the UK, Boxing Day on December 26 starts the January sales, and many shoppers wait for it with gift money and vouchers to spend. For brands that already ran Black Friday, the question is not whether to discount again, but what this second sale should achieve: clear stock, win new customers, or bring Black Friday buyers back." },
-      { type: 'callout', text: "Quick answer: Decide what your Boxing Day sale is for, then plan backwards. Tease it to your email list before Christmas, launch early on December 26, focus on gift card holders and products you need to clear, and run the January sale as a short, clear event rather than a month of discounts. Use your Black Friday results to choose products and creative." },
-
-      { type: 'heading', text: 'Why Boxing Day Still Matters After Black Friday' },
-      { type: 'list', items: [
-        'Shoppers have gift money and vouchers to spend.',
-        'Many people are off work and browsing on their phones.',
-        'It is the natural time to clear winter stock before spring lines.',
-        'Customers who bought gifts on Black Friday may now shop for themselves.',
-      ]},
-
-      { type: 'heading', text: 'Decide What the Sale Is For' },
-      { type: 'table', headers: ['Goal', 'What to put on sale', 'Who to target'], rows: [
-        ['Clear stock', 'Seasonal and slow-moving lines', 'Deal-seeking audiences and your full list'],
-        ['Win new customers', 'Best-sellers with healthy margin', 'Lookalikes and people who visited in Q4'],
-        ['Bring buyers back', 'Products that pair with Black Friday purchases', 'Q4 buyers and gift recipients'],
-      ]},
-
-      { type: 'heading', text: 'Five Boxing Day Marketing Ideas' },
-      { type: 'numbered-list', items: [
-        'Gift card top-up: a bonus for customers spending gift cards or vouchers, so they spend more than the card value.',
-        'Early access for subscribers: open the sale to your email and SMS list on Christmas evening or early Boxing Day.',
-        'Complete the set: offers on items that pair with what customers bought on Black Friday.',
-        'Last chance on seasonal lines: clear winter stock with an honest end date.',
-        'New year starter bundles: themed bundles for January goals and routines.',
-      ]},
-
-      { type: 'heading', text: 'The Timeline From December 20 to January 31' },
-      { type: 'table', headers: ['Dates', 'Action'], rows: [
-        ['Dec 20-23', 'Tease the sale to your list; prepare creative and landing pages'],
-        ['Dec 24-25', 'Schedule emails and ads; send early access on Christmas evening if you use it'],
-        ['Dec 26', 'Launch publicly in the morning; ads, email and social live'],
-        ['Dec 27-31', 'Follow-up emails by product interest; refresh ads if frequency climbs'],
-        ['Jan 1-15', 'January sale continues with fewer, clearer offers'],
-        ['Jan 16-31', 'End the sale on a set date; move to full-price new-year messaging'],
-      ]},
-
-      { type: 'heading', text: 'Email and Ads Plan' },
-      { type: 'list', items: [
-        'Segment email by what customers bought in Q4 and by gift buyers versus self buyers.',
-        'Retarget Q4 site visitors and cart abandoners who did not buy.',
-        'Reuse your best Black Friday creative with new copy and a new date, rather than the same ad.',
-        'Watch cost per purchase daily against your margin after the discount.',
-      ]},
-
-      { type: 'heading', text: 'Mistakes to Avoid' },
-      { type: 'list', items: [
-        'Running the same discount from Black Friday to the end of January, which trains customers to never pay full price.',
-        'Claiming "was" prices that were not genuinely charged before. UK consumer protection rules require price comparisons to be accurate and not misleading.',
-        'Forgetting returns from gifts. Make exchanges easy and use them to suggest the right product.',
-        'Leaving Christmas creative running after December 25.',
-      ]},
-
-      { type: 'heading', text: 'How Loraloop Fits' },
-      { type: 'paragraph', text: "Loraloop connects to Shopify, Klaviyo and your ad accounts. It can draft the Boxing Day and January sale plan from your Black Friday results, write the emails in your brand voice, schedule social posts and check your Meta and Google accounts every day. Every email, ad and budget change waits for your approval, including over the holidays." },
-
-      { type: 'faq', items: [
-        { q: 'When should UK brands start Boxing Day marketing?', a: 'Tease it to your email list in the days before Christmas, prepare ads and pages in advance, and launch publicly early on December 26.' },
-        { q: 'Should I run a Boxing Day sale if I already did Black Friday?', a: 'Yes, if it has a clear goal such as clearing seasonal stock or bringing Black Friday buyers back. Avoid running the same discount continuously.' },
-        { q: 'How long should the January sale last?', a: 'Long enough to reach your list and audiences, with a set end date. Many brands finish by mid-to-late January and move back to full-price messaging.' },
-        { q: 'What are good Boxing Day marketing ideas?', a: 'Gift card top-ups, early access for subscribers, offers that complete a Black Friday purchase, honest clearance on seasonal lines and new year bundles.' },
-      ]},
-      { type: 'cta', text: 'Loraloop plans and drafts your Boxing Day and January sale across email, ads and social, with every send approved by you.' },
-    ],
-    relatedSlugs: ['after-black-friday-retention-plan-shopify', 'q1-marketing-plan-dtc-brands-after-holidays', 'meta-ads-after-cyber-monday-december-plan', 'bfcm-post-mortem-template-agencies'],
-    relatedTools: ['email-subject-generator', 'promotion-headlines-generator'],
-  },
   {
     id: 195,
     slug: 'meta-ads-naming-convention-template',
