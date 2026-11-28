@@ -131,4 +131,25 @@ export const pageMeta: PageMeta[] = [
     h1: 'Contact Loraloop',
     summary: 'Get in touch about plans, demos, agency partnerships or support.',
   },
+  {
+    path: '/terms',
+    title: 'Terms of Service',
+    description: 'The terms that govern your use of Loraloop: the platform, website, AI agents, APIs and related services.',
+    h1: 'Terms of Service',
+    summary: 'The terms of service for the Loraloop platform, website, AI agents and APIs.',
+  },
+  {
+    path: '/privacy-policy',
+    title: 'Privacy Policy',
+    description: 'How Loraloop collects, uses, stores and protects your personal data, and the choices you have.',
+    h1: 'Privacy Policy',
+    summary: 'How Loraloop collects, uses, stores and protects personal data.',
+  },
+  {
+    path: '/data-deletion',
+    title: 'User Data Deletion',
+    description: 'How to delete your Loraloop account and data, including data from connected Meta and Facebook accounts.',
+    h1: 'User Data Deletion',
+    summary: 'How to request deletion of your Loraloop account and data, including data from connected Meta and Facebook accounts.',
+  },
 ];
