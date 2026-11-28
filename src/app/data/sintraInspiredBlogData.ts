@@ -4,6 +4,8 @@ import { RETIRED_BLOG_IDS } from './retiredBlogPosts';
 type Topic = {
   id: number;
   title: string;
+  /** Keeps the published URL when the title changes. */
+  slug?: string;
   keyword: string;
   audience: string;
   category: string;
@@ -24,7 +26,7 @@ const topics: Topic[] = [
   { id: 49, title: 'Best AI Social Media Tools for Small Businesses in 2026', keyword: 'AI social media tools', audience: 'small businesses and creators', category: 'Business', imageIndex: 49 },
   { id: 50, title: 'AI Email Marketing for Small Businesses: Campaigns, Newsletters, and Flows', keyword: 'AI email marketing', audience: 'small businesses and eCommerce teams', category: 'Product', imageIndex: 50 },
   { id: 51, title: 'AI SEO Tools vs AI SEO Agents: What Is the Difference?', keyword: 'AI SEO agents', audience: 'founders, SEO teams, and content marketers', category: 'Product', imageIndex: 51 },
-  { id: 52, title: 'Generative Engine Optimization Examples for Brands and Startups', keyword: 'Generative Engine Optimization examples', audience: 'brands preparing for AI search', category: 'Business', imageIndex: 52 },
+  { id: 52, title: 'Generative Engine Optimization (GEO) Examples for Brands and Startups', slug: 'generative-engine-optimization-examples-for-brands-and-startups', keyword: 'generative engine optimization examples', audience: 'brands preparing for AI search', category: 'Business', imageIndex: 52 },
   { id: 53, title: 'AI Content Calendar vs Social Scheduler: Why Planning Comes Before Posting', keyword: 'AI content calendar', audience: 'founders, creators, and social media managers', category: 'Product', imageIndex: 53 },
   { id: 54, title: 'How AI Agents Help Agencies Scale Client Delivery Without Hiring Too Fast', keyword: 'AI agents for agencies', audience: 'agencies and freelancers', category: 'Business', imageIndex: 54 },
   { id: 55, title: 'AI Ad Copy Generator vs AI Ads Manager: What Growth Teams Really Need', keyword: 'AI ads manager', audience: 'growth teams, founders, and eCommerce brands', category: 'Product', imageIndex: 55 },
@@ -35,7 +37,7 @@ const topics: Topic[] = [
   { id: 60, title: 'AI Marketing for eCommerce Product Launches: A Complete Workflow', keyword: 'AI eCommerce product launch marketing', audience: 'eCommerce founders and product marketers', category: 'Business', imageIndex: 60 },
   { id: 61, title: 'AI Personal Brand Content System: How Founders Can Stay Consistent', keyword: 'AI personal brand content system', audience: 'founders, creators, and consultants', category: 'Business', imageIndex: 61 },
   { id: 62, title: 'AI Newsletter Workflow: How to Create Useful Emails Every Week', keyword: 'AI newsletter workflow', audience: 'founders, creators, and email marketers', category: 'Product', imageIndex: 62 },
-  { id: 63, title: 'What Is an AI Marketing Operating System? A Simple 2026 Guide', keyword: 'AI marketing operating system', audience: 'founders and SMB marketing teams', category: 'Product', imageIndex: 63 },
+  { id: 63, title: 'What Is an AI Marketing Platform? The AI Marketing Operating System Explained', slug: 'what-is-an-ai-marketing-operating-system-a-simple-2026-guide', keyword: 'AI marketing platform', audience: 'founders and SMB marketing teams', category: 'Product', imageIndex: 63 },
   { id: 64, title: 'AI Agent Marketplace vs AI Team Platform: Which One Fits Your Business?', keyword: 'AI agent marketplace vs AI team platform', audience: 'business owners evaluating AI agents', category: 'Business', imageIndex: 64 },
   { id: 65, title: 'AI Marketing Prompts vs Brand DNA: Why Context Beats Better Prompting', keyword: 'AI Brand DNA', audience: 'teams relying on prompt libraries', category: 'Product', imageIndex: 65 },
   { id: 66, title: 'Best AI Tools for Agencies in 2026: Strategy, Content, Social, Email, Ads, and Reporting', keyword: 'AI tools for agencies', audience: 'agencies and freelancers', category: 'Business', imageIndex: 66 },
@@ -124,7 +126,7 @@ function buildContent(topic: Topic): ContentSection[] {
 
 export const sintraInspiredBlogPosts: BlogPost[] = topics.filter((topic) => !RETIRED_BLOG_IDS.has(topic.id)).map((topic) => ({
   id: topic.id,
-  slug: slugify(topic.title),
+  slug: topic.slug ?? slugify(topic.title),
   title: topic.title,
   seoTitle: topic.title,
   description: makeDescription(topic),

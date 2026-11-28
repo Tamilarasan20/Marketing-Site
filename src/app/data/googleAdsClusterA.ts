@@ -301,8 +301,8 @@ export const googleAdsClusterA: BlogPost[] = [
   {
     id: 176,
     slug: 'performance-max-control-2026',
-    title: 'How to Control Performance Max in 2026: Negatives, Channel Reports, Brand Exclusions and Asset Groups',
-    seoTitle: 'How to Control Performance Max in 2026: Negatives, Channels and Asset Groups',
+    title: 'Performance Max in 2026: How to Control It With Negatives, Channel Reports, Brand Exclusions and Asset Groups',
+    seoTitle: 'Performance Max Control in 2026: Negatives, Channels and Asset Groups',
     description: 'Performance Max gives you more control in 2026 than most advertisers use: campaign negatives, channel reporting, brand exclusions, URL controls and asset groups. Here is a weekly routine.',
     category: 'Advertising',
     date: publishDate,
