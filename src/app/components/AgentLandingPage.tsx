@@ -5,6 +5,15 @@ import { type Agent, agentList } from "../data/agents";
 import { Container, Heading, Kicker, Section, Tile } from "./site/ui";
 import { ControlsSection, CtaBand, FaqSection, StartForm } from "./site/sections";
 import { AdsView, ApprovalView, BriefingView, EmailView, GradesView, QueueView, SeoView, StrategyView } from "./site/views";
+import { LoopVideo } from "./site/LoopVideo";
+
+/** Remotion loops in public/video/<key>.*, each ending on the owner's approval (source in video/). */
+const VIDEO_LABELS: Record<string, string> = {
+  lora: "Short demo: Lora lays out a gift-season plan week by week, then waits for the owner to approve it. Example data.",
+  angie: "Short demo: Angie spots a tired ad, drafts two new cuts on the same budget, then waits for the owner to approve the launch. Example data.",
+  sophie: "Short demo: Sophie checks which AI assistants name the brand, drafts FAQ answers, then waits for the owner to approve publishing. Example data.",
+  clara: "Short demo: Clara builds a win-back email series for lapsed subscribers, then waits for the owner to approve sending. Example data.",
+};
 
 /** The two product views under each agent's hero, picked for what that agent produces. */
 const HERO_VIEWS: Record<string, [ReactNode, ReactNode]> = {
@@ -52,12 +61,15 @@ export default function AgentLandingPage({ agent }: { agent: Agent }) {
             </div>
             <p className="mt-1 text-[13.5px] text-[var(--lx-slate)]">{agent.hero.trust}</p>
           </div>
-          <div className="pb-20 md:pb-24" aria-hidden="true">
-            <div className="grid gap-4 rounded-[24px] border border-[var(--lx-line)] bg-[var(--lx-mist)] p-4 shadow-[0_40px_80px_-40px_rgba(17,17,16,0.25)] md:grid-cols-2 md:items-start md:p-10">
-              <div className="min-w-0">{viewA}</div>
-              <div className="min-w-0 md:mt-12">{viewB}</div>
+          <div className="pb-20 md:pb-24">
+            <div className="rounded-[24px] border border-[var(--lx-line)] bg-[var(--lx-mist)] p-2 shadow-[0_40px_80px_-40px_rgba(17,17,16,0.25)] md:p-4">
+              {VIDEO_LABELS[agent.key] && <LoopVideo name={agent.key} label={VIDEO_LABELS[agent.key]} />}
+              <div className="grid gap-4 p-2 pt-4 md:grid-cols-2 md:items-start md:p-6 md:pt-8" aria-hidden="true">
+                <div className="min-w-0">{viewA}</div>
+                <div className="min-w-0 md:mt-12">{viewB}</div>
+              </div>
             </div>
-            <p className="mt-4 text-[12.5px] text-[var(--lx-mute)]">Product views show example data for a sample brand.</p>
+            <p className="mt-4 text-[12.5px] text-[var(--lx-mute)]">Video and product views show example data for a sample brand.</p>
           </div>
         </Container>
       </section>

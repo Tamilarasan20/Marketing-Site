@@ -10,3 +10,6 @@ build/
 .DS_Store
 Thumbs.db
 .vercel
+
+# node_modules as a symlink too (worktrees share one install)
+node_modules
