@@ -198,6 +198,28 @@ export default function SegmentPage() {
 
       <ControlsSection id={`${location}-guardrails`} />
 
+      {s.guides && s.guides.length > 0 && (
+        <Section id={`${location}-guides`} aria-labelledby="seg-guides">
+          <Kicker>Free guides</Kicker>
+          <h2 id="seg-guides" className="lx-h2 mt-4">Practical guides to read next</h2>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {s.guides.map((g) => (
+              <li key={g.to}>
+                <Link
+                  to={g.to}
+                  data-ml-goal="segment_guide_click"
+                  data-ml-goal-location={location}
+                  className="flex h-full flex-col rounded-[16px] bg-[var(--lx-mist)] p-5 transition-colors hover:bg-[#e9e8e2]"
+                >
+                  <span className="text-[16px] font-medium">{g.title}</span>
+                  <span className="mt-2 text-[14px] leading-[1.5] text-[var(--lx-slate)]">{g.note}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+
       <FaqSection items={[...s.faq, ...SHARED_FAQ]} id={`${location}-faq`} />
 
       {/* Other teams, for internal linking */}

@@ -30,6 +30,8 @@ export interface Segment {
   faq: { q: string; a: string }[];
   ctaLead: string;
   ctaRest: string;
+  /** Free guides for this buyer, shown above the FAQ (internal links to blog posts and free tools). */
+  guides?: { to: string; title: string; note: string }[];
 }
 
 export const SHARED_FAQ: { q: string; a: string }[] = [
@@ -78,6 +80,12 @@ export const segments: Segment[] = [
     ],
     ctaLead: 'Keep the store growing',
     ctaRest: 'while your team sleeps.',
+    guides: [
+      { to: '/free-meta-ads-audit', title: 'Free Meta ads audit', note: 'See what your Black Friday and Cyber Monday spend wasted, with a ranked list of fixes.' },
+      { to: '/blog/get-new-customers-shopify-without-discounts', title: 'New customers without discounting', note: 'Story-led content, creators and proof that keep sales coming after the holidays.' },
+      { to: '/blog/creator-ugc-partnerships-dtc-brands', title: 'Creator and UGC partnerships', note: 'How to pick, pay and measure creators who actually use your product.' },
+      { to: '/blog/after-black-friday-retention-plan-shopify', title: 'After Black Friday: retention plan', note: 'Turn this weekend\'s first-time buyers into repeat customers.' },
+    ],
   },
   {
     slug: '/for-saas',
@@ -253,6 +261,12 @@ export const segments: Segment[] = [
     ],
     ctaLead: 'Fill the calendar',
     ctaRest: 'in every location.',
+    guides: [
+      { to: '/blog/get-more-customers-local-business', title: 'Get more local customers', note: 'Referrals, reviews and partnerships with the businesses around you.' },
+      { to: '/blog/turn-leads-into-booked-appointments', title: 'Turn calls and DMs into bookings', note: 'Reply fast, give one booking link and follow up on a schedule.' },
+      { to: '/blog/google-business-profile-holiday-checklist-multi-location', title: 'Holiday Google Business Profile checklist', note: 'Hours, posts and reviews for every location through December.' },
+      { to: '/blog/local-seo-ai-era-near-me-recommendations', title: 'Get recommended for "near me"', note: 'How local search and AI assistants pick which business to suggest.' },
+    ],
   },
 ];
 
