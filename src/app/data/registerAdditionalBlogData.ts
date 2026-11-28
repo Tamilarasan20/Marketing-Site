@@ -6,7 +6,6 @@ import { loraloopTrendingBlogPosts } from './loraloopTrendingBlogData';
 import { jevBlogPosts } from './jevBlogData';
 import { loraloopGrowthBlogPosts } from './loraloopGrowthBlogData';
 import { googleAdsBlogPosts } from './googleAdsBlogData';
-import { bfcmBlogPosts } from './bfcmBlogData';
 import { decemberBlogPosts } from './decemberBlogData';
 import { decemberBlogPostsB } from './decemberBlogDataB';
 import { demandBlogPosts } from './demandBlogData';
@@ -14,8 +13,9 @@ import { guideBlogPosts } from './guideBlogData';
 import { guideBlogPostsB } from './guideBlogDataB';
 import { guideBlogPostsC } from './guideBlogDataC';
 import { guideBlogPostsD } from './guideBlogDataD';
+import { guideBlogPostsE } from './guideBlogDataE';
 
-for (const post of [...additionalBlogPosts, ...sintraInspiredBlogPosts, ...seoGeoBlogPosts, ...loraloopTrendingBlogPosts, ...jevBlogPosts, ...loraloopGrowthBlogPosts, ...googleAdsBlogPosts, ...bfcmBlogPosts, ...decemberBlogPosts, ...decemberBlogPostsB, ...demandBlogPosts, ...guideBlogPosts, ...guideBlogPostsB, ...guideBlogPostsC, ...guideBlogPostsD]) {
+for (const post of [...additionalBlogPosts, ...sintraInspiredBlogPosts, ...seoGeoBlogPosts, ...loraloopTrendingBlogPosts, ...jevBlogPosts, ...loraloopGrowthBlogPosts, ...googleAdsBlogPosts, ...decemberBlogPosts, ...decemberBlogPostsB, ...demandBlogPosts, ...guideBlogPosts, ...guideBlogPostsB, ...guideBlogPostsC, ...guideBlogPostsD, ...guideBlogPostsE]) {
   const alreadyExists = blogPosts.some((existingPost) => existingPost.id === post.id || existingPost.slug === post.slug);
 
   if (!alreadyExists) {
