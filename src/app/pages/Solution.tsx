@@ -1,466 +1,191 @@
-import { useState, useRef, useEffect, useMemo } from "react";
-import { useNavigate, useSearchParams } from "react-router";
-import { Frame35_Auth } from "../../imports/LandingPage/LandingPage";
-import { ChevronDown, Users, BarChart2, Target, Lightbulb, CheckCircle } from "lucide-react";
-import imgLora from "../../imports/Home-1/18110a4df5acac34f23ec4990a55463713d90bef.png";
-import imgSam from "../../imports/Home-1/67e2795861635095f78d499d37fb8c47640346cd.png";
-import imgClara from "../../imports/Home-1/a6c396695db2f4867d2b2cf94c4c4013fb4aa21a.png";
-import imgSteve from "../../imports/Home-1/81459e21086bbb45f043de724414eb6c6a228454.png";
-import imgSarah from "../../imports/Home-1/2ede8e04425e852843b64720e2e6023d1ed754cb.png";
-import imgImage190 from "../../imports/Solution-1/477593f47efb019382046da2baab475c895d18ac.png";
-import imgImage189 from "../../imports/Solution-1/c50f548c927048a571456a95c7cf7e55218fe47b.png";
-import imgLogos from "../../imports/Solution-1/4174d16cdcac15f4497d1c39f4b1a5104b45fac1.png";
-import imgLogos1 from "../../imports/Solution-1/acfc7503e01b011ae7f17074baec7c0d31a597f8.png";
-import imgImage187 from "../../imports/Solution-1/b76237f466af6e76be8b56dc75d1d5e7731fbb48.png";
-import imgLogos2 from "../../imports/Solution-1/6542a1e22417f251cbc55d42da5eae61e5cb8217.png";
-import imgImage172 from "../../imports/Solution-1/a091e0e97bb7d939c455df7635918b4c8c69a7b8.png";
-import imgLogos3 from "../../imports/Solution-1/c7fe7372891e9f00b719c9bfb401718a19a7515e.png";
-import imgLogos4 from "../../imports/Solution-1/62fcac5886e5a57ef8f7cf8f439afb75ac5ab2c9.png";
+import { useEffect, type ReactNode } from "react";
+import { Link, useSearchParams } from "react-router";
+import { ArrowRight, Check, X } from "lucide-react";
+import { Container, Heading, Kicker, Section, Tile } from "../components/site/ui";
+import { ControlsSection, CtaBand, FaqSection, StartForm } from "../components/site/sections";
+import { AdsView, ApprovalView, BriefingView, EmailView, SeoView } from "../components/site/views";
+import { agentList } from "../data/agents";
 
-const aiEmployees = [
-  {
-    name: "Lora",
-    role: "AI Marketing Lead",
-    image: imgLora,
-    isSoon: false,
-    title: (
-      <>
-        Meet <span className="text-[#9131ea]">Lora</span> Autonomous
-        <br />
-        <span className="text-[#9131ea]">AI Marketing Lead</span>
-      </>
-    ),
-    subtext: "Lora supports your marketing from start to finish. She understands your goals and audience. No waiting for instructions; she plans content, runs ads, guides AI, creates content, tracks performance, and boosts results, then reports back to you. She's smart, quick, & easy to work with!",
-  },
-  {
-    name: "Sam",
-    role: "AI Strategist",
-    image: imgSam,
-    isSoon: true,
-    title: (
-      <>
-        Meet <span className="text-[#1877f2]">Sam</span> Autonomous
-        <br />
-        <span className="text-[#1877f2]">AI Strategist</span>
-      </>
-    ),
-    subtext: "Sam plans your marketing every day. He checks your brand, audience, competitors, and trends to decide what your team should focus on next. He helps choose content ideas, campaign plans, product angles & growth opportunities. No guessing — Sam gives your AI team a clear direction so your marketing stays smart, active, and focused on results. Sam helps your brand grow with better daily marketing decisions.",
-  },
-  {
-    name: "Clara",
-    role: "AI Content Writer",
-    image: imgClara,
-    isSoon: true,
-    title: (
-      <>
-        Meet <span className="text-[#9131ea]">Clara</span> Your
-        <br />
-        <span className="text-[#9131ea]">Autonomous AI Content Writer</span>
-      </>
-    ),
-    subtext: "Clara writes content that attracts customers for blogs, emails, social posts, and more. She understands your brand voice and creates persuasive content that drives action.",
-  },
-  {
-    name: "Steve",
-    role: "AI Visual Designer",
-    image: imgSteve,
-    isSoon: true,
-    title: (
-      <>
-        Meet <span className="text-[#d77504]">Steve</span> Your
-        <br />
-        <span className="text-[#d77504]">Autonomous AI Visual Designer</span>
-      </>
-    ),
-    subtext: "Steve creates scroll-stopping visuals for social media, ads, and your website. He ensures your brand looks professional and consistent across all platforms.",
-  },
-  {
-    name: "Sarah",
-    role: "AI Social Media Manager",
-    image: imgSarah,
-    isSoon: true,
-    title: (
-      <>
-        Meet <span className="text-[#14a148]">Sarah</span> Your
-        <br />
-        <span className="text-[#14a148]">Autonomous AI Social Media Manager</span>
-      </>
-    ),
-    subtext: "Sarah manages your social media presence 24/7. She schedules posts, engages with your audience, and tracks performance to grow your brand's reach.",
-  },
+/** One product view per agent, showing what that agent produces. */
+const AGENT_VIEW: Record<string, ReactNode> = {
+  lora: <BriefingView />,
+  angie: <AdsView />,
+  sophie: <SeoView />,
+  clara: <EmailView />,
+};
+
+/** Old ?agent= links (from the previous home page) map onto today's roster. */
+const LEGACY_AGENT: Record<string, string> = { elena: "angie", emma: "clara" };
+
+const OLD_WAY = [
+  "AI tools that only draft. You still plan, publish and report by hand.",
+  "A separate tool, login and report for every channel.",
+  "Freelancers or an agency for each job, each briefed from scratch.",
+  "Ads and emails running without a clear read on what works.",
 ];
 
-const oldWayProblems = [
-  "AI only assists — you still do everything manually",
-  "Spending 30+ hrs/week creating & managing content",
-  "Checking multiple tools just to understand performance",
-  "$5000 to hire freelancers or teams to manage marketing.",
-  "Running ads without knowing what actually works",
-  "Paying $1000 for various marketing tools.",
+const NEW_WAY = [
+  "One plan each week, built from your goals and your numbers.",
+  "Ads, SEO, email and social produced in your brand voice.",
+  "Every post, email and budget change waits for your approval.",
+  "A morning briefing and a weekly report on what worked.",
 ];
 
-const newWayBenefits = [
-  {
-    text: "Coordinates all AI Employees for execution in your voice",
-    color: "#14a148",
-    bgColor: "#eefdf3",
-    icon: Users,
-  },
-  {
-    text: "Analyze performance across all channels",
-    color: "#1877f2",
-    bgColor: "#eef4ff",
-    icon: BarChart2,
-  },
-  {
-    text: "Track competitors and market shifts in real-time",
-    color: "#ec4899",
-    bgColor: "#fce7f3",
-    icon: Target,
-  },
-  {
-    text: "Share daily insights & Plan next marketing",
-    color: "#9131ea",
-    bgColor: "#f2e7ff",
-    icon: CheckCircle,
-  },
-  {
-    text: "Discover trends, ideas & winning strategies instantly",
-    color: "#d77504",
-    bgColor: "#fffaea",
-    icon: Lightbulb,
-  },
+const HOW = [
+  { title: "Lora plans the week", body: "She reads your goals, store, ad and analytics data, and sets the week's priorities across channels." },
+  { title: "The specialists produce the work", body: "Angie builds and tunes ads, Sophie writes for Google and AI search, Clara builds emails and flows." },
+  { title: "You approve", body: "Everything lands in one approval queue in the app, your inbox or Slack. Nothing goes live until you say yes." },
+  { title: "They learn and report", body: "Results come back in a morning briefing and a weekly report, and your edits shape the next drafts." },
 ];
 
-const faqItems = [
+const FAQ = [
   {
-    question: "What is Loraloop AI employees?",
-    answer: "Loraloop provides AI employees that handle your marketing tasks end-to-end. From planning and content creation to execution and analysis, our AI team works 24/7 to grow your business.",
+    q: "What are Loraloop's AI employees?",
+    a: "Four AI agents that each own a marketing job: Lora plans and reports, Angie runs Meta and Google ads, Sophie handles SEO and AI search, and Clara runs email. They share one brand knowledge base, so the work reads like one team.",
   },
   {
-    question: "What if I don't have a marketing team or employees?",
-    answer: "That's exactly what Loraloop is built for! Our AI employees become your marketing team, handling everything from strategy to execution without requiring any marketing expertise on your end.",
+    q: "What if I don't have a marketing team?",
+    a: "That is who Loraloop is built for. Add your website, connect your accounts and approve the first week's plan. The agents produce the work; you make the decisions.",
   },
   {
-    question: "Can AI employees replace human employees?",
-    answer: "AI employees complement and enhance your team by handling repetitive marketing tasks, allowing your human team to focus on strategy and creative decisions. They work alongside your team as reliable, always-available assistants.",
+    q: "Do they replace my team or agency?",
+    a: "They take on daily production and reporting. Your team keeps the strategy and the approvals, and you can keep a specialist or agency for the work you want them on.",
+  },
+  {
+    q: "Will they publish or spend money without asking?",
+    a: "No. Every post, email, article and budget change waits for your approval by default. You can choose to let small, routine changes run inside limits you set.",
   },
 ];
 
 export default function Solution() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const agentParam = searchParams.get("agent");
-  
-  const selectedEmployee = useMemo(() => {
-    if (agentParam) {
-      const index = aiEmployees.findIndex(
-        (emp) => emp.name.toLowerCase() === agentParam.toLowerCase()
-      );
-      return index !== -1 ? index : 0;
-    }
-    return 0;
-  }, [agentParam]);
+  const [params] = useSearchParams();
 
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const employeeRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const navigate = useNavigate();
-
-  // Scroll selected employee into view
   useEffect(() => {
-    if (employeeRefs.current[selectedEmployee]) {
-      employeeRefs.current[selectedEmployee]?.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-        inline: "center",
-      });
-    }
-  }, [selectedEmployee]);
-
-  const handleEmployeeClick = (index: number) => {
-    if (!isDragging) {
-      setSearchParams({ agent: aiEmployees[index].name.toLowerCase() });
-    }
-  };
-
-  const handleGetStart = () => {
-    navigate("/pricing");
-    window.scrollTo(0, 0);
-  };
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    setStartX(e.pageX - (scrollRef.current?.offsetLeft || 0));
-    setScrollLeft(scrollRef.current?.scrollLeft || 0);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - (scrollRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2; // Scroll speed
-    if (scrollRef.current) {
-      scrollRef.current.scrollLeft = scrollLeft - walk;
-    }
-  };
+    document.title = "AI Marketing Employees for Every Channel | Loraloop";
+    const raw = (params.get("agent") ?? "").toLowerCase();
+    const key = LEGACY_AGENT[raw] ?? raw;
+    if (!key) return;
+    // Wait for the layout's scroll-to-top on navigation, then bring the agent's card into view.
+    const timer = window.setTimeout(() => {
+      document.getElementById(`agent-${key}`)?.scrollIntoView({ behavior: "instant", block: "center" });
+    }, 350);
+    return () => window.clearTimeout(timer);
+  }, [params]);
 
   return (
-    <div className="bg-white min-h-screen pt-20 md:pt-32 pb-10 md:pb-20">
-      {/* Hero Section */}
-      <div className="px-4 md:px-20 py-10 md:py-16">
-        <div className="flex flex-col gap-6 md:gap-8 items-center max-w-[800px] mx-auto">
-          {/* Badge */}
-          <div className="bg-[#eefdf3] px-3 py-1 rounded-full">
-            <p className="font-['General_Sans',sans-serif] font-semibold uppercase tracking-[0.08em] leading-[18px] text-[#14a148] text-[13px]">
-              AI Employees / Solution
-            </p>
-          </div>
-
-          {/* AI Employees Selector */}
-          <div 
-            ref={scrollRef}
-            onMouseDown={handleMouseDown}
-            onMouseLeave={handleMouseLeave}
-            onMouseUp={handleMouseUp}
-            onMouseMove={handleMouseMove}
-            className={`bg-[#f9fafc] rounded-2xl md:rounded-3xl px-3 py-1 w-full max-w-[510px] overflow-x-auto shadow-sm no-scrollbar select-none ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
-          >
-            <div className="flex gap-5 items-center min-w-max px-2">
-              {aiEmployees.map((employee, index) => (
-                <button
-                  key={index}
-                  ref={(el) => (employeeRefs.current[index] = el)}
-                  onClick={() => !employee.isSoon && handleEmployeeClick(index)}
-                  disabled={employee.isSoon}
-                  className={`flex gap-3 items-center transition-colors ${
-                    index === selectedEmployee
-                      ? "bg-[#dbeafe] p-2 rounded-[20px] cursor-default"
-                      : employee.isSoon
-                      ? "py-2 cursor-default opacity-50"
-                      : "py-2 cursor-pointer"
-                  }`}
-                >
-                  <div className="w-10 h-10 rounded-full overflow-hidden shrink-0 pointer-events-none">
-                    <img loading="lazy" decoding="async" 
-                      alt={employee.name} 
-                      className={`w-full h-full object-cover ${employee.isSoon ? "grayscale" : ""}`} 
-                      src={employee.image} 
-                    />
-                  </div>
-                  <div className="flex flex-col items-start min-w-0 pointer-events-none">
-                    <p className={`leading-[18px] text-sm whitespace-nowrap ${
-                      index === selectedEmployee
-                        ? "font-['General_Sans',sans-serif] font-semibold text-[#1f2937]"
-                        : employee.isSoon
-                        ? "font-['General_Sans',sans-serif] font-medium text-[#9ca3af]"
-                        : "font-['General_Sans',sans-serif] font-medium text-[#374151]"
-                    }`}>
-                      {employee.role}
-                    </p>
-                    <p className={`font-['General_Sans',sans-serif] font-medium leading-4 text-xs ${
-                      employee.isSoon ? "text-[#9ca3af]" : "text-[#6b7280]"
-                    }`}>
-                      {employee.name}
-                    </p>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Title */}
-          <div className="flex flex-col gap-4 items-center text-center">
-            <h1 className="font-['Satoshi',sans-serif] font-bold leading-[1.05] text-[#0f172a] text-4xl sm:text-5xl lg:text-[64px] tracking-[-0.03em] text-balance">
-              {aiEmployees[selectedEmployee].title}
+    <div className="lx">
+      {/* Hero */}
+      <section aria-labelledby="solution-hero" className="relative overflow-hidden pt-16">
+        <Container className="relative">
+          <div className="pb-14 pt-20 md:pb-20 md:pt-28">
+            <Kicker>Your AI marketing team</Kicker>
+            <h1 id="solution-hero" className="lx-display mt-6 max-w-[900px]">
+              <span>AI marketing employees</span> <span className="lx-soft">that work as one team</span>
             </h1>
-            <p className="font-['General_Sans',sans-serif] leading-[1.6] text-[#4b5563] text-[18px] md:text-[20px] max-w-[800px]">
-              {aiEmployees[selectedEmployee].subtext}
+            <p className="lx-lead mt-6 max-w-[640px]">
+              Each Loraloop AI employee owns one marketing job and shares one brand knowledge base with the others, so
+              strategy, ads, SEO, email and social read like one team. You approve every move.
             </p>
-          </div>
-
-          {/* CTA Button */}
-          <button 
-            onClick={handleGetStart}
-            className="bg-[#1877f2] h-12 px-6 rounded-full hover:bg-[#1565d8] transition-colors cursor-pointer"
-          >
-            <span className="font-['Satoshi',sans-serif] font-bold leading-6 text-white text-base">Get Started</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Screenshot Section */}
-      <div className="relative px-4 md:px-20 py-8 md:py-10">
-        <div className="max-w-[1020px] mx-auto">
-          <div className="relative">
-            <div className="absolute inset-0 -z-10 overflow-hidden">
-              <img loading="lazy" decoding="async" alt="" className="w-full h-full object-cover opacity-30" src={imgImage190} />
-            </div>
-            <div className="rounded-2xl md:rounded-[32px] overflow-hidden border border-[#e5e7eb] shadow-lg">
-              <img loading="lazy" decoding="async" alt="" className="w-full h-auto" src={imgImage189} />
+            <div className="mt-9">
+              <StartForm location="solution_hero" />
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Old vs New Way Section */}
-      <div className="bg-white flex flex-col items-center justify-center px-4 py-12 md:p-12 lg:p-[80px] w-full">
-        <div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[1120px] px-4 md:px-6 lg:px-0">
-          <h2 className="font-['Satoshi',sans-serif] font-bold leading-[1.1] text-[#111827] text-3xl md:text-[40px] text-center tracking-[-0.02em] mb-8 md:mb-12">
-            Old vs New AI Way!
-          </h2>
-
-          <div className="relative rounded-2xl md:rounded-3xl border border-[#e5e7eb] overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              {/* Old Way */}
-              <div className="bg-white p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-[#e5e7eb]">
-                <div className="flex flex-col items-center gap-1 mb-6 md:mb-8">
-                  <p className="font-['General_Sans',sans-serif] font-semibold uppercase tracking-[0.08em] text-[#6b7280] text-[13px]">Old way</p>
-                  <h3 className="font-['Satoshi',sans-serif] font-semibold leading-[1.25] tracking-[-0.015em] text-[#111827] text-[22px] text-center">
-                    You doing all work
-                  </h3>
-                </div>
-                <div className="bg-[#f9fafc] rounded-2xl p-6">
-                  <div className="flex flex-col gap-6">
-                    {oldWayProblems.map((problem, index) => (
-                      <div key={index} className="flex gap-3 items-start">
-                        
-                        <p className="font-['General_Sans',sans-serif] font-medium leading-[1.6] text-[#4b5563] text-[16px]">
-                          {problem}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+          <div className="pb-20 md:pb-24" aria-hidden="true">
+            <div className="grid gap-4 rounded-[24px] border border-[var(--lx-line)] bg-[var(--lx-mist)] p-4 shadow-[0_40px_80px_-40px_rgba(17,17,16,0.25)] md:grid-cols-2 md:items-start md:p-10">
+              <div className="min-w-0">
+                <BriefingView />
               </div>
-
-              {/* New Way */}
-              <div className="bg-white p-6 md:p-10">
-                <div className="flex flex-col items-center gap-1 mb-6 md:mb-8">
-                  <p className="font-['General_Sans',sans-serif] font-semibold uppercase tracking-[0.08em] text-[#6b7280] text-[13px]">New way</p>
-                  <h3 className="font-['Satoshi',sans-serif] font-semibold leading-[1.25] tracking-[-0.015em] text-[#111827] text-[22px] text-center">
-                    AI Agents work while you sleep
-                  </h3>
-                </div>
-                <div className="flex flex-wrap gap-3 justify-center">
-                  {newWayBenefits.map((benefit, index) => {
-                    const IconComponent = benefit.icon;
-                    return (
-                      <div
-                        key={index}
-                        className="flex gap-2 items-start px-4 py-3 rounded-full"
-                        style={{ backgroundColor: benefit.bgColor }}
-                      >
-                        <IconComponent size={20} style={{ color: benefit.color }} className="shrink-0 mt-0.5" />
-                        <p
-                          className="font-['General_Sans',sans-serif] font-medium leading-[22px] text-base"
-                          style={{ color: benefit.color }}
-                        >
-                          {benefit.text}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
+              <div className="min-w-0 md:mt-12">
+                <ApprovalView />
               </div>
             </div>
-
-            {/* Center Icon */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:block z-10">
-              <div className="bg-white rounded-full p-2.5 border border-[#e5e7eb] shadow-lg">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#6b7280" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
+            <p className="mt-4 text-[12.5px] text-[var(--lx-mute)]">Product views show example data for a sample brand.</p>
           </div>
-        </div>
-      </div>
+        </Container>
+      </section>
 
-      {/* What You Get Section */}
-      <div className="bg-[#f9fafc] flex flex-col items-center justify-center px-4 py-12 md:p-12 lg:p-[80px] w-full">
-        <div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[1120px] px-4 md:px-6 lg:px-0">
-          <div className="w-full flex flex-col gap-8 md:gap-12">
-            <h2 className="font-['Satoshi',sans-serif] font-bold leading-[1.1] text-[#111827] text-3xl md:text-[40px] text-center tracking-[-0.02em] mb-6">
-              What you get
-            </h2>
-            <Frame35_Auth />
-          </div>
-        </div>
-      </div>
-
-      {/* FAQ Section */}
-      <div className="bg-white px-4 md:px-20 py-12 md:py-20">
-        <div className="max-w-[800px] mx-auto">
-          <h2 className="font-['Satoshi',sans-serif] font-bold leading-[1.1] text-[#111827] text-3xl md:text-[40px] text-center tracking-[-0.02em] mb-10 md:mb-12">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="flex flex-col gap-4">
-            {faqItems.map((item, index) => (
-              <div key={index} className="border border-[#e5e7eb] rounded-2xl overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between p-5 md:p-6 text-left hover:bg-gray-50 transition-colors cursor-pointer"
-                >
-                  <span className="font-['Satoshi',sans-serif] font-semibold leading-[1.25] tracking-[-0.015em] text-[#111827] text-[18px] md:text-[20px] pr-4">
-                    {item.question}
+      {/* The team, from the live roster */}
+      <Section aria-labelledby="solution-team">
+        <Kicker>Meet the team</Kicker>
+        <Heading id="solution-team" className="mt-4 max-w-[820px]" lead="Four specialists." rest="One brand memory, one approval queue." />
+        <ul className="mt-12 grid gap-4 md:grid-cols-2">
+          {agentList.map((a) => (
+            <li key={a.key} id={`agent-${a.key}`} className="scroll-mt-28">
+              <Link
+                to={a.slug}
+                className="group flex h-full flex-col overflow-hidden rounded-[20px] bg-[var(--lx-mist)] transition-colors hover:bg-[#e9e8e2]"
+              >
+                <div className="flex flex-col gap-2 p-6 md:p-7">
+                  <p className="lx-kicker !text-[11px]">{a.role}</p>
+                  <h3 className="text-[22px] font-medium tracking-[-0.02em]">{a.name}</h3>
+                  <p className="text-[15px] leading-[1.6] text-[var(--lx-slate)]">{a.hero.subhead}</p>
+                  <span className="mt-2 inline-flex items-center gap-1.5 text-[14px] font-medium text-[var(--lx-blue)]">
+                    Meet {a.name}
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                   </span>
-                  <ChevronDown
-                    size={20}
-                    className={`text-[#6b7280] shrink-0 transition-transform ${
-                      openFaq === index ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {openFaq === index && (
-                  <div className="px-5 md:px-6 pb-5 md:pb-6">
-                    <p className="font-['General_Sans',sans-serif] leading-[1.6] text-[#4b5563] text-[16px]">
-                      {item.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+                </div>
+                <div className="mt-auto px-6 pt-1 md:px-7 [&>*]:rounded-b-none [&>*]:border-b-0" aria-hidden="true">
+                  {AGENT_VIEW[a.key]}
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4 text-[12.5px] text-[var(--lx-mute)]">Product views show example data for a sample brand.</p>
+      </Section>
 
-      {/* CTA Section */}
-      <div className="relative bg-black w-full flex flex-col gap-12 md:gap-[80px] items-center overflow-clip pt-12 md:pt-[80px] px-4" data-name="Outro">
-        <div className="content-stretch flex flex-col gap-[24px] items-center relative shrink-0 w-full max-w-[740px]" data-name="Call to Action Group">
-          <div className="content-stretch flex flex-col gap-[8px] items-center justify-center not-italic relative shrink-0 text-center w-full" data-name="Text Group Vertical">
-            <p className="font-['Satoshi',sans-serif] font-bold leading-[1.1] relative shrink-0 text-[32px] md:text-[40px] text-white tracking-[-0.02em] w-full">AI marketing Team that Never sleeps</p>
-            <p className="font-['General_Sans',sans-serif] font-medium leading-[1.6] relative shrink-0 text-[#9ca3af] text-[18px] md:text-[20px] w-full">
-              Social media tools are easy to buy, but hard to keep up with. Loraloop is your AI marketing team — like a 10-year experienced marketing team working for you to
-              <br aria-hidden="true" className="hidden md:block" />
-              {`manage `} marketing {` end to end, so you focus on your work.`}
-            </p>
-          </div>
-          <div 
-            onClick={handleGetStart}
-            className="bg-[#1877f2] content-stretch flex gap-[8px] h-[48px] items-center justify-center px-[24px] relative rounded-[120px] shrink-0 cursor-pointer hover:opacity-90 transition-opacity" 
-            data-name="Button"
-          >
-            <p className="font-['General_Sans',sans-serif] font-semibold leading-[28px] not-italic relative shrink-0 text-[18px] text-white whitespace-nowrap">Get Started</p>
+      {/* How they work together */}
+      <Section aria-labelledby="solution-how">
+        <div className="rounded-[24px] bg-[var(--lx-mist)] p-6 md:p-12">
+          <Kicker>How they work together</Kicker>
+          <Heading id="solution-how" className="mt-4 max-w-[820px]" lead="From goal to published work," rest="with you approving every step." />
+          <ol className="mt-10 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+            {HOW.map((s, i) => (
+              <li key={s.title} className="flex h-full flex-col rounded-[16px] bg-white p-5 shadow-[0_10px_30px_-20px_rgba(17,17,16,0.25)]">
+                <span className="lx-mono text-[12px] text-[var(--lx-mute)]">0{i + 1}</span>
+                <h3 className="mt-3 text-[16.5px] font-medium leading-[1.35]">{s.title}</h3>
+                <p className="mt-1.5 text-[14.5px] leading-[1.55] text-[var(--lx-slate)]">{s.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </Section>
+
+      {/* Old way vs the Loraloop way */}
+      <Section aria-labelledby="solution-why">
+        <Kicker>Why a team, not a tool</Kicker>
+        <Heading id="solution-why" className="mt-4 max-w-[820px]" lead="The old way vs" rest="the Loraloop way." />
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <Tile className="h-full p-6 md:p-8">
+            <p className="lx-kicker !text-[11px]">The old way</p>
+            <ul className="mt-5 border-t border-[var(--lx-line)]">
+              {OLD_WAY.map((item) => (
+                <li key={item} className="flex gap-3 border-b border-[var(--lx-line)] py-3.5">
+                  <X className="mt-0.5 size-4 shrink-0 text-[var(--lx-mute)]" aria-hidden="true" />
+                  <span className="text-[15px] text-[var(--lx-slate)]">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Tile>
+          <div className="h-full rounded-[20px] border border-[var(--lx-line)] bg-white p-6 shadow-[0_20px_50px_-30px_rgba(17,17,16,0.25)] md:p-8">
+            <p className="lx-kicker !text-[11px]">The Loraloop way</p>
+            <ul className="mt-5 border-t border-[var(--lx-line)]">
+              {NEW_WAY.map((item) => (
+                <li key={item} className="flex gap-3 border-b border-[var(--lx-line)] py-3.5">
+                  <Check className="mt-0.5 size-4 shrink-0 text-[var(--lx-blue)]" strokeWidth={2.4} aria-hidden="true" />
+                  <span className="text-[15px]">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-        <div className="h-[150px] md:h-[258px] relative shrink-0 w-full max-w-[1002px]" data-name="image 172">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img loading="lazy" decoding="async" alt="" className="absolute h-[199.29%] left-0 max-w-none top-[-3.87%] w-full object-cover md:object-fill" src={imgImage172} />
-          </div>
-        </div>
-      </div>
+      </Section>
+
+      <ControlsSection id="solution-guardrails" />
+
+      <FaqSection items={FAQ} id="solution-faq" />
+
+      <CtaBand lead="Meet your AI marketing team." rest="Start free for 3 days." location="solution_final_cta" />
     </div>
   );
 }
