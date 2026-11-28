@@ -1,4 +1,5 @@
 import type { BlogPost, ContentSection } from './blogData';
+import { RETIRED_BLOG_IDS } from './retiredBlogPosts';
 
 type LongPostConfig = {
   id: number;
@@ -409,7 +410,7 @@ const configs: LongPostConfig[] = [
   },
 ];
 
-export const additionalBlogPosts: BlogPost[] = configs.map((config) => ({
+export const additionalBlogPosts: BlogPost[] = configs.filter((config) => !RETIRED_BLOG_IDS.has(config.id)).map((config) => ({
   id: config.id,
   slug: config.slug,
   title: config.title,

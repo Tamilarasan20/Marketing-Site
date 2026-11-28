@@ -1,17 +1,6 @@
-import { useState, useEffect } from "react";
-import LandingPage from "../../imports/LandingPage/LandingPage";
-import HomeMobile from "../../imports/Home-1/Home-10-5453";
+import HomeV4 from "../components/site/HomeV4";
 
+// v4 home (Stripe-style, Loraloop blue).
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(
-    () => typeof window !== "undefined" && window.innerWidth < 768
-  );
-
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
-  return isMobile ? <HomeMobile /> : <LandingPage />;
+  return <HomeV4 />;
 }

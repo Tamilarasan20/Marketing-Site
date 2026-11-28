@@ -303,12 +303,16 @@ function UsageRow({ icon, title, sub, accent }: { icon: "credits" | "team"; titl
 export default function PricingSection({
   className = "",
   showCreditUsage = true,
+  headingLevel = "h2",
 }: {
   className?: string;
+  /** "h1" on the /pricing page, where this title is the page's main heading. */
+  headingLevel?: "h1" | "h2";
   /** Renders the Credit Usage breakdown below the plans. On by default so pricing
    *  stays consistent everywhere; pass false to hide it on a given surface. */
   showCreditUsage?: boolean;
 }) {
+  const Heading = headingLevel;
   const [period, setPeriod] = useState<BillingPeriod>("monthly");
   const [demoOpen, setDemoOpen] = useState(false);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
@@ -324,10 +328,10 @@ export default function PricingSection({
 
         {/* Title */}
         <div className="flex flex-col items-center gap-4 text-center">
-          <h2 style={{ ...serif, letterSpacing: "-0.01em" }} className="text-[40px] sm:text-[56px] text-white leading-[1.1] max-w-[640px]">
+          <Heading style={{ ...serif, letterSpacing: "-0.01em" }} className="text-[40px] sm:text-[56px] text-white leading-[1.1] max-w-[640px]">
             Pricing for every stage of{" "}
             <span className="relative inline-block">growth<Scribble className="-bottom-0.5 h-[12px]" /></span>
-          </h2>
+          </Heading>
           <p className="max-w-[560px] text-[15px] sm:text-[16px] text-white/50 leading-relaxed">
             Your AI marketing team for ads, social and SEO. Start with a 3-day free trial: no card needed, cancel anytime.
           </p>

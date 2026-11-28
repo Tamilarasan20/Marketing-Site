@@ -10,7 +10,9 @@ import imgHermes from '../../assets/platform-hermes.png';
 
 const WEBSITE_REGEX = /^(https?:\/\/)?(www\.)?([a-z0-9-]+\.)+[a-z]{2,}(\/[^\s]*)?$/i;
 
-export default function WaitlistForm() {
+type WaitlistFormVariant = 'default' | 'inline-light' | 'prompt';
+
+export default function WaitlistForm({ variant = 'default' }: { variant?: WaitlistFormVariant } = {}) {
   const [website, setWebsite] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [claudeModalOpen, setClaudeModalOpen] = useState(false);
@@ -54,9 +56,104 @@ export default function WaitlistForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isValid) return;
+    if (!isValid) {
+      if (variant === 'inline-light' || variant === 'prompt') setError('Enter your website, like yourbrand.com');
+      return;
+    }
     window.location.href = `https://app.loraloop.com/signup?website=${encodeURIComponent(website.trim())}`;
   };
+
+  if (variant === 'prompt') {
+    // Dark home hero (Cardboard-style prompt box): website field on top, actions row below.
+    return (
+      <form id="waitlist-form" onSubmit={handleSubmit} noValidate className="w-full max-w-[620px] flex flex-col items-center gap-3">
+        <div className="w-full rounded-[18px] border border-white/10 bg-[#1b1b19] p-3 text-left shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)] transition-colors focus-within:border-white/25">
+          <label htmlFor="waitlist-website" className="sr-only">Your website</label>
+          <input
+            id="waitlist-website"
+            ref={inputRef}
+            type="text"
+            inputMode="url"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
+            placeholder="Paste your website, like yourbrand.com"
+            value={website}
+            aria-invalid={!!error}
+            aria-describedby="waitlist-website-error"
+            onChange={(e) => {
+              setWebsite(e.target.value);
+              if (error) setError(null);
+            }}
+            className="w-full bg-transparent px-2 pb-6 pt-1.5 text-[16px] leading-6 text-white outline-none placeholder:text-white/40"
+          />
+          <div className="flex items-center justify-between gap-3">
+            <span className="px-2 text-[13px] text-white/45">Lora builds your brand profile from it</span>
+            <button
+              data-ml-goal="signup_click" data-ml-goal-location="waitlist_form_home"
+              type="submit"
+              className="inline-flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-full bg-white px-4 text-[14px] font-medium text-[#141412] transition-colors hover:bg-[#e9e8e4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Start free trial
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+        <p
+          id="waitlist-website-error"
+          role="alert"
+          className={`min-h-5 text-[13px] leading-5 ${error ? 'text-[#ff9b8f]' : 'text-white/50'}`}
+        >
+          {error ?? '3-day free trial · no card needed · cancel anytime'}
+        </p>
+      </form>
+    );
+  }
+
+  if (variant === 'inline-light') {
+    // Light home hero: one pill with the input and an embedded dark-green button.
+    // The button label is deliberately not "Get Started" — Layout hijacks that
+    // exact text and would drop the ?website= param this form adds.
+    return (
+      <form id="waitlist-form" onSubmit={handleSubmit} noValidate className="w-full max-w-[520px] flex flex-col items-center gap-3">
+        <div className="flex w-full items-center gap-2 rounded-[20px] border border-[#ddd6ce] bg-white p-1.5 pl-5 shadow-[0_1px_2px_rgba(44,44,44,0.04)] transition-colors focus-within:border-[#094413]">
+          <label htmlFor="waitlist-website" className="sr-only">Your website</label>
+          <input
+            id="waitlist-website"
+            ref={inputRef}
+            type="text"
+            inputMode="url"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
+            placeholder="yourwebsite.com"
+            value={website}
+            aria-invalid={!!error}
+            aria-describedby={error ? 'waitlist-website-error' : undefined}
+            onChange={(e) => {
+              setWebsite(e.target.value);
+              if (error) setError(null);
+            }}
+            className="min-w-0 flex-1 bg-transparent font-['General_Sans',sans-serif] text-[16px] font-medium leading-6 text-[#2c2c2c] outline-none placeholder:text-[rgba(44,44,44,0.45)]"
+          />
+          <button
+            data-ml-goal="signup_click" data-ml-goal-location="waitlist_form_home"
+            type="submit"
+            className="inline-flex h-12 shrink-0 items-center justify-center rounded-[16px] bg-[#094413] px-5 sm:px-6 font-['Satoshi',sans-serif] text-[15px] sm:text-[16px] font-bold text-[#f9f3ed] transition-colors hover:bg-[#0d5a1a] focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            Start free trial
+          </button>
+        </div>
+        <p
+          id="waitlist-website-error"
+          role="alert"
+          className={`min-h-5 font-['General_Sans',sans-serif] text-[13px] font-medium leading-5 ${error ? 'text-[#b42318]' : 'text-[rgba(44,44,44,0.5)]'}`}
+        >
+          {error ?? '3-day free trial · no card needed · cancel anytime'}
+        </p>
+      </form>
+    );
+  }
 
   return (
     <form

@@ -1,247 +1,344 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation } from "react-router";
-import { useTranslation } from "react-i18next";
+import {
+  ArrowRight,
+  BookOpen,
+  SearchCheck,
+  Calculator,
+  Megaphone,
+  Scale,
+  ShoppingBag,
+  Users,
+  Workflow,
+  Building2,
+  LayoutGrid,
+  MapPin,
+  type LucideIcon,
+} from "lucide-react";
 import appLogo from "../../assets/loraloop-icon.svg";
 import { useCurrentUser } from "../hooks/useCurrentUser";
-
 import { cn } from "./ui/utils";
 import { agentList, type Agent } from "../data/agents";
+import { segments } from "../data/segments";
 
 function truncateName(name: string, max = 24): string {
   return name.length > max ? name.slice(0, max) + "…" : name;
 }
 
-export default function Header() {
-  const [open, setOpen] = useState(false);
+export type HeaderVariant = "default" | "light";
+
+type MenuKey = "product" | "solutions" | "resources";
+
+const SEGMENT_ICONS: Record<string, LucideIcon> = {
+  "/for-ecommerce": ShoppingBag,
+  "/for-saas": LayoutGrid,
+  "/for-agencies": Users,
+  "/for-media-buyers": Megaphone,
+  "/for-marketing-teams": Building2,
+  "/for-local-businesses": MapPin,
+};
+
+interface MenuItem {
+  to: string;
+  label: string;
+  note: string;
+  icon?: LucideIcon;
+}
+interface MenuDef {
+  key: MenuKey;
+  label: string;
+  heading: string;
+  items: MenuItem[];
+  /** Optional second column of plain links (Resources). */
+  links?: { heading: string; items: { to: string; label: string }[] }[];
+  featured: { title: string; note: string; to: string }[];
+  featuredLink: { to: string; label: string };
+}
+
+const MENUS: MenuDef[] = [
+  {
+    key: "product",
+    label: "Product",
+    heading: "Your AI marketing team",
+    items: [], // filled from agentList at render time
+    featured: [
+      { title: "4,000+ integrations", note: "Shopify, Klaviyo, Meta, Google Ads and thousands more", to: "/#integrations" },
+      { title: "Guardrails you control", note: "Autonomy per area, approvals in Slack, undo on every change", to: "/#guardrails" },
+    ],
+    featuredLink: { to: "/solution", label: "See how the team works" },
+  },
+  {
+    key: "solutions",
+    label: "Solutions",
+    heading: "By team",
+    items: segments.map((seg) => ({ to: seg.slug, label: seg.menuLabel, note: seg.menuNote, icon: SEGMENT_ICONS[seg.slug] })),
+    featured: [
+      { title: "Free Meta ads audit", note: "Find wasted spend, tracking and creative problems in your account", to: "/free-meta-ads-audit" },
+      { title: "After Black Friday", note: "A 30-day plan to turn discount buyers into repeat customers", to: "/blog/after-black-friday-retention-plan-shopify" },
+    ],
+    featuredLink: { to: "/blog", label: "Read the playbooks" },
+  },
+  {
+    key: "resources",
+    label: "Resources",
+    heading: "Resources",
+    items: [
+      { to: "/free-meta-ads-audit", label: "Free Meta ads audit", note: "A score and ranked fixes for your ad account", icon: SearchCheck },
+      { to: "/blog", label: "Blog", note: "Playbooks for ads, email, SEO and GEO", icon: BookOpen },
+      { to: "/tools", label: "Free tools", note: "Generators and marketing calculators", icon: Calculator },
+      { to: "/compare", label: "Comparisons", note: "Loraloop next to the tools you are weighing", icon: Scale },
+    ],
+    links: [
+      {
+        heading: "Popular guides",
+        items: [
+          { to: "/blog/meta-ads-creative-testing-framework-2026", label: "Meta ads creative testing framework" },
+          { to: "/blog/geo-vs-seo-2026", label: "GEO vs SEO in 2026" },
+          { to: "/blog/how-to-choose-ai-marketing-agent", label: "How to choose an AI marketing agent" },
+          { to: "/blog/bfcm-post-mortem-template-agencies", label: "BFCM post-mortem template" },
+        ],
+      },
+      {
+        heading: "Calculators",
+        items: [
+          { to: "/tools/break-even-roas-calculator", label: "Break-even ROAS calculator" },
+          { to: "/tools/hook-rate-calculator", label: "Hook rate calculator" },
+        ],
+      },
+    ],
+    featured: [
+      { title: "Creative fatigue on Meta ads", note: "How to spot it early and what to do", to: "/blog/creative-fatigue-meta-ads-detect-and-fix" },
+      { title: "Black Friday signups churn fast", note: "How SaaS teams keep them", to: "/blog/saas-black-friday-trials-churn" },
+    ],
+    featuredLink: { to: "/blog", label: "Read the latest guides" },
+  },
+];
+
+/** Hash links ("/#integrations") need a scroll after the home route renders. */
+function FeaturedLink({ to, onClick, className, children }: { to: string; onClick: () => void; className: string; children: React.ReactNode }) {
+  return (
+    <Link
+      to={to}
+      onClick={() => {
+        onClick();
+        const hash = to.split("#")[1];
+        if (hash) window.setTimeout(() => document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+      }}
+      className={className}
+    >
+      {children}
+    </Link>
+  );
+}
+
+export default function Header(_props: { variant?: HeaderVariant } = {}) {
+  const [menu, setMenu] = useState<MenuKey | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const { user: currentUser, loading: authLoading } = useCurrentUser();
-  const pillRef = useRef<HTMLDivElement>(null);
+  const barRef = useRef<HTMLDivElement>(null);
+  const hoverOpened = useRef(false);
   const location = useLocation();
-  const { t } = useTranslation();
 
-  const closeAll = useCallback(() => setOpen(false), []);
+  const closeAll = useCallback(() => setMenu(null), []);
 
-  // Subtle background shift on scroll for depth cue
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 24);
+    const handler = () => setScrolled(window.scrollY > 8);
+    handler();
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  // Close on navigation
   useEffect(() => {
     closeAll();
   }, [location, closeAll]);
 
-  // Close on outside click
   useEffect(() => {
-    if (!open) return;
-    const handler = (e: MouseEvent) => {
-      if (pillRef.current && !pillRef.current.contains(e.target as Node)) {
-        closeAll();
-      }
+    if (!menu) return;
+    const onDown = (e: MouseEvent) => {
+      if (barRef.current && !barRef.current.contains(e.target as Node)) closeAll();
     };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [open, closeAll]);
-
-  // Close on Escape
-  useEffect(() => {
-    if (!open) return;
-    const handler = (e: KeyboardEvent) => {
+    const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeAll();
     };
-    document.addEventListener("keydown", handler);
-    return () => document.removeEventListener("keydown", handler);
-  }, [open, closeAll]);
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [menu, closeAll]);
 
+  const active = MENUS.find((m) => m.key === menu) ?? null;
 
   return (
-    <header className="fixed top-[calc(var(--launch-banner-h,0px)+16px)] left-0 right-0 z-50 flex justify-center pointer-events-none">
+    <header className="fixed inset-x-0 top-[var(--launch-banner-h,0px)] z-50 font-['Geist','Inter',sans-serif]" onMouseLeave={closeAll}>
       <div
-        ref={pillRef}
+        ref={barRef}
         className={cn(
-          "pointer-events-auto relative backdrop-blur-[12px] rounded-[30px] px-3 md:px-6 py-[4px] flex items-center gap-3 md:gap-12 transition-[background-color,box-shadow] duration-300",
-          scrolled
-            ? "bg-[rgba(243,246,251,0.97)] shadow-[0px_8px_24px_rgba(186,201,250,0.2),0px_2px_6px_rgba(186,201,250,0.18)]"
-            : "bg-[rgba(243,246,251,0.88)] shadow-[0px_36.858px_13.981px_0px_rgba(227,233,254,0.02),0px_2.542px_5.084px_0px_rgba(186,201,250,0.15)]"
+          "relative bg-white/95 backdrop-blur-[10px] transition-[box-shadow,border-color] duration-200",
+          scrolled || menu ? "border-b border-[#e3e8ef] shadow-[0_6px_24px_-12px_rgba(20,20,18,0.12)]" : "border-b border-transparent",
         )}
       >
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-[6px] py-2 shrink-0">
-          <img loading="lazy" decoding="async"
-            src={appLogo}
-            alt="Loraloop logo"
-            className="w-[34px] h-[34px] object-contain shrink-0"
-          />
-          <span className="font-['Satoshi',sans-serif] font-bold text-[19.5px] leading-[24.82px] tracking-[-0.02em] text-[#0f172a] whitespace-nowrap">
-            Loraloop
-          </span>
-        </Link>
-
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center" style={{ gap: 4 }}>
-          {/* AI Employees dropdown trigger */}
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-haspopup="listbox"
-            className="flex gap-[2px] items-center justify-center px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1877f2]/50"
-          >
-            <span className="font-['Satoshi',sans-serif] font-medium text-base leading-6 text-black whitespace-nowrap">
-              {t('nav.aiEmployees')}
-            </span>
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              aria-hidden="true"
-              className={cn(
-                "ml-1 text-[#40566D] transition-transform duration-200",
-                open && "rotate-180"
-              )}
-            >
-              <path
-                d="M4 6.5L8 10.5L12 6.5"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.3"
-              />
-            </svg>
-          </button>
-
-          <Link
-            to="/solution"
-            className="flex items-center justify-center px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-black/5"
-          >
-            <span className="font-['Satoshi',sans-serif] font-medium text-base leading-6 text-black whitespace-nowrap">
-              {t('nav.solution')}
-            </span>
+        <div className="mx-auto flex h-16 max-w-[1240px] items-center gap-8 px-6 lg:px-8">
+          <Link to="/" className="flex shrink-0 items-center gap-2" onClick={closeAll}>
+            <img src={appLogo} alt="" className="size-[30px] object-contain" />
+            <span className="font-['Geist',sans-serif] text-[19px] font-semibold tracking-[-0.03em] text-[#0b1b33]">Loraloop</span>
           </Link>
-          <Link
-            to="/blog"
-            className="flex items-center justify-center px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-black/5"
-          >
-            <span className="font-['Satoshi',sans-serif] font-medium text-base leading-6 text-black whitespace-nowrap">
-              Blog
-            </span>
-          </Link>
-          <Link
-            data-ml-goal="pricing_view"
-            to="/pricing"
-            className="flex items-center justify-center px-3 py-2 rounded-xl transition-colors duration-150 hover:bg-black/5"
-          >
-            <span className="font-['Satoshi',sans-serif] font-medium text-base leading-6 text-black whitespace-nowrap">
-              Pricing
-            </span>
-          </Link>
-        </nav>
 
-        {/* Auth CTAs */}
-        <div className="flex items-center gap-2">
-          {authLoading ? (
-            /* Skeleton prevents layout shift while session resolves */
-            <div className="h-9 w-28 rounded-full bg-black/5 animate-pulse" />
-          ) : currentUser ? (
-            /* Signed-in → profile pill linking to app */
-            <a
-              href="https://app.loraloop.com/chat"
-              aria-label={`Open Loraloop as ${currentUser.name}`}
-              className="flex items-center gap-2 pl-[5px] pr-4 py-[5px] rounded-full bg-white border border-[#e5e7eb] hover:border-[#d1d5db] hover:bg-[#f9fafb] shadow-[0px_1px_2px_rgba(16,24,40,0.05)] transition-colors duration-150"
-            >
-              <span className="flex items-center justify-center w-7 h-7 rounded-full shrink-0 overflow-hidden">
-                {currentUser.avatarUrl ? (
-                  <img loading="lazy" decoding="async"
-                    src={currentUser.avatarUrl}
-                    alt={currentUser.name}
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                ) : (
-                  <span
-                    className="w-full h-full flex items-center justify-center"
-                    style={{ background: "linear-gradient(135deg, #3a2a8c 0%, #4338ca 48%, #3b82f6 100%)" }}
-                  >
-                    <span className="font-['Satoshi',sans-serif] font-bold text-[12px] text-white leading-none">
-                      {currentUser.name.charAt(0).toUpperCase()}
-                    </span>
-                  </span>
+          <nav aria-label="Main" className="flex items-center gap-1">
+            {MENUS.map((m) => (
+              <button
+                key={m.key}
+                type="button"
+                aria-expanded={menu === m.key}
+                aria-controls="site-mega-menu"
+                onClick={() => {
+                  // A click right after hover-open keeps it open; a second click closes it.
+                  const viaHover = hoverOpened.current;
+                  hoverOpened.current = false;
+                  setMenu((cur) => (cur === m.key && !viaHover ? null : m.key));
+                }}
+                onMouseEnter={() => {
+                  hoverOpened.current = true;
+                  setMenu(m.key);
+                }}
+                className={cn(
+                  "flex items-center gap-1 rounded-full px-3 py-2 text-[15px] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b1b33]",
+                  menu === m.key ? "text-[#0b1b33]" : "text-[#425166] hover:text-[#0b1b33]",
                 )}
-              </span>
-              <span className="font-['Satoshi',sans-serif] font-semibold text-[13px] md:text-[14px] leading-5 text-[#1f2a44] whitespace-nowrap">
-                {truncateName(currentUser.name)}
-              </span>
-            </a>
-          ) : (
-            /* Signed-out → Sign in + Get Started */
-            <>
-              <a
-                href="https://app.loraloop.com/signin"
-                className="flex items-center justify-center px-3 md:px-5 py-2 rounded-full bg-white hover:bg-[#f3f4f6] transition-colors duration-150"
               >
-                <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-[#0f172a] whitespace-nowrap">
-                  {t('nav.signIn')}
-                </span>
-              </a>
+                {m.label}
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true" className={cn("transition-transform duration-200", menu === m.key && "rotate-180")}>
+                  <path d="M4 6.5L8 10.5L12 6.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.4" />
+                </svg>
+              </button>
+            ))}
+            <Link
+              data-ml-goal="pricing_view"
+              to="/pricing"
+              onMouseEnter={closeAll}
+              className="rounded-full px-3 py-2 text-[15px] text-[#425166] transition-colors hover:text-[#0b1b33]"
+            >
+              Pricing
+            </Link>
+          </nav>
+
+          <div className="ml-auto flex items-center gap-2" onMouseEnter={closeAll}>
+            {authLoading ? (
+              <div className="h-10 w-32 animate-pulse rounded-full bg-black/5" />
+            ) : currentUser ? (
               <a
-                data-ml-goal="signup_click" data-ml-goal-location="header"
-                href={`https://app.loraloop.com/signup?lang=${typeof window !== 'undefined' ? (localStorage.getItem('loraloop_language') ?? 'en') : 'en'}`}
-                className="bg-[#1877f2] hover:bg-[#1565c0] active:bg-[#1256b0] transition-colors duration-150 rounded-full px-3 md:px-5 py-2 flex items-center justify-center"
+                href="https://app.loraloop.com/chat"
+                aria-label={`Open Loraloop as ${currentUser.name}`}
+                className="flex items-center gap-2 rounded-full border border-[#e3e8ef] bg-white py-[5px] pl-[5px] pr-4 transition-colors hover:bg-[#f6f8fb]"
               >
-                <span className="font-['Satoshi',sans-serif] font-medium text-[13px] md:text-[14px] leading-5 text-white whitespace-nowrap">
-                  {t('nav.getStarted')}
+                <span className="flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#0b1b33]">
+                  {currentUser.avatarUrl ? (
+                    <img src={currentUser.avatarUrl} alt="" className="size-full object-cover" referrerPolicy="no-referrer" />
+                  ) : (
+                    <span className="text-[12px] font-bold text-white">{currentUser.name.charAt(0).toUpperCase()}</span>
+                  )}
                 </span>
+                <span className="whitespace-nowrap text-[14px] font-medium text-[#0b1b33]">{truncateName(currentUser.name)}</span>
               </a>
-            </>
-          )}
+            ) : (
+              <>
+                <a href="https://app.loraloop.com/signin" className="rounded-full px-3 py-2 text-[15px] text-[#425166] transition-colors hover:text-[#0b1b33]">
+                  Log in
+                </a>
+                <a
+                  data-ml-goal="signup_click"
+                  data-ml-goal-location="header"
+                  href={`https://app.loraloop.com/signup?lang=${typeof window !== "undefined" ? (localStorage.getItem("loraloop_language") ?? "en") : "en"}`}
+                  className="rounded-[8px] bg-[#1f5eff] px-4 py-2 text-[15px] font-medium text-white transition-colors hover:bg-[#1346d6]"
+                >
+                  Start free
+                </a>
+              </>
+            )}
+          </div>
         </div>
 
-        {/* AI Employees dropdown — always rendered, hidden via CSS for smooth transitions */}
+        {/* Mega menu: full width under the bar, Helena-style (list left, featured right). */}
         <div
-          role="listbox"
-          aria-label="AI Employees"
-          className={cn(
-            // Position
-            "absolute left-1/2 -translate-x-1/2 top-[calc(100%+12px)]",
-            // Size + shape
-            "w-[520px] max-w-[calc(100vw-32px)]",
-            "bg-white rounded-3xl border border-gray-200",
-            "shadow-[0px_12px_32px_rgba(0,0,0,0.12)]",
-            "p-6 flex flex-col gap-4 z-[200]",
-            // Transition
-            "transition-[opacity,transform] duration-200 ease-out",
-            // Open / closed states
-            open
-              ? "opacity-100 translate-y-0 pointer-events-auto"
-              : "opacity-0 -translate-y-2 pointer-events-none"
-          )}
+          id="site-mega-menu"
+          hidden={!active}
+          className="absolute inset-x-0 top-full border-b border-[#e3e8ef] bg-white shadow-[0_24px_48px_-24px_rgba(20,20,18,0.18)]"
         >
-          <p className="font-['Satoshi',sans-serif] font-semibold text-[11px] uppercase tracking-[0.08em] text-[#9ca3af] px-2 m-0">
-            Meet your AI marketing team
-          </p>
-          <div className="grid grid-cols-2 gap-2">
-            {agentList.map((agent) => (
-              <Link
-                key={agent.key}
-                to={agent.slug}
-                onClick={closeAll}
-                className="flex items-center gap-3 rounded-xl px-2 py-2 no-underline transition-colors duration-150 hover:bg-[#f9fafc]"
-              >
-                <AgentAvatar agent={agent} />
-                <div className="flex flex-col min-w-0">
-                  <p className="font-['Satoshi',sans-serif] font-bold text-sm leading-5 text-[#1f2937] whitespace-nowrap m-0">
-                    {agent.name}
-                  </p>
-                  <p className="font-['General_Sans',sans-serif] font-medium text-xs leading-4 text-[#6b7280] m-0">
-                    {agent.role}
-                  </p>
+          {active && (
+            <div className="mx-auto grid max-w-[1240px] gap-10 px-6 py-8 lg:grid-cols-[1fr_340px] lg:px-8">
+              <div className="min-w-0">
+                <div className="flex items-center gap-4">
+                  <p className="shrink-0 text-[15px] text-[#8592a6]">{active.heading}</p>
+                  <span className="h-px flex-1 bg-[#e3e8ef]" aria-hidden="true" />
                 </div>
-              </Link>
-            ))}
-          </div>
+                <div className={cn("mt-5 grid gap-x-8 gap-y-2", active.links ? "md:grid-cols-[1fr_1fr]" : "md:grid-cols-2")}>
+                  <ul className={cn("grid gap-2", !active.links && "md:col-span-2 md:grid-cols-2")}>
+                    {active.key === "product"
+                      ? agentList.map((agent) => (
+                          <li key={agent.key}>
+                            <Link to={agent.slug} onClick={closeAll} className="flex items-center gap-4 rounded-[14px] p-2 transition-colors hover:bg-[#f6f8fb]">
+                              <AgentAvatar agent={agent} />
+                              <span className="min-w-0">
+                                <span className="block text-[16px] font-medium text-[#0b1b33]">{agent.name}</span>
+                                <span className="block text-[14px] text-[#55657d]">{agent.role}</span>
+                              </span>
+                            </Link>
+                          </li>
+                        ))
+                      : active.items.map((item) => {
+                          const Icon = item.icon ?? Workflow;
+                          return (
+                            <li key={item.to}>
+                              <Link to={item.to} onClick={closeAll} className="flex items-center gap-4 rounded-[14px] p-2 transition-colors hover:bg-[#f6f8fb]">
+                                <span className="flex size-11 shrink-0 items-center justify-center rounded-[12px] bg-[#f6f8fb] text-[#425166]" aria-hidden="true">
+                                  <Icon className="size-[18px]" strokeWidth={1.7} />
+                                </span>
+                                <span className="min-w-0">
+                                  <span className="block text-[16px] font-medium text-[#0b1b33]">{item.label}</span>
+                                  <span className="block text-[14px] text-[#55657d]">{item.note}</span>
+                                </span>
+                              </Link>
+                            </li>
+                          );
+                        })}
+                  </ul>
+                  {active.links && (
+                    <div className="flex flex-col gap-6">
+                      {active.links.map((group) => (
+                        <div key={group.heading}>
+                          <p className="font-mono text-[11.5px] uppercase tracking-[0.1em] text-[#8592a6]">{group.heading}</p>
+                          <ul className="mt-3 flex flex-col gap-2.5">
+                            {group.items.map((l) => (
+                              <li key={l.to}>
+                                <Link to={l.to} onClick={closeAll} className="text-[15px] text-[#0b1b33] hover:underline hover:underline-offset-4">
+                                  {l.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <aside aria-label="Featured" className="flex flex-col gap-3 rounded-[20px] bg-[#f6f8fb] p-5 lg:border-l-0">
+                <p className="text-[15px] text-[#55657d]">Featured</p>
+                {active.featured.map((f) => (
+                  <FeaturedLink key={f.to} to={f.to} onClick={closeAll} className="rounded-[14px] border border-[#e3e8ef] bg-white p-4 transition-colors hover:border-[#c9d2de]">
+                    <span className="block text-[16px] font-medium text-[#0b1b33]">{f.title}</span>
+                    <span className="mt-1 block text-[14px] leading-[1.45] text-[#55657d]">{f.note}</span>
+                  </FeaturedLink>
+                ))}
+                <Link to={active.featuredLink.to} onClick={closeAll} className="mt-1 inline-flex items-center gap-1.5 text-[15px] font-medium text-[#0b1b33] hover:underline hover:underline-offset-4">
+                  {active.featuredLink.label}
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </aside>
+            </div>
+          )}
         </div>
       </div>
     </header>
@@ -250,18 +347,10 @@ export default function Header() {
 
 function AgentAvatar({ agent }: { agent: Agent }) {
   return (
-    <div
-      className="w-11 h-11 min-w-11 rounded-full flex items-center justify-center shrink-0"
-      style={{ background: agent.gradient }}
-      role="img"
-      aria-label={agent.name}
-    >
-      <span
-        className="text-xl"
-        style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.15))", lineHeight: 1 }}
-      >
+    <span className="flex size-11 shrink-0 items-center justify-center rounded-[12px]" style={{ background: agent.gradient }} aria-hidden="true">
+      <span className="text-[20px] leading-none" style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.15))" }}>
         {agent.emoji}
       </span>
-    </div>
+    </span>
   );
 }
