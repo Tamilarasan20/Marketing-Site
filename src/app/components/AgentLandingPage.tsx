@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Check, X, Star, ArrowRight } from "lucide-react";
-import { type Agent } from "../data/agents";
+import { Link } from "react-router";
+import { type Agent, agentList } from "../data/agents";
 
 const SIGNUP_URL = "https://app.loraloop.com/signup";
 const satoshi = { fontFamily: "Satoshi, sans-serif" } as const;
@@ -328,6 +329,101 @@ export default function AgentLandingPage({ agent }: { agent: Agent }) {
         </div>
       </section>
 
+      {/* ── Routine: daily / weekly / monthly ─────────────────────────── */}
+      {agent.cadence && agent.cadence.length > 0 && (
+        <section className="py-20 md:py-24 px-4 bg-[#fafafb] border-y border-gray-100">
+          <div className="max-w-6xl mx-auto">
+            <Eyebrow color={agent.color}>My routine</Eyebrow>
+            <h2
+              className="text-3xl md:text-[44px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-14 max-w-3xl mx-auto"
+              style={satoshi}
+            >
+              What {agent.name} does every day, week and month
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {agent.cadence.map(({ freq, icon: Icon, title, desc }) => (
+                <div key={title} className="bg-white rounded-[1.5rem] p-7 border border-gray-100 shadow-sm">
+                  <div className="flex items-center justify-between mb-5">
+                    <div
+                      className="w-11 h-11 rounded-2xl flex items-center justify-center"
+                      style={{ background: agent.tint, color: agent.color }}
+                    >
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <span
+                      className="text-[12px] font-bold uppercase tracking-[0.08em] px-3 py-1 rounded-full"
+                      style={{ background: agent.tint, color: agent.color, ...satoshi }}
+                    >
+                      {freq}
+                    </span>
+                  </div>
+                  <h3 className="text-[19px] font-semibold text-[#111827] leading-[1.25] tracking-[-0.015em] mb-2" style={satoshi}>
+                    {title}
+                  </h3>
+                  <p className="text-[14.5px] text-[#4b5563] leading-[1.6]">{desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-[14px] text-[#6b7280] mt-8">
+              Every change, post, email and budget move waits for your approval.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ── Comparison: agent vs specialist vs agency vs DIY ──────────── */}
+      {agent.comparison && agent.comparison.length > 0 && (
+        <section className="py-20 md:py-24 px-4">
+          <div className="max-w-6xl mx-auto">
+            <Eyebrow color={agent.color}>Compare</Eyebrow>
+            <h2
+              className="text-3xl md:text-[44px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-12 max-w-3xl mx-auto"
+              style={satoshi}
+            >
+              {agent.name} vs a specialist, an agency or doing it yourself
+            </h2>
+            <div className="overflow-x-auto rounded-[1.5rem] border border-gray-100 bg-white shadow-sm">
+              <table className="w-full min-w-[720px] text-left text-[14.5px]">
+                <thead>
+                  <tr className="border-b border-gray-100">
+                    <th className="p-5 font-semibold text-[#6b7280]" scope="col"><span className="sr-only">Compare</span></th>
+                    <th className="p-5 font-bold" scope="col" style={{ color: agent.color, ...satoshi }}>{agent.name}</th>
+                    <th className="p-5 font-semibold text-[#111827]" scope="col" style={satoshi}>Hiring a specialist</th>
+                    <th className="p-5 font-semibold text-[#111827]" scope="col" style={satoshi}>An agency</th>
+                    <th className="p-5 font-semibold text-[#111827]" scope="col" style={satoshi}>Doing it yourself</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {agent.comparison.map((row) => (
+                    <tr key={row.label} className="border-b border-gray-100 last:border-0">
+                      <th className="p-5 font-semibold text-[#111827]" scope="row" style={satoshi}>{row.label}</th>
+                      <td className="p-5 font-semibold" style={{ background: agent.tint, color: "#111827" }}>{row.agent}</td>
+                      <td className="p-5 text-[#4b5563]">{row.specialist}</td>
+                      <td className="p-5 text-[#4b5563]">{row.agency}</td>
+                      <td className="p-5 text-[#4b5563]">{row.diy}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {agent.integrations && agent.integrations.length > 0 && (
+              <div className="mt-14 text-center">
+                <p className="text-[15px] font-semibold text-[#111827] mb-4" style={satoshi}>
+                  {agent.name} works with
+                </p>
+                <div className="flex flex-wrap justify-center gap-2.5">
+                  {agent.integrations.map((tool) => (
+                    <span key={tool} className="px-4 py-2 rounded-full border border-gray-200 bg-white text-[14px] text-[#374151]">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* ── Customers ─────────────────────────────────────────────────── */}
       <section className="py-20 md:py-24 px-4 bg-[#fafafb] border-y border-gray-100">
         <div className="max-w-6xl mx-auto">
@@ -413,6 +509,45 @@ export default function AgentLandingPage({ agent }: { agent: Agent }) {
                 </summary>
                 <p className="px-6 pb-5 text-[14.5px] text-[#4b5563] leading-[1.6]">{faq.a}</p>
               </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Meet the team (built from the live agent roster, so names and links stay current) ── */}
+      <section className="py-16 md:py-20 px-4 bg-[#fafafb] border-y border-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <Eyebrow color={agent.color}>The team</Eyebrow>
+          <h2
+            className="text-3xl md:text-[40px] font-bold text-[#111827] leading-[1.1] tracking-[-0.02em] text-center mb-12"
+            style={satoshi}
+          >
+            {agent.name} works alongside
+          </h2>
+          <div className="grid gap-5 md:grid-cols-3">
+            {agentList.filter((a) => a.key !== agent.key).map((a) => (
+              <Link
+                key={a.key}
+                to={a.slug}
+                className="group bg-white rounded-[1.5rem] p-7 border border-gray-100 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className="w-11 h-11 rounded-full flex items-center justify-center text-white font-bold"
+                    style={{ background: a.gradient, ...satoshi }}
+                  >
+                    {a.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="text-[17px] font-semibold text-[#111827]" style={satoshi}>{a.name}</p>
+                    <p className="text-[13px] text-[#6b7280]">{a.role}</p>
+                  </div>
+                </div>
+                <p className="text-[14.5px] text-[#4b5563] leading-[1.6] mb-4 line-clamp-3">{a.metaDescription}</p>
+                <span className="inline-flex items-center gap-1.5 text-[14px] font-semibold" style={{ color: agent.color }}>
+                  Meet {a.name} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
