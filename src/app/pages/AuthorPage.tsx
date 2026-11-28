@@ -3,7 +3,6 @@ import { Clock } from 'lucide-react';
 import '../data/registerAdditionalBlogData';
 import { blogPosts, getHeroImage } from '../data/blogData';
 import { authors, DEFAULT_AUTHOR } from '../data/authors';
-import { blogThumbnails } from '../data/blogThumbnails';
 import { BlogThumbnail } from '../components/BlogThumbnail';
 
 export default function AuthorPage() {
@@ -43,11 +42,10 @@ export default function AuthorPage() {
         <h2 className="font-['Satoshi',sans-serif] font-bold text-[#0f172a] text-2xl md:text-3xl mt-10 mb-6">{posts.length} articles by {author.name}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => {
-            const thumb = blogThumbnails[post.id] ?? { emoji: '📝', gradient: ['#6d28d9', '#4f46e5'] as [string, string] };
             const hero = getHeroImage(post);
             return (
               <Link key={post.id} to={`/blog/${post.slug}`} className="group flex flex-col rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#1877f2] hover:shadow-lg transition-all overflow-hidden">
-                <div className="h-[180px] overflow-hidden"><BlogThumbnail emoji={thumb.emoji} gradient={thumb.gradient} src={hero?.src} alt={hero?.alt} category={post.category} /></div>
+                <div className="h-[180px] overflow-hidden"><BlogThumbnail src={hero?.src} alt={hero?.alt} category={post.category} /></div>
                 <div className="flex flex-col gap-2 p-5">
                   <span className="text-xs font-['Satoshi',sans-serif] font-bold text-[#1877f2] bg-[#eff6ff] px-2.5 py-0.5 rounded-full self-start">{post.category}</span>
                   <h3 className="font-['Satoshi',sans-serif] font-bold leading-[1.3] text-[#0f172a] text-lg group-hover:text-[#1877f2] line-clamp-2">{post.title}</h3>

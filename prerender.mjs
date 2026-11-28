@@ -22,7 +22,7 @@ await build({
   outfile: tmpOut,
   logLevel: 'silent',
 });
-const { blogPosts, calculators, comparisons, authors, getAuthor, DEFAULT_AUTHOR, tools, pageMeta, HOME_H1, HOME_LEAD, HOME_STACK, HOME_GUARDRAILS, HOME_DEFINITION, HOME_FAQ } = await import(tmpOut + '?t=' + Date.now());
+const { blogPosts, blogCovers, calculators, comparisons, authors, getAuthor, DEFAULT_AUTHOR, tools, pageMeta, HOME_H1, HOME_LEAD, HOME_STACK, HOME_GUARDRAILS, HOME_DEFINITION, HOME_FAQ } = await import(tmpOut + '?t=' + Date.now());
 const toolBySlug = (slug) => tools.find(t => t.slug === slug);
 const postBySlug = (slug) => blogPosts.find(p => p.slug === slug);
 
@@ -86,8 +86,10 @@ function faqSchema(content) {
   return { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: items.map(i => ({ '@type': 'Question', name: i.q, acceptedAnswer: { '@type': 'Answer', text: i.a } })) };
 }
 
-/** First `image` section of a post — doubles as its social/AI-answer card image. */
+/** Cover photo (blogCovers.ts), else the first `image` section — the post's social/AI-answer card image. */
 function heroImage(post) {
+  const c = blogCovers[post.slug];
+  if (c) return { url: `${SITE}${c.src}`, alt: c.alt, width: c.width, height: c.height };
   const s = post.content.find(x => x.type === 'image');
   return s ? { url: s.src, alt: s.alt, width: s.width ?? 1200, height: s.height ?? 800 } : null;
 }
