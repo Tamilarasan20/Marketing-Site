@@ -11,11 +11,11 @@ import { decemberBlogPosts } from './decemberBlogData';
 import { decemberBlogPostsB } from './decemberBlogDataB';
 import { salesBlogPosts } from './salesBlogData';
 import { demandBlogPosts } from './demandBlogData';
-import { demandBlogPostsB } from './demandBlogDataB';
 import { guideBlogPosts } from './guideBlogData';
 import { guideBlogPostsB } from './guideBlogDataB';
+import { guideBlogPostsC } from './guideBlogDataC';
 
-for (const post of [...additionalBlogPosts, ...sintraInspiredBlogPosts, ...seoGeoBlogPosts, ...loraloopTrendingBlogPosts, ...jevBlogPosts, ...loraloopGrowthBlogPosts, ...googleAdsBlogPosts, ...bfcmBlogPosts, ...decemberBlogPosts, ...decemberBlogPostsB, ...salesBlogPosts, ...demandBlogPosts, ...demandBlogPostsB, ...guideBlogPosts, ...guideBlogPostsB]) {
+for (const post of [...additionalBlogPosts, ...sintraInspiredBlogPosts, ...seoGeoBlogPosts, ...loraloopTrendingBlogPosts, ...jevBlogPosts, ...loraloopGrowthBlogPosts, ...googleAdsBlogPosts, ...bfcmBlogPosts, ...decemberBlogPosts, ...decemberBlogPostsB, ...salesBlogPosts, ...demandBlogPosts, ...guideBlogPosts, ...guideBlogPostsB, ...guideBlogPostsC]) {
   const alreadyExists = blogPosts.some((existingPost) => existingPost.id === post.id || existingPost.slug === post.slug);
 
   if (!alreadyExists) {
