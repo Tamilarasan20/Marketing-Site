@@ -94,3 +94,54 @@
 }
 
 .lx :focus-visible { outline: 2px solid var(--lx-blue); outline-offset: 3px; }
+
+/* ─── Product-view motion ─────────────────────────────────────────────────────
+ * AppWindow (views.tsx) sets data-motion="armed" on windows that start below the fold,
+ * then "in" once they scroll into view. Everything here runs once. Windows that never
+ * arm ("static"), and anyone with reduced motion, see the finished view.
+ * Only opacity and transform animate, so nothing shifts layout.
+ * ──────────────────────────────────────────────────────────────────────────── */
+.lx .lx-stack { display: inline-grid; }
+.lx .lx-stack > * { grid-area: 1 / 1; }
+.lx .lx-tick__b { visibility: hidden; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .lx [data-motion="armed"] .lx-r { opacity: 0; transform: translateY(6px); }
+  .lx [data-motion="in"] .lx-r {
+    animation: lx-rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(var(--i, 0) * 90ms + 120ms);
+  }
+
+  .lx [data-motion="armed"] .lx-bar { transform: scaleX(0); }
+  .lx [data-motion="in"] .lx-bar {
+    transform-origin: left center;
+    animation: lx-grow-x 0.9s cubic-bezier(0.3, 0.7, 0.2, 1) 0.35s both;
+  }
+  .lx [data-motion="armed"] .lx-bar-y { transform: scaleY(0); }
+  .lx [data-motion="in"] .lx-bar-y {
+    transform-origin: center bottom;
+    animation: lx-grow-y 0.6s cubic-bezier(0.3, 0.7, 0.2, 1) both;
+    animation-delay: calc(var(--i, 0) * 70ms + 200ms);
+  }
+
+  .lx [data-motion="armed"] .lx-draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .lx [data-motion="in"] .lx-draw { stroke-dasharray: 1; animation: lx-draw 1.2s ease-out 0.5s both; }
+
+  .lx [data-motion="in"] .lx-tick__a { animation: lx-tick-out 0.25s ease var(--d, 1.6s) forwards; }
+  .lx [data-motion="in"] .lx-tick__b { animation: lx-tick-in 0.35s cubic-bezier(0.3, 1.4, 0.5, 1) calc(var(--d, 1.6s) + 0.15s) forwards; }
+
+  .lx [data-motion="in"] .lx-live { animation: lx-live 1.8s ease-in-out 3; }
+}
+.lx .lx-live { display: inline-block; width: 6px; height: 6px; border-radius: 9999px; background: var(--lx-blue); }
+
+@keyframes lx-rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes lx-grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes lx-grow-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes lx-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes lx-tick-out { to { opacity: 0; transform: scale(0.9); visibility: hidden; } }
+@keyframes lx-tick-in { from { visibility: visible; opacity: 0; transform: scale(0.8); } to { visibility: visible; opacity: 1; transform: none; } }
+@keyframes lx-live { 50% { opacity: 0.35; } }
+
+/* Looping product videos (LoopVideo.tsx). The box reserves its aspect ratio up front. */
+.lx .lx-video { position: relative; overflow: hidden; border-radius: 14px; background: #fff; aspect-ratio: 16 / 9; }
+.lx .lx-video > video, .lx .lx-video > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }

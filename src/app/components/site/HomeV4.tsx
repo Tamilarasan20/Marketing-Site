@@ -2,8 +2,9 @@ import type { ReactNode } from "react";
 import { Link } from "react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button, Container, Heading, Kicker, Section, Tile } from "./ui";
-import { AdsView, ApprovalView, BriefingView, CompetitorView, EmailView, FunnelView, GradesView, QueueView, SeoView, SocialView, StrategyView, TaskFeedView } from "./views";
+import { AdsView, BriefingView, CompetitorView, EmailView, FunnelView, GradesView, QueueView, SeoView, SocialView, StrategyView, TaskFeedView } from "./views";
 import { ControlsSection, CtaBand, FaqSection, StackMarquee, StartForm } from "./sections";
+import { LoopVideo } from "./LoopVideo";
 import { HOME_DEFINITION, HOME_FAQ, HOME_H1, HOME_LEAD, HOME_STACK } from "../../data/homeContent";
 import { segments } from "../../data/segments";
 import { cn } from "../ui/utils";
@@ -37,17 +38,12 @@ function Hero() {
           </p>
         </div>
 
-        {/* Product composite: the approval queue over the morning briefing */}
-        <div className="relative pb-20 md:pb-28" aria-hidden="true">
-          <div className="rounded-[24px] border border-[var(--lx-line)] bg-[var(--lx-mist)] p-4 shadow-[0_40px_80px_-40px_rgba(17,17,16,0.25)] md:p-10">
-            <div className="grid gap-4 md:grid-cols-[1.15fr_1fr] md:items-start">
-              <BriefingView />
-              <div className="md:mt-12">
-                <ApprovalView />
-              </div>
-            </div>
+        {/* Product loop: the daily brief, the team's drafts, then the owner's approval */}
+        <div className="relative pb-20 md:pb-28">
+          <div className="rounded-[24px] border border-[var(--lx-line)] bg-[var(--lx-mist)] p-2 shadow-[0_40px_80px_-40px_rgba(17,17,16,0.25)] md:p-4">
+            <LoopVideo name="home" label="Short demo: a weekly check-in, three changes proposed by Angie, Sophie and Clara, then approved by the owner. Example data." />
           </div>
-          <p className="mt-4 text-[12.5px] text-[var(--lx-mute)]">Product views show example data for a sample brand.</p>
+          <p className="mt-4 text-[12.5px] text-[var(--lx-mute)]">Video and product views show example data for a sample brand.</p>
         </div>
       </Container>
     </section>
