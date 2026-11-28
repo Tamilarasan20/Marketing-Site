@@ -10,8 +10,9 @@ import { bfcmBlogPosts } from './bfcmBlogData';
 import { decemberBlogPosts } from './decemberBlogData';
 import { decemberBlogPostsB } from './decemberBlogDataB';
 import { salesBlogPosts } from './salesBlogData';
+import { demandBlogPosts } from './demandBlogData';
 
-for (const post of [...additionalBlogPosts, ...sintraInspiredBlogPosts, ...seoGeoBlogPosts, ...loraloopTrendingBlogPosts, ...jevBlogPosts, ...loraloopGrowthBlogPosts, ...googleAdsBlogPosts, ...bfcmBlogPosts, ...decemberBlogPosts, ...decemberBlogPostsB, ...salesBlogPosts]) {
+for (const post of [...additionalBlogPosts, ...sintraInspiredBlogPosts, ...seoGeoBlogPosts, ...loraloopTrendingBlogPosts, ...jevBlogPosts, ...loraloopGrowthBlogPosts, ...googleAdsBlogPosts, ...bfcmBlogPosts, ...decemberBlogPosts, ...decemberBlogPostsB, ...salesBlogPosts, ...demandBlogPosts]) {
   const alreadyExists = blogPosts.some((existingPost) => existingPost.id === post.id || existingPost.slug === post.slug);
 
   if (!alreadyExists) {
