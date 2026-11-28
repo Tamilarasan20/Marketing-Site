@@ -83,7 +83,7 @@ export const segments: Segment[] = [
     guides: [
       { to: '/free-meta-ads-audit', title: 'Free Meta ads audit', note: 'See what your Black Friday and Cyber Monday spend wasted, with a ranked list of fixes.' },
       { to: '/blog/get-new-customers-shopify-without-discounts', title: 'New customers without discounting', note: 'Story-led content, creators and proof that keep sales coming after the holidays.' },
-      { to: '/blog/creator-ugc-partnerships-dtc-brands', title: 'Creator and UGC partnerships', note: 'How to pick, pay and measure creators who actually use your product.' },
+      { to: '/blog/creator-ugc-partnerships-dtc-brands', title: 'UGC creators for DTC brands', note: 'How to pick, pay and measure creators who actually use your product.' },
       { to: '/blog/after-black-friday-retention-plan-shopify', title: 'After Black Friday: retention plan', note: 'Turn this weekend\'s first-time buyers into repeat customers.' },
     ],
   },

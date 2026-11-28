@@ -89,9 +89,9 @@ export const salesBlogPosts: BlogPost[] = [
   {
     id: 198,
     slug: 'cold-outreach-that-gets-replies',
-    title: 'Cold Outreach That Gets Replies: The Give-First Method',
-    seoTitle: 'Cold Outreach That Gets Replies: A Give-First Email and LinkedIn Method',
-    description: 'How to run cold email and LinkedIn outreach that people answer: build a list of exact-fit prospects, protect your main domain, lead with a real offer, keep the message short and follow up with value.',
+    title: 'Cold Email That Gets Replies: The Give-First Outreach Method',
+    seoTitle: 'Cold Email That Gets Replies: A Give-First Cold Outreach Method',
+    description: 'How to write cold email and LinkedIn outreach that people answer: build a list of exact-fit prospects, protect your main domain, lead with a real offer, keep the message short and follow up with value.',
     category: 'Business',
     date: publishDate,
     imageIndex: 198,
@@ -273,9 +273,9 @@ export const salesBlogPosts: BlogPost[] = [
   {
     id: 200,
     slug: 'sell-outcomes-not-features',
-    title: 'Sell the Outcome, Not the Tool: Marketing Messages That Close Sales',
-    seoTitle: 'Sell Outcomes, Not Features: How to Write Marketing That Closes Sales',
-    description: 'Why buyers pay for results, not feature lists, and how to rewrite your homepage, ads and sales emails around the outcome your product delivers, with proof from real customers.',
+    title: 'Features vs Benefits: Sell the Outcome, Not the Tool',
+    seoTitle: 'Features vs Benefits: How to Sell Outcomes, Not Features',
+    description: 'Features vs benefits, explained for marketers: why buyers pay for results, not feature lists, and how to rewrite your homepage, ads and sales emails around the outcome your product delivers, with proof from real customers.',
     category: 'Business',
     date: publishDate,
     imageIndex: 200,
@@ -339,6 +339,7 @@ export const salesBlogPosts: BlogPost[] = [
       { type: 'paragraph', text: "Loraloop works from your brand knowledge, including customer stories and results you add, so the ads, landing pages, posts and emails it drafts lead with outcomes instead of feature lists. You review and approve every piece before it is published." },
 
       { type: 'faq', items: [
+        { q: 'What is the difference between features and benefits?', a: 'A feature is what the product does, such as scheduling posts to 30 channels. A benefit is what the customer gets from it, such as a month of posts from one video. An outcome goes one step further: the measurable result, such as more booked calls.' },
         { q: 'What does selling outcomes mean?', a: 'Leading your marketing with the result a customer gets from your product, such as more sales or time saved, instead of listing what the product does.' },
         { q: 'Should I still list features?', a: 'Yes, lower on the page and in comparison content. Buyers who are close to deciding check features; buyers who are just arriving need to see the result first.' },
         { q: 'What if I have no customer results yet?', a: 'Show the result on your own business or on a pilot customer, and say clearly that it is your own example.' },
@@ -581,9 +582,9 @@ export const salesBlogPosts: BlogPost[] = [
   {
     id: 204,
     slug: 'creator-ugc-partnerships-dtc-brands',
-    title: 'Creator and UGC Partnerships for DTC Brands: How to Pick, Pay and Measure',
-    seoTitle: 'Creator and UGC Partnerships for DTC Brands: Pick, Pay and Measure (2027)',
-    description: 'A practical guide for DTC brands working with creators and UGC: choose creators who use the product and match your buyer, write a clear brief, pay after publishing and measure by comparing push weeks with normal weeks.',
+    title: 'UGC Creators for DTC Brands: How to Pick, Pay and Measure Them',
+    seoTitle: 'UGC Creators for DTC Brands: How to Find, Pay and Measure (2027)',
+    description: 'How DTC brands find and work with UGC creators: choose creators who use the product and match your buyer, write a clear brief, pay after publishing and measure by comparing push weeks with normal weeks.',
     category: 'Business',
     date: publishDate,
     imageIndex: 204,
@@ -755,7 +756,7 @@ export const salesBlogPosts: BlogPost[] = [
     slug: 'turn-leads-into-booked-appointments',
     title: 'How to Turn Calls, Forms and DMs Into Booked Appointments',
     seoTitle: 'How to Turn Leads Into Booked Appointments: Calls, Forms and DMs',
-    description: 'How service businesses lose leads between the first message and the booking, and how to fix it: reply fast, give one booking link, ask a few qualifying questions, follow up on a schedule and track every lead.',
+    description: 'How service businesses lose leads between the first message and the booking, and how to fix it: missed call text back, reply fast, give one booking link, ask a few qualifying questions, follow up on a schedule and track every lead.',
     category: 'Business',
     date: publishDate,
     imageIndex: 206,
@@ -787,7 +788,7 @@ export const salesBlogPosts: BlogPost[] = [
 
       { type: 'heading', text: 'Step 1: Reply Fast, Everywhere' },
       { type: 'list', items: [
-        'Set an automatic text reply for missed calls with your booking link.',
+        'Turn on missed call text back: an automatic text to every missed caller with your booking link.',
         'Send an instant confirmation for web forms that says when you will reply.',
         'Turn on saved replies for common DM questions such as prices, areas and availability.',
         'Decide who checks each channel, and when, including weekends.',
@@ -827,6 +828,7 @@ export const salesBlogPosts: BlogPost[] = [
       { type: 'paragraph', text: "Loraloop drafts replies to comments and DMs, follow-up emails and the monthly newsletter for people who are not ready yet, in your brand voice. Sensitive messages are held for a person. Calls and bookings stay in your existing phone and booking tools, and every reply and email waits for your approval before it is sent." },
 
       { type: 'faq', items: [
+        { q: 'What is missed call text back?', a: 'An automatic text message sent to anyone whose call you miss, usually with a short apology and your booking link. Most business phone systems and booking tools offer it as a setting.' },
         { q: 'How fast should a business reply to a lead?', a: 'As fast as you reasonably can, ideally the same day. An instant automatic reply with a booking link covers the gap until a person answers.' },
         { q: 'Should I put prices on my website?', a: 'Showing a price range filters out people who are not a fit and answers the most common question before they ask.' },
         { q: 'What is the best free way to track leads?', a: 'A shared spreadsheet with name, channel, request, status and next follow-up date works for most small businesses.' },

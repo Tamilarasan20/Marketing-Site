@@ -584,9 +584,9 @@ export const loraloopAdsBatchB: BlogPost[] = [
   {
     id: 137,
     slug: 'competitor-ad-research-meta-ad-library',
-    title: 'Competitor Ad Research With the Meta Ad Library: A Step-by-Step Guide',
-    seoTitle: "Meta Ad Library Competitor Research (2026): Step-by-Step Guide",
-    description: "Meta Ad Library competitor research, step by step: build a competitor list, filter the library, spot winners by run time, break down hooks and offers.",
+    title: 'Meta Ad Library: How to Research Competitor Ads Step by Step',
+    seoTitle: "Meta Ad Library (Facebook Ad Library): Competitor Research Guide",
+    description: "How to use the Meta Ad Library (formerly the Facebook Ad Library) for competitor research, step by step: build a competitor list, filter the library, spot winners by run time, break down hooks and offers.",
     category: 'Advertising',
     date: publishDate,
     imageIndex: 137,
