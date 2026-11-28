@@ -10,11 +10,12 @@ import { bfcmBlogPosts } from './bfcmBlogData';
 import { decemberBlogPosts } from './decemberBlogData';
 import { decemberBlogPostsB } from './decemberBlogDataB';
 import { salesBlogPosts } from './salesBlogData';
+import { demandBlogPosts } from './demandBlogData';
 
 // Keep this list in sync with registerAdditionalBlogData.ts (client-side registration).
 // Dedupe incrementally (same rule as registerAdditionalBlogData.ts): the first post to claim an id or slug wins.
 const seenKeys = new Set(baseBlogPosts.flatMap((post) => [String(post.id), post.slug]));
-const uniqueAdditionalPosts = [...additionalBlogPosts, ...sintraInspiredBlogPosts, ...seoGeoBlogPosts, ...loraloopTrendingBlogPosts, ...jevBlogPosts, ...loraloopGrowthBlogPosts, ...googleAdsBlogPosts, ...bfcmBlogPosts, ...decemberBlogPosts, ...decemberBlogPostsB, ...salesBlogPosts].filter((post) => {
+const uniqueAdditionalPosts = [...additionalBlogPosts, ...sintraInspiredBlogPosts, ...seoGeoBlogPosts, ...loraloopTrendingBlogPosts, ...jevBlogPosts, ...loraloopGrowthBlogPosts, ...googleAdsBlogPosts, ...bfcmBlogPosts, ...decemberBlogPosts, ...decemberBlogPostsB, ...salesBlogPosts, ...demandBlogPosts].filter((post) => {
   if (seenKeys.has(String(post.id)) || seenKeys.has(post.slug)) return false;
   seenKeys.add(String(post.id));
   seenKeys.add(post.slug);
